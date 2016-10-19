@@ -43,8 +43,8 @@
     "johnpbloch/wordpress": "4.6.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/vanilla-pdf-embed": "^0.0.7",
     "roots/soil": "^3.7",
+    "wpackagist-plugin/vanilla-pdf-embed": "^0.0.7",
     "jlm2017/theme-wp": "dev-master"
   },
   "require-dev": {
