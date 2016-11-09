@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f001c695349b21733bff0d660e51fb45",
-    "content-hash": "8d710af4d1ef374f10ac133062feb070",
+    "hash": "4841d600c77854cfbe5d4f3da51efb63",
+    "content-hash": "d0b785a81194ada77a2ee52e3d6a3d89",
     "packages": [
         {
             "name": "composer/installers",
@@ -438,6 +438,26 @@
             "time": "2016-09-01 10:05:43"
         },
         {
+            "name": "wpackagist-plugin/elementor",
+            "version": "0.10.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/elementor/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/elementor/"
+        },
+        {
             "name": "wpackagist-plugin/vanilla-pdf-embed",
             "version": "0.0.7",
             "source": {
@@ -468,7 +488,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.8.zip",
-                "reference": null,
+                "reference": "tags/3.8",
                 "shasum": null
             },
             "require": {
