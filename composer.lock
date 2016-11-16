@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "c02b9b03618345700c1fcf5d13744620e95e15d9"
+                "reference": "0706fe3255fba7e9ebad901d307554ec25098cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/c02b9b03618345700c1fcf5d13744620e95e15d9",
-                "reference": "c02b9b03618345700c1fcf5d13744620e95e15d9",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/0706fe3255fba7e9ebad901d307554ec25098cd1",
+                "reference": "0706fe3255fba7e9ebad901d307554ec25098cd1",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2016-11-16 14:08:24"
+            "time": "2016-11-16 15:00:24"
         },
         {
             "name": "johnpbloch/wordpress",
