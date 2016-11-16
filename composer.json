@@ -47,7 +47,9 @@
     "wpackagist-plugin/vanilla-pdf-embed": "^0.0.7",
     "jlm2017/theme-wp": "dev-master",
     "wpackagist-plugin/wordpress-seo": "^3.7",
-    "wpackagist-plugin/elementor": "^0.10.7"
+    "wpackagist-plugin/elementor": "^0.10.7",
+    "wpackagist-plugin/siteorigin-panels": "^2.4",
+    "wpackagist-plugin/so-widgets-bundle": "^1.7"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

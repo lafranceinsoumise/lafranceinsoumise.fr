@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4841d600c77854cfbe5d4f3da51efb63",
-    "content-hash": "d0b785a81194ada77a2ee52e3d6a3d89",
+    "hash": "e7862b2098db80fdec7c7fc9eb9b12df",
+    "content-hash": "8222c957300d0b6e5cba39ff6cca81e6",
     "packages": [
         {
             "name": "composer/installers",
@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "b60f7dbc36303e2f1f7956746d0e4c37985385d9"
+                "reference": "fcfe7b01e5090dd1227596792a8ef438b4af219d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/b60f7dbc36303e2f1f7956746d0e4c37985385d9",
-                "reference": "b60f7dbc36303e2f1f7956746d0e4c37985385d9",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/fcfe7b01e5090dd1227596792a8ef438b4af219d",
+                "reference": "fcfe7b01e5090dd1227596792a8ef438b4af219d",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2016-11-16 11:10:17"
+            "time": "2016-11-16 13:46:02"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -448,7 +448,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/elementor.zip",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -456,6 +456,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/elementor/"
+        },
+        {
+            "name": "wpackagist-plugin/siteorigin-panels",
+            "version": "2.4.18",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
+                "reference": "tags/2.4.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.18.zip",
+                "reference": "tags/2.4.18",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/siteorigin-panels/"
+        },
+        {
+            "name": "wpackagist-plugin/so-widgets-bundle",
+            "version": "1.7.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
+                "reference": "tags/1.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.7.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/so-widgets-bundle/"
         },
         {
             "name": "wpackagist-plugin/vanilla-pdf-embed",
