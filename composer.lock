@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e7862b2098db80fdec7c7fc9eb9b12df",
-    "content-hash": "8222c957300d0b6e5cba39ff6cca81e6",
+    "hash": "fefda9b9cb87af495939cc01c45cd246",
+    "content-hash": "d7b5dda75db04beab678477744506caa",
     "packages": [
         {
             "name": "composer/installers",
@@ -439,16 +439,16 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "0.10.7",
+            "version": "0.11.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "trunk"
+                "reference": "tags/0.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.zip",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/elementor.0.11.2.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -459,16 +459,16 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.4.18",
+            "version": "2.4.19",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.4.18"
+                "reference": "tags/2.4.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.18.zip",
-                "reference": "tags/2.4.18",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.19.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -499,7 +499,7 @@
         },
         {
             "name": "wpackagist-plugin/vanilla-pdf-embed",
-            "version": "0.0.7",
+            "version": "0.0.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/vanilla-pdf-embed/",
@@ -508,7 +508,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/vanilla-pdf-embed.zip",
-                "reference": "trunk",
+                "reference": null,
                 "shasum": null
             },
             "require": {
