@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fefda9b9cb87af495939cc01c45cd246",
-    "content-hash": "d7b5dda75db04beab678477744506caa",
+    "hash": "6caca7c3206359ec27beeeaebd3bde6c",
+    "content-hash": "098f06d4c31055f8cdea128130f461a4",
     "packages": [
         {
             "name": "composer/installers",
@@ -448,7 +448,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/elementor.0.11.2.zip",
-                "reference": null,
+                "reference": "tags/0.11.2",
                 "shasum": null
             },
             "require": {
@@ -468,7 +468,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.19.zip",
-                "reference": null,
+                "reference": "tags/2.4.19",
                 "shasum": null
             },
             "require": {
@@ -488,7 +488,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.7.2.zip",
-                "reference": null,
+                "reference": "tags/1.7.2",
                 "shasum": null
             },
             "require": {
@@ -508,7 +508,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/vanilla-pdf-embed.zip",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -536,6 +536,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-maintenance",
+            "version": "2.8.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
+                "reference": "tags/2.8.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.2.8.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-maintenance/"
         }
     ],
     "packages-dev": [
