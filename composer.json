@@ -44,7 +44,7 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/soil": "^3.7",
-    "wpackagist-plugin/vanilla-pdf-embed": "~0.0.7",
+    "wpackagist-plugin/vanilla-pdf-embed": "~0.0.8",
     "jlm2017/theme-wp": "dev-master",
     "wpackagist-plugin/wordpress-seo": "^3.7",
     "wpackagist-plugin/elementor": "^0.11.2",
