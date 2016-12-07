@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc42c678cb49cf7c4b7f5053287b601a",
-    "content-hash": "5b90d0ddeb633cc17837970411ece598",
+    "hash": "a706afec55dd513aa5b28662cd4c4ca8",
+    "content-hash": "18bd2c3155f972055ccec87cfc6d55b8",
     "packages": [
         {
             "name": "composer/installers",
@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "56bd85e2f6d69936bd71474be6aa424c8e84fe30"
+                "reference": "6f41782000cf2a2dbbac7ffdfad61f04f60783a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/56bd85e2f6d69936bd71474be6aa424c8e84fe30",
-                "reference": "56bd85e2f6d69936bd71474be6aa424c8e84fe30",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/6f41782000cf2a2dbbac7ffdfad61f04f60783a7",
+                "reference": "6f41782000cf2a2dbbac7ffdfad61f04f60783a7",
                 "shasum": ""
             },
             "require": {
@@ -156,20 +156,20 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2016-11-30 18:41:34"
+            "time": "2016-12-07 15:12:35"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6.1",
+            "version": "4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
+                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b327faa6feea3a4058178dee7ac8b512bd957e92",
+                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-09-07 15:01:47"
+            "time": "2016-12-06 18:46:46"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -439,16 +439,16 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "0.11.2",
+            "version": "1.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/0.11.2"
+                "reference": "tags/1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.0.11.2.zip",
-                "reference": "tags/0.11.2",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.0.0.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
