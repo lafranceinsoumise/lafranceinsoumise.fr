@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "6f41782000cf2a2dbbac7ffdfad61f04f60783a7"
+                "reference": "fb1b1f39f93dafcda61849a770a58f521b05d56d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/6f41782000cf2a2dbbac7ffdfad61f04f60783a7",
-                "reference": "6f41782000cf2a2dbbac7ffdfad61f04f60783a7",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/fb1b1f39f93dafcda61849a770a58f521b05d56d",
+                "reference": "fb1b1f39f93dafcda61849a770a58f521b05d56d",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2016-12-07 15:12:35"
+            "time": "2016-12-07 18:36:01"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -439,15 +439,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.0.0",
+            "version": "1.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.0.0"
+                "reference": "tags/1.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.0.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -459,16 +459,16 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.4.19",
+            "version": "2.4.20",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.4.19"
+                "reference": "tags/2.4.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.19.zip",
-                "reference": "tags/2.4.19",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.20.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Seventeen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-07 13:37:49+0000\n"
+"PO-Revision-Date: 2016-12-09 10:37:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.3.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Themes - Twenty Seventeen\n"
+
+#. Description of the plugin/theme
+msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
+msgstr "Twenty Seventeen donne vie à votre site avec un en-tête vidéo et des images mises en avant immersives. En mettant l’accent sur les sites d’entreprises, il offre de multiples sections sur la page d’accueil comme sur les widgets, les menus de navigation et sociaux, un logo et bien plus encore. Personnalisez sa grille asymétrique avec votre propre jeu de couleurs et mettez en valeur vos contenus multimédias avec les formats d’articles. Notre thème par défaut pour 2017 fonctionne dans de nombreuses langues, dans tous les domaines et sur n’importe quel type d’appareils."
 
 #. Theme Name of the plugin/theme
 msgid "Twenty Seventeen"
@@ -41,7 +45,7 @@ msgstr "Arrière plan vidéo en pause"
 
 #: inc/custom-header.php:116
 msgid "Play background video"
-msgstr "Lecture d’arrière plan vidéo"
+msgstr "Lecture d’arrière-plan vidéo"
 
 #: inc/template-tags.php:154
 msgid "Front Page Section %1$s Placeholder"
@@ -151,7 +155,7 @@ msgstr "on"
 #: functions.php:60 functions.php:170
 #: template-parts/navigation/navigation-top.php:12
 msgid "Top Menu"
-msgstr "Menu du haut"
+msgstr "Menu supérieur"
 
 #: comments.php:60
 msgid "Reply"
@@ -275,7 +279,7 @@ msgstr "https://wordpress.org/"
 
 #: footer.php:25
 msgid "Footer Social Links Menu"
-msgstr "Menu de liens sociaux de pied"
+msgstr "Menu de liens sociaux de pied de page"
 
 #: comments.php:75
 msgid "Comments are closed."
@@ -286,8 +290,8 @@ msgstr "Les commentaires sont fermés."
 msgctxt "comments title"
 msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s pensée sur &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s pensées sur &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s réponse sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s réponses sur &ldquo;%2$s&rdquo;"
 
 #. translators: %s: post title
 #: comments.php:36
@@ -301,7 +305,7 @@ msgstr "Page"
 
 #: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oups&nbsp;! Cette page est introuvable."
+msgstr "Aie&nbsp;! Cette page est introuvable."
 
 #: 404.php:24
 msgid "It looks like nothing was found at this location. Maybe try a search?"

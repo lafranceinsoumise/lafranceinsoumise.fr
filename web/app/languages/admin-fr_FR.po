@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-06 18:55:34+0000\n"
+"PO-Revision-Date: 2016-12-08 10:49:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgstr "Groupes de modifications personnalisés"
 #. https://make.wordpress.org/core/2016/10/26/registering-your-settings-in-wordpress-4-7/
 #: wp-admin/about.php:215
 msgid "%1$s <a href=\"%2$s\">has been enhanced</a> to include type, description, and REST API visibility."
-msgstr "%1$s <a href=\"%2$s\">a été améliorée</a> pour inclure la visibilité des types, description et de l’API REST."
+msgstr "%1$s <a href=\"%2$s\">a été améliorée</a> pour inclure le type, la description et la visibilité dans l’API REST."
 
 #: wp-admin/about.php:211
 msgid "Settings Registration API"
@@ -112,15 +112,15 @@ msgstr "Aperçus de miniature de PDF"
 
 #: wp-admin/about.php:133
 msgid "Sometimes you just need a few visual tweaks to make your site perfect. WordPress 4.7 allows you to add custom CSS and instantly see how your changes affect your site. The live preview allows you to work quickly without page refreshes slowing you down."
-msgstr "Parfois, vous n’avez besoin que de quelques ajustements visuels pour rendre parfaire votre site. WordPress 4.7 vous permet d’ajouter du CSS personnalisé et de voir instantanément comment vos modifications affectent votre site. L’aperçu en direct vous permet de travailler rapidement, sans devoir rafraîchir la page."
+msgstr "Parfois, vous n’avez besoin que de quelques ajustements visuels pour parfaire votre site. WordPress 4.7 vous permet d’ajouter du CSS personnalisé et de voir instantanément comment vos modifications affectent votre site. L’aperçu en direct vous permet de travailler rapidement, sans devoir rafraîchir la page."
 
 #: wp-admin/about.php:128
 msgid "Many menus for sites contain links to the pages of your site, but what happens when you don&#8217;t have any pages yet? Now you can add new pages while building menus instead of leaving the customizer and abandoning your changes. Once you&#8217;ve published your customizations, you&#8217;ll have new pages ready for you to fill with content."
-msgstr "De nombreux menus de sites contiennent des liens vers les pages du site, mais que se passe-t-il si vous n’avez pas encore de pages&nbsp;? Vous pouvez désormais ajouter de nouvelles pages tout en créant des menus, au lieu de quitter l’outil de personnalisation et d’abandonner vos modifications. Une fois que vous avez publié vos personnalisations, vous aurez de nouvelles pages prêtes à remplir avec du contenu."
+msgstr "De nombreux menus de sites contiennent des liens vers les pages du site, mais que se passe-t-il si vous n’avez pas encore de page&nbsp;? Vous pouvez désormais ajouter de nouvelles pages tout en créant des menus, au lieu de quitter l’outil de personnalisation et d’abandonner vos modifications. Une fois que vous avez publié vos personnalisations, vous aurez de nouvelles pages prêtes à remplir avec du contenu."
 
 #: wp-admin/about.php:126
 msgid "Smoother Menu Building"
-msgstr "Construction de menu assoupli"
+msgstr "Construction de menu plus fluide"
 
 #: wp-admin/about.php:120
 msgid "Sometimes a big atmospheric video as a moving header image is just what you need to showcase your wares; go ahead and try it out with Twenty Seventeen. Need some video inspiration? Try searching for sites with video headers available for download and use."
@@ -6241,7 +6241,7 @@ msgstr "Tous les thèmes et extensions disponibles sur le répertoire de WordPre
 
 #: wp-admin/freedoms.php:41
 msgid "WordPress grows when people like you tell their friends about it, and the thousands of businesses and services that are built on and around WordPress share that fact with their users. We&#8217;re flattered every time someone spreads the good word, just make sure to <a href=\"%s\">check out our trademark guidelines</a> first."
-msgstr "WordPress croît à chaque fois que vous en parlez à vos amis, et cela est également vrai pour les milliers de sociétés et services dans le monde construits à l&rsquo;aide de ou autour de WordPress. Nous sommes flattés chaque fois que quelqu&rsquo;un vante les mérites de cet outil&nbsp;; veillez cependant à respecter les <a href=\"%s\">conseils d&rsquo;utilisation de notre marque déposée</a>."
+msgstr "WordPress croît à chaque fois que vous en parlez à vos amis, et à chaque fois que les milliers de sociétés et services dans le monde construits à l&rsquo;aide de ou autour de WordPress en font mention à leurs utilisateurs. Nous sommes flattés chaque fois que quelqu&rsquo;un vante les mérites de cet outil&nbsp;; veillez cependant à respecter les <a href=\"%s\">conseils d&rsquo;utilisation de notre marque déposée</a>."
 
 #: wp-admin/freedoms.php:32
 msgid "WordPress is Free and open source software, built by a distributed community of mostly volunteer developers from around the world. WordPress comes with some awesome, worldview-changing rights courtesy of its <a href=\"%s\">license</a>, the GPL."
