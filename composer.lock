@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "53bb1e2b8065662f81749c8e770bdc4f",
-    "content-hash": "1934045cff580a219c67688504bd1f07",
+    "hash": "7a58a8e683ed81f566d516a47821afa5",
+    "content-hash": "65ec88eb8acf29a5caa5900a7477445a",
     "packages": [
         {
             "name": "composer/installers",
@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "fb1b1f39f93dafcda61849a770a58f521b05d56d"
+                "reference": "6e04b3f55dd6aed500b9570905220341cdffe34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/fb1b1f39f93dafcda61849a770a58f521b05d56d",
-                "reference": "fb1b1f39f93dafcda61849a770a58f521b05d56d",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/6e04b3f55dd6aed500b9570905220341cdffe34b",
+                "reference": "6e04b3f55dd6aed500b9570905220341cdffe34b",
                 "shasum": ""
             },
             "require": {
@@ -156,20 +156,20 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2016-12-07 18:36:01"
+            "time": "2017-01-11 18:00:22"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.7",
+            "version": "4.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92"
+                "reference": "6a6a20e568db37fb501fe9deb75ed2a8600d1b30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b327faa6feea3a4058178dee7ac8b512bd957e92",
-                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/6a6a20e568db37fb501fe9deb75ed2a8600d1b30",
+                "reference": "6a6a20e568db37fb501fe9deb75ed2a8600d1b30",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-12-06 18:46:46"
+            "time": "2017-01-11 17:46:47"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -439,15 +439,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.0.3",
+            "version": "1.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.0.3"
+                "reference": "tags/1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -459,15 +459,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.4.20",
+            "version": "2.4.21",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.4.20"
+                "reference": "tags/2.4.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.20.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.21.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -539,15 +539,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "2.8.2",
+            "version": "2.8.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/2.8.2"
+                "reference": "tags/2.8.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.2.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.2.8.4.zip",
                 "reference": null,
                 "shasum": null
             },
