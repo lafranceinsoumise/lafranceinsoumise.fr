@@ -34,6 +34,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:jlm2017/theme-wp"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:jlm2017/wp-plugin"
     }
   ],
   "require": {
@@ -45,6 +49,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/soil": "^3.7",
     "jlm2017/theme-wp": "dev-master#fb1b1f39f93dafcda61849a770a58f521b05d56d",
+    "jlm2017/jlm2017-wordpress-addons": "dev-master",
     "wpackagist-plugin/vanilla-pdf-embed": "~0.0.8",
     "wpackagist-plugin/wordpress-seo": "^3.7",
     "wpackagist-plugin/elementor": "^1.0.0",
