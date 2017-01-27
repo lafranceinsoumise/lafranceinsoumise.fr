@@ -502,15 +502,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.6",
+            "version": "4.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.6"
+                "reference": "tags/4.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.1.5"
+                "reference": "tags/1.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.1.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.1.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -591,7 +591,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.7.2.zip",
-                "reference": null,
+                "reference": "tags/1.7.2",
                 "shasum": null
             },
             "require": {
@@ -631,7 +631,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/vanilla-pdf-embed.zip",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
