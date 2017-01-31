@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "6e04b3f55dd6aed500b9570905220341cdffe34b"
+                "reference": "4e0279bf3becabd6818dab83cd4478698cf06093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/6e04b3f55dd6aed500b9570905220341cdffe34b",
-                "reference": "6e04b3f55dd6aed500b9570905220341cdffe34b",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/4e0279bf3becabd6818dab83cd4478698cf06093",
+                "reference": "4e0279bf3becabd6818dab83cd4478698cf06093",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2017-01-11 18:00:22"
+            "time": "2017-01-31 14:41:18"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -562,15 +562,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.4.21",
+            "version": "2.4.23",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.4.21"
+                "reference": "tags/2.4.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.21.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.23.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -642,15 +642,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.1",
+            "version": "4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.1"
+                "reference": "tags/4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.2.zip",
                 "reference": null,
                 "shasum": null
             },

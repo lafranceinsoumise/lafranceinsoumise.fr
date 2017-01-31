@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-01-08 17:17:24+0000\n"
+"PO-Revision-Date: 2017-01-28 23:08:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,128 @@ msgstr ""
 "X-Generator: GlotPress/2.3.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Elementor Page Builder - Stable (latest release)\n"
+
+#: includes/settings/settings.php:100
+msgid "Checking this box will disable Elementor's Global Fonts, and make Elementor inherit the fonts from your theme."
+msgstr "Cochez cette case pour désactiver les polices globales d’Elementor et faire en sorte qu’Elementor hérite des polices de votre thème."
+
+#: includes/settings/settings.php:92
+msgid "Disable Global Fonts"
+msgstr "Désactiver les polices globales"
+
+#: includes/settings/settings.php:83
+msgid "Checking this box will disable Elementor's Global Colors, and make Elementor inherit the colors from your theme."
+msgstr "Cochez cette case pour désactiver les couleurs globales d’Elementor et faire en sorte qu’Elementor hérite des couleurs de votre thème."
+
+#: includes/settings/settings.php:75
+msgid "Disable Global Colors"
+msgstr "Désactiver les couleurs globales"
+
+#: includes/admin.php:211
+msgid "Video Tutorials"
+msgstr "Tutoriels en vidéo"
+
+#: includes/admin.php:211
+msgid "View Elementor Video Tutorials"
+msgstr "Voir des tutoriels vidéo d’Elementor"
+
+#: includes/admin.php:210
+msgid "Docs & FAQs"
+msgstr "Docs & FAQs"
+
+#: includes/admin.php:210
+msgid "View Elementor Documentation"
+msgstr "Voir la documentation d’Elementor"
+
+#: includes/settings/tools.php:144
+msgid "%d Rows Affected"
+msgstr "%d rangées affectées"
+
+#: includes/settings/tools.php:129
+msgid "The `from` and `to` URL's must be different"
+msgstr "Les URLs « de » et « à » doivent être différentes"
+
+#: includes/settings/tools.php:125
+msgid "The `from` and `to` URL's must be a valid URL"
+msgstr "Les URLs « de » et « à » doivent être des URLs valides"
+
+#: includes/settings/tools.php:90
+msgid "Enter your old and new URLs for your WordPress installation, to update all Elementor data (Relevant for domain transfers or move to 'HTTPS')."
+msgstr "Saisissez les anciennes et nouvelles URLs de votre installation WordPress pour mettre à jour toutes les données Elementor (pertinent pour les transferts de domaine ou le passage au 'HTTPS')."
+
+#: includes/settings/tools.php:82
+msgid "Update Site Address (URL)"
+msgstr "Mettre à jour l’adresse du site (URL)"
+
+#: includes/settings/tools.php:71
+msgid "<strong>Important:</strong> It is strongly recommended that you <a target=\"_blank\" href=\"%s\">backup your database</a> before using Replace URL."
+msgstr "<strong>Important :</strong> il est fortement recommandé de <a target=\"_blank\" href=\"%s\">sauvegarder votre base de données</a> avant d’utiliser le remplacement d’URL."
+
+#: includes/settings/tools.php:69 includes/settings/tools.php:89
+msgid "Replace URL"
+msgstr "Remplacer l’URL"
+
+#: includes/settings/system-info/classes/wordpress.php:43
+msgctxt "System Info"
+msgid "We recommend setting memory to at least %s. For more information, read about <a href=\"%s\">how to Increase memory allocated to PHP</a>."
+msgstr "Nous vous recommandons de régler la mémoire au moins à %s. Pour plus d’informations, consultez <a href=\"%s\">comment augmenter la mémoire allouée à PHP</a>."
+
+#: includes/managers/revisions.php:105
+msgid "Cannot delete this Revision"
+msgstr "Impossible de supprimer cette révision"
+
+#: includes/managers/revisions.php:97
+msgid "Invalid Revision"
+msgstr "Révision non valide"
+
+#: includes/managers/revisions.php:49
+msgid "%1$s ago (%2$s)"
+msgstr "Il y a %1$s (%2$s)"
+
+#: includes/managers/revisions.php:36
+msgctxt "revision date format"
+msgid "M j @ H:i"
+msgstr "j M @ h:i"
+
+#: includes/editor.php:390
+msgid "Back to Editor"
+msgstr "Retour à l’éditeur"
+
+#: includes/editor.php:388
+msgid "Autosave"
+msgstr "Sauvegarde automatique"
+
+#: includes/editor.php:387
+msgid "Revision"
+msgstr "Révision"
+
+#: includes/editor.php:386
+msgid "Learn more about <a targe=\"_blank\" href=\"%s\">WordPress revisions</a>"
+msgstr "En apprendre plus au sujet des <a targe=\"_blank\" href=\"%s\">révisions WordPress</a>"
+
+#: includes/editor.php:385
+msgid "It looks like the post revision feature is unavailable in your website."
+msgstr "Il semble que la fonctionnalité de révision après publication n’est pas disponible sur votre site web."
+
+#: includes/editor.php:384
+msgid "Start designing your page and you'll be able to see the entire revision history here."
+msgstr "Commencez à concevoir votre page et vous pourrez voir l’historique de révision complet ici."
+
+#: includes/editor.php:383
+msgid "Revision history lets you save your previous versions of your work, and restore them any time."
+msgstr "L’historique des révisions vous permet de sauvegarder les versions précédentes de votre travail et de les restaurer à tout moment."
+
+#: includes/editor-templates/panel.php:262
+msgid "By"
+msgstr "Par"
+
+#: includes/editor-templates/panel.php:253
+msgid "No Revisions Saved Yet"
+msgstr "Encore aucune révision enregistrée"
+
+#: includes/db.php:60
+msgid "Auto Save"
+msgstr "Enregistrement automatique"
 
 #: includes/widgets/counter.php:84
 msgid "Thousand Separator"
@@ -23,20 +145,20 @@ msgctxt "Background Control"
 msgid "Default"
 msgstr "Par défaut"
 
-#: includes/managers/controls.php:410
+#: includes/managers/controls.php:405
 msgid "Custom CSS lets you add CSS code to any widget, and see it render live right in the editor."
 msgstr "Le CSS personnalisé vous permet d'ajouter du code CSS à n'importe quel widget et d'avoir le rendu en direct dans l’éditeur."
 
-#: includes/managers/controls.php:407
+#: includes/managers/controls.php:402
 msgid "Meet Our Custom CSS"
 msgstr "Découvrez nos CSS personnalisés"
 
-#: includes/managers/controls.php:395
+#: includes/managers/controls.php:390
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
 #: includes/editor-templates/panel-elements.php:51
-#: includes/managers/controls.php:413
+#: includes/managers/controls.php:408
 msgid "This feature is only available on Elementor Pro."
 msgstr "Cette fonctionnalité uniquement disponible avec Elementor Pro."
 
@@ -51,7 +173,7 @@ msgstr "Découvrez notre widget global"
 #: includes/admin.php:202 includes/editor-templates/panel-elements.php:21
 #: includes/editor-templates/panel-elements.php:52
 #: includes/editor-templates/templates.php:81
-#: includes/managers/controls.php:416 includes/settings/settings.php:207
+#: includes/managers/controls.php:411 includes/settings/settings.php:207
 msgid "Go Pro"
 msgstr "Passer à la version Pro"
 
@@ -99,11 +221,11 @@ msgstr "Outils d’Elementor"
 msgid "Improve Elementor"
 msgstr "Améliorer Elementor"
 
-#: includes/managers/elements.php:174
+#: includes/managers/elements.php:178
 msgid "General Elements"
 msgstr "Éléments généraux"
 
-#: includes/frontend.php:373
+#: includes/frontend.php:379
 msgid "Invalid Data: The Template ID cannot be the same as the currently edited template. Please choose a different one."
 msgstr "Données non valides : l’ID du modèle ne peut pas être le même que le modèle en cours de modification. Veuillez en choisir un autre."
 
@@ -135,11 +257,11 @@ msgstr "Attention ! Vous êtes sur le point de supprimer tout le contenu de cet
 msgid "Delete All Content"
 msgstr "Supprimer tout le contenu"
 
-#: includes/editor-templates/panel.php:157
+#: includes/editor-templates/panel.php:155
 msgid "{0} are disabled"
 msgstr "{0} sont désactivés"
 
-#: includes/editor-templates/panel.php:146
+#: includes/editor-templates/panel.php:144
 msgid "Update changes to page"
 msgstr "Mettre à jour les modifications apportées à la page"
 
@@ -481,34 +603,18 @@ msgid "Prevent Scroll"
 msgstr "Empêcher le défilement"
 
 #: includes/elements/column.php:274 includes/elements/section.php:576
-#: includes/widgets/common.php:69
+#: includes/widgets/common.php:68
 msgid "Fast"
 msgstr "Rapide"
 
 #: includes/elements/column.php:272 includes/elements/section.php:574
-#: includes/widgets/common.php:67
+#: includes/widgets/common.php:66
 msgid "Slow"
 msgstr "Lent"
 
-#: includes/admin.php:308
+#: includes/admin.php:321
 msgid "Submit & Deactivate"
 msgstr "Soumettre & désactiver"
-
-#: includes/settings/settings.php:100
-msgid "Default Fonts let you change the fonts that appear on Elementor from one place. If you prefer to inherit the fonts from your theme, you can disable this feature here."
-msgstr "Les polices par défaut vous permettent de changer les polices qui apparaissent dans Elementor à partir d'un seul endroit. Si vous préférez hériter des polices de votre thème, vous pouvez désactiver cette fonctionnalité ici."
-
-#: includes/settings/settings.php:92
-msgid "Disable Default Fonts"
-msgstr "Désactiver les polices par défaut"
-
-#: includes/settings/settings.php:83
-msgid "Color Palettes let you change the default colors that appear under the various widgets. If you prefer to inherit the colors from your theme, you can disable this feature."
-msgstr "Les palettes de couleurs vous permettent de modifier les couleurs par défaut sur les différents widgets. Si vous préférez utiliser les couleurs de votre thème, vous pouvez désactiver cette fonctionnalité."
-
-#: includes/settings/settings.php:75
-msgid "Disable Color Palettes"
-msgstr "Désactiver les palettes de couleurs"
 
 #: includes/settings/settings.php:67
 msgid "Style Settings"
@@ -527,17 +633,12 @@ msgstr "Palettes de couleurs"
 msgid "Entrance Animation"
 msgstr "Animation d’accueil"
 
-#: includes/editor-templates/panel.php:158
+#: includes/editor-templates/panel.php:156
 msgid "You can enable it from the <a href=\"%s\" target=\"_blank\">Elementor settings page</a>."
 msgstr "Vous pouvez les activer depuis <a href=\"%s\" target=\"_blank\">la page des réglages d’Elementor</a>."
 
-#: includes/controls/groups/box-shadow.php:20
-msgctxt "Box Shadow Control"
-msgid "Yes"
-msgstr "Oui"
-
 #: includes/controls/groups/box-shadow.php:16
-#: includes/controls/groups/box-shadow.php:26
+#: includes/controls/groups/box-shadow.php:25
 msgctxt "Box Shadow Control"
 msgid "Box Shadow"
 msgstr "Ombre de boîte"
@@ -558,7 +659,7 @@ msgstr "Diffuser"
 msgid "Blur"
 msgstr "Flou"
 
-#: includes/admin.php:309
+#: includes/admin.php:322
 msgid "Skip & Deactivate"
 msgstr "Passer & désactiver"
 
@@ -643,58 +744,58 @@ msgstr "Superposition d’arrière-plan"
 msgid "Extended"
 msgstr "Étendre"
 
-#: includes/admin.php:351
+#: includes/admin.php:364
 msgid "If you have a moment, please share why you are deactivating Elementor:"
 msgstr "Si vous avez un moment, veuillez partager la raison pour laquelle vous désactivez Elementor :"
 
-#: includes/admin.php:343
+#: includes/admin.php:356
 msgid "Quick Feedback"
 msgstr "Retour rapide"
 
-#: includes/admin.php:335
+#: includes/admin.php:348
 msgid "Please share the reason"
 msgstr "Veuillez partager la raison"
 
-#: includes/admin.php:334
+#: includes/admin.php:347
 msgid "Other"
 msgstr "Autre"
 
-#: includes/admin.php:330
+#: includes/admin.php:343
 msgid "It's a temporary deactivation"
 msgstr "C’est une désactivation temporaire"
 
-#: includes/admin.php:326
+#: includes/admin.php:339
 msgid "I couldn't get the plugin to work"
 msgstr "Je n’ai pas réussi à faire fonctionner l’extension"
 
-#: includes/admin.php:323
+#: includes/admin.php:336
 msgid "Please share which plugin"
 msgstr "Veuillez partager quelle extension"
 
-#: includes/admin.php:322
+#: includes/admin.php:335
 msgid "I found a better plugin"
 msgstr "J’ai trouvé un meilleure extension"
 
-#: includes/admin.php:318
+#: includes/admin.php:331
 msgid "I no longer need the plugin"
 msgstr "Je n’ai plus besoin de cette extension"
 
-#: includes/admin.php:258 includes/admin.php:263
+#: includes/admin.php:271 includes/admin.php:276
 msgid "Update Now"
 msgstr "Mettre à jour maintenant"
 
 #. translators: %s: version number
-#: includes/admin.php:252
+#: includes/admin.php:265
 msgid "View Elementor version %s details"
 msgstr "Voir les détails de la version %s d’Elementor"
 
 #. translators: 1: details URL, 2: accessibility text, 3: version number, 4:
 #. update URL, 5: accessibility text
-#: includes/admin.php:247
+#: includes/admin.php:260
 msgid "There is a new version of Elementor Page Builder available. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">update now</a>."
 msgstr "Une nouvelle version d'Elementor Page Builder est disponible. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">Voir les détails de la version %3$s</a> ou <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">mettre à jour maintenant</a>."
 
-#: includes/admin.php:243
+#: includes/admin.php:256
 msgid "New in Elementor"
 msgstr "Nouveau dans Elementor"
 
@@ -711,7 +812,7 @@ msgid "Wider"
 msgstr "Plus Large"
 
 #. translators: %s: link to plugin review
-#: includes/admin.php:277
+#: includes/admin.php:290
 msgid "Enjoyed <strong>Elementor</strong>? Please leave us a %s rating. We really appreciate your support!"
 msgstr "Vous appréciez <strong>Elementor</strong> ? Veuillez nous laissez un vote %s. Nous apprécions votre aide !"
 
@@ -787,7 +888,7 @@ msgid "Left Border Width"
 msgstr "Largeur de la bordure gauche"
 
 #: includes/elements/column.php:268 includes/elements/section.php:570
-#: includes/widgets/common.php:63 includes/widgets/counter.php:73
+#: includes/widgets/common.php:62 includes/widgets/counter.php:73
 msgid "Animation Duration"
 msgstr "Durée de l’animation"
 
@@ -986,11 +1087,11 @@ msgid "This is the heading"
 msgstr "Ceci est le titre"
 
 #: includes/elements/column.php:291 includes/elements/section.php:593
-#: includes/widgets/common.php:87
+#: includes/widgets/common.php:86
 msgid "Add your custom class WITHOUT the dot. e.g: my-class"
 msgstr "Ajoutez votre classe personnalisée sans le point. Ex : ma-classe"
 
-#: includes/elements/section.php:634 includes/widgets/common.php:150
+#: includes/elements/section.php:634 includes/widgets/common.php:149
 msgid "Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you're in editing mode in Elementor."
 msgstr "Attention: Les réglages d’affichage (afficher/masquer pour mobile, tablette ou bureau) ne prendront effet qu’une fois que vous êtes sur l’aperçu ou la page en direct, et pas pendant que vous êtes en mode modification dans Elementor."
 
@@ -1015,7 +1116,7 @@ msgstr "La liste des polices utilisées si la police choisie n’est pas disponi
 msgid "Default Generic Fonts"
 msgstr "Polices génériques par défaut"
 
-#: includes/managers/elements.php:178
+#: includes/managers/elements.php:182
 msgid "Pojo Themes"
 msgstr "Thèmes Pojo"
 
@@ -1090,9 +1191,9 @@ msgstr "Majuscule"
 msgid "Elementor.com"
 msgstr "Elementor.com"
 
-#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.7)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.7)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "https://elementor.com/"
 msgstr "https://elementor.com/"
@@ -1706,20 +1807,20 @@ msgstr "Bouton"
 msgid "Edit"
 msgstr "Modifier"
 
-#: includes/elements/section.php:669 includes/widgets/common.php:185
+#: includes/elements/section.php:669 includes/widgets/common.php:184
 msgid "Hide On Mobile"
 msgstr "Masquer sur mobile"
 
-#: includes/elements/section.php:656 includes/widgets/common.php:172
+#: includes/elements/section.php:656 includes/widgets/common.php:171
 msgid "Hide On Tablet"
 msgstr "Masquer sur tablette"
 
-#: includes/elements/section.php:643 includes/widgets/common.php:159
+#: includes/elements/section.php:643 includes/widgets/common.php:158
 msgid "Hide On Desktop"
 msgstr "Masquer sur ordinateur"
 
 #: includes/elements/column.php:68 includes/elements/section.php:414
-#: includes/widgets/button.php:231 includes/widgets/common.php:120
+#: includes/widgets/button.php:231 includes/widgets/common.php:119
 #: includes/widgets/icon-box.php:287 includes/widgets/icon.php:217
 #: includes/widgets/image-carousel.php:432
 #: includes/widgets/image-gallery.php:160 includes/widgets/image.php:194
@@ -1731,8 +1832,8 @@ msgstr "Rayon de bordure"
 msgid "Element Style"
 msgstr "Style de l’élément"
 
-#: includes/widgets/alert.php:176 includes/widgets/icon-box.php:454
-#: includes/widgets/image-box.php:323
+#: includes/compatibility.php:68 includes/widgets/alert.php:176
+#: includes/widgets/icon-box.php:454 includes/widgets/image-box.php:323
 msgid "Description"
 msgstr "Description"
 
@@ -1971,9 +2072,10 @@ msgstr "Nom"
 msgid "No"
 msgstr "Non"
 
-#: includes/elements/section.php:132 includes/elements/section.php:615
-#: includes/widgets/audio.php:52 includes/widgets/audio.php:74
-#: includes/widgets/google-maps.php:83 includes/widgets/image-carousel.php:82
+#: includes/controls/groups/box-shadow.php:18 includes/elements/section.php:132
+#: includes/elements/section.php:615 includes/widgets/audio.php:52
+#: includes/widgets/audio.php:74 includes/widgets/google-maps.php:83
+#: includes/widgets/image-carousel.php:82
 #: includes/widgets/image-carousel.php:154
 #: includes/widgets/image-carousel.php:167
 #: includes/widgets/image-carousel.php:189 includes/widgets/video.php:116
@@ -2031,11 +2133,11 @@ msgstr "Secondaire"
 msgid "Primary"
 msgstr "Principal"
 
-#: includes/plugin.php:109 includes/plugin.php:120
+#: includes/plugin.php:111 includes/plugin.php:122
 msgid "Cheatin&#8217; huh?"
 msgstr "Une fausse manipulation ?"
 
-#: includes/managers/elements.php:182
+#: includes/managers/elements.php:186
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -2044,7 +2146,7 @@ msgstr "WordPress"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/managers/elements.php:170
+#: includes/managers/elements.php:174
 msgid "Basic"
 msgstr "Basique"
 
@@ -2136,7 +2238,7 @@ msgid "Column Width"
 msgstr "Largeur de colonne"
 
 #: includes/elements/column.php:286 includes/elements/section.php:588
-#: includes/widgets/common.php:81
+#: includes/widgets/common.php:80
 msgid "CSS Classes"
 msgstr "Classes CSS"
 
@@ -2197,7 +2299,7 @@ msgstr "Couleur du texte"
 msgid "Typography"
 msgstr "Typographie"
 
-#: includes/elements/column.php:43 includes/widgets/common.php:96
+#: includes/elements/column.php:43 includes/widgets/common.php:95
 msgid "Background & Border"
 msgstr "Arrière-plan & bordure"
 
@@ -2241,7 +2343,7 @@ msgid "Structure"
 msgstr "Structure"
 
 #: includes/elements/column.php:301 includes/elements/section.php:603
-#: includes/managers/controls.php:73 includes/widgets/common.php:142
+#: includes/managers/controls.php:73 includes/widgets/common.php:141
 msgid "Responsive"
 msgstr "Responsive"
 
@@ -2269,6 +2371,10 @@ msgstr "Colonnes"
 #: includes/editor.php:361
 msgid "About Elementor"
 msgstr "À propos d'Elementor"
+
+#: includes/editor-templates/panel.php:245 includes/editor.php:360
+msgid "Revision History"
+msgstr "Historique des révisions"
 
 #: includes/editor.php:359
 msgid "Soon"
@@ -2323,12 +2429,12 @@ msgid "Color Palette"
 msgstr "Palette de couleur"
 
 #: includes/controls/image-dimensions.php:60
-#: includes/editor-templates/panel.php:148
-#: includes/editor-templates/panel.php:241 includes/schemes/base.php:72
+#: includes/editor-templates/panel.php:146
+#: includes/editor-templates/panel.php:239 includes/schemes/base.php:72
 msgid "Apply"
 msgstr "Appliquer"
 
-#: includes/editor-templates/panel.php:236 includes/schemes/base.php:68
+#: includes/editor-templates/panel.php:234 includes/schemes/base.php:68
 msgid "Discard"
 msgstr "Jeter"
 
@@ -2406,7 +2512,7 @@ msgstr "Ajouter une nouvelle section"
 msgid "Loading"
 msgstr "Chargement"
 
-#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-elementor.pot (Elementor 1.1.7)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/editor-templates/editor-wrapper.php:18 includes/editor.php:345
 #: includes/settings/settings.php:194 includes/settings/settings.php:195
@@ -2460,7 +2566,7 @@ msgid "Line-Height"
 msgstr "Hauteur de ligne"
 
 #: includes/elements/column.php:273 includes/elements/section.php:575
-#: includes/widgets/common.php:68
+#: includes/widgets/common.php:67
 msgid "Normal"
 msgstr "Normal"
 
@@ -2679,11 +2785,11 @@ msgctxt "Background Control"
 msgid "Classic"
 msgstr "Classique"
 
-#: includes/controls/font.php:45 includes/editor-templates/panel.php:203
+#: includes/controls/font.php:45 includes/editor-templates/panel.php:201
 msgid "Google"
 msgstr "Google"
 
-#: includes/controls/font.php:34 includes/editor-templates/panel.php:197
+#: includes/controls/font.php:34 includes/editor-templates/panel.php:195
 msgid "System"
 msgstr "Système"
 
@@ -2749,7 +2855,7 @@ msgstr "Sélectionnez une couleur"
 #: includes/controls/font.php:33 includes/controls/groups/typography.php:58
 #: includes/controls/groups/typography.php:75
 #: includes/controls/groups/typography.php:87
-#: includes/editor-templates/panel.php:195 includes/elements/column.php:329
+#: includes/editor-templates/panel.php:193 includes/elements/column.php:329
 #: includes/elements/section.php:185 includes/elements/section.php:202
 #: includes/elements/section.php:247 includes/elements/section.php:305
 #: includes/widgets/button.php:45 includes/widgets/heading.php:58
@@ -2765,7 +2871,7 @@ msgid "Clear"
 msgstr "Effacer"
 
 #: includes/admin.php:109 includes/admin.php:117 includes/admin.php:175
-#: includes/frontend.php:359
+#: includes/frontend.php:365
 msgid "Edit with Elementor"
 msgstr "Modifier avec Elementor"
 

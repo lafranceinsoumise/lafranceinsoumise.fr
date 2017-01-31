@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-01-10 20:27:25+0000\n"
+"PO-Revision-Date: 2017-01-29 23:03:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "ACTIVÉ"
 
 #: vendor/yoast/license-manager/class-license-manager.php:116
 msgid "<b>Warning!</b> Your %s license is inactive which means you're missing out on updates and support! <a href=\"%s\">Activate your license</a> or <a href=\"%s\" target=\"_blank\">get a license here</a>."
-msgstr "<b>Attention !</b> Votre licence %s n'est pas activée ce qui signifie que vous ne profitez pas des mises à jour et du support&nbsp;! <a href=\"%s\">Saisissez votre clé de licence</a> ou <a href=\"%s\" target=\"_blank\">obtenez une licence ici</a>."
+msgstr "<b>Avertissement !</b> Votre licence %s n'est pas activée ce qui signifie que vous ne profitez pas des mises à jour et du support&nbsp;! <a href=\"%s\">Saisissez votre clé de licence</a> ou <a href=\"%s\" target=\"_blank\">obtenez une licence ici</a>."
 
 #: vendor/yoast/license-manager/class-license-manager.php:114
 msgid "<b>Warning!</b> You didn't set your %s license key yet, which means you're missing out on updates and support! <a href=\"%s\">Enter your license key</a> or <a href=\"%s\" target=\"_blank\">get a license here</a>."
@@ -471,7 +471,7 @@ msgstr "(sans titre)"
 #. translators: %1$s expands to Yoast SEO
 #: admin/views/tabs/dashboard/general.php:18
 msgid "Configure %1$s step-by-step."
-msgstr "Configurez %1$s étape par étape."
+msgstr "Configurer %1$s étape par étape."
 
 #: admin/views/tabs/dashboard/features.php:43
 msgid "%1$s comes with a lot of features. You can enable / disable some of them below."
@@ -2397,7 +2397,7 @@ msgstr "Importer les réglages"
 
 #: admin/views/tabs/tool/wpseo-import.php:13
 msgid "Import settings by locating <em>settings.zip</em> and clicking \"Import settings\""
-msgstr "Importer les réglages en localisant le fichier <em>settings.zip</em> et en cliquant sur « Importer les réglages »."
+msgstr "Importer les réglages en localisant le fichier<em>settings.zip</em> et en cliquant sur \"Importer les réglages\""
 
 #: admin/views/tool-import-export.php:91
 msgid "Import from other SEO plugins"
@@ -3970,7 +3970,7 @@ msgstr "Par défaut pour ce type de contenu, actuellement : %s"
 #: admin/metabox/class-metabox.php:91
 #: admin/taxonomy/class-taxonomy-settings-fields.php:101
 msgid "Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won't have an effect."
-msgstr "Attention : même si vous pouvez modifier les méta \"robots\" ici, tout votre site est réglé en mode \"noindex\" dans les réglages de vie privée, toute modification effectuée ici n’aura donc aucun effet. "
+msgstr "Avertissement : même si vous pouvez modifier les méta « robots » ici, tout votre site est réglé en mode « noindex » dans les réglages de vie privée, toute modification effectuée ici n’aura donc aucun effet. "
 
 #: admin/metabox/class-metabox.php:86
 msgid "If you type something above it will override your %smeta keywords template%s."
