@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "4e0279bf3becabd6818dab83cd4478698cf06093"
+                "reference": "da6504c180977704530685562cc74645333f74a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/4e0279bf3becabd6818dab83cd4478698cf06093",
-                "reference": "4e0279bf3becabd6818dab83cd4478698cf06093",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/da6504c180977704530685562cc74645333f74a3",
+                "reference": "da6504c180977704530685562cc74645333f74a3",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2017-01-31 14:41:18"
+            "time": "2017-02-07 16:22:04"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.1.7",
+            "version": "1.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.1.7"
+                "reference": "tags/1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -562,15 +562,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.4.23",
+            "version": "2.4.24",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.4.23"
+                "reference": "tags/2.4.24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.23.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.24.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -582,16 +582,16 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.7.2",
+            "version": "1.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.7.2"
+                "reference": "tags/1.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.7.2.zip",
-                "reference": "tags/1.7.2",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.8.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -642,15 +642,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.2",
+            "version": "4.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.2"
+                "reference": "tags/4.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -684,16 +684,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.7.1",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f"
+                "reference": "86dd55a522238211f9f3631e3361703578941d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9b324f3a1132459a7274a0ace2e1b766ba80930f",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/86dd55a522238211f9f3631e3361703578941d9a",
+                "reference": "86dd55a522238211f9f3631e3361703578941d9a",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +758,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30 04:02:31"
+            "time": "2017-02-02 03:30:00"
         }
     ],
     "aliases": [],
