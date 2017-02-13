@@ -1,0 +1,111 @@
+# Translation of Stable (latest release) in French (France)
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-05-31 13:55:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: google-authenticator.php:168
+msgid "Google Authenticator code"
+msgstr "Code Google Authenticator"
+
+#: google-authenticator.php:279 google-authenticator.php:473
+msgid "Google Authenticator Settings"
+msgstr "Réglages Google Authenticator"
+
+#: google-authenticator.php:299
+msgid "Description"
+msgstr "Description"
+
+#. Plugin Name of the plugin/theme
+msgid "Google Authenticator"
+msgstr "Google Authenticator"
+
+#: google-authenticator.php:276
+msgid "WordPressBlog"
+msgstr "WordPressBlog"
+
+#: google-authenticator.php:284 google-authenticator.php:485
+msgid "Active"
+msgstr "Activé"
+
+#: google-authenticator.php:292
+msgid "Relaxed mode"
+msgstr "Mode moins strict"
+
+#: google-authenticator.php:304
+msgid "Secret"
+msgstr "Clé secrète"
+
+#: google-authenticator.php:308
+msgid "Show/Hide QR code"
+msgstr "Afficher/Masquer le QR Code"
+
+#: google-authenticator.php:332
+msgid "Create new password"
+msgstr "Créer un nouveau mot de passe"
+
+#. Plugin URI of the plugin/theme
+msgid "http://henrik.schack.dk/google-authenticator-for-wordpress"
+msgstr "http://henrik.schack.dk/google-authenticator-for-wordpress"
+
+#. Author of the plugin/theme
+msgid "Henrik Schack"
+msgstr "Henrik Schack"
+
+#. Author URI of the plugin/theme
+msgid "http://henrik.schack.dk/"
+msgstr "http://henrik.schack.dk/"
+
+#. Description of the plugin/theme
+msgid "Two-Factor Authentication for WordPress using the Android/iPhone/Blackberry app as One Time Password generator."
+msgstr "Authentification à deux étapes pour WordPress utilisant l’application Android/iPhone/Blackberry comme générateur de mot de passe unique."
+
+#: google-authenticator.php:333
+msgid " Password is not stored in cleartext, this is your only chance to see it."
+msgstr "Le mot de passe n’est pas enregistré en clair ; c’est votre seule chance de le voir."
+
+#: google-authenticator.php:307
+msgid "Create new secret"
+msgstr "Créer une nouvelle clé secrète"
+
+#: google-authenticator.php:300
+msgid " Description that you'll see in the Google Authenticator app on your phone."
+msgstr "Description affichée dans l’application Google Authenticator sur votre téléphone."
+
+#: google-authenticator.php:294
+msgid " Relaxed mode allows for more time drifting on your phone clock (&#177;4 min)."
+msgstr "Le mode moins strict autorise une dérive de l’horloge de votre téléphone plus importante (&#177;4 min)."
+
+#: google-authenticator.php:236
+msgid "<strong>ERROR</strong>: The Google Authenticator code is incorrect or has expired."
+msgstr "<strong>ERREUR</strong> : le code Google Authenticator est invalide ou a expiré."
+
+#: google-authenticator.php:233
+msgid "<strong>ERROR</strong>: The Google Authenticator password is incorrect."
+msgstr "<strong>ERREUR</strong> : le code Google Authenticator est invalide."
+
+#: google-authenticator.php:168
+msgid "If you don't have Google Authenticator enabled for your WordPress account, leave this field empty."
+msgstr "Si vous n’avez pas activé Google Authenticator pour votre compte WordPress, laissez ce champ vide."
+
+#: google-authenticator.php:317
+msgid "Scan this with the Google Authenticator app."
+msgstr "Scannez ceci avec votre application Google Authenticator."
+
+#: google-authenticator.php:478
+msgid "Hide settings from user"
+msgstr "Masquer les réglages à l’utilisateur"
+
+#: google-authenticator.php:322
+msgid "Enable App password"
+msgstr "Activer le mot de passe d’application"
+
+#: google-authenticator.php:324
+msgid " Enabling an App password will decrease your overall login security."
+msgstr "Activer le mot de passe d’application réduira le niveau de sécurité général de connexion."
