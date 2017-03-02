@@ -137,12 +137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/wp-plugin.git",
-                "reference": "5a8b737180a026b2c6e245445ae610554062abad"
+                "reference": "14e2c3882471d8907df90e0d0a1ad8e8084776eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/5a8b737180a026b2c6e245445ae610554062abad",
-                "reference": "5a8b737180a026b2c6e245445ae610554062abad",
+                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/14e2c3882471d8907df90e0d0a1ad8e8084776eb",
+                "reference": "14e2c3882471d8907df90e0d0a1ad8e8084776eb",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "source": "https://github.com/jlm2017/wp-plugin/tree/master",
                 "issues": "https://github.com/jlm2017/wp-plugin/issues"
             },
-            "time": "2017-02-23 14:54:46"
+            "time": "2017-03-02 13:36:36"
         },
         {
             "name": "jlm2017/theme-wp",
@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "b6a8537bba9eb7f553d5a2cc4ef21b987dd290d4"
+                "reference": "5c7266cd88eb1f78fc3b3d5e2d51ee379c2a5f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/b6a8537bba9eb7f553d5a2cc4ef21b987dd290d4",
-                "reference": "b6a8537bba9eb7f553d5a2cc4ef21b987dd290d4",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/5c7266cd88eb1f78fc3b3d5e2d51ee379c2a5f8a",
+                "reference": "5c7266cd88eb1f78fc3b3d5e2d51ee379c2a5f8a",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2017-02-23 15:44:21"
+            "time": "2017-03-01 17:14:34"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.2.3"
+                "reference": "tags/1.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -662,15 +662,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.3",
+            "version": "4.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.3"
+                "reference": "tags/4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -704,16 +704,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.8.0",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "86dd55a522238211f9f3631e3361703578941d9a"
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/86dd55a522238211f9f3631e3361703578941d9a",
-                "reference": "86dd55a522238211f9f3631e3361703578941d9a",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
                 "shasum": ""
             },
             "require": {
@@ -778,7 +778,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-02-02 03:30:00"
+            "time": "2017-03-01 22:17:45"
         }
     ],
     "aliases": [],
