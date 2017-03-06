@@ -137,12 +137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/wp-plugin.git",
-                "reference": "14e2c3882471d8907df90e0d0a1ad8e8084776eb"
+                "reference": "1ee693714f46abf15cec68072420adc014f104d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/14e2c3882471d8907df90e0d0a1ad8e8084776eb",
-                "reference": "14e2c3882471d8907df90e0d0a1ad8e8084776eb",
+                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/1ee693714f46abf15cec68072420adc014f104d6",
+                "reference": "1ee693714f46abf15cec68072420adc014f104d6",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "source": "https://github.com/jlm2017/wp-plugin/tree/master",
                 "issues": "https://github.com/jlm2017/wp-plugin/issues"
             },
-            "time": "2017-03-02 13:36:36"
+            "time": "2017-03-06 18:09:24"
         },
         {
             "name": "jlm2017/theme-wp",
@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/theme-wp.git",
-                "reference": "5e5c25ea932c2d95b4c8ed40dc81aef19f3c95b4"
+                "reference": "30013e1f39cedf5a4631590fc5381e940ad0156b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/5e5c25ea932c2d95b4c8ed40dc81aef19f3c95b4",
-                "reference": "5e5c25ea932c2d95b4c8ed40dc81aef19f3c95b4",
+                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/30013e1f39cedf5a4631590fc5381e940ad0156b",
+                "reference": "30013e1f39cedf5a4631590fc5381e940ad0156b",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2017-03-06 14:35:44"
+            "time": "2017-03-06 18:08:42"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.2.4",
+            "version": "1.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.2.4"
+                "reference": "tags/1.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
