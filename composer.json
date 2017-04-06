@@ -63,7 +63,7 @@
     "wpackagist-plugin/elementor": "^1.0.0",
     "wpackagist-plugin/siteorigin-panels": "^2.4",
     "wpackagist-plugin/so-widgets-bundle": "^1.7",
-    "wpackagist-plugin/wp-maintenance": "^2.8",
+    "wpackagist-plugin/wp-maintenance": "^3.0",
     "wpackagist-plugin/google-authenticator": "^0.48.0"
   },
   "require-dev": {
