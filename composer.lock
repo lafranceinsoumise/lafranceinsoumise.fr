@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3169bfe372257141f7aa55d46ed8c9ad",
-    "content-hash": "016afcd60746d271e36294f362c928b5",
+    "hash": "fd4dda3a544e2f0a79e9b01da8b02fc4",
+    "content-hash": "ec566f99056f9869275a198a479299f0",
     "packages": [
         {
             "name": "composer/installers",
@@ -550,7 +550,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.7.zip",
-                "reference": null,
+                "reference": "tags/4.7",
                 "shasum": null
             },
             "require": {
@@ -570,7 +570,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/elementor.1.4.2.zip",
-                "reference": null,
+                "reference": "tags/1.4.2",
                 "shasum": null
             },
             "require": {
@@ -590,7 +590,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-authenticator.0.48.zip",
-                "reference": null,
+                "reference": "tags/0.48",
                 "shasum": null
             },
             "require": {
@@ -598,6 +598,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-authenticator/"
+        },
+        {
+            "name": "wpackagist-plugin/members",
+            "version": "1.1.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/members/",
+                "reference": "tags/1.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/members.1.1.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/members/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -630,7 +650,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.4.25.zip",
-                "reference": null,
+                "reference": "tags/2.4.25",
                 "shasum": null
             },
             "require": {
@@ -650,7 +670,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.8.2.zip",
-                "reference": null,
+                "reference": "tags/1.8.2",
                 "shasum": null
             },
             "require": {
@@ -710,7 +730,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.5.zip",
-                "reference": null,
+                "reference": "tags/4.5",
                 "shasum": null
             },
             "require": {
@@ -730,7 +750,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.zip",
-                "reference": null,
+                "reference": "tags/3.0",
                 "shasum": null
             },
             "require": {

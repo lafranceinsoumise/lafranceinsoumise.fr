@@ -64,7 +64,8 @@
     "wpackagist-plugin/siteorigin-panels": "^2.4",
     "wpackagist-plugin/so-widgets-bundle": "^1.7",
     "wpackagist-plugin/wp-maintenance": "^3.0",
-    "wpackagist-plugin/google-authenticator": "^0.48.0"
+    "wpackagist-plugin/google-authenticator": "^0.48.0",
+    "wpackagist-plugin/members": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
