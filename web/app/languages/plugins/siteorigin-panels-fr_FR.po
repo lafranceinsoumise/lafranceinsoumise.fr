@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Page Builder by SiteOrigin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-04-05 17:09:17+0000\n"
+"PO-Revision-Date: 2017-04-09 18:36:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "https://siteorigin.com/page-builder/"
 
 #. Plugin Name of the plugin/theme
 msgid "Page Builder by SiteOrigin"
-msgstr "Page Builder par SiteOrigin"
+msgstr "SiteOrigin Page Builder"
 
 #: widgets/widgets.php:951
 msgid "Auto Play Video"
@@ -117,7 +117,7 @@ msgstr "Taille de l’image"
 
 #: widgets/widgets.php:738
 msgid "Comma separated attachment IDs. Defaults to all current page's attachments."
-msgstr "ID séparées par des virgules.Cela s’applique à tous les attachements actuels de la page."
+msgstr "ID séparées par des virgules. Cela s’applique à tous les attachements actuels de la page."
 
 #: widgets/widgets.php:734
 msgid "edit gallery"
@@ -174,7 +174,7 @@ msgstr "Liste des fonctionnalités"
 
 #: widgets/widgets/price-box/price-box.php:31
 msgid "Features Text"
-msgstr "Texte des fonctionnalités"
+msgstr "Texte des services"
 
 #: widgets/widgets/price-box/price-box.php:27
 msgid "Information Text"
@@ -475,7 +475,7 @@ msgstr "Marges des bords de cellule"
 
 #: tpl/options.php:58
 msgid "Should the layout collapse for mobile devices."
-msgstr "La mise en page doit-elle se réduire sur les appareils mobiles."
+msgstr "La mise en page doit-elle être réduite sur les appareils mobiles."
 
 #: tpl/options.php:48
 msgid "Display"
@@ -547,7 +547,7 @@ msgstr "Votre recherche n'a donné aucun résultat"
 
 #: tpl/js-templates.php:392
 msgid "Newest Layouts"
-msgstr "Styles les plus récents"
+msgstr "Mise en page les plus récentes"
 
 #: tpl/js-templates.php:384
 msgid "Enable"
@@ -555,11 +555,11 @@ msgstr "Activer"
 
 #: tpl/js-templates.php:383
 msgid "Do you want to browse the Prebuilt Layouts directory?"
-msgstr "Voulez-vous parcourir le répertoire des styles pré-définis&nbsp;?"
+msgstr "Voulez-vous parcourir le répertoire des mise en page pré-définis ?"
 
 #: tpl/js-templates.php:365
 msgid "Clone: %s"
-msgstr "Clone : %s"
+msgstr "Cloner : %s"
 
 #: tpl/js-templates.php:359
 msgid "Import/Export"
@@ -579,7 +579,7 @@ msgstr "Rechercher"
 
 #: tpl/js-templates.php:347
 msgid "Prebuilt Layouts"
-msgstr "Mise en page prédéfinis"
+msgstr "Mises en page prédéfinies"
 
 #: tpl/js-templates.php:329
 msgid "Save"
@@ -649,7 +649,7 @@ msgstr "Modifier la rangée"
 #. x{...} is used to insert links
 #: tpl/js-templates.php:64
 msgid "Add a 1{widget}, 2{row} or 3{prebuilt layout} to get started. Read our 4{documentation} if you need help."
-msgstr "Ajouter un 1{widget} de, 2{rangée} ou 3{style prédéfini} pour commencer. Consultez notre 4{documentation} si vous avez besoin d’aide."
+msgstr "Ajouter un 1{widget} de, 2{rangée} ou 3{mise en pages prédéfinies} pour commencer. Consultez notre 4{documentation} si vous avez besoin d’aide."
 
 #: tpl/js-templates.php:39
 msgid "Switch to Editor"
@@ -673,7 +673,7 @@ msgstr "Ajouter un widget"
 
 #: tpl/help.php:18
 msgid "Read the 1{full documentation} on SiteOrigin. Ask a question on our 2{support forum} if you need help and sign up to 3{our newsletter} to stay up to date with future developments."
-msgstr "Lire le 1{documentation complète} sur SiteOrigin. Poser une question sur notre 2{forum de support} si vous avez besoin d'aide et inscrivez-vous à 3{notre newsletter} pour demeurer à jour avec les développements futurs."
+msgstr "Lire le 1{documentation complète} sur SiteOrigin. Poser une question sur notre 2{forum de support} si vous avez besoin d'aide et inscrivez-vous à 3{notre newsletter} pour rester à jour avec les futurs développements."
 
 #: tpl/help.php:3
 msgid "The page layouts are responsive and fully customizable."
@@ -681,7 +681,7 @@ msgstr "Les mises en page sont responsives et entièrement personnalisables."
 
 #: tpl/help.php:2
 msgid "You can use SiteOrigin Page Builder to create home and sub pages, filled your own widgets."
-msgstr "Vous pouvez utiliser SiteOrigin Page Builder pour créer la page d’accueil et d'autres pages, insérer vos propres widgets."
+msgstr "Vous pouvez utiliser SiteOrigin Page Builder pour créer la page d’accueil et les autres pages, remplies avec vos propres widgets."
 
 #: tpl/admin-home-page.php:50
 msgid "This interface requires Javascript"
@@ -753,7 +753,7 @@ msgstr "Colonne"
 
 #: siteorigin-panels.php:385 tpl/js-templates.php:17
 msgid "Add Row"
-msgstr "Ajout de rangée"
+msgstr "Ajouter une rangée"
 
 #: siteorigin-panels.php:383 tpl/js-templates.php:187
 msgid "Search Widgets"
@@ -970,7 +970,7 @@ msgstr "Pleine largeur du conteneur"
 
 #: settings/settings.php:255
 msgid "Default spacing between columns in each row."
-msgstr "L'espacement par défaut entre les colonnes dans chaque rangée."
+msgstr "Espacement par défaut entre les colonnes pour chaque rangée."
 
 #: settings/settings.php:254
 msgid "Row Gutter"
@@ -986,7 +986,7 @@ msgstr "Marge en bas de ligne"
 
 #: settings/settings.php:241
 msgid "Device width, in pixels, to collapse into a mobile view ."
-msgstr "Largeur de l'ecran, en pixels, à laquelle reduire dans une vue Mobile."
+msgstr "Largeur d'appareil, en pixels, à laquelle diminuer pour la vue mobile."
 
 #: settings/settings.php:240 tpl/options.php:64
 msgid "Mobile Width"
@@ -994,23 +994,23 @@ msgstr "Largeur mobile"
 
 #: settings/settings.php:234
 msgid "Collapse widgets, rows and columns on mobile devices."
-msgstr "Réduire widgets, lignes et  colonnes sur les appareils mobiles."
+msgstr "Réduire les widgets, lignes et colonnes sur les appareils mobiles."
 
 #: settings/settings.php:233 tpl/options.php:57
 msgid "Responsive Layout"
-msgstr "Disposition Responsive"
+msgstr "Mise en page adaptative (responsive)"
 
 #: settings/settings.php:219
 msgid "Display recommend widgets in Page Builder add widget dialog."
-msgstr "Afficher les widgets recommandés dans la boîte de dialogue ajouter widget de Page Builder"
+msgstr "Afficher les widgets recommandés dans la boîte de dialogue ajouter widget du Page Builder."
 
 #: settings/settings.php:213
 msgid "Load legacy widgets from Page Builder 1."
-msgstr "Charger les widgets Heritage (Legacy) depuis Page Builder 1."
+msgstr "Charger les widgets hérités (legacy) depuis Page Builder 1."
 
 #: settings/settings.php:212
 msgid "Legacy Bundled Widgets"
-msgstr "Pack de Widgets Heritage (Legacy)"
+msgstr "Paquets de widgets hérités (Legacy)"
 
 #: settings/settings.php:207
 msgid "The HTML used for widget titles. {{title}} is replaced with the widget title."
@@ -1038,7 +1038,7 @@ msgstr "Général"
 
 #: settings/settings.php:170
 msgid "Page Builder Settings"
-msgstr "Paramètres de Page Builder"
+msgstr "Réglages du Page Builder"
 
 #: settings/settings.php:146 siteorigin-panels.php:110
 #: siteorigin-panels.php:516 tpl/js-templates.php:160
@@ -1074,11 +1074,11 @@ msgstr "Widgets de WordPress"
 
 #: inc/widgets.php:120
 msgid "You can enable the legacy (PB) widgets in the 1{Page Builder settings}."
-msgstr "Vous pouvez activer les widgets hérités(PB) dans les paramètres 1{Page Builder}."
+msgstr "Vous pouvez activer les widgets hérités (PB) dans les 1{réglages Page Builder}."
 
 #: inc/widgets.php:112
 msgid "Page Builder Widgets"
-msgstr "Widgets de Page Builder"
+msgstr "Widgets du Page Builder"
 
 #: inc/widgets.php:107
 msgid "Install the 1{Widgets Bundle} to get extra widgets."
@@ -1090,7 +1090,7 @@ msgstr "Activer plus de widgets dans les 1{paramètres Widgets Bundle}."
 
 #: inc/widgets.php:84
 msgid "Widgets Bundle"
-msgstr "Pack de Widgets"
+msgstr "Widgets Bundle"
 
 #: inc/widgets-bundle.php:68
 msgid "Display your posts as a carousel."
@@ -1098,23 +1098,23 @@ msgstr "Affichez vos articles comme un carrousel"
 
 #: inc/widgets-bundle.php:67
 msgid "SiteOrigin Post Carousel"
-msgstr "Carousel d'articles SiteOrigin"
+msgstr "SiteOrigin carrousel d’articles "
 
 #: inc/widgets-bundle.php:56
 msgid "Display site features as a collection of icons."
-msgstr "Afficher les caracteristiques du site comme un ensemble d'icônes."
+msgstr "Afficher les services du site comme un ensemble d'icônes."
 
 #: inc/widgets-bundle.php:55
 msgid "SiteOrigin Features"
-msgstr "Caractéristiques de SiteOrigin"
+msgstr "SiteOrigin services"
 
 #: inc/widgets-bundle.php:44
 msgid "A basic slider widget."
-msgstr "Un widget de slider de base"
+msgstr "Un widget de diaporama simple."
 
 #: inc/widgets-bundle.php:43
 msgid "SiteOrigin Slider"
-msgstr "Slider SiteOrigin"
+msgstr "SiteOrigin diaporama"
 
 #: inc/widgets-bundle.php:32
 msgid "Choose images from your media library."
@@ -1136,7 +1136,7 @@ msgstr "Bouton SiteOrigin"
 #: inc/widgets-bundle.php:35 inc/widgets-bundle.php:47
 #: inc/widgets-bundle.php:59 inc/widgets-bundle.php:71 inc/widgets.php:106
 msgid "SiteOrigin Widgets Bundle"
-msgstr "Pack de widgets SiteOrigin"
+msgstr "SiteOrigin paquets de widgets"
 
 #: inc/widgets-bundle.php:8
 msgid "A rich text editor"
@@ -1144,7 +1144,7 @@ msgstr "Un éditeur de texte enrichi"
 
 #: inc/widgets-bundle.php:7
 msgid "SiteOrigin Editor"
-msgstr "Éditeur SiteOrigin"
+msgstr "SiteOrigin éditeur "
 
 #: inc/styles.php:201 settings/settings.php:313
 msgid "Enabled"
@@ -1260,19 +1260,19 @@ msgstr "Image d'arrière-plan de la rangée."
 
 #: inc/default-styles.php:117 inc/default-styles.php:186
 msgid "Background Image"
-msgstr "Image d'arrière-plan"
+msgstr "Image d’arrière-plan"
 
 #: inc/default-styles.php:112
 msgid "Background color of the row."
-msgstr "Couleur d'arrière-plan de la rangée."
+msgstr "Couleur d’arrière-plan de la rangée."
 
 #: inc/default-styles.php:109 inc/default-styles.php:178
 msgid "Background Color"
-msgstr "Couleur d'arrière-plan"
+msgstr "Couleur d’arrière-plan"
 
 #: inc/default-styles.php:101
 msgid "Full Width Stretched"
-msgstr "La Largeur pleine a Étiré "
+msgstr "Pleine largeur étirée "
 
 #: inc/default-styles.php:100
 msgid "Full Width"
@@ -1284,19 +1284,19 @@ msgstr "Standard"
 
 #: inc/default-styles.php:95
 msgid "Row Layout"
-msgstr "Mise en ligne"
+msgstr "Mise en page rangée"
 
 #: inc/default-styles.php:89
 msgid "Padding around the entire row."
-msgstr "Rembourrage autour de la rangée."
+msgstr " Marge externe de la rangée."
 
 #: inc/default-styles.php:86 inc/default-styles.php:167
 msgid "Padding"
-msgstr "Rembourrage"
+msgstr "Marge externe"
 
 #: inc/default-styles.php:81
 msgid "Amount of space between columns."
-msgstr "Dimension de l'espace entre les colonnes."
+msgstr "Taille de l'espace entre les colonnes."
 
 #: inc/default-styles.php:78
 msgid "Gutter"
