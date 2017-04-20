@@ -561,16 +561,16 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.4.2",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.4.2"
+                "reference": "tags/1.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.4.2.zip",
-                "reference": "tags/1.4.2",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.4.4.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -641,15 +641,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.5.0",
+            "version": "2.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.5.0"
+                "reference": "tags/2.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -741,16 +741,16 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "3.0",
+            "version": "3.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/3.0"
+                "reference": "tags/3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.zip",
-                "reference": "tags/3.0",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
