@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-09 13:04:12+0000\n"
+"PO-Revision-Date: 2017-06-26 17:14:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +40,7 @@ msgstr "Cette fonctionnalité est en voie de devenir une de nos préférées. Qu
 
 #: wp-admin/about.php:147
 msgid "Did you know that WordPress has a thriving offline community with groups meeting regularly in more than 400 cities around the world? WordPress now draws your attention to the events that help you continue improving your WordPress skills, meet friends, and, of course, publish!"
-msgstr "Saviez-vous que WordPress a une communauté hors ligne prospère avec des groupes qui se réunissent régulièrement dans plus de 400 villes à travers le monde ? WordPress peut maintenant attirer votre attention sur les événements qui vous aident à continuer à améliorer vos compétences WordPress, à rencontrer des amis et, bien sûr, à publier !"
+msgstr "Saviez-vous que WordPress a une communauté hors ligne prospère avec des groupes qui se réunissent régulièrement dans plus de 400 villes à travers le monde ? WordPress peut maintenant attirer votre attention sur les évènements qui vous aident à continuer à améliorer vos compétences WordPress, à rencontrer des amis et, bien sûr, à publier !"
 
 #: wp-admin/about.php:126
 msgid "Have you ever tried updating a link, or the text around a link, and found you can&#8217;t seem to edit it correctly? When you edit the text after the link, your new text also ends up linked. Or you edit the text in the link, but your text ends up outside of it. This can be frustrating! With link boundaries, a great new feature, the process is streamlined and your links will work well. You’ll be happier. We promise."
@@ -225,6 +225,10 @@ msgstr "Encore plus de bonheur pour les développeurs %s"
 #: wp-admin/users.php:167 wp-admin/users.php:207
 msgid "Sorry, you are not allowed to delete users."
 msgstr "Désolé, vous n’avez pas l’autorisation de supprimer des utilisateurs."
+
+#: wp-admin/user-new.php:23 wp-admin/user-new.php:117
+msgid "Sorry, you are not allowed to create users."
+msgstr "Désolé, vous n’avez pas l'autorisation de créer des utilisateurs."
 
 #: wp-admin/customize.php:163
 msgid "The Customizer allows you to preview changes to your site before publishing them. You can navigate to different pages on your site within the preview. Edit shortcuts are shown for some editable elements."
@@ -466,9 +470,9 @@ msgstr "La recherche dans les extensions installées sera faite sur les noms des
 msgid "Custom Logo"
 msgstr "Logo personnalisé"
 
-#: wp-admin/user-new.php:23 wp-admin/user-new.php:117
-msgid "Sorry, you are not allowed to create users."
-msgstr "Désolé, vous n’avez pas l’autorisation de créer des utilisateurs."
+#: wp-admin/users.php:317 wp-admin/users.php:348
+msgid "Sorry, you are not allowed to remove users."
+msgstr "Désolé, vous n’avez pas l’autorisation de supprimer des utilisateurs."
 
 #: wp-admin/user-new.php:16 wp-admin/user-new.php:56
 msgid "Sorry, you are not allowed to add users to this network."
@@ -660,10 +664,6 @@ msgstr "Cela remplacera le contenu actuel de l’éditeur par la dernière versi
 #: wp-admin/includes/template.php:1523
 msgid "Close media attachment panel"
 msgstr "Fermer le panneau des fichiers attachés."
-
-#: wp-admin/users.php:317 wp-admin/users.php:348
-msgid "Sorry, you are not allowed to remove users."
-msgstr "Désolé, vous n’avez pas l’autorisation de supprimer les utilisateurs."
 
 #: wp-admin/includes/ms.php:1096
 msgid "Info"
@@ -2471,14 +2471,14 @@ msgid ""
 "Webmaster\n"
 "###SITE_NAME###"
 msgstr ""
-"Cher/chère ###USERNAME###,\n"
+"Chèr·e ###USERNAME###,\n"
 "\n"
 "Vous avez récemment cliqué sur le lien « Supprimer le site » pour votre propre site, \n"
 "et avez complété le formulaire présent sur cette même page.\n"
 "\n"
 "Si vous confirmez la suppression de votre site, cliquez sur le lien ci-dessous.\n"
 "Aucune confirmation ne vous sera demandée par la suite, soyez donc totalement \n"
-"certain(e) de ce que vous faites :\n"
+"certain·e de ce que vous faites :\n"
 "###URL_DELETE###\n"
 "\n"
 "Si vous effacez votre site, n’hésitez pas à revenir créer un autre site à l’avenir ! \n"
@@ -2981,7 +2981,7 @@ msgstr "Bienvenue dans la très célèbre installation en 5 minutes de WordPress
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:582
 msgid "<strong>Compatible</strong> with your version of WordPress"
-msgstr "<strong>Compatible</strong> avec votre WordPress"
+msgstr "<strong>Compatible</strong> avec votre version de WordPress"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:580
 msgid "<strong>Incompatible</strong> with your version of WordPress"
@@ -3284,7 +3284,7 @@ msgstr "Dans la plupart des cas, WordPress appliquera automatiquement les mises 
 
 #: wp-admin/update-core.php:560
 msgid "<strong>WordPress</strong> &mdash; Updating your WordPress installation is a simple one-click procedure: just <strong>click on the &#8220;Update Now&#8221; button</strong> when you are notified that a new version is available."
-msgstr "<strong>WordPress</strong> &mdash; La mise à jour de votre installation WordPress tient en une simple procédure&nbsp;: <strong>cliquez sur le bouton &laquo;&nbsp;Mettre à jour&nbsp;&raquo;</strong> quand vous êtes notifié(e) qu&rsquo;une nouvelle version est disponible."
+msgstr "<strong>WordPress</strong> &mdash; La mise à jour de votre installation WordPress tient en une simple procédure : <strong>cliquez sur le bouton « Mettre à jour »</strong> quand vous êtes notifié·e qu’une nouvelle version est disponible."
 
 #: wp-admin/update-core.php:552
 msgid "If an update is available, you&#8127;ll see a notification appear in the Toolbar and navigation menu."
@@ -4306,7 +4306,7 @@ msgstr "Merci d&rsquo;avoir fait cette mise à jour&nbsp;!  Rendez-vous sur la p
 
 #: wp-admin/setup-config.php:402
 msgid "All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;"
-msgstr "C&rsquo;est parfait&nbsp;! Vous avez passé la première partie de l&rsquo;installation. WordPress peut désormais communiquer avec votre base de données. Si vous êtes prêt(e), il est maintenant temps de&hellip;"
+msgstr "C’est parfait ! Vous avez passé la première partie de l’installation. WordPress peut désormais communiquer avec votre base de données. Préparez-vous, il est maintenant temps de&hellip;"
 
 #: wp-admin/nav-menus.php:805
 msgid "Auto add pages"
@@ -4831,7 +4831,7 @@ msgstr "Chercher un thème par mot-clé."
 
 #: wp-admin/setup-config.php:172
 msgid "In all likelihood, these items were supplied to you by your Web Host. If you don&#8217;t have this information, then you will need to contact them before you can continue. If you&#8217;re all ready&hellip;"
-msgstr "Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt(e)&hellip;"
+msgstr "Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt·e&hellip;"
 
 #: wp-admin/theme-editor.php:192
 msgid "This theme is broken."
@@ -5763,7 +5763,7 @@ msgid ""
 msgstr ""
 "Bonjour,\n"
 "\n"
-"Vous avez été invité(e) à rejoindre « %1$s » sur\n"
+"Vous avez été invité·e à rejoindre « %1$s » sur\n"
 "%2$s en tant que %3$s. \n"
 "Veuillez cliquer sur le lien suivant pour confirmer l’invitation :\n"
 "%4$s"
@@ -6146,7 +6146,7 @@ msgid ""
 "%%s"
 msgstr ""
 "Bonjour,\n"
-"Vous avez été invité(e) à rejoindre « %1$s » sur\n"
+"Vous avez été invité·e·à rejoindre « %1$s » sur\n"
 "%2$s en tant que %3$s. \n"
 "Si vous ne souhaitez pas rejoindre ce site, veuillez ignorer\n"
 "ce message. L’invitation expirera dans quelques jours.\n"
@@ -6417,7 +6417,7 @@ msgstr "&laquo;&nbsp;Press This&nbsp;&raquo; est un bookmarklet qui vous facilit
 
 #: wp-admin/includes/upgrade.php:242
 msgid "Sample Page"
-msgstr "Page d&rsquo;exemple"
+msgstr "Page d’exemple"
 
 #. translators: Default page slug
 #: wp-admin/includes/upgrade.php:244
@@ -6448,7 +6448,7 @@ msgid ""
 "\n"
 "As a new WordPress user, you should go to <a href=\"%s\">your dashboard</a> to delete this page and create new pages for your content. Have fun!"
 msgstr ""
-"Voici un exemple de page. Elle est différente d’un article de blog, en cela qu’elle restera à la même place, et s’affichera dans le menu de navigation de votre site (en fonction de votre thème). La plupart des gens commencent par écrire une page &laquo;&nbsp;À Propos&nbsp;&raquo; qui les présente aux visiteurs potentiels du site. Vous pourriez y écrire quelque chose de ce tenant :\n"
+"Voici un exemple de page. Elle est différente d’un article de blog, en cela qu’elle restera à la même place, et s’affichera dans le menu de navigation de votre site (en fonction de votre thème). La plupart des gens commencent par écrire une page « À Propos » qui les présente aux visiteurs potentiels du site. Vous pourriez y écrire quelque chose de ce tenant :\n"
 "\n"
 "<blockquote>Bonjour ! Je suis un mécanicien qui aspire à devenir un acteur, et ceci est mon blog. J’habite à Bordeaux, j’ai un super chien qui s’appelle Russell, et j’aime la vodka-ananas (ainsi que perdre mon temps à regarder la pluie tomber).</blockquote>\n"
 "\n"
@@ -9353,7 +9353,7 @@ msgstr "être aimé"
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1155
 msgid "date"
-msgstr "petit(e) ami(e)"
+msgstr "petit·e ami·e"
 
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1152
@@ -9433,7 +9433,7 @@ msgstr "professionnel"
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1093
 msgid "met"
-msgstr "rencontré(e)"
+msgstr "rencontré·e"
 
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1090 wp-admin/includes/meta-boxes.php:1091
@@ -9449,7 +9449,7 @@ msgstr "aucune"
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1082
 msgid "friend"
-msgstr "ami(e)"
+msgstr "ami·e"
 
 #. translators: xfn: http://gmpg.org/xfn/
 #: wp-admin/includes/meta-boxes.php:1079
@@ -10927,7 +10927,7 @@ msgstr "Veuillez saisir une valeur pour le champ personnalisé."
 
 #: wp-admin/includes/ajax-actions.php:1076
 msgid "Sorry, you must be logged in to reply to a comment."
-msgstr "Désolé, vous devez être connecté(e) pour répondre à un commentaire."
+msgstr "Désolé, vous devez être connecté·e pour répondre à un commentaire."
 
 #: wp-admin/includes/taxonomy.php:116
 msgid "You did not enter a category name."

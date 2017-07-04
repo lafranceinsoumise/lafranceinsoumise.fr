@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a961c322039be609c8fdba8440c9b042",
     "content-hash": "41fb093ba82e865d462d8bb92c30dd76",
     "packages": [
         {
@@ -112,7 +111,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -136,7 +135,7 @@
                 "source": "https://github.com/guilro/wp-menu-export/tree/master",
                 "issues": "https://github.com/guilro/wp-menu-export/issues"
             },
-            "time": "2016-11-11 17:18:06"
+            "time": "2016-11-11T17:18:06+00:00"
         },
         {
             "name": "jlm2017/jlm2017-wordpress-addons",
@@ -175,7 +174,7 @@
                 "source": "https://github.com/jlm2017/wp-plugin/tree/master",
                 "issues": "https://github.com/jlm2017/wp-plugin/issues"
             },
-            "time": "2017-03-06 18:09:24"
+            "time": "2017-03-06T18:09:24+00:00"
         },
         {
             "name": "jlm2017/theme-wp",
@@ -226,7 +225,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/jlm2017/theme-wp/tree/master"
             },
-            "time": "2017-05-24 14:23:02"
+            "time": "2017-05-24T14:23:02+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -265,7 +264,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-06-08 15:12:19"
+            "time": "2017-06-08T15:12:19+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -302,7 +301,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-06-08 15:12:14"
+            "time": "2017-06-08T15:12:14+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -351,7 +350,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-05-31 18:42:33"
+            "time": "2017-05-31T18:42:33+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -393,20 +392,20 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08 17:14:32"
+            "time": "2016-05-08T17:14:32+00:00"
         },
         {
             "name": "roots/soil",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c"
+                "reference": "09368d6db8c40daa9cc94054b0d1a16e6113e3e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
-                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
+                "url": "https://api.github.com/repos/roots/soil/zipball/09368d6db8c40daa9cc94054b0d1a16e6113e3e5",
+                "reference": "09368d6db8c40daa9cc94054b0d1a16e6113e3e5",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +437,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-08-30 18:15:45"
+            "time": "2017-06-12T01:25:19+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -495,7 +494,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -545,7 +544,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
@@ -569,15 +568,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.4.8",
+            "version": "1.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.4.8"
+                "reference": "tags/1.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.4.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -629,15 +628,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.6.2"
+                "reference": "tags/2.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -649,15 +648,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.5.5",
+            "version": "2.5.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.5.5"
+                "reference": "tags/2.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -845,7 +844,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-05-22 02:43:20"
+            "time": "2017-05-22T02:43:20+00:00"
         }
     ],
     "aliases": [],
