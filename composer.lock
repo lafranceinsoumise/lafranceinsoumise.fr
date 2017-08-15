@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6121751f4bbc04872be05bca51d32f08",
+    "content-hash": "48c91c7612f2f6f686782bbfa79ccc1d",
     "packages": [
         {
             "name": "composer/installers",
@@ -557,7 +557,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.8.1.zip",
-                "reference": null,
+                "reference": "tags/4.8.1",
                 "shasum": null
             },
             "require": {
@@ -577,7 +577,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/elementor.1.6.2.zip",
-                "reference": null,
+                "reference": "tags/1.6.2",
                 "shasum": null
             },
             "require": {
@@ -605,6 +605,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-authenticator/"
+        },
+        {
+            "name": "wpackagist-plugin/gregs-comment-length-limiter",
+            "version": "1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gregs-comment-length-limiter/",
+                "reference": "tags/1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gregs-comment-length-limiter.1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gregs-comment-length-limiter/"
         },
         {
             "name": "wpackagist-plugin/members",
@@ -637,7 +657,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/redirection.2.6.6.zip",
-                "reference": null,
+                "reference": "tags/2.6.6",
                 "shasum": null
             },
             "require": {
@@ -657,7 +677,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.9.zip",
-                "reference": null,
+                "reference": "tags/2.5.9",
                 "shasum": null
             },
             "require": {
@@ -677,7 +697,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.9.5.zip",
-                "reference": null,
+                "reference": "tags/1.9.5",
                 "shasum": null
             },
             "require": {
@@ -737,7 +757,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.9.zip",
-                "reference": null,
+                "reference": "tags/4.9",
                 "shasum": null
             },
             "require": {
@@ -757,7 +777,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.2.zip",
-                "reference": null,
+                "reference": "tags/3.0.2",
                 "shasum": null
             },
             "require": {
