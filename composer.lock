@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad2d4eef8529fa2c66aaa9d4ec8fef0b",
+    "content-hash": "a76ceeef8dcce54f42b258eaaf530211",
     "packages": [
         {
             "name": "composer/installers",
@@ -547,6 +547,26 @@
             "time": "2016-09-01T10:05:43+00:00"
         },
         {
+            "name": "wpackagist-plugin/author-category",
+            "version": "0.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/author-category/",
+                "reference": "tags/0.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/author-category.0.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/author-category/"
+        },
+        {
             "name": "wpackagist-plugin/contact-form-7",
             "version": "4.9",
             "source": {
@@ -557,7 +577,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.9.zip",
-                "reference": null,
+                "reference": "tags/4.9",
                 "shasum": null
             },
             "require": {
@@ -568,15 +588,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.7.0",
+            "version": "1.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.7.0"
+                "reference": "tags/1.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -617,7 +637,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/gregs-comment-length-limiter.1.7.zip",
-                "reference": null,
+                "reference": "tags/1.7",
                 "shasum": null
             },
             "require": {
@@ -637,7 +657,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/members.2.0.0.zip",
-                "reference": null,
+                "reference": "tags/2.0.0",
                 "shasum": null
             },
             "require": {
@@ -657,7 +677,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/redirection.2.7.3.zip",
-                "reference": null,
+                "reference": "tags/2.7.3",
                 "shasum": null
             },
             "require": {
@@ -677,7 +697,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.11.zip",
-                "reference": null,
+                "reference": "tags/2.5.11",
                 "shasum": null
             },
             "require": {
@@ -688,15 +708,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.9.8",
+            "version": "1.9.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.9.8"
+                "reference": "tags/1.9.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.9.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.9.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -757,7 +777,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.3.3.zip",
-                "reference": null,
+                "reference": "tags/5.3.3",
                 "shasum": null
             },
             "require": {
@@ -777,7 +797,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.4.zip",
-                "reference": null,
+                "reference": "tags/3.0.4",
                 "shasum": null
             },
             "require": {
