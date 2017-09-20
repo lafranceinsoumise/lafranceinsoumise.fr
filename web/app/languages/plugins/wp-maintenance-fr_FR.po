@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Maintenance - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-09-01 16:08:05+0000\n"
+"PO-Revision-Date: 2017-09-12 16:40:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,9 +11,13 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: Plugins - WP Maintenance - Stable (latest release)\n"
 
+#: views/wp-maintenance-dashboard.php:224
+msgid "Choose icons style:"
+msgstr "Choisir le style des icônes :"
+
 #: views/wp-maintenance-settings.php:100
 msgid "If you set \"Yes\", this returns the error page \"503 Service Unavailable Error\""
-msgstr "Si vous définissez « Oui », cela renvoie la page d'erreur « 503 Service non disponible »"
+msgstr "Si vous définissez « Oui », cela renvoie la page d’erreur « 503 Service non disponible »"
 
 #: views/wp-maintenance-settings.php:100
 msgid "Display code HTTP Error 503?"
@@ -25,7 +29,7 @@ msgstr "Importer"
 
 #: views/wp-maintenance-settings.php:194
 msgid "Import the plugin settings from a .json file. This file can be obtained by exporting the settings on another site using the form above."
-msgstr "Importez les paramètres de l'extension à partir d'un fichier .json. Ce fichier peut être obtenu en exportant les paramètres sur un autre site en utilisant le formulaire ci-dessus."
+msgstr "Importez les réglages de l’extension à partir d'un fichier .json. Ce fichier peut être obtenu en exportant les réglages sur un autre site en utilisant le formulaire ci-dessus."
 
 #: views/wp-maintenance-settings.php:192
 msgid "Import Settings"
@@ -44,29 +48,29 @@ msgstr "Exporter les réglages"
 msgid "Click to toggle"
 msgstr "Cliquez pour déplier"
 
-#: classes/wp-maintenance.php:562
+#: classes/wp-maintenance.php:569
 msgid "New settings imported successfully!"
 msgstr "Les nouveaux réglages ont bien été importés !"
 
-#: classes/wp-maintenance.php:552
+#: classes/wp-maintenance.php:559
 msgid "Please upload a file to import"
 msgstr "Veuillez mettre en ligne un fichier à importer"
 
-#: classes/wp-maintenance.php:546
+#: classes/wp-maintenance.php:553
 msgid "Please upload a valid .json file"
 msgstr "Veuillez mettre en ligne un fichier .json valide"
 
 #. Description of the plugin/theme
 msgid "The WP Maintenance plugin allows you to put your website on the waiting time for you to do maintenance or launch your website. Personalize this page with picture, countdown..."
-msgstr "Le plugin WP Maintenance vous permet de mettre votre site web en pause pour vous permettre de faire la maintenance ou de lancer votre site web. Personnalisez cette page avec photo, compte à rebours..."
+msgstr "L’extension WP Maintenance vous permet de mettre votre site web en pause pour vous permettre de faire sa maintenance ou d’organiser son lancement. Personnalisez cette page avec une photo, un compte à rebours…"
 
 #: views/wp-maintenance-settings.php:85
 msgid "If you set \"Yes\" all custom settings will be deleted from database upon plugin deactivation"
-msgstr "Si vous laissez sur « oui », tous les réglages personnalisés seront effacés de la base de données lors de la désactivation de l'extension."
+msgstr "Si vous laissez sur « oui », tous les réglages personnalisés seront effacés de la base de données lors de la désactivation de l’extension."
 
 #: views/wp-maintenance-settings.php:85
 msgid "Delete custom settings upon plugin deactivation?"
-msgstr "Effacer les réglages personnalisés lors de la désactivation de l'extension ?"
+msgstr "Effacer les réglages personnalisés lors de la désactivation de l’extension ?"
 
 #: views/wp-maintenance-picture.php:87
 msgid "Background picture or pattern"
@@ -74,7 +78,7 @@ msgstr "Image de fond ou motif"
 
 #: views/wp-maintenance-picture.php:74
 msgid "Header picture"
-msgstr "Image d'en-tête"
+msgstr "Image d’en-tête"
 
 #: views/wp-maintenance-countdown.php:150
 msgid "Saturday"
@@ -164,17 +168,21 @@ msgstr "Personnaliser les couleurs et polices"
 msgid "Countdown"
 msgstr "Compte à rebours"
 
-#: views/wp-maintenance-colors.php:302
+#: views/wp-maintenance-colors.php:300
 msgid "Enable Mailpoet or MailChimp extensions to customize the forms"
 msgstr "Activer les extensions MailPoet ou MailChimp pour personnaliser les formulaires"
 
-#: views/wp-maintenance-colors.php:298
+#: views/wp-maintenance-colors.php:296
 msgid "newsletter option"
 msgstr "Option de newsletter"
 
-#: views/wp-maintenance-colors.php:298
+#: views/wp-maintenance-colors.php:296
 msgid "Enable %s to customize the forms"
 msgstr "Active %s pour personnaliser les formulaires"
+
+#: views/wp-maintenance-colors.php:135
+msgid "Activate Frame"
+msgstr "Activer un cadre"
 
 #: includes/functions.php:153
 msgid "DISCOVER"
@@ -182,7 +190,7 @@ msgstr "DÉCOUVRIR"
 
 #: includes/functions.php:141
 msgid "Support this extension and my other developments (French Paypal):"
-msgstr "Soutenez cette extension et mes autres développements (PayPal) :"
+msgstr "Soutenez cette extension et mes autres développements (PayPal) :"
 
 #: includes/functions.php:138
 msgid "This plugin has been developed for you for free by <a href=\"https://restezconnectes.fr\" target=\"_blank\">Florent Maillefaud</a>. It is royalty free, you can take it, modify it, distribute it as you see fit."
@@ -216,11 +224,11 @@ msgstr "Aller aux options de couleurs et polices"
 msgid "Go to Generals options"
 msgstr "Aller aux options générales"
 
-#: classes/wp-maintenance.php:420 classes/wp-maintenance.php:428
-#: classes/wp-maintenance.php:436 classes/wp-maintenance.php:445
-#: classes/wp-maintenance.php:454 classes/wp-maintenance.php:463
+#: classes/wp-maintenance.php:427 classes/wp-maintenance.php:435
+#: classes/wp-maintenance.php:443 classes/wp-maintenance.php:452
+#: classes/wp-maintenance.php:461 classes/wp-maintenance.php:470
 msgid "You do not have sufficient privileges to access this page."
-msgstr "Vous n'avez pas les autorisations suffisantes pour accéder à cette page."
+msgstr "Vous n’avez pas les droits suffisants pour accéder à cette page."
 
 #: classes/wp-maintenance.php:267
 msgid "Pictures"
@@ -228,7 +236,7 @@ msgstr "Images"
 
 #: views/wp-maintenance-settings.php:142
 msgid "Allow the site to display these ID pages. Please, enter the ID pages separate with comma :"
-msgstr "Autoriser le site à afficher ces ID de pages. Veuillez saisir les ID des pages séparées par une virgule :"
+msgstr "Autoriser le site à afficher ces ID de pages. Veuillez saisir les ID des pages séparées par une virgule :"
 
 #: views/wp-maintenance-settings.php:141
 msgid "ID pages autorized:"
@@ -238,33 +246,33 @@ msgstr "ID des pages autorisées :"
 msgid "https://fr.wordpress.org/plugins/wp-maintenance/"
 msgstr "https://fr.wordpress.org/plugins/wp-maintenance/"
 
-#: views/wp-maintenance-dashboard.php:273
+#: views/wp-maintenance-dashboard.php:287
 msgid "Or enter your newletter iframe code here:"
 msgstr "Ou saisissez le code iframe de la newsletter ici :"
 
-#: views/wp-maintenance-colors.php:151
+#: views/wp-maintenance-colors.php:149
 msgid "Opacity:"
 msgstr "Opacité :"
 
-#: views/wp-maintenance-colors.php:150
+#: views/wp-maintenance-colors.php:148
 msgid "Color:"
 msgstr "Couleur :"
 
-#: views/wp-maintenance-css.php:109
+#: views/wp-maintenance-css.php:108
 msgid "Need CSS code for MailChimp plugin?"
-msgstr "Vous avez besoin de code CSS pour l’extension MailChimp ?"
+msgstr "Vous avez besoin de code CSS pour l’extension MailChimp ?"
 
-#: views/wp-maintenance-css.php:95 views/wp-maintenance-css.php:110
+#: views/wp-maintenance-css.php:94 views/wp-maintenance-css.php:109
 msgid "Click for select all"
 msgstr "Cliquez pour tout sélectionner"
 
-#: views/wp-maintenance-css.php:94
+#: views/wp-maintenance-css.php:93
 msgid "Need CSS code for MailPoet plugin?"
 msgstr "Vous avez besoin de code CSS pour l’extension MailPoet ?"
 
-#: views/wp-maintenance-dashboard.php:238
+#: views/wp-maintenance-dashboard.php:252
 msgid "Reset Social Icon?"
-msgstr "Réinitialiser les icônes des réseaux sociaux ?"
+msgstr "Réinitialiser les icônes des réseaux sociaux ?"
 
 #. Author URI of the plugin/theme
 msgid "https://wpmaintenance.info"
@@ -288,7 +296,7 @@ msgstr "Supprimer cette diapositive"
 
 #: views/wp-maintenance-picture.php:239
 msgid "Link:"
-msgstr "Lien :"
+msgstr "Lien :"
 
 #: views/wp-maintenance-picture.php:203
 msgid "Below title & text"
@@ -304,19 +312,19 @@ msgstr "Au-dessus du logo"
 
 #: views/wp-maintenance-picture.php:188
 msgid "Display button navigation:"
-msgstr "Afficher les boutons de navigation :"
+msgstr "Afficher les boutons de navigation :"
 
 #: views/wp-maintenance-picture.php:181
 msgid "Display Auto Slider:"
-msgstr "Afficher le diaporama en automatique :"
+msgstr "Afficher le diaporama en automatique :"
 
-#: views/wp-maintenance-colors.php:153 views/wp-maintenance-picture.php:176
+#: views/wp-maintenance-colors.php:151 views/wp-maintenance-picture.php:176
 msgid "Width:"
-msgstr "Largeur :"
+msgstr "Largeur :"
 
 #: views/wp-maintenance-picture.php:175
 msgid "Speed:"
-msgstr "Vitesse :"
+msgstr "Vitesse :"
 
 #: views/wp-maintenance-picture.php:148
 msgid "Enable Slider"
@@ -361,17 +369,17 @@ msgstr "Sélectionnez une date et une heure de lancement"
 
 #: views/wp-maintenance-settings.php:135
 msgid "Allow the site to display these IP addresses. Please, enter one IP address by line:"
-msgstr "Autoriser l’affichage du site à ces adresses IP. Merci de saisir 1 adresse IP par ligne&nbsp;: "
+msgstr "Autoriser l’affichage du site à ces adresses IP. Veuillez saisir une adresse IP par ligne : "
 
 #: views/wp-maintenance-settings.php:134
 msgid "IP autorized:"
-msgstr "Adresses IP autorisées :"
+msgstr "Adresses IP autorisées :"
 
 #. Author of the plugin/theme
 msgid "Florent Maillefaud"
 msgstr "Florent Maillefaud"
 
-#. #-#-#-#-#  wp-maintenance-code.pot (WP Maintenance 3.0.3)  #-#-#-#-#
+#. #-#-#-#-#  wp-maintenance-code.pot (WP Maintenance 3.0.5)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/functions.php:174
 msgid "WP Maintenance"
@@ -393,21 +401,21 @@ msgstr "Heures"
 msgid "Days"
 msgstr "Jours"
 
-#: classes/wp-maintenance.php:758
+#: classes/wp-maintenance.php:765
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: classes/wp-maintenance.php:404
+#: classes/wp-maintenance.php:411
 msgid "Choose Image"
 msgstr "Choisissez une image"
 
-#: classes/wp-maintenance.php:403
+#: classes/wp-maintenance.php:410
 msgid "Choose This Image"
 msgstr "Choisir cette image"
 
 #: classes/wp-maintenance.php:46 classes/wp-maintenance.php:284
 msgid "Come back quickly!"
-msgstr "Revenez vite !"
+msgstr "Revenez vite !"
 
 #: classes/wp-maintenance.php:45 classes/wp-maintenance.php:283
 msgid "This site is down for maintenance"
@@ -415,7 +423,7 @@ msgstr "Ce site est en maintenance"
 
 #: classes/wp-maintenance.php:216
 msgid "Maintenance mode activated!"
-msgstr "Maintenance activée !"
+msgstr "Maintenance activée !"
 
 #: includes/functions.php:174
 msgid "give it 5 &#9733; on WordPress.org"
@@ -427,7 +435,7 @@ msgstr "Si vous avez trouvé cette extension utile,"
 
 #: includes/functions.php:139
 msgid "try the demo of the plugin, talk about this plugin to your surroundings!"
-msgstr "essayez la démo de cette extension et parlez-en à votre entourage !"
+msgstr "essayez la démo de cette extension et parlez-en à votre entourage !"
 
 #: includes/functions.php:139
 msgid "Visit"
@@ -447,15 +455,15 @@ msgstr "Autoriser l’affichage du site à ces rôles :"
 
 #: views/wp-maintenance-settings.php:114
 msgid "Roles and Capabilities:"
-msgstr "Rôles et capacités :"
+msgstr "Rôles et capacités :"
 
 #: views/wp-maintenance-settings.php:78
 msgid "You can use this shortcode to include Social Networks icons:"
-msgstr "Vous pouvez utiliser ce code court pour insérer les icônes des réseaux sociaux sur votre page :"
+msgstr "Vous pouvez utiliser ce code court pour insérer les icônes des réseaux sociaux sur votre page :"
 
 #: views/wp-maintenance-settings.php:78
 msgid "You can use this shortcode to include Google Analytics code:"
-msgstr "Vous pouvez utiliser ce code court pour insérer le code Google Analytics sur votre page :"
+msgstr "Vous pouvez utiliser ce code court pour insérer le code Google Analytics sur votre page :"
 
 #: views/wp-maintenance-settings.php:65
 msgid "If you would use your maintenance.php page in your theme folder, click Yes."
@@ -465,53 +473,53 @@ msgstr "Si vous souhaitez utiliser votre page maintenance.php dans le dossier de
 msgid "Theme maintenance page"
 msgstr "Page maintenance du thème"
 
-#: views/wp-maintenance-css.php:53
+#: views/wp-maintenance-css.php:52
 msgid "Reset default CSS stylesheet ?"
-msgstr "Réinitialiser la feuille de style par défaut&nbsp;?"
+msgstr "Réinitialiser la feuille de style par défaut ?"
 
-#: views/wp-maintenance-css.php:89
+#: views/wp-maintenance-css.php:88
 msgid "Use this code for countdown color"
 msgstr "Utiliser ce code pour la couleur du texte du compte à rebours"
 
-#: views/wp-maintenance-css.php:85
+#: views/wp-maintenance-css.php:84
 msgid "Use this code for size countdown"
 msgstr "Utiliser ce code pour la taille du compte à rebours"
 
-#: views/wp-maintenance-css.php:81
+#: views/wp-maintenance-css.php:80
 msgid "Use this code for background color countdown"
 msgstr "Utiliser ce code pour la couleur du fond du compte à rebours"
 
-#: views/wp-maintenance-css.php:77
+#: views/wp-maintenance-css.php:76
 msgid "Use this code for background text color"
 msgstr "Utiliser ce code pour la couleur de fond du texte"
 
-#: views/wp-maintenance-css.php:73
+#: views/wp-maintenance-css.php:72
 msgid "Use this code for text color"
 msgstr "Utiliser ce code pour la couleur du texte"
 
-#: views/wp-maintenance-css.php:68
+#: views/wp-maintenance-css.php:67
 msgid "Markers for colors"
 msgstr "Marqueurs pour les couleurs"
 
-#: views/wp-maintenance-css.php:45
+#: views/wp-maintenance-css.php:44
 msgid "Edit the CSS sheet of your maintenance page here. Click \"Reset\" and \"Save\" to retrieve the default style sheet."
 msgstr "Modifier le code CSS de votre page de maintenance ici. Cliquez sur « Réinitialiser » et « Enregistrer » pour remettre le style par défaut."
 
 #: views/wp-maintenance-countdown.php:117
 msgid "End message:"
-msgstr "Message de fin :"
+msgstr "Message de fin :"
 
 #: views/wp-maintenance-countdown.php:113
 msgid "Disable maintenance mode at the end of the countdown?"
-msgstr "Désactiver le mode maintenance à la fin du compte à rebours ?"
+msgstr "Désactiver le mode maintenance à la fin du compte à rebours ?"
 
 #: views/wp-maintenance-countdown.php:101
 msgid "Enable seconds ?"
-msgstr "Afficher les secondes ?"
+msgstr "Afficher les secondes ?"
 
 #: views/wp-maintenance-countdown.php:50
 msgid "Enable a countdown ?"
-msgstr "Activer le compte à rebours ?"
+msgstr "Activer le compte à rebours ?"
 
 #: views/wp-maintenance-picture.php:111
 msgid "Fixed"
@@ -527,15 +535,15 @@ msgstr "AUCUN MOTIF"
 
 #: views/wp-maintenance-picture.php:123
 msgid "Or choose a pattern:"
-msgstr "Ou choisissez un motif de fond :"
+msgstr "Ou choisissez un motif de fond :"
 
 #: views/wp-maintenance-picture.php:139
 msgid "You use this pattern:"
-msgstr "Vous utilisez ce motif : "
+msgstr "Vous utilisez ce motif :"
 
 #: views/wp-maintenance-picture.php:115
 msgid "You use this background picture:"
-msgstr "Image de fond actuelle : "
+msgstr "Vous utilisez cette image d’arrière-plan :"
 
 #: views/wp-maintenance-picture.php:76 views/wp-maintenance-picture.php:104
 #: views/wp-maintenance-picture.php:209
@@ -548,153 +556,153 @@ msgstr "Saisissez une URL ou mettez en ligne une image."
 
 #: views/wp-maintenance-picture.php:80
 msgid "You use this picture:"
-msgstr "Image actuelle : "
-
-#: views/wp-maintenance-colors.php:291
-msgid "Button color onclick:"
-msgstr "Couleur du bouton au click :"
+msgstr "Vous utilisez cette image :"
 
 #: views/wp-maintenance-colors.php:289
+msgid "Button color onclick:"
+msgstr "Couleur du bouton au clic :"
+
+#: views/wp-maintenance-colors.php:287
 msgid "Button color hover:"
-msgstr "Couleur du bouton au survol :"
+msgstr "Couleur du bouton au survol :"
 
-#: views/wp-maintenance-colors.php:286
+#: views/wp-maintenance-colors.php:284
 msgid "Button color:"
-msgstr "Couleur du bouton :"
+msgstr "Couleur du bouton :"
 
-#: views/wp-maintenance-colors.php:282
+#: views/wp-maintenance-colors.php:280
 msgid "Button text color:"
-msgstr "Couleur du texte dans le bouton :"
-
-#: views/wp-maintenance-colors.php:281
-msgid "Field background color:"
-msgstr "Couleur de fond des champs :"
+msgstr "Couleur du texte du bouton :"
 
 #: views/wp-maintenance-colors.php:279
-msgid "Field border color:"
-msgstr "Couleur de bordure des champs :"
+msgid "Field background color:"
+msgstr "Couleur d’arrière-plan des champs :"
 
 #: views/wp-maintenance-colors.php:277
+msgid "Field border color:"
+msgstr "Couleur de bordure des champs :"
+
+#: views/wp-maintenance-colors.php:275
 msgid "Field text color:"
-msgstr "Couleur du texte dans les champs :"
+msgstr "Couleur du texte des champs :"
 
-#: views/wp-maintenance-colors.php:226
+#: views/wp-maintenance-colors.php:224
 msgid "Choice form color:"
-msgstr "Choisir les couleurs du formulaire :"
+msgstr "Choisir les couleurs du formulaire :"
 
-#: views/wp-maintenance-colors.php:166
+#: views/wp-maintenance-colors.php:164
 msgid "Countdown font settings"
 msgstr "Réglages de la police du compte à rebours"
 
-#: views/wp-maintenance-colors.php:163
-msgid "Countdown background color:"
-msgstr "Couleur du fond du compteur :"
-
-#: views/wp-maintenance-colors.php:162
-msgid "Countdown text color:"
-msgstr "Couleur du texte du compteur :"
-
 #: views/wp-maintenance-colors.php:161
+msgid "Countdown background color:"
+msgstr "Couleur d’arrière-plan du compteur :"
+
+#: views/wp-maintenance-colors.php:160
+msgid "Countdown text color:"
+msgstr "Couleur du texte du compteur :"
+
+#: views/wp-maintenance-colors.php:159
 msgid "Choice countdown fonts and colors:"
-msgstr "Choix des polices et couleurs du compte à rebours :"
-
-#: views/wp-maintenance-colors.php:184
-msgid "Text bottom color:"
-msgstr "Couleur du texte :"
-
-#: views/wp-maintenance-colors.php:183
-msgid "Bottom color:"
-msgstr "Couleur du fond :"
+msgstr "Choix des polices et couleurs du compte à rebours :"
 
 #: views/wp-maintenance-colors.php:182
+msgid "Text bottom color:"
+msgstr "Couleur du texte du bas :"
+
+#: views/wp-maintenance-colors.php:181
+msgid "Bottom color:"
+msgstr "Couleur du bas :"
+
+#: views/wp-maintenance-colors.php:180
 msgid "Choice fonts and colors bottom page:"
 msgstr "Choix des polices et couleurs du bas de page"
 
-#: views/wp-maintenance-colors.php:97 views/wp-maintenance-colors.php:187
+#: views/wp-maintenance-colors.php:95 views/wp-maintenance-colors.php:185
 msgid "Text font settings"
 msgstr "Réglages de la police du texte"
 
-#: views/wp-maintenance-colors.php:66 views/wp-maintenance-colors.php:104
-#: views/wp-maintenance-colors.php:173 views/wp-maintenance-colors.php:194
-#: views/wp-maintenance-colors.php:245
+#: views/wp-maintenance-colors.php:64 views/wp-maintenance-colors.php:102
+#: views/wp-maintenance-colors.php:171 views/wp-maintenance-colors.php:192
+#: views/wp-maintenance-colors.php:243
 msgid "Size:"
-msgstr "Taille :"
+msgstr "Taille :"
 
-#: views/wp-maintenance-colors.php:59
+#: views/wp-maintenance-colors.php:57
 msgid "Title font settings"
 msgstr "Réglages de la police du titre"
 
-#: views/wp-maintenance-colors.php:57
+#: views/wp-maintenance-colors.php:55
 msgid "Text color:"
-msgstr "Couleur du texte :"
+msgstr "Couleur du texte :"
 
-#: views/wp-maintenance-colors.php:56
+#: views/wp-maintenance-colors.php:54
 msgid "Choice texts fonts and colors:"
 msgstr "Choix des polices et couleurs des textes :"
 
-#: views/wp-maintenance-colors.php:53
-msgid "Header color:"
-msgstr "Couleur de l&rsquo;en-tête"
-
-#: views/wp-maintenance-colors.php:52
-msgid "Background page color:"
-msgstr "Couleur du fond de page :"
-
 #: views/wp-maintenance-colors.php:51
-msgid "Choice general colors:"
-msgstr "Choix des couleurs générales :"
+msgid "Header color:"
+msgstr "Couleur de l’en-tête"
 
-#: views/wp-maintenance-dashboard.php:271
+#: views/wp-maintenance-colors.php:50
+msgid "Background page color:"
+msgstr "Couleur d’arrière plan de la page :"
+
+#: views/wp-maintenance-colors.php:49
+msgid "Choice general colors:"
+msgstr "Choix des couleurs générales :"
+
+#: views/wp-maintenance-dashboard.php:285
 msgid "Enter your newletter shortcode here:"
-msgstr "Saisissez le code court de la newsletter ici&nbsp;:"
+msgstr "Saisissez le code court de votre newsletter ici :"
+
+#: views/wp-maintenance-dashboard.php:283
+msgid "Enter title for the newletter block:"
+msgstr "Saisissez un titre pour l’encart de la newsletter :"
 
 #: views/wp-maintenance-dashboard.php:269
-msgid "Enter title for the newletter block:"
-msgstr "Saisissez un titre pour l&rsquo;encart de la newsletter&nbsp;:"
-
-#: views/wp-maintenance-dashboard.php:255
 msgid "Enable Newletter:"
 msgstr "Activer l’encart de newsletter :"
 
-#: views/wp-maintenance-dashboard.php:235
+#: views/wp-maintenance-dashboard.php:249
 msgid "You have your own icons? Enter the folder name of your theme here:"
-msgstr "Vous avez vos propres icônes ? Saisissez le nom du dossier de votre thème ici :"
+msgstr "Vous avez vos propres icônes ? Saisissez le nom du dossier de votre thème ici :"
 
-#: views/wp-maintenance-dashboard.php:232
+#: views/wp-maintenance-dashboard.php:246
 msgid "Right"
 msgstr "Droite"
 
-#: views/wp-maintenance-dashboard.php:231
+#: views/wp-maintenance-dashboard.php:245
 msgid "Center"
 msgstr "Centre"
 
-#: views/wp-maintenance-dashboard.php:230
+#: views/wp-maintenance-dashboard.php:244
 msgid "Left"
 msgstr "Gauche"
 
-#: views/wp-maintenance-dashboard.php:228
+#: views/wp-maintenance-dashboard.php:242
 msgid "Align:"
-msgstr "Alignement :"
+msgstr "Alignement :"
 
-#: views/wp-maintenance-dashboard.php:225
+#: views/wp-maintenance-dashboard.php:239
 msgid "Bottom"
 msgstr "Bas"
 
-#: views/wp-maintenance-dashboard.php:224
+#: views/wp-maintenance-dashboard.php:238
 msgid "Top"
 msgstr "Haut"
 
-#: views/wp-maintenance-dashboard.php:222 views/wp-maintenance-picture.php:199
+#: views/wp-maintenance-dashboard.php:236 views/wp-maintenance-picture.php:199
 msgid "Position:"
-msgstr "Position :"
+msgstr "Position :"
 
-#: views/wp-maintenance-dashboard.php:211
+#: views/wp-maintenance-dashboard.php:213
 msgid "Choose icons size:"
-msgstr "Choisissez la taille des icônes :"
+msgstr "Choisissez la taille des icônes :"
 
 #: views/wp-maintenance-dashboard.php:184
 msgid "Drad and drop the lines to put in the order you want:"
-msgstr "Cliquez et glissez les lignes pour mettre dans l’ordre que vous souhaitez&nbsp;:"
+msgstr "Cliquez et glissez les lignes pour mettre dans l’ordre que vous souhaitez :"
 
 #: views/wp-maintenance-dashboard.php:182
 msgid "Follow me on"
@@ -706,11 +714,11 @@ msgstr "Saisissez un texte pour la balise titre des icônes :"
 
 #: views/wp-maintenance-dashboard.php:167
 msgid "Enable Social Networks:"
-msgstr "Activer les icônes des réseaux sociaux :"
+msgstr "Activer les icônes des réseaux sociaux :"
 
 #: views/wp-maintenance-dashboard.php:160
 msgid "Enter your domain URL:"
-msgstr "Saisissez l’URL de votre nom de domaine&nbsp;:"
+msgstr "Saisissez l’URL de votre nom de domaine :"
 
 #: views/wp-maintenance-dashboard.php:158
 msgid "Enter your Google analytics tracking ID here:"
@@ -734,54 +742,54 @@ msgstr "Saisissez un texte pour accéder au Tableau de bord :"
 
 #: views/wp-maintenance-dashboard.php:120
 msgid "Enable login access in the bottom ?"
-msgstr "Activer l’accès à la page de connexion en bas de page ?"
+msgstr "Activer l’accès à la page de connexion en bas de page ?"
 
 #: views/wp-maintenance-dashboard.php:96
 msgid "Text in the bottom of maintenance page:"
-msgstr "Texte du bas de page :"
+msgstr "Texte du bas de page de maintenance :"
 
 #: views/wp-maintenance-dashboard.php:76 views/wp-maintenance-picture.php:238
 msgid "Text:"
-msgstr "Texte :"
+msgstr "Texte :"
 
 #: views/wp-maintenance-dashboard.php:75
 msgid "Title:"
-msgstr "Titre :"
+msgstr "Titre :"
 
 #: views/wp-maintenance-dashboard.php:74
 msgid "Title and text for the maintenance page:"
-msgstr "Titre et Texte de la page maintenance :"
+msgstr "Titre et texte de la page de maintenance :"
 
-#: views/wp-maintenance-colors.php:80 views/wp-maintenance-colors.php:89
-#: views/wp-maintenance-colors.php:118 views/wp-maintenance-colors.php:127
-#: views/wp-maintenance-colors.php:143 views/wp-maintenance-colors.php:208
-#: views/wp-maintenance-colors.php:217 views/wp-maintenance-colors.php:259
-#: views/wp-maintenance-colors.php:268 views/wp-maintenance-countdown.php:60
+#: views/wp-maintenance-colors.php:78 views/wp-maintenance-colors.php:87
+#: views/wp-maintenance-colors.php:116 views/wp-maintenance-colors.php:125
+#: views/wp-maintenance-colors.php:141 views/wp-maintenance-colors.php:206
+#: views/wp-maintenance-colors.php:215 views/wp-maintenance-colors.php:257
+#: views/wp-maintenance-colors.php:266 views/wp-maintenance-countdown.php:60
 #: views/wp-maintenance-countdown.php:98 views/wp-maintenance-countdown.php:110
-#: views/wp-maintenance-css.php:59 views/wp-maintenance-dashboard.php:66
+#: views/wp-maintenance-css.php:58 views/wp-maintenance-dashboard.php:66
 #: views/wp-maintenance-dashboard.php:126
 #: views/wp-maintenance-dashboard.php:150
 #: views/wp-maintenance-dashboard.php:173
-#: views/wp-maintenance-dashboard.php:244
-#: views/wp-maintenance-dashboard.php:261 views/wp-maintenance-picture.php:93
+#: views/wp-maintenance-dashboard.php:258
+#: views/wp-maintenance-dashboard.php:275 views/wp-maintenance-picture.php:93
 #: views/wp-maintenance-picture.php:154 views/wp-maintenance-picture.php:186
 #: views/wp-maintenance-picture.php:193 views/wp-maintenance-settings.php:71
 #: views/wp-maintenance-settings.php:91 views/wp-maintenance-settings.php:106
 msgid "No"
 msgstr "Non"
 
-#: views/wp-maintenance-colors.php:78 views/wp-maintenance-colors.php:87
-#: views/wp-maintenance-colors.php:116 views/wp-maintenance-colors.php:125
-#: views/wp-maintenance-colors.php:141 views/wp-maintenance-colors.php:206
-#: views/wp-maintenance-colors.php:215 views/wp-maintenance-colors.php:257
-#: views/wp-maintenance-colors.php:266 views/wp-maintenance-countdown.php:58
+#: views/wp-maintenance-colors.php:76 views/wp-maintenance-colors.php:85
+#: views/wp-maintenance-colors.php:114 views/wp-maintenance-colors.php:123
+#: views/wp-maintenance-colors.php:139 views/wp-maintenance-colors.php:204
+#: views/wp-maintenance-colors.php:213 views/wp-maintenance-colors.php:255
+#: views/wp-maintenance-colors.php:264 views/wp-maintenance-countdown.php:58
 #: views/wp-maintenance-countdown.php:96 views/wp-maintenance-countdown.php:108
-#: views/wp-maintenance-css.php:57 views/wp-maintenance-dashboard.php:64
+#: views/wp-maintenance-css.php:56 views/wp-maintenance-dashboard.php:64
 #: views/wp-maintenance-dashboard.php:124
 #: views/wp-maintenance-dashboard.php:148
 #: views/wp-maintenance-dashboard.php:171
-#: views/wp-maintenance-dashboard.php:242
-#: views/wp-maintenance-dashboard.php:259 views/wp-maintenance-picture.php:91
+#: views/wp-maintenance-dashboard.php:256
+#: views/wp-maintenance-dashboard.php:273 views/wp-maintenance-picture.php:91
 #: views/wp-maintenance-picture.php:152 views/wp-maintenance-picture.php:184
 #: views/wp-maintenance-picture.php:191 views/wp-maintenance-settings.php:69
 #: views/wp-maintenance-settings.php:89 views/wp-maintenance-settings.php:104
@@ -790,7 +798,7 @@ msgstr "Oui"
 
 #: views/wp-maintenance-dashboard.php:60
 msgid "Enable maintenance mode:"
-msgstr "Activer le mode maintenance :"
+msgstr "Activer le mode maintenance :"
 
 #: classes/wp-maintenance.php:153 classes/wp-maintenance.php:273
 #: views/wp-maintenance-settings.php:57
