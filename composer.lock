@@ -119,12 +119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/wp-plugin.git",
-                "reference": "3145fa8338702a3530ec72b0a6ede30226ec2a40"
+                "reference": "b534b4196596aacd9de48a767bdf4b52f384daac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/3145fa8338702a3530ec72b0a6ede30226ec2a40",
-                "reference": "3145fa8338702a3530ec72b0a6ede30226ec2a40",
+                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/b534b4196596aacd9de48a767bdf4b52f384daac",
+                "reference": "b534b4196596aacd9de48a767bdf4b52f384daac",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 "source": "https://github.com/jlm2017/wp-plugin/tree/master",
                 "issues": "https://github.com/jlm2017/wp-plugin/issues"
             },
-            "time": "2017-09-28T10:48:59+00:00"
+            "time": "2017-09-28T20:44:43+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
