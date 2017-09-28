@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae608c201919b87b63d11250ed137e20",
+    "content-hash": "b7e041e52474e61f7c63b9e97c44bdaf",
     "packages": [
         {
             "name": "composer/installers",
@@ -114,6 +114,49 @@
             "time": "2016-08-13T20:53:52+00:00"
         },
         {
+            "name": "fi/fi-wordpress-addons",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jlm2017/wp-plugin.git",
+                "reference": "3145fa8338702a3530ec72b0a6ede30226ec2a40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/3145fa8338702a3530ec72b0a6ede30226ec2a40",
+                "reference": "3145fa8338702a3530ec72b0a6ede30226ec2a40",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.3.2"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "SIMON Florian",
+                    "email": "fsimondev@gmail.com"
+                },
+                {
+                    "name": "Guillaume Royer",
+                    "email": "site@lafranceinsoumise.fr"
+                }
+            ],
+            "homepage": "https://github.com/jlm2017/wp-plugin",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/jlm2017/wp-plugin/tree/master",
+                "issues": "https://github.com/jlm2017/wp-plugin/issues"
+            },
+            "time": "2017-09-28T10:48:59+00:00"
+        },
+        {
             "name": "guilro/wp-menu-export",
             "version": "dev-master",
             "source": {
@@ -136,45 +179,6 @@
                 "issues": "https://github.com/guilro/wp-menu-export/issues"
             },
             "time": "2016-11-11T17:18:06+00:00"
-        },
-        {
-            "name": "jlm2017/jlm2017-wordpress-addons",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jlm2017/wp-plugin.git",
-                "reference": "1ee693714f46abf15cec68072420adc014f104d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/1ee693714f46abf15cec68072420adc014f104d6",
-                "reference": "1ee693714f46abf15cec68072420adc014f104d6",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.3.2"
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "SIMON Florian",
-                    "email": "fsimondev@gmail.com"
-                }
-            ],
-            "homepage": "https://github.com/jlm2017/wp-plugin",
-            "keywords": [
-                "plugin",
-                "wordpress"
-            ],
-            "support": {
-                "source": "https://github.com/jlm2017/wp-plugin/tree/master",
-                "issues": "https://github.com/jlm2017/wp-plugin/issues"
-            },
-            "time": "2017-03-06T18:09:24+00:00"
         },
         {
             "name": "jlm2017/theme-wp",
@@ -591,15 +595,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.7.4",
+            "version": "1.7.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.7.4"
+                "reference": "tags/1.7.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -651,16 +655,16 @@
         },
         {
             "name": "wpackagist-plugin/members",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/members/",
-                "reference": "tags/2.0.0"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/members.2.0.0.zip",
-                "reference": "tags/2.0.0",
+                "url": "https://downloads.wordpress.org/plugin/members.2.0.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -771,15 +775,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.4",
+            "version": "5.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.4"
+                "reference": "tags/5.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.5.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -894,7 +898,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jlm2017/theme-wp": 20,
-        "jlm2017/jlm2017-wordpress-addons": 20,
+        "fi/fi-wordpress-addons": 20,
         "guilro/wp-menu-export": 20
     },
     "prefer-stable": false,

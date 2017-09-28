@@ -53,7 +53,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/soil": "^3.7",
     "jlm2017/theme-wp": "dev-master",
-    "jlm2017/jlm2017-wordpress-addons": "dev-master",
+    "fi/fi-wordpress-addons": "dev-master",
     "guilro/wp-menu-export": "dev-master",
     "wpackagist-plugin/vanilla-pdf-embed": "^0.0.8",
     "wpackagist-plugin/wordpress-seo": "^5.0",
