@@ -119,12 +119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jlm2017/wp-plugin.git",
-                "reference": "ad751cb1682da3094574a25bde7f1640fa646706"
+                "reference": "08ce27d123614ea683d364340a2d2357ad9d7bec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/ad751cb1682da3094574a25bde7f1640fa646706",
-                "reference": "ad751cb1682da3094574a25bde7f1640fa646706",
+                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/08ce27d123614ea683d364340a2d2357ad9d7bec",
+                "reference": "08ce27d123614ea683d364340a2d2357ad9d7bec",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                 "source": "https://github.com/jlm2017/wp-plugin/tree/master",
                 "issues": "https://github.com/jlm2017/wp-plugin/issues"
             },
-            "time": "2017-09-28T20:52:12+00:00"
+            "time": "2017-10-05T16:57:38+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -595,15 +595,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.7.6",
+            "version": "1.7.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.7.6"
+                "reference": "tags/1.7.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.11.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -695,15 +695,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.5.12",
+            "version": "2.5.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.5.12"
+                "reference": "tags/2.5.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.12.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.5.13.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -795,15 +795,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/3.0.5"
+                "reference": "tags/3.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.6.zip",
                 "reference": null,
                 "shasum": null
             },

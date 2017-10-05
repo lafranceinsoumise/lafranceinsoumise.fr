@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-09-26 06:49:15+0000\n"
+"PO-Revision-Date: 2017-10-03 08:16:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3393,7 +3393,7 @@ msgstr "Cet écran est utilisé pour gérer vos thèmes installés. En dehors de
 
 #: wp-admin/widgets.php:395
 msgid "To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back."
-msgstr "Pour activer un widget, glissez-le dans la barre latérale ou cliquez dessus. Pour désactiver un widget et supprimer ses réglages, enlevez-le de la barre latérale."
+msgstr "Pour activer un widget, glissez-le dans la colonne latérale ou cliquez dessus. Pour désactiver un widget et supprimer ses réglages, enlevez-le de la colonne latérale."
 
 #. translators: 1: The rating
 #: wp-admin/includes/template.php:2127
@@ -3768,7 +3768,7 @@ msgstr "Les menus peuvent être affichés à des emplacements définis par votre
 
 #: wp-admin/nav-menus.php:517
 msgid "Your theme does not natively support menus, but you can use them in sidebars by adding a &#8220;Custom Menu&#8221; widget on the <a href=\"%s\">Widgets</a> screen."
-msgstr "Votre thème ne peut pas utiliser les menus nativement, mais vous pouvez les utiliser dans la barre latérale en ajoutant le widget &#8220;Menu personnalisé&#8221; depuis l&rsquo;écran <a href=\"%s\">Widgets</a>."
+msgstr "Votre thème ne peut pas utiliser les menus nativement, mais vous pouvez les utiliser dans la colonne latérale en ajoutant le widget &#8220;Menu personnalisé&#8221; depuis l’écran <a href=\"%s\">Widgets</a>."
 
 #: wp-admin/install.php:365
 msgid "Sorry, that isn&#8217;t a valid email address. Email addresses look like <code>username@example.com</code>."
@@ -4901,7 +4901,7 @@ msgstr "Version&nbsp;: "
 #: wp-admin/includes/class-wp-theme-install-list-table.php:342
 #: wp-admin/theme-install.php:63 wp-admin/theme-install.php:341
 msgid "Collapse Sidebar"
-msgstr "Réduire la barre latérale"
+msgstr "Réduire la colonne latérale"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:386
 msgid "Plugin"
@@ -5600,11 +5600,11 @@ msgstr "Vous pouvez modifier votre mot de passe, activer les raccourcis clavier,
 
 #: wp-admin/widgets.php:100
 msgid "This sidebar is no longer available and does not show anywhere on your site. Remove each of the widgets below to fully remove this inactive sidebar."
-msgstr "Cette barre latérale n&rsquo;est plus disponible, et ne s&rsquo;affiche nulle part sur le site. Vous pouvez en retirer les widgets ci-dessous afin de la supprimer totalement."
+msgstr "Cette colonne latérale n’est plus disponible, et ne s’affiche nulle part sur le site. Vous pouvez en retirer les widgets ci-dessous afin de la supprimer totalement."
 
 #: wp-admin/widgets.php:97
 msgid "Inactive Sidebar (not used)"
-msgstr "Barre latérale inactive (inutilisée)"
+msgstr "Colonne latérale inactive (inutilisée)"
 
 #: wp-admin/widgets.php:68
 msgid "Missing Widgets"
@@ -6600,7 +6600,7 @@ msgstr "Pensez bien à cliquer sur le bouton &laquo;&nbsp;Mettre à jour le fich
 
 #: wp-admin/widgets.php:56
 msgid "The Available Widgets section contains all the widgets you can choose from. Once you drag a widget into a sidebar, it will open to allow you to configure its settings. When you are happy with the widget settings, click the Save button and the widget will go live on your site. If you click Delete, it will remove the widget."
-msgstr "La section &laquo;&nbsp;Widgets disponibles&nbsp;&raquo; contient tous les widgets que vous pouvez utiliser. Une fois le widget glissé dans la barre latérale, il s&rsquo;ouvrira pour vous permettre d&rsquo;en modifier les réglages. Quand vous êtes satisfait de vos réglages, cliquez sur le bouton &laquo;&nbsp;Enregistrer&nbsp;&raquo; et le widget sera lancé sur votre site. Si vous cliquez sur &laquo;&nbsp;Supprimer&nbsp;&raquo;, le widget sera enlevé du site."
+msgstr "La section &laquo;&nbsp;Widgets disponibles&nbsp;&raquo; contient tous les widgets que vous pouvez utiliser. Une fois le widget glissé dans la colonne latérale, il s&rsquo;ouvrira pour vous permettre d&rsquo;en modifier les réglages. Quand vos réglages vous satisfont, cliquez sur le bouton &laquo;&nbsp;Enregistrer&nbsp;&raquo; et le widget sera lancé sur votre site. Si vous cliquez sur &laquo;&nbsp;Supprimer&nbsp;&raquo;, le widget sera enlevé du site."
 
 #: wp-admin/user-new.php:322
 msgid "Email or Username"
@@ -6780,7 +6780,7 @@ msgstr "Mot de passe FTP"
 
 #: wp-admin/widgets.php:70
 msgid "Many themes show some sidebar widgets by default until you edit your sidebars, but they are not automatically displayed in your sidebar management tool. After you make your first widget change, you can re-add the default widgets by adding them from the Available Widgets area."
-msgstr "De nombreux thèmes affichent par défaut quelques widgets dans la barre latérale, jusqu&rsquo;à ce que vous la modifiez vous-mêmes. Ces widgets par défaut ne sont pas automatiquement affichés dans le gestionnaire de barre latérale. Après avoir fait vos propres modifications de widgets, vous pouvez rajouter les widgets par défaut depuis la section &laquo;&nbsp;Widgets Disponibles&nbsp;&raquo;."
+msgstr "De nombreux thèmes affichent par défaut quelques widgets dans la colonne latérale, jusqu&rsquo;à ce que vous la modifiez vous-mêmes. Ces widgets par défaut ne sont pas automatiquement affichés dans le gestionnaire de colonne latérale. Après avoir fait vos propres modifications de widgets, vous pouvez rajouter les widgets par défaut depuis la section &laquo;&nbsp;Widgets Disponibles&nbsp;&raquo;."
 
 #: wp-admin/options-permalink.php:30
 msgid "If you pick an option other than Plain, your general URL path with structure tags (terms surrounded by <code>%</code>) will also appear in the custom structure field and your path can be further modified there."
@@ -7009,7 +7009,7 @@ msgstr "<strong>Conseil&nbsp;:</strong> gardez bien en tête que si vous modifie
 
 #: wp-admin/widgets.php:55
 msgid "Widgets are independent sections of content that can be placed into any widgetized area provided by your theme (commonly called sidebars). To populate your sidebars/widget areas with individual widgets, drag and drop the title bars into the desired area. By default, only the first widget area is expanded. To populate additional widget areas, click on their title bars to expand them."
-msgstr "Les widgets sont des conteneurs de contenu indépendants, qui peuvent être placés dans n&rsquo;importe quelle zone à widgets de votre thème (le plus souvent, la barre latérale). Pour remplir les zones à widgets de votre barre latérale, glissez/déposez les barres de titre dans la zone désirée. Par défaut, seule la première zone de widgets sera ouverte. Pour remplir les autres zones à widgets, cliquez sur leur barre de titre afin de les ouvrir."
+msgstr "Les widgets sont des conteneurs de contenu indépendants, qui peuvent être placés dans n&rsquo;importe quelle zone à widgets de votre thème (le plus souvent, la colonne latérale). Pour remplir les zones à widgets de votre colonne latérale, glissez/déposez les barres de titre dans la zone désirée. Par défaut, seule la première zone de widgets sera ouverte. Pour remplir les autres zones à widgets, cliquez sur leur barre de titre afin de les ouvrir."
 
 #: wp-admin/theme-editor.php:28
 msgid "Begin by choosing a theme to edit from the dropdown menu and clicking the Select button. A list then appears of the theme&#8217;s template files. Clicking once on any file name causes the file to appear in the large Editor box."
