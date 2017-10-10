@@ -119,20 +119,23 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:guilro/elementor-pro.git",
-                "reference": "a4131538dd5a58205cf09aa4a829dfe4bf45b747"
+                "reference": "ec49913bde0f484b379894f8be9e3e75b5747374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guilro/elementor-pro/zipball/a4131538dd5a58205cf09aa4a829dfe4bf45b747",
-                "reference": "a4131538dd5a58205cf09aa4a829dfe4bf45b747",
+                "url": "https://api.github.com/repos/guilro/elementor-pro/zipball/ec49913bde0f484b379894f8be9e3e75b5747374",
+                "reference": "ec49913bde0f484b379894f8be9e3e75b5747374",
                 "shasum": ""
             },
-            "type": "library",
+            "require": {
+                "composer/installers": ">=1.0.6"
+            },
+            "type": "wordpress-plugin",
             "support": {
                 "source": "https://github.com/guilro/elementor-pro/tree/master",
                 "issues": "https://github.com/guilro/elementor-pro/issues"
             },
-            "time": "2017-10-10T12:43:56+00:00"
+            "time": "2017-10-10T12:56:41+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
