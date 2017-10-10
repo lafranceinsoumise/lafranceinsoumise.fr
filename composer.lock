@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7e041e52474e61f7c63b9e97c44bdaf",
+    "content-hash": "2f2b9346c6213c2db9bf4bf346dd1a42",
     "packages": [
         {
             "name": "composer/installers",
@@ -114,16 +114,37 @@
             "time": "2016-08-13T20:53:52+00:00"
         },
         {
+            "name": "elementor/elementor-pro",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:guilro/elementor-pro.git",
+                "reference": "a4131538dd5a58205cf09aa4a829dfe4bf45b747"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guilro/elementor-pro/zipball/a4131538dd5a58205cf09aa4a829dfe4bf45b747",
+                "reference": "a4131538dd5a58205cf09aa4a829dfe4bf45b747",
+                "shasum": ""
+            },
+            "type": "library",
+            "support": {
+                "source": "https://github.com/guilro/elementor-pro/tree/master",
+                "issues": "https://github.com/guilro/elementor-pro/issues"
+            },
+            "time": "2017-10-10T12:43:56+00:00"
+        },
+        {
             "name": "fi/fi-wordpress-addons",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jlm2017/wp-plugin.git",
+                "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
                 "reference": "08ce27d123614ea683d364340a2d2357ad9d7bec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/wp-plugin/zipball/08ce27d123614ea683d364340a2d2357ad9d7bec",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/08ce27d123614ea683d364340a2d2357ad9d7bec",
                 "reference": "08ce27d123614ea683d364340a2d2357ad9d7bec",
                 "shasum": ""
             },
@@ -185,12 +206,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jlm2017/theme-wp.git",
+                "url": "https://github.com/lafranceinsoumise/theme-wp.git",
                 "reference": "92875771c329379ab5accfbd9b010d2c020b174a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jlm2017/theme-wp/zipball/92875771c329379ab5accfbd9b010d2c020b174a",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/92875771c329379ab5accfbd9b010d2c020b174a",
                 "reference": "92875771c329379ab5accfbd9b010d2c020b174a",
                 "shasum": ""
             },
@@ -775,15 +796,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.5.1",
+            "version": "5.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.5.1"
+                "reference": "tags/5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.5.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -899,7 +920,8 @@
     "stability-flags": {
         "jlm2017/theme-wp": 20,
         "fi/fi-wordpress-addons": 20,
-        "guilro/wp-menu-export": 20
+        "guilro/wp-menu-export": 20,
+        "elementor/elementor-pro": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

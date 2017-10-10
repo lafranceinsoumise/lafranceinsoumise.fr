@@ -42,6 +42,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:guilro/wp-menu-export"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:guilro/elementor-pro"
     }
   ],
   "require": {
@@ -55,6 +59,7 @@
     "jlm2017/theme-wp": "dev-master",
     "fi/fi-wordpress-addons": "dev-master",
     "guilro/wp-menu-export": "dev-master",
+    "elementor/elementor-pro": "dev-master",
     "wpackagist-plugin/vanilla-pdf-embed": "^0.0.8",
     "wpackagist-plugin/wordpress-seo": "^5.0",
     "wpackagist-plugin/redirection": "^2.4",
