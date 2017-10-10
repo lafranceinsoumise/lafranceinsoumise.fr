@@ -210,12 +210,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "92875771c329379ab5accfbd9b010d2c020b174a"
+                "reference": "107fc5fd4dc33ed52385e1471d4c0ef49bc0f1fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/92875771c329379ab5accfbd9b010d2c020b174a",
-                "reference": "92875771c329379ab5accfbd9b010d2c020b174a",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/107fc5fd4dc33ed52385e1471d4c0ef49bc0f1fc",
+                "reference": "107fc5fd4dc33ed52385e1471d4c0ef49bc0f1fc",
                 "shasum": ""
             },
             "require": {
@@ -251,9 +251,9 @@
             "support": {
                 "issues": "https://github.com/roots/sage/issues",
                 "forum": "https://discourse.roots.io/",
-                "source": "https://github.com/jlm2017/theme-wp/tree/master"
+                "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2017-09-05T16:17:59+00:00"
+            "time": "2017-10-10T14:18:48+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
