@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Redirection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-10-01 17:13:01+0000\n"
+"PO-Revision-Date: 2017-10-06 12:47:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -365,6 +365,10 @@ msgstr "Incapable de créer une nouvelle redirection"
 msgid "Something went wrong 🙁"
 msgstr "Quelque chose s’est mal passé 🙁"
 
+#: redirection-strings.php:13
+msgid "I was trying to do a thing and it went wrong. It may be a temporary issue and if you try again it might work - great!"
+msgstr "J’essayais de faire une chose et ça a mal tourné. C’est peut-être un problème temporaire et si vous essayez à nouveau, cela pourrait fonctionner, c’est génial !"
+
 #: redirection-strings.php:11
 msgid "It didn't work when I tried again"
 msgstr "Cela n’a pas fonctionné quand j’ai réessayé."
@@ -372,6 +376,10 @@ msgstr "Cela n’a pas fonctionné quand j’ai réessayé."
 #: redirection-strings.php:10
 msgid "See if your problem is described on the list of outstanding {{link}}Redirection issues{{/link}}. Please add more details if you find the same problem."
 msgstr "Voyez si votre problème est décrit dans la liste des {{link}}problèmes de redirection{{/ link}} exceptionnels. Veuillez ajouter plus de détails si vous rencontrez le même problème."
+
+#: redirection-admin.php:143
+msgid "Log entries (%d max)"
+msgstr "Entrées du journal (100 max.)"
 
 #: redirection-strings.php:125
 msgid "Remove WWW"
@@ -431,6 +439,10 @@ msgstr[1] "%s éléments"
 msgid "Select All"
 msgstr "Tout sélectionner"
 
+#: redirection-strings.php:234
+msgid "Sorry, something went wrong loading the data - please try again"
+msgstr "Désolé, quelque chose a échoué au chargement des données. Veuillez réessayer."
+
 #: redirection-strings.php:233
 msgid "No results"
 msgstr "Aucun résultat"
@@ -438,6 +450,10 @@ msgstr "Aucun résultat"
 #: redirection-strings.php:82
 msgid "Delete the logs - are you sure?"
 msgstr "Confirmez-vous la suppression des journaux ?"
+
+#: redirection-strings.php:81
+msgid "Once deleted your current logs will no longer be available. You can set a delete schedule from the Redirection options if you want to do this automatically."
+msgstr "Une fois supprimés, vos journaux actuels ne seront plus disponibles. Vous pouvez définir une règle de suppression dans les options de l’extension Redirection si vous désirez procéder automatiquement."
 
 #: redirection-strings.php:80
 msgid "Yes! Delete the logs"
@@ -479,9 +495,21 @@ msgstr "Votre navigateur mettra en cache les redirections. Si vous avez retiré 
 msgid "Can I open a redirect in a new tab?"
 msgstr "Puis-je ouvrir une redirection dans un nouvel onglet ?"
 
+#: redirection-strings.php:206
+msgid "It's not possible to do this on the server. Instead you will need to add {{code}}target=\"_blank\"{{/code}} to your link."
+msgstr "Impossible de faire cela sur le serveur. À la place, vous allez devoir ajouter {{code}}target=\"blank\"{{/code}} à votre lien."
+
 #: redirection-strings.php:203
 msgid "Frequently Asked Questions"
 msgstr "Foire aux questions"
+
+#: redirection-strings.php:121
+msgid "You've supported this plugin - thank you!"
+msgstr "Vous avez apporté votre soutien à l’extension. Merci !"
+
+#: redirection-strings.php:118
+msgid "You get useful software and I get to carry on making it better."
+msgstr "Vous avez une extension utile, et je peux continuer à l’améliorer."
 
 #: redirection-strings.php:140
 msgid "Forever"
@@ -590,6 +618,10 @@ msgstr "Journaux des redirections "
 #: redirection-strings.php:138
 msgid "I'm a nice person and I have helped support the author of this plugin"
 msgstr "Je suis un type bien et j&rsquo;ai aidé l&rsquo;auteur de cette extension."
+
+#: redirection-strings.php:116
+msgid "Plugin Support"
+msgstr "Support de l’extension "
 
 #: redirection-strings.php:44 redirection-strings.php:102
 msgid "Options"
@@ -746,6 +778,10 @@ msgstr "Nom"
 #: redirection-strings.php:221
 msgid "Filter"
 msgstr "Filtre"
+
+#: redirection-strings.php:185
+msgid "Reset hits"
+msgstr "Réinitialiser les vues"
 
 #: redirection-strings.php:23 redirection-strings.php:32
 #: redirection-strings.php:187 redirection-strings.php:199
