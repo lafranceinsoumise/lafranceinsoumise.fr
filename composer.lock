@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb5e20519f9c700e4157c51be3612e66",
+    "content-hash": "244c7945b3115130720ec8435a2aa0a0",
     "packages": [
         {
             "name": "composer/installers",
@@ -629,15 +629,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.8.0",
+            "version": "1.7.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.8.0"
+                "reference": "tags/1.7.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.8.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.7.12.zip",
                 "reference": null,
                 "shasum": null
             },
