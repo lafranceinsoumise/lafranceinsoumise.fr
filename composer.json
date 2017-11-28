@@ -65,7 +65,7 @@
     "wpackagist-plugin/redirection": "^2.4",
     "wpackagist-plugin/contact-form-7": "^4.5",
     "wpackagist-plugin/ultimate-category-excluder": "^1.1",
-    "wpackagist-plugin/elementor": "1.7.12",
+    "wpackagist-plugin/elementor": "^1.8",
     "wpackagist-plugin/siteorigin-panels": "^2.4",
     "wpackagist-plugin/so-widgets-bundle": "^1.7",
     "wpackagist-plugin/wp-maintenance": "^3.0",
