@@ -153,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "45924134e73fadbf1805e4b57659e895304bc150"
+                "reference": "ee7f5579d220576b497b7290d47e1cda05ead795"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/45924134e73fadbf1805e4b57659e895304bc150",
-                "reference": "45924134e73fadbf1805e4b57659e895304bc150",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/ee7f5579d220576b497b7290d47e1cda05ead795",
+                "reference": "ee7f5579d220576b497b7290d47e1cda05ead795",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2017-11-10T12:45:11+00:00"
+            "time": "2017-11-28T14:34:56+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
