@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Maintenance - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-09-12 16:40:51+0000\n"
+"PO-Revision-Date: 2017-11-18 07:50:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,14 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - WP Maintenance - Stable (latest release)\n"
+
+#: classes/wp-maintenance.php:269
+msgid "CSS"
+msgstr "CSS"
+
+#: classes/wp-maintenance.php:239
+msgid "Colors"
+msgstr "Couleurs"
 
 #: views/wp-maintenance-dashboard.php:224
 msgid "Choose icons style:"
@@ -48,15 +56,15 @@ msgstr "Exporter les réglages"
 msgid "Click to toggle"
 msgstr "Cliquez pour déplier"
 
-#: classes/wp-maintenance.php:569
+#: classes/wp-maintenance.php:631
 msgid "New settings imported successfully!"
 msgstr "Les nouveaux réglages ont bien été importés !"
 
-#: classes/wp-maintenance.php:559
+#: classes/wp-maintenance.php:621
 msgid "Please upload a file to import"
 msgstr "Veuillez mettre en ligne un fichier à importer"
 
-#: classes/wp-maintenance.php:553
+#: classes/wp-maintenance.php:615
 msgid "Please upload a valid .json file"
 msgstr "Veuillez mettre en ligne un fichier .json valide"
 
@@ -164,7 +172,7 @@ msgstr "à"
 msgid "Personnalize Colors and Fonts"
 msgstr "Personnaliser les couleurs et polices"
 
-#: views/wp-maintenance-countdown.php:24
+#: classes/wp-maintenance.php:259 views/wp-maintenance-countdown.php:24
 msgid "Countdown"
 msgstr "Compte à rebours"
 
@@ -182,55 +190,55 @@ msgstr "Active %s pour personnaliser les formulaires"
 
 #: views/wp-maintenance-colors.php:135
 msgid "Activate Frame"
-msgstr "Activer un cadre"
+msgstr "Activer un arrière plan pour la section."
 
-#: includes/functions.php:153
+#: includes/functions.php:151
 msgid "DISCOVER"
 msgstr "DÉCOUVRIR"
 
-#: includes/functions.php:141
+#: includes/functions.php:139
 msgid "Support this extension and my other developments (French Paypal):"
 msgstr "Soutenez cette extension et mes autres développements (PayPal) :"
 
-#: includes/functions.php:138
+#: includes/functions.php:136
 msgid "This plugin has been developed for you for free by <a href=\"https://restezconnectes.fr\" target=\"_blank\">Florent Maillefaud</a>. It is royalty free, you can take it, modify it, distribute it as you see fit."
 msgstr "Cette extension a été développée gratuitement pour vous par <a href=\"https://restezconnectes.fr\" target=\"_blank\">Florent Maillefaud</a>. Elle est libre de droits, vous pouvez la prendre, la modifier, la distribuer comme bon vous semble."
 
-#: includes/functions.php:136
+#: includes/functions.php:134
 msgid "ABOUT"
 msgstr "À PROPOS"
 
-#: includes/functions.php:82
+#: includes/functions.php:80
 msgid "Go to Settings options"
 msgstr "Aller aux paramètrages"
 
-#: includes/functions.php:77
+#: includes/functions.php:75
 msgid "Go to CSS options"
 msgstr "Aller aux options de la feuille de style CSS"
 
-#: includes/functions.php:72
+#: includes/functions.php:70
 msgid "Go to Countdown options"
 msgstr "Aller aux options du compte à rebours"
 
-#: includes/functions.php:67
+#: includes/functions.php:65
 msgid "Go to Pictures options"
 msgstr "Aller aux options des images"
 
-#: includes/functions.php:62
+#: includes/functions.php:60
 msgid "Go to Colors and Fonts options"
 msgstr "Aller aux options de couleurs et polices"
 
-#: includes/functions.php:57
+#: includes/functions.php:55
 msgid "Go to Generals options"
 msgstr "Aller aux options générales"
 
-#: classes/wp-maintenance.php:427 classes/wp-maintenance.php:435
-#: classes/wp-maintenance.php:443 classes/wp-maintenance.php:452
-#: classes/wp-maintenance.php:461 classes/wp-maintenance.php:470
+#: classes/wp-maintenance.php:489 classes/wp-maintenance.php:497
+#: classes/wp-maintenance.php:505 classes/wp-maintenance.php:514
+#: classes/wp-maintenance.php:523 classes/wp-maintenance.php:532
 msgid "You do not have sufficient privileges to access this page."
 msgstr "Vous n’avez pas les droits suffisants pour accéder à cette page."
 
-#: classes/wp-maintenance.php:267
+#: classes/wp-maintenance.php:249 classes/wp-maintenance.php:324
 msgid "Pictures"
 msgstr "Images"
 
@@ -278,15 +286,15 @@ msgstr "Réinitialiser les icônes des réseaux sociaux ?"
 msgid "https://wpmaintenance.info"
 msgstr "https://wpmaintenance.info"
 
-#: classes/slider.php:91
+#: classes/slider.php:100
 msgid "Next"
 msgstr "Suivant"
 
-#: classes/slider.php:90
+#: classes/slider.php:99
 msgid "Previous"
 msgstr "Précédent"
 
-#: includes/functions.php:174
+#: includes/functions.php:172
 msgid "is brought to you by"
 msgstr "vous est proposé par"
 
@@ -379,65 +387,62 @@ msgstr "Adresses IP autorisées :"
 msgid "Florent Maillefaud"
 msgstr "Florent Maillefaud"
 
-#. #-#-#-#-#  wp-maintenance-code.pot (WP Maintenance 3.0.5)  #-#-#-#-#
+#. #-#-#-#-#  wp-maintenance-code.pot (WP Maintenance 3.0.9)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: includes/functions.php:174
+#: classes/wp-maintenance.php:217 classes/wp-maintenance.php:222
+#: includes/functions.php:172
 msgid "WP Maintenance"
 msgstr "WP Maintenance"
 
-#: classes/countdown.php:36
+#: classes/countdown.php:37
 msgid "Seconds"
 msgstr "Secondes"
 
-#: classes/countdown.php:34
+#: classes/countdown.php:35
 msgid "Minutes"
 msgstr "Minutes"
 
-#: classes/countdown.php:34
+#: classes/countdown.php:35
 msgid "Hours"
 msgstr "Heures"
 
-#: classes/countdown.php:34
+#: classes/countdown.php:35
 msgid "Days"
 msgstr "Jours"
 
-#: classes/wp-maintenance.php:765
+#: classes/wp-maintenance.php:827
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: classes/wp-maintenance.php:411
+#: classes/wp-maintenance.php:473
 msgid "Choose Image"
 msgstr "Choisissez une image"
 
-#: classes/wp-maintenance.php:410
+#: classes/wp-maintenance.php:472
 msgid "Choose This Image"
 msgstr "Choisir cette image"
 
-#: classes/wp-maintenance.php:46 classes/wp-maintenance.php:284
+#: classes/wp-maintenance.php:51 classes/wp-maintenance.php:346
 msgid "Come back quickly!"
 msgstr "Revenez vite !"
 
-#: classes/wp-maintenance.php:45 classes/wp-maintenance.php:283
+#: classes/wp-maintenance.php:50 classes/wp-maintenance.php:345
 msgid "This site is down for maintenance"
 msgstr "Ce site est en maintenance"
 
-#: classes/wp-maintenance.php:216
-msgid "Maintenance mode activated!"
-msgstr "Maintenance activée !"
-
-#: includes/functions.php:174
+#: includes/functions.php:172
 msgid "give it 5 &#9733; on WordPress.org"
 msgstr "donnez-lui 5 &#9733; sur WordPress.org"
 
-#: includes/functions.php:174
+#: includes/functions.php:172
 msgid "If you found this plugin useful"
 msgstr "Si vous avez trouvé cette extension utile,"
 
-#: includes/functions.php:139
+#: includes/functions.php:137
 msgid "try the demo of the plugin, talk about this plugin to your surroundings!"
 msgstr "essayez la démo de cette extension et parlez-en à votre entourage !"
 
-#: includes/functions.php:139
+#: includes/functions.php:137
 msgid "Visit"
 msgstr "Visitez le site web de"
 
@@ -800,16 +805,16 @@ msgstr "Oui"
 msgid "Enable maintenance mode:"
 msgstr "Activer le mode maintenance :"
 
-#: classes/wp-maintenance.php:153 classes/wp-maintenance.php:273
-#: views/wp-maintenance-settings.php:57
+#: classes/wp-maintenance.php:158 classes/wp-maintenance.php:279
+#: classes/wp-maintenance.php:330 views/wp-maintenance-settings.php:57
 msgid "Settings"
 msgstr "Réglages"
 
-#: classes/wp-maintenance.php:271 views/wp-maintenance-css.php:36
+#: classes/wp-maintenance.php:328 views/wp-maintenance-css.php:36
 msgid "CSS Style"
 msgstr "Style CSS"
 
-#: classes/wp-maintenance.php:269
+#: classes/wp-maintenance.php:326
 msgid "CountDown"
 msgstr "Compte à rebours"
 
@@ -817,14 +822,14 @@ msgstr "Compte à rebours"
 msgid "Picture"
 msgstr "Image"
 
-#: classes/wp-maintenance.php:265 views/wp-maintenance-colors.php:41
+#: classes/wp-maintenance.php:322 views/wp-maintenance-colors.php:41
 msgid "Colors & Fonts"
 msgstr "Couleurs & Polices"
 
-#: classes/wp-maintenance.php:263 views/wp-maintenance-dashboard.php:53
+#: classes/wp-maintenance.php:320 views/wp-maintenance-dashboard.php:53
 msgid "General"
 msgstr "Général"
 
-#: includes/functions.php:25
+#: includes/functions.php:24
 msgid "Options saved."
 msgstr "Réglages enregistrés."
