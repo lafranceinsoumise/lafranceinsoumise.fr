@@ -609,15 +609,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.9.1",
+            "version": "4.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.9.1"
+                "reference": "tags/4.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.9.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -629,15 +629,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.8.7",
+            "version": "1.8.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.8.7"
+                "reference": "tags/1.8.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.8.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.8.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -809,15 +809,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.8",
+            "version": "5.9.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.8"
+                "reference": "tags/5.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
