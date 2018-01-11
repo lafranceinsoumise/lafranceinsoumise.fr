@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6dfdd2d088f50136008505706232500e",
+    "content-hash": "f09a8e5ee99a38aa3cbc7e857f0ec0e1",
     "packages": [
         {
             "name": "composer/installers",
@@ -220,12 +220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "53f1b308e12931e76a3fd0f3a314f8784ae36cb1"
+                "reference": "0df288198ee47e3a2148b3adeb42f539f5cef73a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/53f1b308e12931e76a3fd0f3a314f8784ae36cb1",
-                "reference": "53f1b308e12931e76a3fd0f3a314f8784ae36cb1",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/0df288198ee47e3a2148b3adeb42f539f5cef73a",
+                "reference": "0df288198ee47e3a2148b3adeb42f539f5cef73a",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2017-12-18T15:18:10+00:00"
+            "time": "2017-12-21T15:37:02+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -629,15 +629,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.8.10",
+            "version": "1.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.8.10"
+                "reference": "tags/1.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.8.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -749,15 +749,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.11.2",
+            "version": "1.11.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.11.2"
+                "reference": "tags/1.11.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -809,15 +809,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.9.3",
+            "version": "6.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.9.3"
+                "reference": "tags/6.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.9.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -829,15 +829,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "3.0.9",
+            "version": "4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/3.0.9"
+                "reference": "tags/4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.3.0.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.4.0.zip",
                 "reference": null,
                 "shasum": null
             },
