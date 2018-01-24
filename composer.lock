@@ -220,12 +220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "7a40b4678e53d315cd0a7586b9ea1df9b3756b86"
+                "reference": "c191ca2f22c900c3eb0b0f50aa26c65c9e2b0c36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/7a40b4678e53d315cd0a7586b9ea1df9b3756b86",
-                "reference": "7a40b4678e53d315cd0a7586b9ea1df9b3756b86",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/c191ca2f22c900c3eb0b0f50aa26c65c9e2b0c36",
+                "reference": "c191ca2f22c900c3eb0b0f50aa26c65c9e2b0c36",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-01-17T16:19:36+00:00"
+            "time": "2018-01-24T09:43:54+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -629,15 +629,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.9.2",
+            "version": "1.9.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.9.2"
+                "reference": "tags/1.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -729,15 +729,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.6.0",
+            "version": "2.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.6.0"
+                "reference": "tags/2.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -809,15 +809,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "6.1.1",
+            "version": "6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/6.1.1"
+                "reference": "tags/6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
