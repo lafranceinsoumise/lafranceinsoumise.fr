@@ -153,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "842a9ba48ff3a2bde1f5a9b8d1b2347508ec6164"
+                "reference": "5ccddae442c216c3bae67934e4d1efd8bd453589"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/842a9ba48ff3a2bde1f5a9b8d1b2347508ec6164",
-                "reference": "842a9ba48ff3a2bde1f5a9b8d1b2347508ec6164",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/5ccddae442c216c3bae67934e4d1efd8bd453589",
+                "reference": "5ccddae442c216c3bae67934e4d1efd8bd453589",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-01-24T09:47:16+00:00"
+            "time": "2018-01-31T14:42:32+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -346,16 +346,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "1.0.0",
+            "version": "1.0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2"
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/e9e767f2d9f994f358c34b41def2c410ad8717f2",
-                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-05-31T18:42:33+00:00"
+            "time": "2018-01-29T14:49:29+00:00"
         },
         {
             "name": "oscarotero/env",
