@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-01-25 09:23:43+0000\n"
+"PO-Revision-Date: 2018-02-13 15:06:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,161 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
+
+#: admin/views/tabs/tool/import-seo.php:35
+msgid "Import from SEOpressor"
+msgstr "Importer depuis SEOpressor"
+
+#: admin/views/tabs/tool/import-seo.php:34
+msgid "Import from Ultimate SEO"
+msgstr "Importer depuis Ultimate SEO"
+
+#: admin/views/tabs/social/twitterbox.php:17
+msgid "Enable this feature if you want Twitter to display a preview with images and a text excerpt when a link to your site is shared."
+msgstr "Activez cette fonctionnalité si vous voulez que Twitter affiche un extrait avec images lorsque votre site est partagé."
+
+#: admin/class-help-center.php:231
+msgid "Search result"
+msgstr "Résultats de recherche"
+
+#: admin/views/tabs/dashboard/features.php:14
+msgid "SEO analysis"
+msgstr "Analyse SEO"
+
+#: admin/views/tabs/dashboard/features.php:40
+msgid "The text link counter helps you improve your site structure."
+msgstr "Le compteur de liens vous aide à améliorer la structure de votre site."
+
+#: admin/views/tabs/dashboard/features.php:49
+msgid "Discover all the features that Yoast SEO offers."
+msgstr "Découvrez toutes les fonctionnalités qu’apporte Yoast SEO."
+
+#: admin/class-help-center.php:116
+msgid "If you have a problem that you can't solve with our video tutorials or knowledge base, you can send a message to our support team. They can be reached 24/7."
+msgstr "Si vous avez un problème qui n’est pas résolu grâce à nos tutoriels vidéo ou notre base de connaissances, vous pouvez envoyer un message à notre support. Ils peuvent être contactés 24h/24h 7j/7."
+
+#: admin/class-help-center.php:120
+msgid "Support requests you create here are sent directly into our support system, which is secured with 256 bit SSL, so communication is 100% secure."
+msgstr "Les demandes de supports crées ici sont directement envoyés à notre outil de support qui est sécurisé avec un certificat SSL 256 bit afin que nos communications soient sécurisées."
+
+#: admin/class-help-center.php:240
+msgid "New support request"
+msgstr "Nouvelle demande de support"
+
+#: admin/class-import-seopressor.php:24
+msgid "SEOpressor data successfully imported."
+msgstr "Données de SEOpressor bien importées."
+
+#: admin/class-import-ultimate-seo.php:23
+msgid "SEO Ultimate data successfully imported."
+msgstr "Données de SEO Ultimate bien importées."
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:76
+msgid "Readability: %1$sNot available%2$s"
+msgstr "Lisibilité : %1$sNon disponible%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:79
+msgid "Readability: %1$sNeeds improvement%2$s"
+msgstr "Lisibilité : %1$sÀ améliorer%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:82
+msgid "Readability: %1$sOK%2$s"
+msgstr "Lisibilité : %1$sOk%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:85
+msgid "Readability: %1$sGood%2$s"
+msgstr "Lisibilité : %1$sBien%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:90
+msgid "SEO: %1$sNot available%2$s"
+msgstr "SEO : %1$sNon disponible%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:93
+msgid "SEO: %1$sNeeds improvement%2$s"
+msgstr "SEO : %1$sÀ améliorer%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:96
+msgid "SEO: %1$sOK%2$s"
+msgstr "SEO : %1$sOK%2$s"
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag.
+#: admin/formatter/class-metabox-formatter.php:99
+msgid "SEO: %1$sGood%2$s"
+msgstr "SEO : %1$sBien%2$s"
+
+#: admin/formatter/class-metabox-formatter.php:135
+msgid "Good results"
+msgstr "Bons résultats"
+
+#: admin/views/licenses.php:101
+msgid "Get better search results in local search"
+msgstr "Obtenez de meilleurs résultats locaux"
+
+#: admin/views/licenses.php:102
+msgid "Enhance your contact pages with Google Maps, opening hours and a store locator"
+msgstr "Améliorez vos pages de contact avec Google Maps, vos heures d’ouverture et la location de votre établissement."
+
+#. translators: %1$s expands to WooCommerce
+#: admin/views/licenses.php:104
+msgid "Allow customers to pick up their %s order locally"
+msgstr "Permet à vos clients de récupérer leur commandes %s sur place."
+
+#: admin/views/tabs/dashboard/features.php:16
+msgid "The SEO analysis offers suggestions to improve the SEO of your text."
+msgstr "L’analyse SEO propose des suggestions pour améliorer le référencement de votre texte."
+
+#: admin/views/tabs/dashboard/features.php:17
+msgid "Learn how the SEO analysis can help you rank."
+msgstr "Découvrez comment l’analyse SEO peut améliorer votre référencement."
+
+#: admin/views/tabs/dashboard/features.php:24
+msgid "The readability analysis offers suggestions to improve the structure and style of your text."
+msgstr "L’analyse de lisibilité propose des suggestions pour améliorer la structure et le style de votre texte."
+
+#: admin/views/tabs/dashboard/features.php:25
+msgid "Discover why readability is important for SEO."
+msgstr "Découvrez pourquoi la lisibilité est importante pour le SEO."
+
+#: admin/views/tabs/dashboard/features.php:32
+msgid "The cornerstone content feature lets you to mark and filter cornerstone content on your website."
+msgstr "La fonctionnalité des contenus Cornerstone vous permets de distinguer et filtrer les contenus les plus importants de votre site."
+
+#: admin/views/tabs/dashboard/features.php:33
+msgid "Find out how cornerstone content can help you improve your site structure."
+msgstr "Découvrez comment les contenus Cornerstone peuvent améliorer votre structure de site."
+
+#: admin/views/tabs/dashboard/features.php:41
+msgid "Find out how the text link counter can enhance your SEO."
+msgstr "Découvrez comment le compteur de liens peut améliorer votre SEO."
+
+#. translators: %s expands to Ryte.
+#: admin/views/tabs/dashboard/features.php:55
+msgid "%s integration"
+msgstr "Intégration de %s"
+
+#. translators: %s expands to Ryte.
+#: admin/views/tabs/dashboard/features.php:60
+msgid "Read more about how %s works."
+msgstr "Découvrez comment %s fonctionne."
+
+#: admin/views/tabs/social/facebook.php:19
+msgid "Enable this feature if you want Facebook and other social media to display a preview with images and a text excerpt when a link to your site is shared."
+msgstr "Activez cette fonctionnalité si vous voulez que Facebook et d’autres réseaux sociaux affichent un extrait avec images lorsque votre site est partagé."
 
 #: languages/yoast-seo-js.php:212
 msgid "The focus keyword appears in %2$d (out of %1$d) subheadings in your copy."
@@ -1711,6 +1866,11 @@ msgstr "La barre de menu d’administration de %1$s contient des liens utiles ve
 msgid "%s installation wizard"
 msgstr "%s assistant d’installation"
 
+#. translators: %1$s expands to Ryte.
+#: admin/views/tabs/dashboard/features.php:58
+msgid "%1$s can check daily if your site is still indexable by search engines and will notify you when this is not the case."
+msgstr "%1$s peut vérifier quotidiennement si votre site est toujours indexable par les moteurs de recherche et vous avertit lorsque ce n’est plus le cas."
+
 #: admin/pages/dashboard.php:60 admin/views/tabs/dashboard/features.php:81
 msgid "Features"
 msgstr "Fonctionnalités"
@@ -2285,6 +2445,11 @@ msgstr "Lisibilité"
 #: admin/views/user-profile.php:44
 msgid "Removes the readability tab from the metabox and disables all readability-related suggestions."
 msgstr "Retire l’onglet de la lisibilité de la boite à méta et désactive toutes les suggestions liées à la lisibilité."
+
+#. translators: %1$s resolves to https://github.com/Yoast/wordpress-seo
+#: admin/class-admin-asset-seo-location.php:48
+msgid "You are trying to load non-minified files. These are only available in our development package. Check out %1$s to see all the source files."
+msgstr "Vous essayez de charger des fichiers non minifiés. Ceux-ci ne sont disponibles que dans notre paquet de développement. Rendez-vous sur %1$s pour voir tous les fichiers source."
 
 #. translators: %1$s expands to Yoast SEO.
 #: admin/views/tabs/dashboard/dashboard.php:14
@@ -2923,7 +3088,7 @@ msgstr "Vous avez atteint votre limite d’activation. Vous devez <a href=\"%s\"
 msgid "Error 404: Page not found"
 msgstr "Erreur 404 : Page introuvable"
 
-#. #-#-#-#-#  wordpress-seo-code.pot (Yoast SEO 6.3)  #-#-#-#-#
+#. #-#-#-#-#  wordpress-seo-code.pot (Yoast SEO 6.3.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: admin/capabilities/class-capability-manager-integration.php:66
 msgid "Yoast SEO"

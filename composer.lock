@@ -153,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "5ccddae442c216c3bae67934e4d1efd8bd453589"
+                "reference": "d3e93d6987199da44cf3299e5dee733ea3eb9f3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/5ccddae442c216c3bae67934e4d1efd8bd453589",
-                "reference": "5ccddae442c216c3bae67934e4d1efd8bd453589",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/d3e93d6987199da44cf3299e5dee733ea3eb9f3e",
+                "reference": "d3e93d6987199da44cf3299e5dee733ea3eb9f3e",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-01-31T14:42:32+00:00"
+            "time": "2018-02-13T17:53:10+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -629,15 +629,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.9.4",
+            "version": "1.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.9.4"
+                "reference": "tags/1.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -809,15 +809,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "6.3",
+            "version": "6.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/6.3"
+                "reference": "tags/6.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
