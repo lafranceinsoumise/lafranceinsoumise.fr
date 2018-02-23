@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d71643ad7cd0f709e4b0264583b6fe9c",
+    "content-hash": "1cc763ededb01b2d0a932f4443f7461e",
     "packages": [
         {
             "name": "composer/installers",
@@ -219,16 +219,16 @@
         },
         {
             "name": "jlm2017/theme-wp",
-            "version": "dev-master",
+            "version": "dev-orange_and_green",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d"
+                "reference": "e0833057627c749fb91227933c32c6810f26c083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/1d730ba892cbb97618b7da06bb6ca15b231d182d",
-                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/e0833057627c749fb91227933c32c6810f26c083",
+                "reference": "e0833057627c749fb91227933c32c6810f26c083",
                 "shasum": ""
             },
             "require": {
@@ -264,9 +264,9 @@
             "support": {
                 "issues": "https://github.com/roots/sage/issues",
                 "forum": "https://discourse.roots.io/",
-                "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
+                "source": "https://github.com/lafranceinsoumise/theme-wp/tree/orange_and_green"
             },
-            "time": "2018-03-06T10:09:33+00:00"
+            "time": "2018-03-06T10:09:59+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -632,15 +632,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.9.7",
+            "version": "1.9.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.9.7"
+                "reference": "tags/1.9.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -752,16 +752,16 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.11.4",
+            "version": "1.11.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.11.4"
+                "reference": "tags/1.11.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.4.zip",
-                "reference": "tags/1.11.4",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.6.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
