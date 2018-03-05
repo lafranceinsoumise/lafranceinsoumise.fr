@@ -223,12 +223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "6d48c3312c673699c5c79cfcbc72e0ab5c92d56a"
+                "reference": "0e2147c9aecef3fdd449f989140815118618cab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/6d48c3312c673699c5c79cfcbc72e0ab5c92d56a",
-                "reference": "6d48c3312c673699c5c79cfcbc72e0ab5c92d56a",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/0e2147c9aecef3fdd449f989140815118618cab8",
+                "reference": "0e2147c9aecef3fdd449f989140815118618cab8",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +266,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-01-26T15:49:04+00:00"
+            "time": "2018-03-05T16:58:19+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
