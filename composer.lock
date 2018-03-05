@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9700aab203ab47980df2951e74612be2",
+    "content-hash": "d71643ad7cd0f709e4b0264583b6fe9c",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
+                "reference": "049797d727261bf27f2690430d935067710049c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+                "reference": "049797d727261bf27f2690430d935067710049c2",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -100,15 +100,18 @@
                 "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
                 "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
                 "reindex",
                 "roundcube",
                 "shopware",
@@ -121,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-08-09T07:53:48+00:00"
+            "time": "2017-12-29T09:13:20+00:00"
         },
         {
             "name": "elementor/elementor-pro",
@@ -598,7 +601,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/author-category.0.8.zip",
-                "reference": null,
+                "reference": "tags/0.8",
                 "shasum": null
             },
             "require": {
@@ -609,15 +612,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.9.2",
+            "version": "5.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.9.2"
+                "reference": "tags/5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -629,15 +632,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.9.6",
+            "version": "1.9.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.9.6"
+                "reference": "tags/1.9.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -698,7 +701,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/members.2.0.2.zip",
-                "reference": null,
+                "reference": "tags/2.0.2",
                 "shasum": null
             },
             "require": {
@@ -709,15 +712,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.10.1",
+            "version": "3.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.10.1"
+                "reference": "tags/3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.10.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.3.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -738,7 +741,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.2.zip",
-                "reference": null,
+                "reference": "tags/2.6.2",
                 "shasum": null
             },
             "require": {
@@ -758,7 +761,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.4.zip",
-                "reference": null,
+                "reference": "tags/1.11.4",
                 "shasum": null
             },
             "require": {
@@ -818,7 +821,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.3.1.zip",
-                "reference": null,
+                "reference": "tags/6.3.1",
                 "shasum": null
             },
             "require": {
@@ -829,15 +832,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "4.0",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/4.0"
+                "reference": "tags/4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.4.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.4.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
