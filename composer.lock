@@ -223,12 +223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "0e2147c9aecef3fdd449f989140815118618cab8"
+                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/0e2147c9aecef3fdd449f989140815118618cab8",
-                "reference": "0e2147c9aecef3fdd449f989140815118618cab8",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/1d730ba892cbb97618b7da06bb6ca15b231d182d",
+                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +266,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-03-05T16:58:19+00:00"
+            "time": "2018-03-06T10:09:33+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -732,16 +732,16 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.6.2"
+                "reference": "tags/2.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.2.zip",
-                "reference": "tags/2.6.2",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
