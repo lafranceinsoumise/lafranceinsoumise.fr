@@ -156,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "d3e93d6987199da44cf3299e5dee733ea3eb9f3e"
+                "reference": "6babf26d741296d61c8c8b78cbbc9159c6a8606f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/d3e93d6987199da44cf3299e5dee733ea3eb9f3e",
-                "reference": "d3e93d6987199da44cf3299e5dee733ea3eb9f3e",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/6babf26d741296d61c8c8b78cbbc9159c6a8606f",
+                "reference": "6babf26d741296d61c8c8b78cbbc9159c6a8606f",
                 "shasum": ""
             },
             "require": {
@@ -191,7 +191,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-02-13T17:53:10+00:00"
+            "time": "2018-03-20T11:47:47+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -632,15 +632,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "1.9.7",
+            "version": "1.9.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/1.9.7"
+                "reference": "tags/1.9.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.1.9.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -752,16 +752,16 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.11.4",
+            "version": "1.11.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.11.4"
+                "reference": "tags/1.11.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.4.zip",
-                "reference": "tags/1.11.4",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.11.6.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
