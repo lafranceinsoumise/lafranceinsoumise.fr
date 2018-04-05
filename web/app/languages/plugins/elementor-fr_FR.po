@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-02-21 15:53:28+0000\n"
+"PO-Revision-Date: 2018-03-14 08:56:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Elementor Page Builder - Stable (latest release)\n"
+
+#: includes/widgets/image-carousel.php:142
+msgid "Set how many slides are scrolled per swipe."
+msgstr "Définissez combien de diapositives défilent par glissement."
 
 #: includes/controls/groups/background.php:329
 msgid "Note: Attachment Fixed works only on desktop."
@@ -2403,6 +2407,7 @@ msgstr "https://your-link.com"
 
 #: includes/widgets/icon-box.php:159 includes/widgets/image-box.php:129
 #: includes/widgets/image-carousel.php:184
+#: includes/widgets/image-carousel.php:198
 #: includes/widgets/image-gallery.php:139 includes/widgets/image.php:132
 #: includes/widgets/image.php:146
 msgid "Link to"
@@ -2565,11 +2570,11 @@ msgstr "Compteur"
 msgid "Autoplay"
 msgstr "Lecture auto"
 
-#: includes/widgets/image-carousel.php:141
+#: includes/widgets/image-carousel.php:140
 msgid "Slides to Scroll"
 msgstr "Diapositives à faire défiler"
 
-#: includes/widgets/image-carousel.php:129
+#: includes/widgets/image-carousel.php:128
 msgid "Slides to Show"
 msgstr "Diapositives à afficher"
 
@@ -3305,7 +3310,7 @@ msgstr "Ajouter une nouvelle section"
 msgid "Loading"
 msgstr "Chargement"
 
-#. #-#-#-#-#  elementor-code.pot (Elementor 1.9.6)  #-#-#-#-#
+#. #-#-#-#-#  elementor-code.pot (Elementor 1.9.8)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: core/settings/page/manager.php:53 includes/admin.php:230
 #: includes/admin.php:587 includes/admin.php:744
@@ -3654,7 +3659,7 @@ msgstr "Haut"
 #: includes/elements/section.php:382 includes/elements/section.php:440
 #: includes/elements/section.php:460 includes/widgets/button.php:104
 #: includes/widgets/heading.php:105 includes/widgets/icon-box.php:97
-#: includes/widgets/icon.php:81 includes/widgets/image-carousel.php:132
+#: includes/widgets/icon.php:81 includes/widgets/image-carousel.php:131
 #: includes/widgets/image-carousel.php:215
 #: includes/widgets/image-carousel.php:504
 #: includes/widgets/image-gallery.php:157
