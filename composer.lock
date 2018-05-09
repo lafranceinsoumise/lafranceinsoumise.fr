@@ -156,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "5f41743d3ac410e015dc16c58ac8c11323d273c9"
+                "reference": "5e7a4a719cc778cade5c3b5f4ce9cd169e4054c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/5f41743d3ac410e015dc16c58ac8c11323d273c9",
-                "reference": "5f41743d3ac410e015dc16c58ac8c11323d273c9",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/5e7a4a719cc778cade5c3b5f4ce9cd169e4054c0",
+                "reference": "5e7a4a719cc778cade5c3b5f4ce9cd169e4054c0",
                 "shasum": ""
             },
             "require": {
@@ -191,7 +191,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-04-15T19:23:58+00:00"
+            "time": "2018-05-09T12:46:22+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -223,12 +223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d"
+                "reference": "d6392b902a5e51af06e9f50304d4fdc7b3b38b82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/1d730ba892cbb97618b7da06bb6ca15b231d182d",
-                "reference": "1d730ba892cbb97618b7da06bb6ca15b231d182d",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/d6392b902a5e51af06e9f50304d4fdc7b3b38b82",
+                "reference": "d6392b902a5e51af06e9f50304d4fdc7b3b38b82",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +266,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-03-06T10:09:33+00:00"
+            "time": "2018-05-09T12:47:26+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -692,16 +692,16 @@
         },
         {
             "name": "wpackagist-plugin/members",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/members/",
-                "reference": "tags/2.0.2"
+                "reference": "tags/2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/members.2.0.2.zip",
-                "reference": "tags/2.0.2",
+                "url": "https://downloads.wordpress.org/plugin/members.2.1.0.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -732,15 +732,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.6.4",
+            "version": "2.6.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.6.4"
+                "reference": "tags/2.6.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.6.7.zip",
                 "reference": null,
                 "shasum": null
             },
