@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3244ec47884915aaa24082de4868a58f",
+    "content-hash": "5a875943356997887bc2e39d15736e0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -125,30 +125,6 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
-        },
-        {
-            "name": "elementor/elementor-pro",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:guilro/elementor-pro.git",
-                "reference": "2fdd1cf7f9d3b0f6d515a213e13544c0144a1e4c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guilro/elementor-pro/zipball/2fdd1cf7f9d3b0f6d515a213e13544c0144a1e4c",
-                "reference": "2fdd1cf7f9d3b0f6d515a213e13544c0144a1e4c",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": ">=1.0.6"
-            },
-            "type": "wordpress-plugin",
-            "support": {
-                "source": "https://github.com/guilro/elementor-pro/tree/master",
-                "issues": "https://github.com/guilro/elementor-pro/issues"
-            },
-            "time": "2018-06-11T15:09:35+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -956,8 +932,7 @@
     "stability-flags": {
         "jlm2017/theme-wp": 20,
         "fi/fi-wordpress-addons": 20,
-        "guilro/wp-menu-export": 20,
-        "elementor/elementor-pro": 20
+        "guilro/wp-menu-export": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
