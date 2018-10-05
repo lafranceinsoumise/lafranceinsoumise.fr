@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dc0d45895401afe6cb24f1e95a37fc1",
+    "content-hash": "3244ec47884915aaa24082de4868a58f",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "elementor/elementor-pro",
@@ -612,16 +612,16 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.0.3"
+                "reference": "tags/5.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.3.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.4.zip",
+                "reference": "tags/5.0.4",
                 "shasum": null
             },
             "require": {
@@ -632,16 +632,16 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.1.6",
+            "version": "2.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.1.6"
+                "reference": "tags/2.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.1.6.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.2.4.zip",
+                "reference": "tags/2.2.4",
                 "shasum": null
             },
             "require": {
@@ -701,7 +701,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/members.2.1.0.zip",
-                "reference": null,
+                "reference": "tags/2.1.0",
                 "shasum": null
             },
             "require": {
@@ -712,16 +712,16 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "3.4",
+            "version": "3.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/3.4"
+                "reference": "tags/3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.3.4.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/redirection.3.5.zip",
+                "reference": "tags/3.5",
                 "shasum": null
             },
             "require": {
@@ -732,16 +732,16 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.8.0",
+            "version": "2.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.8.0"
+                "reference": "tags/2.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.8.0.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.8.2.zip",
+                "reference": "tags/2.8.2",
                 "shasum": null
             },
             "require": {
@@ -752,16 +752,16 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.12.1",
+            "version": "1.13.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.12.1"
+                "reference": "tags/1.13.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.12.1.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.13.0.zip",
+                "reference": "tags/1.13.0",
                 "shasum": null
             },
             "require": {
@@ -821,7 +821,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.7.9.1.zip",
-                "reference": null,
+                "reference": "tags/7.9.1",
                 "shasum": null
             },
             "require": {
@@ -832,16 +832,16 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.4.0.3.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.4.0.4.zip",
+                "reference": "tags/4.0.4",
                 "shasum": null
             },
             "require": {
@@ -849,6 +849,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-maintenance/"
+        },
+        {
+            "name": "wpackagist-theme/generatepress",
+            "version": "2.1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/generatepress/",
+                "reference": "2.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/generatepress.2.1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/generatepress/"
         }
     ],
     "packages-dev": [

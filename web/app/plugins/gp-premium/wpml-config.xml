@@ -1,0 +1,36 @@
+<wpml-config>
+  <admin-texts>
+    <key name="theme_mods_generatepress">
+      <key name="generate_copyright"/>
+    </key>
+    <key name="generate_blog_settings">
+      <key name="read_more"/>
+    </key>
+    <key name="generate_secondary_nav_settings">
+      <key name="secondary_nav_mobile_label"/>
+    </key>
+    <key name="generate_menu_plus_settings">
+      <key name="mobile_menu_label"/>
+    </key>
+    <key name="generate_hooks">
+      <key name="generate_wp_head"/>
+      <key name="generate_before_header"/>
+      <key name="generate_before_header_content"/>
+      <key name="generate_after_header_content"/>
+      <key name="generate_after_header"/>
+      <key name="generate_before_main_content"/>
+      <key name="generate_before_content"/>
+      <key name="generate_after_entry_header"/>
+      <key name="generate_after_content"/>
+      <key name="generate_before_right_sidebar_content"/>
+      <key name="generate_after_right_sidebar_content"/>
+      <key name="generate_before_left_sidebar_content"/>
+      <key name="generate_after_left_sidebar_content"/>
+      <key name="generate_before_footer"/>
+      <key name="generate_after_footer_widgets"/>
+      <key name="generate_before_footer_content"/>
+      <key name="generate_after_footer_content"/>
+      <key name="generate_wp_footer"/>
+    </key>
+  </admin-texts>
+</wpml-config>

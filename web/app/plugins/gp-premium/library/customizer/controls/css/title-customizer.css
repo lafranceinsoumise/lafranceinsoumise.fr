@@ -1,0 +1,9 @@
+.generatepress-customizer-title {
+	background: #FFF;
+	padding: 10px 12px;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	margin: 0 -12px;
+	font-size: 115%;
+	font-weight: bold;
+}

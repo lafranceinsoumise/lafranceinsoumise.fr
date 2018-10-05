@@ -1,0 +1,1 @@
+jQuery(document).ready(function(a){a(".wc-has-gallery .wc-product-image").hover(function(){a(this).find(".secondary-image").css("opacity","1")},function(){a(this).find(".secondary-image").css("opacity","0")})});
