@@ -199,12 +199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "c562d23e2326277899bbb9ba5ac8024f73aafb70"
+                "reference": "23fd29d1f24e65f6d5405dfce612498719277e3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/c562d23e2326277899bbb9ba5ac8024f73aafb70",
-                "reference": "c562d23e2326277899bbb9ba5ac8024f73aafb70",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/23fd29d1f24e65f6d5405dfce612498719277e3a",
+                "reference": "23fd29d1f24e65f6d5405dfce612498719277e3a",
                 "shasum": ""
             },
             "require": {
@@ -242,7 +242,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-07-04T10:35:24+00:00"
+            "time": "2018-10-18T15:15:12+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -608,16 +608,16 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.2.4"
+                "reference": "tags/2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.2.4.zip",
-                "reference": "tags/2.2.4",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.2.5.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -708,16 +708,16 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.8.2",
+            "version": "2.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.8.2"
+                "reference": "tags/2.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.8.2.zip",
-                "reference": "tags/2.8.2",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.9.0.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
