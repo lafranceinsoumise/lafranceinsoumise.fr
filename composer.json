@@ -42,10 +42,6 @@
     {
       "type": "vcs",
       "url": "git@github.com:guilro/wp-menu-export"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:guilro/elementor-pro"
     }
   ],
   "require": {
