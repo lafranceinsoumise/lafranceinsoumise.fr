@@ -612,15 +612,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.2.7",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.2.7"
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.2.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -692,15 +692,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "3.6.2",
+            "version": "3.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/3.6.2"
+                "reference": "tags/3.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.3.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.3.6.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -732,15 +732,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.13.2",
+            "version": "1.13.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.13.2"
+                "reference": "tags/1.13.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.13.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.13.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -832,15 +832,15 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "2.1.4",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "2.1.4"
+                "reference": "2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.2.1.4.zip",
+                "url": "https://downloads.wordpress.org/theme/generatepress.2.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
