@@ -132,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "0b4dac6fa784a04d401c665d632ff8f589f10874"
+                "reference": "dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/0b4dac6fa784a04d401c665d632ff8f589f10874",
-                "reference": "0b4dac6fa784a04d401c665d632ff8f589f10874",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6",
+                "reference": "dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                     "email": "fsimondev@gmail.com"
                 },
                 {
-                    "name": "Guillaume Royer",
+                    "name": "Jill Royer",
                     "email": "site@lafranceinsoumise.fr"
                 },
                 {
@@ -162,7 +162,7 @@
                     "email": "arthur@cheysson.fr"
                 }
             ],
-            "homepage": "https://github.com/jlm2017/wp-plugin",
+            "homepage": "https://github.com/lafranceinsoumise/wp-plugin",
             "keywords": [
                 "plugin",
                 "wordpress"
@@ -171,7 +171,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-11-12T10:26:12+00:00"
+            "time": "2018-12-04T15:42:00+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
