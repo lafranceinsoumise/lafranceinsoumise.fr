@@ -132,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6"
+                "reference": "ce19b5b1ef2d38680af2d12ac60f51ea94962f32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6",
-                "reference": "dfc9ee1ad48a267816e0c290d5e3cc07b05b17f6",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/ce19b5b1ef2d38680af2d12ac60f51ea94962f32",
+                "reference": "ce19b5b1ef2d38680af2d12ac60f51ea94962f32",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2018-12-04T15:42:00+00:00"
+            "time": "2019-01-11T17:21:40+00:00"
         },
         {
             "name": "guilro/wp-menu-export",
@@ -203,12 +203,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "1e04208dc2f935dcfcf2093fdb98e4c4f78edab5"
+                "reference": "159eefc9892b50a26b9b9f434c15aaea209a2350"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/1e04208dc2f935dcfcf2093fdb98e4c4f78edab5",
-                "reference": "1e04208dc2f935dcfcf2093fdb98e4c4f78edab5",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/159eefc9892b50a26b9b9f434c15aaea209a2350",
+                "reference": "159eefc9892b50a26b9b9f434c15aaea209a2350",
                 "shasum": ""
             },
             "require": {
@@ -246,7 +246,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2018-10-18T15:54:36+00:00"
+            "time": "2019-01-11T17:21:05+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -522,16 +522,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e"
+                "reference": "cfd5dc225767ca154853752abc93aeec040fcf36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
-                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/cfd5dc225767ca154853752abc93aeec040fcf36",
+                "reference": "cfd5dc225767ca154853752abc93aeec040fcf36",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +568,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2018-07-29T20:33:41+00:00"
+            "time": "2018-10-30T17:29:25+00:00"
         },
         {
             "name": "wpackagist-plugin/author-category",
@@ -592,15 +592,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.0.5",
+            "version": "5.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.0.5"
+                "reference": "tags/5.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -612,15 +612,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.3.4",
+            "version": "2.3.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.3.4"
+                "reference": "tags/2.3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.3.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -712,15 +712,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.9.2",
+            "version": "2.9.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.9.2"
+                "reference": "tags/2.9.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.9.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -732,15 +732,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.13.3",
+            "version": "1.14.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.13.3"
+                "reference": "tags/1.14.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.13.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.14.1.zip",
                 "reference": null,
                 "shasum": null
             },
