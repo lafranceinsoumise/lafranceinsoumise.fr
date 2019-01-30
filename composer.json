@@ -59,6 +59,7 @@
     "wpackagist-plugin/wordpress-seo": "^7.0",
     "wpackagist-plugin/redirection": "^3.0",
     "wpackagist-plugin/contact-form-7": "^5.0",
+    "wpackagist-plugin/wpcf7-recaptcha": "^1.0",
     "wpackagist-plugin/ultimate-category-excluder": "^1.1",
     "wpackagist-plugin/elementor": "^2.0",
     "wpackagist-plugin/siteorigin-panels": "^2.4",
