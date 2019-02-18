@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ff7a9f3979cac69adb8a79fe6a8d244",
+    "content-hash": "7b41424ff4ccf22180c11c5932b06238",
     "packages": [
         {
             "name": "composer/installers",
@@ -203,12 +203,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "c5930f7909677ffdaea449af0d7670d912ffafb6"
+                "reference": "4bbacba403e29bc6829445124badcb59bb18cf0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/c5930f7909677ffdaea449af0d7670d912ffafb6",
-                "reference": "c5930f7909677ffdaea449af0d7670d912ffafb6",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/4bbacba403e29bc6829445124badcb59bb18cf0e",
+                "reference": "4bbacba403e29bc6829445124badcb59bb18cf0e",
                 "shasum": ""
             },
             "require": {
@@ -246,7 +246,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2019-01-16T13:15:31+00:00"
+            "time": "2019-01-31T10:29:21+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -691,15 +691,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.4.5",
+            "version": "2.4.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.4.5"
+                "reference": "tags/2.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.4.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.4.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -771,15 +771,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "3.7.2",
+            "version": "3.7.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/3.7.2"
+                "reference": "tags/3.7.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.3.7.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.3.7.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -791,15 +791,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.10.0",
+            "version": "2.10.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.10.0"
+                "reference": "tags/2.10.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.10.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.10.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -811,15 +811,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.14.1",
+            "version": "1.15.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.14.1"
+                "reference": "tags/1.15.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.14.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.15.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -911,15 +911,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.1.2"
+                "reference": "tags/1.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -931,15 +931,15 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "2.2.1"
+                "reference": "2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.2.2.1.zip",
+                "url": "https://downloads.wordpress.org/theme/generatepress.2.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
