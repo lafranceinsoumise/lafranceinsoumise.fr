@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "568f0c13971d4473598786c2f9ca365f",
+    "content-hash": "01fcd913a0b5303d3a12590e45921c17",
     "packages": [
         {
             "name": "composer/installers",
@@ -531,7 +531,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -657,15 +657,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.4.7",
+            "version": "2.5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.4.7"
+                "reference": "tags/2.5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.4.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.5.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -757,15 +757,15 @@
         },
         {
             "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.10.1",
+            "version": "2.10.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.10.1"
+                "reference": "tags/2.10.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.10.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.10.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -777,15 +777,15 @@
         },
         {
             "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.15.2",
+            "version": "1.15.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.15.2"
+                "reference": "tags/1.15.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.15.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.15.3.zip",
                 "reference": null,
                 "shasum": null
             },
