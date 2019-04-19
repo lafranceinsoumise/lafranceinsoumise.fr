@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 abstract class Integration_Base extends Action_Base {
 
+	abstract public function handle_panel_request( array $data );
+
 	public static function global_api_control( $widget, $api_key = '', $label = '', $condition = [], $id = '' ) {
 		if ( empty( $api_key ) ) {
 			/* translators: 1: Integration label, 2: Setting Page link. */

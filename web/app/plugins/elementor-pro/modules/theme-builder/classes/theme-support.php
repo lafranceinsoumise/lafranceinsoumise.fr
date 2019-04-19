@@ -3,6 +3,7 @@ namespace ElementorPro\Modules\ThemeBuilder\Classes;
 
 use ElementorPro\Modules\ThemeBuilder\Module;
 use ElementorPro\Modules\ThemeBuilder\ThemeSupport\GeneratePress_Theme_Support;
+use ElementorPro\Modules\ThemeBuilder\ThemeSupport\Safe_Mode_Theme_Support;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -21,6 +22,9 @@ class Theme_Support {
 			case 'generatepress':
 				new GeneratePress_Theme_Support();
 				break;
+			case 'elementor-safe':
+				new Safe_Mode_Theme_Support();
+				break;
 		}
 
 		add_action( 'elementor/theme/register_locations', [ $this, 'after_register_locations' ], 99 );
@@ -35,7 +39,7 @@ class Theme_Support {
 		$overwrite_footer_location = false;
 
 		foreach ( $core_locations as $location => $settings ) {
-			if ( ! $location_manager->get_locations( $location ) ) {
+			if ( ! $location_manager->get_location( $location ) ) {
 				if ( 'header' === $location ) {
 					$overwrite_header_location = true;
 				} elseif ( 'footer' === $location ) {
@@ -48,7 +52,11 @@ class Theme_Support {
 		}
 
 		if ( $overwrite_header_location || $overwrite_footer_location ) {
-			$conditions_manager = Module::instance()->get_conditions_manager();
+			/** @var Module $theme_builder_module */
+			$theme_builder_module = Module::instance();
+
+			$conditions_manager = $theme_builder_module->get_conditions_manager();
+
 			$headers = $conditions_manager->get_documents_for_location( 'header' );
 			$footers = $conditions_manager->get_documents_for_location( 'footer' );
 

@@ -578,7 +578,7 @@ class Slides extends Base_Widget {
 		$this->add_control(
 			'transition_speed',
 			[
-				'label' => __( 'Transition Speed (ms)', 'elementor-pro' ),
+				'label' => __( 'Transition Speed', 'elementor-pro' ) . ' (ms)',
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
 			]

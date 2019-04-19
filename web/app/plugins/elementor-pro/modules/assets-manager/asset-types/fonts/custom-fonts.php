@@ -348,16 +348,21 @@ class Custom_Fonts extends Classes\Font_Base {
 		$post_css->get_stylesheet()->add_raw_css( $custom_css );
 	}
 
-	public function handle_panel_request() {
-		if ( ! isset( $_POST['font'] ) ) {
-			throw new \Exception( 'Font is required.' );
-		}
-		$font_family = sanitize_text_field( $_POST['font'] );
+	/**
+	 * @param array $data
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function handle_panel_request( array $data ) {
+		$font_family = sanitize_text_field( $data['font'] );
 
 		$font_face = $this->get_font_face_by_font_family( $font_family );
+
 		if ( empty( $font_face ) ) {
 			/* translators: %s: Font family. */
 			$error_message = sprintf( __( 'Font %s was not found.', 'elementor-pro' ), $font_family );
+
 			throw new \Exception( $error_message );
 		}
 

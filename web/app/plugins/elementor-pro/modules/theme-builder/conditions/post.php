@@ -16,6 +16,10 @@ class Post extends Condition_Base {
 		return 'singular';
 	}
 
+	public static function get_priority() {
+		return 40;
+	}
+
 	public function __construct( $data ) {
 		$this->post_type = get_post_type_object( $data['post_type'] );
 		$taxonomies = get_object_taxonomies( $data['post_type'], 'objects' );
@@ -31,17 +35,13 @@ class Post extends Condition_Base {
 		return $this->post_type->name;
 	}
 
-	public static function get_priority() {
-		return 40;
-	}
-
 	public function get_label() {
 		return $this->post_type->labels->singular_name;
 	}
 
 	public function get_all_label() {
 		/* translators: %s: Post type label. */
-		return sprintf( __( 'All %s', 'elementor-pro' ), $this->post_type->label );
+		return $this->post_type->label;
 	}
 
 	public function check( $args ) {
@@ -57,16 +57,22 @@ class Post extends Condition_Base {
 
 	public function register_sub_conditions() {
 		foreach ( $this->post_taxonomies as $slug => $object ) {
-			$condition = new In_Taxonomy( [
+			$in_taxonomy = new In_Taxonomy( [
 				'object' => $object,
 			] );
-			$this->register_sub_condition( $condition );
+			$this->register_sub_condition( $in_taxonomy );
+
+			if ( $object->hierarchical ) {
+				$in_sub_term = new In_Sub_Term( [
+					'object' => $object,
+				] );
+				$this->register_sub_condition( $in_sub_term );
+			}
 		}
 
-		if ( $this->post_type->hierarchical ) {
-			$condition = new Child_Of();
-			$this->register_sub_condition( $condition );
-		}
+		$by_author = new Post_Type_By_Author( $this->post_type );
+		$this->register_sub_condition( $by_author );
+
 	}
 
 	protected function _register_controls() {

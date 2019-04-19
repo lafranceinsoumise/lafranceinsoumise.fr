@@ -55,6 +55,8 @@ class Redirect extends Action_Base {
 	public function run( $record, $ajax_handler ) {
 		$redirect_to = $record->get_form_settings( 'redirect_to' );
 
+		$redirect_to = $record->replace_setting_shortcodes( $redirect_to, true );
+
 		if ( ! empty( $redirect_to ) && filter_var( $redirect_to, FILTER_VALIDATE_URL ) ) {
 			$ajax_handler->add_response_data( 'redirect_url', $redirect_to );
 		}

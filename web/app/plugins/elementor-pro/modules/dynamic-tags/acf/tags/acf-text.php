@@ -67,6 +67,7 @@ class ACF_Text extends Tag {
 
 					break;
 				case 'checkbox':
+					$value = (array) $value;
 					$values = [];
 					foreach ( $value as $item ) {
 						if ( isset( $field['choices'][ $item ] ) ) {
@@ -129,6 +130,7 @@ class ACF_Text extends Tag {
 			'google_map',
 			'date_picker',
 			'time_picker',
+			'date_time_picker',
 			'color_picker',
 		];
 	}

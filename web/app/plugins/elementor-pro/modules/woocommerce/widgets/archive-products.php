@@ -2,37 +2,23 @@
 namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Controls_Stack;
-use ElementorPro\Modules\QueryControl\Controls\Group_Control_Posts;
-use ElementorPro\Modules\QueryControl\Module;
+use Elementor\Group_Control_Typography;
+use Elementor\Scheme_Color;
+use Elementor\Scheme_Typography;
 use ElementorPro\Modules\Woocommerce\Classes\Products_Renderer;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Archive_Products extends Products_Base {
+class Archive_Products extends Products {
 
 	public function get_name() {
-		return 'woocommerce-archive-products';
+		return 'wc-archive-products';
 	}
 
 	public function get_title() {
 		return __( 'Archive Products', 'elementor-pro' );
-	}
-
-	public function get_icon() {
-		return 'eicon-products';
-	}
-
-	public function get_keywords() {
-		return [ 'woocommerce', 'shop', 'store', 'product', 'archive' ];
-	}
-
-	public function on_export( $element ) {
-		$element = Group_Control_Posts::on_export_remove_setting_from_element( $element, 'posts' );
-
-		return $element;
 	}
 
 	public function get_categories() {
@@ -42,210 +28,156 @@ class Archive_Products extends Products_Base {
 	}
 
 	protected function _register_controls() {
-		$this->start_controls_section(
-			'section_content',
+		parent::_register_controls();
+
+		$this->remove_responsive_control( 'columns' );
+		$this->remove_responsive_control( 'rows' );
+		$this->remove_control( 'orderby' );
+		$this->remove_control( 'order' );
+
+		$this->update_control(
+			'products_class',
 			[
-				'label' => __( 'Content', 'elementor-pro' ),
+				'prefix_class' => 'elementor-',
 			]
 		);
 
-		$this->add_responsive_control(
-			'columns',
-			[
-				'label' => __( 'Columns', 'elementor-pro' ),
-				'type' => Controls_Manager::NUMBER,
-				'prefix_class' => 'elementor-products-columns%s-',
-				'min' => 1,
-				'max' => 12,
-				'default' => 4,
-				'required' => true,
-				'device_args' => [
-					Controls_Stack::RESPONSIVE_TABLET => [
-						'required' => false,
-					],
-					Controls_Stack::RESPONSIVE_MOBILE => [
-						'required' => false,
-					],
-				],
-				'min_affected_device' => [
-					Controls_Stack::RESPONSIVE_DESKTOP => Controls_Stack::RESPONSIVE_TABLET,
-					Controls_Stack::RESPONSIVE_TABLET => Controls_Stack::RESPONSIVE_TABLET,
-				],
-			]
-		);
-
-		$this->add_control(
-			'rows',
-			[
-				'label' => __( 'Rows', 'elementor-pro' ),
-				'type' => Controls_Manager::NUMBER,
-				'default' => 4,
-				'render_type' => 'template',
-				'range' => [
-					'px' => [
-						'max' => 20,
-					],
-				],
-			]
-		);
-
-		$this->add_control(
+		// Should be kept as hidden since required for "allow_order"
+		$this->update_control(
 			'paginate',
 			[
-				'label' => __( 'Pagination', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => '',
+				'type' => 'hidden',
+				'default' => 'yes',
 			]
 		);
 
-		$this->add_control(
+		$this->update_control(
 			'allow_order',
 			[
-				'label' => __( 'Allow Order', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => '',
-				'condition' => [
-					'paginate' => 'yes',
-				],
+				'default' => 'yes',
+			]
+		);
+
+		$this->start_injection( [
+			'at' => 'before',
+			'of' => 'allow_order',
+		] );
+
+		if ( ! get_theme_support( 'woocommerce' ) ) {
+			$this->add_control(
+				'wc_notice_wc_not_supported',
+				[
+					'type' => Controls_Manager::RAW_HTML,
+					'raw' => __( 'Looks like you are using WooCommerce, while your theme does not support it. Please consider switching themes.', 'elementor-pro' ),
+					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+				]
+			);
+		}
+
+		$this->add_control(
+			'wc_notice_use_customizer',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => __( 'To change the Products Archive’s layout, go to Appearance > Customize.', 'elementor-pro' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
 
 		$this->add_control(
+			'wc_notice_wrong_data',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => __( 'The editor preview might look different from the live site. Please make sure to check the frontend.', 'elementor-pro' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+			]
+		);
+
+		$this->end_injection();
+
+		$this->update_control(
 			'show_result_count',
 			[
-				'label' => __( 'Show Result Count', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => '',
-				'condition' => [
-					'paginate' => 'yes',
-				],
+				'default' => 'yes',
+			]
+		);
+
+		$this->update_control(
+			'section_query',
+			[
+				'type' => 'hidden',
+			]
+		);
+
+		$this->update_control(
+			Products_Renderer::QUERY_CONTROL_NAME . '_post_type',
+			[
+				'default' => 'current_query',
+			]
+		);
+
+		$this->start_controls_section(
+			'section_advanced',
+			[
+				'label' => __( 'Advanced', 'elementor-pro' ),
+			]
+		);
+
+		$this->add_control(
+			'nothing_found_message',
+			[
+				'label' => __( 'Nothing Found Message', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'default' => __( 'It seems we can\'t find what you\'re looking for.', 'elementor-pro' ),
 			]
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'section_query',
+			'section_nothing_found_style',
 			[
-				'label' => __( 'Query', 'elementor-pro' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => Controls_Manager::TAB_STYLE,
+				'label' => __( 'Nothing Found Message', 'elementor-pro' ),
+				'condition' => [
+					'nothing_found_message!' => '',
+				],
+			]
+		);
+
+		$this->add_control(
+			'nothing_found_color',
+			[
+				'label' => __( 'Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'scheme' => [
+					'type' => Scheme_Color::get_type(),
+					'value' => Scheme_Color::COLOR_3,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-products-nothing-found' => 'color: {{VALUE}};',
+				],
 			]
 		);
 
 		$this->add_group_control(
-			Group_Control_Posts::get_type(),
+			Group_Control_Typography::get_type(),
 			[
-				'name' => 'query',
-				'post_type' => 'product',
-				'fields_options' => [
-					'post_type' => [
-						'default' => 'current_query',
-						'options' => [
-							'current_query' => __( 'Current Query', 'elementor-pro' ),
-							'product' => __( 'Latest Products', 'elementor-pro' ),
-							'sale' => __( 'Sale', 'elementor-pro' ),
-							'featured' => __( 'Featured', 'elementor-pro' ),
-							'by_id' => _x( 'Manual Selection', 'Posts Query Control', 'elementor-pro' ),
-						],
-					],
-					'product_cat_ids' => [
-						'condition' => [
-							'query_post_type!' => [
-								'current_query',
-								'by_id',
-							],
-						],
-					],
-					'product_tag_ids' => [
-						'condition' => [
-							'query_post_type!' => [
-								'current_query',
-								'by_id',
-							],
-						],
-					],
-				],
-				'exclude' => [
-					'authors',
-				],
+				'name' => 'nothing_found_typography',
+				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'selector' => '{{WRAPPER}} .elementor-products-nothing-found',
 			]
 		);
-
-		$this->add_control(
-			'advanced',
-			[
-				'label' => __( 'Advanced', 'elementor-pro' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'orderby',
-			[
-				'label' => __( 'Order by', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => 'date',
-				'options' => [
-					'date' => __( 'Date', 'elementor-pro' ),
-					'title' => __( 'Title', 'elementor-pro' ),
-					'price' => __( 'Price', 'elementor-pro' ),
-					'popularity' => __( 'Popularity', 'elementor-pro' ),
-					'rating' => __( 'Rating', 'elementor-pro' ),
-					'rand' => __( 'Random', 'elementor-pro' ),
-					'menu_order' => __( 'Menu Order', 'elementor-pro' ),
-				],
-				'condition' => [
-					'query_post_type!' => 'current_query',
-				],
-			]
-		);
-
-		$this->add_control(
-			'order',
-			[
-				'label' => __( 'Order', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => 'desc',
-				'options' => [
-					'asc' => __( 'ASC', 'elementor-pro' ),
-					'desc' => __( 'DESC', 'elementor-pro' ),
-				],
-				'condition' => [
-					'query_post_type!' => 'current_query',
-				],
-			]
-		);
-
-		Module::add_exclude_controls( $this );
 
 		$this->end_controls_section();
+	}
 
-		parent::_register_controls();
+	public function render_no_results() {
+		echo '<div class="elementor-nothing-found elementor-products-nothing-found">' . esc_html( $this->get_settings( 'nothing_found_message' ) ) . '</div>';
 	}
 
 	protected function render() {
+		add_action( 'woocommerce_shortcode_products_loop_no_results', [ $this, 'render_no_results' ] );
 
-		if ( WC()->session ) {
-			wc_print_notices();
-		}
-
-		// For Products_Renderer.
-		if ( ! isset( $GLOBALS['post'] ) ) {
-			$GLOBALS['post'] = null; // WPCS: override ok.
-		}
-
-		$settings = $this->get_settings();
-
-		$shortcode = new Products_Renderer( $settings, 'products' );
-
-		$content = $shortcode->get_content();
-
-		if ( $content ) {
-			echo $content;
-		} elseif ( $this->get_settings( 'nothing_found_message' ) ) {
-			echo '<div class="elementor-nothing-found elementor-products-nothing-found">' . esc_html( $this->get_settings( 'nothing_found_message' ) ) . '</div>';
-		}
+		parent::render();
 	}
-
-	public function render_plain_content() {}
 }

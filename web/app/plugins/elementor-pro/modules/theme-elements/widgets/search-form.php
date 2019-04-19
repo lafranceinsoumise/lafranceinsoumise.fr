@@ -739,12 +739,14 @@ class Search_Form extends Base {
 			<?php if ( 'full_screen' === $settings['skin'] ) : ?>
 			<div class="elementor-search-form__toggle">
 				<i class="fa fa-search" aria-hidden="true"></i>
+				<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 			</div>
 			<?php endif; ?>
 			<div class="elementor-search-form__container">
 				<?php if ( 'minimal' === $settings['skin'] ) : ?>
 					<div class="elementor-search-form__icon">
 						<i class="fa fa-search" aria-hidden="true"></i>
+						<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 					</div>
 				<?php endif; ?>
 				<input <?php echo $this->get_render_attribute_string( 'input' ); ?>>
@@ -752,6 +754,7 @@ class Search_Form extends Base {
 				<button class="elementor-search-form__submit" type="submit">
 					<?php if ( 'icon' === $settings['button_type'] ) : ?>
 						<i <?php echo $this->get_render_attribute_string( 'icon' ); ?> aria-hidden="true"></i>
+						<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 					<?php elseif ( ! empty( $settings['button_text'] ) ) : ?>
 						<?php echo $settings['button_text']; ?>
 					<?php endif; ?>
@@ -774,7 +777,7 @@ class Search_Form extends Base {
 			var iconClass = 'fa fa-search';
 
 			if ( 'arrow' === settings.icon ) {
-				if ( elementor.config.is_rtl ) {
+				if ( elementorCommon.config.isRTL ) {
 					iconClass = 'fa fa-arrow-left';
 				} else {
 					iconClass = 'fa fa-arrow-right';
@@ -785,12 +788,14 @@ class Search_Form extends Base {
 			<# if ( 'full_screen' === settings.skin ) { #>
 				<div class="elementor-search-form__toggle">
 					<i class="fa fa-search" aria-hidden="true"></i>
+					<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 				</div>
 			<# } #>
 			<div class="elementor-search-form__container">
 				<# if ( 'minimal' === settings.skin ) { #>
 					<div class="elementor-search-form__icon">
 						<i class="fa fa-search" aria-hidden="true"></i>
+						<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 					</div>
 				<# } #>
 				<input type="search"
@@ -803,6 +808,7 @@ class Search_Form extends Base {
 					<button class="elementor-search-form__submit" type="submit">
 						<# if ( 'icon' === settings.button_type ) { #>
 							<i class="{{ iconClass }}" aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php esc_html_e( 'Submit', 'elementor-pro' ); ?></span>
 						<# } else if ( settings.button_text ) { #>
 							{{{ settings.button_text }}}
 						<# } #>

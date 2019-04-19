@@ -39,16 +39,22 @@ abstract class Products_Base extends Widget_Base {
 			[
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'wc-products',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'elementor-products-grid elementor-',
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'column_gap',
 			[
 				'label' => __( 'Columns Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
+					'size' => 20,
+				],
+				'tablet_default' => [
+					'size' => 20,
+				],
+				'mobile_default' => [
 					'size' => 20,
 				],
 				'range' => [
@@ -63,12 +69,18 @@ abstract class Products_Base extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'row_gap',
 			[
 				'label' => __( 'Rows Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
+					'size' => 40,
+				],
+				'tablet_default' => [
+					'size' => 40,
+				],
+				'mobile_default' => [
 					'size' => 40,
 				],
 				'range' => [
@@ -170,6 +182,7 @@ abstract class Products_Base extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-product__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-category__title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -179,7 +192,9 @@ abstract class Products_Base extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-product__title',
+				'selector' => '{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-product__title, ' .
+								'{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-category__title',
+
 			]
 		);
 
@@ -198,6 +213,7 @@ abstract class Products_Base extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-product__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.elementor-wc-products ul.products li.product .woocommerce-loop-category__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -441,7 +457,7 @@ abstract class Products_Base extends Widget_Base {
 				'label' => __( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}..elementor-wc-products ul.products li.product .button:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}}.elementor-wc-products ul.products li.product .button:hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);

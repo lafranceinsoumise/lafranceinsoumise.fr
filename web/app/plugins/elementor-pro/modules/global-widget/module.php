@@ -22,8 +22,6 @@ class Module extends Module_Base {
 	public function __construct() {
 		parent::__construct();
 
-		Plugin::elementor()->editor->add_editor_template( __DIR__ . '/views/panel-template.php' );
-
 		$this->add_hooks();
 	}
 
@@ -44,8 +42,15 @@ class Module extends Module_Base {
 
 		$widgets_types = $elementor->widgets_manager->get_widget_types();
 
-		$widget_templates = array_filter( $templates_manager->get_source( 'local' )->get_items(), function( $template ) use ( $widgets_types ) {
-			return ! empty( $template['widgetType'] ) && ! empty( $widgets_types[ $template['widgetType'] ] );
+		$widget_templates = array_filter( $templates_manager->get_source( 'local' )->get_items( [ 'type' => self::TEMPLATE_TYPE ] ), function( $template ) use ( $widgets_types ) {
+			if ( empty( $template['widgetType'] ) || empty( $widgets_types[ $template['widgetType'] ] ) ) {
+				return false;
+			}
+
+			// Open the stack in order to include the widget controls in initial editor config
+			$widgets_types[ $template['widgetType'] ]->get_stack( false );
+
+			return true;
 		} );
 
 		$widget_templates_content = [];
@@ -133,6 +138,8 @@ class Module extends Module_Base {
 	}
 
 	/**
+	 * TODO: Remove. On Elementor 2.3.3 it's handled by the Documents Manager.
+	 *
 	 * Remove user edit capabilities.
 	 *
 	 * Filters the user capabilities to disable editing in admin.
@@ -210,20 +217,15 @@ class Module extends Module_Base {
 	}
 
 	private function delete_included_posts_css( $template_id ) {
-		$including_post_ids = get_post_meta( $template_id, self::INCLUDED_POSTS_LIST_META_KEY, true );
+		$including_post_ids = (array) get_post_meta( $template_id, self::INCLUDED_POSTS_LIST_META_KEY, true );
 
 		if ( empty( $including_post_ids ) ) {
 			return;
 		}
 
-		global $wpdb;
-
-		$wpdb->query(
-			$wpdb->prepare(
-				"DELETE FROM {$wpdb->postmeta} WHERE `meta_key` = '_elementor_css' AND `post_id` IN (%s);",
-				implode( ',', array_keys( $including_post_ids ) )
-			)
-		);
+		foreach ( array_keys( $including_post_ids ) as $post_id ) {
+			delete_post_meta( $post_id, '_elementor_css' );
+		}
 	}
 
 	/**
@@ -233,10 +235,15 @@ class Module extends Module_Base {
 		$documents_manager->register_document_type( self::TEMPLATE_TYPE, Documents\Widget::get_class_full_name() );
 	}
 
+	public function on_elementor_editor_init() {
+		Plugin::elementor()->common->add_template( __DIR__ . '/views/panel-template.php' );
+	}
+
 	private function add_hooks() {
 		add_action( 'elementor/documents/register', [ $this, 'register_documents' ] );
 		add_action( 'elementor/template-library/after_save_template', [ $this, 'set_template_widget_type_meta' ], 10, 2 );
 		add_action( 'elementor/template-library/after_update_template', [ $this, 'on_template_update' ], 10, 2 );
+		add_action( 'elementor/editor/init', [ $this, 'on_elementor_editor_init' ] );
 		add_action( 'elementor/editor/after_save', [ $this, 'set_global_widget_included_posts_list' ], 10, 2 );
 
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'add_templates_localize_data' ] );

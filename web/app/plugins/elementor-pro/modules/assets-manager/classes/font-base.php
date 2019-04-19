@@ -28,7 +28,7 @@ class Font_Base extends Assets_Base {
 		return '';
 	}
 
-	public function handle_panel_request() {
+	public function handle_panel_request( array $data ) {
 		return [];
 	}
 

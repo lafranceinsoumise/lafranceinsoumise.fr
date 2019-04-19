@@ -60,7 +60,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_responsive_control(
 			'layout',
 			[
-				'label' => __( 'Layout', 'elementor-pro' ),
+				'label' => __( 'Position', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
@@ -95,7 +95,6 @@ class Call_To_Action extends Base_Widget {
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
 				],
-				'show_label' => false,
 			]
 		);
 
@@ -338,7 +337,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_control(
 			'ribbon_horizontal_position',
 			[
-				'label' => __( 'Horizontal Position', 'elementor-pro' ),
+				'label' => __( 'Position', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
@@ -489,7 +488,6 @@ class Call_To_Action extends Base_Widget {
 				'condition' => [
 					'skin' => 'classic',
 				],
-				'separator' => 'before',
 			]
 		);
 
@@ -555,7 +553,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_control(
 			'graphic_image_width',
 			[
-				'label' => __( 'Size (%)', 'elementor-pro' ),
+				'label' => __( 'Size', 'elementor-pro' ) . ' (%)',
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'default' => [
@@ -749,11 +747,6 @@ class Call_To_Action extends Base_Widget {
 						],
 						[
 							'name' => 'description',
-							'operator' => '!==',
-							'value' => '',
-						],
-						[
-							'name' => 'button',
 							'operator' => '!==',
 							'value' => '',
 						],
@@ -1315,7 +1308,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_control(
 			'content_animation_duration',
 			[
-				'label' => __( 'Animation Duration', 'elementor-pro' ),
+				'label' => __( 'Animation Duration', 'elementor-pro' ) . ' (ms)',
 				'type' => Controls_Manager::SLIDER,
 				'render_type' => 'template',
 				'default' => [
@@ -1503,7 +1496,6 @@ class Call_To_Action extends Base_Widget {
 		$title_tag = $settings['title_tag'];
 		$wrapper_tag = 'div';
 		$button_tag = 'a';
-		$link_url = empty( $settings['link']['url'] ) ? false : $settings['link']['url'];
 		$bg_image = '';
 		$content_animation = $settings['content_animation'];
 		$animation_class = '';
@@ -1583,20 +1575,23 @@ class Call_To_Action extends Base_Widget {
 
 		}
 
-		if ( ! empty( $link_url ) ) {
+		if ( ! empty( $settings['link']['url'] ) ) {
+			$link_element = 'button';
 
 			if ( 'box' === $settings['link_click'] ) {
 				$wrapper_tag = 'a';
 				$button_tag = 'button';
-				$this->add_render_attribute( 'wrapper', 'href', $link_url );
-				if ( $settings['link']['is_external'] ) {
-					$this->add_render_attribute( 'wrapper', 'target', '_blank' );
-				}
-			} else {
-				$this->add_render_attribute( 'button', 'href', $link_url );
-				if ( $settings['link']['is_external'] ) {
-					$this->add_render_attribute( 'button', 'target', '_blank' );
-				}
+				$link_element = 'wrapper';
+			}
+
+			$this->add_render_attribute( $link_element, 'href', $settings['link']['url'] );
+
+			if ( $settings['link']['is_external'] ) {
+				$this->add_render_attribute( $link_element, 'target', '_blank' );
+			}
+
+			if ( $settings['link']['nofollow'] ) {
+				$this->add_render_attribute( $link_element, 'rel', 'nofollow' );
 			}
 		}
 

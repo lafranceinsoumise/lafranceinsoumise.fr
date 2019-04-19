@@ -16,11 +16,14 @@ final class Manager {
 	public function __construct() {
 		$modules = [
 			'query-control',
+			'custom-attributes',
 			'custom-css',
 			// role-manager Must be before Global Widget
 			'role-manager',
 			'global-widget',
 			'assets-manager',
+			'popup',
+			'motion-fx',
 
 			// Modules with Widgets.
 			'theme-builder',
@@ -43,6 +46,7 @@ final class Manager {
 			'dynamic-tags',
 			'sticky',
 			'wp-cli',
+			'link-actions',
 		];
 
 		foreach ( $modules as $module_name ) {

@@ -17,8 +17,7 @@ class Conditions_Repeater extends Control_Repeater {
 	}
 
 	protected function get_default_settings() {
-		return [
-			'is_repeater' => true,
+		return array_merge( parent::get_default_settings(), [
 			'render_type' => 'none',
 			'fields' => [
 				[
@@ -74,6 +73,6 @@ class Conditions_Repeater extends Control_Repeater {
 					],
 				],
 			],
-		];
+		] );
 	}
 }

@@ -94,16 +94,6 @@ class Skin_Cards extends Skin_Base {
 	}
 
 	public function register_additional_design_image_controls() {
-
-		$this->update_control(
-			'section_design_image',
-			[
-				'condition' => [
-					$this->get_control_id( 'thumbnail!' ) => 'none',
-				],
-			]
-		);
-
 		$this->update_control(
 			'image_spacing',
 			[

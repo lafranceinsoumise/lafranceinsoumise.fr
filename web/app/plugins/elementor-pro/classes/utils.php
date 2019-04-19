@@ -28,9 +28,13 @@ class Utils {
 			'show_in_nav_menus' => true,
 		];
 
+		// Keep for backwards compatibility
 		if ( ! empty( $args['post_type'] ) ) {
 			$post_type_args['name'] = $args['post_type'];
+			unset( $args['post_type'] );
 		}
+
+		$post_type_args = wp_parse_args( $post_type_args, $args );
 
 		$_post_types = get_post_types( $post_type_args, 'objects' );
 
@@ -40,7 +44,16 @@ class Utils {
 			$post_types[ $post_type ] = $object->label;
 		}
 
-		return $post_types;
+		/**
+		 * Public Post types
+		 *
+		 * Allow 3rd party plugins to filters the public post types elementor should work on
+		 *
+		 * @since 2.3.0
+		 *
+		 * @param array $post_types Elementor supported public post types.
+		 */
+		return apply_filters( 'elementor_pro/utils/get_public_post_types', $post_types );
 	}
 
 	public static function get_client_ip() {
@@ -190,6 +203,8 @@ class Utils {
 				/* translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term */
 				$title = sprintf( __( '%1$s: %2$s', 'elementor-pro' ), $tax->labels->singular_name, $title );
 			}
+		} elseif ( is_404() ) {
+			$title = __( 'Page Not Found', 'elementor-pro' );
 		} // End if().
 
 		/**

@@ -265,11 +265,17 @@ class Getresponse extends Integration_Base {
 		return $subscriber;
 	}
 
-	public function handle_panel_request() {
-		if ( ! empty( $_POST['api_key'] ) && 'default' === $_POST['api_key'] ) {
+	/**
+	 * @param array $data
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function handle_panel_request( array $data ) {
+		if ( ! empty( $data['api_key'] ) && 'default' === $data['api_key'] ) {
 			$api_key = $this->get_global_api_key();
-		} elseif ( ! empty( $_POST['custom_api_key'] ) ) {
-			$api_key = $_POST['custom_api_key'];
+		} elseif ( ! empty( $data['custom_api_key'] ) ) {
+			$api_key = $data['custom_api_key'];
 		}
 
 		if ( empty( $api_key ) ) {
@@ -277,13 +283,12 @@ class Getresponse extends Integration_Base {
 		}
 
 		$handler = new Getresponse_Handler( $api_key );
-		if ( 'lists' === $_POST['getresponse_action'] ) {
+
+		if ( 'lists' === $data['getresponse_action'] ) {
 			return $handler->get_lists();
 		}
 
-		if ( 'get_fields' === $_POST['getresponse_action'] ) {
-			return $handler->get_fields();
-		}
+		return $handler->get_fields();
 	}
 
 	public function ajax_validate_api_token() {

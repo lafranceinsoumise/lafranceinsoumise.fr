@@ -36,6 +36,11 @@ class Post_Content extends Widget_Base {
 		return [ 'content', 'post' ];
 	}
 
+	public function show_in_panel() {
+		// By default don't show.
+		return false;
+	}
+
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'section_style',
@@ -171,6 +176,8 @@ class Post_Content extends Widget_Base {
 				Plugin::elementor()->frontend->add_content_filter();
 
 				return;
+			} else {
+				$content = apply_filters( 'the_content', $content );
 			}
 		} // End if().
 

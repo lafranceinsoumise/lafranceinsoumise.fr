@@ -64,7 +64,7 @@ class Preview_Manager {
 
 		$new_query_vars = $document->get_preview_as_query_args();
 
-		Plugin::elementor()->db->switch_to_query( $new_query_vars );
+		Plugin::elementor()->db->switch_to_query( $new_query_vars, true );
 	}
 
 	/**

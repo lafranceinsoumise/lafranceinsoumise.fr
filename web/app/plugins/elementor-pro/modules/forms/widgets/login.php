@@ -399,7 +399,7 @@ class Login extends Base_Widget {
 				'label' => __( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-form-fields-wrapper' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-form-fields-wrapper label' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -412,7 +412,7 @@ class Login extends Base_Widget {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'label_typography',
-				'selector' => '{{WRAPPER}} .elementor-form-fields-wrapper',
+				'selector' => '{{WRAPPER}} .elementor-form-fields-wrapper label',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -564,8 +564,6 @@ class Login extends Base_Widget {
 		$this->add_group_control(
 			Group_Control_Border::get_type(), [
 				'name' => 'button_border',
-				'placeholder' => '1px',
-				'default' => '1px',
 				'selector' => '{{WRAPPER}} .elementor-button',
 				'separator' => 'before',
 			]

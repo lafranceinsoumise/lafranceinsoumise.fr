@@ -37,10 +37,6 @@ class Product_Post extends Post {
 		return __( 'Product Post', 'elementor-pro' );
 	}
 
-	public function get_remote_library_type() {
-		return 'single product';
-	}
-
 	protected static function get_editor_panel_categories() {
 		$categories = parent::get_editor_panel_categories();
 
@@ -58,5 +54,13 @@ class Product_Post extends Post {
 		);
 
 		return $categories;
+	}
+
+	protected function get_remote_library_config() {
+		$config = parent::get_remote_library_config();
+
+		$config['category'] = 'single product';
+
+		return $config;
 	}
 }

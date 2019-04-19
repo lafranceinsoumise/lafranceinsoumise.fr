@@ -44,7 +44,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'url',
 			[
-				'label' => __( 'URL', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'placeholder' => 'https://www.facebook.com/your-page/',
 				'default' => 'https://www.facebook.com/elemntor/',
 				'label_block' => true,
@@ -82,7 +82,7 @@ class Facebook_Page extends Widget_Base {
 		$this->add_control(
 			'show_cover',
 			[
-				'label' => __( 'Cover', 'elementor-pro' ),
+				'label' => __( 'Cover Photo', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 			]
@@ -148,6 +148,7 @@ class Facebook_Page extends Widget_Base {
 			'data-hide-cover' => $settings['show_cover'] ? 'false' : 'true', // if `show` - don't hide.
 			'data-show-facepile' => $settings['show_facepile'] ? 'true' : 'false',
 			'data-hide-cta' => $settings['show_cta'] ? 'false' : 'true', // if `show` - don't hide.
+			'data-adapt-container-width' => 'true', // try to adapt width (min 180px max 500px)
 			// The style prevent's the `widget.handleEmptyWidget` to set it as an empty widget.
 			'style' => 'min-height: 1px;height:' . $height,
 		];

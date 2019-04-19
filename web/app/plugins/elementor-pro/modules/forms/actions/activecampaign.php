@@ -260,13 +260,19 @@ class Activecampaign extends Classes\Integration_Base {
 		return $subscriber;
 	}
 
-	public function handle_panel_request() {
-		if ( ! empty( $_POST['api_cred'] ) && 'default' === $_POST['api_cred'] ) {
+	/**
+	 * @param array $data
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function handle_panel_request( array $data ) {
+		if ( ! empty( $data['api_cred'] ) && 'default' === $data['api_cred'] ) {
 			$api_key = $this->get_global_api_key();
 			$api_url = $this->get_global_api_url();
-		} elseif ( ! empty( $_POST['api_key'] ) && ! empty( $_POST['api_url'] ) ) {
-			$api_key = $_POST['api_key'];
-			$api_url = $_POST['api_url'];
+		} elseif ( ! empty( $data['api_key'] ) && ! empty( $data['api_url'] ) ) {
+			$api_key = $data['api_key'];
+			$api_url = $data['api_url'];
 		}
 
 		if ( empty( $api_key ) ) {
@@ -278,9 +284,8 @@ class Activecampaign extends Classes\Integration_Base {
 		}
 
 		$handler = new Classes\Activecampaign_Handler( $api_key, $api_url );
-		if ( 'activecampaign_list' === $_POST['activecampaign_action'] ) {
-			return $handler->get_lists();
-		}
+
+		return $handler->get_lists();
 	}
 
 	public function ajax_validate_api_token() {

@@ -31,7 +31,14 @@ class Posts_Archive_Skin_Cards extends Skin_Cards {
 		if ( ! $wp_query->found_posts ) {
 			$this->render_loop_header();
 
-			echo '<div class="elementor-nothing-found elementor-posts-nothing-found">' . esc_html( $this->parent->get_settings( 'nothing_found_message' ) ) . '</div>';
+			$should_escape = apply_filters( 'elementor_pro/theme_builder/archive/escape_nothing_found_message', true );
+
+			$message = $this->parent->get_settings_for_display( 'nothing_found_message' );
+			if ( $should_escape ) {
+				$message = esc_html( $message );
+			}
+
+			echo '<div class="elementor-nothing-found elementor-posts-nothing-found">' . $message . '</div>';
 
 			$this->render_loop_footer();
 

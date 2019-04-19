@@ -35,12 +35,13 @@ class License_Command extends \WP_CLI_Command {
 				'expired' => 'Your License Has Expired',
 				'missing' => 'Your license is missing. Please check your key again.',
 				'revoked' => 'Your license key has been cancelled',
+				'key_mismatch' => 'Your license is invalid for this domain. Please check your key again.',
 			];
 
 			if ( isset( $errors[ $data['error'] ] ) ) {
 				$error_msg = $errors[ $data['error'] ];
 			} else {
-				$error_msg = 'An error occurred. (' . $data->error . ')';
+				$error_msg = 'An error occurred. (' . $data['error'] . ')';
 			}
 
 			\WP_CLI::error( $error_msg );

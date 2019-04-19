@@ -5,6 +5,7 @@ use Elementor\Core\Base\Document;
 use Elementor\Elements_Manager;
 use Elementor\TemplateLibrary\Source_Local;
 use ElementorPro\Base\Module_Base;
+use ElementorPro\Classes\Utils;
 use ElementorPro\Modules\ThemeBuilder\Classes;
 use ElementorPro\Modules\ThemeBuilder\Documents\Single;
 use ElementorPro\Modules\ThemeBuilder\Documents\Theme_Document;
@@ -107,15 +108,17 @@ class Module extends Module_Base {
 
 		$settings = array_replace_recursive( $settings, [
 			'i18n' => [
+				'publish_settings' => __( 'Publish Settings', 'elementor-pro' ),
+				'conditions' => __( 'Conditions', 'elementor-pro' ),
 				'display_conditions' => __( 'Display Conditions', 'elementor-pro' ),
 				'choose' => __( 'Choose', 'elementor-pro' ),
 				'add_condition' => __( 'Add Condition', 'elementor-pro' ),
-				'save_without_conditions' => __( 'Save Without Conditions', 'elementor-pro' ),
-				'conditions_title' => sprintf( __( 'Where Do You Want to Display Your %s?', 'elementor-pro' ), $document::get_title() ),
-				'conditions_description' => sprintf( __( 'Set the conditions that determine where your %s is used throughout your site.<br />For example, choose \'Entire Site\' to display the template across your site.', 'elementor-pro' ), $document::get_title() ),
+				'conditions_title' => sprintf( __( 'Where Do You Want to Display Your %s?', 'elementor-pro' ), $document->get_post_type_title() ),
+				'conditions_description' => sprintf( __( 'Set the conditions that determine where your %s is used throughout your site.<br />For example, choose \'Entire Site\' to display the template across your site.', 'elementor-pro' ), $document->get_post_type_title() ),
+				'conditions_publish_screen_description' => __( 'Apply current template to these pages.', 'elementor-pro' ),
+				'save_and_close' => __( 'Save & Close', 'elementor-pro' ),
 			],
 			'theme_builder' => [
-				'groups' => Plugin::elementor()->documents->get_groups(),
 				'types' => $types_manager->get_types_config(),
 				'conditions' => $conditions_manager->get_conditions_config(),
 				'template_conditions' => ( new Classes\Template_Conditions() )->get_config(),
@@ -154,7 +157,9 @@ class Module extends Module_Base {
 	}
 
 	public function print_location_field() {
-		$locations = $this->get_locations_manager()->get_locations_without_core();
+		$locations = $this->get_locations_manager()->get_locations( [
+			'public' => true,
+		] );
 
 		if ( empty( $locations ) ) {
 			return;
@@ -182,12 +187,11 @@ class Module extends Module_Base {
 	}
 
 	public function print_post_type_field() {
-		$post_types = get_post_types( [
+		$post_types = Utils::get_public_post_types( [
 			'exclude_from_search' => false,
-		], 'objects' );
+		] );
 
 		unset( $post_types['product'] );
-
 		if ( empty( $post_types ) ) {
 			return;
 		}
@@ -197,18 +201,19 @@ class Module extends Module_Base {
 				<?php echo __( 'Select Post Type', 'elementor-pro' ); ?>
 			</label>
 			<div class="elementor-form-field__select__wrapper">
-				<select id="elementor-new-template__form__post-type" class="elementor-form-field__select" name="<?php echo Single::SUB_TYPE_META_KEY; ?>">
+				<select id="elementor-new-template__form__post-type" class="elementor-form-field__select" name="<?php echo Single::REMOTE_CATEGORY_META_KEY; ?>">
 					<option value="">
 						<?php echo __( 'Select', 'elementor-pro' ); ?>...
 					</option>
 					<?php
 
-					foreach ( $post_types as $post_type => $post_type_config ) {
+					foreach ( $post_types as $post_type => $label ) {
 						$doc_type = Plugin::elementor()->documents->get_document_type( $post_type );
 						$doc_name = ( new $doc_type() )->get_name();
 
 						if ( 'post' === $doc_name || 'page' === $doc_name ) {
-							echo sprintf( '<option value="%1$s">%2$s</option>', $post_type, $post_type_config->labels->singular_name );
+							$post_type_object = get_post_type_object( $post_type );
+							echo sprintf( '<option value="%1$s">%2$s</option>', $post_type, $post_type_object->labels->singular_name );
 						}
 					}
 
@@ -255,6 +260,50 @@ class Module extends Module_Base {
 		return $document instanceof Theme_Document;
 	}
 
+	public function on_elementor_editor_init() {
+		Plugin::elementor()->common->add_template( __DIR__ . '/views/panel-template.php' );
+	}
+
+	public function add_finder_items( array $categories ) {
+		$categories['general']['items']['theme-builder'] = [
+			'title' => __( 'Theme Builder', 'elementor-pro' ),
+			'icon' => 'library-save',
+			'url' => $this->get_admin_templates_url(),
+			'keywords' => [ 'template', 'header', 'footer', 'single', 'archive', 'search', '404', 'library' ],
+		];
+
+		$categories['create']['items']['theme-template'] = [
+			'title' => __( 'Add New Theme Template', 'elementor-pro' ),
+			'icon' => 'plus-circle',
+			'url' => $this->get_admin_templates_url() . '#add_new',
+			'keywords' => [ 'template', 'theme', 'new', 'create' ],
+		];
+
+		return $categories;
+	}
+
+	/**
+	 * Add New item to admin menu.
+	 *
+	 * Fired by `admin_menu` action.
+	 *
+	 * @since 2.4.0
+	 * @access public
+	 */
+	public function admin_menu() {
+		add_submenu_page( Source_Local::ADMIN_MENU_SLUG, '', __( 'Theme Builder', 'elementor-pro' ), 'publish_posts', $this->get_admin_templates_url( true ) );
+	}
+
+	private function get_admin_templates_url( $relative = false ) {
+		$base_url = Source_Local::ADMIN_MENU_SLUG;
+
+		if ( ! $relative ) {
+			$base_url = admin_url( $base_url );
+		}
+
+		return add_query_arg( 'tabs_group', 'theme', $base_url );
+	}
+
 	public function __construct() {
 		parent::__construct();
 
@@ -266,17 +315,21 @@ class Module extends Module_Base {
 		$this->add_component( 'preview', new Classes\Preview_Manager() );
 		$this->add_component( 'locations', new Classes\Locations_Manager() );
 
-		Plugin::elementor()->editor->add_editor_template( __DIR__ . '/views/panel-template.php' );
 		add_action( 'elementor/controls/controls_registered', [ $this, 'register_controls' ] );
 
 		// Editor
+		add_action( 'elementor/editor/init', [ $this, 'on_elementor_editor_init' ] );
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'localize_settings' ] );
 
 		// Admin
 		add_action( 'admin_head', [ $this, 'admin_head' ] );
+		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 		add_action( 'manage_' . Source_Local::CPT . '_posts_custom_column', [ $this, 'admin_columns_content' ], 10, 2 );
 		add_action( 'elementor/template-library/create_new_dialog_fields', [ $this, 'print_location_field' ] );
 		add_action( 'elementor/template-library/create_new_dialog_fields', [ $this, 'print_post_type_field' ] );
 		add_filter( 'elementor/template-library/create_new_dialog_types', [ $this, 'create_new_dialog_types' ] );
+
+		// Common
+		add_filter( 'elementor/finder/categories', [ $this, 'add_finder_items' ] );
 	}
 }

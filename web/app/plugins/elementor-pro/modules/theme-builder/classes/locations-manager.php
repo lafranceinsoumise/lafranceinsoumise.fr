@@ -17,6 +17,9 @@ class Locations_Manager {
 	protected $locations = [];
 	protected $did_locations = [];
 	protected $current_location;
+	protected $locations_queue = [];
+	protected $locations_printed = [];
+	protected $locations_skipped = [];
 
 	public function __construct() {
 		$this->set_core_locations();
@@ -117,7 +120,7 @@ class Locations_Manager {
 		}
 
 		if ( $location ) {
-			$location_settings = $this->get_locations( $location );
+			$location_settings = $this->get_location( $location );
 			$location_documents = Module::instance()->get_conditions_manager()->get_documents_for_location( $location );
 			if ( empty( $location_documents ) ) {
 				$this->inspector_log( [
@@ -129,7 +132,8 @@ class Locations_Manager {
 			}
 
 			if ( 'single' === $location || 'archive' === $location ) {
-				$theme_document = $location_documents[0];
+				$first_key = key( $location_documents );
+				$theme_document = $location_documents[ $first_key ];
 
 				if ( Module::is_preview() && $theme_document->get_autosave_id() ) {
 					$theme_document = $theme_document->get_autosave();
@@ -184,15 +188,65 @@ class Locations_Manager {
 		return $template;
 	}
 
+	/**
+	 * @param string $location
+	 * @param integer $document_id
+	 */
+	public function add_doc_to_location( $location, $document_id ) {
+		if ( isset( $this->locations_skipped[ $location ][ $document_id ] ) ) {
+			// Don't re-add skipped documents.
+			return;
+		}
+
+		if ( ! isset( $this->locations_queue[ $location ] ) ) {
+			$this->locations_queue[ $location ] = [];
+		}
+
+		$this->locations_queue[ $location ][ $document_id ] = $document_id;
+	}
+
+	public function remove_doc_from_location( $location, $document_id ) {
+		unset( $this->locations_queue[ $location ][ $document_id ] );
+	}
+
+	public function skip_doc_in_location( $location, $document_id ) {
+		$this->remove_doc_from_location( $location, $document_id );
+
+		if ( ! isset( $this->locations_skipped[ $location ] ) ) {
+			$this->locations_skipped[ $location ] = [];
+		}
+
+		$this->locations_skipped[ $location ][ $document_id ] = $document_id;
+	}
+
+	public function is_printed( $location, $document_id ) {
+		return isset( $this->locations_printed[ $location ][ $document_id ] );
+	}
+
+	public function set_is_printed( $location, $document_id ) {
+		if ( ! isset( $this->locations_printed[ $location ] ) ) {
+			$this->locations_printed[ $location ] = [];
+		}
+
+		$this->locations_printed[ $location ][ $document_id ] = $document_id;
+		$this->remove_doc_from_location( $location, $document_id );
+	}
+
 	public function do_location( $location ) {
-		$documents = Module::instance()->get_conditions_manager()->get_documents_for_location( $location );
+		/** @var Theme_Document[] $documents_by_conditions */
+		$documents_by_conditions = Module::instance()->get_conditions_manager()->get_documents_for_location( $location );
+
+		foreach ( $documents_by_conditions as $document_id => $document ) {
+			$this->add_doc_to_location( $location, $document_id );
+		}
+
+		// Locations Queue can contain documents that added manually.
+		if ( empty( $this->locations_queue[ $location ] ) ) {
+			return false;
+		}
 
 		if ( is_singular() ) {
 			Utils::set_global_authordata();
-		}
-
-		if ( empty( $documents ) ) {
-			return false;
 		}
 
 		/**
@@ -208,16 +262,45 @@ class Locations_Manager {
 		 */
 		do_action( "elementor/theme/before_do_{$location}", $this );
 
-		foreach ( $documents as $document ) {
+		while ( ! empty( $this->locations_queue[ $location ] ) ) {
+			$document_id = key( $this->locations_queue[ $location ] );
+			$document = Module::instance()->get_document( $document_id );
+
+			if ( ! $document || $this->is_printed( $location, $document_id ) ) {
+				$this->skip_doc_in_location( $location, $document_id );
+				continue;
+			}
+
+			// `$documents_by_conditions` can pe current post even if it's a draft.
+			if ( empty( $documents_by_conditions[ $document_id ] ) ) {
+
+				$post_status = get_post_status( $document_id );
+
+				if ( 'publish' !== $post_status ) {
+					$this->inspector_log( [
+						'location' => $location,
+						'document' => $document,
+						'description' => 'Added manually but skipped because is not Published',
+					] );
+
+					$this->skip_doc_in_location( $location, $document_id );
+					continue;
+				}
+			}
+
 			$this->inspector_log( [
 				'location' => $location,
 				'document' => $document,
+				'description' => isset( $documents_by_conditions[ $document_id ] ) ? 'Added By Condition' : 'Added Manually',
+
 			] );
 
 			$this->current_location = $location;
 			$document->print_content();
 			$this->did_locations[] = $this->current_location;
 			$this->current_location = null;
+
+			$this->set_is_printed( $location, $document_id );
 		}
 
 		/**
@@ -251,7 +334,7 @@ class Locations_Manager {
 			$document = Module::instance()->get_document( $post_id );
 			if ( $document ) {
 				$document_location = $document->get_location();
-				$location_settings = $this->get_locations( $document_location );
+				$location_settings = $this->get_location( $document_location );
 				// If is a `content` document or the theme is not support the document location (header/footer and etc.).
 				if ( $location_settings && ! $location_settings['edit_in_content'] ) {
 					$content = '<div class="elementor-theme-builder-content-area">' . __( 'Content Area', 'elementor-pro' ) . '</div>';
@@ -262,13 +345,22 @@ class Locations_Manager {
 		return $content;
 	}
 
-	public function get_locations( $location = null ) {
-		if ( is_null( $location ) ) {
-			return $this->locations;
+	public function get_locations( $filter_args = [] ) {
+		$this->register_locations();
+
+		if ( is_string( $filter_args ) ) {
+			_deprecated_argument( __FUNCTION__, '2.4.0', 'Passing a location name is deprecated. Use `get_location` instead.' );
+			return $this->get_location( $filter_args );
 		}
 
-		if ( isset( $this->locations[ $location ] ) ) {
-			$location_config = $this->locations[ $location ];
+		return wp_list_filter( $this->locations, $filter_args );
+	}
+
+	public function get_location( $location ) {
+		$locations = $this->get_locations();
+
+		if ( isset( $locations[ $location ] ) ) {
+			$location_config = $locations[ $location ];
 		} else {
 			$location_config = [];
 		}
@@ -297,6 +389,7 @@ class Locations_Manager {
 		$args = wp_parse_args( $args, [
 			'label' => $location,
 			'multiple' => false,
+			'public' => true,
 			'edit_in_content' => true,
 			'hook' => 'elementor/theme/' . $location,
 		] );
@@ -326,17 +419,15 @@ class Locations_Manager {
 	}
 
 	public function get_locations_without_core() {
-		$locations = $this->get_locations();
+		_deprecated_function( __FUNCTION__, '2.4.0', 'Use get_locations( [ \'public\'=> true ] )' );
 
-		foreach ( $this->core_locations as $location => $settings ) {
-			unset( $locations[ $location ] );
-		}
-
-		return $locations;
+		return $this->get_locations( [
+			'public' => true,
+		] );
 	}
 
 	public function location_exits( $location = '', $check_match = false ) {
-		$location_exits = ! ! $this->get_locations( $location );
+		$location_exits = ! ! $this->get_location( $location );
 
 		if ( $location_exits && $check_match ) {
 			$location_exits = ! ! Module::instance()->get_conditions_manager()->get_documents_for_location( $location );
@@ -357,22 +448,26 @@ class Locations_Manager {
 		$this->core_locations = [
 			'header' => [
 				'is_core' => true,
+				'public' => false,
 				'label' => __( 'Header', 'elementor-pro' ),
 				'edit_in_content' => false,
 			],
 			'footer' => [
 				'is_core' => true,
+				'public' => false,
 				'label' => __( 'Footer', 'elementor-pro' ),
 				'edit_in_content' => false,
 			],
 			'archive' => [
 				'is_core' => true,
+				'public' => false,
 				'overwrite' => true,
 				'label' => __( 'Archive', 'elementor-pro' ),
 				'edit_in_content' => true,
 			],
 			'single' => [
 				'is_core' => true,
+				'public' => false,
 				'label' => __( 'Single', 'elementor-pro' ),
 				'edit_in_content' => true,
 			],
@@ -389,7 +484,7 @@ class Locations_Manager {
 		$url = '';
 
 		if ( isset( $args['location'] ) ) {
-			$location_settings = $this->get_locations( $args['location'] );
+			$location_settings = $this->get_location( $args['location'] );
 			if ( $location_settings ) {
 				$args['location'] = $location_settings['label'];
 			}

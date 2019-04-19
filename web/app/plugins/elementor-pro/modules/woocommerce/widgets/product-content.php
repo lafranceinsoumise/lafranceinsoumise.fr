@@ -10,7 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Product_Content extends Post_Content {
 
 	public function get_name() {
-		// `theme` prefix is to avoid conflicts with a dynamic-tag with same name.
 		return 'woocommerce-product-content';
 	}
 

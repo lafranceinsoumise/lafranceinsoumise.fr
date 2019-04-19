@@ -146,7 +146,7 @@ class Author_Box extends Base {
 		$this->add_control(
 			'link_to',
 			[
-				'label' => __( 'Link To', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'' => __( 'None', 'elementor-pro' ),
@@ -196,7 +196,7 @@ class Author_Box extends Base {
 		$this->add_control(
 			'author_website',
 			[
-				'label' => __( 'Link To', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => __( 'https://your-link.com', 'elementor-pro' ),
 				'condition' => [

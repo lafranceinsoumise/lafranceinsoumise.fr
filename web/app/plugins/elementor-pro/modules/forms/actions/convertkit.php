@@ -225,11 +225,17 @@ class Convertkit extends Integration_Base {
 		return $subscriber;
 	}
 
-	public function handle_panel_request() {
-		if ( ! empty( $_POST['api_key'] ) && 'default' === $_POST['api_key'] ) {
+	/**
+	 * @param array $data
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function handle_panel_request( array $data ) {
+		if ( ! empty( $data['api_key'] ) && 'default' === $data['api_key'] ) {
 			$api_key = $this->get_global_api_key();
-		} elseif ( ! empty( $_POST['custom_api_key'] ) ) {
-			$api_key = $_POST['custom_api_key'];
+		} elseif ( ! empty( $data['custom_api_key'] ) ) {
+			$api_key = $data['custom_api_key'];
 		}
 
 		if ( empty( $api_key ) ) {
@@ -237,9 +243,8 @@ class Convertkit extends Integration_Base {
 		}
 
 		$handler = new Convertkit_Handler( $api_key );
-		if ( 'convertkit_get_forms' === $_POST['convertkit_action'] ) {
-			return $handler->get_forms_and_tags();
-		}
+
+		return $handler->get_forms_and_tags();
 	}
 
 	public function ajax_validate_api_token() {

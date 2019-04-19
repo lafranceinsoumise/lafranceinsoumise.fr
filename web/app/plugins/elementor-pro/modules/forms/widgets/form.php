@@ -11,6 +11,7 @@ use ElementorPro\Classes\Utils;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
 use ElementorPro\Modules\Forms\Classes\Form_Base;
 use ElementorPro\Modules\Forms\Module;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -31,7 +32,7 @@ class Form extends Form_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'form', 'field', 'button', 'mailchimp', 'drip', 'mailpoet', 'convertkit', 'getresponse', 'recaptcha', 'zapier', 'webhook', 'activecampaign' ];
+		return [ 'form', 'forms', 'field', 'button', 'mailchimp', 'drip', 'mailpoet', 'convertkit', 'getresponse', 'recaptcha', 'zapier', 'webhook', 'activecampaign', 'slack', 'discord', 'mailerlite' ];
 	}
 
 	protected function _register_controls() {
@@ -89,18 +90,6 @@ class Form extends Form_Base {
 				'label' => __( 'Label', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
-			]
-		);
-
-		$repeater->add_control(
-			'field_value',
-			[
-				'label' => __( 'Value', 'elementor-pro' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => '',
-				'condition' => [
-					'field_type' => 'hidden',
-				],
 			]
 		);
 
@@ -243,6 +232,9 @@ class Form extends Form_Base {
 			[
 				'label' => __( 'HTML', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
+				'dynamic' => [
+					'active' => true,
+				],
 				'conditions' => [
 					'terms' => [
 						[
@@ -370,9 +362,42 @@ class Form extends Form_Base {
 		);
 
 		$repeater->add_control(
-			'_id',
+			'field_value',
 			[
-				'label' => __( 'Custom ID', 'elementor-pro' ),
+				'label' => __( 'Default Value', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
+				'dynamic' => [
+					'active' => true,
+				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'operator' => 'in',
+							'value' => [
+								'text',
+								'email',
+								'textarea',
+								'url',
+								'tel',
+								'radio',
+								'select',
+								'number',
+								'date',
+								'time',
+								'hidden',
+							],
+						],
+					],
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'custom_id',
+			[
+				'label' => __( 'ID', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'description' => __( 'Please make sure the ID is unique and not used elsewhere in this form. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-pro' ),
 				'render_type' => 'none',
@@ -417,14 +442,14 @@ class Form extends Form_Base {
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'_id' => 'name',
+						'custom_id' => 'name',
 						'field_type' => 'text',
 						'field_label' => __( 'Name', 'elementor-pro' ),
 						'placeholder' => __( 'Name', 'elementor-pro' ),
 						'width' => '100',
 					],
 					[
-						'_id' => 'email',
+						'custom_id' => 'email',
 						'field_type' => 'email',
 						'required' => 'true',
 						'field_label' => __( 'Email', 'elementor-pro' ),
@@ -432,7 +457,7 @@ class Form extends Form_Base {
 						'width' => '100',
 					],
 					[
-						'_id' => 'message',
+						'custom_id' => 'message',
 						'field_type' => 'textarea',
 						'field_label' => __( 'Message', 'elementor-pro' ),
 						'placeholder' => __( 'Message', 'elementor-pro' ),
@@ -1045,8 +1070,6 @@ class Form extends Form_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(), [
 				'name' => 'button_border',
-				'placeholder' => '1px',
-				'default' => '1px',
 				'selector' => '{{WRAPPER}} .elementor-button',
 			]
 		);
@@ -1189,7 +1212,21 @@ class Form extends Form_Base {
 	}
 
 	protected function render() {
-		$instance = $this->get_active_settings();
+		$instance = $this->get_settings_for_display();
+
+		if ( ! Plugin::elementor()->editor->is_edit_mode() ) {
+			/**
+			 * Elementor form Pre render.
+			 *
+			 * Fires before the from is rendered in the frontend
+			 *
+			 * @since 2.4.0
+			 *
+			 * @param array $instance current form settings
+			 * @param Form $this current form widget instance
+			 */
+			do_action( 'elementor-pro/forms/pre_render', $instance, $this );
+		}
 
 		$this->add_render_attribute(
 			[
@@ -1300,7 +1337,6 @@ class Form extends Form_Base {
 
 					if ( 'hidden' === $item['field_type'] ) {
 						$item['field_label'] = false;
-						$this->add_render_attribute( 'input' . $item_index, 'value', $item['field_value'] );
 					}
 					?>
 				<div <?php echo $this->get_render_attribute_string( 'field-group' . $item_index ); ?>>
@@ -1360,7 +1396,10 @@ class Form extends Form_Base {
 						<span <?php echo $this->get_render_attribute_string( 'content-wrapper' ); ?>>
 							<?php if ( ! empty( $instance['button_icon'] ) ) : ?>
 								<span <?php echo $this->get_render_attribute_string( 'icon-align' ); ?>>
-									<i class="<?php echo esc_attr( $instance['button_icon'] ); ?>"></i>
+									<i class="<?php echo esc_attr( $instance['button_icon'] ); ?>" aria-hidden="true"></i>
+									<?php if ( empty( $instance['button_text'] ) ) : ?>
+										<span class="elementor-screen-only"><?php _e( 'Submit', 'elementor-pro' ); ?></span>
+									<?php endif; ?>
 								</span>
 							<?php endif; ?>
 							<?php if ( ! empty( $instance['button_text'] ) ) : ?>
@@ -1375,6 +1414,7 @@ class Form extends Form_Base {
 	}
 
 	protected function _content_template() {
+		$submit_text = esc_html__( 'Submit', 'elementor-pro' );
 		?>
 		<form class="elementor-form" id="{{settings.form_id}}" name="{{settings.form_name}}">
 			<div class="elementor-form-fields-wrapper elementor-labels-{{settings.label_position}}">
@@ -1431,7 +1471,7 @@ class Form extends Form_Base {
 								break;
 
 							case 'textarea':
-								inputField = '<textarea class="elementor-field elementor-field-textual elementor-size-' + settings.input_size + ' ' + itemClasses + '" name="form_field_' + i + '" id="form_field_' + i + '" rows="' + item.rows + '" ' + required + ' ' + placeholder + '></textarea>';
+								inputField = '<textarea class="elementor-field elementor-field-textual elementor-size-' + settings.input_size + ' ' + itemClasses + '" name="form_field_' + i + '" id="form_field_' + i + '" rows="' + item.rows + '" ' + required + ' ' + placeholder + '>' + item.field_value + '</textarea>';
 								break;
 
 							case 'select':
@@ -1443,12 +1483,21 @@ class Form extends Form_Base {
 									inputField = '<div class="elementor-field elementor-select-wrapper ' + itemClasses + '">';
 									inputField += '<select class="elementor-field-textual elementor-size-' + settings.input_size + '" name="form_field_' + i + '" id="form_field_' + i + '" ' + required + multiple + size + ' >';
 									for ( var x in options ) {
+										var option_value = options[ x ];
+										var option_label = options[ x ];
+										var option_id = 'form_field_option' + i + x;
+
 										if ( options[ x ].indexOf( '|' ) > -1 ) {
 											var label_value = options[ x ].split( '|' );
-											inputField += '<option value="' + label_value[1] + '">' + label_value[0] + '</option>';
-										} else {
-											inputField += '<option value="' + options[ x ] + '">' + options[ x ] + '</option>';
+											option_label = label_value[0];
+											option_value = label_value[1];
 										}
+
+										view.addRenderAttribute( option_id, 'value', option_value );
+										if ( option_value ===  item.field_value ) {
+											view.addRenderAttribute( option_id, 'selected', 'selected' );
+										}
+										inputField += '<option ' + view.getRenderAttributeString( option_id ) + '>' + option_label + '</option>';
 									}
 									inputField += '</select></div>';
 								}
@@ -1466,14 +1515,29 @@ class Form extends Form_Base {
 									inputField = '<div class="elementor-field-subgroup ' + itemClasses + ' ' + item.inline_list + '">';
 
 									for ( var x in options ) {
+										var option_value = options[ x ];
+										var option_label = options[ x ];
+										var option_id = 'form_field_' + item.field_type + i + x;
 										if ( options[x].indexOf( '|' ) > -1 ) {
 											var label_value = options[x].split( '|' );
-											inputField += '<span class="elementor-field-option"><input type="' + item.field_type + '" value="' + label_value[1] + '" id="form_field_' + i + '-' + x + '" name="form_field_' + i + multiple + '" ' + required + '> ';
-											inputField += '<label for="form_field_' + i + '-' + x + '">' + label_value[0] + '</label></span>';
-										} else {
-											inputField += '<span class="elementor-field-option"><input type="' + item.field_type + '" value="' + options[ x ] + '" id="form_field_' + i + '-' + x + '" name="form_field_' + i + multiple + '" ' + required + '> ';
-											inputField += '<label for="form_field_' + i + '-' + x + '">' + options[ x ] + '</label></span>';
+											option_label = label_value[0];
+											option_value = label_value[1];
 										}
+
+										view.addRenderAttribute( option_id, {
+											value: option_value,
+											type: item.field_type,
+											id: 'form_field_' + i + '-' + x,
+											name: 'form_field_' + i + multiple
+										} );
+
+										if ( option_value ===  item.field_value ) {
+											view.addRenderAttribute( option_id, 'checked', 'checked' );
+										}
+
+										inputField += '<span class="elementor-field-option"><input ' + view.getRenderAttributeString( option_id ) + ' ' + required + '> ';
+										inputField += '<label for="form_field_' + i + '-' + x + '">' + option_label + '</label></span>';
+
 									}
 
 									inputField += '</div>';
@@ -1487,7 +1551,7 @@ class Form extends Form_Base {
 							case 'number':
 							case 'search':
 								itemClasses = 'elementor-field-textual ' + itemClasses;
-								inputField = '<input size="1" type="' + item.field_type + '" class="elementor-field elementor-size-' + settings.input_size + ' ' + itemClasses + '" name="form_field_' + i + '" id="form_field_' + i + '" ' + required + ' ' + placeholder + ' >';
+								inputField = '<input size="1" type="' + item.field_type + '" value="' + item.field_value + '" class="elementor-field elementor-size-' + settings.input_size + ' ' + itemClasses + '" name="form_field_' + i + '" id="form_field_' + i + '" ' + required + ' ' + placeholder + ' >';
 								break;
 							default:
 								inputField = elementor.hooks.applyFilters( 'elementor_pro/forms/content_template/field/' + item.field_type, '', item, i, settings );
@@ -1527,7 +1591,8 @@ class Form extends Form_Base {
 							<span>
 								<# if ( settings.button_icon ) { #>
 									<span class="elementor-button-icon elementor-align-icon-{{ settings.button_icon_align }}">
-										<i class="{{ settings.button_icon }}"></i>
+										<i class="{{ settings.button_icon }}" aria-hidden="true"></i>
+										<span class="elementor-screen-only"><?php echo $submit_text; ?></span>
 									</span>
 								<# } #>
 

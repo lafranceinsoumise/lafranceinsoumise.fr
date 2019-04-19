@@ -32,5 +32,6 @@ class Module extends BaseModule {
 	 */
 	public function __construct() {
 		\WP_CLI::add_command( 'elementor-pro license', '\ElementorPro\Modules\WpCli\License_Command' );
+		\WP_CLI::add_command( 'elementor-pro update', '\ElementorPro\Modules\WpCli\Update' );
 	}
 }

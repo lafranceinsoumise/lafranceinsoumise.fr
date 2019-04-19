@@ -11,6 +11,10 @@ class Not_Found404 extends Condition_Base {
 		return 'singular';
 	}
 
+	public static function get_priority() {
+		return 20;
+	}
+
 	public function get_name() {
 		return 'not_found404';
 	}

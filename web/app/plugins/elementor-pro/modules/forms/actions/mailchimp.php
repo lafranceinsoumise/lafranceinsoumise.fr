@@ -173,8 +173,10 @@ class Mailchimp extends Integration_Base {
 			$subscriber['interests'] = [];
 		}
 
-		foreach ( $form_settings['mailchimp_groups'] as $mailchimp_group ) {
-			$subscriber['interests'][ $mailchimp_group ] = true;
+		if ( is_array( $form_settings['mailchimp_groups'] ) ) {
+			foreach ( $form_settings['mailchimp_groups'] as $mailchimp_group ) {
+				$subscriber['interests'][ $mailchimp_group ] = true;
+			}
 		}
 
 		if ( 'default' === $form_settings['mailchimp_api_key_source'] ) {
@@ -242,11 +244,17 @@ class Mailchimp extends Integration_Base {
 		wp_send_json_success();
 	}
 
-	public function handle_panel_request() {
-		if ( ! empty( $_POST['use_global_api_key'] ) && 'default' === $_POST['use_global_api_key'] ) {
+	/**
+	 * @param array $data
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function handle_panel_request( array $data ) {
+		if ( ! empty( $data['use_global_api_key'] ) && 'default' === $data['use_global_api_key'] ) {
 			$api_key = $this->get_global_api_key();
-		} elseif ( ! empty( $_POST['api_key'] ) ) {
-			$api_key = $_POST['api_key'];
+		} elseif ( ! empty( $data['api_key'] ) ) {
+			$api_key = $data['api_key'];
 		}
 
 		if ( empty( $api_key ) ) {
@@ -254,12 +262,12 @@ class Mailchimp extends Integration_Base {
 		}
 
 		$handler = new Mailchimp_Handler( $api_key );
-		if ( 'lists' === $_POST['mailchimp_action'] ) {
+
+		if ( 'lists' === $data['mailchimp_action'] ) {
 			return $handler->get_lists();
 		}
-		if ( 'list_details' === $_POST['mailchimp_action'] ) {
-			return $handler->get_list_details( $_POST['mailchimp_list'] );
-		}
+
+		return $handler->get_list_details( $data['mailchimp_list'] );
 	}
 
 	public function register_admin_fields( Settings $settings ) {

@@ -42,6 +42,10 @@ class Toolset_Date extends Toolset_Base {
 				'style' => 'text',
 			] );
 
+			if ( empty( $timestamp ) ) {
+				return $value;
+			}
+
 			if ( 'human' === $format ) {
 				/* translators: %s: Human readable date/time. */
 				$value = human_time_diff( $timestamp );

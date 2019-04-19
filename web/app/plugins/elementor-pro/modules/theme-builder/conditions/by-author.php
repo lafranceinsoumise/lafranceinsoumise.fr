@@ -13,12 +13,12 @@ class By_Author extends Condition_Base {
 		return 'singular';
 	}
 
-	public function get_name() {
-		return 'by_author';
+	public static function get_priority() {
+		return 40;
 	}
 
-	public static function get_priority() {
-		return 50;
+	public function get_name() {
+		return 'by_author';
 	}
 
 	public function get_label() {
@@ -26,7 +26,7 @@ class By_Author extends Condition_Base {
 	}
 
 	public function check( $args = null ) {
-		return get_post_field( 'post_author' ) === $args['id'];
+		return is_singular() && get_post_field( 'post_author' ) === $args['id'];
 	}
 
 	protected function _register_controls() {

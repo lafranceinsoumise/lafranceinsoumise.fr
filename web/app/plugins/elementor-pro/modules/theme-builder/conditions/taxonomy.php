@@ -15,6 +15,10 @@ class Taxonomy extends Condition_Base {
 		return 'archive';
 	}
 
+	public static function get_priority() {
+		return 70;
+	}
+
 	public function __construct( $data ) {
 		parent::__construct();
 

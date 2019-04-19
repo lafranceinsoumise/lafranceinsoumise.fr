@@ -58,7 +58,7 @@ class Admin {
 		 */
 		$locale_settings = apply_filters( 'elementor_pro/admin/localize_settings', $locale_settings );
 
-		wp_localize_script(
+		Utils::print_js_config(
 			'elementor-pro-admin',
 			'ElementorProConfig',
 			$locale_settings
@@ -67,10 +67,6 @@ class Admin {
 
 	public function remove_go_pro_menu() {
 		remove_action( 'admin_menu', [ Plugin::elementor()->settings, 'register_pro_menu' ], Settings::MENU_PRIORITY_GO_PRO );
-	}
-
-	public function hide_getting_started_menu() {
-		remove_submenu_page( 'elementor', 'elementor-getting-started' );
 	}
 
 	public function register_admin_tools_fields( Tools $tools ) {
@@ -149,6 +145,19 @@ class Admin {
 		return $params;
 	}
 
+	public function add_finder_items( array $categories ) {
+		$settings_url = Settings::get_url();
+
+		$categories['settings']['items']['integrations'] = [
+			'title' => __( 'Integrations', 'elementor-pro' ),
+			'icon' => 'integration',
+			'url' => $settings_url . '#tab-integrations',
+			'keywords' => [ 'integrations', 'settings', 'typekit', 'facebook', 'recaptcha', 'mailchimp', 'drip', 'activecampaign', 'getresponse', 'convertkit', 'elementor' ],
+		];
+
+		return $categories;
+	}
+
 	/**
 	 * Admin constructor.
 	 */
@@ -156,12 +165,13 @@ class Admin {
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'remove_go_pro_menu' ], 0 );
-		add_action( 'admin_head', [ $this, 'hide_getting_started_menu' ], 510 );
 
 		add_action( 'elementor/admin/after_create_settings/' . Tools::PAGE_ID, [ $this, 'register_admin_tools_fields' ], 50 );
 
 		add_filter( 'plugin_action_links_' . ELEMENTOR_PLUGIN_BASE, [ $this, 'plugin_action_links' ], 50 );
 		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
+
+		add_filter( 'elementor/finder/categories', [ $this, 'add_finder_items' ] );
 
 		add_filter( 'elementor/tracker/send_tracking_data_params', [ $this, 'change_tracker_params' ], 200 );
 		add_action( 'admin_post_elementor_pro_rollback', [ $this, 'post_elementor_pro_rollback' ] );

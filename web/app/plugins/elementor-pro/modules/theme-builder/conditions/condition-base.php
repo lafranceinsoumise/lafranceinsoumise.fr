@@ -39,8 +39,9 @@ abstract class Condition_Base extends Controls_Stack {
 		return $this->get_label();
 	}
 
-	public function get_condition_config() {
-		$config = parent::get_config();
+	protected function _get_initial_config() {
+		$config = parent::_get_initial_config();
+
 		$config['label'] = $this->get_label();
 		$config['sub_conditions'] = $this->get_sub_conditions();
 		$config['all_label'] = $this->get_all_label();

@@ -23,6 +23,7 @@ class Module extends Module_Base {
 			'Post_Comments',
 			'Post_Navigation',
 			'Post_Info',
+			'Sitemap',
 		];
 
 		if ( $this->is_yoast_seo_active() ) {

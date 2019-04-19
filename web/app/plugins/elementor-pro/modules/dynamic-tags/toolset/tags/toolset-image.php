@@ -51,6 +51,10 @@ class Toolset_Image extends Data_Tag {
 
 			$url = types_render_field( $field_key, [ 'url' => true ] );
 
+			if ( empty( $url ) ) {
+				return $image_data;
+			}
+
 			$image_data = [
 				'id' => attachment_url_to_postid( $url ),
 				'url' => $url,

@@ -70,13 +70,6 @@ class Product_Additional_Information extends Widget_Base {
 		);
 
 		$this->add_control(
-			'heading_divider',
-			[
-				'type' => Controls_Manager::DIVIDER,
-			]
-		);
-
-		$this->add_control(
 			'content_color',
 			[
 				'label' => __( 'Color', 'elementor-pro' ),
@@ -84,6 +77,7 @@ class Product_Additional_Information extends Widget_Base {
 				'selectors' => [
 					'.woocommerce {{WRAPPER}} .shop_attributes' => 'color: {{VALUE}}',
 				],
+				'separator' => 'before',
 			]
 		);
 

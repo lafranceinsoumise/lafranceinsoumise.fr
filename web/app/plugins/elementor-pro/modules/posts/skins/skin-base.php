@@ -17,6 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 abstract class Skin_Base extends Elementor_Skin_Base {
 
+	/**
+	 * @var string Save current permalink to avoid conflict with plugins the filters the permalink during the post render.
+	 */
+	private $current_permalink;
+
 	protected function _register_controls_actions() {
 		add_action( 'elementor/element/posts/section_layout/before_section_end', [ $this, 'register_controls' ] );
 		add_action( 'elementor/element/posts/section_query/after_section_end', [ $this, 'register_style_sections' ] );
@@ -770,11 +775,13 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 
 		// It's the global `wp_query` it self. and the loop was started from the theme.
 		if ( $query->in_the_loop ) {
+			$this->current_permalink = get_permalink();
 			$this->render_post();
 		} else {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
+				$this->current_permalink = get_permalink();
 				$this->render_post();
 			}
 		}
@@ -815,7 +822,7 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			return;
 		}
 		?>
-		<a class="elementor-post__thumbnail__link" href="<?php echo get_permalink(); ?>">
+		<a class="elementor-post__thumbnail__link" href="<?php echo $this->current_permalink; ?>">
 			<div class="elementor-post__thumbnail"><?php echo $thumbnail_html; ?></div>
 		</a>
 		<?php
@@ -829,7 +836,7 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 		$tag = $this->get_instance_value( 'title_tag' );
 		?>
 		<<?php echo $tag; ?> class="elementor-post__title">
-			<a href="<?php echo get_permalink(); ?>">
+			<a href="<?php echo $this->current_permalink; ?>">
 				<?php the_title(); ?>
 			</a>
 		</<?php echo $tag; ?>>
@@ -862,7 +869,7 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			return;
 		}
 		?>
-			<a class="elementor-post__read-more" href="<?php echo get_permalink(); ?>">
+			<a class="elementor-post__read-more" href="<?php echo $this->current_permalink; ?>">
 				<?php echo $this->get_instance_value( 'read_more_text' ); ?>
 			</a>
 		<?php

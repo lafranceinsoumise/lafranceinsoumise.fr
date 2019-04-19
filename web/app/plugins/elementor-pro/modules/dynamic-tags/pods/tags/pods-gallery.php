@@ -47,6 +47,10 @@ class Pods_Gallery extends Data_Tag {
 
 		$galley_images = $pod->field( $meta_key );
 
+		if ( empty( $galley_images ) || ! is_array( $galley_images ) ) {
+			return $images;
+		}
+
 		foreach ( $galley_images as $image ) {
 			$images[] = [
 				'id' => $image['ID'],

@@ -143,7 +143,6 @@ class Product_Data_Tabs extends Widget_Base {
 			'separator_tabs_style',
 			[
 				'type' => Controls_Manager::DIVIDER,
-				'style' => 'thick',
 			]
 		);
 
@@ -230,7 +229,6 @@ class Product_Data_Tabs extends Widget_Base {
 			'separator_panel_style',
 			[
 				'type' => Controls_Manager::DIVIDER,
-				'style' => 'thick',
 			]
 		);
 

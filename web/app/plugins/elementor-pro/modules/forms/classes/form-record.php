@@ -210,7 +210,7 @@ class Form_Record {
 	private function set_fields() {
 		foreach ( $this->form_settings['form_fields'] as $form_field ) {
 			$field = [
-				'id' => $form_field['_id'],
+				'id' => $form_field['custom_id'],
 				'type' => $form_field['field_type'],
 				'title' => $form_field['field_label'],
 				'value' => '',
@@ -224,8 +224,8 @@ class Form_Record {
 				$field['max_files'] = isset( $form_field['max_files'] ) ? $form_field['max_files'] : '';
 			}
 
-			if ( isset( $this->sent_data[ $form_field['_id'] ] ) ) {
-				$field['raw_value'] = $this->sent_data[ $form_field['_id'] ];
+			if ( isset( $this->sent_data[ $form_field['custom_id'] ] ) ) {
+				$field['raw_value'] = $this->sent_data[ $form_field['custom_id'] ];
 
 				$value = $field['raw_value'];
 
@@ -235,7 +235,7 @@ class Form_Record {
 
 				$field['value'] = $this->sanitize_field( $field, $value );
 			}
-			$this->fields[ $form_field['_id'] ] = $field;
+			$this->fields[ $form_field['custom_id'] ] = $field;
 		}
 	}
 
@@ -279,15 +279,18 @@ class Form_Record {
 		return $value;
 	}
 
-	public function replace_setting_shortcodes( $setting ) {
+	public function replace_setting_shortcodes( $setting, $urlencode = false ) {
 		// Shortcode can be `[field id="fds21fd"]` or `[field title="Email" id="fds21fd"]`, multiple shortcodes are allowed
-		return preg_replace_callback( '/(\[field[^]]*id="(\w+)"[^]]*\])/', function( $matches ) {
+		return preg_replace_callback( '/(\[field[^]]*id="(\w+)"[^]]*\])/', function( $matches ) use ( $urlencode ) {
 			$value = '';
 
 			if ( isset( $this->fields[ $matches[2] ] ) ) {
 				$value = $this->fields[ $matches[2] ]['value'];
 			}
 
+			if ( $urlencode ) {
+				$value = urlencode( $value );
+			}
 			return $value;
 		}, $setting );
 	}

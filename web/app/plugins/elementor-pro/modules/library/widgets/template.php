@@ -2,8 +2,11 @@
 namespace ElementorPro\Modules\Library\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\TemplateLibrary\Source_Local;
 use ElementorPro\Base\Base_Widget;
 use ElementorPro\Modules\Library\Module;
+use ElementorPro\Modules\QueryControl\Controls\Query;
+use ElementorPro\Modules\QueryControl\Module as QueryControlModule;
 use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,42 +43,13 @@ class Template extends Base_Widget {
 			]
 		);
 
-		$templates = Module::get_templates();
-
-		if ( empty( $templates ) ) {
-
-			$this->add_control(
-				'no_templates',
-				[
-					'label' => false,
-					'type' => Controls_Manager::RAW_HTML,
-					'raw' => Module::empty_templates_message(),
-				]
-			);
-
-			return;
-		}
-
-		$options = [
-			'0' => '— ' . __( 'Select', 'elementor-pro' ) . ' —',
-		];
-
-		$types = [];
-
-		foreach ( $templates as $template ) {
-			$options[ $template['template_id'] ] = $template['title'] . ' (' . $template['type'] . ')';
-			$types[ $template['template_id'] ] = $template['type'];
-		}
-
 		$this->add_control(
 			'template_id',
 			[
 				'label' => __( 'Choose Template', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '0',
-				'options' => $options,
-				'types' => $types,
-				'label_block' => 'true',
+				'type' => QueryControlModule::QUERY_CONTROL_ID,
+				'filter_type' => 'library_widget_templates',
+				'label_block' => true,
 			]
 		);
 
@@ -84,6 +58,7 @@ class Template extends Base_Widget {
 
 	protected function render() {
 		$template_id = $this->get_settings( 'template_id' );
+
 		if ( 'publish' !== get_post_status( $template_id ) ) {
 			return;
 		}

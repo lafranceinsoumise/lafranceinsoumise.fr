@@ -45,16 +45,16 @@ class Price_Table extends Base_Widget {
 			[
 				'label' => __( 'Title', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'I am title', 'elementor-pro' ),
+				'default' => __( 'Enter your title', 'elementor-pro' ),
 			]
 		);
 
 		$this->add_control(
 			'sub_heading',
 			[
-				'label' => __( 'Subtitle', 'elementor-pro' ),
+				'label' => __( 'Description', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'I am subtitle', 'elementor-pro' ),
+				'default' => __( 'Enter your description', 'elementor-pro' ),
 			]
 		);
 
@@ -301,7 +301,7 @@ class Price_Table extends Base_Widget {
 		$this->add_control(
 			'ribbon_horizontal_position',
 			[
-				'label' => __( 'Horizontal Position', 'elementor-pro' ),
+				'label' => __( 'Position', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
@@ -1096,8 +1096,6 @@ class Price_Table extends Base_Widget {
 		$this->add_group_control(
 			Group_Control_Border::get_type(), [
 				'name' => 'button_border',
-				'placeholder' => '1px',
-				'default' => '1px',
 				'selector' => '{{WRAPPER}} .elementor-price-table__button',
 				'condition' => [
 					'button_text!' => '',
@@ -1412,6 +1410,10 @@ class Price_Table extends Base_Widget {
 
 			if ( ! empty( $settings['link']['is_external'] ) ) {
 				$this->add_render_attribute( 'button_text', 'target', '_blank' );
+			}
+
+			if ( $settings['link']['nofollow'] ) {
+				$this->add_render_attribute( 'button_text', 'rel', 'nofollow' );
 			}
 		}
 

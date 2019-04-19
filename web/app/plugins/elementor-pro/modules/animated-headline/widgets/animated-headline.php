@@ -173,6 +173,18 @@ class Animated_Headline extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'link',
+			[
+				'label' => __( 'Link', 'elementor-pro' ),
+				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
+				'separator' => 'before',
+			]
+		);
+
 		$this->add_responsive_control(
 			'alignment',
 			[
@@ -194,7 +206,6 @@ class Animated_Headline extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-headline' => 'text-align: {{VALUE}}',
 				],
@@ -378,6 +389,20 @@ class Animated_Headline extends Widget_Base {
 			}
 		}
 
+		if ( ! empty( $settings['link']['url'] ) ) {
+			$this->add_render_attribute( 'url', 'href', $settings['link']['url'] );
+
+			if ( $settings['link']['is_external'] ) {
+				$this->add_render_attribute( 'url', 'target', '_blank' );
+			}
+
+			if ( ! empty( $settings['link']['nofollow'] ) ) {
+				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
+			}
+
+			echo '<a ' . $this->get_render_attribute_string( 'url' );
+		}
+
 		?>
 		<<?php echo $tag; ?> <?php echo $this->get_render_attribute_string( 'headline' ); ?>>
 			<?php if ( ! empty( $settings['before_text'] ) ) : ?>
@@ -389,12 +414,17 @@ class Animated_Headline extends Widget_Base {
 			<?php endif; ?>
 		</<?php echo $tag; ?>>
 		<?php
+
+		if ( ! empty( $settings['link']['url'] ) ) {
+			echo '</a>';
+		}
 	}
 
 	protected function _content_template() {
 		?>
 		<#
-		var headlineClasses = 'elementor-headline';
+		var headlineClasses = 'elementor-headline',
+			tag = settings.tag;
 
 		if ( 'rotate' === settings.headline_style ) {
 			headlineClasses += ' elementor-headline-animation-type-' + settings.animation_type;
@@ -405,20 +435,26 @@ class Animated_Headline extends Widget_Base {
 				headlineClasses += ' elementor-headline-letters';
 			}
 		}
-		#>
-		<{{{ settings.tag }}} class="{{{ headlineClasses }}}">
-			<# if ( settings.before_text ) { #>
-				<span class="elementor-headline-plain-text elementor-headline-text-wrapper">{{{ settings.before_text }}}</span>
-			<# } #>
 
-			<# if ( settings.rotating_text ) { #>
-				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper"></span>
-			<# } #>
+		if ( settings.link.url ) { #>
+			<a htef="#">
+		<# } #>
+				<{{{ tag }}} class="{{{ headlineClasses }}}">
+					<# if ( settings.before_text ) { #>
+						<span class="elementor-headline-plain-text elementor-headline-text-wrapper">{{{ settings.before_text }}}</span>
+					<# } #>
 
-			<# if ( settings.after_text ) { #>
-				<span class="elementor-headline-plain-text elementor-headline-text-wrapper">{{{ settings.after_text }}}</span>
-			<# } #>
-		</{{{ settings.tag }}}>
+					<# if ( settings.rotating_text ) { #>
+						<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper"></span>
+					<# } #>
+
+					<# if ( settings.after_text ) { #>
+						<span class="elementor-headline-plain-text elementor-headline-text-wrapper">{{{ settings.after_text }}}</span>
+					<# } #>
+				</{{{ tag }}}>
+		<# if ( settings.link.url ) { #>
+			<a htef="#">
+		<# } #>
 		<?php
 	}
 }

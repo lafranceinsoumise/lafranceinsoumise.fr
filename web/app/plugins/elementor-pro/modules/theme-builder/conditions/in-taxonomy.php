@@ -9,14 +9,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class In_Taxonomy extends Condition_Base {
 
-	public static function get_type() {
-		return 'singular';
-	}
 
 	/**
 	 * @var \WP_Taxonomy
 	 */
 	private $taxonomy;
+
+	public static function get_type() {
+		return 'singular';
+	}
+
+	public static function get_priority() {
+		return 40;
+	}
 
 	public function __construct( $data ) {
 		parent::__construct();

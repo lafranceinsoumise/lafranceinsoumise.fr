@@ -48,7 +48,11 @@ class Internal_URL extends Data_Tag {
 			$url = get_author_posts_url( (int) $settings['author_id'] );
 		}
 
-		return $url;
+		if ( ! is_wp_error( $url ) ) {
+			return $url;
+		}
+
+		return '';
 	}
 
 	protected function _register_controls() {

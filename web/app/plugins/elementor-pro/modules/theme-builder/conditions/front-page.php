@@ -11,6 +11,10 @@ class Front_Page extends Condition_Base {
 		return 'singular';
 	}
 
+	public static function get_priority() {
+		return 30;
+	}
+
 	public function get_name() {
 		return 'front_page';
 	}

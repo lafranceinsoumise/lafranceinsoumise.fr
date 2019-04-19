@@ -1,10 +1,8 @@
 /*
  * By Elementor Team
  */
-(function( $ ) {
-
+( function( $ ) {
 	var Sticky = function( element, userSettings ) {
-
 		var $element,
 			isSticky = false,
 			isFollowingParent = false,
@@ -21,8 +19,8 @@
 				sticky: 'sticky',
 				stickyActive: 'sticky-active',
 				stickyEffects: 'sticky-effects',
-				spacer: 'sticky-spacer'
-			}
+				spacer: 'sticky-spacer',
+			},
 		};
 
 		var initElements = function() {
@@ -46,7 +44,7 @@
 		var bindEvents = function() {
 			elements.$window.on( {
 				scroll: onWindowScroll,
-				resize: onWindowResize
+				resize: onWindowResize,
 			} );
 		};
 
@@ -66,19 +64,19 @@
 			checkPosition();
 		};
 
-		var backupCSS = function( $element, backupState, properties ) {
+		var backupCSS = function( $elementBackupCSS, backupState, properties ) {
 			var css = {},
-				elementStyle = $element[0].style;
+				elementStyle = $elementBackupCSS[ 0 ].style;
 
 			properties.forEach( function( property ) {
 				css[ property ] = undefined !== elementStyle[ property ] ? elementStyle[ property ] : '';
 			} );
 
-			$element.data( 'css-backup-' + backupState, css );
+			$elementBackupCSS.data( 'css-backup-' + backupState, css );
 		};
 
-		var getCSSBackup = function( $element, backupState ) {
-			return $element.data( 'css-backup-' + backupState );
+		var getCSSBackup = function( $elementCSSBackup, backupState ) {
+			return $elementCSSBackup.data( 'css-backup-' + backupState );
 		};
 
 		var addSpacer = function() {
@@ -87,7 +85,7 @@
 				.css( {
 					visibility: 'hidden',
 					transition: 'none',
-					animation: 'none'
+					animation: 'none',
 				} );
 
 			$element.after( elements.$spacer );
@@ -104,7 +102,7 @@
 				position: 'fixed',
 				width: getElementOuterSize( $element, 'width' ),
 				marginTop: 0,
-				marginBottom: 0
+				marginBottom: 0,
 			};
 
 			css[ settings.to ] = settings.offset;
@@ -130,7 +128,7 @@
 			backupCSS( $element, 'notFollowing', [ 'position', 'top', 'bottom' ] );
 
 			var css = {
-				position: 'absolute'
+				position: 'absolute',
 			};
 
 			css[ settings.to ] = '';
@@ -150,8 +148,8 @@
 			isFollowingParent = false;
 		};
 
-		var getElementOuterSize = function( $element, dimension, includeMargins ) {
-			var computedStyle = getComputedStyle( $element[0] ),
+		var getElementOuterSize = function( $elementOuterSize, dimension, includeMargins ) {
+			var computedStyle = getComputedStyle( $elementOuterSize[ 0 ] ),
 				elementSize = parseFloat( computedStyle[ dimension ] ),
 				sides = 'height' === dimension ? [ 'top', 'bottom' ] : [ 'left', 'right' ],
 				propertiesToAdd = [];
@@ -173,23 +171,23 @@
 			return elementSize;
 		};
 
-		var getElementViewportOffset = function( $element ) {
+		var getElementViewportOffset = function( $elementViewportOffset ) {
 			var windowScrollTop = elements.$window.scrollTop(),
-				elementHeight = getElementOuterSize( $element, 'height' ),
+				elementHeight = getElementOuterSize( $elementViewportOffset, 'height' ),
 				viewportHeight = innerHeight,
-				elementOffsetFromTop = $element.offset().top,
+				elementOffsetFromTop = $elementViewportOffset.offset().top,
 				distanceFromTop = elementOffsetFromTop - windowScrollTop,
 				topFromBottom = distanceFromTop - viewportHeight;
 
 			return {
 				top: {
 					fromTop: distanceFromTop,
-					fromBottom: topFromBottom
+					fromBottom: topFromBottom,
 				},
 				bottom: {
 					fromTop: distanceFromTop + elementHeight,
-					fromBottom: topFromBottom + elementHeight
-				}
+					fromBottom: topFromBottom + elementHeight,
+				},
 			};
 		};
 
@@ -225,7 +223,7 @@
 				}
 			} else {
 				var parentOffset = getElementViewportOffset( elements.$parent ),
-					parentStyle = getComputedStyle( elements.$parent[0] ),
+					parentStyle = getComputedStyle( elements.$parent[ 0 ] ),
 					borderWidthToDecrease = parseFloat( parentStyle[ isTop ? 'borderBottomWidth' : 'borderTopWidth' ] ),
 					parentViewportDistance = isTop ? parentOffset.bottom.fromTop - borderWidthToDecrease : parentOffset.top.fromBottom + borderWidthToDecrease,
 					isNeedFollowing = isTop ? parentViewportDistance <= elementOffset.bottom.fromTop : parentViewportDistance >= elementOffset.top.fromBottom;

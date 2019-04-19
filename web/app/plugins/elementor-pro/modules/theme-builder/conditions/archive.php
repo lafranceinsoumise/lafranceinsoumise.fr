@@ -19,12 +19,12 @@ class Archive extends Condition_Base {
 		return 'archive';
 	}
 
-	public function get_name() {
-		return 'archive';
-	}
-
 	public static function get_priority() {
 		return 80;
+	}
+
+	public function get_name() {
+		return 'archive';
 	}
 
 	public function get_label() {

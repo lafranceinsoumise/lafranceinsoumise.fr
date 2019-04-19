@@ -72,6 +72,9 @@ class Archive_Posts extends Posts_Base {
 				'label' => __( 'Nothing Found Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => __( 'It seems we can\'t find what you\'re looking for.', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

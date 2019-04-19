@@ -49,8 +49,9 @@ class ACF_Image extends Data_Tag {
 				$field = get_field_object( $field_key );
 			}
 
-			if ( $field && ! empty( $field['save_format'] ) ) {
-				switch ( $field['save_format'] ) {
+			if ( $field && is_array( $field ) ) {
+				$field['return_format'] = isset( $field['save_format'] ) ? $field['save_format'] : $field['return_format'];
+				switch ( $field['return_format'] ) {
 					case 'object':
 					case 'array':
 						$value = $field['value'];

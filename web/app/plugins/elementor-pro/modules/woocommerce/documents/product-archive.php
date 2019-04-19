@@ -27,40 +27,6 @@ class Product_Archive extends Archive {
 		return __( 'Product Archive', 'elementor-pro' );
 	}
 
-	public function get_remote_library_type() {
-		return 'product archive';
-	}
-
-	protected static function get_editor_panel_categories() {
-		$categories = [
-			'woocommerce-elements-archive' => [
-				'title' => __( 'Product Archive', 'elementor-pro' ),
-			],
-			// Move to top as active.
-			'woocommerce-elements' => [
-				'title' => __( 'WooCommerce', 'elementor-pro' ),
-				'active' => true,
-			],
-		];
-
-		$categories += parent::get_editor_panel_categories();
-
-		unset( $categories['theme-elements-archive'] );
-
-		return $categories;
-	}
-
-	protected function _register_controls() {
-		parent::_register_controls();
-
-		$this->update_control(
-			'preview_type',
-			[
-				'default' => 'post_type_archive/product',
-			]
-		);
-	}
-
 	public function enqueue_scripts() {
 		// In preview mode it's not a real Woocommerce page - enqueue manually.
 		if ( Plugin::elementor()->preview->is_preview_mode( $this->get_main_id() ) ) {
@@ -68,12 +34,12 @@ class Product_Archive extends Archive {
 		}
 	}
 
-	public function get_container_classes() {
-		$classes = parent::get_container_classes();
+	public function get_container_attributes() {
+		$attributes = parent::get_container_attributes();
 
-		$classes .= ' product';
+		$attributes['class'] .= ' product';
 
-		return $classes;
+		return $attributes;
 	}
 
 	public function filter_body_classes( $body_classes ) {
@@ -128,5 +94,43 @@ class Product_Archive extends Archive {
 		parent::__construct( $data );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 11 );
+	}
+
+	protected static function get_editor_panel_categories() {
+		$categories = [
+			'woocommerce-elements-archive' => [
+				'title' => __( 'Product Archive', 'elementor-pro' ),
+			],
+			// Move to top as active.
+			'woocommerce-elements' => [
+				'title' => __( 'WooCommerce', 'elementor-pro' ),
+				'active' => true,
+			],
+		];
+
+		$categories += parent::get_editor_panel_categories();
+
+		unset( $categories['theme-elements-archive'] );
+
+		return $categories;
+	}
+
+	protected function _register_controls() {
+		parent::_register_controls();
+
+		$this->update_control(
+			'preview_type',
+			[
+				'default' => 'post_type_archive/product',
+			]
+		);
+	}
+
+	protected function get_remote_library_config() {
+		$config = parent::get_remote_library_config();
+
+		$config['category'] = 'product archive';
+
+		return $config;
 	}
 }

@@ -342,10 +342,10 @@ class Testimonial_Carousel extends Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'image_size',
 			[
-				'label' => __( 'Image Size', 'elementor-pro' ),
+				'label' => __( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -380,7 +380,7 @@ class Testimonial_Carousel extends Base {
 		$this->add_responsive_control(
 			'image_gap',
 			[
-				'label' => __( 'Image Gap', 'elementor-pro' ),
+				'label' => __( 'Gap', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -518,7 +518,7 @@ class Testimonial_Carousel extends Base {
 			[
 				'label' => __( 'Name', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Click Here', 'elementor-pro' ),
+				'default' => __( 'John Doe', 'elementor-pro' ),
 			]
 		);
 
@@ -527,7 +527,7 @@ class Testimonial_Carousel extends Base {
 			[
 				'label' => __( 'Title', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Click Here', 'elementor-pro' ),
+				'default' => __( 'CEO', 'elementor-pro' ),
 			]
 		);
 	}

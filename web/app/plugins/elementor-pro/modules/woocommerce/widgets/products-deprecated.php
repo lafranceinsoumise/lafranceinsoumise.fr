@@ -158,7 +158,9 @@ class Products_Deprecated extends Products_Base {
 
 	public function query_posts() {
 		$settings = $this->get_settings();
-		$query_args = Module::get_query_args( 'posts', $settings );
+		/** @var Module $query_module */
+		$query_module = Module::instance();
+		$query_args = $query_module->get_query_args( 'posts', $settings );
 
 		// Default ordering args
 		$ordering_args = WC()->query->get_catalog_ordering_args( $settings['orderby'], $settings['order'] );

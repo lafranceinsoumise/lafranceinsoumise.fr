@@ -52,7 +52,7 @@ class Email extends Action_Base {
 		$widget->add_control(
 			$this->get_control_id( 'email_subject' ),
 			[
-				'label' => __( 'Email Subject', 'elementor-pro' ),
+				'label' => __( 'Subject', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => $default_message,
 				'placeholder' => $default_message,
@@ -64,7 +64,7 @@ class Email extends Action_Base {
 		$widget->add_control(
 			$this->get_control_id( 'email_content' ),
 			[
-				'label' => __( 'Email Content', 'elementor-pro' ),
+				'label' => __( 'Message', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => '[all-fields]',
 				'placeholder' => '[all-fields]',
@@ -224,7 +224,7 @@ class Email extends Action_Base {
 		if ( ! empty( $fields['email_reply_to'] ) ) {
 			$sent_data = $record->get( 'sent_data' );
 			foreach ( $record->get( 'fields' ) as $field_index => $field ) {
-				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) ) {
+				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) && is_email( $sent_data[ $field_index ] ) ) {
 					$email_reply_to = $sent_data[ $field_index ];
 					break;
 				}
@@ -336,10 +336,15 @@ class Email extends Action_Base {
 		if ( false !== strpos( $email_content, $all_fields_shortcode ) ) {
 			$text = '';
 			foreach ( $record->get( 'fields' ) as $field ) {
-				$text .= $this->field_formatted( $field ) . $line_break;
+				$formatted = $this->field_formatted( $field );
+				if ( ( 'textarea' === $field['type'] ) && ( '<br>' === $line_break ) ) {
+					$formatted = str_replace( [ "\r\n", "\n", "\r" ], '<br />', $formatted );
+				}
+				$text .= $formatted . $line_break;
 			}
 
 			$email_content = str_replace( $all_fields_shortcode, $text, $email_content );
+
 		}
 
 		return $email_content;

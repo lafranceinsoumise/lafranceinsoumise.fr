@@ -552,7 +552,6 @@ class Nav_Menu extends Widget_Base {
 			'hr',
 			[
 				'type' => Controls_Manager::DIVIDER,
-				'style' => 'thick',
 			]
 		);
 
@@ -728,6 +727,7 @@ class Nav_Menu extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-nav-menu--dropdown a:hover,
 					{{WRAPPER}} .elementor-nav-menu--dropdown a.elementor-item-active,
+					{{WRAPPER}} .elementor-nav-menu--dropdown a.highlighted,
 					{{WRAPPER}} .elementor-menu-toggle:hover' => 'color: {{VALUE}}',
 				],
 			]
@@ -1118,6 +1118,7 @@ class Nav_Menu extends Widget_Base {
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'menu-toggle' ); ?>>
 			<i class="eicon" aria-hidden="true"></i>
+			<span class="elementor-screen-only"><?php _e( 'Menu', 'elementor-pro' ); ?></span>
 		</div>
 		<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"><?php echo $dropdown_menu_html; ?></nav>
 		<?php
@@ -1125,9 +1126,14 @@ class Nav_Menu extends Widget_Base {
 
 	public function handle_link_classes( $atts, $item, $args, $depth ) {
 		$classes = $depth ? 'elementor-sub-item' : 'elementor-item';
+		$is_anchor = false !== strpos( $atts['href'], '#' );
 
-		if ( in_array( 'current-menu-item', $item->classes ) ) {
-			$classes .= '  elementor-item-active';
+		if ( ! $is_anchor && in_array( 'current-menu-item', $item->classes ) ) {
+			$classes .= ' elementor-item-active';
+		}
+
+		if ( $is_anchor ) {
+			$classes .= ' elementor-item-anchor';
 		}
 
 		if ( empty( $atts['class'] ) ) {

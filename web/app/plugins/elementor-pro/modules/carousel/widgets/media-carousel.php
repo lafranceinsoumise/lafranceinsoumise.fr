@@ -163,7 +163,7 @@ class Media_Carousel extends Base {
 		$repeater->add_control(
 			'image_link_to_type',
 			[
-				'label' => __( 'Link To', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'' => __( 'None', 'elementor-pro' ),
@@ -306,7 +306,6 @@ class Media_Carousel extends Base {
 					'autoplay' => 1,
 					'rel' => 0,
 					'controls' => 0,
-					'showinfo' => 0,
 				];
 
 				$this->add_render_attribute( $element_key . '_link', 'data-elementor-lightbox-video', Embed::get_embed_url( $slide['video']['url'], $embed_url_params ) );
@@ -327,7 +326,8 @@ class Media_Carousel extends Base {
 		<div <?php echo $this->get_render_attribute_string( $element_key . '-image' ); ?>>
 			<?php if ( 'video' === $slide['type'] && $settings['video_play_icon'] ) : ?>
 				<div class="elementor-custom-embed-play">
-					<i class="eicon-play"></i>
+					<i class="eicon-play" aria-hidden="true"></i>
+					<span class="elementor-screen-only"><?php _e( 'Play', 'elementor-pro' ); ?></span>
 				</div>
 			<?php endif; ?>
 		</div>

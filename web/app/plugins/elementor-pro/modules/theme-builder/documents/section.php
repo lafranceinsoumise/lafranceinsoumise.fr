@@ -18,12 +18,22 @@ class Section extends Theme_Section_Document {
 		return __( 'Section', 'elementor-pro' );
 	}
 
+	public static function get_properties() {
+		$properties = parent::get_properties();
+
+		$properties['admin_tab_group'] = 'library';
+
+		return $properties;
+	}
+
 	protected function _register_controls() {
 		parent::_register_controls();
 
 		Module::instance()->get_locations_manager()->register_locations();
 
-		$locations = Module::instance()->get_locations_manager()->get_locations_without_core();
+		$locations = Module::instance()->get_locations_manager()->get_locations( [
+			'public' => true,
+		] );
 
 		if ( empty( $locations ) ) {
 			return;

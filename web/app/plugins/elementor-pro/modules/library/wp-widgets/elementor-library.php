@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\Library\WP_Widgets;
 
-use Elementor\TemplateLibrary\Source_Local;
+use Elementor\Core\Base\Document;
 use ElementorPro\Modules\Library\Module;
 use ElementorPro\Plugin;
 
@@ -32,7 +32,8 @@ class Elementor_Library extends \WP_Widget {
 
 		if ( ! empty( $instance['title'] ) ) {
 			/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
 		if ( ! empty( $instance['template_id'] ) && 'publish' === get_post_status( $instance['template_id'] ) ) {
@@ -113,7 +114,7 @@ class Elementor_Library extends \WP_Widget {
 			<?php
 			$style = ' style="display:none"';
 
-			$template_type = get_post_meta( $instance['template_id'], Source_Local::TYPE_META_KEY, true );
+			$template_type = get_post_meta( $instance['template_id'], Document::TYPE_META_KEY, true );
 
 			// 'widget' is editable only from an Elementor page
 			if ( 'page' === $template_type ) {

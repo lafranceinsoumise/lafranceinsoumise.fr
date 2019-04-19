@@ -87,7 +87,7 @@ class Product_Add_To_Cart extends Widget_Base {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'prefix_class' => 'elementor-add-to-cart--align-',
+				'prefix_class' => 'elementor-add-to-cart%s--align-',
 			]
 		);
 
@@ -422,7 +422,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Spacing', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} form.cart .variations' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'.woocommerce {{WRAPPER}} form.cart .variations' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -433,7 +433,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Space Between', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations tr:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations tr:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -453,7 +453,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations label' => 'color: {{VALUE}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations label' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -462,7 +462,7 @@ class Product_Add_To_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'variations_label_typography',
-				'selector' => '{{WRAPPER}} form.cart table.variations label',
+				'selector' => '.woocommerce {{WRAPPER}} form.cart table.variations label',
 			]
 		);
 
@@ -481,7 +481,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations td.value select' => 'color: {{VALUE}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations td.value select' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -492,7 +492,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations td.value:before' => 'background-color: {{VALUE}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations td.value:before' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -503,7 +503,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations td.value:before' => 'border: 1px solid {{VALUE}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations td.value:before' => 'border: 1px solid {{VALUE}}',
 				],
 			]
 		);
@@ -512,7 +512,7 @@ class Product_Add_To_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'variations_select_typography',
-				'selector' => '{{WRAPPER}} form.cart table.variations td.value select, {{WRAPPER}} form.cart table.variations td.value:before',
+				'selector' => '.woocommerce {{WRAPPER}} form.cart table.variations td.value select, .woocommerce div.product.elementor{{WRAPPER}} form.cart table.variations td.value:before',
 			]
 		);
 
@@ -522,7 +522,7 @@ class Product_Add_To_Cart extends Widget_Base {
 				'label' => __( 'Border Radius', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} form.cart table.variations td.value:before' => 'border-radius: {{SIZE}}{{UNIT}}',
+					'.woocommerce {{WRAPPER}} form.cart table.variations td.value:before' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);

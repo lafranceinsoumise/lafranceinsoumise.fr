@@ -271,13 +271,13 @@ abstract class Assets_Base {
 		$close_title = isset( $field['close_title'] ) ? $field['close_title'] : __( 'Close', 'elementor-pro' );
 
 		return '<span class="elementor-repeater-tool-btn close-repeater-row" title="' . esc_attr( $close_title ) . '">
-                    <i class="eicon-times"></i>' . $close_title . '
+                    <i class="eicon-times" aria-hidden="true"></i>' . $close_title . '
                 </span>
                 <span class="elementor-repeater-tool-btn toggle-repeater-row" title="' . esc_attr( $toggle_title ) . '">
-                    <i class="eicon-edit"></i>' . $toggle_title . '
+                    <i class="eicon-edit" aria-hidden="true"></i>' . $toggle_title . '
                 </span>
                 <span class="elementor-repeater-tool-btn remove-repeater-row" data-confirm="' . $confirm . '" title="' . esc_attr( $remove_title ) . '">
-                    <i class="eicon-trash"></i>' . $remove_title . '
+                    <i class="eicon-trash" aria-hidden="true"></i>' . $remove_title . '
                 </span>';
 	}
 

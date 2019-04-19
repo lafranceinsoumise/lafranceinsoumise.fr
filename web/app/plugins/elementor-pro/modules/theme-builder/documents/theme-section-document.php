@@ -28,4 +28,12 @@ abstract class Theme_Section_Document extends Theme_Document {
 			Single::get_preview_as_options()
 		);
 	}
+
+	protected function get_remote_library_config() {
+		$config = parent::get_remote_library_config();
+
+		$config['category'] = '';
+
+		return $config;
+	}
 }

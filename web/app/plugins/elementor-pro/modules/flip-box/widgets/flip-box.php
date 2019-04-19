@@ -73,6 +73,9 @@ class Flip_Box extends Base_Widget {
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 				'condition' => [
 					'graphic_element' => 'image',
 				],
@@ -143,6 +146,9 @@ class Flip_Box extends Base_Widget {
 				'type' => Controls_Manager::TEXT,
 				'default' => __( 'This is the heading', 'elementor-pro' ),
 				'placeholder' => __( 'Enter your title', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 				'label_block' => true,
 				'separator' => 'before',
 			]
@@ -156,6 +162,9 @@ class Flip_Box extends Base_Widget {
 				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 				'placeholder' => __( 'Enter your description', 'elementor-pro' ),
 				'separator' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 				'rows' => 10,
 				'show_label' => false,
 			]
@@ -214,6 +223,9 @@ class Flip_Box extends Base_Widget {
 				'type' => Controls_Manager::TEXT,
 				'default' => __( 'This is the heading', 'elementor-pro' ),
 				'placeholder' => __( 'Enter your title', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 				'label_block' => true,
 			]
 		);
@@ -226,6 +238,9 @@ class Flip_Box extends Base_Widget {
 				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 				'placeholder' => __( 'Enter your description', 'elementor-pro' ),
 				'separator' => 'none',
+				'dynamic' => [
+					'active' => true,
+				],
 				'rows' => 10,
 				'show_label' => false,
 			]
@@ -237,6 +252,9 @@ class Flip_Box extends Base_Widget {
 				'label' => __( 'Button Text', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Click Here', 'elementor-pro' ),
+				'dynamic' => [
+					'active' => true,
+				],
 				'separator' => 'before',
 			]
 		);
@@ -246,6 +264,9 @@ class Flip_Box extends Base_Widget {
 			[
 				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
 				'placeholder' => __( 'https://your-link.com', 'elementor-pro' ),
 			]
 		);
@@ -531,7 +552,7 @@ class Flip_Box extends Base_Widget {
 		$this->add_control(
 			'image_width',
 			[
-				'label' => __( 'Size (%)', 'elementor-pro' ),
+				'label' => __( 'Size', 'elementor-pro' ) . ' (%)',
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'default' => [
@@ -1273,10 +1294,9 @@ class Flip_Box extends Base_Widget {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
 		$wrapper_tag = 'div';
 		$button_tag = 'a';
-		$link_url = empty( $settings['link']['url'] ) ? '#' : $settings['link']['url'];
 		$this->add_render_attribute( 'button', 'class', [
 			'elementor-flip-box__button',
 			'elementor-button',
@@ -1284,17 +1304,23 @@ class Flip_Box extends Base_Widget {
 		] );
 
 		$this->add_render_attribute( 'wrapper', 'class', 'elementor-flip-box__layer elementor-flip-box__back' );
-		if ( 'box' === $settings['link_click'] ) {
-			$wrapper_tag = 'a';
-			$button_tag = 'button';
-			$this->add_render_attribute( 'wrapper', 'href', $link_url );
-			if ( $settings['link']['is_external'] ) {
-				$this->add_render_attribute( 'wrapper', 'target', '_blank' );
+
+		if ( ! empty( $settings['link']['url'] ) ) {
+			$link_element = 'button';
+
+			if ( 'box' === $settings['link_click'] ) {
+				$wrapper_tag = 'a';
+				$button_tag = 'button';
+				$link_element = 'wrapper';
 			}
-		} else {
-			$this->add_render_attribute( 'button', 'href', $link_url );
+
+			$this->add_render_attribute( $link_element, 'href', $settings['link']['url'] );
 			if ( $settings['link']['is_external'] ) {
-				$this->add_render_attribute( 'button', 'target', '_blank' );
+				$this->add_render_attribute( $link_element, 'target', '_blank' );
+			}
+
+			if ( $settings['link']['nofollow'] ) {
+				$this->add_render_attribute( $link_element, 'rel', 'nofollow' );
 			}
 		}
 
@@ -1356,10 +1382,10 @@ class Flip_Box extends Base_Widget {
 					<?php endif; ?>
 
 					<?php if ( ! empty( $settings['button_text'] ) ) : ?>
-					<<?php echo $button_tag; ?> <?php echo $this->get_render_attribute_string( 'button' ); ?>>
-					<?php echo $settings['button_text']; ?>
-				</<?php echo $button_tag; ?>>
-				<?php endif; ?>
+						<<?php echo $button_tag; ?> <?php echo $this->get_render_attribute_string( 'button' ); ?>>
+						<?php echo $settings['button_text']; ?>
+						</<?php echo $button_tag; ?>>
+					<?php endif; ?>
 			</div>
 		</div>
 		</<?php echo $wrapper_tag; ?>>

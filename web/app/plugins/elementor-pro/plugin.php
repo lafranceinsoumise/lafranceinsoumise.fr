@@ -1,9 +1,11 @@
 <?php
 namespace ElementorPro;
 
+use ElementorPro\Core\Connect;
 use Elementor\Core\Responsive\Files\Frontend as FrontendFile;
 use Elementor\Core\Responsive\Responsive;
 use Elementor\Utils;
+use ElementorPro\Core\Upgrade\Manager as UpgradeManager;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -23,6 +25,11 @@ class Plugin {
 	 * @var Manager
 	 */
 	public $modules_manager;
+
+	/**
+	 * @var UpgradeManager
+	 */
+	public $upgrade;
 
 	private $classes_aliases = [
 		'ElementorPro\Modules\PanelPostsControl\Module' => 'ElementorPro\Modules\QueryControl\Module',
@@ -87,7 +94,6 @@ class Plugin {
 		require ELEMENTOR_PRO_PATH . 'includes/modules-manager.php';
 
 		if ( is_admin() ) {
-			require ELEMENTOR_PRO_PATH . 'includes/upgrades.php';
 			require ELEMENTOR_PRO_PATH . 'includes/admin.php';
 		}
 	}
@@ -165,7 +171,7 @@ class Plugin {
 			'elementor-pro-frontend',
 			ELEMENTOR_PRO_URL . 'assets/js/frontend' . $suffix . '.js',
 			[
-				'jquery',
+				'elementor-frontend-modules',
 				'elementor-sticky',
 			],
 			ELEMENTOR_PRO_VERSION,
@@ -188,7 +194,7 @@ class Plugin {
 		 */
 		$locale_settings = apply_filters( 'elementor_pro/frontend/localize_settings', $locale_settings );
 
-		wp_localize_script(
+		Utils::print_js_config(
 			'elementor-pro-frontend',
 			'ElementorProFrontendConfig',
 			$locale_settings
@@ -203,6 +209,8 @@ class Plugin {
 			ELEMENTOR_PRO_URL . 'assets/js/editor' . $suffix . '.js',
 			[
 				'backbone-marionette',
+				'elementor-common-modules',
+				'elementor-editor-modules',
 			],
 			ELEMENTOR_PRO_VERSION,
 			true
@@ -223,6 +231,9 @@ class Plugin {
 		$locale_settings = [
 			'i18n' => [],
 			'isActive' => $is_license_active,
+			'urls' => [
+				'modules' => ELEMENTOR_PRO_MODULES_URL,
+			],
 		];
 
 		/**
@@ -236,7 +247,7 @@ class Plugin {
 		 */
 		$locale_settings = apply_filters( 'elementor_pro/editor/localize_settings', $locale_settings );
 
-		wp_localize_script(
+		Utils::print_js_config(
 			'elementor-pro',
 			'ElementorProConfig',
 			$locale_settings
@@ -304,10 +315,13 @@ class Plugin {
 		return $templates;
 	}
 
-	public function elementor_init() {
+	public function on_elementor_init() {
 		$this->modules_manager = new Manager();
 
-		self::elementor()->editor->add_editor_template( __DIR__ . '/includes/templates/editor.php' );
+		/** TODO: BC for Elementor v2.4.0 */
+		if ( class_exists( '\Elementor\Core\Upgrade\Manager' ) ) {
+			$this->upgrade = UpgradeManager::instance();
+		}
 
 		/**
 		 * Elementor Pro init.
@@ -320,12 +334,24 @@ class Plugin {
 		do_action( 'elementor_pro/init' );
 	}
 
+	public function on_elementor_editor_init() {
+		self::elementor()->common->add_template( __DIR__ . '/includes/templates/editor.php' );
+	}
+
+	/**
+	 * @param \Elementor\Core\Base\Document $document
+	 */
+	public function on_document_save_version( $document ) {
+		$document->update_meta( '_elementor_pro_version', ELEMENTOR_PRO_VERSION );
+	}
+
 	private function get_responsive_templates_path() {
 		return ELEMENTOR_PRO_ASSETS_PATH . 'css/templates/';
 	}
 
 	private function setup_hooks() {
-		add_action( 'elementor/init', [ $this, 'elementor_init' ] );
+		add_action( 'elementor/init', [ $this, 'on_elementor_init' ] );
+		add_action( 'elementor/editor/init', [ $this, 'on_elementor_editor_init' ] );
 
 		add_action( 'elementor/frontend/before_register_scripts', [ $this, 'register_frontend_scripts' ] );
 
@@ -336,6 +362,7 @@ class Plugin {
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'enqueue_styles' ] );
 
 		add_filter( 'elementor/core/responsive/get_stylesheet_templates', [ $this, 'get_responsive_stylesheet_templates' ] );
+		add_action( 'elementor/document/save_version', [ $this, 'on_document_save_version' ] );
 	}
 
 	/**
@@ -346,10 +373,11 @@ class Plugin {
 
 		$this->includes();
 
+		new Connect\Manager();
+
 		$this->setup_hooks();
 
 		if ( is_admin() ) {
-			new Upgrades();
 			new Admin();
 			new License\Admin();
 		}

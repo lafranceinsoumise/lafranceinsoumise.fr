@@ -32,7 +32,7 @@ class Blockquote extends Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'blockquote', 'quote', 'paragraph', 'testimonial', 'text' ];
+		return [ 'blockquote', 'quote', 'paragraph', 'testimonial', 'text', 'twitter', 'tweet' ];
 	}
 
 	protected function _register_controls() {
@@ -181,7 +181,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'user_name',
 			[
-				'label' => __( 'Via', 'elementor-pro' ),
+				'label' => __( 'Username', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => false,
 				'placeholder' => '@username',
@@ -211,7 +211,7 @@ class Blockquote extends Widget_Base {
 		$this->add_control(
 			'url',
 			[
-				'label' => __( 'URL', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'input_type' => 'url',
 				'dynamic' => [
@@ -808,7 +808,7 @@ class Blockquote extends Widget_Base {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
 
 		$tweet_button_view = $settings['tweet_button_view'];
 		$share_link = 'https://twitter.com/intent/tweet';
@@ -857,7 +857,10 @@ class Blockquote extends Widget_Base {
 					<?php if ( 'yes' === $settings['tweet_button'] ) : ?>
 						<a href="<?php echo esc_attr( $share_link ); ?>" class="elementor-blockquote__tweet-button" target="_blank">
 							<?php if ( 'text' !== $tweet_button_view ) : ?>
-								<i class="fa fa-twitter"></i>
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+								<?php if ( 'icon-text' !== $tweet_button_view ) : ?>
+									<span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-pro' ); ?></span>
+								<?php endif; ?>
 							<?php endif; ?>
 							<?php if ( 'icon-text' === $tweet_button_view || 'text' === $tweet_button_view ) : ?>
 								<span <?php echo $this->get_render_attribute_string( 'tweet_button_label' ); ?>><?php echo $settings['tweet_button_label']; ?></span>
@@ -887,7 +890,7 @@ class Blockquote extends Widget_Base {
 						<# if ( 'yes' === settings.tweet_button ) { #>
 							<a href="#" class="elementor-blockquote__tweet-button">
 								<# if ( 'text' !== tweetButtonView ) { #>
-									<i class="fa fa-twitter"></i>
+									<i class="fa fa-twitter" aria-hidden="true"></i><span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-pro' ); ?></span>
 								<# } #>
 								<# if ( 'icon-text' === tweetButtonView || 'text' === tweetButtonView ) { #>
 									<span class="elementor-inline-editing elementor-blockquote__tweet-label" data-elementor-setting-key="tweet_button_label" data-elementor-inline-editing-toolbar="none">{{{ settings.tweet_button_label }}}</span>

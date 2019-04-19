@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\ThemeBuilder\Classes;
 
-use Elementor\Core\Ajax_Manager;
+use Elementor\Core\Common\Modules\Ajax\Module as Ajax;
 use Elementor\Core\Utils\Exceptions;
 use Elementor\TemplateLibrary\Source_Local;
 use ElementorPro\Modules\ThemeBuilder\Documents\Theme_Document;
@@ -40,9 +40,14 @@ class Conditions_Manager {
 	}
 
 	public function on_untrash_post( $post_id ) {
-		$document = Module::instance()->get_document( $post_id );
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$document = $theme_builder_module->get_document( $post_id );
+
 		if ( $document ) {
 			$conditions = $document->get_meta( '_elementor_conditions' );
+
 			if ( $conditions ) {
 				$this->cache->add( $document, $conditions )->save();
 			}
@@ -64,7 +69,11 @@ class Conditions_Manager {
 			return;
 		}
 
-		$document = Module::instance()->get_document( $post_id );
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$document = $theme_builder_module->get_document( $post_id );
+
 		if ( ! $document ) {
 			echo __( 'None', 'elementor-pro' );
 
@@ -106,24 +115,36 @@ class Conditions_Manager {
 	/**
 	 * @access public
 	 *
-	 * @param Ajax_Manager $ajax_manager
+	 * @param Ajax $ajax_manager
 	 */
 	public function register_ajax_actions( $ajax_manager ) {
-		$ajax_manager->register_ajax_action( 'theme_builder_save_conditions', [ $this, 'ajax_save_theme_template_conditions' ] );
-		$ajax_manager->register_ajax_action( 'theme_builder_conditions_check_conflicts', [ $this, 'ajax_check_conditions_conflicts' ] );
+		$ajax_manager->register_ajax_action( 'pro_theme_builder_save_conditions', [ $this, 'ajax_save_theme_template_conditions' ] );
+		$ajax_manager->register_ajax_action( 'pro_theme_builder_conditions_check_conflicts', [ $this, 'ajax_check_conditions_conflicts' ] );
 	}
 
 	public function ajax_check_conditions_conflicts( $request ) {
 		$post_id = $request['editor_post_id'];
+
+		/** @var \ElementorPro\Modules\ThemeBuilder\Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$document = $theme_builder_module->get_document( $post_id );
+
+		$location = $document->get_location();
+
+		$location_settings = $theme_builder_module->get_locations_manager()->get_location( $location );
+
+		if ( ! empty( $location_settings['multiple'] ) ) {
+			return '';
+		}
+
 		$condition = $request['condition'];
 
 		unset( $condition['_id'] );
 
 		$conditions_to_check = rtrim( implode( '/', $condition ), '/' );
 
-		$document = Module::instance()->get_document( $post_id );
-
-		$conditions_groups = $this->cache->get_by_location( $document->get_location() );
+		$conditions_groups = $this->cache->get_by_location( $location );
 
 		$conflicted = [];
 		$message = '';
@@ -139,7 +160,7 @@ class Conditions_Manager {
 				}
 
 				if ( false !== array_search( $conditions_to_check, $conditions, true ) ) {
-					$edit_url = Module::instance()->get_document( $template_id )->get_edit_url();
+					$edit_url = $theme_builder_module->get_document( $template_id )->get_edit_url();
 					$conflicted[] = sprintf( '<a href="%s" target="_blank">%s</a>', $edit_url, get_the_title( $template_id ) );
 				}
 			}
@@ -206,7 +227,7 @@ class Conditions_Manager {
 		$config = [];
 
 		foreach ( $this->conditions as $condition ) {
-			$config[ $condition->get_name() ] = $condition->get_condition_config();
+			$config[ $condition->get_name() ] = $condition->get_config();
 		}
 
 		return $config;
@@ -226,7 +247,11 @@ class Conditions_Manager {
 			$conditions_to_save[] = rtrim( implode( '/', $condition ), '/' );
 		}
 
-		$document = Module::instance()->get_document( $post_id );
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$document = $theme_builder_module->get_document( $post_id );
+
 		if ( empty( $conditions_to_save ) ) {
 			// TODO: $document->delete_meta.
 			delete_post_meta( $post_id, '_elementor_conditions' );
@@ -258,7 +283,10 @@ class Conditions_Manager {
 			return $conditions_priority;
 		}
 
-		$location_manager = Module::instance()->get_locations_manager();
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$location_manager = $theme_builder_module->get_locations_manager();
 		$excludes = [];
 
 		foreach ( $conditions_groups as $theme_template_id => $conditions ) {
@@ -289,7 +317,7 @@ class Conditions_Manager {
 					}
 
 					$args = [
-						'id' => $sub_id,
+						'id' => apply_filters( 'elementor/theme/get_location_templates/condition_sub_id', $sub_id, $parsed_condition ),
 					];
 
 					$condition_pass = $sub_condition_instance->check( $args );
@@ -302,7 +330,7 @@ class Conditions_Manager {
 					if ( 'publish' !== $post_status ) {
 						$location_manager->inspector_log( [
 							'location' => $location,
-							'document' => Module::instance()->get_document( $theme_template_id ),
+							'document' => $theme_builder_module->get_document( $theme_template_id ),
 							'description' => 'Skipped, is not Published',
 						] );
 						continue;
@@ -327,13 +355,16 @@ class Conditions_Manager {
 	}
 
 	public function get_theme_templates_ids( $location ) {
-		$location_manager = Module::instance()->get_locations_manager();
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$location_manager = $theme_builder_module->get_locations_manager();
 
 		// In case the user want to preview any page with a theme_template_id,
 		// like http://domain.com/any-post/?preview=1&theme_template_id=6453
 		if ( ! empty( $_GET['theme_template_id'] ) ) {
 			$force_template_id = $_GET['theme_template_id'];
-			$document = Module::instance()->get_document( $force_template_id );
+			$document = $theme_builder_module->get_document( $force_template_id );
 			// e.g. header / header
 			if ( $document && $location === $document->get_location() ) {
 				$location_manager->inspector_log( [
@@ -349,7 +380,7 @@ class Conditions_Manager {
 		}
 
 		$current_post_id = get_the_ID();
-		$document = Module::instance()->get_document( $current_post_id );
+		$document = $theme_builder_module->get_document( $current_post_id );
 		if ( $document && $location === $document->get_location() ) {
 			$location_manager->inspector_log( [
 				'location' => $location,
@@ -432,14 +463,17 @@ class Conditions_Manager {
 
 		$theme_templates_ids = $this->get_theme_templates_ids( $location );
 
-		$location_settings = Module::instance()->get_locations_manager()->get_locations( $location );
+		/** @var Module $theme_builder_module */
+		$theme_builder_module = Module::instance();
+
+		$location_settings = $theme_builder_module->get_locations_manager()->get_location( $location );
 
 		$documents = [];
 
 		foreach ( $theme_templates_ids as $theme_template_id => $priority ) {
-			$document = Module::instance()->get_document( $theme_template_id );
+			$document = $theme_builder_module->get_document( $theme_template_id );
 			if ( $document ) {
-				$documents[] = $document;
+				$documents[ $theme_template_id ] = $document;
 			} else {
 				$this->purge_post_from_cache( $theme_template_id );
 			}

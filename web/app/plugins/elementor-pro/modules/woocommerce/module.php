@@ -21,7 +21,7 @@ class Module extends Module_Base {
 	protected $docs_types = [];
 
 	public static function is_active() {
-		return function_exists( 'wc' );
+		return class_exists( 'woocommerce' );
 	}
 
 	public static function is_product_search() {
@@ -54,8 +54,7 @@ class Module extends Module_Base {
 				?>
 			</div>
 
-			<div class="elementor-menu-cart__product-name product-name"
-				 data-title="<?php esc_attr_e( 'Product', 'elementor-pro' ); ?>">
+			<div class="elementor-menu-cart__product-name product-name" data-title="<?php esc_attr_e( 'Product', 'elementor-pro' ); ?>">
 				<?php
 				if ( ! $product_permalink ) :
 					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
@@ -115,14 +114,14 @@ class Module extends Module_Base {
 		</div>
 
 		<div class="elementor-menu-cart__subtotal">
-			<strong><?php esc_attr_e( 'Subtotal', 'elementor-pro' ); ?>:</strong> <?php echo $sub_total; ?>
+			<strong><?php echo translate( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo $sub_total; ?>
 		</div>
 		<div class="elementor-menu-cart__footer-buttons">
 			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="elementor-button elementor-button--view-cart elementor-size-md">
-				<span class="elementor-button-text"><?php esc_attr_e( 'Show Cart', 'elementor-pro' ); ?></span>
+				<span class="elementor-button-text"><?php echo translate( 'View cart', 'woocommerce' ); ?></span>
 			</a>
 			<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="elementor-button elementor-button--checkout elementor-size-md">
-				<span class="elementor-button-text"><?php esc_attr_e( 'Checkout', 'elementor-pro' ); ?></span>
+				<span class="elementor-button-text"><?php echo translate( 'Checkout', 'woocommerce' ); ?></span>
 			</a>
 		</div>
 		<?php
@@ -135,6 +134,7 @@ class Module extends Module_Base {
 	public function get_widgets() {
 		return [
 			'Archive_Products',
+			'Archive_Products_Deprecated',
 			'Archive_Description',
 			'Products',
 			'Products_Deprecated',
@@ -195,7 +195,7 @@ class Module extends Module_Base {
 		$module = Plugin::elementor()->dynamic_tags;
 
 		$module->register_group( self::WOOCOMMERCE_GROUP, [
-			'title' => __( 'Woocommerce', 'elementor-pro' ),
+			'title' => __( 'WooCommerce', 'elementor-pro' ),
 		] );
 
 		foreach ( $tags as $tag ) {
@@ -238,6 +238,9 @@ class Module extends Module_Base {
 		$cart_items = WC()->cart->get_cart();
 
 		$toggle_button_link = $widget_cart_is_hidden ? wc_get_cart_url() : '#';
+		/** workaround WooCommerce Subscriptions issue that changes the behavior of is_cart() */
+		$toggle_button_classes = 'elementor-button elementor-size-sm';
+		$toggle_button_classes .= $widget_cart_is_hidden ? ' elementor-menu-cart-hidden' : '';
 		$counter_attr = 'data-counter="' . $product_count . '"';
 
 		?>
@@ -252,9 +255,12 @@ class Module extends Module_Base {
 			<?php endif; ?>
 
 			<div class="elementor-menu-cart__toggle elementor-button-wrapper">
-				<a href="<?php echo esc_attr( $toggle_button_link ); ?>" class="elementor-button elementor-size-sm">
+				<a href="<?php echo esc_attr( $toggle_button_link ); ?>" class="<?php echo $toggle_button_classes; ?>">
 					<span class="elementor-button-text"><?php echo $sub_total; ?></span>
-					<span class="elementor-button-icon" <?php echo $counter_attr; ?>><i class="eicon" aria-hidden="true"></i></span>
+					<span class="elementor-button-icon" <?php echo $counter_attr; ?>>
+						<i class="eicon" aria-hidden="true"></i>
+						<span class="elementor-screen-only"><?php esc_html_e( 'Cart', 'elementor-pro' ); ?></span>
+					</span>
 				</a>
 			</div>
 		</div>

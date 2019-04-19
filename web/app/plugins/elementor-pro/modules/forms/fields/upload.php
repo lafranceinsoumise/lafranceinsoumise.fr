@@ -104,6 +104,16 @@ class Upload extends Field_Base {
 			$form->add_render_attribute( 'input' . $item_index, 'name', $form->get_attribute_name( $item ) . '[]', true );
 		}
 
+		if ( ! empty( $item['file_sizes'] ) ) {
+			$form->add_render_attribute(
+				'input' . $item_index,
+				[
+					'data-maxsize' => $item['file_sizes'],  //MB
+					'data-maxsize-message' => __( 'This file exceeds the maximum allowed size.', 'elementor-pro' ),
+				]
+			);
+		}
+
 		echo '<input ' . $form->get_render_attribute_string( 'input' . $item_index ) . '>';
 	}
 
@@ -346,21 +356,31 @@ class Upload extends Field_Base {
 
 		wp_mkdir_p( $path );
 
-		//'base' => $upload_dir['basedir'] . '/elementor/forms',
 		$files = [
 			[
 				'file' => 'index.php',
-				'content' => '<?php' . PHP_EOL . '// Silence is golden.',
+				'content' => [
+					'<?php',
+					'// Silence is golden.',
+				],
 			],
 			[
 				'file' => '.htaccess',
-				'content' => 'Options -Indexes' . PHP_EOL . '<Files *.*>' . PHP_EOL . 'Header set Content-Disposition attachment' . PHP_EOL . '</Files>',
+				'content' => [
+					'Options -Indexes',
+					'<ifModule mod_headers.c>',
+					'	<Files *.*>',
+					'       Header set Content-Disposition attachment',
+					'	</Files>',
+					'</IfModule>',
+				],
 			],
 		];
 
 		foreach ( $files as $file ) {
 			if ( ! file_exists( trailingslashit( $path ) . $file['file'] ) ) {
-				@ file_put_contents( trailingslashit( $path ) . $file['file'], $file['content'] );
+				$content = implode( PHP_EOL, $file['content'] );
+				@ file_put_contents( trailingslashit( $path ) . $file['file'], $content );
 			}
 		}
 

@@ -110,7 +110,7 @@ class Current_Date_Time extends Tag {
 			}
 		}
 
-		$value = date( $format );
+		$value = date_i18n( $format );
 
 		echo wp_kses_post( $value );
 	}

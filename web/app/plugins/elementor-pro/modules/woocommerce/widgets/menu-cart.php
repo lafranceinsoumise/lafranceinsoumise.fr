@@ -3,12 +3,9 @@ namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Typography;
-use Elementor\Utils;
 use ElementorPro\Modules\Woocommerce\Module;
-use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -74,6 +71,21 @@ class Menu_Cart extends Widget_Base {
 				],
 				'prefix_class' => 'elementor-menu-cart--items-indicator-',
 				'default' => 'bubble',
+			]
+		);
+
+		$this->add_control(
+			'hide_empty_indicator',
+			[
+				'label' => __( 'Hide Empty', 'elementor-pro' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'elementor-pro' ),
+				'label_off' => __( 'No', 'elementor-pro' ),
+				'return_value' => 'hide',
+				'prefix_class' => 'elementor-menu-cart--empty-indicator-',
+				'condition' => [
+					'items_indicator!' => 'none',
+				],
 			]
 		);
 
@@ -335,7 +347,7 @@ class Menu_Cart extends Widget_Base {
 			'items_indicator_style',
 			[
 				'type' => Controls_Manager::HEADING,
-				'label' => _x( 'Items Indicator', 'Menu Cart Widget', 'elementor-pro' ),
+				'label' => __( 'Items Indicator', 'elementor-pro' ),
 				'separator' => 'before',
 				'condition' => [
 					'items_indicator!' => 'none',
@@ -644,6 +656,33 @@ class Menu_Cart extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'product_buttons_typography',
+				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .elementor-menu-cart__footer-buttons .elementor-button',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'button_border_radius',
+			[
+				'label' => __( 'Border Radius', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-menu-cart__footer-buttons .elementor-button' => 'border-radius: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
 		$this->add_control(
 			'heading_view_cart_button_style',
 			[
@@ -675,32 +714,11 @@ class Menu_Cart extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'view_cart_button_border_color',
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
 			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button--view-cart' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'view_cart_button_border_width',
-			[
-				'label' => __( 'Border Width', 'elementor-pro' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 20,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button--view-cart' => 'border-width: {{SIZE}}{{UNIT}};',
-				],
-				'separator' => 'after',
+				'name' => 'view_cart_border',
+				'selector' => '{{WRAPPER}} .elementor-button--view-cart',
 			]
 		);
 
@@ -735,58 +753,11 @@ class Menu_Cart extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'checkout_button_border_color',
-			[
-				'label' => __( 'Border Color', 'elementor-pro' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button--checkout' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'checkout_button_border_width',
-			[
-				'label' => __( 'Border Width', 'elementor-pro' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 20,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-button--checkout' => 'border-width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->add_group_control(
-			Group_Control_Typography::get_type(),
+			Group_Control_Border::get_type(),
 			[
-				'name' => 'product_buttons_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .elementor-menu-cart__footer-buttons .elementor-button',
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'button_border_radius',
-			[
-				'label' => __( 'Border Radius', 'elementor-pro' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-menu-cart__footer-buttons .elementor-button' => 'border-radius: {{SIZE}}{{UNIT}}',
-				],
+				'name' => 'checkout_border',
+				'selector' => '{{WRAPPER}} .elementor-button--checkout',
 			]
 		);
 

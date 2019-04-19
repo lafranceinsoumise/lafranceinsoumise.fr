@@ -22,6 +22,12 @@ class Module extends TagsModule {
 
 	const ARCHIVE_GROUP = 'archive';
 
+	const REQUEST_GROUP = 'request';
+
+	const MEDIA_GROUP = 'media';
+
+	const ACTION_GROUP = 'action';
+
 	public function __construct() {
 		parent::__construct();
 
@@ -73,6 +79,12 @@ class Module extends TagsModule {
 			'Site_URL',
 			'Internal_URL',
 			'Current_Date_Time',
+			'Request_Parameter',
+			'Lightbox',
+			'Featured_Image_Data',
+			'Shortcode',
+			'Contact_URL',
+			'User_Info',
 		];
 	}
 
@@ -87,11 +99,17 @@ class Module extends TagsModule {
 			self::SITE_GROUP => [
 				'title' => __( 'Site', 'elementor-pro' ),
 			],
-			self::COMMENTS_GROUP => [
-				'title' => __( 'Comments', 'elementor-pro' ),
+			self::MEDIA_GROUP => [
+				'title' => __( 'Media', 'elementor-pro' ),
+			],
+			self::ACTION_GROUP => [
+				'title' => __( 'Actions', 'elementor-pro' ),
 			],
 			self::AUTHOR_GROUP => [
 				'title' => __( 'Author', 'elementor-pro' ),
+			],
+			self::COMMENTS_GROUP => [
+				'title' => __( 'Comments', 'elementor-pro' ),
 			],
 		];
 	}

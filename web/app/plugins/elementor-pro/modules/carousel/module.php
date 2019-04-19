@@ -13,6 +13,7 @@ class Module extends Module_Base {
 		return [
 			'Media_Carousel',
 			'Testimonial_Carousel',
+			'Reviews',
 		];
 	}
 

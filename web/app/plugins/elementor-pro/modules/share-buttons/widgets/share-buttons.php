@@ -103,7 +103,7 @@ class Share_Buttons extends Base_Widget {
 						'button' => 'linkedin',
 					],
 				],
-				'title_field' => '<i class="{{ elementorPro.modules.shareButtons.getNetworkClass( button ) }}"></i> {{{ elementorPro.modules.shareButtons.getNetworkTitle( obj ) }}}',
+				'title_field' => '<i class="{{ elementorPro.modules.shareButtons.getNetworkClass( button ) }}" aria-hidden="true"></i> {{{ elementorPro.modules.shareButtons.getNetworkTitle( obj ) }}}',
 			]
 		);
 
@@ -214,7 +214,7 @@ class Share_Buttons extends Base_Widget {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'alignment',
 			[
 				'label' => __( 'Alignment', 'elementor-pro' ),
@@ -237,7 +237,7 @@ class Share_Buttons extends Base_Widget {
 						'icon' => 'fa fa-align-justify',
 					],
 				],
-				'prefix_class' => 'elementor-share-buttons--align-',
+				'prefix_class' => 'elementor-share-buttons%s--align-',
 				'condition' => [
 					'columns' => '0',
 				],
@@ -261,7 +261,7 @@ class Share_Buttons extends Base_Widget {
 		$this->add_control(
 			'share_url',
 			[
-				'label' => __( 'URL', 'elementor-pro' ),
+				'label' => __( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
 				'show_external' => false,
 				'placeholder' => __( 'https://your-link.com', 'elementor-pro' ),
@@ -617,7 +617,8 @@ class Share_Buttons extends Base_Widget {
 					<div class="<?php echo esc_attr( $button_classes . $social_network_class ); ?>">
 						<?php if ( 'icon' === $settings['view'] || 'icon-text' === $settings['view'] ) : ?>
 							<span class="elementor-share-btn__icon">
-								<i class="<?php echo self::get_network_class( $network_name ); ?>"></i>
+								<i class="<?php echo self::get_network_class( $network_name ); ?>" aria-hidden="true"></i>
+								<span class="elementor-screen-only"><?php echo sprintf( __( 'Share on %s', 'elementor-pro' ), $network_name ); ?></span>
 							</span>
 						<?php endif; ?>
 						<?php if ( $show_text || $has_counter ) : ?>
@@ -659,7 +660,10 @@ class Share_Buttons extends Base_Widget {
 					<div class="elementor-grid-item">
 						<div class="{{ buttonClass }} {{ socialNetworkClass }}">
 							<# if ( 'icon' === settings.view || 'icon-text' === settings.view ) { #>
-								<span class="elementor-share-btn__icon"><i class="{{ shareButtonsEditorModule.getNetworkClass( networkName ) }}"></i></span>
+							<span class="elementor-share-btn__icon">
+								<i class="{{ shareButtonsEditorModule.getNetworkClass( networkName ) }}" aria-hidden="true"></i>
+								<span class="elementor-screen-only">Share on {{{ networkName }}}</span>
+							</span>
 							<# } #>
 							<# if ( showText || showCounter ) { #>
 								<div class="elementor-share-btn__text">

@@ -39,7 +39,7 @@ class Archive_Meta extends Tag {
 
 		$value = '';
 
-		if ( is_category() || is_tax() || is_tax() ) {
+		if ( is_category() || is_tax() ) {
 			$value = get_term_meta( get_queried_object_id(), $key, true );
 		} elseif ( is_author() ) {
 			$value = get_user_meta( get_queried_object_id(), $key, true );

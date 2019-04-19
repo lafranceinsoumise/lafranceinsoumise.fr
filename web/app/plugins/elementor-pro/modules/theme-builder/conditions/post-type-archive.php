@@ -14,6 +14,10 @@ class Post_Type_Archive extends Condition_Base {
 		return 'archive';
 	}
 
+	public static function get_priority() {
+		return 70;
+	}
+
 	public function __construct( $data ) {
 		$this->post_type = get_post_type_object( $data['post_type'] );
 		$taxonomies = get_object_taxonomies( $data['post_type'], 'objects' );
