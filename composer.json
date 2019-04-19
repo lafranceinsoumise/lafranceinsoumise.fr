@@ -56,7 +56,7 @@
     "fi/fi-wordpress-addons": "dev-master",
     "guilro/wp-menu-export": "dev-master",
     "wpackagist-plugin/vanilla-pdf-embed": "^0.0.8",
-    "wpackagist-plugin/wordpress-seo": "^10.0",
+    "wpackagist-plugin/wordpress-seo": "^11.0",
     "wpackagist-plugin/redirection": "^4.0",
     "wpackagist-plugin/contact-form-7": "^5.0",
     "wpackagist-plugin/wpcf7-recaptcha": "^1.0",
