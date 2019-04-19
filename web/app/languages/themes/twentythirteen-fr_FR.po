@@ -1,22 +1,73 @@
-# Translation of Twenty Thirteen in French (France)
-# This file is distributed under the same license as the Twenty Thirteen package.
+# Translation of Themes - Twenty Thirteen in French (France)
+# This file is distributed under the same license as the Themes - Twenty Thirteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-29 10:36:04+0000\n"
+"PO-Revision-Date: 2019-04-01 11:16:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
-"Project-Id-Version: Twenty Thirteen\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Themes - Twenty Thirteen\n"
 
-#. Description of the plugin/theme
+#. Description of the theme
 msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
 msgstr "Le thème de WordPress pour 2013 nous ramène au blog, avec un grand nombre de formats d'article, chacun s'affichant à sa propre manière, en toute beauté. Vous y trouverez de nombreux détails de mise en page, à commencer par le jeu de couleurs vives et les images d'en-tête assorties, une superbe typographie et de belles icônes, et une mise en page flexible qui fonctionne sur toutes les tailles d'écrans, grands ou petits."
 
-#. Theme Name of the plugin/theme
+#. Theme Name of the theme
 msgid "Twenty Thirteen"
 msgstr "Twenty Thirteen"
+
+#. translators: %s: The post title.
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Une réflexion sur « %s »"
+
+#: functions.php:146
+msgid "Off-white"
+msgstr "Blanc crème"
+
+#: functions.php:141
+msgid "Beige"
+msgstr "Beige"
+
+#: functions.php:136
+msgid "Light Brown"
+msgstr "Marron clair"
+
+#: functions.php:131
+msgid "Medium Brown"
+msgstr "Marron moyen"
+
+#: functions.php:126
+msgid "Dark Brown"
+msgstr "Marron foncé"
+
+#: functions.php:121
+msgid "White"
+msgstr "Blanc"
+
+#: functions.php:116
+msgid "Yellow"
+msgstr "Jaune"
+
+#: functions.php:111
+msgid "Light Orange"
+msgstr "Orange clair"
+
+#: functions.php:106
+msgid "Medium Orange"
+msgstr "Orange moyen"
+
+#: functions.php:101
+msgid "Red"
+msgstr "Rouge"
+
+#: functions.php:96
+msgid "Dark Gray"
+msgstr "Gris foncé"
 
 #: taxonomy-post_format.php:23
 msgid "%s Archives"
@@ -30,42 +81,42 @@ msgstr "Archives par mot-clé&nbsp;: %s"
 msgid "Search Results for: %s"
 msgstr "Résultats de recherche pour %s"
 
-#: inc/custom-header.php:59
+#: inc/custom-header.php:60
 msgctxt "header image description"
 msgid "Star"
 msgstr "Étoile"
 
-#: inc/custom-header.php:54
+#: inc/custom-header.php:55
 msgctxt "header image description"
 msgid "Diamond"
 msgstr "Losange"
 
-#: inc/custom-header.php:49
+#: inc/custom-header.php:50
 msgctxt "header image description"
 msgid "Circle"
 msgstr "Cercle"
 
-#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
+#: inc/back-compat.php:37 inc/back-compat.php:48 inc/back-compat.php:64
 msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
 msgstr "Twenty Thirteen nécessite au moins WordPress 3.6. Vous utilisez la version %s. Veuillez faire une mise à jour et réessayer."
 
-#: image.php:58
+#: image.php:62
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 
-#: image.php:57
+#: image.php:61
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
 msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
 
-#: image.php:45
+#: image.php:49
 msgid "Full resolution"
 msgstr "Pleine résolution"
 
-#: image.php:44
+#: image.php:48
 msgid "Link to full-size image"
 msgstr "Lien vers l&rsquo;image originale"
 
-#: image.php:28
+#: image.php:29
 msgid "<span class=\"attachment-meta\">Published on <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Return to %4$s\" rel=\"gallery\">%5$s</a></span>"
 msgstr "<span class=\"attachment-meta\">Publié le <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> dans <a href=\"%3$s\" title=\"Revenir vers %4$s\" rel=\"gallery\">%5$s</a></span>"
 
@@ -77,94 +128,95 @@ msgstr "Aller au contenu"
 msgid "Menu"
 msgstr "Menu"
 
-#: functions.php:372
+#: functions.php:525
 msgid "Permalink to %s"
 msgstr "Permalien vers %s"
 
-#: functions.php:366
+#: functions.php:517
 msgctxt "1: post format name. 2: date"
 msgid "%1$s on %2$s"
 msgstr "%1$s le %2$s"
 
-#: functions.php:346
+#: functions.php:497
 msgid "View all posts by %s"
 msgstr "Afficher tous les articles par %s"
 
 #. Translators: used between list items, there is a space after the comma.
-#: functions.php:331 functions.php:337
+#: functions.php:481 functions.php:487
 msgid ", "
 msgstr ", "
 
-#: functions.php:325
+#: functions.php:473
 msgid "Sticky"
 msgstr "Mis en avant"
 
-#: functions.php:307
+#: functions.php:455
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:306
+#: functions.php:454
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr "<span class=\"meta-nav\">&larr;</span> %title"
 
-#: functions.php:303
+#: functions.php:451
 msgid "Post navigation"
 msgstr "Navigation des articles"
 
-#: functions.php:277
+#: functions.php:424
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:273
+#: functions.php:420
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
 
-#: functions.php:269
+#: functions.php:416
 msgid "Posts navigation"
 msgstr "Navigation des articles"
 
-#: functions.php:246
+#: functions.php:391
 msgid "Appears on posts and pages in the sidebar."
 msgstr "Apparaît dans la barre latérale des articles et pages."
 
-#: functions.php:244
+#: functions.php:389
 msgid "Secondary Widget Area"
 msgstr "Zone secondaire de widgets"
 
-#: functions.php:236
+#: functions.php:379
 msgid "Appears in the footer section of the site."
 msgstr "Apparaît dans le pied de page du site."
 
-#: functions.php:234
+#: functions.php:377
 msgid "Main Widget Area"
 msgstr "Zone principale de widgets"
 
-#: functions.php:221
+#: functions.php:362
 msgid "Page %s"
 msgstr "Page %s"
 
-#. Translators: If there are characters in your language that are not supported
-#. by Bitter, translate this to 'off'. Do not translate into your own language.
-#: functions.php:137
+#. Translators: If there are characters in your language that are not *
+#. supported by Bitter, translate this to 'off'. Do not translate into your *
+#. own language.
+#: functions.php:231
 msgctxt "Bitter font: on or off"
 msgid "on"
 msgstr "on"
 
-#. Translators: If there are characters in your language that are not supported
-#. by Source Sans Pro, translate this to 'off'. Do not translate into your own
-#. language.
-#: functions.php:131
+#. Translators: If there are characters in your language that are not *
+#. supported by Source Sans Pro, translate this to 'off'. Do not translate *
+#. into your own language.
+#: functions.php:225
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:97
+#: functions.php:191
 msgid "Navigation Menu"
 msgstr "Menu de navigation"
 
-#: footer.php:19
+#: footer.php:25
 msgid "Proudly powered by %s"
 msgstr "Fièrement propulsé par %s"
 
@@ -182,67 +234,68 @@ msgstr "Prêt à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vo
 
 #: content-none.php:12
 msgid "Nothing Found"
-msgstr "Rien de trouvé"
+msgstr "Aucun résultat"
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
+#: content-gallery.php:52 content-video.php:48 content-image.php:48
+#: content-quote.php:38 content.php:65
 msgid "View all % comments"
 msgstr "Afficher les % commentaires"
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
+#: content-gallery.php:52 content-video.php:48 content-image.php:48
+#: content-quote.php:38 content.php:65
 msgid "One comment so far"
 msgstr "Un commentaire pour le moment"
 
-#: content-gallery.php:43 content-image.php:39 content-quote.php:29
-#: content-video.php:39 content.php:56
+#: content-gallery.php:52 content-video.php:48 content-image.php:48
+#: content-quote.php:38 content.php:65
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
-#: content-aside.php:27 content-aside.php:35 content-audio.php:38
-#: content-chat.php:36 content-gallery.php:46 content-image.php:42
-#: content-link.php:19 content-quote.php:32 content-status.php:26
-#: content-video.php:42 content.php:31 image.php:50 page.php:39
+#: content-gallery.php:55 content-aside.php:36 content-aside.php:44
+#: content-status.php:35 content-video.php:51 content-image.php:51
+#: content-link.php:19 content-audio.php:47 content-quote.php:41 image.php:54
+#: content-chat.php:45 content.php:31 page.php:51
 msgid "Edit"
 msgstr "Modifier"
 
-#: content-aside.php:20 content-audio.php:31 content-chat.php:30
-#: content-gallery.php:31 content-image.php:30 content-link.php:31
-#: content-quote.php:20 content-status.php:20 content-video.php:30
-#: content.php:48 image.php:76 page.php:35
+#: content-gallery.php:35 content-aside.php:24 content-status.php:24
+#: content-video.php:34 content-image.php:34 content-link.php:35
+#: content-audio.php:35 content-quote.php:24 image.php:83 content-chat.php:34
+#: content.php:52 page.php:41
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
 #. translators: %s: Name of current post
-#: content-aside.php:16 content-audio.php:27 content-chat.php:26
-#: content-gallery.php:27 content-image.php:26 content-link.php:27
-#: content-quote.php:16 content-status.php:16 content-video.php:26
-#: content.php:44 functions.php:481
+#: content-gallery.php:28 content-aside.php:17 content-status.php:17
+#: content-video.php:27 content-image.php:27 content-link.php:28
+#: content-audio.php:28 content-quote.php:17 functions.php:639
+#: content-chat.php:27 content.php:45
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continuer la lecture de %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: comments.php:52
+#: comments.php:67
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: comments.php:47
+#: comments.php:62
 msgid "Newer Comments &rarr;"
 msgstr "Commentaires plus récents &rarr;"
 
-#: comments.php:46
+#: comments.php:61
 msgid "&larr; Older Comments"
 msgstr "&larr; Commentaire plus ancien"
 
-#: comments.php:45
+#: comments.php:60
 msgid "Comment navigation"
 msgstr "Navigation des commentaires"
 
-#: comments.php:25
+#. translators: %1$s: The number of comments. %2$s: The post title.
+#: comments.php:35
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Une réflexion au sujet de &laquo;&nbsp;%2$s&nbsp;&raquo;"
-msgstr[1] "%1$s réflexions au sujet de &laquo;&nbsp;%2$s&nbsp;&raquo;"
+msgstr[0] "%1$s réflexion sur « %2$s »"
+msgstr[1] "%1$s réflexions sur « %2$s »"
 
 #: category.php:19
 msgid "Category Archives: %s"
@@ -260,29 +313,29 @@ msgstr "Voir tous les articles de %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "About %s"
 msgstr "A propos %s"
 
-#: archive.php:35
+#: archive.php:36
 msgid "Archives"
 msgstr "Archives"
 
-#: archive.php:33
+#: archive.php:34
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: archive.php:33
+#: archive.php:34
 msgid "Yearly Archives: %s"
 msgstr "Archives annuelles&nbsp;: %s"
 
-#: archive.php:31
+#: archive.php:32
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: archive.php:31
+#: archive.php:32
 msgid "Monthly Archives: %s"
 msgstr "Archives mensuelles&nbsp;: %s"
 
-#: archive.php:29
+#: archive.php:30
 msgid "Daily Archives: %s"
 msgstr "Archives quotidiennes&nbsp;:"
 
@@ -298,16 +351,15 @@ msgstr "C&rsquo;est plutôt gênant, vous ne trouvez pas&nbsp;?"
 msgid "Not Found"
 msgstr "Rien de trouvé"
 
-#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 2.0)  #-#-#-#-#
-#. Author URI of the plugin/theme
-#: footer.php:19
+#. Author URI of the theme
+#: footer.php:24
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
-#. Author of the plugin/theme
+#. Author of the theme
 msgid "the WordPress team"
 msgstr "L&rsquo;équipe WordPress"
 
-#. Theme URI of the plugin/theme
+#. Theme URI of the theme
 msgid "https://wordpress.org/themes/twentythirteen/"
 msgstr "https://wordpress.org/themes/twentythirteen/"
