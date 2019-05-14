@@ -27,9 +27,6 @@ class Shortcode extends Tag {
 			Module::TEXT_CATEGORY,
 			Module::URL_CATEGORY,
 			Module::POST_META_CATEGORY,
-			Module::GALLERY_CATEGORY,
-			Module::IMAGE_CATEGORY,
-			Module::MEDIA_CATEGORY,
 		];
 	}
 

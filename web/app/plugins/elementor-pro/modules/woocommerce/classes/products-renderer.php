@@ -156,7 +156,7 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		foreach ( $terms as $taxonomy => $ids ) {
 			$query = [
 				'taxonomy' => $taxonomy,
-				'field' => 'term_id',
+				'field' => 'term_taxonomy_id',
 				'terms' => $ids,
 			];
 

@@ -337,13 +337,13 @@ class Elementor_Post_Query {
 	}
 
 	/**
-	 * @param string        $value
-	 * @param string|array  $maybe_array
+	 * @param string    $value
+	 * @param mixed     $maybe_array
 	 *
 	 * @return bool
 	 */
 	protected function maybe_in_array( $value, $maybe_array ) {
-		return is_string( $maybe_array ) ? $value === $maybe_array : in_array( $value, $maybe_array, true );
+		return is_array( $maybe_array ) ? in_array( $value, $maybe_array, true ) : $value === $maybe_array;
 	}
 
 	/**

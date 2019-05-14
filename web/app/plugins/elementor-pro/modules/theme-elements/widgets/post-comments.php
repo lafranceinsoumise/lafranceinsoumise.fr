@@ -101,7 +101,7 @@ class Post_Comments extends Base {
 			?>
 			<div class="elementor-alert elementor-alert-danger" role="alert">
 				<span class="elementor-alert-title">
-					<?php esc_html_e( 'Comments Are Closed!', 'elementor-pro' ); ?>
+					<?php esc_html_e( 'Comments are closed.', 'elementor-pro' ); ?>
 				</span>
 				<span class="elementor-alert-description">
 					<?php esc_html_e( 'Switch on comments from either the discussion box on the WordPress post edit screen or from the WordPress discussion settings.', 'elementor-pro' ); ?>

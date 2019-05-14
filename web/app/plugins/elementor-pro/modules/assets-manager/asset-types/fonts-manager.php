@@ -520,8 +520,8 @@ class Fonts_Manager {
 		add_filter( 'elementor/fonts/groups', [ $this, 'register_fonts_groups' ] );
 		add_filter( 'elementor/fonts/additional_fonts', [ $this, 'register_fonts_in_control' ] );
 		add_filter( 'elementor/finder/categories', [ $this, 'add_finder_item' ] );
-		add_action( 'elementor/post-css-file/parse', [ $this, 'enqueue_fonts' ] );
-		add_action( 'elementor/global-css-file/parse', [ $this, 'enqueue_fonts' ] );
+		add_action( 'elementor/css-file/post/parse', [ $this, 'enqueue_fonts' ] );
+		add_action( 'elementor/css-file/global/parse', [ $this, 'enqueue_fonts' ] );
 		add_filter( 'post_updated_messages', [ $this, 'post_updated_messages' ] );
 		add_filter( 'enter_title_here', [ $this, 'update_enter_title_here' ], 10, 2 );
 

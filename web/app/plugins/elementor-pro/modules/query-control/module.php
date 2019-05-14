@@ -91,6 +91,45 @@ class Module extends Module_Base {
 		return 'query-control';
 	}
 
+	private function search_taxonomies( $query_params, $data ) {
+		$by_field = $this->extract_term_by_field( $data );
+		$terms = get_terms( $query_params );
+
+		global $wp_taxonomies;
+
+		$results = [];
+
+		foreach ( $terms as $term ) {
+			$term_name = $this->get_term_name_with_parents( $term );
+			if ( ! empty( $data['include_type'] ) ) {
+				$text = $wp_taxonomies[ $term->taxonomy ]->labels->name . ': ' . $term_name;
+			} else {
+				$text = $term_name;
+			}
+
+			$results[] = [
+				'id' => $term->{$by_field},
+				'text' => $text,
+			];
+		}
+
+		return $results;
+
+	}
+
+	/**
+	 * @param array $data
+	 *
+	 * @return string
+	 */
+	private function extract_term_by_field( $data ) {
+		if ( ! empty( $data['query'] ) && ! empty( $data['query']['by_field'] ) ) {
+			return $data['query']['by_field'];
+		}
+
+		return 'term_taxonomy_id';
+	}
+
 	/**
 	 * @param array $data
 	 *
@@ -112,23 +151,22 @@ class Module extends Module_Base {
 					'hide_empty' => false,
 				];
 
-				$terms = get_terms( $query_params );
+				$results = $this->search_taxonomies( $query_params, $data );
 
-				global $wp_taxonomies;
+				break;
 
-				foreach ( $terms as $term ) {
-					$term_name = $this->get_term_name_with_parents( $term );
-					if ( ! empty( $data['include_type'] ) ) {
-						$text = $wp_taxonomies[ $term->taxonomy ]->labels->name . ': ' . $term_name;
-					} else {
-						$text = $term_name;
-					}
+			case 'cpt_taxonomies':
+				$post_type = $this->extract_post_type( $data );
 
-					$results[] = [
-						'id' => $term->term_taxonomy_id,
-						'text' => $text,
-					];
-				}
+				$taxonomies = get_object_taxonomies( $post_type );
+
+				$query_params = [
+					'taxonomy' => $taxonomies,
+					'search' => $data['q'],
+					'hide_empty' => false,
+				];
+
+				$results = $this->search_taxonomies( $query_params, $data );
 
 				break;
 
@@ -200,10 +238,12 @@ class Module extends Module_Base {
 		$results = [];
 
 		switch ( $request['filter_type'] ) {
+			case 'cpt_taxonomies':
 			case 'taxonomy':
+				$by_field = $this->extract_term_by_field( $request );
 				$terms = get_terms(
 					[
-						'term_taxonomy_id' => $ids,
+						$by_field => $ids,
 						'hide_empty' => false,
 					]
 				);
@@ -216,7 +256,7 @@ class Module extends Module_Base {
 					} else {
 						$text = $term_name;
 					}
-					$results[ $term->term_taxonomy_id ] = $text;
+					$results[ $term->{$by_field} ] = $text;
 				}
 				break;
 

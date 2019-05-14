@@ -337,6 +337,7 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Animation Duration', 'elementor-pro' ) . ' (sec)',
 				'type' => Controls_Manager::SLIDER,
+				'frontend_available' => true,
 				'default' => [
 					'size' => 1.2,
 				],

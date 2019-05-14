@@ -440,10 +440,6 @@
 .elementor ul li.elementor-portfolio__filter {
   list-style-type: none; }
 
-@media (max-width: ELEMENTOR_SCREEN_SM_MAX) {
-  .elementor-widget-posts .elementor-widget-container {
-    overflow: hidden; } }
-
 .elementor-field-type-hidden {
   display: none; }
 
@@ -1544,7 +1540,8 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
     border: 0;
     position: absolute;
     background: transparent;
-    top: 0; }
+    top: 0;
+    padding: 0; }
 
 .woocommerce div.product.elementor .quantity .qty {
   vertical-align: top;

@@ -1,5 +1,26 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.5.8 - 2019-05-06
+* Fix: Popup entrance animation not working in frontend
+* Fix: Popup Exit Intent trigger activated multiple times
+
+#### 2.5.7 - 2019-05-05
+* Fix: Embedded video keeps playing after a Popup is closed ([#7875](https://github.com/elementor/elementor/issues/7875))
+* Fix: Maximum call stack size exceeded error in Safari ([#7824](https://github.com/elementor/elementor/issues/7824))
+* Fix: Entrance animations not appearing on Popup reopen ([#7395](https://github.com/elementor/elementor/issues/7395))
+* Fix: WC variations select style glitch in several themes ([#8008](https://github.com/elementor/elementor/issues/8008))
+* Fix: Theme Builder taxonomy conditions not retrieving proper results in edge cases
+
+#### 2.5.6 - 2019-04-29
+* Tweak: Removed `Shortcode` dynamic from Image, Gallery and Media control
+* Fix: Popup not inheriting entrance animation in responsive mode ([#7809](https://github.com/elementor/elementor/issues/7809))
+* Fix: Terms autocomplete retrieves wrong results in Query Control
+* Fix: Query Control Related by author glitches in edge cases
+* Fix: Query Control using terms for Products widget
+* Fix: Posts cards style glitch in small screens
+* Fix: Display conditions delete icon missing in small screens
+* Fix: Avoid rendering Menu Cart widget in WordPress native editor
+
 #### 2.5.5 - 2019-04-08
 * Tweak: Allow text selection inside a Popup
 * Fix: Added backwards compatibility for `tax_query` in Query Control ([#7751](https://github.com/elementor/elementor/issues/7751))

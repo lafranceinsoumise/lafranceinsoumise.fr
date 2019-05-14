@@ -232,6 +232,10 @@ class Module extends Module_Base {
 	}
 
 	public static function render_menu_cart() {
+		if ( null === WC()->cart ) {
+			return;
+		}
+
 		$widget_cart_is_hidden = apply_filters( 'woocommerce_widget_cart_is_hidden', is_cart() || is_checkout() );
 		$product_count = WC()->cart->get_cart_contents_count();
 		$sub_total = WC()->cart->get_cart_subtotal();

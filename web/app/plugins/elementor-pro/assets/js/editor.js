@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.5 - 08-04-2019 */
+/*! elementor-pro - v2.5.8 - 06-05-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -689,6 +689,11 @@ module.exports = elementor.modules.controls.Select2.extend({
 		};
 	},
 
+	getControlValueByName: function getControlValueByName(controlName) {
+		var name = this.model.get('group_prefix') + controlName;
+		return this.elementSettingsModel.attributes[name];
+	},
+
 	getSelect2DefaultOptions: function getSelect2DefaultOptions() {
 		var self = this;
 
@@ -702,6 +707,12 @@ module.exports = elementor.modules.controls.Select2.extend({
 						include_type: self.model.get('include_type'),
 						query: self.model.get('query')
 					};
+
+					if ('cpt_taxonomies' === data.filter_type) {
+						data.query = {
+							post_type: self.getControlValueByName('post_type')
+						};
+					}
 
 					return elementorPro.ajax.addRequest('panel_posts_control_filter_autocomplete', {
 						data: data,
@@ -744,7 +755,8 @@ module.exports = elementor.modules.controls.Select2.extend({
 				filter_type: filterType,
 				object_type: self.model.get('object_type'),
 				include_type: self.model.get('include_type'),
-				unique_id: '' + self.cid + filterType
+				unique_id: '' + self.cid + filterType,
+				query: self.model.get('query')
 			},
 			before: function before() {
 				self.addControlSpinner();
@@ -3384,7 +3396,7 @@ module.exports = elementor.modules.controls.Repeater.extend({
 		elementorPro.ajax.addRequest('theme_builder_conditions_check_conflicts', {
 			unique_id: rowId,
 			data: {
-				condition: model.toJSON({ removeDefaults: true })
+				condition: model.toJSON({ removeDefault: true })
 			},
 			success: function success(data) {
 				if (!_.isEmpty(data)) {

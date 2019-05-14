@@ -114,7 +114,7 @@ class Module extends Module_Base {
 				'choose' => __( 'Choose', 'elementor-pro' ),
 				'add_condition' => __( 'Add Condition', 'elementor-pro' ),
 				'conditions_title' => sprintf( __( 'Where Do You Want to Display Your %s?', 'elementor-pro' ), $document->get_post_type_title() ),
-				'conditions_description' => sprintf( __( 'Set the conditions that determine where your %s is used throughout your site.<br />For example, choose \'Entire Site\' to display the template across your site.', 'elementor-pro' ), $document->get_post_type_title() ),
+				'conditions_description' => sprintf( __( 'Set the conditions that determine where your %s is used throughout your site.', 'elementor-pro' ), $document->get_post_type_title() ) . '<br>' . __( 'For example, choose \'Entire Site\' to display the template across your site.', 'elementor-pro' ),
 				'conditions_publish_screen_description' => __( 'Apply current template to these pages.', 'elementor-pro' ),
 				'save_and_close' => __( 'Save & Close', 'elementor-pro' ),
 			],

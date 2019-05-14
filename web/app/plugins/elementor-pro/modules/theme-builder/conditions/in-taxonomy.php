@@ -53,6 +53,9 @@ class In_Taxonomy extends Condition_Base {
 				],
 				'filter_type' => 'taxonomy',
 				'object_type' => $this->taxonomy->name,
+				'query' => [
+					'by_field' => 'term_id',
+				],
 			]
 		);
 	}

@@ -231,23 +231,25 @@ class Admin {
 					<p class="e-row-divider-bottom elementor-admin-alert elementor-alert-info"><?php echo __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL of your site (including HTTPS/SSL migration). Please deactivate the license and then reactivate it again.', 'elementor-pro' ); ?></p>
 				<?php endif; ?>
 
-
 					<p class="e-row-stretch e-row-divider-bottom">
+						<span>
 						<?php
 						$connected_user = $this->get_connected_account();
 
-						if ( $connected_user ) :?>
-							 <span><?php echo __( 'You\'re connected as', 'elementor-pro' ); ?> <strong><?php echo $this->get_connected_account(); ?></strong>.
-						<?php endif; ?>
+						if ( $connected_user ) :
+							echo sprintf( __( 'You\'re connected as %s.', 'elementor-pro' ), '<strong>' . $this->get_connected_account() . '</strong>' );
+						endif;
+						?>
 
-						<?php echo __( 'Want to activate this website by a different license?', 'elementor-pro' ); ?></span>
+						<?php echo __( 'Want to activate this website by a different license?', 'elementor-pro' ); ?>
+						</span>
 						<a class="button button-primary" href="<?php echo esc_url( $this->get_switch_license_url() ); ?>">
 							<?php echo __( 'Switch Account', 'elementor-pro' ); ?>
 						</a>
 					</p>
 
 					<p class="e-row-stretch">
-						<span>Want to deactivate the license for any reason?</span>
+						<span><?php echo __( 'Want to deactivate the license for any reason?', 'elementor-pro' ); ?></span>
 						<a class="button" href="<?php echo esc_url( $this->get_deactivate_url() ); ?>">
 							<?php echo __( 'Disconnect', 'elementor-pro' ); ?>
 						</a>
@@ -461,7 +463,7 @@ class Admin {
 
 					<input type="submit" class="button button-primary" value="<?php esc_attr_e( 'Activate', 'elementor-pro' ); ?>"/>
 
-					<p class="description"><?php _e( 'Your license key should look something like this: <code>fb351f05958872E193feb37a505a84be</code>', 'elementor-pro' ); ?></p>
+					<p class="description"><?php printf( __( 'Your license key should look something like this: %s', 'elementor-pro' ), '<code>fb351f05958872E193feb37a505a84be</code>' ); ?></p>
 
 				<?php else :
 					$license_data = API::get_license_data( true ); ?>
