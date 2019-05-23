@@ -178,12 +178,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guilro/wp-menu-export.git",
+                "url": "https://github.com/jillro/wp-menu-export.git",
                 "reference": "267491ec01798b40621ec3d53e46c8d3dcd2d77f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guilro/wp-menu-export/zipball/267491ec01798b40621ec3d53e46c8d3dcd2d77f",
+                "url": "https://api.github.com/repos/jillro/wp-menu-export/zipball/267491ec01798b40621ec3d53e46c8d3dcd2d77f",
                 "reference": "267491ec01798b40621ec3d53e46c8d3dcd2d77f",
                 "shasum": ""
             },
@@ -293,16 +293,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.7.3",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd"
+                "reference": "a6088212296243470513b74bad1a18f277574213"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/d0e409e70dafff4ceeaa8ef941ee319e350317dd",
-                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd",
+                "url": "https://api.github.com/repos/roots/soil/zipball/a6088212296243470513b74bad1a18f277574213",
+                "reference": "a6088212296243470513b74bad1a18f277574213",
                 "shasum": ""
             },
             "require": {
@@ -334,20 +334,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-08-14T01:36:41+00:00"
+            "time": "2019-05-23T00:52:42+00:00"
         },
         {
             "name": "roots/wordpress",
-            "version": "5.2",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.2"
+                "reference": "5.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.2",
-                "reference": "5.2",
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.2.1",
+                "reference": "5.2.1",
                 "shasum": null
             },
             "require": {
@@ -372,7 +372,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-05-07T21:16:12+00:00"
+            "time": "2019-05-21T19:53:10+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -638,15 +638,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.1",
+            "version": "5.1.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.1"
+                "reference": "tags/5.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -798,15 +798,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "11.1.1",
+            "version": "11.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/11.1.1"
+                "reference": "tags/11.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -838,15 +838,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.1.8"
+                "reference": "tags/1.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.1.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.1.9.zip",
                 "reference": null,
                 "shasum": null
             },
