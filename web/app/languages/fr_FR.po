@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.2.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-06-13 17:31:14+0000\n"
+"PO-Revision-Date: 2019-07-19 18:52:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2671,7 +2671,7 @@ msgstr "Enregistrement automatique"
 
 #: wp-includes/js/dist/editor.js:9818
 msgid "Finished writing? That’s great, let’s get this published right now. Just click “Publish” and you’re good to go."
-msgstr "Vous avez fini de rédiger ? Super, publions ceci maintenant. Cliquez sur « Publier » et nous serons prêts à y aller."
+msgstr "Vous avez fini de rédiger ? Super ! Il est temps de publier votre création : cliquez simplement sur « Publier » et c’est parti !"
 
 #: wp-includes/js/dist/editor.js:9808
 msgid "Publish…"
@@ -11098,7 +11098,7 @@ msgstr "Retour"
 
 #: wp-includes/customize/class-wp-customize-themes-section.php:84
 msgid "An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"https://wordpress.org/support/\">support forums</a>."
-msgstr "Une erreur inattendue s’est produite. Quelque chose semble ne pas fonctionner avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer des problèmes, veuillez essayer les <a href=\"https://wpfr.net/support\">forums de support</a>."
+msgstr "Une erreur inattendue s’est produite. Quelque chose semble ne pas fonctionner avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer des problèmes, veuillez essayer les <a href=\"https://wpfr.net/support\">forums d’entraide</a>."
 
 #: wp-includes/media.php:3706
 msgid "Image Details"
@@ -11608,8 +11608,8 @@ msgstr "Non valide"
 #: wp-includes/formatting.php:3662
 msgid "%s year"
 msgid_plural "%s years"
-msgstr[0] "%s année"
-msgstr[1] "%s années"
+msgstr[0] "%s an"
+msgstr[1] "%s ans"
 
 #. translators: Time difference between two dates, in months. %s: Number of
 #. months

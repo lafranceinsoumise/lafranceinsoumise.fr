@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.2.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-06-13 17:32:08+0000\n"
+"PO-Revision-Date: 2019-08-06 06:39:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,8 +92,8 @@ msgid "Improvements for Everyone"
 msgstr "Des améliorations pour tout le monde"
 
 #: wp-admin/about.php:154
-msgid "This administrator-focused update will let you safely fix or manage fatal errors without requiring developer time. It features better handling of the so-called “white screen of death”, and a way to enter recovery mode, which pauses error-causing plugins or themes."
-msgstr "Cette mise à jour centrée sur l’administration va vous permettre de corriger ou gérer sans risque les erreurs fatales sans vous demander de temps de développement. Une meilleure prise en charge des fameux « écrans blancs de la mort » vous est proposée, ainsi qu’une manière de passer en mode de récupération, ce qui permet de mettre en pause les extensions ou thèmes qui sont en erreur."
+msgid "This administrator-focused update will let you safely fix or manage fatal errors without requiring a developer. It features better handling of the so-called “white screen of death”, and a way to enter recovery mode, which pauses error-causing plugins or themes."
+msgstr "Cette mise à jour centrée sur l’administration va vous permettre de corriger ou gérer sans risque les erreurs fatales sans vous demander de temps de développement. Une meilleure prise en charge des fameux « écrans blancs de la mort » vous est proposée, ainsi qu’une manière de passer en mode de récupération, ce qui permet de mettre en pause les extensions ou thèmes qui posent des problèmes."
 
 #: wp-admin/about.php:153
 msgid "PHP Error Protection"
@@ -3452,7 +3452,7 @@ msgstr "Taille d’origine"
 #: wp-admin/edit.php:260 wp-admin/edit.php:285 wp-admin/plugin-install.php:106
 #: wp-admin/export.php:58 wp-admin/custom-header.php:130
 msgid "<a href=\"https://wordpress.org/support/\">Support</a>"
-msgstr "<a href=\"https://wpfr.net/support/\">Forums de support</a>"
+msgstr "<a href=\"https://wpfr.net/support/\">Forums d’entraide</a>"
 
 #. translators: %s: Number of failed updates
 #: wp-admin/includes/update.php:752
@@ -6040,7 +6040,7 @@ msgstr "https://make.wordpress.org/"
 
 #: wp-admin/includes/ms.php:1176
 msgid "<a href=\"https://wordpress.org/support/forum/multisite/\">Support Forums</a>"
-msgstr "<a href=\"https://wpfr.net/support/forum/support-de-wordpress-multisites/\" target=\"_blank\">Forums de support</a>"
+msgstr "<a href=\"https://wpfr.net/support/forum/support-de-wordpress-multisites/\" target=\"_blank\">Forums d’entraide</a>"
 
 #: wp-admin/admin-footer.php:35
 msgid "Thank you for creating with <a href=\"%s\">WordPress</a>."
@@ -6112,7 +6112,7 @@ msgstr[1] "%s pages"
 #: wp-admin/includes/dashboard.php:272
 msgid "%s Post"
 msgid_plural "%s Posts"
-msgstr[0] "%s articles"
+msgstr[0] "%s article"
 msgstr[1] "%s articles"
 
 #: wp-admin/includes/dashboard.php:47
@@ -8749,8 +8749,8 @@ msgstr "Attention :"
 #: wp-admin/includes/class-wp-plugins-list-table.php:461
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] "Prête à mettre à jour <span class=\"count\">(%s)</span>"
-msgstr[1] "Prêtes à mettre à jour <span class=\"count\">(%s)</span>"
+msgstr[0] "À mettre à jour <span class=\"count\">(%s)</span>"
+msgstr[1] "À mettre à jour <span class=\"count\">(%s)</span>"
 
 #. translators: %s: number of pending updates
 #: wp-admin/menu.php:46
