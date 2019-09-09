@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6014dded0b9a47f727c70ad9963ca5b3",
+    "content-hash": "7936713ef02af9aca8a8f99b2fb945d4",
     "packages": [
         {
             "name": "composer/installers",
@@ -588,6 +588,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/autoptimize/"
+        },
+        {
+            "name": "wpackagist-plugin/autoptimize-criticalcss",
+            "version": "1.16.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autoptimize-criticalcss/",
+                "reference": "tags/1.16.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize-criticalcss.1.16.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoptimize-criticalcss/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
