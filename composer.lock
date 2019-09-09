@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea956976f58d73b566c75ddb553992ce",
+    "content-hash": "740ef8b36cb4aaab16da54fe3493c809",
     "packages": [
         {
             "name": "composer/installers",
@@ -268,51 +268,6 @@
                 "env"
             ],
             "time": "2019-04-03T18:28:43+00:00"
-        },
-        {
-            "name": "roots/soil",
-            "version": "3.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/soil.git",
-                "reference": "7920eb22bb434c1b86ff3d4d7dc318498de0c675"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/7920eb22bb434c1b86ff3d4d7dc318498de0c675",
-                "reference": "7920eb22bb434c1b86ff3d4d7dc318498de0c675",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                }
-            ],
-            "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
-            "homepage": "https://roots.io/plugins/soil/",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2019-05-23T21:45:50+00:00"
         },
         {
             "name": "roots/wordpress",
@@ -636,15 +591,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.6.8",
+            "version": "2.7.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.6.8"
+                "reference": "tags/2.7.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.6.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.0.zip",
                 "reference": null,
                 "shasum": null
             },
