@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "740ef8b36cb4aaab16da54fe3493c809",
+    "content-hash": "9698125b8ecfb79d5c9730abf91f7cdc",
     "packages": [
         {
             "name": "composer/installers",
@@ -728,26 +728,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ultimate-category-excluder/"
-        },
-        {
-            "name": "wpackagist-plugin/vanilla-pdf-embed",
-            "version": "0.0.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/vanilla-pdf-embed/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vanilla-pdf-embed.zip",
-                "reference": "trunk",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/vanilla-pdf-embed/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
