@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9698125b8ecfb79d5c9730abf91f7cdc",
+    "content-hash": "6014dded0b9a47f727c70ad9963ca5b3",
     "packages": [
         {
             "name": "composer/installers",
@@ -568,6 +568,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/author-category/"
+        },
+        {
+            "name": "wpackagist-plugin/autoptimize",
+            "version": "2.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autoptimize/",
+                "reference": "tags/2.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.5.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoptimize/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",

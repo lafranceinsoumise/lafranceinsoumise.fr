@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.2.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-08-06 06:39:46+0000\n"
+"PO-Revision-Date: 2019-09-09 12:01:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2948,7 +2948,7 @@ msgstr "De temps en temps, votre site WordPress peut envoyer des données sur Wo
 #. translators: Attachment information. %s: Date the attachment was uploaded
 #: wp-admin/includes/meta-boxes.php:374
 msgid "Uploaded on: %s"
-msgstr "Téléversé sur : %s"
+msgstr "Téléversé le : %s"
 
 #. translators: %s: package URL
 #: wp-admin/includes/class-plugin-upgrader.php:67

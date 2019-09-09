@@ -62,7 +62,8 @@
     "wpackagist-plugin/author-category": "^0.8.0",
     "wpackagist-theme/generatepress": "^2.1",
     "wpackagist-plugin/amp": "^1.0",
-    "wpackagist-plugin/menu-export": "1.0.1"
+    "wpackagist-plugin/menu-export": "1.0.1",
+    "wpackagist-plugin/autoptimize": "^2.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
