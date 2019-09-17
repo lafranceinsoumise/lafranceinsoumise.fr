@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.2.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-09-09 12:01:01+0000\n"
+"PO-Revision-Date: 2019-09-10 12:52:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9201,7 +9201,7 @@ msgstr "Choisir les données à exporter"
 
 #: wp-admin/export.php:181
 msgid "This will contain all of your posts, pages, comments, custom fields, terms, navigation menus, and custom posts."
-msgstr "Il contiendra tous vos articles, pages, commentaires, champs personnalisés, termes, menus de navigation et types de publications personnalisées."
+msgstr "Il contiendra tous vos articles, pages, commentaires, champs personnalisés, termes, menus de navigation et types de publications personnalisés."
 
 #: wp-admin/export.php:208 wp-admin/export.php:255 wp-admin/export.php:295
 msgid "Date range:"

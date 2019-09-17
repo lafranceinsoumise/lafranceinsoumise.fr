@@ -591,15 +591,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize-criticalcss",
-            "version": "1.16.0",
+            "version": "1.17.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize-criticalcss/",
-                "reference": "tags/1.16.0"
+                "reference": "tags/1.17.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize-criticalcss.1.16.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize-criticalcss.1.17.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -631,15 +631,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.7.0",
+            "version": "2.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.7.0"
+                "reference": "tags/2.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -811,15 +811,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.2.0"
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
