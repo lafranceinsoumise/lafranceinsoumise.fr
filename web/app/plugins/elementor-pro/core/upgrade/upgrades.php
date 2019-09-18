@@ -25,7 +25,12 @@ class Upgrades {
 		}
 
 		foreach ( $post_ids as $post_id ) {
-			$data = Plugin::elementor()->db->get_plain_editor( $post_id );
+			$document = Plugin::elementor()->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
@@ -71,7 +76,12 @@ class Upgrades {
 		}
 
 		foreach ( $post_ids as $post_id ) {
-			$data = Plugin::elementor()->db->get_plain_editor( $post_id );
+			$document = Plugin::elementor()->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}
@@ -98,7 +108,11 @@ class Upgrades {
 				return $element;
 			} );
 
-			Plugin::elementor()->db->save_editor( $post_id, $data );
+			$document = Plugin::elementor()->documents->get( $post_id );
+
+			$document->save( [
+				'elements' => $data,
+			] );
 		}
 	}
 
@@ -116,7 +130,12 @@ class Upgrades {
 
 		foreach ( $post_ids as $post_id ) {
 			$do_update = false;
-			$data = Plugin::elementor()->db->get_plain_editor( $post_id );
+			$document = Plugin::elementor()->documents->get( $post_id );
+
+			if ( $document ) {
+				$data = $document->get_elements_data();
+			}
+
 			if ( empty( $data ) ) {
 				continue;
 			}

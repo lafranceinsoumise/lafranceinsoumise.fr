@@ -10,6 +10,7 @@ class Products_Renderer extends \WC_Shortcode_Products {
 	private $settings = [];
 	private $is_added_product_filter = false;
 	const QUERY_CONTROL_NAME = 'query'; //Constraint: the class that uses the renderer, must use the same name
+	const DEFAULT_COLUMNS_AND_ROWS = 4;
 
 	public function __construct( $settings = [], $type = 'products' ) {
 		$this->settings = $settings;
@@ -58,7 +59,8 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		$query_args['meta_query'] = WC()->query->get_meta_query();
 		$query_args['tax_query'] = [];
 
-		if ( 'yes' === $settings['paginate'] && 'yes' === $settings['allow_order'] ) {
+		$front_page = is_front_page();
+		if ( 'yes' === $settings['paginate'] && 'yes' === $settings['allow_order'] && ! $front_page ) {
 			$ordering_args = WC()->query->get_catalog_ordering_args();
 		} else {
 			$ordering_args = WC()->query->get_catalog_ordering_args( $query_args['orderby'], $query_args['order'] );
@@ -75,6 +77,9 @@ class Products_Renderer extends \WC_Shortcode_Products {
 
 		//Featured.
 		$this->set_featured_query_args( $query_args );
+
+		//Sale.
+		$this->set_sale_products_query_args( $query_args );
 
 		// IDs.
 		$this->set_ids_query_args( $query_args );
@@ -97,7 +102,7 @@ class Products_Renderer extends \WC_Shortcode_Products {
 				$query_args['paged'] = $page;
 			}
 
-			if ( 'yes' !== $settings['allow_order'] ) {
+			if ( 'yes' !== $settings['allow_order'] || $front_page ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
 
@@ -105,7 +110,10 @@ class Products_Renderer extends \WC_Shortcode_Products {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 			}
 		}
-		$query_args['posts_per_page'] = intval( $settings['columns'] * $settings['rows'] );
+		// fallback to the widget's default settings in case settings was left empty:
+		$rows = ! empty( $settings['rows'] ) ? $settings['rows'] : self::DEFAULT_COLUMNS_AND_ROWS;
+		$columns = ! empty( $settings['columns'] ) ? $settings['columns'] : self::DEFAULT_COLUMNS_AND_ROWS;
+		$query_args['posts_per_page'] = intval( $columns * $rows );
 
 		$query_args = apply_filters( 'woocommerce_shortcode_products_query', $query_args, $this->attributes, $this->type );
 
@@ -181,6 +189,13 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		}
 	}
 
+	protected function set_sale_products_query_args( &$query_args ) {
+		$prefix = self::QUERY_CONTROL_NAME . '_';
+		if ( 'sale' === $this->settings[ $prefix . 'post_type' ] ) {
+			parent::set_sale_products_query_args( $query_args );
+		}
+	}
+
 	protected function set_exclude_query_args( &$query_args ) {
 		$prefix = self::QUERY_CONTROL_NAME . '_';
 
@@ -199,6 +214,14 @@ class Products_Renderer extends \WC_Shortcode_Products {
 		}
 
 		$query_args['post__not_in'] = empty( $query_args['post__not_in'] ) ? $post__not_in : array_merge( $query_args['post__not_in'], $post__not_in );
+
+		/**
+		 * WC populates `post__in` with the ids of the products that are on sale.
+		 * Since WP_Query ignores `post__not_in` once `post__in` exists, the ids are filtered manually, using `array_diff`.
+		 */
+		if ( 'sale' === $this->settings[ $prefix . 'post_type' ] ) {
+			$query_args['post__in'] = array_diff( $query_args['post__in'], $query_args['post__not_in'] );
+		}
 
 		if ( in_array( 'terms', $this->settings[ $prefix . 'exclude' ] ) && ! empty( $this->settings[ $prefix . 'exclude_term_ids' ] ) ) {
 			$terms = [];

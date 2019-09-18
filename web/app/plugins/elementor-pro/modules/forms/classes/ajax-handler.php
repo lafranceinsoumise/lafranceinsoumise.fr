@@ -30,7 +30,7 @@ class Ajax_Handler {
 	const SUBSCRIBER_ALREADY_EXISTS = 'subscriber_already_exists';
 
 	public static function is_form_submitted() {
-		return Utils::is_ajax() && isset( $_POST['action'] ) && 'elementor_pro_forms_send_form' === $_POST['action'];
+		return wp_doing_ajax() && isset( $_POST['action'] ) && 'elementor_pro_forms_send_form' === $_POST['action'];
 	}
 
 	public static function get_default_messages() {
@@ -63,25 +63,30 @@ class Ajax_Handler {
 		$form_id = $_POST['form_id'];
 
 		$elementor = Plugin::elementor();
+		$document = $elementor->documents->get( $post_id );
 
-		$meta = $elementor->db->get_plain_editor( $post_id );
-
-		$form = Module::find_element_recursive( $meta, $form_id );
-
-		if ( ! $form ) {
-			$this
-				->add_error_message( self::get_default_message( self::INVALID_FORM, $form['settings'] ) )
-				->send();
+		if ( $document ) {
+			$form = Module::find_element_recursive( $document->get_elements_data(), $form_id );
 		}
 
 		if ( ! empty( $form['templateID'] ) ) {
-			$global_meta = $elementor->db->get_plain_editor( $form['templateID'] );
-			$form = $global_meta[0];
+			$template = $elementor->documents->get( $form['templateID'] );
+
+			if ( $template ) {
+				$global_meta = $template->get_elements_data();
+				$form = $global_meta[0];
+			}
+		}
+
+		if ( empty( $form ) ) {
+			$this
+				->add_error_message( self::get_default_message( self::INVALID_FORM, [] ) )
+				->send();
 		}
 
 		// restore default values
 		$widget = $elementor->elements_manager->create_element_instance( $form );
-		$form['settings'] = $widget->get_active_settings();
+		$form['settings'] = $widget->get_settings_for_display();
 		$form['settings']['id'] = $form_id;
 
 		$this->current_form = $form;

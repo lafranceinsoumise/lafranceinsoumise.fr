@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\ThemeBuilder\Conditions;
 
-use ElementorPro\Classes\Utils;
+use ElementorPro\Modules\ThemeBuilder\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -36,8 +36,7 @@ class Archive extends Condition_Base {
 	}
 
 	public function register_sub_conditions() {
-		$post_types = Utils::get_public_post_types();
-		unset( $post_types['product'] );
+		$post_types = Module::get_public_post_types();
 
 		foreach ( $post_types as $post_type => $label ) {
 			if ( ! get_post_type_archive_link( $post_type ) ) {
@@ -53,6 +52,13 @@ class Archive extends Condition_Base {
 	}
 
 	public function check( $args ) {
-		return is_archive() || is_home() || is_search();
+		$is_archive = is_archive() || is_home() || is_search();
+
+		// WooCommerce is handled by `woocommerce` module.
+		if ( $is_archive && class_exists( 'woocommerce' ) && is_woocommerce() ) {
+			$is_archive = false;
+		}
+
+		return $is_archive;
 	}
 }

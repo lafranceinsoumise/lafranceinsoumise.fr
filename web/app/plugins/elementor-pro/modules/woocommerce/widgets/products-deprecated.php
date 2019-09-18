@@ -2,6 +2,7 @@
 namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
+use ElementorPro\Plugin;
 use ElementorPro\Modules\QueryControl\Controls\Group_Control_Posts;
 use ElementorPro\Modules\QueryControl\Module;
 use ElementorPro\Modules\Woocommerce\Skins;
@@ -61,6 +62,8 @@ class Products_Deprecated extends Products_Base {
 	}
 
 	protected function _register_controls() {
+		$this->deprecated_notice( Plugin::get_title(), '2.0.10', '', __( 'Products', 'elementor-pro' ) );
+
 		$this->start_controls_section(
 			'section_layout',
 			[

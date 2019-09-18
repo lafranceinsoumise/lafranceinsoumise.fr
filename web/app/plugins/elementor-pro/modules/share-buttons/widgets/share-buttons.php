@@ -3,6 +3,7 @@ namespace ElementorPro\Modules\ShareButtons\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use ElementorPro\Base\Base_Widget;
 use ElementorPro\Modules\ShareButtons\Module;
@@ -20,12 +21,36 @@ class Share_Buttons extends Base_Widget {
 		'email' => 'fa fa-envelope',
 	];
 
+	private static $networks_icon_mapping = [
+		'google' => 'fab fa-google-plus-g',
+		'pocket' => 'fab fa-get-pocket',
+		'email' => 'fas fa-envelope',
+		'print' => 'fas fa-print',
+	];
+
+	public function get_style_depends() {
+		if ( Icons_Manager::is_migration_allowed() ) {
+			return [
+				'elementor-icons-fa-solid',
+				'elementor-icons-fa-brands',
+			];
+		}
+		return [];
+	}
+
 	private static function get_network_class( $network_name ) {
+		$prefix = 'fa ';
+		if ( Icons_Manager::is_migration_allowed() ) {
+			if ( isset( self::$networks_icon_mapping[ $network_name ] ) ) {
+				return self::$networks_icon_mapping[ $network_name ];
+			}
+			$prefix = 'fab ';
+		}
 		if ( isset( self::$networks_class_dictionary[ $network_name ] ) ) {
 			return self::$networks_class_dictionary[ $network_name ];
 		}
 
-		return 'fa fa-' . $network_name;
+		return $prefix . 'fa-' . $network_name;
 	}
 
 	public function get_name() {
@@ -140,30 +165,6 @@ class Share_Buttons extends Base_Widget {
 		);
 
 		$this->add_control(
-			'show_counter',
-			[
-				'label' => __( 'Count', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'elementor-pro' ),
-				'label_off' => __( 'Hide', 'elementor-pro' ),
-				'condition' => [
-					'view!' => 'icon',
-				],
-			]
-		);
-		$this->add_control(
-			'social_counter_notice',
-			[
-				'raw' => __( 'To display button share count, enter your donReach API key in the', 'elementor-pro' ) . ' ' . sprintf( '<a href="%s" target="_blank">%s</a>', Settings::get_url() . '#tab-integrations', __( 'Integrations Panel', 'elementor-pro' ) ),
-				'type' => Controls_Manager::RAW_HTML,
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-				'condition' => [
-					'show_counter' => 'yes',
-				],
-			]
-		);
-
-		$this->add_control(
 			'skin',
 			[
 				'label' => __( 'Skin', 'elementor-pro' ),
@@ -222,19 +223,19 @@ class Share_Buttons extends Base_Widget {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
 						'title' => __( 'Justify', 'elementor-pro' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'prefix_class' => 'elementor-share-buttons%s--align-',
@@ -562,7 +563,7 @@ class Share_Buttons extends Base_Widget {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
-				'selector' => '{{WRAPPER}} .elementor-share-btn__title, {{WRAPPER}} .elementor-share-btn__counter',
+				'selector' => '{{WRAPPER}} .elementor-share-btn__title',
 				'exclude' => [ 'line_height' ],
 			]
 		);
@@ -587,12 +588,6 @@ class Share_Buttons extends Base_Widget {
 
 	}
 
-	private function has_counter( $network_name ) {
-		$settings = $this->get_active_settings();
-
-		return 'icon' !== $settings['view'] && 'yes' === $settings['show_counter'] && ! empty( Module::get_networks( $network_name )['has_counter'] );
-	}
-
 	protected function render() {
 		$settings = $this->get_active_settings();
 
@@ -611,7 +606,6 @@ class Share_Buttons extends Base_Widget {
 
 				$social_network_class = ' elementor-share-btn_' . $network_name;
 
-				$has_counter = $this->has_counter( $network_name );
 				?>
 				<div class="elementor-grid-item">
 					<div class="<?php echo esc_attr( $button_classes . $social_network_class ); ?>">
@@ -621,15 +615,12 @@ class Share_Buttons extends Base_Widget {
 								<span class="elementor-screen-only"><?php echo sprintf( __( 'Share on %s', 'elementor-pro' ), $network_name ); ?></span>
 							</span>
 						<?php endif; ?>
-						<?php if ( $show_text || $has_counter ) : ?>
+						<?php if ( $show_text ) : ?>
 							<div class="elementor-share-btn__text">
 								<?php if ( 'yes' === $settings['show_label'] || 'text' === $settings['view'] ) : ?>
 									<span class="elementor-share-btn__title">
 										<?php echo $button['text'] ? $button['text'] : Module::get_networks( $network_name )['title']; ?>
 									</span>
-								<?php endif; ?>
-								<?php if ( $has_counter ) : ?>
-									<span class="elementor-share-btn__counter elementor-share-btn__counter_<?php echo $network_name; ?>">0</span>
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
@@ -654,8 +645,7 @@ class Share_Buttons extends Base_Widget {
 			<#
 				_.each( settings.share_buttons, function( button ) {
 					var networkName = button.button,
-						socialNetworkClass = 'elementor-share-btn_' + networkName,
-						showCounter = shareButtonsEditorModule.hasCounter( networkName, settings );
+						socialNetworkClass = 'elementor-share-btn_' + networkName;
 					#>
 					<div class="elementor-grid-item">
 						<div class="{{ buttonClass }} {{ socialNetworkClass }}">
@@ -665,13 +655,10 @@ class Share_Buttons extends Base_Widget {
 								<span class="elementor-screen-only">Share on {{{ networkName }}}</span>
 							</span>
 							<# } #>
-							<# if ( showText || showCounter ) { #>
+							<# if ( showText ) { #>
 								<div class="elementor-share-btn__text">
 									<# if ( 'yes' === settings.show_label || 'text' === settings.view ) { #>
 										<span class="elementor-share-btn__title">{{{ shareButtonsEditorModule.getNetworkTitle( button ) }}}</span>
-									<# } #>
-									<# if ( showCounter ) { #>
-										<span class="elementor-share-btn__counter elementor-share-btn__counter_{{ networkName }}">0</span>
 									<# } #>
 								</div>
 							<# } #>

@@ -36,5 +36,6 @@ class Module extends Module_Base {
 		parent::__construct();
 
 		$this->add_asset_manager( 'font', new AssetTypes\Fonts_Manager() );
+		$this->add_asset_manager( 'icon', new AssetTypes\Icons_Manager() );
 	}
 }

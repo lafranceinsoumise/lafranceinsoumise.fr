@@ -4,6 +4,7 @@ namespace ElementorPro\Modules\Carousel\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
@@ -307,7 +308,7 @@ class Reviews extends Base {
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Official Color', 'elementor-pro' ),
+					'default' => __( 'Official', 'elementor-pro' ),
 					'custom' => __( 'Custom', 'elementor-pro' ),
 				],
 			]
@@ -323,6 +324,7 @@ class Reviews extends Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__icon:not(.elementor-testimonial__rating)' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-testimonial__icon:not(.elementor-testimonial__rating) svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -340,6 +342,7 @@ class Reviews extends Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-testimonial__icon' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .elementor-testimonial__icon svg' => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -379,11 +382,11 @@ class Reviews extends Base {
 				'options' => [
 					'solid' => [
 						'title' => __( 'Solid', 'elementor-pro' ),
-						'icon' => 'fa fa-star',
+						'icon' => 'eicon-star',
 					],
 					'outline' => [
 						'title' => __( 'Outline', 'elementor-pro' ),
-						'icon' => 'fa fa-star-o',
+						'icon' => 'eicon-star-o',
 					],
 				],
 				'default' => 'solid',
@@ -524,64 +527,72 @@ class Reviews extends Base {
 		);
 
 		$repeater->add_control(
-			'social_icon',
+			'selected_social_icon',
 			[
 				'label' => __( 'Icon', 'elementor-pro' ),
-				'type' => Controls_Manager::ICON,
+				'type' => Controls_Manager::ICONS,
+				'fa4compatibility' => 'social_icon',
 				'label_block' => true,
-				'default' => 'fa fa-twitter',
-				'include' => [
-					'fa fa-android',
-					'fa fa-apple',
-					'fa fa-behance',
-					'fa fa-bitbucket',
-					'fa fa-codepen',
-					'fa fa-delicious',
-					'fa fa-digg',
-					'fa fa-dribbble',
-					'fa fa-envelope',
-					'fa fa-facebook',
-					'fa fa-flickr',
-					'fa fa-foursquare',
-					'fa fa-github',
-					'fa fa-google-plus',
-					'fa fa-houzz',
-					'fa fa-instagram',
-					'fa fa-jsfiddle',
-					'fa fa-linkedin',
-					'fa fa-medium',
-					'fa fa-meetup',
-					'fa fa-mixcloud',
-					'fa fa-odnoklassniki',
-					'fa fa-pinterest',
-					'fa fa-product-hunt',
-					'fa fa-reddit',
-					'fa fa-rss',
-					'fa fa-shopping-cart',
-					'fa fa-skype',
-					'fa fa-slideshare',
-					'fa fa-snapchat',
-					'fa fa-soundcloud',
-					'fa fa-spotify',
-					'fa fa-stack-overflow',
-					'fa fa-steam',
-					'fa fa-stumbleupon',
-					'fa fa-telegram',
-					'fa fa-thumb-tack',
-					'fa fa-tripadvisor',
-					'fa fa-tumblr',
-					'fa fa-twitch',
-					'fa fa-twitter',
-					'fa fa-vimeo',
-					'fa fa-vk',
-					'fa fa-weibo',
-					'fa fa-weixin',
-					'fa fa-whatsapp',
-					'fa fa-wordpress',
-					'fa fa-xing',
-					'fa fa-yelp',
-					'fa fa-youtube',
-					'fa fa-500px',
+				'default' => [
+					'value' => 'fab fa-twitter',
+					'library' => 'fa-brands',
+				],
+				'recommended' => [
+					'fa-solid' => [
+						'rss',
+						'shopping-cart',
+						'thumbtack',
+					],
+					'fa-brands' => [
+						'android',
+						'apple',
+						'behance',
+						'bitbucket',
+						'codepen',
+						'delicious',
+						'digg',
+						'dribbble',
+						'envelope',
+						'facebook',
+						'flickr',
+						'foursquare',
+						'github',
+						'google-plus',
+						'houzz',
+						'instagram',
+						'jsfiddle',
+						'linkedin',
+						'medium',
+						'meetup',
+						'mixcloud',
+						'odnoklassniki',
+						'pinterest',
+						'product-hunt',
+						'reddit',
+						'skype',
+						'slideshare',
+						'snapchat',
+						'soundcloud',
+						'spotify',
+						'stack-overflow',
+						'steam',
+						'stumbleupon',
+						'telegram',
+						'tripadvisor',
+						'tumblr',
+						'twitch',
+						'twitter',
+						'vimeo',
+						'fa-vk',
+						'weibo',
+						'weixin',
+						'whatsapp',
+						'wordpress',
+						'xing',
+						'yelp',
+						'youtube',
+						'500px',
+					],
 				],
 			]
 		);
@@ -664,11 +675,11 @@ class Reviews extends Base {
 	}
 
 	protected function render_stars( $slide, $settings ) {
-		$icon = '&#61445;';
+		$icon = '&#xE934;';
 
 		if ( 'star_fontawesome' === $settings['star_style'] ) {
 			if ( 'outline' === $settings['unmarked_star_style'] ) {
-				$icon = '&#61446;';
+				$icon = '&#xE933;';
 			}
 		} elseif ( 'star_unicode' === $settings['star_style'] ) {
 			$icon = '&#9733;';
@@ -696,14 +707,47 @@ class Reviews extends Base {
 	}
 
 	private function print_icon( $slide, $element_key ) {
-		if ( empty( $slide['social_icon'] ) ) {
+		$migration_allowed = Icons_Manager::is_migration_allowed();
+		if ( ! isset( $slide['social_icon'] ) && ! $migration_allowed ) {
+			// add old default
+			$slide['social_icon'] = 'fa fa-twitter';
+		}
+
+		if ( empty( $slide['social_icon'] ) && empty( $slide['selected_social_icon'] ) ) {
 			return '';
+		}
+
+		$migrated = isset( $slide['__fa4_migrated']['selected_social_icon'] );
+		$is_new = empty( $slide['social_icon'] ) && $migration_allowed;
+		$social = '';
+
+		if ( $is_new || $migrated ) {
+			ob_start();
+			Icons_Manager::render_icon( $slide['selected_social_icon'], [ 'aria-hidden' => 'true' ] );
+			$icon = ob_get_clean();
+		} else {
+			$icon = '<i class="' . esc_attr( $slide['social_icon'] ) . '" aria-hidden="true"></i>';
+		}
+
+		if ( ! empty( $slide['social_icon'] ) ) {
+			$social = str_replace( 'fa fa-', '', $slide['social_icon'] );
+		}
+
+		if ( ( $is_new || $migrated ) && 'svg' !== $slide['selected_social_icon']['library'] ) {
+			$social = explode( ' ', $slide['selected_social_icon']['value'], 2 );
+			if ( empty( $social[1] ) ) {
+				$social = '';
+			} else {
+				$social = str_replace( 'fa-', '', $social[1] );
+			}
+		}
+		if ( 'svg' === $slide['selected_social_icon']['library'] ) {
+			$social = '';
 		}
 
 		$this->add_render_attribute( 'icon_wrapper_' . $element_key, 'class', 'elementor-testimonial__icon elementor-icon' );
 
-		$icon = '<i class="' . $slide['social_icon'] . '" aria-hidden="true"></i><span class="elementor-screen-only">' . esc_html__( 'Read More', 'elementor-pro' ) . '</span>';
-		$social = str_replace( 'fa fa-', '', $slide['social_icon'] );
+		$icon .= '<span class="elementor-screen-only">' . esc_html__( 'Read More', 'elementor-pro' ) . '</span>';
 		$this->add_render_attribute( 'icon_wrapper_' . $element_key, 'class', 'elementor-icon-' . $social );
 
 		return '<div ' . $this->get_render_attribute_string( 'icon_wrapper_' . $element_key ) . '>' . $icon . '</div>';

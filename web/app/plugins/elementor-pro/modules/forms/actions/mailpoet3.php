@@ -52,15 +52,6 @@ class Mailpoet3 extends Action_Base {
 			]
 		);
 
-		$widget->add_control(
-			'mailpoet3_auto_confirm',
-			[
-				'label' => __( 'Auto Confirm', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => 'yes',
-			]
-		);
-
 		$mailpoet_fields = [
 			[
 				'remote_id' => 'first_name',
@@ -128,10 +119,6 @@ class Mailpoet3 extends Action_Base {
 	public function run( $record, $ajax_handler ) {
 		$settings = $record->get( 'form_settings' );
 		$subscriber = $this->map_fields( $record );
-
-		if ( 'yes' === $settings['mailpoet3_auto_confirm'] ) {
-			$subscriber['status'] = Subscriber::STATUS_SUBSCRIBED;
-		}
 
 		$existing_subscriber = false;
 

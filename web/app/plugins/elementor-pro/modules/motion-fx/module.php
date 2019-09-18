@@ -85,17 +85,8 @@ class Module extends Module_Base {
 				'relation' => 'or',
 				'terms' => [
 					[
-						'terms' => [
-							[
-								'name' => 'background_background',
-								'value' => 'classic',
-							],
-							[
-								'name' => 'background_image[url]',
-								'operator' => '!==',
-								'value' => '',
-							],
-						],
+						'name' => 'background_background',
+						'value' => 'classic',
 					],
 					[
 						'terms' => [
@@ -126,6 +117,12 @@ class Module extends Module_Base {
 		$element->end_injection();
 	}
 
+	public function localize_settings( array $settings ) {
+		$settings['i18n']['motion_effects'] = __( 'Motion Effects', 'elementor-pro' );
+
+		return $settings;
+	}
+
 	private function add_actions() {
 		add_action( 'elementor/controls/controls_registered', [ $this, 'register_controls_group' ] );
 
@@ -135,5 +132,7 @@ class Module extends Module_Base {
 
 		add_action( 'elementor/element/section/section_background/before_section_end', [ $this, 'add_controls_group_to_element_background' ] );
 		add_action( 'elementor/element/column/section_style/before_section_end', [ $this, 'add_controls_group_to_element_background' ] );
+
+		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'localize_settings' ] );
 	}
 }

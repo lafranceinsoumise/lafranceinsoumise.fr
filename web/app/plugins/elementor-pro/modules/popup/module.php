@@ -29,8 +29,6 @@ class Module extends Module_Base {
 		add_action( 'elementor_pro/init', [ $this, 'add_form_action' ] );
 
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'localize_settings' ] );
-		add_filter( 'elementor_pro/query_control/get_autocomplete/popup_templates', [ $this, 'get_autocomplete_for_popup_templates' ], 10, 2 );
-		add_filter( 'elementor_pro/query_control/get_value_titles/popup_templates', [ $this, 'get_titles_for_popup_templates' ], 10, 2 );
 		add_filter( 'elementor/finder/categories', [ $this, 'add_finder_items' ] );
 	}
 
@@ -71,47 +69,6 @@ class Module extends Module_Base {
 
 	public function register_tag( DynamicTagsManager $dynamic_tags ) {
 		$dynamic_tags->register_tag( __NAMESPACE__ . '\Tag' );
-	}
-
-	public function get_autocomplete_for_popup_templates( array $results, array $data ) {
-		$query_params = [
-			's' => $data['q'],
-			'post_type' => Source_Local::CPT,
-			'posts_per_page' => 20,
-			'orderby' => 'meta_value',
-			'order' => 'ASC',
-			'meta_query' => [
-				[
-					'key' => Document::TYPE_META_KEY,
-					'value' => 'popup',
-				],
-			],
-		];
-
-		$query = new \WP_Query( $query_params );
-
-		foreach ( $query->posts as $post ) {
-			$document = Plugin::elementor()->documents->get( $post->ID );
-
-			if ( $document ) {
-				$results[] = [
-					'id' => $post->ID,
-					'text' => $post->post_title,
-				];
-			}
-		}
-
-		return $results;
-	}
-
-	public function get_titles_for_popup_templates( array $results, array $data ) {
-		$document = Plugin::elementor()->documents->get( $data['id'] );
-
-		if ( $document ) {
-			$results[ $data['id'] ] = $document->get_post()->post_title;
-		}
-
-		return $results;
 	}
 
 	public function register_ajax_actions( Ajax $ajax ) {

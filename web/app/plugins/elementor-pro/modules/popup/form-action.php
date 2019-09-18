@@ -5,6 +5,7 @@ use Elementor\Controls_Manager;
 use ElementorPro\Modules\Forms\Classes\Action_Base;
 use ElementorPro\Modules\QueryControl\Module as QueryControlModule;
 use ElementorPro\Modules\Forms\Module as FormsModule;
+use Elementor\TemplateLibrary\Source_Local;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -50,7 +51,18 @@ class Form_Action extends Action_Base {
 				'label' => __( 'Popup', 'elementor-pro' ),
 				'type' => QueryControlModule::QUERY_CONTROL_ID,
 				'label_block' => true,
-				'filter_type' => 'popup_templates',
+				'autocomplete' => [
+					'object' => QueryControlModule::QUERY_OBJECT_LIBRARY_TEMPLATE,
+					'query' => [
+						'posts_per_page' => 20,
+						'meta_query' => [
+							[
+								'key' => Document::TYPE_META_KEY,
+								'value' => 'popup',
+							],
+						],
+					],
+				],
 				'condition' => [
 					'popup_action' => 'open',
 				],

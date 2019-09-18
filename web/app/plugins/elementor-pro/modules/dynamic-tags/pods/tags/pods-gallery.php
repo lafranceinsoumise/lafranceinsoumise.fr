@@ -45,6 +45,10 @@ class Pods_Gallery extends Data_Tag {
 		 */
 		$pod = pods( $pod_name, get_the_ID() );
 
+		if ( false === $pod ) {
+			return [];
+		}
+
 		$galley_images = $pod->field( $meta_key );
 
 		if ( empty( $galley_images ) || ! is_array( $galley_images ) ) {

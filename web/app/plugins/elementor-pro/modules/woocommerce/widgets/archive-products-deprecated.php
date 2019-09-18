@@ -5,6 +5,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -36,6 +37,8 @@ class Archive_Products_Deprecated extends Products {
 	}
 
 	protected function _register_controls() {
+		$this->deprecated_notice( Plugin::get_title(), '2.5.0', '', __( 'Archive Products', 'elementor-pro' ) );
+
 		parent::_register_controls();
 
 		$this->start_injection( [

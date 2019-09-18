@@ -48,7 +48,6 @@ if ( $comment_count ) :
 	<?php else : ?>
 		<!-- If comments are closed. -->
 		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'elementor-pro' ); ?></p>
-
-	<?php
+		<?php
 	endif;
 endif;

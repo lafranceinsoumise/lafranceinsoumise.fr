@@ -7,6 +7,7 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
 use Elementor\Utils;
@@ -129,7 +130,7 @@ class Call_To_Action extends Base_Widget {
 				'options' => [
 					'none' => [
 						'title' => __( 'None', 'elementor-pro' ),
-						'icon' => 'fa fa-ban',
+						'icon' => 'eicon-ban',
 					],
 					'image' => [
 						'title' => __( 'Image', 'elementor-pro' ),
@@ -137,7 +138,7 @@ class Call_To_Action extends Base_Widget {
 					],
 					'icon' => [
 						'title' => __( 'Icon', 'elementor-pro' ),
-						'icon' => 'fa fa-star',
+						'icon' => 'eicon-star',
 					],
 				],
 				'separator' => 'before',
@@ -176,11 +177,15 @@ class Call_To_Action extends Base_Widget {
 		);
 
 		$this->add_control(
-			'icon',
+			'selected_icon',
 			[
 				'label' => __( 'Icon', 'elementor-pro' ),
-				'type' => Controls_Manager::ICON,
-				'default' => 'fa fa-star',
+				'type' => Controls_Manager::ICONS,
+				'fa4compatibility' => 'icon',
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'fa-solid',
+				],
 				'condition' => [
 					'graphic_element' => 'icon',
 				],
@@ -398,15 +403,15 @@ class Call_To_Action extends Base_Widget {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'center',
@@ -633,7 +638,9 @@ class Call_To_Action extends Base_Widget {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-view-stacked .elementor-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .elementor-view-stacked .elementor-icon svg' => 'stroke: {{VALUE}}',
 					'{{WRAPPER}} .elementor-view-framed .elementor-icon, {{WRAPPER}} .elementor-view-default .elementor-icon' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+					'{{WRAPPER}} .elementor-view-framed .elementor-icon, {{WRAPPER}} .elementor-view-default .elementor-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition' => [
 					'graphic_element' => 'icon',
@@ -653,7 +660,9 @@ class Call_To_Action extends Base_Widget {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-view-framed .elementor-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-view-framed .elementor-icon svg' => 'stroke: {{VALUE}};',
 					'{{WRAPPER}} .elementor-view-stacked .elementor-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-view-stacked .elementor-icon svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1556,6 +1565,12 @@ class Call_To_Action extends Base_Widget {
 			if ( 'default' != $settings['icon_view'] ) {
 				$this->add_render_attribute( 'graphic_element', 'class', 'elementor-shape-' . $settings['icon_shape'] );
 			}
+
+			if ( ! isset( $settings['icon'] ) && ! Icons_Manager::is_migration_allowed() ) {
+				// add old default
+				$settings['icon'] = 'fa fa-star';
+			}
+
 			if ( ! empty( $settings['icon'] ) ) {
 				$this->add_render_attribute( 'icon', 'class', $settings['icon'] );
 			}
@@ -1599,6 +1614,9 @@ class Call_To_Action extends Base_Widget {
 		$this->add_inline_editing_attributes( 'description' );
 		$this->add_inline_editing_attributes( 'button' );
 
+		$migrated = isset( $settings['__fa4_migrated']['selected_icon'] );
+		$is_new = empty( $settings['icon'] ) && Icons_Manager::is_migration_allowed();
+
 		?>
 		<<?php echo $wrapper_tag . ' ' . $this->get_render_attribute_string( 'wrapper' ); ?> class="elementor-cta">
 		<?php if ( $print_bg ) : ?>
@@ -1613,10 +1631,14 @@ class Call_To_Action extends Base_Widget {
 					<div <?php echo $this->get_render_attribute_string( 'graphic_element' ); ?>>
 						<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'graphic_image' ); ?>
 					</div>
-				<?php elseif ( 'icon' === $settings['graphic_element'] && ! empty( $settings['icon'] ) ) : ?>
+				<?php elseif ( 'icon' === $settings['graphic_element'] && ( ! empty( $settings['icon'] ) || ! empty( $settings['selected_icon'] ) ) ) : ?>
 					<div <?php echo $this->get_render_attribute_string( 'graphic_element' ); ?>>
 						<div class="elementor-icon">
-							<i <?php echo $this->get_render_attribute_string( 'icon' ); ?>></i>
+							<?php if ( $is_new || $migrated ) :
+								Icons_Manager::render_icon( $settings['selected_icon'], [ 'aria-hidden' => 'true' ] );
+							else : ?>
+								<i <?php echo $this->get_render_attribute_string( 'icon' ); ?>></i>
+							<?php endif; ?>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -1667,7 +1689,9 @@ class Call_To_Action extends Base_Widget {
 				animationClass,
 				btnSizeClass = 'elementor-size-' + settings.button_size,
 				printBg = true,
-				printContent = true;
+				printContent = true,
+				iconHTML = elementor.helpers.renderIcon( view, settings.selected_icon, { 'aria-hidden': true }, 'i' , 'object' ),
+				migrated = elementor.helpers.isIconMigrated( settings, 'selected_icon' );
 
 			if ( 'box' === settings.link_click ) {
 				wrapperTag = 'a';
@@ -1754,10 +1778,14 @@ class Call_To_Action extends Base_Widget {
 					<div {{{ view.getRenderAttributeString( 'graphic_element' ) }}}>
 						<img src="{{ imageUrl }}">
 					</div>
-				<#  } else if ( 'icon' === settings.graphic_element && settings.icon ) { #>
+				<#  } else if ( 'icon' === settings.graphic_element && ( settings.icon || settings.selected_icon ) ) { #>
 					<div {{{ view.getRenderAttributeString( 'graphic_element' ) }}}>
 						<div class="elementor-icon">
-							<i class="{{ settings.icon }}"></i>
+							<# if ( iconHTML && iconHTML.rendered && ( ! settings.icon || migrated ) ) { #>
+								{{{ iconHTML.value }}}
+							<# } else { #>
+								<i class="{{ settings.icon }}"></i>
+							<# } #>
 						</div>
 					</div>
 				<# } #>

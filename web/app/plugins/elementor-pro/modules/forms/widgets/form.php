@@ -4,12 +4,15 @@ namespace ElementorPro\Modules\Forms\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
 use ElementorPro\Classes\Utils;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
 use ElementorPro\Modules\Forms\Classes\Form_Base;
+use ElementorPro\Modules\Forms\Classes\Recaptcha_Handler;
+use ElementorPro\Modules\Forms\Classes\Recaptcha_V3_Handler;
 use ElementorPro\Modules\Forms\Module;
 use ElementorPro\Plugin;
 
@@ -134,6 +137,7 @@ class Form extends Form_Base {
 							'value' => [
 								'checkbox',
 								'recaptcha',
+								'recaptcha_v3',
 								'hidden',
 								'html',
 							],
@@ -273,6 +277,7 @@ class Form extends Form_Base {
 							'value' => [
 								'hidden',
 								'recaptcha',
+								'recaptcha_v3',
 							],
 						],
 					],
@@ -298,8 +303,7 @@ class Form extends Form_Base {
 		);
 
 		$repeater->add_control(
-			'recaptcha_size',
-			[
+			'recaptcha_size', [
 				'label' => __( 'Size', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'normal',
@@ -333,6 +337,28 @@ class Form extends Form_Base {
 						[
 							'name' => 'field_type',
 							'value' => 'recaptcha',
+						],
+					],
+				],
+			]
+		);
+
+		$repeater->add_control(
+			'recaptcha_badge', [
+				'label' => __( 'Badge', 'elementor-pro' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'bottomright',
+				'options' => [
+					'bottomright' => __( 'Bottom Right', 'elementor-pro' ),
+					'bottomleft' => __( 'Bottom Left', 'elementor-pro' ),
+					'inline' => __( 'Inline', 'elementor-pro' ),
+				],
+				'description' => __( 'To view the validation badge, switch to preview mode', 'elementor-pro' ),
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'field_type',
+							'value' => 'recaptcha_v3',
 						],
 					],
 				],
@@ -587,19 +613,19 @@ class Form extends Form_Base {
 				'options' => [
 					'start' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'end' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'stretch' => [
 						'title' => __( 'Justified', 'elementor-pro' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'default' => 'stretch',
@@ -608,12 +634,12 @@ class Form extends Form_Base {
 		);
 
 		$this->add_control(
-			'button_icon',
+			'selected_button_icon',
 			[
 				'label' => __( 'Icon', 'elementor-pro' ),
-				'type' => Controls_Manager::ICON,
+				'type' => Controls_Manager::ICONS,
+				'fa4compatibility' => 'button_icon',
 				'label_block' => true,
-				'default' => '',
 			]
 		);
 
@@ -628,7 +654,7 @@ class Form extends Form_Base {
 					'right' => __( 'After', 'elementor-pro' ),
 				],
 				'condition' => [
-					'button_icon!' => '',
+					'selected_button_icon[value]!' => '',
 				],
 			]
 		);
@@ -644,7 +670,7 @@ class Form extends Form_Base {
 					],
 				],
 				'condition' => [
-					'button_icon!' => '',
+					'selected_button_icon[value]!' => '',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-button .elementor-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
@@ -845,6 +871,7 @@ class Form extends Form_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-field-group' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-field-group.recaptcha_v3-bottomleft, {{WRAPPER}} .elementor-field-group.recaptcha_v3-bottomright' => 'margin-bottom: 0;',
 					'{{WRAPPER}} .elementor-form-fields-wrapper' => 'margin-bottom: -{{SIZE}}{{UNIT}};',
 				],
 			]
@@ -1054,6 +1081,7 @@ class Form extends Form_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1211,6 +1239,17 @@ class Form extends Form_Base {
 
 	}
 
+	private function render_icon_with_fallback( $settings ) {
+		$migrated = isset( $settings['__fa4_migrated']['selected_button_icon'] );
+		$is_new = empty( $settings['button_icon'] ) && Icons_Manager::is_migration_allowed();
+
+		if ( $is_new || $migrated ) {
+			Icons_Manager::render_icon( $settings['selected_button_icon'], [ 'aria-hidden' => 'true' ] );
+		} else {
+			?><i class="<?php echo esc_attr( $settings['button_icon'] ); ?>" aria-hidden="true"></i><?php
+		}
+	}
+
 	protected function render() {
 		$instance = $this->get_settings_for_display();
 
@@ -1347,7 +1386,7 @@ class Form extends Form_Base {
 
 					switch ( $item['field_type'] ) :
 						case 'html':
-							echo $item['field_html'];
+							echo do_shortcode( $item['field_html'] );
 							break;
 						case 'textarea':
 							echo $this->make_textarea_field( $item, $item_index );
@@ -1394,9 +1433,9 @@ class Form extends Form_Base {
 				<div <?php echo $this->get_render_attribute_string( 'submit-group' ); ?>>
 					<button type="submit" <?php echo $this->get_render_attribute_string( 'button' ); ?>>
 						<span <?php echo $this->get_render_attribute_string( 'content-wrapper' ); ?>>
-							<?php if ( ! empty( $instance['button_icon'] ) ) : ?>
+							<?php if ( ! empty( $instance['button_icon'] ) || ! empty( $instance['selected_button_icon'] ) ) : ?>
 								<span <?php echo $this->get_render_attribute_string( 'icon-align' ); ?>>
-									<i class="<?php echo esc_attr( $instance['button_icon'] ); ?>" aria-hidden="true"></i>
+									<?php $this->render_icon_with_fallback( $instance ); ?>
 									<?php if ( empty( $instance['button_text'] ) ) : ?>
 										<span class="elementor-screen-only"><?php _e( 'Submit', 'elementor-pro' ); ?></span>
 									<?php endif; ?>
@@ -1584,14 +1623,21 @@ class Form extends Form_Base {
 						buttonClasses += ' elementor-sm-' + settings.button_width_mobile;
 					}
 
+					var iconHTML = elementor.helpers.renderIcon( view, settings.selected_button_icon, { 'aria-hidden': true }, 'i' , 'object' ),
+						migrated = elementor.helpers.isIconMigrated( settings, 'selected_button_icon' );
+
 					#>
 
 					<div class="{{ buttonClasses }}">
 						<button id="{{ settings.button_css_id }}" type="submit" class="elementor-button elementor-size-{{ settings.button_size }} elementor-button-{{ settings.button_type }} elementor-animation-{{ settings.button_hover_animation }}">
 							<span>
-								<# if ( settings.button_icon ) { #>
+								<# if ( settings.button_icon || settings.selected_button_icon ) { #>
 									<span class="elementor-button-icon elementor-align-icon-{{ settings.button_icon_align }}">
-										<i class="{{ settings.button_icon }}" aria-hidden="true"></i>
+										<# if ( iconHTML && iconHTML.rendered && ( ! settings.button_icon || migrated ) ) { #>
+											{{{ iconHTML.value }}}
+										<# } else { #>
+											<i class="{{ settings.button_icon }}" aria-hidden="true"></i>
+										<# } #>
 										<span class="elementor-screen-only"><?php echo $submit_text; ?></span>
 									</span>
 								<# } #>

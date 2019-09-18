@@ -46,6 +46,10 @@ class Pods_Image extends Data_Tag {
 		 */
 		$pod = pods( $pod_name, get_the_ID() );
 
+		if ( false === $pod ) {
+			return [];
+		}
+
 		$image = $pod->field( $meta_key );
 
 		$image_data = [

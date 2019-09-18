@@ -3,6 +3,7 @@ namespace ElementorPro\Modules\ThemeElements\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
@@ -325,10 +326,11 @@ class Post_Info extends Base {
 		);
 
 		$repeater->add_control(
-			'icon',
+			'selected_icon',
 			[
 				'label' => __( 'Choose Icon', 'elementor-pro' ),
-				'type' => Controls_Manager::ICON,
+				'type' => Controls_Manager::ICONS,
+				'fa4compatibility' => 'icon',
 				'condition' => [
 					'show_icon' => 'custom',
 					'show_avatar!' => 'yes',
@@ -345,22 +347,34 @@ class Post_Info extends Base {
 				'default' => [
 					[
 						'type' => 'author',
-						'icon' => 'fa fa-user-circle-o',
+						'selected_icon' => [
+							'value' => 'far fa-user-circle',
+							'library' => 'fa-regular',
+						],
 					],
 					[
 						'type' => 'date',
-						'icon' => 'fa fa-calendar',
+						'selected_icon' => [
+							'value' => 'fas fa-calendar',
+							'library' => 'fa-solid',
+						],
 					],
 					[
 						'type' => 'time',
-						'icon' => 'fa fa-clock-o',
+						'selected_icon' => [
+							'value' => 'far fa-clock',
+							'library' => 'fa-regular',
+						],
 					],
 					[
 						'type' => 'comments',
-						'icon' => 'fa fa-commenting-o',
+						'selected_icon' => [
+							'value' => 'far fa-comment-dots',
+							'library' => 'fa-regular',
+						],
 					],
 				],
-				'title_field' => '<i class="{{ icon }}" aria-hidden="true"></i> <span style="text-transform: capitalize;">{{{ type }}}</span>',
+				'title_field' => '{{{ elementor.helpers.renderIcon( this, selected_icon, {}, "i", "panel" ) || \'<i class="{{ icon }}" aria-hidden="true"></i>\' }}} <span style="text-transform: capitalize;">{{{ type }}}</span>',
 			]
 		);
 
@@ -573,6 +587,7 @@ class Post_Info extends Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon-list-icon svg' => 'fill: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -597,6 +612,7 @@ class Post_Info extends Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-icon' => 'width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-icon-list-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-icon-list-icon svg' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -679,6 +695,10 @@ class Post_Info extends Base {
 			case 'author':
 				$item_data['text'] = get_the_author_meta( 'display_name' );
 				$item_data['icon'] = 'fa fa-user-circle-o'; // Default icon.
+				$item_data['selected_icon'] = [
+					'value' => 'far fa-user-circle',
+					'library' => 'fa-regular',
+				]; // Default icons.
 				$item_data['itemprop'] = 'author';
 
 				if ( 'yes' === $repeater_item['link'] ) {
@@ -707,6 +727,10 @@ class Post_Info extends Base {
 
 				$item_data['text'] = get_the_time( $format_options[ $repeater_item['date_format'] ] );
 				$item_data['icon'] = 'fa fa-calendar'; // Default icon
+				$item_data['selected_icon'] = [
+					'value' => 'fas fa-calendar',
+					'library' => 'fa-solid',
+				]; // Default icons.
 				$item_data['itemprop'] = 'datePublished';
 
 				if ( 'yes' === $repeater_item['link'] ) {
@@ -728,6 +752,10 @@ class Post_Info extends Base {
 				];
 				$item_data['text'] = get_the_time( $format_options[ $repeater_item['time_format'] ] );
 				$item_data['icon'] = 'fa fa-clock-o'; // Default icon
+				$item_data['selected_icon'] = [
+					'value' => 'far fa-clock',
+					'library' => 'fa-regular',
+				]; // Default icons.
 				break;
 
 			case 'comments':
@@ -766,12 +794,20 @@ class Post_Info extends Base {
 						];
 					}
 					$item_data['icon'] = 'fa fa-commenting-o'; // Default icon
+					$item_data['selected_icon'] = [
+						'value' => 'far fa-comment-dots',
+						'library' => 'fa-regular',
+					]; // Default icons.
 					$item_data['itemprop'] = 'commentCount';
 				}
 				break;
 
 			case 'terms':
 				$item_data['icon'] = 'fa fa-tags'; // Default icon
+				$item_data['selected_icon'] = [
+					'value' => 'fas fa-tags',
+					'library' => 'fa-solid',
+				]; // Default icons.
 				$item_data['itemprop'] = 'about';
 
 				$taxonomy = $repeater_item['taxonomy'];
@@ -787,6 +823,10 @@ class Post_Info extends Base {
 			case 'custom':
 				$item_data['text'] = $repeater_item['custom_text'];
 				$item_data['icon'] = 'fa fa-info-circle'; // Default icon.
+				$item_data['selected_icon'] = [
+					'value' => 'far fa-tags',
+					'library' => 'fa-regular',
+				]; // Default icons.
 
 				if ( 'yes' === $repeater_item['link'] && ! empty( $repeater_item['custom_url'] ) ) {
 					$item_data['url'] = $repeater_item['custom_url'];
@@ -864,15 +904,28 @@ class Post_Info extends Base {
 
 	protected function render_item_icon_or_image( $item_data, $repeater_item, $repeater_index ) {
 		// Set icon according to user settings.
-		if ( 'custom' === $repeater_item['show_icon'] && ! empty( $repeater_item['icon'] ) ) {
-			$item_data['icon'] = $repeater_item['icon'];
-		} elseif ( 'none' === $repeater_item['show_icon'] ) {
-			$item_data['icon'] = '';
+		$migration_allowed = Icons_Manager::is_migration_allowed();
+		if ( ! $migration_allowed ) {
+			if ( 'custom' === $repeater_item['show_icon'] && ! empty( $repeater_item['icon'] ) ) {
+				$item_data['icon'] = $repeater_item['icon'];
+			} elseif ( 'none' === $repeater_item['show_icon'] ) {
+				$item_data['icon'] = '';
+			}
+		} else {
+			if ( 'custom' === $repeater_item['show_icon'] && ! empty( $repeater_item['selected_icon'] ) ) {
+				$item_data['selected_icon'] = $repeater_item['selected_icon'];
+			} elseif ( 'none' === $repeater_item['show_icon'] ) {
+				$item_data['selected_icon'] = [];
+			}
 		}
 
-		if ( empty( $item_data['icon'] ) && empty( $item_data['image'] ) ) {
+		if ( empty( $item_data['icon'] ) && empty( $item_data['selected_icon'] ) && empty( $item_data['image'] ) ) {
 			return;
 		}
+
+		$migrated = isset( $repeater_item['__fa4_migrated']['selected_icon'] );
+		$is_new = empty( $repeater_item['icon'] ) && $migration_allowed;
+		$show_icon = 'none' !== $repeater_item['show_icon'];
 
 		?>
 		<span class="elementor-icon-list-icon">
@@ -883,8 +936,12 @@ class Post_Info extends Base {
 				$this->add_render_attribute( $image_data, 'alt', $item_data['text'] );
 				?>
 				<img class="elementor-avatar" <?php echo $this->get_render_attribute_string( $image_data ); ?>>
-			<?php else : ?>
-				<i class="<?php echo esc_attr( $item_data['icon'] ); ?>" aria-hidden="true"></i>
+			<?php elseif ( $show_icon ) : ?>
+				<?php if ( $is_new || $migrated ) :
+					Icons_Manager::render_icon( $item_data['selected_icon'], [ 'aria-hidden' => 'true' ] );
+				else : ?>
+					<i class="<?php echo esc_attr( $item_data['icon'] ); ?>" aria-hidden="true"></i>
+				<?php endif; ?>
 			<?php endif; ?>
 		</span>
 		<?php

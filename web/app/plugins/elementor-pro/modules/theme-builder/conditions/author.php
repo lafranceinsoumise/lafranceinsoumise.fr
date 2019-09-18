@@ -38,8 +38,9 @@ class Author extends Condition_Base {
 				'select2options' => [
 					'dropdownCssClass' => 'elementor-conditions-select2-dropdown',
 				],
-				'filter_type' => 'author',
-				'object_type' => $this->get_name(),
+				'autocomplete' => [
+					'object' => QueryModule::QUERY_OBJECT_AUTHOR,
+				],
 			]
 		);
 	}

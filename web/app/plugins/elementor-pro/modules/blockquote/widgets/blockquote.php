@@ -5,6 +5,7 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Scheme_Color;
 use Elementor\Widget_Base;
 use Elementor\Modules\DynamicTags\Module as TagsModule;
@@ -14,6 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Blockquote extends Widget_Base {
+
+	public function get_style_depends() {
+		if ( Icons_Manager::is_migration_allowed() ) {
+			return [ 'elementor-icons-fa-brands' ];
+		}
+		return [];
+	}
 
 	public function get_name() {
 		return 'blockquote';
@@ -67,15 +75,15 @@ class Blockquote extends Widget_Base {
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'prefix_class' => 'elementor-blockquote--align-',
@@ -857,7 +865,14 @@ class Blockquote extends Widget_Base {
 					<?php if ( 'yes' === $settings['tweet_button'] ) : ?>
 						<a href="<?php echo esc_attr( $share_link ); ?>" class="elementor-blockquote__tweet-button" target="_blank">
 							<?php if ( 'text' !== $tweet_button_view ) : ?>
-								<i class="fa fa-twitter" aria-hidden="true"></i>
+								<?php
+								$icon = [
+									'value' => 'fab fa-twitter',
+									'library' => 'fa-brands',
+								];
+								if ( ! Icons_Manager::is_migration_allowed() || ! Icons_Manager::render_icon( $icon, [ 'aria-hidden' => 'true' ] ) ) : ?>
+									<i class="fa fa-twitter" aria-hidden="true"></i>
+								<?php endif; ?>
 								<?php if ( 'icon-text' !== $tweet_button_view ) : ?>
 									<span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-pro' ); ?></span>
 								<?php endif; ?>

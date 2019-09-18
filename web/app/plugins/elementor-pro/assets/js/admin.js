@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.8 - 06-05-2019 */
+/*! elementor-pro - v2.6.5 - 26-08-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,23 +82,23 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 56);
+/******/ 	return __webpack_require__(__webpack_require__.s = 68);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 56:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var modules = {
-	widget_template_edit_button: __webpack_require__(57),
-	forms_integrations: __webpack_require__(59),
-	AssetsManager: __webpack_require__(61),
-	RoleManager: __webpack_require__(66),
-	ThemeBuilder: __webpack_require__(68)
+	widget_template_edit_button: __webpack_require__(69),
+	forms_integrations: __webpack_require__(71),
+	AssetsManager: __webpack_require__(73),
+	RoleManager: __webpack_require__(81),
+	ThemeBuilder: __webpack_require__(83)
 };
 
 window.elementorProAdmin = {
@@ -116,20 +116,20 @@ jQuery(function () {
 
 /***/ }),
 
-/***/ 57:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var EditButton = __webpack_require__(58);
+	var EditButton = __webpack_require__(70);
 	this.editButton = new EditButton();
 };
 
 /***/ }),
 
-/***/ 58:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -163,14 +163,14 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 59:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var ApiValidations = __webpack_require__(60);
+	var ApiValidations = __webpack_require__(72);
 
 	this.dripButton = new ApiValidations('drip_api_token');
 	this.getResponse = new ApiValidations('getresponse_api_key');
@@ -182,7 +182,7 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 60:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -259,22 +259,26 @@ module.exports = function (key, fieldID) {
 
 /***/ }),
 
-/***/ 61:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var FontManager = __webpack_require__(62),
-	    TypekitAdmin = __webpack_require__(65);
+	var FontManager = __webpack_require__(74),
+	    TypekitAdmin = __webpack_require__(77),
+	    CustomIcon = __webpack_require__(78).default,
+	    FontAwesomeProAdmin = __webpack_require__(80).default;
 	this.fontManager = new FontManager();
 	this.typekit = new TypekitAdmin();
+	this.fontAwesomePro = new FontAwesomeProAdmin();
+	this.customIcons = new CustomIcon();
 };
 
 /***/ }),
 
-/***/ 62:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -284,8 +288,8 @@ module.exports = function () {
 	var self = this;
 
 	self.fields = {
-		upload: __webpack_require__(63),
-		repeater: __webpack_require__(64)
+		upload: __webpack_require__(75),
+		repeater: __webpack_require__(76)
 	};
 
 	self.selectors = {
@@ -421,7 +425,7 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 63:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -460,8 +464,22 @@ module.exports = {
 
 	setUploadParams: function setUploadParams(ext, name) {
 		var self = this;
-		self.fileFrame[name].uploader.uploader.param('uploadeType', ext);
-		self.fileFrame[name].uploader.uploader.param('uploadeTypecaller', 'elementor-admin-upload');
+		self.fileFrame[name].uploader.uploader.param('uploadType', ext);
+		self.fileFrame[name].uploader.uploader.param('uploadTypeCaller', 'elementor-admin-font-upload');
+		self.fileFrame[name].uploader.uploader.param('post_id', self.getPostId());
+	},
+
+	setUploadMimeType: function setUploadMimeType(frame, ext) {
+		// Set svg as only allowed upload extensions
+		var oldExtensions = _wpPluploadSettings.defaults.filters.mime_types[0].extensions;
+		frame.on('ready', function () {
+			_wpPluploadSettings.defaults.filters.mime_types[0].extensions = ext;
+		});
+
+		frame.on('close', function () {
+			// restore allowed upload extensions
+			_wpPluploadSettings.defaults.filters.mime_types[0].extensions = oldExtensions;
+		});
 	},
 
 	replaceButtonClass: function replaceButtonClass(el) {
@@ -513,6 +531,8 @@ module.exports = {
 			self.updatePreview(el);
 		});
 
+		self.setUploadMimeType(self.fileFrame[name], ext);
+
 		// Finally, open the modal
 		self.fileFrame[name].open();
 		if (ext) {
@@ -549,6 +569,11 @@ module.exports = {
 		});
 	},
 
+	getPostId: function getPostId() {
+		return jQuery('#post_ID').val();
+	},
+
+
 	init: function init() {
 		var self = this;
 
@@ -578,7 +603,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 64:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -737,7 +762,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 65:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -813,20 +838,642 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 66:
+/***/ 78:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CustomIcons = function (_elementorModules$Vie) {
+	_inherits(CustomIcons, _elementorModules$Vie);
+
+	function CustomIcons() {
+		_classCallCheck(this, CustomIcons);
+
+		return _possibleConstructorReturn(this, (CustomIcons.__proto__ || Object.getPrototypeOf(CustomIcons)).apply(this, arguments));
+	}
+
+	_createClass(CustomIcons, [{
+		key: 'getDefaultElements',
+		value: function getDefaultElements() {
+			var elements = {};
+			var selectors = this.getSettings('selectors');
+
+			jQuery.each(selectors, function (element, selector) {
+				elements['$' + element] = jQuery(selector);
+			});
+
+			return elements;
+		}
+	}, {
+		key: 'getDefaultSettings',
+		value: function getDefaultSettings() {
+			return {
+				fields: {
+					dropzone: __webpack_require__(79).default
+				},
+				classes: {
+					editPageClass: 'post-type-elementor_icons',
+					editPhp: 'edit-php',
+					hasIcons: 'elementor--has-icons'
+				},
+				selectors: {
+					editPageClass: 'post-type-elementor_icons',
+					title: '#title',
+					metaboxContainer: '#elementor-custom-icons-metabox',
+					metabox: '.elementor-custom-icons-metabox',
+					closeHandle: 'button.handlediv',
+					iconsTemplate: '#elementor-icons-template',
+					dataInput: '#elementor_custom_icon_set_config',
+					dropzone: '.zip_upload',
+					submitDelete: '.submitdelete',
+					dayInput: '#hidden_jj',
+					mmInput: '#hidden_mm',
+					yearInput: '#hidden_aa',
+					hourInput: '#hidden_hh',
+					minuteInput: '#hidden_mn',
+					publishButton: '#publish',
+					submitMetabox: '#postbox-container-1'
+				},
+				templates: {
+					icon: '<li><div class="icon"><i class="{{icon}}"></i><div class="icon-name">{{label}}</div></div></li>',
+					header: jQuery('#elementor-custom-icons-template-header').html(),
+					footer: jQuery('#elementor-custom-icons-template-footer').html(),
+					duplicatePrefix: jQuery('#elementor-custom-icons-template-duplicate-prefix').html()
+				}
+			};
+		}
+	}, {
+		key: 'bindEvents',
+		value: function bindEvents() {
+			var $submitDelete = this.elements.$submitDelete,
+			    triggerDelete = function triggerDelete() {
+				return $submitDelete[0].click();
+			};
+
+
+			elementorCommon.elements.$document.on('click', '.remove', triggerDelete);
+
+			if ('' !== this.getData()) {
+				this.bindOnTitleChange();
+			}
+		}
+	}, {
+		key: 'bindOnTitleChange',
+		value: function bindOnTitleChange() {
+			var _this2 = this;
+
+			var $title = this.elements.$title,
+			    onTitleInput = function onTitleInput(event) {
+				return _this2.onTitleInput(event);
+			};
+
+
+			$title.on('input change', onTitleInput);
+		}
+	}, {
+		key: 'removeCloseHandle',
+		value: function removeCloseHandle() {
+			var $metaboxContainer = this.elements.$metaboxContainer;
+
+			$metaboxContainer.find('h2').remove();
+			$metaboxContainer.find('button').remove();
+			$metaboxContainer.removeClass('closed').removeClass('postbox');
+		}
+	}, {
+		key: 'prepareIconName',
+		value: function prepareIconName(icon) {
+			var iconName = icon.replace('_', ' ').replace('-', ' ');
+			return elementorCommon.helpers.upperCaseWords(iconName);
+		}
+	}, {
+		key: 'getCreatedOn',
+		value: function getCreatedOn() {
+			var _elements = this.elements,
+			    $dayInput = _elements.$dayInput,
+			    $mmInput = _elements.$mmInput,
+			    $yearInput = _elements.$yearInput,
+			    $hourInput = _elements.$hourInput,
+			    $minuteInput = _elements.$minuteInput;
+
+			return {
+				day: $dayInput.val(),
+				mm: $mmInput.val(),
+				year: $yearInput.val(),
+				hour: $hourInput.val(),
+				minute: $minuteInput.val()
+			};
+		}
+	}, {
+		key: 'enqueueCSS',
+		value: function enqueueCSS(url) {
+			if (!elementorCommon.elements.$document.find('link[href="' + url + '"]').length) {
+				elementorCommon.elements.$document.find('link:last').after('<link href="' + url + '" rel="stylesheet" type="text/css">');
+			}
+		}
+	}, {
+		key: 'setData',
+		value: function setData(data) {
+			this.elements.$dataInput.val(JSON.stringify(data));
+		}
+	}, {
+		key: 'getData',
+		value: function getData() {
+			var value = this.elements.$dataInput.val();
+			return '' === value ? '' : JSON.parse(value);
+		}
+	}, {
+		key: 'renderIconList',
+		value: function renderIconList(config) {
+			var _this3 = this;
+
+			var iconTemplate = this.getSettings('templates.icon');
+			return config.icons.map(function (icon) {
+				var data = {
+					icon: config.displayPrefix + ' ' + config.prefix + icon,
+					label: _this3.prepareIconName(icon)
+				};
+				return elementorCommon.compileTemplate(iconTemplate, data);
+			}).join('\n');
+		}
+	}, {
+		key: 'renderIcons',
+		value: function renderIcons(config) {
+			var _elements2 = this.elements,
+			    $metaboxContainer = _elements2.$metaboxContainer,
+			    $metabox = _elements2.$metabox,
+			    $submitMetabox = _elements2.$submitMetabox;
+
+			var _getSettings = this.getSettings('templates'),
+			    header = _getSettings.header,
+			    footer = _getSettings.footer;
+
+			$metaboxContainer.addClass(this.getSettings('classes.hasIcons'));
+			$submitMetabox.show();
+			this.setData(config);
+			this.enqueueCSS(config.url);
+			$metabox.html('');
+			$metaboxContainer.prepend(elementorCommon.compileTemplate(header, config));
+			$metabox.append('<ul>' + this.renderIconList(config) + '</ul>');
+			$metaboxContainer.append(elementorCommon.compileTemplate(footer, this.getCreatedOn()));
+		}
+	}, {
+		key: 'onTitleInput',
+		value: function onTitleInput(event) {
+			var data = this.getData();
+			data.label = event.target.value;
+			this.setData(data);
+		}
+	}, {
+		key: 'showAlertDialog',
+		value: function showAlertDialog(id, message) {
+			var onConfirm = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+			var alertData = {
+				id: id,
+				message: message
+			};
+			if (onConfirm) {
+				alertData.onConfirm = onConfirm;
+			}
+			return elementorCommon.dialogsManager.createWidget('alert', alertData).show();
+		}
+	}, {
+		key: 'onSuccess',
+		value: function onSuccess(data, dropzoneElement) {
+			var _this4 = this;
+
+			if (data.data.errors) {
+				var id = void 0,
+				    message = void 0;
+				jQuery.each(data.data.errors, function (errorId, errorMessage) {
+					id = errorId;
+					message = errorMessage;
+					return false;
+				});
+				return this.showAlertDialog(id, message);
+			}
+			if (data.data.config.duplicate_prefix) {
+				delete data.data.config.duplicatePrefix;
+				return this.showAlertDialog('duplicate-prefix', this.getSettings('templates.duplicatePrefix'), function () {
+					return _this4.saveInitialUpload(data.data.config);
+				});
+			}
+			this.saveInitialUpload(data.data.config);
+			//
+			// this.setData( data.data.config );
+			//
+			// const { $publishButton, $title } = this.elements;
+			// if ( '' === $title.val() ) {
+			// 	$title.val( data.data.config.name );
+			// }
+			// $publishButton.click();
+		}
+	}, {
+		key: 'saveInitialUpload',
+		value: function saveInitialUpload(config) {
+			this.setData(config);
+			var _elements3 = this.elements,
+			    $publishButton = _elements3.$publishButton,
+			    $title = _elements3.$title,
+			    $submitMetabox = _elements3.$submitMetabox;
+
+			$submitMetabox.show();
+			if ('' === $title.val()) {
+				$title.val(config.name);
+			}
+			$publishButton.click();
+		}
+	}, {
+		key: 'onInit',
+		value: function onInit() {
+			var _this5 = this;
+
+			var $body = elementorCommon.elements.$body,
+			    _getSettings2 = this.getSettings('classes'),
+			    editPageClass = _getSettings2.editPageClass,
+			    editPhp = _getSettings2.editPhp;
+
+
+			if (!$body.hasClass(editPageClass) || $body.hasClass(editPhp)) {
+				return;
+			}
+
+			_get(CustomIcons.prototype.__proto__ || Object.getPrototypeOf(CustomIcons.prototype), 'onInit', this).call(this);
+
+			this.removeCloseHandle();
+
+			var dropzoneFieldClass = this.getSettings('fields.dropzone'),
+			    dropzoneField = new dropzoneFieldClass(),
+			    config = this.getData(),
+			    _elements4 = this.elements,
+			    $dropzone = _elements4.$dropzone,
+			    $metaboxContainer = _elements4.$metaboxContainer;
+
+
+			if ('' === config) {
+				$dropzone.show('fast');
+				dropzoneField.setSettings('onSuccess', function () {
+					return _this5.onSuccess.apply(_this5, arguments);
+				});
+			} else {
+				this.renderIcons(config);
+			}
+			$metaboxContainer.show('fast');
+		}
+	}]);
+
+	return CustomIcons;
+}(elementorModules.ViewModule);
+
+exports.default = CustomIcons;
+
+/***/ }),
+
+/***/ 79:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropZoneField = function (_elementorModules$Vie) {
+	_inherits(DropZoneField, _elementorModules$Vie);
+
+	function DropZoneField() {
+		_classCallCheck(this, DropZoneField);
+
+		return _possibleConstructorReturn(this, (DropZoneField.__proto__ || Object.getPrototypeOf(DropZoneField)).apply(this, arguments));
+	}
+
+	_createClass(DropZoneField, [{
+		key: 'getDefaultSettings',
+		value: function getDefaultSettings() {
+			var baseSelector = '.elementor-dropzone-field';
+			return {
+				droppedFiles: false,
+				selectors: {
+					dropZone: baseSelector,
+					input: baseSelector + ' [type="file"]',
+					label: baseSelector + 'label',
+					errorMsg: baseSelector + '.box__error span',
+					restart: baseSelector + '.box__restart',
+					browseButton: baseSelector + ' .elementor--dropzone--upload__browse',
+					postId: '#post_ID'
+				},
+				classes: {
+					drag: 'is-dragover',
+					error: 'is-error',
+					success: 'is-success',
+					upload: 'is-uploading'
+				},
+				onSuccess: null,
+				onError: null
+			};
+		}
+	}, {
+		key: 'getDefaultElements',
+		value: function getDefaultElements() {
+			var elements = {};
+			var selectors = this.getSettings('selectors');
+
+			jQuery.each(selectors, function (element, selector) {
+				elements['$' + element] = jQuery(selector);
+			});
+
+			return elements;
+		}
+	}, {
+		key: 'bindEvents',
+		value: function bindEvents() {
+			var _this2 = this;
+
+			var _elements = this.elements,
+			    $dropZone = _elements.$dropZone,
+			    $browseButton = _elements.$browseButton,
+			    $input = _elements.$input;
+
+			var _getSettings = this.getSettings('classes'),
+			    drag = _getSettings.drag;
+
+			$browseButton.on('click', function () {
+				return $input.click();
+			});
+			$dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function (event) {
+				event.preventDefault();
+				event.stopPropagation();
+			}).on('dragover dragenter', function () {
+				$dropZone.addClass(drag);
+			}).on('dragleave dragend drop', function () {
+				$dropZone.removeClass(drag);
+			}).on('drop change', function (event) {
+				if ('change' === event.type) {
+					_this2.setSettings('droppedFiles', event.originalEvent.target.files);
+				} else {
+					_this2.setSettings('droppedFiles', event.originalEvent.dataTransfer.files);
+				}
+				_this2.handleUpload();
+			});
+		}
+	}, {
+		key: 'handleUpload',
+		value: function handleUpload() {
+			var _arguments = arguments;
+
+			var droppedFiles = this.getSettings('droppedFiles');
+
+			if (!droppedFiles) {
+				return;
+			}
+
+			var _elements2 = this.elements,
+			    $input = _elements2.$input,
+			    $dropZone = _elements2.$dropZone,
+			    $postId = _elements2.$postId,
+			    $errorMsg = _elements2.$errorMsg,
+			    _getSettings2 = this.getSettings('classes'),
+			    error = _getSettings2.error,
+			    _success = _getSettings2.success,
+			    upload = _getSettings2.upload,
+			    _getSettings3 = this.getSettings(),
+			    onSuccess = _getSettings3.onSuccess,
+			    onError = _getSettings3.onError,
+			    ajaxData = new FormData(),
+			    fieldName = $input.attr('name'),
+			    actionKey = 'pro_assets_manager_custom_icon_upload',
+			    self = this;
+
+			Object.entries(droppedFiles).forEach(function (file) {
+				ajaxData.append(fieldName, file[1]);
+			});
+
+			ajaxData.append('actions', JSON.stringify({
+				pro_assets_manager_custom_icon_upload: {
+					action: actionKey,
+					data: {
+						post_id: $postId.val()
+					}
+				}
+			}));
+
+			$dropZone.removeClass(_success).removeClass(error);
+
+			elementorCommon.ajax.send('ajax', {
+				data: ajaxData,
+				cache: false,
+				enctype: 'multipart/form-data',
+				contentType: false,
+				processData: false,
+				xhr: function xhr() {
+					var xhr = $.ajaxSettings.xhr();
+					//Upload progress
+					xhr.upload.onprogress = function (evt) {
+						if (evt.lengthComputable) {
+							var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+							//Do something with upload progress
+						}
+					};
+					return xhr;
+				},
+				complete: function complete() {
+					$dropZone.removeClass(upload);
+				},
+				success: function success(response) {
+					var data = response.responses[actionKey];
+					$dropZone.addClass(data.success ? _success : error);
+					if (data.success) {
+						if (onSuccess) {
+							onSuccess(data, self);
+						}
+					} else {
+						$errorMsg.text(data.error);
+						if (onError) {
+							onError(self, _arguments);
+						}
+					}
+				},
+				error: function error() {
+					if ('function' === typeof onError) {
+						onError(self, _arguments);
+					}
+				}
+			});
+		}
+	}, {
+		key: 'onInit',
+		value: function onInit() {
+			_get(DropZoneField.prototype.__proto__ || Object.getPrototypeOf(DropZoneField.prototype), 'onInit', this).call(this);
+			elementorCommon.elements.$document.trigger('onDropzoneLoaded', [this]);
+		}
+	}]);
+
+	return DropZoneField;
+}(elementorModules.ViewModule);
+
+exports.default = DropZoneField;
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _class = function (_elementorModules$Vie) {
+	_inherits(_class, _elementorModules$Vie);
+
+	function _class() {
+		_classCallCheck(this, _class);
+
+		return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+	}
+
+	_createClass(_class, [{
+		key: 'getDefaultSettings',
+		value: function getDefaultSettings() {
+			return {
+				selectors: {
+					button: '#elementor_pro_fa_pro_validate_button',
+					kitIdField: '#elementor_font_awesome_pro_kit_id'
+				}
+			};
+		}
+	}, {
+		key: 'getDefaultElements',
+		value: function getDefaultElements() {
+			var elements = {};
+			var selectors = this.getSettings('selectors');
+
+			jQuery.each(selectors, function (element, selector) {
+				elements['$' + element] = jQuery(selector);
+			});
+
+			return elements;
+		}
+	}, {
+		key: 'bindEvents',
+		value: function bindEvents() {
+			var _this2 = this;
+
+			var _elements = this.elements,
+			    $button = _elements.$button,
+			    $kitIdField = _elements.$kitIdField;
+
+			$button.on('click', function (event) {
+				event.preventDefault();
+				_this2.testKitUrl();
+			});
+
+			$kitIdField.on('change', function () {
+				_this2.setState('clear');
+			});
+		}
+	}, {
+		key: 'setState',
+		value: function setState(type) {
+			var classes = ['loading', 'success', 'error'],
+			    $button = this.elements.$button;
+
+			var currentClass = void 0,
+			    classIndex = void 0;
+
+			for (classIndex in classes) {
+				currentClass = classes[classIndex];
+				if (type === currentClass) {
+					$button.addClass(currentClass);
+				} else {
+					$button.removeClass(currentClass);
+				}
+			}
+		}
+	}, {
+		key: 'testKitUrl',
+		value: function testKitUrl() {
+			this.setState('loading');
+
+			var self = this,
+			    kitID = this.elements.$kitIdField.val();
+
+			if ('' === kitID) {
+				this.setState('clear');
+				return;
+			}
+
+			jQuery.ajax({
+				url: 'https://kit.fontawesome.com/' + kitID + '.js',
+				method: 'GET',
+				complete: function complete(xhr) {
+					if (200 !== xhr.status) {
+						self.setState('error');
+					} else {
+						self.setState('success');
+					}
+				}
+			});
+		}
+	}]);
+
+	return _class;
+}(elementorModules.ViewModule);
+
+exports.default = _class;
+
+/***/ }),
+
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var AdvancedRoleManager = __webpack_require__(67);
+	var AdvancedRoleManager = __webpack_require__(82);
 	this.advancedRoleManager = new AdvancedRoleManager();
 };
 
 /***/ }),
 
-/***/ 67:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -866,20 +1513,20 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 68:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var CreateTemplateDialog = __webpack_require__(69);
+	var CreateTemplateDialog = __webpack_require__(84);
 	this.createTemplateDialog = new CreateTemplateDialog();
 };
 
 /***/ }),
 
-/***/ 69:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

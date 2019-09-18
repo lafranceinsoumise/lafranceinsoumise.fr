@@ -50,11 +50,11 @@ class Child_Of extends Condition_Base {
 				'select2options' => [
 					'dropdownCssClass' => 'elementor-conditions-select2-dropdown',
 				],
-				'filter_type' => 'post',
-				'object_type' => '',
-				'include_type' => '',
-				'query' => [
-					'post_type' => array_keys( $hierarchical_post_types ),
+				'autocomplete' => [
+					'object' => QueryModule::QUERY_OBJECT_POST,
+					'query' => [
+						'post_type' => array_keys( $hierarchical_post_types ),
+					],
 				],
 			]
 		);

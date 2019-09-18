@@ -49,6 +49,10 @@ class Module extends DynamicTags\Module {
 				continue;
 			}
 
+			if ( 1 === count( $options ) ) {
+				$options = [ -1 => ' -- ' ] + $options;
+			}
+
 			$groups[] = [
 				'label' => $group['name'],
 				'options' => $options,

@@ -387,11 +387,20 @@ class Price_List extends Base_Widget {
 			'vertical_align',
 			[
 				'label' => __( 'Vertical Align', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
+				'type' => Controls_Manager::CHOOSE,
 				'options' => [
-					'top' => __( 'Top', 'elementor-pro' ),
-					'bottom' => __( 'Bottom', 'elementor-pro' ),
-					'center' => __( 'Center', 'elementor-pro' ),
+					'top' => [
+						'title' => __( 'Top', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-top',
+					],
+					'center' => [
+						'title' => __( 'Center', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-middle',
+					],
+					'bottom' => [
+						'title' => __( 'Bottom', 'elementor-pro' ),
+						'icon' => 'eicon-v-align-bottom',
+					],
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-price-list-item' => 'align-items: {{VALUE}};',

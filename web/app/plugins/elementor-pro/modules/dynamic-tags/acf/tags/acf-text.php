@@ -41,7 +41,7 @@ class ACF_Text extends Tag {
 		if ( 'options' === $field_key ) {
 			$field = get_field_object( $meta_key, $field_key );
 		} else {
-			$field = get_field_object( $field_key );
+			$field = get_field_object( $field_key, get_queried_object() );
 		}
 
 		if ( $field && ! empty( $field['type'] ) ) {
@@ -82,10 +82,10 @@ class ACF_Text extends Tag {
 					break;
 				case 'oembed':
 					// Get from db without formatting.
-					$value = get_post_meta( get_the_ID(), $meta_key, true );
+					$value = $this->get_queried_object_meta( $meta_key );
 					break;
 				case 'google_map':
-					$meta = get_post_meta( get_the_ID(), $meta_key, true );
+					$meta = $this->get_queried_object_meta( $meta_key );
 					$value = isset( $meta['address'] ) ? $meta['address'] : '';
 					break;
 			} // End switch().
@@ -133,5 +133,16 @@ class ACF_Text extends Tag {
 			'date_time_picker',
 			'color_picker',
 		];
+	}
+
+	private function get_queried_object_meta( $meta_key ) {
+		$value = '';
+		if ( is_singular() ) {
+			$value = get_post_meta( get_the_ID(), $meta_key, true );
+		} elseif ( is_tax() || is_category() || is_tag() ) {
+			$value = get_term_meta( get_queried_object_id(), $meta_key, true );
+		}
+
+		return $value;
 	}
 }

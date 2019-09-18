@@ -2,7 +2,6 @@
 namespace ElementorPro\Modules\ThemeBuilder\Documents;
 
 use Elementor\DB;
-use ElementorPro\Classes\Utils;
 use ElementorPro\Modules\ThemeBuilder\Module;
 use ElementorPro\Plugin;
 
@@ -127,8 +126,7 @@ class Single extends Theme_Page_Document {
 	}
 
 	public static function get_preview_as_options() {
-		$post_types = Utils::get_public_post_types();
-		unset( $post_types['product'] );
+		$post_types = Module::get_public_post_types();
 
 		$post_types['attachment'] = get_post_type_object( 'attachment' )->label;
 		$post_types_options = [];

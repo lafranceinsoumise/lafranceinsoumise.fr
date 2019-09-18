@@ -156,7 +156,7 @@ class Product_Images extends Widget_Base {
 		wc_get_template( 'single-product/product-image.php' );
 
 		// On render widget from Editor - trigger the init manually.
-		if ( Utils::is_ajax() ) {
+		if ( wp_doing_ajax() ) {
 			?>
 			<script>
 				jQuery( '.woocommerce-product-gallery' ).each( function() {

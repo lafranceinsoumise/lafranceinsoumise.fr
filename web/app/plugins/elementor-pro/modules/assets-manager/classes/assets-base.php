@@ -20,6 +20,7 @@ abstract class Assets_Base {
 		<div class="elementor-metabox-content">
 			<?php
 			foreach ( $fields as $field ) :
+				$field['saved'] = isset( $field['saved'] ) ? $field['saved'] : '';
 				echo $this->get_metabox_field_html( $field, $field['saved'] );
 			endforeach;
 			?>
@@ -67,6 +68,10 @@ abstract class Assets_Base {
 				$html = $this->get_repeater_field( $field, $saved );
 				break;
 
+			case 'dropzone':
+				$html = $this->get_dropzone_field( $field, $saved );
+				break;
+
 			default:
 				$method = 'get_' . $field['field_type'] . 'field';
 				if ( method_exists( $this, $method ) ) {
@@ -91,6 +96,10 @@ abstract class Assets_Base {
 	}
 
 	public function get_input_field( $attributes ) {
+		if ( isset( $attributes['input_type'] ) ) {
+			$attributes['type'] = $attributes['input_type'];
+			unset( $attributes['input_type'] );
+		}
 		$input = '<input ' . $this->get_attribute_string( $attributes ) . '>';
 
 		return $input;
@@ -186,6 +195,43 @@ abstract class Assets_Base {
 
 	public function get_html_field( $field ) {
 		return $field['raw_html'];
+	}
+
+	public function get_dropzone_field( $field ) {
+		ob_start();
+		$input_attributes = [
+			'type' => 'file',
+			'name' => $field['id'],
+			'id' => $field['id'],
+			'accept' => $field['accept'],
+			'class' => 'box__file',
+		];
+		if ( ! empty( $field['multiple'] ) ) {
+			$input_attributes['multiple'] = true;
+		}
+		$input_html = $this->get_input_field( $input_attributes );
+		$field['label'] = '<h4><span class="box__dragndrop">' . __( 'Drag & Drop to Upload', 'elementor-pro' ) . '</span></h4>';
+		if ( ! empty( $field['sub-label'] ) ) {
+			$field['label'] .= '<h5>' . $field['sub-label'] . '</h5>';
+		}
+		?>
+		<div class="elementor-dropzone-field">
+			<div class="box__input">
+				<div class="elementor--dropzone--upload__icon">
+					<i class="eicon-library-upload"></i>
+				</div>
+				<?php echo $input_html; ?>
+				<?php echo $this->get_field_label( $field ); ?>
+				<div class="elementor-button elementor--dropzone--upload__browse">
+					<span><?php esc_html_e( 'Click here to browse', 'elementor-pro' ); ?></span>
+				</div>
+			</div>
+			<div class="box__uploading"><?php esc_html_e( 'Uploading&hellip;', 'elementor-pro' ); ?></div>
+			<div class="box__success"><?php esc_html_e( 'Done!', 'elementor-pro' ); ?></div>
+			<div class="box__error"><?php esc_html_e( 'Error!', 'elementor-pro' ); ?> <span></span>.</div>
+		</div>
+		<?php
+		return ob_get_clean();
 	}
 
 	public function get_repeater_field( $field, $saved ) {

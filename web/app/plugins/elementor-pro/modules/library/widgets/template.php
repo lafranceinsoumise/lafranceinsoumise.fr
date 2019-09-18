@@ -1,11 +1,8 @@
 <?php
 namespace ElementorPro\Modules\Library\Widgets;
 
-use Elementor\Controls_Manager;
-use Elementor\TemplateLibrary\Source_Local;
+use Elementor\Core\Base\Document;
 use ElementorPro\Base\Base_Widget;
-use ElementorPro\Modules\Library\Module;
-use ElementorPro\Modules\QueryControl\Controls\Query;
 use ElementorPro\Modules\QueryControl\Module as QueryControlModule;
 use ElementorPro\Plugin;
 
@@ -43,13 +40,28 @@ class Template extends Base_Widget {
 			]
 		);
 
+		$document_types = Plugin::elementor()->documents->get_document_types( [
+			'show_in_library' => true,
+		] );
+
 		$this->add_control(
 			'template_id',
 			[
 				'label' => __( 'Choose Template', 'elementor-pro' ),
 				'type' => QueryControlModule::QUERY_CONTROL_ID,
-				'filter_type' => 'library_widget_templates',
 				'label_block' => true,
+				'autocomplete' => [
+					'object' => QueryControlModule::QUERY_OBJECT_LIBRARY_TEMPLATE,
+					'query' => [
+						'meta_query' => [
+							[
+								'key' => Document::TYPE_META_KEY,
+								'value' => array_keys( $document_types ),
+								'compare' => 'IN',
+							],
+						],
+					],
+				],
 			]
 		);
 

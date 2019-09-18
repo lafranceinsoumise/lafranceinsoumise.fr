@@ -122,7 +122,7 @@ class Elementor_Library extends \WP_Widget {
 			}
 			?>
 			<a target="_blank" class="elementor-edit-template"<?php echo $style; ?> href="<?php echo esc_url( add_query_arg( 'elementor', '', get_permalink( $instance['template_id'] ) ) ); ?>">
-				<i class="fa fa-pencil"></i> <?php echo __( 'Edit Template', 'elementor-pro' ); ?>
+				<i class="eicon-pencil"></i> <?php echo __( 'Edit Template', 'elementor-pro' ); ?>
 			</a>
 		</p>
 		<?php

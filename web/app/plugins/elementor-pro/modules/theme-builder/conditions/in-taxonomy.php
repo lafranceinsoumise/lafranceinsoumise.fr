@@ -51,10 +51,13 @@ class In_Taxonomy extends Condition_Base {
 				'select2options' => [
 					'dropdownCssClass' => 'elementor-conditions-select2-dropdown',
 				],
-				'filter_type' => 'taxonomy',
-				'object_type' => $this->taxonomy->name,
-				'query' => [
+				'autocomplete' => [
+					'object' => QueryModule::QUERY_OBJECT_TAX,
+					'display' => 'detailed',
 					'by_field' => 'term_id',
+					'query' => [
+						'taxonomy' => $this->taxonomy->name,
+					],
 				],
 			]
 		);

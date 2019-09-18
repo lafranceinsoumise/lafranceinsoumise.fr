@@ -119,7 +119,7 @@ class Products extends Products_Base {
 				'prefix_class' => 'elementor-products-columns%s-',
 				'min' => 1,
 				'max' => 12,
-				'default' => 4,
+				'default' => Products_Renderer::DEFAULT_COLUMNS_AND_ROWS,
 				'required' => true,
 				'render_type' => 'template',
 				'device_args' => [
@@ -142,7 +142,7 @@ class Products extends Products_Base {
 			[
 				'label' => __( 'Rows', 'elementor-pro' ),
 				'type' => Controls_Manager::NUMBER,
-				'default' => 4,
+				'default' => Products_Renderer::DEFAULT_COLUMNS_AND_ROWS,
 				'render_type' => 'template',
 				'range' => [
 					'px' => [
@@ -169,6 +169,19 @@ class Products extends Products_Base {
 				'default' => '',
 				'condition' => [
 					'paginate' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'wc_notice_frontpage',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => __( 'Ordering is not available if this widget is placed in your front page. Visible on frontend only.', 'elementor-pro' ),
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+				'condition' => [
+					'paginate' => 'yes',
+					'allow_order' => 'yes',
 				],
 			]
 		);

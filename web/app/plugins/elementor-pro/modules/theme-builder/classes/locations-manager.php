@@ -6,6 +6,7 @@ use ElementorPro\Classes\Utils;
 use ElementorPro\Modules\ThemeBuilder\Documents\Theme_Document;
 use ElementorPro\Modules\ThemeBuilder\Module;
 use ElementorPro\Plugin;
+use Elementor\Modules\PageTemplates\Module as PageTemplatesModule;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -17,6 +18,7 @@ class Locations_Manager {
 	protected $locations = [];
 	protected $did_locations = [];
 	protected $current_location;
+	protected $current_page_template = '';
 	protected $locations_queue = [];
 	protected $locations_printed = [];
 	protected $locations_skipped = [];
@@ -62,6 +64,10 @@ class Locations_Manager {
 			return;
 		}
 
+		if ( ! empty( $this->current_page_template ) ) {
+			$locations = $this->filter_page_template_locations( $locations );
+		}
+
 		$current_post_id = get_the_ID();
 
 		/** @var Post_CSS[] $css_files */
@@ -100,7 +106,7 @@ class Locations_Manager {
 						'template' => $template,
 						'description' => 'Template File: WP Page Template',
 					] );
-
+					$this->current_page_template = $wp_page_template;
 					return $template;
 				}
 			}
@@ -419,7 +425,7 @@ class Locations_Manager {
 	}
 
 	public function get_locations_without_core() {
-		_deprecated_function( __FUNCTION__, '2.4.0', 'Use get_locations( [ \'public\'=> true ] )' );
+		_deprecated_function( __METHOD__, '2.4.0', __CLASS__ . '::get_locations( [ \'public\'=> true ] )' );
 
 		return $this->get_locations( [
 			'public' => true,
@@ -507,5 +513,30 @@ class Locations_Manager {
 		$title = implode( ' > ', $title );
 
 		Plugin::elementor()->inspector->add_log( 'Theme', $title, $url );
+	}
+
+	private function filter_page_template_locations( array $locations ) {
+		$templates_to_filter = [
+			PageTemplatesModule::TEMPLATE_CANVAS,
+			PageTemplatesModule::TEMPLATE_HEADER_FOOTER,
+		];
+
+		if ( ! in_array( $this->current_page_template, $templates_to_filter, true ) ) {
+			return $locations;
+		}
+
+		if ( PageTemplatesModule::TEMPLATE_CANVAS === $this->current_page_template ) {
+			$allowed_core = [];
+		} else {
+			$allowed_core = [ 'header', 'footer' ];
+		}
+
+		foreach ( $locations as $location => $settings ) {
+			if ( ! empty( $settings['is_core'] ) && ! in_array( $location, $allowed_core, true ) ) {
+				unset( $locations[ $location ] );
+			}
+		}
+
+		return $locations;
 	}
 }

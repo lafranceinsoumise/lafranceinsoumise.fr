@@ -280,7 +280,7 @@ class Product_Data_Tabs extends Widget_Base {
 		wc_get_template( 'single-product/tabs/tabs.php' );
 
 		// On render widget from Editor - trigger the init manually.
-		if ( Utils::is_ajax() ) {
+		if ( wp_doing_ajax() ) {
 			?>
 			<script>
 				jQuery( '.wc-tabs-wrapper, .woocommerce-tabs, #rating' ).trigger( 'init' );

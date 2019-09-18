@@ -9,19 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Utils {
 
-	/**
-	 * @deprecated 2.0.5
-	 *
-	 * @param array $args
-	 *
-	 * @return array
-	 */
-	public static function get_post_types( $args = [] ) {
-		_deprecated_function( __FUNCTION__, '2.0.5', 'Utils::get_public_post_types()' );
-
-		return self::get_public_post_types( $args );
-	}
-
 	public static function get_public_post_types( $args = [] ) {
 		$post_type_args = [
 			// Default is the value $public.
@@ -203,6 +190,8 @@ class Utils {
 				/* translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term */
 				$title = sprintf( __( '%1$s: %2$s', 'elementor-pro' ), $tax->labels->singular_name, $title );
 			}
+		} elseif ( is_archive() ) {
+			$title = __( 'Archives', 'elementor-pro' );
 		} elseif ( is_404() ) {
 			$title = __( 'Page Not Found', 'elementor-pro' );
 		} // End if().
@@ -222,9 +211,11 @@ class Utils {
 	}
 
 	/**
-	 * @deprecated 2.0
+	 * @deprecated 2.0.0 Use `Utils::get_page_title()` instead
 	 */
 	public static function get_the_archive_title( $include_context = true ) {
+		_deprecated_function( __METHOD__, '2.0.0', __CLASS__ . '::get_page_title()' );
+
 		return self::get_page_title();
 	}
 
@@ -276,5 +267,43 @@ class Utils {
 		}
 
 		return $taxonomies;
+	}
+
+	public static function get_ensure_upload_dir( $path ) {
+		if ( file_exists( $path . '/index.php' ) ) {
+			return $path;
+		}
+
+		wp_mkdir_p( $path );
+
+		$files = [
+			[
+				'file' => 'index.php',
+				'content' => [
+					'<?php',
+					'// Silence is golden.',
+				],
+			],
+			[
+				'file' => '.htaccess',
+				'content' => [
+					'Options -Indexes',
+					'<ifModule mod_headers.c>',
+					'	<Files *.*>',
+					'       Header set Content-Disposition attachment',
+					'	</Files>',
+					'</IfModule>',
+				],
+			],
+		];
+
+		foreach ( $files as $file ) {
+			if ( ! file_exists( trailingslashit( $path ) . $file['file'] ) ) {
+				$content = implode( PHP_EOL, $file['content'] );
+				@ file_put_contents( trailingslashit( $path ) . $file['file'], $content );
+			}
+		}
+
+		return $path;
 	}
 }

@@ -40,7 +40,9 @@ class Admin {
 		wp_enqueue_script(
 			'elementor-pro-admin',
 			ELEMENTOR_PRO_URL . 'assets/js/admin' . $suffix . '.js',
-			[],
+			[
+				'elementor-common',
+			],
 			ELEMENTOR_PRO_VERSION,
 			true
 		);

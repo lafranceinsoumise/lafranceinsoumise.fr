@@ -43,11 +43,11 @@ class Lightbox extends Tag {
 				'options' => [
 					'video' => [
 						'title' => __( 'Video', 'elementor-pro' ),
-						'icon' => 'fa fa-video-camera',
+						'icon' => 'eicon-video-camera',
 					],
 					'image' => [
 						'title' => __( 'Image', 'elementor-pro' ),
-						'icon' => 'fa fa-image',
+						'icon' => 'eicon-image-bold',
 					],
 				],
 			]

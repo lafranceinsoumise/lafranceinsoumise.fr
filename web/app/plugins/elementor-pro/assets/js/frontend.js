@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.5.8 - 06-05-2019 */
+/*! elementor-pro - v2.6.5 - 26-08-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,7 +82,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 70);
+/******/ 	return __webpack_require__(__webpack_require__.s = 85);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -355,7 +355,10 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 
 /***/ }),
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -439,7 +442,7 @@ var _class = function (_elementorModules$Vie) {
 exports.default = _class;
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -565,7 +568,10 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 			spaceBetween: this.getSpaceBetween(),
 			loop: 'yes' === elementSettings.loop,
 			speed: elementSettings.speed,
-			effect: this.getEffect()
+			effect: this.getEffect(),
+			preventClicks: false,
+			preventClicksPropagation: false,
+			slideToClickedSlide: true
 		};
 
 		if (elementSettings.show_arrows) {
@@ -672,13 +678,13 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 });
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Base = __webpack_require__(6),
+var Base = __webpack_require__(9),
     TestimonialCarousel;
 
 TestimonialCarousel = Base.extend({
@@ -691,6 +697,10 @@ TestimonialCarousel = Base.extend({
 			tablet: 1,
 			mobile: 1
 		};
+
+		if (defaultSettings.loop) {
+			defaultSettings.loopedSlides = this.getSlidesCount();
+		}
 
 		return defaultSettings;
 	},
@@ -705,16 +715,16 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var FormSender = __webpack_require__(103),
+var FormSender = __webpack_require__(118),
     Form = FormSender.extend();
 
-var RedirectAction = __webpack_require__(104);
+var RedirectAction = __webpack_require__(119);
 
 module.exports = function ($scope) {
 	new Form({ $element: $scope });
@@ -722,7 +732,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -737,7 +747,7 @@ module.exports = PostsHandler.extend({
 });
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -846,9 +856,6 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
@@ -905,7 +912,22 @@ module.exports = function ($scope) {
 /* 67 */,
 /* 68 */,
 /* 69 */,
-/* 70 */
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -915,15 +937,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _frontend = __webpack_require__(71);
+var _frontend = __webpack_require__(86);
 
 var _frontend2 = _interopRequireDefault(_frontend);
 
-var _frontend3 = __webpack_require__(72);
+var _frontend3 = __webpack_require__(87);
 
 var _frontend4 = _interopRequireDefault(_frontend3);
 
-var _frontend5 = __webpack_require__(90);
+var _frontend5 = __webpack_require__(105);
 
 var _frontend6 = _interopRequireDefault(_frontend5);
 
@@ -964,22 +986,22 @@ var ElementorProFrontend = function (_elementorModules$Vie) {
 			var _this2 = this;
 
 			var handlers = {
-				animatedText: __webpack_require__(96),
-				carousel: __webpack_require__(98),
-				countdown: __webpack_require__(100),
-				form: __webpack_require__(102),
+				animatedText: __webpack_require__(111),
+				carousel: __webpack_require__(113),
+				countdown: __webpack_require__(115),
+				form: __webpack_require__(117),
 				linkActions: _frontend2.default,
-				nav_menu: __webpack_require__(108),
+				nav_menu: __webpack_require__(123),
 				popup: _frontend4.default,
 				motionFX: _frontend6.default,
-				posts: __webpack_require__(110),
-				share_buttons: __webpack_require__(112),
-				slides: __webpack_require__(114),
-				social: __webpack_require__(116),
-				sticky: __webpack_require__(118),
-				themeBuilder: __webpack_require__(119),
-				themeElements: __webpack_require__(122),
-				woocommerce: __webpack_require__(124)
+				posts: __webpack_require__(125),
+				share_buttons: __webpack_require__(127),
+				slides: __webpack_require__(129),
+				social: __webpack_require__(131),
+				sticky: __webpack_require__(133),
+				themeBuilder: __webpack_require__(134),
+				themeElements: __webpack_require__(137),
+				woocommerce: __webpack_require__(139)
 			};
 
 			jQuery.each(handlers, function (moduleName, ModuleClass) {
@@ -999,7 +1021,7 @@ var ElementorProFrontend = function (_elementorModules$Vie) {
 window.elementorProFrontend = new ElementorProFrontend();
 
 /***/ }),
-/* 71 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1117,7 +1139,7 @@ var _class = function (_elementorModules$Vie) {
 exports.default = _class;
 
 /***/ }),
-/* 72 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1129,11 +1151,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _document = __webpack_require__(73);
+var _document = __webpack_require__(88);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _formsAction = __webpack_require__(89);
+var _formsAction = __webpack_require__(104);
 
 var _formsAction2 = _interopRequireDefault(_formsAction);
 
@@ -1231,7 +1253,7 @@ var _class = function (_elementorModules$Mod) {
 exports.default = _class;
 
 /***/ }),
-/* 73 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1245,11 +1267,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _triggers = __webpack_require__(74);
+var _triggers = __webpack_require__(89);
 
 var _triggers2 = _interopRequireDefault(_triggers);
 
-var _timing = __webpack_require__(81);
+var _timing = __webpack_require__(96);
 
 var _timing2 = _interopRequireDefault(_timing);
 
@@ -1295,7 +1317,7 @@ var _class = function (_elementorModules$fro) {
 		}
 	}, {
 		key: 'showModal',
-		value: function showModal() {
+		value: function showModal(avoidMultiple) {
 			var settings = this.getDocumentSettings();
 
 			if (!this.isEdit) {
@@ -1304,11 +1326,12 @@ var _class = function (_elementorModules$fro) {
 						return;
 					}
 
-					if (elementorProFrontend.modules.popup.popupPopped && settings.avoid_multiple_popups) {
+					if (avoidMultiple && elementorProFrontend.modules.popup.popupPopped && settings.avoid_multiple_popups) {
 						return;
 					}
 				}
 
+				// A clean copy of the element without previous initializations and events
 				this.$element = jQuery(this.elementHTML);
 
 				this.elements.$elements = this.$element.find(this.getSettings('selectors.elements'));
@@ -1367,15 +1390,42 @@ var _class = function (_elementorModules$fro) {
 			}, animationDuration * 1000);
 		}
 	}, {
+		key: 'setExitAnimation',
+		value: function setExitAnimation() {
+			var _this2 = this;
+
+			var modal = this.getModal(),
+			    settings = this.getDocumentSettings(),
+			    $widgetContent = modal.getElements('widgetContent'),
+			    newAnimation = elementorFrontend.getCurrentDeviceSetting(settings, 'exit_animation'),
+			    animationDuration = newAnimation ? settings.entrance_animation_duration.size : 0;
+
+			setTimeout(function () {
+				if (newAnimation) {
+					$widgetContent.removeClass(newAnimation + ' reverse');
+				}
+
+				if (!_this2.isEdit) {
+					_this2.$element.remove();
+
+					modal.getElements('widget').hide();
+				}
+			}, animationDuration * 1000);
+
+			if (newAnimation) {
+				$widgetContent.addClass(newAnimation + ' reverse');
+			}
+		}
+	}, {
 		key: 'initModal',
 		value: function initModal() {
-			var _this2 = this;
+			var _this3 = this;
 
 			var modal = void 0;
 
 			this.getModal = function () {
 				if (!modal) {
-					var settings = _this2.getDocumentSettings();
+					var settings = _this3.getDocumentSettings();
 
 					var classes = 'elementor-popup-modal';
 
@@ -1384,13 +1434,19 @@ var _class = function (_elementorModules$fro) {
 					}
 
 					modal = elementorFrontend.getDialogsManager().createWidget('lightbox', {
-						id: 'elementor-popup-modal-' + _this2.getSettings('id'),
+						id: 'elementor-popup-modal-' + _this3.getSettings('id'),
 						className: classes,
 						closeButton: true,
 						closeButtonClass: 'eicon-close',
 						preventScroll: settings.prevent_scroll,
 						effects: {
-							hide: 'hide',
+							hide: function hide() {
+								if (settings.timing && settings.timing.times_count) {
+									_this3.countTimes();
+								}
+
+								_this3.setExitAnimation();
+							},
 							show: 'show'
 						},
 						hide: {
@@ -1398,17 +1454,11 @@ var _class = function (_elementorModules$fro) {
 							autoDelay: settings.close_automatically * 1000,
 							onBackgroundClick: !settings.prevent_close_on_background_click,
 							onOutsideClick: !settings.prevent_close_on_background_click,
-							onEscKeyPress: !settings.prevent_close_on_esc_key
+							onEscKeyPress: !settings.prevent_close_on_esc_key,
+							ignore: '.flatpickr-calendar'
 						},
 						position: {
 							enable: false
-						},
-						onHide: function onHide() {
-							if (settings.timing && settings.timing.times_count) {
-								_this2.countTimes();
-							}
-
-							_this2.$element.remove();
 						}
 					});
 
@@ -1416,13 +1466,13 @@ var _class = function (_elementorModules$fro) {
 
 					var $closeButton = modal.getElements('closeButton');
 
-					if (_this2.isEdit) {
+					if (_this3.isEdit) {
 						$closeButton.off('click');
 
 						modal.hide = function () {};
 					}
 
-					_this2.setCloseButtonPosition();
+					_this3.setCloseButtonPosition();
 				}
 
 				return modal;
@@ -1500,6 +1550,10 @@ var _class = function (_elementorModules$fro) {
 				this.setEntranceAnimation();
 			}
 
+			if ('exit_animation' === changedKey) {
+				this.setExitAnimation();
+			}
+
 			if ('close_button_position' === changedKey) {
 				this.setCloseButtonPosition();
 			}
@@ -1512,7 +1566,7 @@ var _class = function (_elementorModules$fro) {
 exports.default = _class;
 
 /***/ }),
-/* 74 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1524,27 +1578,27 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _pageLoad = __webpack_require__(75);
+var _pageLoad = __webpack_require__(90);
 
 var _pageLoad2 = _interopRequireDefault(_pageLoad);
 
-var _scrolling = __webpack_require__(76);
+var _scrolling = __webpack_require__(91);
 
 var _scrolling2 = _interopRequireDefault(_scrolling);
 
-var _scrollingTo = __webpack_require__(77);
+var _scrollingTo = __webpack_require__(92);
 
 var _scrollingTo2 = _interopRequireDefault(_scrollingTo);
 
-var _click = __webpack_require__(78);
+var _click = __webpack_require__(93);
 
 var _click2 = _interopRequireDefault(_click);
 
-var _inactivity = __webpack_require__(79);
+var _inactivity = __webpack_require__(94);
 
 var _inactivity2 = _interopRequireDefault(_inactivity);
 
-var _exitIntent = __webpack_require__(80);
+var _exitIntent = __webpack_require__(95);
 
 var _exitIntent2 = _interopRequireDefault(_exitIntent);
 
@@ -1614,7 +1668,7 @@ var _class = function (_elementorModules$Mod) {
 	}, {
 		key: 'onTriggerFired',
 		value: function onTriggerFired() {
-			this.document.showModal();
+			this.document.showModal(true);
 
 			this.destroyTriggers();
 		}
@@ -1626,7 +1680,7 @@ var _class = function (_elementorModules$Mod) {
 exports.default = _class;
 
 /***/ }),
-/* 75 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1682,7 +1736,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 76 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1774,7 +1828,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 77 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1840,7 +1894,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 78 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1916,7 +1970,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 79 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2002,7 +2056,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 80 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2074,7 +2128,7 @@ var _class = function (_BaseTrigger) {
 exports.default = _class;
 
 /***/ }),
-/* 81 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2086,31 +2140,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _pageViews = __webpack_require__(82);
+var _pageViews = __webpack_require__(97);
 
 var _pageViews2 = _interopRequireDefault(_pageViews);
 
-var _sessions = __webpack_require__(83);
+var _sessions = __webpack_require__(98);
 
 var _sessions2 = _interopRequireDefault(_sessions);
 
-var _url = __webpack_require__(84);
+var _url = __webpack_require__(99);
 
 var _url2 = _interopRequireDefault(_url);
 
-var _sources = __webpack_require__(85);
+var _sources = __webpack_require__(100);
 
 var _sources2 = _interopRequireDefault(_sources);
 
-var _loggedIn = __webpack_require__(86);
+var _loggedIn = __webpack_require__(101);
 
 var _loggedIn2 = _interopRequireDefault(_loggedIn);
 
-var _devices = __webpack_require__(87);
+var _devices = __webpack_require__(102);
 
 var _devices2 = _interopRequireDefault(_devices);
 
-var _times = __webpack_require__(88);
+var _times = __webpack_require__(103);
 
 var _times2 = _interopRequireDefault(_times);
 
@@ -2175,7 +2229,7 @@ var _class = function (_elementorModules$Mod) {
 exports.default = _class;
 
 /***/ }),
-/* 82 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2237,7 +2291,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 83 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2299,7 +2353,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 84 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2366,7 +2420,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 85 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2439,7 +2493,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 86 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2504,7 +2558,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 87 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2555,7 +2609,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 88 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2608,7 +2662,7 @@ var _class = function (_BaseTiming) {
 exports.default = _class;
 
 /***/ }),
-/* 89 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2652,7 +2706,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 90 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2662,7 +2716,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _handler = __webpack_require__(91);
+var _handler = __webpack_require__(106);
 
 var _handler2 = _interopRequireDefault(_handler);
 
@@ -2694,7 +2748,7 @@ var _class = function (_elementorModules$Mod) {
 exports.default = _class;
 
 /***/ }),
-/* 91 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2710,7 +2764,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _motionFx = __webpack_require__(92);
+var _motionFx = __webpack_require__(107);
 
 var _motionFx2 = _interopRequireDefault(_motionFx);
 
@@ -2870,6 +2924,7 @@ var _class = function (_elementorModules$fro) {
 				$element: $element,
 				$dimensionsElement: $dimensionsElement,
 				refreshDimensions: this.isEdit,
+				range: elementSettings[name + '_range'],
 				classes: {
 					element: 'elementor-motion-effects-element',
 					parent: 'elementor-motion-effects-parent',
@@ -2880,7 +2935,7 @@ var _class = function (_elementorModules$fro) {
 				}
 			};
 
-			if ('fixed' === this.getCurrentDeviceSetting('_position')) {
+			if (!options.range && 'fixed' === this.getCurrentDeviceSetting('_position')) {
 				options.range = 'page';
 			}
 
@@ -3005,7 +3060,7 @@ var _class = function (_elementorModules$fro) {
 exports.default = _class;
 
 /***/ }),
-/* 92 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3019,15 +3074,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _scroll = __webpack_require__(93);
+var _scroll = __webpack_require__(108);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _mouseMove = __webpack_require__(94);
+var _mouseMove = __webpack_require__(109);
 
 var _mouseMove2 = _interopRequireDefault(_mouseMove);
 
-var _actions2 = __webpack_require__(95);
+var _actions2 = __webpack_require__(110);
 
 var _actions3 = _interopRequireDefault(_actions2);
 
@@ -3313,7 +3368,7 @@ var _class = function (_elementorModules$Vie) {
 exports.default = _class;
 
 /***/ }),
-/* 93 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3325,7 +3380,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _base = __webpack_require__(5);
+var _base = __webpack_require__(8);
 
 var _base2 = _interopRequireDefault(_base);
 
@@ -3383,7 +3438,7 @@ var _class = function (_BaseInteraction) {
 exports.default = _class;
 
 /***/ }),
-/* 94 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3397,7 +3452,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _base = __webpack_require__(5);
+var _base = __webpack_require__(8);
 
 var _base2 = _interopRequireDefault(_base);
 
@@ -3472,7 +3527,7 @@ MouseMoveInteraction.updateMousePosition = function (event) {
 };
 
 /***/ }),
-/* 95 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3739,18 +3794,18 @@ var _class = function (_elementorModules$Mod) {
 exports.default = _class;
 
 /***/ }),
-/* 96 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-    elementorFrontend.hooks.addAction('frontend/element_ready/animated-headline.default', __webpack_require__(97));
+    elementorFrontend.hooks.addAction('frontend/element_ready/animated-headline.default', __webpack_require__(112));
 };
 
 /***/ }),
-/* 97 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4038,26 +4093,26 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 98 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/media-carousel.default', __webpack_require__(99));
-	elementorFrontend.hooks.addAction('frontend/element_ready/testimonial-carousel.default', __webpack_require__(7));
-	elementorFrontend.hooks.addAction('frontend/element_ready/reviews.default', __webpack_require__(7));
+	elementorFrontend.hooks.addAction('frontend/element_ready/media-carousel.default', __webpack_require__(114));
+	elementorFrontend.hooks.addAction('frontend/element_ready/testimonial-carousel.default', __webpack_require__(10));
+	elementorFrontend.hooks.addAction('frontend/element_ready/reviews.default', __webpack_require__(10));
 };
 
 /***/ }),
-/* 99 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Base = __webpack_require__(6),
+var Base = __webpack_require__(9),
     MediaCarousel;
 
 MediaCarousel = Base.extend({
@@ -4209,18 +4264,18 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 100 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/countdown.default', __webpack_require__(101));
+	elementorFrontend.hooks.addAction('frontend/element_ready/countdown.default', __webpack_require__(116));
 };
 
 /***/ }),
-/* 101 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4383,24 +4438,24 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 102 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(8));
-	elementorFrontend.hooks.addAction('frontend/element_ready/subscribe.default', __webpack_require__(8));
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(11));
+	elementorFrontend.hooks.addAction('frontend/element_ready/subscribe.default', __webpack_require__(11));
 
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(105));
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(120));
 
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(106));
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(107));
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(121));
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(122));
 };
 
 /***/ }),
-/* 103 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4556,7 +4611,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 });
 
 /***/ }),
-/* 104 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4592,7 +4647,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 });
 
 /***/ }),
-/* 105 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4600,20 +4655,43 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 
 module.exports = function ($scope) {
 	var $element = $scope.find('.elementor-g-recaptcha:last');
+	var captchaIds = [];
 
 	if (!$element.length) {
 		return;
 	}
 
 	var addRecaptcha = function addRecaptcha($elementRecaptcha) {
-		var widgetId = grecaptcha.render($elementRecaptcha[0], $elementRecaptcha.data()),
-		    $form = $elementRecaptcha.parents('form');
+		var $form = $elementRecaptcha.parents('form'),
+		    settings = $elementRecaptcha.data(),
+		    isV2 = 'v3' !== settings.type;
 
-		$elementRecaptcha.data('widgetId', widgetId);
-
-		$form.on('reset error', function () {
-			grecaptcha.reset($elementRecaptcha.data('widgetId'));
+		captchaIds.forEach(function (id) {
+			return grecaptcha.reset(id);
 		});
+		var widgetId = grecaptcha.render($elementRecaptcha[0], settings);
+		$form.on('reset error', function () {
+			grecaptcha.reset(widgetId);
+		});
+		if (isV2) {
+			$elementRecaptcha.data('widgetId', widgetId);
+		} else {
+			captchaIds.push(widgetId);
+			$form.find('button[type="submit"]').on('click', function (e) {
+				e.preventDefault();
+				grecaptcha.ready(function () {
+					grecaptcha.execute(widgetId, { action: $elementRecaptcha.data('action') }).then(function (token) {
+						$form.find('[name="g-recaptcha-response"]').remove();
+						$form.append(jQuery('<input>', {
+							type: 'hidden',
+							value: token,
+							name: 'g-recaptcha-response'
+						}));
+						$form.submit();
+					});
+				});
+			});
+		}
 	};
 
 	var onRecaptchaApiReady = function onRecaptchaApiReady(callback) {
@@ -4633,7 +4711,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 106 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4663,7 +4741,7 @@ module.exports = function ($scope, $) {
 };
 
 /***/ }),
-/* 107 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4692,7 +4770,7 @@ module.exports = function ($scope, $) {
 };
 
 /***/ }),
-/* 108 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4710,11 +4788,11 @@ module.exports = function () {
 		}
 	}
 
-	elementorFrontend.hooks.addAction('frontend/element_ready/nav-menu.default', __webpack_require__(109));
+	elementorFrontend.hooks.addAction('frontend/element_ready/nav-menu.default', __webpack_require__(124));
 };
 
 /***/ }),
-/* 109 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4873,7 +4951,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 110 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4881,8 +4959,8 @@ module.exports = function ($scope) {
 
 module.exports = function () {
 	var PostsModule = __webpack_require__(3),
-	    CardsModule = __webpack_require__(9),
-	    PortfolioModule = __webpack_require__(111);
+	    CardsModule = __webpack_require__(12),
+	    PortfolioModule = __webpack_require__(126);
 
 	elementorFrontend.hooks.addAction('frontend/element_ready/posts.classic', function ($scope) {
 		new PostsModule({ $element: $scope });
@@ -4902,7 +4980,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 111 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5171,7 +5249,7 @@ module.exports = PostsHandler.extend({
 });
 
 /***/ }),
-/* 112 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5179,12 +5257,12 @@ module.exports = PostsHandler.extend({
 
 module.exports = function () {
 	if (!elementorFrontend.isEditMode()) {
-		elementorFrontend.hooks.addAction('frontend/element_ready/share-buttons.default', __webpack_require__(113));
+		elementorFrontend.hooks.addAction('frontend/element_ready/share-buttons.default', __webpack_require__(128));
 	}
 };
 
 /***/ }),
-/* 113 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5217,31 +5295,14 @@ var ShareButtonsHandler = elementorModules.frontend.handlers.Base.extend({
 		}
 
 		this.elements.$shareButton.shareLink(shareLinkSettings);
-
-		var shareCountProviders = jQuery.map(elementorProFrontend.config.shareButtonsNetworks, function (network, networkName) {
-			return network.has_counter ? networkName : null;
-		});
-
-		if (!ElementorProFrontendConfig.hasOwnProperty('donreach')) {
-			return;
-		}
-
-		this.elements.$shareCounter.shareCounter({
-			url: isCustomURL ? elementSettings.share_url.url : location.href,
-			providers: shareCountProviders,
-			classPrefix: classes.shareCounterPrefix,
-			formatCount: true
-		});
 	},
 	getDefaultSettings: function getDefaultSettings() {
 		return {
 			selectors: {
-				shareButton: '.elementor-share-btn',
-				shareCounter: '.elementor-share-btn__counter'
+				shareButton: '.elementor-share-btn'
 			},
 			classes: {
-				shareLinkPrefix: 'elementor-share-btn_',
-				shareCounterPrefix: 'elementor-share-btn__counter_'
+				shareLinkPrefix: 'elementor-share-btn_'
 			}
 		};
 	},
@@ -5249,8 +5310,7 @@ var ShareButtonsHandler = elementorModules.frontend.handlers.Base.extend({
 		var selectors = this.getSettings('selectors');
 
 		return {
-			$shareButton: this.$element.find(selectors.shareButton),
-			$shareCounter: this.$element.find(selectors.shareCounter)
+			$shareButton: this.$element.find(selectors.shareButton)
 		};
 	}
 });
@@ -5260,18 +5320,18 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 114 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/slides.default', __webpack_require__(115));
+	elementorFrontend.hooks.addAction('frontend/element_ready/slides.default', __webpack_require__(130));
 };
 
 /***/ }),
-/* 115 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5376,13 +5436,13 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 116 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var facebookHandler = __webpack_require__(117);
+var facebookHandler = __webpack_require__(132);
 
 module.exports = function () {
 	elementorFrontend.hooks.addAction('frontend/element_ready/facebook-button.default', facebookHandler);
@@ -5392,7 +5452,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 117 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5440,27 +5500,27 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 118 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-    elementorFrontend.hooks.addAction('frontend/element_ready/section', __webpack_require__(10));
-    elementorFrontend.hooks.addAction('frontend/element_ready/widget', __webpack_require__(10));
+    elementorFrontend.hooks.addAction('frontend/element_ready/section', __webpack_require__(13));
+    elementorFrontend.hooks.addAction('frontend/element_ready/widget', __webpack_require__(13));
 };
 
 /***/ }),
-/* 119 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var PostsArchiveClassic = __webpack_require__(120),
-	    PostsArchiveCards = __webpack_require__(121);
+	var PostsArchiveClassic = __webpack_require__(135),
+	    PostsArchiveCards = __webpack_require__(136);
 
 	elementorFrontend.hooks.addAction('frontend/element_ready/archive-posts.archive_classic', function ($scope) {
 		new PostsArchiveClassic({ $element: $scope });
@@ -5483,7 +5543,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 120 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5498,13 +5558,13 @@ module.exports = PostsClassicHandler.extend({
 });
 
 /***/ }),
-/* 121 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var PostsCardHandler = __webpack_require__(9);
+var PostsCardHandler = __webpack_require__(12);
 
 module.exports = PostsCardHandler.extend({
 	getSkinPrefix: function getSkinPrefix() {
@@ -5513,18 +5573,18 @@ module.exports = PostsCardHandler.extend({
 });
 
 /***/ }),
-/* 122 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-    elementorFrontend.hooks.addAction('frontend/element_ready/search-form.default', __webpack_require__(123));
+    elementorFrontend.hooks.addAction('frontend/element_ready/search-form.default', __webpack_require__(138));
 };
 
 /***/ }),
-/* 123 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5628,14 +5688,14 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 124 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/woocommerce-menu-cart.default', __webpack_require__(125));
+	elementorFrontend.hooks.addAction('frontend/element_ready/woocommerce-menu-cart.default', __webpack_require__(140));
 
 	if (elementorFrontend.isEditMode()) {
 		return;
@@ -5649,7 +5709,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 125 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

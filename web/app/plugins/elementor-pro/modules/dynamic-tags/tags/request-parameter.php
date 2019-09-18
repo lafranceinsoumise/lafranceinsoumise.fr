@@ -56,7 +56,7 @@ class Request_Parameter extends Tag {
 				$value = get_query_var( $param_name );
 				break;
 		}
-		echo wp_kses_post( $value );
+		echo htmlentities( wp_kses_post( $value ) );
 	}
 
 	protected function _register_controls() {

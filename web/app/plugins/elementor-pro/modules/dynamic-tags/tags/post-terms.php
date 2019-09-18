@@ -73,12 +73,37 @@ class Post_Terms extends Tag {
 				'default' => ', ',
 			]
 		);
+
+		$this->add_control(
+			'link',
+			[
+				'label' => __( 'Link', 'elementor-pro' ),
+				'type' => Controls_Manager::SWITCHER,
+				'default' => 'yes',
+			]
+		);
 	}
 
 	public function render() {
 		$settings = $this->get_settings();
 
-		$value = get_the_term_list( get_the_ID(), $settings['taxonomy'], '', $settings['separator'] );
+		if ( 'yes' === $settings['link'] ) {
+			$value = get_the_term_list( get_the_ID(), $settings['taxonomy'], '', $settings['separator'] );
+		} else {
+			$terms = get_the_terms( get_the_ID(), $settings['taxonomy'] );
+
+			if ( is_wp_error( $terms ) || empty( $terms ) ) {
+				return '';
+			}
+
+			$term_names = [];
+
+			foreach ( $terms as $term ) {
+				$term_names[] = '<span>' . $term->name . '</span>';
+			}
+
+			$value = implode( $settings['separator'], $term_names );
+		}
 
 		echo wp_kses_post( $value );
 	}

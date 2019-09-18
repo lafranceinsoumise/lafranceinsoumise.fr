@@ -326,9 +326,17 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Entrance Animation', 'elementor-pro' ),
 				'type' => Controls_Manager::ANIMATION,
-				'label_block' => true,
 				'frontend_available' => true,
 				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'exit_animation',
+			[
+				'label' => __( 'Exit Animation', 'elementor-pro' ),
+				'type' => Controls_Manager::EXIT_ANIMATION,
+				'frontend_available' => true,
 			]
 		);
 
@@ -351,9 +359,22 @@ class Document extends Theme_Section_Document {
 				'selectors' => [
 					'{{WRAPPER}} .dialog-widget-content' => 'animation-duration: {{SIZE}}s',
 				],
-				'condition' => [
-					'entrance_animation!' => '',
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'entrance_animation',
+							'operator' => '!==',
+							'value' => '',
+						],
+						[
+							'name' => 'exit_animation',
+							'operator' => '!==',
+							'value' => '',
+						],
+					],
 				],
+				'frontend_available' => true,
 			]
 		);
 

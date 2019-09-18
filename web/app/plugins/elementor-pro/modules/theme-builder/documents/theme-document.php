@@ -148,8 +148,9 @@ abstract class Theme_Document extends Library_Document {
 			[
 				'type' => QueryModule::QUERY_CONTROL_ID,
 				'label_block' => true,
-				'filter_type' => '',
-				'object_type' => '',
+				'autocomplete' => [
+					'object' => QueryModule::QUERY_OBJECT_JS,
+				],
 				'separator' => 'none',
 				'export' => false,
 				'condition' => [
@@ -393,6 +394,13 @@ abstract class Theme_Document extends Library_Document {
 		}
 
 		return $query_args;
+	}
+
+	public function after_preview_switch_to_query() {
+		global $wp_query;
+		if ( 'archive/recent_posts' === $this->get_settings( 'preview_type' ) ) {
+			$wp_query->is_archive = true;
+		}
 	}
 
 	public function get_location() {

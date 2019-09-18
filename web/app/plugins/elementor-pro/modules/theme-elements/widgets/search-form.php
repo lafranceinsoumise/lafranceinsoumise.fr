@@ -4,6 +4,7 @@ namespace ElementorPro\Modules\ThemeElements\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
+use Elementor\Icons_Manager;
 use Elementor\Scheme_Color;
 use Elementor\Scheme_Typography;
 
@@ -27,6 +28,13 @@ class Search_Form extends Base {
 
 	public function get_keywords() {
 		return [ 'search', 'form' ];
+	}
+
+	public function get_style_depends() {
+		if ( Icons_Manager::is_migration_allowed() ) {
+			return [ 'elementor-icons-fa-solid' ];
+		}
+		return [];
 	}
 
 	protected function _register_controls() {
@@ -118,11 +126,11 @@ class Search_Form extends Base {
 				'options' => [
 					'search' => [
 						'title' => __( 'Search', 'elementor-pro' ),
-						'icon' => 'fa fa-search',
+						'icon' => 'eicon-search',
 					],
 					'arrow' => [
 						'title' => __( 'Arrow', 'elementor-pro' ),
-						'icon' => 'fa fa-arrow-right',
+						'icon' => 'eicon-arrow-right',
 					],
 				],
 				'render_type' => 'template',
@@ -722,6 +730,7 @@ class Search_Form extends Base {
 		);
 
 		// Set the selected icon.
+		$icon_class = '';
 		if ( 'icon' == $settings['button_type'] ) {
 			$icon_class = 'search';
 
@@ -734,11 +743,18 @@ class Search_Form extends Base {
 			] );
 		}
 
+		$migration_allowed = Icons_Manager::is_migration_allowed();
+		$icon = [
+			'value' => 'fas fa-' . $icon_class,
+			'library' => 'fa-solid',
+		];
 		?>
 		<form class="elementor-search-form" role="search" action="<?php echo home_url(); ?>" method="get">
 			<?php if ( 'full_screen' === $settings['skin'] ) : ?>
 			<div class="elementor-search-form__toggle">
-				<i class="fa fa-search" aria-hidden="true"></i>
+				<?php if ( ! $migration_allowed || ! Icons_Manager::render_icon( $icon, [ 'aria-hidden' => 'true' ] ) ) { ?>
+					<i class="fa fa-search" aria-hidden="true"></i>
+				<?php } ?>
 				<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 			</div>
 			<?php endif; ?>
@@ -751,14 +767,14 @@ class Search_Form extends Base {
 				<?php endif; ?>
 				<input <?php echo $this->get_render_attribute_string( 'input' ); ?>>
 				<?php if ( 'classic' === $settings['skin'] ) : ?>
-				<button class="elementor-search-form__submit" type="submit">
-					<?php if ( 'icon' === $settings['button_type'] ) : ?>
-						<i <?php echo $this->get_render_attribute_string( 'icon' ); ?> aria-hidden="true"></i>
-						<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
-					<?php elseif ( ! empty( $settings['button_text'] ) ) : ?>
-						<?php echo $settings['button_text']; ?>
-					<?php endif; ?>
-				</button>
+					<button class="elementor-search-form__submit" type="submit" title="<?php esc_attr_e( 'Search', 'elementor-pro' ); ?>" aria-label="<?php esc_attr_e( 'Search', 'elementor-pro' ); ?>">
+						<?php if ( 'icon' === $settings['button_type'] ) : ?>
+							<i <?php echo $this->get_render_attribute_string( 'icon' ); ?> aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
+						<?php elseif ( ! empty( $settings['button_text'] ) ) : ?>
+							<?php echo $settings['button_text']; ?>
+						<?php endif; ?>
+					</button>
 				<?php endif; ?>
 				<?php if ( 'full_screen' === $settings['skin'] ) : ?>
 				<div class="dialog-lightbox-close-button dialog-close-button">
@@ -774,27 +790,27 @@ class Search_Form extends Base {
 	protected function _content_template() {
 		?>
 		<#
-			var iconClass = 'fa fa-search';
+			var iconClass = 'fa fas fa-search';
 
 			if ( 'arrow' === settings.icon ) {
 				if ( elementorCommon.config.isRTL ) {
-					iconClass = 'fa fa-arrow-left';
+					iconClass = 'fa fas fa-arrow-left';
 				} else {
-					iconClass = 'fa fa-arrow-right';
+					iconClass = 'fa fas fa-arrow-right';
 				}
 			}
 		#>
 		<form class="elementor-search-form" action="" role="search">
 			<# if ( 'full_screen' === settings.skin ) { #>
 				<div class="elementor-search-form__toggle">
-					<i class="fa fa-search" aria-hidden="true"></i>
+					<i class="fa fas fa-search" aria-hidden="true"></i>
 					<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 				</div>
 			<# } #>
 			<div class="elementor-search-form__container">
 				<# if ( 'minimal' === settings.skin ) { #>
 					<div class="elementor-search-form__icon">
-						<i class="fa fa-search" aria-hidden="true"></i>
+						<i class="fa fas fa-search" aria-hidden="true"></i>
 						<span class="elementor-screen-only"><?php esc_html_e( 'Search', 'elementor-pro' ); ?></span>
 					</div>
 				<# } #>

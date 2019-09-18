@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\ThemeBuilder\Conditions;
 
-use ElementorPro\Classes\Utils;
+use ElementorPro\Modules\ThemeBuilder\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -34,8 +34,7 @@ class Singular extends Condition_Base {
 	}
 
 	public function register_sub_conditions() {
-		$post_types = Utils::get_public_post_types();
-		unset( $post_types['product'] );
+		$post_types = Module::get_public_post_types();
 
 		$post_types['attachment'] = get_post_type_object( 'attachment' )->label;
 

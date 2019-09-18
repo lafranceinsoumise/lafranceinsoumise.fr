@@ -27,6 +27,10 @@ abstract class Pods_Base extends Tag {
 		 */
 		$pod = pods( $pod_name, get_the_ID() );
 
+		if ( false === $pod ) {
+			return [];
+		}
+
 		return [
 			'field' => $pod->fields[ $meta_key ],
 			'value' => $pod->field( $meta_key ),

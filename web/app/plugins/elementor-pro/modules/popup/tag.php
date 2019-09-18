@@ -6,6 +6,7 @@ use Elementor\Core\DynamicTags\Tag as DynamicTagsTag;
 use ElementorPro\Modules\DynamicTags\Module as DynamicTagsModule;
 use ElementorPro\Modules\LinkActions\Module as LinkActionsModule;
 use ElementorPro\Modules\QueryControl\Module as QueryControlModule;
+use Elementor\TemplateLibrary\Source_Local;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -49,7 +50,18 @@ class Tag extends DynamicTagsTag {
 			[
 				'label' => __( 'Popup', 'elementor-pro' ),
 				'type' => QueryControlModule::QUERY_CONTROL_ID,
-				'filter_type' => 'popup_templates',
+				'autocomplete' => [
+					'object' => QueryControlModule::QUERY_OBJECT_LIBRARY_TEMPLATE,
+					'query' => [
+						'posts_per_page' => 20,
+						'meta_query' => [
+							[
+								'key' => Document::TYPE_META_KEY,
+								'value' => 'popup',
+							],
+						],
+					],
+				],
 				'label_block' => true,
 				'condition' => [
 					'action' => [ 'open', 'toggle' ],

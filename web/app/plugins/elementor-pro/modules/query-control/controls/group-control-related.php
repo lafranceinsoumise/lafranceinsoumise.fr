@@ -71,11 +71,12 @@ class Group_Control_Related extends Group_Control_Query {
 		$fallback_ids = [
 			'label' => __( 'Search & Select', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'by_id',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_POST,
+			],
 			'condition' => [
 				'post_type' => 'related',
 				'related_fallback' => 'fallback_by_id',

@@ -78,11 +78,14 @@ class Elements extends Widget_Base {
 			[
 				'label' => __( 'Product', 'elementor-pro' ),
 				'type' => QueryModule::QUERY_CONTROL_ID,
-				'post_type' => '',
 				'options' => [],
 				'label_block' => true,
-				'filter_type' => 'by_id',
-				'object_type' => [ 'product' ],
+				'autocomplete' => [
+					'object' => QueryModule::QUERY_OBJECT_POST,
+					'query' => [
+						'post_type' => [ 'product' ],
+					],
+				],
 				'condition' => [
 					'element' => [ 'product_page' ],
 				],

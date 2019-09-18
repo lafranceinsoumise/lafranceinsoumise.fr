@@ -108,19 +108,19 @@ class Login extends Base_Widget {
 				'options' => [
 					'start' => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon' => 'fa fa-align-left',
+						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon' => 'fa fa-align-center',
+						'icon' => 'eicon-text-align-center',
 					],
 					'end' => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon' => 'fa fa-align-right',
+						'icon' => 'eicon-text-align-right',
 					],
 					'stretch' => [
 						'title' => __( 'Justified', 'elementor-pro' ),
-						'icon' => 'fa fa-align-justify',
+						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'prefix_class' => 'elementor%s-button-align-',
@@ -651,6 +651,41 @@ class Login extends Base_Widget {
 		$this->end_controls_tabs();
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_style_message',
+			[
+				'label' => __( 'Logged in Message', 'elementor-pro' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'message_color',
+			[
+				'label' => __( 'Text Color', 'elementor-pro' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .elementor-widget-container .elementor-login__logged-in-message' => 'color: {{VALUE}};',
+				],
+				'scheme' => [
+					'type' => Scheme_Color::get_type(),
+					'value' => Scheme_Color::COLOR_3,
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'message_typography',
+				'selector' => '{{WRAPPER}} .elementor-widget-container .elementor-login__logged-in-message',
+				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+			]
+		);
+
+		$this->end_controls_section();
+
 	}
 
 	private function form_fields_render_attributes() {
@@ -761,7 +796,7 @@ class Login extends Base_Widget {
 			if ( 'yes' === $settings['show_logged_in_message'] ) {
 				$current_user = wp_get_current_user();
 
-				echo '<div class="elementor-login">' .
+				echo '<div class="elementor-login elementor-login__logged-in-message">' .
 					sprintf( __( 'You are Logged in as %1$s (<a href="%2$s">Logout</a>)', 'elementor-pro' ), $current_user->display_name, wp_logout_url( $logout_redirect ) ) .
 					'</div>';
 			}

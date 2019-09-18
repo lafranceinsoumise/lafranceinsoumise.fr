@@ -92,11 +92,12 @@ class Sitemap extends Base {
 			[
 				'label' => __( 'Search & Select', 'elementor-pro' ),
 				'type' => Query_Module::QUERY_CONTROL_ID,
-				'post_type' => '',
 				'options' => [],
 				'label_block' => true,
 				'multiple' => true,
-				'filter_type' => 'by_id',
+				'autocomplete' => [
+					'object' => Query_Module::QUERY_OBJECT_POST,
+				],
 				'condition' => [
 					'sitemap_exclude' => 'manual_selection',
 				],
@@ -486,19 +487,19 @@ class Sitemap extends Base {
 				'options' => [
 					'disc' => [
 						'title' => __( 'Disc', 'elementor-pro' ),
-						'icon' => 'fa fa-circle',
+						'icon' => 'eicon-circle',
 					],
 					'circle' => [
 						'title' => __( 'Circle', 'elementor-pro' ),
-						'icon' => 'fa fa-circle-o',
+						'icon' => 'eicon-circle-o',
 					],
 					'square' => [
 						'title' => __( 'Square', 'elementor-pro' ),
-						'icon' => 'fa fa-square',
+						'icon' => 'eicon-square',
 					],
 					'none' => [
 						'title' => __( 'None', 'elementor-pro' ),
-						'icon' => 'fa fa-ban',
+						'icon' => 'eicon-ban',
 					],
 				],
 				'selectors' => [

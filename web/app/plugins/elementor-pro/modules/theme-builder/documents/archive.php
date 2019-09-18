@@ -1,7 +1,7 @@
 <?php
 namespace ElementorPro\Modules\ThemeBuilder\Documents;
 
-use ElementorPro\Classes\Utils;
+use ElementorPro\Modules\ThemeBuilder\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -45,9 +45,7 @@ class Archive extends Theme_Page_Document {
 
 		$taxonomies = [];
 
-		$post_types = Utils::get_public_post_types();
-
-		unset( $post_types['product'] );
+		$post_types = Module::get_public_post_types();
 
 		foreach ( $post_types as $post_type => $label ) {
 			$post_type_object = get_post_type_object( $post_type );

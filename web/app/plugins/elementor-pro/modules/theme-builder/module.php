@@ -21,6 +21,17 @@ class Module extends Module_Base {
 		return Plugin::elementor()->preview->is_preview_mode() || is_preview();
 	}
 
+	public static function get_public_post_types( $args = [] ) {
+		$post_types = Utils::get_public_post_types( $args );
+
+		// Product form WooCommerce are handled separately.
+		if ( class_exists( 'woocommerce' ) ) {
+			unset( $post_types['product'] );
+		}
+
+		return $post_types;
+	}
+
 	public function get_name() {
 		return 'theme-builder';
 	}
@@ -187,11 +198,10 @@ class Module extends Module_Base {
 	}
 
 	public function print_post_type_field() {
-		$post_types = Utils::get_public_post_types( [
+		$post_types = self::get_public_post_types( [
 			'exclude_from_search' => false,
 		] );
 
-		unset( $post_types['product'] );
 		if ( empty( $post_types ) ) {
 			return;
 		}
@@ -209,9 +219,18 @@ class Module extends Module_Base {
 
 					foreach ( $post_types as $post_type => $label ) {
 						$doc_type = Plugin::elementor()->documents->get_document_type( $post_type );
-						$doc_name = ( new $doc_type() )->get_name();
+						$doc_class = new $doc_type();
 
-						if ( 'post' === $doc_name || 'page' === $doc_name ) {
+						// New: Core >=2.7.0
+						$is_base_page = class_exists( '\Elementor\Core\DocumentTypes\PageBase' ) && $doc_class instanceof \Elementor\Core\DocumentTypes\PageBase;
+
+						// Old: Core < 2.7.0. TODO: Remove on 2.7.0.
+						if ( ! $is_base_page ) {
+							$doc_name = $doc_class->get_name();
+							$is_base_page = in_array( $doc_name, [ 'post', 'page', 'wp-post', 'wp-page' ] );
+						}
+
+						if ( $is_base_page ) {
 							$post_type_object = get_post_type_object( $post_type );
 							echo sprintf( '<option value="%1$s">%2$s</option>', $post_type, $post_type_object->labels->singular_name );
 						}

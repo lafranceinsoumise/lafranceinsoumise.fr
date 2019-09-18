@@ -43,6 +43,10 @@ class Pods_URL extends Data_Tag {
 		 */
 		$pod = pods( $pod_name, get_the_ID() );
 
+		if ( false === $pod ) {
+			return [];
+		}
+
 		$field = $pod->fields[ $meta_key ];
 		$value = $pod->field( $meta_key );
 		if ( $field && ! empty( $field['type'] ) ) {

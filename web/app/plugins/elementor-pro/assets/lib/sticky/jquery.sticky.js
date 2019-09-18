@@ -291,6 +291,13 @@
 			unstickElement();
 
 			stickElement();
+
+			if ( settings.parent ) {
+				// Force recalculation of the relation between the element and its parent
+				isFollowingParent = false;
+
+				checkParent();
+			}
 		};
 
 		this.destroy = function() {

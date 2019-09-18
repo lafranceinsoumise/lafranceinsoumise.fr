@@ -38,7 +38,7 @@ class Archive_Products extends Products {
 		$this->update_control(
 			'products_class',
 			[
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'elementor-products-grid elementor-',
 			]
 		);
 

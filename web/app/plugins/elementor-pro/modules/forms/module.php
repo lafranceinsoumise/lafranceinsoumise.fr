@@ -132,6 +132,7 @@ class Module extends Module_Base {
 		$this->add_form_field_type( 'upload', new Fields\Upload() );
 
 		$this->add_component( 'recaptcha', new Classes\Recaptcha_Handler() );
+		$this->add_component( 'recaptcha_v3', new Classes\Recaptcha_V3_Handler() );
 		$this->add_component( 'honeypot', new Classes\Honeypot_Handler() );
 
 		// Actions Handlers

@@ -42,7 +42,7 @@ class ACF_URL extends Data_Tag {
 		if ( 'options' === $field_key ) {
 			$field = get_field_object( $meta_key, $field_key );
 		} else {
-			$field = get_field_object( $field_key );
+			$field = get_field_object( $field_key, get_queried_object() );
 		}
 
 		if ( $field ) {

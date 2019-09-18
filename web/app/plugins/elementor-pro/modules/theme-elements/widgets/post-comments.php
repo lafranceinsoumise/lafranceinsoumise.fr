@@ -79,7 +79,9 @@ class Post_Comments extends Base {
 				'label' => __( 'Search & Select', 'elementor-pro' ),
 				'type' => QueryControlModule::QUERY_CONTROL_ID,
 				'label_block' => true,
-				'filter_type' => 'by_id',
+				'autocomplete' => [
+					'object' => QueryControlModule::QUERY_OBJECT_POST,
+				],
 				'condition' => [
 					'source_type' => Module::SOURCE_TYPE_CUSTOM,
 				],

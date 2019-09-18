@@ -140,11 +140,11 @@ class Media_Carousel extends Base {
 				'options' => [
 					'image' => [
 						'title' => __( 'Image', 'elementor-pro' ),
-						'icon' => 'fa fa-image',
+						'icon' => 'eicon-image-bold',
 					],
 					'video' => [
 						'title' => __( 'Video', 'elementor-pro' ),
-						'icon' => 'fa fa-video-camera',
+						'icon' => 'eicon-video-camera',
 					],
 				],
 				'label_block' => false,
@@ -275,7 +275,7 @@ class Media_Carousel extends Base {
 
 		$image_link_to = $this->get_image_link_to( $slide );
 
-		if ( $image_link_to ) {
+		if ( $image_link_to && empty( $settings['thumbs_slider'] ) ) {
 			$this->add_render_attribute( $element_key . '_link', 'href', $image_link_to );
 
 			if ( 'custom' === $slide['image_link_to_type'] ) {
@@ -495,16 +495,16 @@ class Media_Carousel extends Base {
 				'default' => 'search-plus',
 				'options' => [
 					'search-plus' => [
-						'icon' => 'fa fa-search-plus',
+						'icon' => 'eicon-search-plus',
 					],
 					'plus-circle' => [
-						'icon' => 'fa fa-plus-circle',
+						'icon' => 'eicon-plus-circle',
 					],
 					'eye' => [
-						'icon' => 'fa fa-eye',
+						'icon' => 'eicon-eye',
 					],
 					'link' => [
-						'icon' => 'fa fa-link',
+						'icon' => 'eicon-link',
 					],
 				],
 				'condition' => [
@@ -673,6 +673,9 @@ class Media_Carousel extends Base {
 			[
 				'label' => __( 'Centered Slides', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'skin' => 'slideshow',
+				],
 				'frontend_available' => true,
 			]
 		);

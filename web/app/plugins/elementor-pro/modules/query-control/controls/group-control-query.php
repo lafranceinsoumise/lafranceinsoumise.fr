@@ -75,11 +75,12 @@ class Group_Control_Query extends Group_Control_Base {
 		$fields['posts_ids'] = [
 			'label' => __( 'Search & Select', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'by_id',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_POST,
+			],
 			'condition' => [
 				'post_type' => 'by_id',
 			],
@@ -109,14 +110,16 @@ class Group_Control_Query extends Group_Control_Base {
 
 		$fields['include_term_ids'] = [
 			'label' => __( 'Term', 'elementor-pro' ),
+			'description' => __( 'Terms are items in a taxonomy. The available taxonomies are: Categories, Tags, Formats and custom taxonomies.', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'cpt_taxonomies',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_CPT_TAX,
+				'display' => 'detailed',
+			],
 			'group_prefix' => $name,
-			'include_type' => true,
 			'condition' => [
 				'include' => 'terms',
 				'post_type!' => [
@@ -135,7 +138,9 @@ class Group_Control_Query extends Group_Control_Base {
 			'multiple' => true,
 			'default' => [],
 			'options' => [],
-			'filter_type' => 'author',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_AUTHOR,
+			],
 			'condition' => [
 				'include' => 'authors',
 				'post_type!' => [
@@ -184,11 +189,12 @@ class Group_Control_Query extends Group_Control_Base {
 		$fields['exclude_ids'] = [
 			'label' => __( 'Search & Select', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'by_id',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_POST,
+			],
 			'condition' => [
 				'exclude' => 'manual_selection',
 				'post_type!' => [
@@ -204,13 +210,14 @@ class Group_Control_Query extends Group_Control_Base {
 		$fields['exclude_term_ids'] = [
 			'label' => __( 'Term', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'cpt_taxonomies',
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_CPT_TAX,
+				'display' => 'detailed',
+			],
 			'group_prefix' => $name,
-			'include_type' => true,
 			'condition' => [
 				'exclude' => 'terms',
 				'post_type!' => [
@@ -226,12 +233,13 @@ class Group_Control_Query extends Group_Control_Base {
 		$fields['exclude_authors'] = [
 			'label' => __( 'Author', 'elementor-pro' ),
 			'type' => Query_Module::QUERY_CONTROL_ID,
-			'post_type' => '',
 			'options' => [],
 			'label_block' => true,
 			'multiple' => true,
-			'filter_type' => 'author',
-			'include_type' => true,
+			'autocomplete' => [
+				'object' => Query_Module::QUERY_OBJECT_AUTHOR,
+				'display' => 'detailed',
+			],
 			'condition' => [
 				'exclude' => 'authors',
 				'post_type!' => [
@@ -290,8 +298,6 @@ class Group_Control_Query extends Group_Control_Base {
 			'default' => 'anytime',
 			'label_block' => false,
 			'multiple' => false,
-			'filter_type' => 'date',
-			'include_type' => true,
 			'condition' => [
 				'post_type!' => [
 					'by_id',
@@ -307,8 +313,6 @@ class Group_Control_Query extends Group_Control_Base {
 			'post_type' => '',
 			'label_block' => false,
 			'multiple' => false,
-			'filter_type' => 'date',
-			'include_type' => true,
 			'placeholder' => __( 'Choose', 'elementor-pro' ),
 			'condition' => [
 				'select_date' => 'exact',
@@ -326,8 +330,6 @@ class Group_Control_Query extends Group_Control_Base {
 			'post_type' => '',
 			'label_block' => false,
 			'multiple' => false,
-			'filter_type' => 'date',
-			'include_type' => true,
 			'placeholder' => __( 'Choose', 'elementor-pro' ),
 			'condition' => [
 				'select_date' => 'exact',

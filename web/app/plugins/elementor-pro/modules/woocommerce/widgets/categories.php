@@ -191,7 +191,7 @@ class Categories extends Widget_Base {
 			[
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'wc-products',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'elementor-products-grid elementor-',
 			]
 		);
 
@@ -243,15 +243,15 @@ class Categories extends Widget_Base {
 				'options'   => [
 					'left'   => [
 						'title' => __( 'Left', 'elementor-pro' ),
-						'icon'  => 'fa fa-align-left',
+						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'elementor-pro' ),
-						'icon'  => 'fa fa-align-center',
+						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
 						'title' => __( 'Right', 'elementor-pro' ),
-						'icon'  => 'fa fa-align-right',
+						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'prefix_class' => 'elementor-product-loop-item--align-',
@@ -321,7 +321,7 @@ class Categories extends Widget_Base {
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .woocommerce-loop-category__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .woocommerce .woocommerce-loop-category__title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -331,7 +331,7 @@ class Categories extends Widget_Base {
 			[
 				'name'     => 'title_typography',
 				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .woocommerce-loop-category__title',
+				'selector' => '{{WRAPPER}} .woocommerce .woocommerce-loop-category__title',
 			]
 		);
 

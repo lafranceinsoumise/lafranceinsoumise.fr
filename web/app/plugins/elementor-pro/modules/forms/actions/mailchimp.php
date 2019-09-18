@@ -79,7 +79,7 @@ class Mailchimp extends Integration_Base {
 		$widget->add_control(
 			'mailchimp_list',
 			[
-				'label' => __( 'List', 'elementor-pro' ),
+				'label' => __( 'Audience', 'elementor-pro' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [],
 				'render_type' => 'none',

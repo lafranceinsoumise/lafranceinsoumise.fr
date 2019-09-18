@@ -270,7 +270,8 @@ class Conditions_Manager {
 	 * @return array
 	 */
 	public function get_theme_templates_by_location( $location ) {
-		// TODO: _deprecated_function( __METHOD__, '2.0.10', 'get_location_templates' );
+		_deprecated_function( __METHOD__, '2.0.10', __CLASS__ . '::get_location_templates()' );
+
 		return $this->get_location_templates( $location );
 	}
 

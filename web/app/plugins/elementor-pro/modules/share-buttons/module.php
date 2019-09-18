@@ -10,17 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Module extends Module_Base {
 
-	const OPTION_NAME_API_KEY = 'pro_donreach_api_key';
-	const OPTION_NAME_API_URL = 'pro_donreach_api_url';
-
-	private function get_api_key() {
-		return get_option( 'elementor_' . self::OPTION_NAME_API_KEY, '' );
-	}
-
-	private function get_api_url() {
-		return get_option( 'elementor_' . self::OPTION_NAME_API_URL, '' );
-	}
-
 	private static $networks = [
 		'facebook' => [
 			'title' => 'Facebook',
@@ -115,47 +104,6 @@ class Module extends Module_Base {
 		return $settings;
 	}
 
-	public function register_admin_fields( Settings $settings ) {
-		$settings->add_section( Settings::TAB_INTEGRATIONS, 'donreach', [
-			'callback' => function() {
-				echo '<hr><h2>' . esc_html__( 'donReach', 'elementor-pro' ) . '</h2>';
-
-				/* translators: %s: donReach home URL. */
-				echo sprintf( __( '<a href="%s" target="_blank">donReach</a> is a service that has been integrated into the Share Buttons widget, and finds how many times a URL has been shared on different social networks.', 'elementor-pro' ), 'https://donreach.com/' );
-			},
-			'fields' => [
-				self::OPTION_NAME_API_KEY => [
-					'label' => __( 'API Key', 'elementor-pro' ),
-					'field_args' => [
-						'type' => 'text',
-					],
-				],
-				self::OPTION_NAME_API_URL => [
-					'label' => __( 'API Host', 'elementor-pro' ),
-					'field_args' => [
-						'type' => 'text',
-						/* translators: %s: donReach pricing URL. */
-						'desc' => sprintf( __( 'To integrate with our share buttons counter you need an <a href="%s" target="_blank">API Key</a>.', 'elementor-pro' ), 'https://donreach.com/pricing/' ),
-					],
-				],
-			],
-		] );
-	}
-
-	public function localize_settings( $localized_settings ) {
-		$api_key = $this->get_api_key();
-		$api_url = $this->get_api_url();
-
-		if ( ! empty( $api_key ) && ! empty( $api_url ) ) {
-			$localized_settings['donreach'] = [
-				'key' => $this->get_api_key(),
-				'api_url' => $this->get_api_url(),
-			];
-		}
-
-		return $localized_settings;
-	}
-
 	public function __construct() {
 		parent::__construct();
 
@@ -163,10 +111,5 @@ class Module extends Module_Base {
 
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'add_localize_data' ] );
 
-		if ( is_admin() ) {
-			add_action( 'elementor/admin/after_create_settings/' . Settings::PAGE_ID, [ $this, 'register_admin_fields' ] );
-		}
-
-		add_filter( 'elementor_pro/frontend/localize_settings', [ $this, 'localize_settings' ] );
 	}
 }
