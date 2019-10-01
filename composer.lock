@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7936713ef02af9aca8a8f99b2fb945d4",
+    "content-hash": "cbfe6e3c4426ee8e6522ac25273dcb98",
     "packages": [
         {
             "name": "composer/installers",
@@ -631,15 +631,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.7.2"
+                "reference": "tags/2.7.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -731,15 +731,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.3.3",
+            "version": "4.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.3.3"
+                "reference": "tags/4.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.3.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -808,6 +808,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-maintenance/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-typography",
+            "version": "5.6.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-typography/",
+                "reference": "tags/5.6.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-typography.5.6.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-typography/"
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
