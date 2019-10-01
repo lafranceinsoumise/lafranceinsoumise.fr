@@ -1,17 +1,33 @@
 <?php
-namespace ElementorPro;
+namespace ElementorPro\Core\Admin;
 
+use Elementor\Core\Base\App;
 use Elementor\Rollback;
 use Elementor\Settings;
 use Elementor\Tools;
 use Elementor\Utils;
 use ElementorPro\License\API;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Admin {
+class Admin extends App {
+
+	/**
+	 * Get module name.
+	 *
+	 * Retrieve the module name.
+	 *
+	 * @since 2.3.0
+	 * @access public
+	 *
+	 * @return string Module name.
+	 */
+	public function get_name() {
+		return 'admin';
+	}
 
 	/**
 	 * Enqueue admin styles.
@@ -71,7 +87,51 @@ class Admin {
 		remove_action( 'admin_menu', [ Plugin::elementor()->settings, 'register_pro_menu' ], Settings::MENU_PRIORITY_GO_PRO );
 	}
 
+	private function get_rollback_versions() {
+		$rollback_versions = get_transient( 'elementor_pro_rollback_versions_' . ELEMENTOR_PRO_VERSION );
+		if ( false === $rollback_versions ) {
+			$max_versions = 30;
+
+			$versions = API::get_previous_versions();
+
+			if ( is_wp_error( $versions ) ) {
+				return [];
+			}
+
+			$rollback_versions = [];
+
+			$current_index = 0;
+			foreach ( $versions as $version ) {
+				if ( $max_versions <= $current_index ) {
+					break;
+				}
+
+				if ( preg_match( '/(trunk|beta|rc)/i', strtolower( $version ) ) ) {
+					continue;
+				}
+
+				if ( version_compare( $version, ELEMENTOR_VERSION, '>=' ) ) {
+					continue;
+				}
+
+				$current_index++;
+				$rollback_versions[] = $version;
+			}
+
+			set_transient( 'elementor_pro_rollback_versions_' . ELEMENTOR_PRO_VERSION, $rollback_versions, WEEK_IN_SECONDS );
+		}
+
+		return $rollback_versions;
+	}
+
 	public function register_admin_tools_fields( Tools $tools ) {
+		$rollback_html = '<select class="elementor-rollback-select">';
+
+		foreach ( $this->get_rollback_versions() as $version ) {
+			$rollback_html .= "<option value='{$version}'>$version</option>";
+		}
+		$rollback_html .= '</select>';
+
 		// Rollback
 		$tools->add_fields( 'versions', 'rollback', [
 			'rollback_pro_separator' => [
@@ -84,7 +144,11 @@ class Admin {
 				'label' => __( 'Rollback Pro Version', 'elementor-pro' ),
 				'field_args' => [
 					'type' => 'raw_html',
-					'html' => sprintf( '<a href="%s" class="button elementor-button-spinner elementor-rollback-button">%s</a>', wp_nonce_url( admin_url( 'admin-post.php?action=elementor_pro_rollback' ), 'elementor_pro_rollback' ), sprintf( __( 'Reinstall Pro v%s', 'elementor-pro' ), ELEMENTOR_PRO_PREVIOUS_STABLE_VERSION ) ),
+					'html' => sprintf(
+						$rollback_html . '<a data-placeholder-text="' . __( 'Reinstall v{VERSION}', 'elementor-pro' ) . '" href="#" data-placeholder-url="%s" class="button elementor-button-spinner elementor-rollback-button">%s</a>',
+						wp_nonce_url( admin_url( 'admin-post.php?action=elementor_pro_rollback&version=VERSION' ), 'elementor_pro_rollback' ),
+						__( 'Reinstall', 'elementor-pro' )
+					),
 					'desc' => '<span style="color: red;">' . __( 'Warning: Please backup your database before making the rollback.', 'elementor-pro' ) . '</span>',
 				],
 			],
@@ -94,15 +158,20 @@ class Admin {
 	public function post_elementor_pro_rollback() {
 		check_admin_referer( 'elementor_pro_rollback' );
 
-		$plugin_slug = basename( ELEMENTOR_PRO__FILE__, '.php' );
+		$rollback_versions = $this->get_rollback_versions();
+		if ( empty( $_GET['version'] ) || ! in_array( $_GET['version'], $rollback_versions, true ) ) {
+			wp_die( __( 'Error occurred, The version selected is invalid. Try selecting different version.', 'elementor-pro' ) );
+		}
 
-		$package_url = API::get_previous_package_url();
+		$package_url = API::get_plugin_package_url( $_GET['version'] );
 		if ( is_wp_error( $package_url ) ) {
 			wp_die( $package_url );
 		}
 
+		$plugin_slug = basename( ELEMENTOR_PRO__FILE__, '.php' );
+
 		$rollback = new Rollback( [
-			'version' => ELEMENTOR_PRO_PREVIOUS_STABLE_VERSION,
+			'version' => $_GET['version'],
 			'plugin_name' => ELEMENTOR_PRO_PLUGIN_BASE,
 			'plugin_slug' => $plugin_slug,
 			'package_url' => $package_url,
@@ -164,6 +233,8 @@ class Admin {
 	 * Admin constructor.
 	 */
 	public function __construct() {
+		$this->add_component( 'canary-deployment', new Canary_Deployment() );
+
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_menu', [ $this, 'remove_go_pro_menu' ], 0 );

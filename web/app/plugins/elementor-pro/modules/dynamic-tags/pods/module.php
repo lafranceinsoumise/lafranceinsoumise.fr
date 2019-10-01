@@ -113,6 +113,7 @@ class Module extends DynamicTags\Module {
 			'Pods_Image',
 			'Pods_Gallery',
 			'Pods_URL',
+			'Pods_Numeric',
 		];
 	}
 

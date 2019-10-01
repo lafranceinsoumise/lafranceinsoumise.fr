@@ -13,7 +13,7 @@ class Fontello extends Icon_Set_Base {
 	protected $allowed_webfont_extensions = [ 'woff', 'woff2', 'ttf', 'svg', 'otf' ];
 
 	protected function prepare() {
-		return [];
+		$this->remove_fontello_styling();
 	}
 
 	public function get_type() {
@@ -25,6 +25,13 @@ class Fontello extends Icon_Set_Base {
 			return false; // missing data file
 		}
 		return true;
+	}
+
+	private function remove_fontello_styling() {
+		$filename = $this->directory . 'css/' . $this->get_name() . '.css';
+		$stylesheet = file_get_contents( $filename );
+		$stylesheet = str_replace( [ 'margin-left: .2em;', 'margin-right: .2em;' ], [ '', '' ], $stylesheet );
+		file_put_contents( $filename, $stylesheet );
 	}
 
 	private function get_json() {

@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.6.5 - 26-08-2019 */
+/*! elementor-pro - v2.7.1 - 26-09-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -721,10 +721,10 @@ module.exports = function ($scope) {
 "use strict";
 
 
-var FormSender = __webpack_require__(118),
+var FormSender = __webpack_require__(120),
     Form = FormSender.extend();
 
-var RedirectAction = __webpack_require__(119);
+var RedirectAction = __webpack_require__(121);
 
 module.exports = function ($scope) {
 	new Form({ $element: $scope });
@@ -949,6 +949,10 @@ var _frontend5 = __webpack_require__(105);
 
 var _frontend6 = _interopRequireDefault(_frontend5);
 
+var _frontend7 = __webpack_require__(111);
+
+var _frontend8 = _interopRequireDefault(_frontend7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -986,22 +990,23 @@ var ElementorProFrontend = function (_elementorModules$Vie) {
 			var _this2 = this;
 
 			var handlers = {
-				animatedText: __webpack_require__(111),
-				carousel: __webpack_require__(113),
-				countdown: __webpack_require__(115),
-				form: __webpack_require__(117),
+				animatedText: __webpack_require__(113),
+				carousel: __webpack_require__(115),
+				countdown: __webpack_require__(117),
+				form: __webpack_require__(119),
+				gallery: _frontend8.default,
 				linkActions: _frontend2.default,
-				nav_menu: __webpack_require__(123),
-				popup: _frontend4.default,
+				nav_menu: __webpack_require__(125),
 				motionFX: _frontend6.default,
-				posts: __webpack_require__(125),
-				share_buttons: __webpack_require__(127),
-				slides: __webpack_require__(129),
-				social: __webpack_require__(131),
-				sticky: __webpack_require__(133),
-				themeBuilder: __webpack_require__(134),
-				themeElements: __webpack_require__(137),
-				woocommerce: __webpack_require__(139)
+				popup: _frontend4.default,
+				posts: __webpack_require__(127),
+				share_buttons: __webpack_require__(129),
+				slides: __webpack_require__(131),
+				social: __webpack_require__(133),
+				sticky: __webpack_require__(135),
+				themeBuilder: __webpack_require__(136),
+				themeElements: __webpack_require__(139),
+				woocommerce: __webpack_require__(141)
 			};
 
 			jQuery.each(handlers, function (moduleName, ModuleClass) {
@@ -1425,7 +1430,11 @@ var _class = function (_elementorModules$fro) {
 
 			this.getModal = function () {
 				if (!modal) {
-					var settings = _this3.getDocumentSettings();
+					var settings = _this3.getDocumentSettings(),
+					    id = _this3.getSettings('id'),
+					    triggerPopupEvent = function triggerPopupEvent(eventType) {
+						return elementorFrontend.elements.$document.trigger('elementor/popup/' + eventType, id, _this3);
+					};
 
 					var classes = 'elementor-popup-modal';
 
@@ -1434,11 +1443,17 @@ var _class = function (_elementorModules$fro) {
 					}
 
 					modal = elementorFrontend.getDialogsManager().createWidget('lightbox', {
-						id: 'elementor-popup-modal-' + _this3.getSettings('id'),
+						id: 'elementor-popup-modal-' + id,
 						className: classes,
 						closeButton: true,
 						closeButtonClass: 'eicon-close',
 						preventScroll: settings.prevent_scroll,
+						onShow: function onShow() {
+							return triggerPopupEvent('show');
+						},
+						onHide: function onHide() {
+							return triggerPopupEvent('hide');
+						},
 						effects: {
 							hide: function hide() {
 								if (settings.timing && settings.timing.times_count) {
@@ -3800,12 +3815,325 @@ exports.default = _class;
 "use strict";
 
 
-module.exports = function () {
-    elementorFrontend.hooks.addAction('frontend/element_ready/animated-headline.default', __webpack_require__(112));
-};
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _handler = __webpack_require__(112);
+
+var _handler2 = _interopRequireDefault(_handler);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _class = function (_elementorModules$Mod) {
+	_inherits(_class, _elementorModules$Mod);
+
+	function _class() {
+		_classCallCheck(this, _class);
+
+		var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));
+
+		elementorFrontend.hooks.addAction('frontend/element_ready/gallery.default', function ($element) {
+			elementorFrontend.elementsHandler.addHandler(_handler2.default, { $element: $element });
+		});
+		return _this;
+	}
+
+	return _class;
+}(elementorModules.Module);
+
+exports.default = _class;
 
 /***/ }),
 /* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var galleryHandler = function (_elementorModules$fro) {
+	_inherits(galleryHandler, _elementorModules$fro);
+
+	function galleryHandler() {
+		_classCallCheck(this, galleryHandler);
+
+		return _possibleConstructorReturn(this, (galleryHandler.__proto__ || Object.getPrototypeOf(galleryHandler)).apply(this, arguments));
+	}
+
+	_createClass(galleryHandler, [{
+		key: 'getDefaultSettings',
+		value: function getDefaultSettings() {
+			return {
+				selectors: {
+					container: '.elementor-gallery__container',
+					galleryItems: '.e-gallery-item',
+					galleryImages: '.e-gallery-image'
+				},
+				classes: {
+					titles: 'elementor-gallery-title',
+					activeTitle: 'elementor-item-active',
+					galleryItemOverlayBG: 'elementor-gallery-item__overlay',
+					galleryItemOverlayContent: 'elementor-gallery-item__content'
+				}
+			};
+		}
+	}, {
+		key: 'getDefaultElements',
+		value: function getDefaultElements() {
+			var handlerSettings = this.getSettings();
+
+			return {
+				$container: this.$element.find(handlerSettings.selectors.container),
+				$titles: this.$element.find('.' + handlerSettings.classes.titles)
+			};
+		}
+	}, {
+		key: 'getGallerySettings',
+		value: function getGallerySettings() {
+			var settings = this.getElementSettings(),
+			    breakpoints = elementorFrontend.config.breakpoints,
+			    breakPointSettings = {};
+
+			breakPointSettings[breakpoints.lg - 1] = {
+				horizontalGap: elementorFrontend.getDeviceSetting('tablet', settings, 'gap').size,
+				verticalGap: elementorFrontend.getDeviceSetting('tablet', settings, 'gap').size,
+				columns: elementorFrontend.getDeviceSetting('tablet', settings, 'columns')
+			};
+
+			breakPointSettings[breakpoints.md - 1] = {
+				horizontalGap: elementorFrontend.getDeviceSetting('mobile', settings, 'gap').size,
+				verticalGap: elementorFrontend.getDeviceSetting('mobile', settings, 'gap').size,
+				columns: elementorFrontend.getDeviceSetting('mobile', settings, 'columns')
+			};
+
+			var desktopIdealRowHeight = elementorFrontend.getDeviceSetting('desktop', settings, 'ideal_row_height'),
+			    tabletIdealRowHeight = elementorFrontend.getDeviceSetting('tablet', settings, 'ideal_row_height'),
+			    mobileIdealRowHeight = elementorFrontend.getDeviceSetting('mobile', settings, 'ideal_row_height');
+
+			breakPointSettings[breakpoints.lg - 1].idealRowHeight = tabletIdealRowHeight && tabletIdealRowHeight.size ? tabletIdealRowHeight.size : null;
+			breakPointSettings[breakpoints.md - 1].idealRowHeight = mobileIdealRowHeight && mobileIdealRowHeight.size ? mobileIdealRowHeight.size : null;
+
+			return {
+				type: settings.gallery_layout,
+				idealRowHeight: desktopIdealRowHeight && desktopIdealRowHeight.size ? desktopIdealRowHeight.size : null,
+				container: this.elements.$container,
+				columns: settings.columns,
+				aspectRatio: settings.aspect_ratio,
+				lastRow: 'normal',
+				horizontalGap: elementorFrontend.getDeviceSetting('desktop', settings, 'gap').size,
+				verticalGap: elementorFrontend.getDeviceSetting('desktop', settings, 'gap').size,
+				animationDuration: settings.content_animation_duration,
+				classesPrefix: 'e-gallery-',
+				breakpoints: breakPointSettings
+				//tags: '',
+			};
+		}
+	}, {
+		key: 'initGallery',
+		value: function initGallery() {
+			var gallerySettings = this.getGallerySettings();
+			this.gallery = new EGallery(gallerySettings);
+			this.appendAnimationClasses('all');
+		}
+	}, {
+		key: 'appendAnimationClasses',
+		value: function appendAnimationClasses(settingKey) {
+			var settings = this.getElementSettings(),
+			    classSettings = this.getSettings();
+
+			if (settings.background_overlay_hover_animation || settings.content_hover_animation || settings.image_hover_animation) {
+				this.$element.find(classSettings.selectors.galleryItems).addClass('elementor-animated-content');
+			} else {
+				this.$element.find(classSettings.selectors.galleryItems).removeClass('elementor-animated-content');
+			}
+
+			if ('background_overlay_hover_animation' === settingKey || 'all' === settingKey) {
+				var $imageOverlay = this.$element.find('.' + classSettings.classes.galleryItemOverlayBG);
+
+				$imageOverlay.removeClass(function (index, className) {
+					return (className.match(/(^|\s)elementor-animated-item-\S+/g) || []).join(' ');
+				});
+
+				if ('' !== settings.background_overlay_hover_animation) {
+					$imageOverlay.addClass('elementor-animated-item--' + settings.background_overlay_hover_animation);
+				}
+			}
+
+			if ('content_hover_animation' === settingKey || 'content_sequenced_animation' === settingKey || 'all' === settingKey) {
+				if ('yes' === settings.content_sequenced_animation) {
+					this.$element.find('.' + classSettings.classes.galleryItemOverlayContent).addClass('elementor-gallery--sequenced-animation');
+				} else {
+					this.$element.find('.' + classSettings.classes.galleryItemOverlayContent).removeClass('elementor-gallery--sequenced-animation');
+				}
+
+				if ('content_sequenced_animation' === settingKey) {
+					return;
+				}
+
+				var $contentElements = this.$element.find('.' + classSettings.classes.galleryItemOverlayContent).children();
+
+				$contentElements.removeClass(function (index, className) {
+					return (className.match(/(^|\s)elementor-animated-item-\S+/g) || []).join(' ');
+				});
+
+				if ('' !== settings.content_hover_animation) {
+					$contentElements.addClass('elementor-animated-item--' + settings.content_hover_animation);
+				}
+			}
+
+			if ('image_hover_animation' === settingKey || 'all' === settingKey) {
+				var $galleryImages = this.$element.find(classSettings.selectors.galleryImages);
+
+				$galleryImages.removeClass(function (index, className) {
+					return (className.match(/(^|\s)elementor-animated-item-\S+/g) || []).join(' ');
+				});
+
+				if ('' !== settings.image_hover_animation) {
+					$galleryImages.addClass('elementor-animated-item--' + settings.image_hover_animation);
+				}
+			}
+		}
+	}, {
+		key: 'setGalleryTags',
+		value: function setGalleryTags(id) {
+			this.gallery.setSettings('tags', 'all' === id ? [] : ['' + id]);
+		}
+	}, {
+		key: 'bindEvents',
+		value: function bindEvents() {
+			this.elements.$titles.on('click', this.galleriesNavigationListener.bind(this));
+		}
+	}, {
+		key: 'galleriesNavigationListener',
+		value: function galleriesNavigationListener(event) {
+			var _this2 = this;
+
+			var classes = this.getSettings('classes'),
+			    clickedElement = jQuery(event.target);
+
+			// Make sure no other gallery title has an active class
+			this.elements.$titles.removeClass(classes.activeTitle);
+
+			// Give the gallery being activated the active class
+			clickedElement.addClass(classes.activeTitle);
+
+			this.setGalleryTags(clickedElement.data('gallery-index'));
+
+			var updateLightboxGroup = function updateLightboxGroup() {
+				return _this2.setLightboxGalleryIndex(clickedElement.data('gallery-index'));
+			};
+
+			// Wait for the gallery to filter before grouping items for the Light-box
+			setTimeout(updateLightboxGroup, 1000);
+		}
+	}, {
+		key: 'setLightboxGalleryIndex',
+		value: function setLightboxGalleryIndex() {
+			var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'all';
+
+			if ('all' === index) {
+				return this.$element.find(this.getSettings().selectors.galleryItems).attr('data-elementor-lightbox-slideshow', 'all_' + this.getID());
+			}
+			this.$element.find(this.getSettings().selectors.galleryItems).not('.gallery-item--hidden').attr('data-elementor-lightbox-slideshow', index + '_' + this.getID());
+		}
+	}, {
+		key: 'onInit',
+		value: function onInit() {
+			var _get2;
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			(_get2 = _get(galleryHandler.prototype.__proto__ || Object.getPrototypeOf(galleryHandler.prototype), 'onInit', this)).call.apply(_get2, [this].concat(args));
+
+			this.initGallery();
+
+			this.elements.$titles.first().trigger('click');
+
+			if (elementorFrontend.isEditMode() && 1 <= this.$element.find('.elementor-widget-empty-icon').length) {
+				this.$element.addClass('elementor-widget-empty');
+			}
+		}
+	}, {
+		key: 'onElementChange',
+		value: function onElementChange(settingKey) {
+			var _this3 = this;
+
+			if (-1 !== ['background_overlay_hover_animation', 'content_hover_animation', 'image_hover_animation', 'content_sequenced_animation'].indexOf(settingKey)) {
+				this.appendAnimationClasses(settingKey);
+				return;
+			}
+
+			var settingsDictionary = {
+				columns: ['columns'],
+				columns_tablet: ['breakpoints.1024.columns'],
+				columns_mobile: ['breakpoints.767.columns'],
+				gap: ['horizontalGap', 'verticalGap'],
+				gap_tablet: ['breakpoints.1024.horizontalGap', 'breakpoints.1024.verticalGap'],
+				gap_mobile: ['breakpoints.767.horizontalGap', 'breakpoints.767.verticalGap'],
+				aspect_ratio: ['aspectRatio'],
+				ideal_row_height: ['idealRowHeight'],
+				ideal_row_height_tablet: ['breakpoints.1024.idealRowHeight'],
+				ideal_row_height_mobile: ['breakpoints.767.idealRowHeight']
+			};
+
+			var settingsToUpdate = settingsDictionary[settingKey];
+
+			if (settingsToUpdate) {
+				var gallerySettings = this.getGallerySettings();
+				settingsToUpdate.forEach(function (settingToUpdate) {
+					_this3.gallery.setSettings(settingToUpdate, _this3.getItems(gallerySettings, settingToUpdate));
+				});
+			}
+		}
+	}, {
+		key: 'onDestroy',
+		value: function onDestroy() {
+			if (this.gallery) {
+				this.gallery.destroy();
+			}
+		}
+	}]);
+
+	return galleryHandler;
+}(elementorModules.frontend.handlers.Base);
+
+exports.default = galleryHandler;
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+    elementorFrontend.hooks.addAction('frontend/element_ready/animated-headline.default', __webpack_require__(114));
+};
+
+/***/ }),
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4093,20 +4421,20 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/media-carousel.default', __webpack_require__(114));
+	elementorFrontend.hooks.addAction('frontend/element_ready/media-carousel.default', __webpack_require__(116));
 	elementorFrontend.hooks.addAction('frontend/element_ready/testimonial-carousel.default', __webpack_require__(10));
 	elementorFrontend.hooks.addAction('frontend/element_ready/reviews.default', __webpack_require__(10));
 };
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4224,11 +4552,6 @@ MediaCarousel = Base.extend({
 			spaceBetween: this.getSpaceBetween(),
 			loopedSlides: slidesCount,
 			loop: loop,
-			onSlideChangeEnd: function onSlideChangeEnd(swiper) {
-				if (loop) {
-					swiper.fixLoop();
-				}
-			},
 			breakpoints: breakpointsSettings
 		};
 
@@ -4264,18 +4587,18 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/countdown.default', __webpack_require__(116));
+	elementorFrontend.hooks.addAction('frontend/element_ready/countdown.default', __webpack_require__(118));
 };
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4438,7 +4761,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4448,14 +4771,14 @@ module.exports = function () {
 	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(11));
 	elementorFrontend.hooks.addAction('frontend/element_ready/subscribe.default', __webpack_require__(11));
 
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(120));
-
-	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(121));
 	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(122));
+
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(123));
+	elementorFrontend.hooks.addAction('frontend/element_ready/form.default', __webpack_require__(124));
 };
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4611,7 +4934,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 });
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4647,7 +4970,7 @@ module.exports = elementorModules.frontend.handlers.Base.extend({
 });
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4711,7 +5034,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4741,7 +5064,7 @@ module.exports = function ($scope, $) {
 };
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4770,7 +5093,7 @@ module.exports = function ($scope, $) {
 };
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4788,11 +5111,11 @@ module.exports = function () {
 		}
 	}
 
-	elementorFrontend.hooks.addAction('frontend/element_ready/nav-menu.default', __webpack_require__(124));
+	elementorFrontend.hooks.addAction('frontend/element_ready/nav-menu.default', __webpack_require__(126));
 };
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4951,7 +5274,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4960,9 +5283,13 @@ module.exports = function ($scope) {
 module.exports = function () {
 	var PostsModule = __webpack_require__(3),
 	    CardsModule = __webpack_require__(12),
-	    PortfolioModule = __webpack_require__(126);
+	    PortfolioModule = __webpack_require__(128);
 
 	elementorFrontend.hooks.addAction('frontend/element_ready/posts.classic', function ($scope) {
+		new PostsModule({ $element: $scope });
+	});
+
+	elementorFrontend.hooks.addAction('frontend/element_ready/posts.full_content', function ($scope) {
 		new PostsModule({ $element: $scope });
 	});
 
@@ -4980,7 +5307,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5249,7 +5576,7 @@ module.exports = PostsHandler.extend({
 });
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5257,12 +5584,12 @@ module.exports = PostsHandler.extend({
 
 module.exports = function () {
 	if (!elementorFrontend.isEditMode()) {
-		elementorFrontend.hooks.addAction('frontend/element_ready/share-buttons.default', __webpack_require__(128));
+		elementorFrontend.hooks.addAction('frontend/element_ready/share-buttons.default', __webpack_require__(130));
 	}
 };
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5320,18 +5647,18 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/slides.default', __webpack_require__(130));
+	elementorFrontend.hooks.addAction('frontend/element_ready/slides.default', __webpack_require__(132));
 };
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5341,8 +5668,9 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 	getDefaultSettings: function getDefaultSettings() {
 		return {
 			selectors: {
-				slider: '.elementor-slides',
-				slideContent: '.elementor-slide-content'
+				slider: '.elementor-slides-wrapper',
+				slideContent: '.swiper-slide',
+				slideInnerContents: '.swiper-slide-contents'
 			},
 			classes: {
 				animated: 'animated'
@@ -5357,60 +5685,118 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 	getDefaultElements: function getDefaultElements() {
 		var selectors = this.getSettings('selectors');
 
-		return {
+		var elements = {
 			$slider: this.$element.find(selectors.slider)
 		};
+
+		elements.$mainSwiperSlides = elements.$slider.find(selectors.slideContent);
+
+		return elements;
+	},
+
+	getSlidesCount: function getSlidesCount() {
+		return this.elements.$mainSwiperSlides.length;
+	},
+
+	getInitialSlide: function getInitialSlide() {
+		var editSettings = this.getEditSettings();
+
+		return editSettings.activeItemIndex ? editSettings.activeItemIndex - 1 : 0;
+	},
+
+	getSwiperOptions: function getSwiperOptions() {
+		var elementSettings = this.getElementSettings();
+
+		var swiperOptions = {
+			grabCursor: true,
+			initialSlide: this.getInitialSlide(),
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			loop: 'yes' === elementSettings.infinite,
+			speed: elementSettings.transition_speed,
+			effect: elementSettings.transition,
+			on: {
+				slideChange: function slideChange() {
+					var kenBurnsActiveClass = 'elementor-ken-burns--active';
+
+					if (this.$activeImage) {
+						this.$activeImage.removeClass(kenBurnsActiveClass);
+					}
+
+					this.$activeImage = jQuery(this.slides[this.activeIndex]).children();
+
+					this.$activeImage.addClass(kenBurnsActiveClass);
+				}
+			}
+		};
+
+		var showArrows = 'arrows' === elementSettings.navigation || 'both' === elementSettings.navigation,
+		    pagination = 'dots' === elementSettings.navigation || 'both' === elementSettings.navigation;
+
+		if (showArrows) {
+			swiperOptions.navigation = {
+				prevEl: '.elementor-swiper-button-prev',
+				nextEl: '.elementor-swiper-button-next'
+			};
+		}
+
+		if (pagination) {
+			swiperOptions.pagination = {
+				el: '.swiper-pagination',
+				type: 'bullets',
+				clickable: true
+			};
+		}
+
+		if (!this.isEdit && elementSettings.autoplay) {
+			swiperOptions.autoplay = {
+				delay: elementSettings.autoplay_speed,
+				disableOnInteraction: !!elementSettings.pause_on_hover
+			};
+		}
+
+		if (true === swiperOptions.loop) {
+			swiperOptions.loopedSlides = this.getSlidesCount();
+		}
+
+		if ('fade' === swiperOptions.effect) {
+			swiperOptions.fadeEffect = { crossFade: true };
+		}
+
+		return swiperOptions;
 	},
 
 	initSlider: function initSlider() {
-		var $slider = this.elements.$slider;
+		var $slider = this.elements.$slider,
+		    settings = this.getSettings(),
+		    animation = $slider.data(settings.attributes.dataAnimation);
 
 		if (!$slider.length) {
 			return;
 		}
 
-		$slider.slick($slider.data(this.getSettings('attributes.dataSliderOptions')));
-	},
+		this.swipers = {};
 
-	goToActiveSlide: function goToActiveSlide() {
-		this.elements.$slider.slick('slickGoTo', this.getEditSettings('activeItemIndex') - 1);
-	},
+		if (1 >= this.getSlidesCount()) {
+			return;
+		}
 
-	onPanelShow: function onPanelShow() {
-		var $slider = this.elements.$slider;
-
-		$slider.slick('slickPause');
-
-		// On switch between slides while editing. stop again.
-		$slider.on('afterChange', function () {
-			$slider.slick('slickPause');
-		});
-	},
-
-	bindEvents: function bindEvents() {
-		var $slider = this.elements.$slider,
-		    settings = this.getSettings(),
-		    animation = $slider.data(settings.attributes.dataAnimation);
+		this.swipers.main = new Swiper(this.elements.$slider, this.getSwiperOptions());
 
 		if (!animation) {
 			return;
 		}
 
-		if (elementorFrontend.isEditMode()) {
-			elementor.hooks.addAction('panel/open_editor/widget/slides', this.onPanelShow);
-		}
+		this.swipers.main.on('slideChangeTransitionStart', function () {
+			var $sliderContent = $slider.find(settings.selectors.slideInnerContents);
 
-		$slider.on({
-			beforeChange: function beforeChange() {
-				var $sliderContent = $slider.find(settings.selectors.slideContent);
+			$sliderContent.removeClass(settings.classes.animated + ' ' + animation).hide();
+		});
 
-				$sliderContent.removeClass(settings.classes.animated + ' ' + animation).hide();
-			},
-			afterChange: function afterChange(event, slick, currentSlide) {
-				var $currentSlide = jQuery(slick.$slides.get(currentSlide)).find(settings.selectors.slideContent);
+		this.swipers.main.on('slideChangeTransitionEnd', function () {
+			var $currentSlide = $slider.find(settings.selectors.slideInnerContents);
 
-				$currentSlide.show().addClass(settings.classes.animated + ' ' + animation);
-			}
+			$currentSlide.show().addClass(settings.classes.animated + ' ' + animation);
 		});
 	},
 
@@ -5418,15 +5804,25 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 		elementorModules.frontend.handlers.Base.prototype.onInit.apply(this, arguments);
 
 		this.initSlider();
+	},
 
-		if (this.isEdit) {
-			this.goToActiveSlide();
+	onElementChange: function onElementChange(propertyName) {
+		if (1 >= this.getSlidesCount()) {
+			return;
+		}
+
+		if (0 === propertyName.indexOf('width')) {
+			this.swipers.main.update();
 		}
 	},
 
 	onEditSettingsChange: function onEditSettingsChange(propertyName) {
+		if (1 >= this.getSlidesCount()) {
+			return;
+		}
+
 		if ('activeItemIndex' === propertyName) {
-			this.goToActiveSlide();
+			this.swipers.main.slideToLoop(this.getEditSettings('activeItemIndex') - 1);
 		}
 	}
 });
@@ -5436,13 +5832,13 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var facebookHandler = __webpack_require__(132);
+var facebookHandler = __webpack_require__(134);
 
 module.exports = function () {
 	elementorFrontend.hooks.addAction('frontend/element_ready/facebook-button.default', facebookHandler);
@@ -5452,7 +5848,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5500,7 +5896,7 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 133 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5512,17 +5908,21 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	var PostsArchiveClassic = __webpack_require__(135),
-	    PostsArchiveCards = __webpack_require__(136);
+	var PostsArchiveClassic = __webpack_require__(137),
+	    PostsArchiveCards = __webpack_require__(138);
 
 	elementorFrontend.hooks.addAction('frontend/element_ready/archive-posts.archive_classic', function ($scope) {
+		new PostsArchiveClassic({ $element: $scope });
+	});
+
+	elementorFrontend.hooks.addAction('frontend/element_ready/archive-posts.archive_full_content', function ($scope) {
 		new PostsArchiveClassic({ $element: $scope });
 	});
 
@@ -5543,7 +5943,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 135 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5558,7 +5958,7 @@ module.exports = PostsClassicHandler.extend({
 });
 
 /***/ }),
-/* 136 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5573,18 +5973,18 @@ module.exports = PostsCardHandler.extend({
 });
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-    elementorFrontend.hooks.addAction('frontend/element_ready/search-form.default', __webpack_require__(138));
+    elementorFrontend.hooks.addAction('frontend/element_ready/search-form.default', __webpack_require__(140));
 };
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5688,14 +6088,14 @@ module.exports = function ($scope) {
 };
 
 /***/ }),
-/* 139 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function () {
-	elementorFrontend.hooks.addAction('frontend/element_ready/woocommerce-menu-cart.default', __webpack_require__(140));
+	elementorFrontend.hooks.addAction('frontend/element_ready/woocommerce-menu-cart.default', __webpack_require__(142));
 
 	if (elementorFrontend.isEditMode()) {
 		return;
@@ -5709,25 +6109,25 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 140 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var SearchBerHandler = elementorModules.frontend.handlers.Base.extend({
+var MiniCartHandler = elementorModules.frontend.handlers.Base.extend({
 
 	getDefaultSettings: function getDefaultSettings() {
 		return {
 			selectors: {
 				container: '.elementor-menu-cart__container',
 				toggle: '.elementor-menu-cart__toggle .elementor-button',
-				closeButton: '.elementor-menu-cart__close-button'
+				closeButton: '.elementor-menu-cart__close-button',
+				cartLink: '#elementor-menu-cart__toggle_button'
 			},
 			classes: {
 				isShown: 'elementor-menu-cart--shown',
-				lightbox: 'elementor-lightbox',
-				isHidden: 'elementor-menu-cart-hidden'
+				lightbox: 'elementor-lightbox'
 			}
 		};
 	},
@@ -5739,21 +6139,33 @@ var SearchBerHandler = elementorModules.frontend.handlers.Base.extend({
 		elements.$container = this.$element.find(selectors.container);
 		elements.$toggle = this.$element.find(selectors.toggle);
 		elements.$closeButton = this.$element.find(selectors.closeButton);
+		elements.$cartLink = this.$element.find(selectors.cartLink);
 
 		return elements;
 	},
 
 	bindEvents: function bindEvents() {
-		var self = this,
-		    $container = self.elements.$container,
-		    $closeButton = self.elements.$closeButton,
+		var _elements = this.elements,
+		    $container = _elements.$container,
+		    $toggle = _elements.$toggle,
+		    $closeButton = _elements.$closeButton,
+		    $cartLink = _elements.$cartLink,
 		    classes = this.getSettings('classes');
 
 		// Activate full-screen mode on click
-		self.elements.$toggle.on('click', function (event) {
-			if (!self.elements.$toggle.hasClass(classes.isHidden)) {
+
+		$toggle.on('click', function (event) {
+			var currentUrl = window.location.origin + window.location.pathname,
+			    isCart = ElementorProFrontendConfig.menu_cart.cart_page_url === currentUrl,
+			    isCheckout = ElementorProFrontendConfig.menu_cart.checkout_page_url === currentUrl;
+
+			if (!isCart && !isCheckout) {
 				event.preventDefault();
 				$container.toggleClass(classes.isShown);
+			} else {
+				var cartUrl = ElementorProFrontendConfig.menu_cart.cart_page_url;
+				$cartLink.attr('href', cartUrl);
+				$container.removeClass(classes.isShown);
 			}
 		});
 
@@ -5781,7 +6193,7 @@ var SearchBerHandler = elementorModules.frontend.handlers.Base.extend({
 });
 
 module.exports = function ($scope) {
-	new SearchBerHandler({ $element: $scope });
+	new MiniCartHandler({ $element: $scope });
 };
 
 /***/ })

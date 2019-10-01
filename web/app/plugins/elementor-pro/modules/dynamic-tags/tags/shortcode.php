@@ -25,6 +25,7 @@ class Shortcode extends Tag {
 	public function get_categories() {
 		return [
 			Module::TEXT_CATEGORY,
+			Module::NUMBER_CATEGORY,
 			Module::URL_CATEGORY,
 			Module::POST_META_CATEGORY,
 		];

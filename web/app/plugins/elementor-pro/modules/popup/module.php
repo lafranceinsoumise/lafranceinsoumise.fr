@@ -120,7 +120,7 @@ class Module extends Module_Base {
 
 		$categories['create']['items']['popups'] = [
 			'title' => __( 'Add New Popup', 'elementor-pro' ),
-			'icon' => 'plus-circle',
+			'icon' => 'plus-circle-o',
 			'url' => $this->get_admin_url() . '#add_new',
 			'keywords' => [ 'template', 'theme', 'popup', 'new', 'create' ],
 		];

@@ -117,39 +117,56 @@ class API {
 		return $license_data;
 	}
 
-	public static function get_version() {
-		$updater = Admin::get_updater_instance();
+	public static function get_version( $force_update = true ) {
+		$cache_key = 'elementor_pro_remote_info_api_data_' . ELEMENTOR_PRO_VERSION;
 
-		$translations = wp_get_installed_translations( 'plugins' );
-		$plugin_translations = [];
-		if ( isset( $translations[ $updater->plugin_slug ] ) ) {
-			$plugin_translations = $translations[ $updater->plugin_slug ];
+		$info_data = get_site_transient( $cache_key );
+
+		if ( $force_update || false === $info_data ) {
+			$updater = Admin::get_updater_instance();
+
+			$translations = wp_get_installed_translations( 'plugins' );
+			$plugin_translations = [];
+			if ( isset( $translations[ $updater->plugin_slug ] ) ) {
+				$plugin_translations = $translations[ $updater->plugin_slug ];
+			}
+
+			$locales = array_values( get_available_languages() );
+
+			$body_args = [
+				'edd_action' => 'get_version',
+				'name' => $updater->plugin_name,
+				'slug' => $updater->plugin_slug,
+				'version' => $updater->plugin_version,
+				'license' => Admin::get_license_key(),
+				'translations' => wp_json_encode( $plugin_translations ),
+				'locales' => wp_json_encode( $locales ),
+				'beta' => 'yes' === get_option( 'elementor_beta', 'no' ),
+			];
+
+			$info_data = self::remote_post( $body_args );
+
+			set_site_transient( $cache_key, $info_data, 12 * HOUR_IN_SECONDS );
 		}
 
-		$locales = array_values( get_available_languages() );
-
-		$body_args = [
-			'edd_action' => 'get_version',
-			'name' => $updater->plugin_name,
-			'slug' => $updater->plugin_slug,
-			'version' => $updater->plugin_version,
-			'license' => Admin::get_license_key(),
-			'translations' => wp_json_encode( $plugin_translations ),
-			'locales' => wp_json_encode( $locales ),
-			'beta' => 'yes' === get_option( 'elementor_beta', 'no' ),
-		];
-
-		$license_data = self::remote_post( $body_args );
-
-		return $license_data;
+		return $info_data;
 	}
 
-	public static function get_previous_package_url() {
+	/**
+	 * @param $version
+	 *
+	 * @deprecated 2.7.0 Use `API::get_plugin_package_url()` method instead.
+	 */
+	public static function get_previous_package_url( $version ) {
+		return self::get_plugin_package_url( $version );
+	}
+
+	public static function get_plugin_package_url( $version ) {
 		$url = 'https://my.elementor.com/api/v1/pro-downloads/';
 
 		$body_args = [
 			'item_name' => self::PRODUCT_NAME,
-			'version' => ELEMENTOR_PRO_PREVIOUS_STABLE_VERSION,
+			'version' => $version,
 			'license' => Admin::get_license_key(),
 			'url' => home_url(),
 		];
@@ -180,6 +197,43 @@ class API {
 		}
 
 		return $data['package_url'];
+	}
+
+	public static function get_previous_versions() {
+		$url = 'https://my.elementor.com/api/v1/pro-downloads/';
+
+		$body_args = [
+			'version' => ELEMENTOR_PRO_VERSION,
+			'license' => Admin::get_license_key(),
+			'url' => home_url(),
+		];
+
+		$response = wp_remote_get( $url, [
+			'timeout' => 40,
+			'body' => $body_args,
+		] );
+
+		if ( is_wp_error( $response ) ) {
+			return $response;
+		}
+
+		$response_code = (int) wp_remote_retrieve_response_code( $response );
+		$data = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		if ( 401 === $response_code ) {
+			return new \WP_Error( $response_code, $data['message'] );
+		}
+
+		if ( 200 !== $response_code ) {
+			return new \WP_Error( $response_code, __( 'HTTP Error', 'elementor-pro' ) );
+		}
+
+		$data = json_decode( wp_remote_retrieve_body( $response ), true );
+		if ( empty( $data ) || ! is_array( $data ) ) {
+			return new \WP_Error( 'no_json', __( 'An error occurred, please try again', 'elementor-pro' ) );
+		}
+
+		return $data['versions'];
 	}
 
 	public static function get_errors() {

@@ -148,7 +148,6 @@ class Animated_Headline extends Widget_Base {
 				'placeholder' => __( 'Enter each word in a separate line', 'elementor-pro' ),
 				'separator' => 'none',
 				'default' => "Better\nBigger\nFaster",
-				'rows' => 5,
 				'condition' => [
 					'headline_style' => 'rotate',
 				],

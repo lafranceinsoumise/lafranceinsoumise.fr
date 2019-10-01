@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.6.5 - 26-08-2019 */
+/*! elementor-pro - v2.7.1 - 26-09-2019 */
 #elementor-panel-get-pro-elements {
   display: none; }
 
@@ -301,9 +301,6 @@
         border-width: 4px 4px 0 4px;
         margin-top: 2px;
         margin-left: -7px; }
-    #elementor-theme-builder-conditions .select2-selection__placeholder {
-      color: #495157;
-      text-transform: none; }
   #elementor-theme-builder-conditions .elementor-repeater-tool-remove {
     font-size: 18px;
     cursor: pointer;

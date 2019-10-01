@@ -177,16 +177,18 @@ class Recaptcha_Handler {
 			}
 
 			$this->add_error( $ajax_handler, $field, $message );
+
 		}
 
 		// If success - remove the field form list (don't send it in emails and etc )
 		$record->remove_field( $field['id'] );
+
 	}
 
 	/**
 	 * @param Ajax_Handler $ajax_handler
-	 * @param              $field
-	 * @param              $message
+	 * @param $field
+	 * @param $message
 	 */
 	protected function add_error( $ajax_handler, $field, $message ) {
 		$ajax_handler->add_error( $field['id'], $message );

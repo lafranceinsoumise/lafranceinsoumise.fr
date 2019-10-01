@@ -122,6 +122,17 @@ class Mailerlite extends Integration_Base {
 			]
 		);
 
+		$widget->add_control(
+			'allow_resubscribe',
+			[
+				'label' => __( 'Allow Resubscribe', 'elementor-pro' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'mailerlite_group!' => '',
+				],
+			]
+		);
+
 		$widget->end_controls_section();
 	}
 
@@ -180,6 +191,12 @@ class Mailerlite extends Integration_Base {
 		];
 
 		$subscriber['fields'] = $this->get_mailerlite_custom_fields( $record );
+
+		// Allow re-subscribe
+		$allow_resubscribe = $record->get_form_settings( 'allow_resubscribe' );
+		if ( ! empty( $allow_resubscribe ) && 'yes' === $allow_resubscribe ) {
+			$subscriber['resubscribe'] = true;
+		}
 
 		return $subscriber;
 	}

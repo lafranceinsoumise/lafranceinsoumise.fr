@@ -2,6 +2,7 @@
 namespace ElementorPro\Modules\Woocommerce;
 
 use Elementor\Core\Documents_Manager;
+use Elementor\Settings;
 use ElementorPro\Base\Module_Base;
 use ElementorPro\Modules\ThemeBuilder\Classes\Conditions_Manager;
 use ElementorPro\Modules\Woocommerce\Conditions\Woocommerce;
@@ -17,6 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Module extends Module_Base {
 
 	const WOOCOMMERCE_GROUP = 'woocommerce';
+	const TEMPLATE_MINI_CART = 'cart/mini-cart.php';
+	const OPTION_NAME_USE_MINI_CART = 'use_mini_cart_template';
 
 	protected $docs_types = [];
 
@@ -26,105 +29,6 @@ class Module extends Module_Base {
 
 	public static function is_product_search() {
 		return is_search() && 'product' === get_query_var( 'post_type' );
-	}
-
-	private static function render_cart_item( $cart_item_key, $cart_item ) {
-		$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-		$is_product_visible = ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) );
-
-		if ( ! $is_product_visible ) {
-			return;
-		}
-
-		$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-		$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-		$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-		?>
-		<div class="elementor-menu-cart__product woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-			<div class="elementor-menu-cart__product-image product-thumbnail">
-				<?php
-				$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-				if ( ! $product_permalink ) :
-					echo wp_kses_post( $thumbnail );
-				else :
-					printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post( $thumbnail ) );
-				endif;
-				?>
-			</div>
-
-			<div class="elementor-menu-cart__product-name product-name" data-title="<?php esc_attr_e( 'Product', 'elementor-pro' ); ?>">
-				<?php
-				if ( ! $product_permalink ) :
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-				else :
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-				endif;
-
-				do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-
-				// Meta data.
-				echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-				?>
-			</div>
-
-			<div class="elementor-menu-cart__product-price product-price" data-title="<?php esc_attr_e( 'Price', 'elementor-pro' ); ?>">
-				<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
-			</div>
-
-			<div class="elementor-menu-cart__product-remove product-remove">
-				<?php
-				echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-					'<a href="%s" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
-					esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-					__( 'Remove this item', 'elementor-pro' ),
-					esc_attr( $product_id ),
-					esc_attr( $cart_item_key ),
-					esc_attr( $_product->get_sku() )
-				), $cart_item_key );
-				?>
-			</div>
-		</div>
-		<?php
-	}
-
-	private static function render_cart_empty() {
-		?>
-		<div class="woocommerce-mini-cart__empty-message"><?php esc_attr_e( 'No products in the cart.', 'elementor-pro' ); ?></div>
-		<?php
-	}
-
-	private static function render_cart_content( $cart_items, $sub_total ) {
-		if ( empty( $cart_items ) ) {
-			self::render_cart_empty();
-			return;
-		}
-		?>
-		<div class="elementor-menu-cart__products woocommerce-mini-cart cart woocommerce-cart-form__contents">
-			<?php
-			do_action( 'woocommerce_before_mini_cart_contents' );
-
-			foreach ( $cart_items as $cart_item_key => $cart_item ) {
-				self::render_cart_item( $cart_item_key, $cart_item );
-			}
-
-			do_action( 'woocommerce_mini_cart_contents' );
-			?>
-		</div>
-
-		<div class="elementor-menu-cart__subtotal">
-			<strong><?php echo translate( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo $sub_total; ?>
-		</div>
-		<div class="elementor-menu-cart__footer-buttons">
-			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="elementor-button elementor-button--view-cart elementor-size-md">
-				<span class="elementor-button-text"><?php echo translate( 'View cart', 'woocommerce' ); ?></span>
-			</a>
-			<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="elementor-button elementor-button--checkout elementor-size-md">
-				<span class="elementor-button-text"><?php echo translate( 'Checkout', 'woocommerce' ); ?></span>
-			</a>
-		</div>
-		<?php
 	}
 
 	public function get_name() {
@@ -231,46 +135,61 @@ class Module extends Module_Base {
 		}
 	}
 
+	public static function render_menu_cart_toggle_button() {
+		if ( null === WC()->cart ) {
+			return;
+		}
+		$product_count = WC()->cart->get_cart_contents_count();
+		$sub_total = WC()->cart->get_cart_subtotal();
+		$counter_attr = 'data-counter="' . $product_count . '"';
+
+		?>
+		<div class="elementor-menu-cart__toggle elementor-button-wrapper">
+			<a id="elementor-menu-cart__toggle_button" href="#" class="elementor-button elementor-size-sm">
+				<span class="elementor-button-text"><?php echo $sub_total; ?></span>
+				<span class="elementor-button-icon" <?php echo $counter_attr; ?>>
+					<i class="eicon" aria-hidden="true"></i>
+					<span class="elementor-screen-only"><?php esc_html_e( 'Cart', 'elementor-pro' ); ?></span>
+				</span>
+			</a>
+		</div>
+
+		<?php
+	}
+
+	/**
+	 * Render menu cart markup.
+	 * The `widget_shopping_cart_content` div will be populated by woocommerce js.
+	 */
 	public static function render_menu_cart() {
 		if ( null === WC()->cart ) {
 			return;
 		}
 
-		$widget_cart_is_hidden = apply_filters( 'woocommerce_widget_cart_is_hidden', is_cart() || is_checkout() );
-		$product_count = WC()->cart->get_cart_contents_count();
-		$sub_total = WC()->cart->get_cart_subtotal();
-		$cart_items = WC()->cart->get_cart();
-
-		$toggle_button_link = $widget_cart_is_hidden ? wc_get_cart_url() : '#';
-		/** workaround WooCommerce Subscriptions issue that changes the behavior of is_cart() */
-		$toggle_button_classes = 'elementor-button elementor-size-sm';
-		$toggle_button_classes .= $widget_cart_is_hidden ? ' elementor-menu-cart-hidden' : '';
-		$counter_attr = 'data-counter="' . $product_count . '"';
-
+		$widget_cart_is_hidden = apply_filters( 'woocommerce_widget_cart_is_hidden', false );
 		?>
 		<div class="elementor-menu-cart__wrapper">
 			<?php if ( ! $widget_cart_is_hidden ) : ?>
 			<div class="elementor-menu-cart__container elementor-lightbox">
-				<form class="elementor-menu-cart__main woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+				<div class="elementor-menu-cart__main">
 					<div class="elementor-menu-cart__close-button"></div>
-					<?php self::render_cart_content( $cart_items, $sub_total ); ?>
-				</form>
+					<div class="widget_shopping_cart_content"></div>
+				</div>
 			</div>
+				<?php self::render_menu_cart_toggle_button(); ?>
 			<?php endif; ?>
-
-			<div class="elementor-menu-cart__toggle elementor-button-wrapper">
-				<a href="<?php echo esc_attr( $toggle_button_link ); ?>" class="<?php echo $toggle_button_classes; ?>">
-					<span class="elementor-button-text"><?php echo $sub_total; ?></span>
-					<span class="elementor-button-icon" <?php echo $counter_attr; ?>>
-						<i class="eicon" aria-hidden="true"></i>
-						<span class="elementor-screen-only"><?php esc_html_e( 'Cart', 'elementor-pro' ); ?></span>
-					</span>
-				</a>
-			</div>
-		</div>
+			</div> <!-- close elementor-menu-cart__wrapper -->
 		<?php
 	}
 
+	/**
+	 * Refresh the Menu Cart button and items counter.
+	 * The mini-cart itself will be rendered by WC functions.
+	 *
+	 * @param $fragments
+	 *
+	 * @return array
+	 */
 	public function menu_cart_fragments( $fragments ) {
 		$has_cart = is_a( WC()->cart, 'WC_Cart' );
 		if ( ! $has_cart ) {
@@ -278,11 +197,11 @@ class Module extends Module_Base {
 		}
 
 		ob_start();
-		self::render_menu_cart();
-		$menu_cart_html = ob_get_clean();
+		self::render_menu_cart_toggle_button();
+		$menu_cart_toggle_button_html = ob_get_clean();
 
-		if ( ! empty( $menu_cart_html ) ) {
-			$fragments['body:not(.elementor-editor-active) div.elementor-element.elementor-widget.elementor-widget-woocommerce-menu-cart div.elementor-menu-cart__wrapper'] = $menu_cart_html;
+		if ( ! empty( $menu_cart_toggle_button_html ) ) {
+			$fragments['body:not(.elementor-editor-active) div.elementor-element.elementor-widget.elementor-widget-woocommerce-menu-cart div.elementor-menu-cart__toggle.elementor-button-wrapper'] = $menu_cart_toggle_button_html;
 		}
 
 		return $fragments;
@@ -314,6 +233,18 @@ class Module extends Module_Base {
 		return $settings;
 	}
 
+	public function localized_settings_frontend( $settings ) {
+		$has_cart = is_a( WC()->cart, 'WC_Cart' );
+
+		if ( $has_cart ) {
+			$settings['menu_cart'] = [
+				'cart_page_url' => wc_get_cart_url(),
+				'checkout_page_url' => wc_get_checkout_url(),
+			];
+		}
+		return $settings;
+	}
+
 	public function theme_template_include( $need_override_location, $location ) {
 		if ( is_product() && 'single' === $location ) {
 			$need_override_location = true;
@@ -322,8 +253,65 @@ class Module extends Module_Base {
 		return $need_override_location;
 	}
 
+	/**
+	 * Add plugin path to wc template search path.
+	 * Based on: https://www.skyverge.com/blog/override-woocommerce-template-file-within-a-plugin/
+	 * @param $template
+	 * @param $template_name
+	 * @param $template_path
+	 *
+	 * @return string
+	 */
+	public function woocommerce_locate_template( $template, $template_name, $template_path ) {
+
+		if ( self::TEMPLATE_MINI_CART !== $template_name ) {
+			return $template;
+		}
+
+		$use_mini_cart_template = get_option( 'elementor_' . self::OPTION_NAME_USE_MINI_CART, 'no' );
+
+		if ( 'yes' !== $use_mini_cart_template ) {
+			return $template;
+		}
+
+		$plugin_path = plugin_dir_path( __DIR__ ) . 'woocommerce/wc-templates/';
+
+		if ( file_exists( $plugin_path . $template_name ) ) {
+			$template = $plugin_path . $template_name;
+		}
+
+		return $template;
+	}
+
+	public function register_admin_fields( Settings $settings ) {
+		$settings->add_section( Settings::TAB_INTEGRATIONS, 'woocommerce', [
+			'callback' => function() {
+				echo '<hr><h2>' . esc_html__( 'WooCommerce', 'elementor-pro' ) . '</h2>';
+			},
+			'fields' => [
+				self::OPTION_NAME_USE_MINI_CART => [
+					'label' => __( 'Mini Cart Template', 'elementor-pro' ),
+					'field_args' => [
+						'type' => 'select',
+						'std' => 'initial',
+						'options' => [
+							'initial' => '',
+							'no' => __( 'Disable', 'elementor-pro' ),
+							'yes' => __( 'Enable', 'elementor-pro' ),
+						],
+						'desc' => __( 'Set to `Disable` in order to use your Theme\'s or WooCommerce\'s mini-cart template instead of Elementor\'s.', 'elementor-pro' ),
+					],
+				],
+			],
+		] );
+	}
+
 	public function __construct() {
 		parent::__construct();
+
+		if ( is_admin() ) {
+			add_action( 'elementor/admin/after_create_settings/' . Settings::PAGE_ID, [ $this, 'register_admin_fields' ], 15 );
+		}
 
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'maybe_init_cart' ] );
 		add_action( 'elementor/dynamic_tags/register_tags', [ $this, 'register_tags' ] );
@@ -333,6 +321,7 @@ class Module extends Module_Base {
 		add_filter( 'elementor/theme/need_override_location', [ $this, 'theme_template_include' ], 10, 2 );
 
 		add_filter( 'elementor/editor/localize_settings', [ $this, 'localized_settings' ] );
+		add_filter( 'elementor_pro/frontend/localize_settings', [ $this, 'localized_settings_frontend' ] );
 
 		// On Editor - Register WooCommerce frontend hooks before the Editor init.
 		// Priority = 5, in order to allow plugins remove/add their wc hooks on init.
@@ -341,5 +330,7 @@ class Module extends Module_Base {
 		}
 
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'menu_cart_fragments' ] );
+
+		add_filter( 'woocommerce_locate_template', [ $this, 'woocommerce_locate_template' ], 10, 3 );
 	}
 }

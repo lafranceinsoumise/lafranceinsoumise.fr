@@ -28,8 +28,9 @@ final class Manager {
 			// Modules with Widgets.
 			'theme-builder',
 			'posts',
-			'slides',
+			'gallery',
 			'forms',
+			'slides',
 			'nav-menu',
 			'animated-headline',
 			'pricing',

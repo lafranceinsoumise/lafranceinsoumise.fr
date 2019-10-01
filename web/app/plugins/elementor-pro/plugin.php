@@ -1,6 +1,7 @@
 <?php
 namespace ElementorPro;
 
+use ElementorPro\Core\Admin\Admin;
 use ElementorPro\Core\Connect;
 use Elementor\Core\Responsive\Files\Frontend as FrontendFile;
 use Elementor\Core\Responsive\Responsive;
@@ -110,10 +111,6 @@ class Plugin {
 
 	private function includes() {
 		require ELEMENTOR_PRO_PATH . 'includes/modules-manager.php';
-
-		if ( is_admin() ) {
-			require ELEMENTOR_PRO_PATH . 'includes/admin.php';
-		}
 	}
 
 	public function autoload( $class ) {

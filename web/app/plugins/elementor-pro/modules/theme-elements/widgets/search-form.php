@@ -750,6 +750,7 @@ class Search_Form extends Base {
 		];
 		?>
 		<form class="elementor-search-form" role="search" action="<?php echo home_url(); ?>" method="get">
+			<?php do_action( 'elementor_pro/search_form/before_input', $this ); ?> 
 			<?php if ( 'full_screen' === $settings['skin'] ) : ?>
 			<div class="elementor-search-form__toggle">
 				<?php if ( ! $migration_allowed || ! Icons_Manager::render_icon( $icon, [ 'aria-hidden' => 'true' ] ) ) { ?>
@@ -766,6 +767,7 @@ class Search_Form extends Base {
 					</div>
 				<?php endif; ?>
 				<input <?php echo $this->get_render_attribute_string( 'input' ); ?>>
+				<?php do_action( 'elementor_pro/search_form/after_input', $this ); ?>
 				<?php if ( 'classic' === $settings['skin'] ) : ?>
 					<button class="elementor-search-form__submit" type="submit" title="<?php esc_attr_e( 'Search', 'elementor-pro' ); ?>" aria-label="<?php esc_attr_e( 'Search', 'elementor-pro' ); ?>">
 						<?php if ( 'icon' === $settings['button_type'] ) : ?>

@@ -20,7 +20,7 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 	/**
 	 * @var string Save current permalink to avoid conflict with plugins the filters the permalink during the post render.
 	 */
-	private $current_permalink;
+	protected $current_permalink;
 
 	protected function _register_controls_actions() {
 		add_action( 'elementor/element/posts/section_layout/before_section_end', [ $this, 'register_controls' ] );
@@ -900,14 +900,24 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 	}
 
 	protected function render_loop_header() {
+		$classes = [
+			'elementor-posts-container',
+			'elementor-posts',
+			$this->get_container_class(),
+		];
+
+		/** @var \WP_Query $wp_query */
+		$wp_query = $this->parent->get_query();
+
+		// Use grid only if found posts.
+		if ( $wp_query->found_posts ) {
+			$classes[] = 'elementor-grid';
+		}
+
 		$this->parent->add_render_attribute( 'container', [
-			'class' => [
-				'elementor-posts-container',
-				'elementor-posts',
-				'elementor-grid',
-				$this->get_container_class(),
-			],
+			'class' => $classes,
 		] );
+
 		?>
 		<div <?php echo $this->parent->get_render_attribute_string( 'container' ); ?>>
 		<?php

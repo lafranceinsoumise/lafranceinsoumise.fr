@@ -48,10 +48,28 @@ class Post_Custom_Field extends Tag {
 				'options' => $this->get_custom_keys_array(),
 			]
 		);
+
+		$this->add_control(
+			'custom_key',
+			[
+				'label' => __( 'Custom Key', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'label_block' => false,
+				'placeholder' => 'key',
+				'condition' => [
+					'key' => '',
+				],
+			]
+		);
+
 	}
 
 	public function render() {
 		$key = $this->get_settings( 'key' );
+
+		if ( empty( $key ) ) {
+			$key = $this->get_settings( 'custom_key' );
+		}
 
 		if ( empty( $key ) ) {
 			return;

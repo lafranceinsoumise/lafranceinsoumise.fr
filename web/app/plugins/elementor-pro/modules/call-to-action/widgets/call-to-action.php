@@ -141,7 +141,6 @@ class Call_To_Action extends Base_Widget {
 						'icon' => 'eicon-star',
 					],
 				],
-				'separator' => 'before',
 				'default' => 'none',
 			]
 		);
@@ -249,7 +248,7 @@ class Call_To_Action extends Base_Widget {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+				'default' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 				'placeholder' => __( 'Enter your description', 'elementor-pro' ),
 				'separator' => 'none',
 				'rows' => 5,
@@ -374,7 +373,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_responsive_control(
 			'min-height',
 			[
-				'label' => __( 'Min. Height', 'elementor-pro' ),
+				'label' => __( 'Height', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -390,7 +389,6 @@ class Call_To_Action extends Base_Widget {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-cta__content' => 'min-height: {{SIZE}}{{UNIT}}',
 				],
-				'separator' => 'before',
 			]
 		);
 
@@ -474,7 +472,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_responsive_control(
 			'image_min_width',
 			[
-				'label' => __( 'Min. Width', 'elementor-pro' ),
+				'label' => __( 'Width', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -492,6 +490,7 @@ class Call_To_Action extends Base_Widget {
 				],
 				'condition' => [
 					'skin' => 'classic',
+					'layout!' => 'above',
 				],
 			]
 		);
@@ -499,7 +498,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_responsive_control(
 			'image_min_height',
 			[
-				'label' => __( 'Min. Height', 'elementor-pro' ),
+				'label' => __( 'Height', 'elementor-pro' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -769,7 +768,6 @@ class Call_To_Action extends Base_Widget {
 			[
 				'type' => Controls_Manager::HEADING,
 				'label' => __( 'Title', 'elementor-pro' ),
-				'separator' => 'before',
 				'condition' => [
 					'title!' => '',
 				],
@@ -1234,7 +1232,6 @@ class Call_To_Action extends Base_Widget {
 			[
 				'type' => Controls_Manager::HEADING,
 				'label' => __( 'Content', 'elementor-pro' ),
-				'separator' => 'before',
 				'condition' => [
 					'skin' => 'cover',
 				],
@@ -1304,7 +1301,7 @@ class Call_To_Action extends Base_Widget {
 		$this->add_control(
 			'animation_class',
 			[
-				'label' => 'Animation',
+				'label' => __( 'Animation', 'elementor-pro' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'animated-content',
 				'prefix_class' => 'elementor-',

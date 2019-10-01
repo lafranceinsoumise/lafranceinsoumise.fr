@@ -126,7 +126,7 @@ class Mailpoet3 extends Action_Base {
 			API::MP( 'v1' )->addSubscriber( $subscriber, (array) $settings['mailpoet3_lists'] );
 			$existing_subscriber = false;
 		} catch ( \Exception $exception ) {
-			$error_string = translate( 'This subscriber already exists.', 'mailpoet' );
+			$error_string = __( 'This subscriber already exists.', 'mailpoet' ); // phpcs:ignore WordPress.WP.I18n
 
 			if ( $error_string === $exception->getMessage() ) {
 				$existing_subscriber = true;

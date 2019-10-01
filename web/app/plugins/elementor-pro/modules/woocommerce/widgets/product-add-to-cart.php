@@ -417,6 +417,21 @@ class Product_Add_To_Cart extends Widget_Base {
 		);
 
 		$this->add_control(
+			'variations_width',
+			[
+				'label' => __( 'Width', 'elementor-pro' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ '%' ],
+				'default' => [
+					'unit' => '%',
+				],
+				'selectors' => [
+					'.woocommerce {{WRAPPER}} form.cart .variations' => 'width: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
 			'variations_spacing',
 			[
 				'label' => __( 'Spacing', 'elementor-pro' ),

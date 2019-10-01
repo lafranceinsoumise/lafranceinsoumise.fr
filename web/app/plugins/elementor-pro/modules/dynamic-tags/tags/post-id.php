@@ -22,7 +22,10 @@ class Post_ID extends Tag {
 	}
 
 	public function get_categories() {
-		return [ Module::TEXT_CATEGORY ];
+		return [
+			Module::TEXT_CATEGORY,
+			Module::NUMBER_CATEGORY,
+		];
 	}
 
 	public function render() {

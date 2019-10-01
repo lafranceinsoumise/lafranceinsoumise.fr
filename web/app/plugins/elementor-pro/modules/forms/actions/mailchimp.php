@@ -117,6 +117,19 @@ class Mailchimp extends Integration_Base {
 		);
 
 		$widget->add_control(
+			'mailchimp_tags',
+			[
+				'label' => __( 'Tags', 'elementor-pro' ),
+				'description' => __( 'Add comma separated tags', 'elementor-pro' ),
+				'type' => Controls_Manager::TEXT,
+				'render_type' => 'none',
+				'condition' => [
+					'mailchimp_list!' => '',
+				],
+			]
+		);
+
+		$widget->add_control(
 			'mailchimp_double_opt_in',
 			[
 				'label' => __( 'Double Opt-In', 'elementor-pro' ),
@@ -177,6 +190,10 @@ class Mailchimp extends Integration_Base {
 			foreach ( $form_settings['mailchimp_groups'] as $mailchimp_group ) {
 				$subscriber['interests'][ $mailchimp_group ] = true;
 			}
+		}
+
+		if ( ! empty( $form_settings['mailchimp_tags'] ) ) {
+			$subscriber['tags'] = explode( ',', trim( $form_settings['mailchimp_tags'] ) );
 		}
 
 		if ( 'default' === $form_settings['mailchimp_api_key_source'] ) {

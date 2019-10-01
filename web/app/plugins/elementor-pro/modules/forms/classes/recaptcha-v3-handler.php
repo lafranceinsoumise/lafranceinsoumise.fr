@@ -109,7 +109,8 @@ class Recaptcha_V3_Handler extends Recaptcha_Handler {
 	 * @param $message
 	 */
 	protected function add_error( $ajax_handler, $field, $message ) {
-		$ajax_handler->add_error_message( $message );
+		parent::add_error( $ajax_handler, $field, $message );
+		$ajax_handler->add_error_message( __( 'reCAPTCHA V3 validation failed, suspected as abusive usage', 'elementor-pro' ) );
 	}
 
 	protected function validate_result( $result, $field ) {

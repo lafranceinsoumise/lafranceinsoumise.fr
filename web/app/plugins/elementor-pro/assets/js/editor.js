@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.6.5 - 26-08-2019 */
+/*! elementor-pro - v2.7.1 - 26-09-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -321,7 +321,7 @@ module.exports = elementorModules.editor.utils.Module.extend({
 		var $controlEl = this.getEditorControlView(name).$el;
 
 		$controlEl.find(':input').attr('disabled', false);
-		$controlEl.find('elementor-control-spinner').remove();
+		$controlEl.find('.elementor-control-spinner').remove();
 	},
 
 	addSectionListener: function addSectionListener(section, callback) {
@@ -1188,7 +1188,8 @@ module.exports = elementor.modules.controls.Select2.extend({
 
 
 	getQueryData: function getQueryData() {
-		var autocomplete = this.model.get('autocomplete');
+		// Use a clone to keep model data unchanged:
+		var autocomplete = elementorCommon.helpers.cloneObject(this.model.get('autocomplete'));
 
 		if (_.isEmpty(autocomplete.query)) {
 			autocomplete.query = {};
@@ -2776,8 +2777,13 @@ if (!elementorProEditorConfig.useComponentsRouter) {
 
 		setWidgetContextMenuSaveAction: function setWidgetContextMenuSaveAction() {
 			elementor.hooks.addFilter('elements/widget/contextMenuGroups', function (groups, widget) {
-				var saveGroup = _.findWhere(groups, { name: 'save' }),
-				    saveAction = _.findWhere(saveGroup.actions, { name: 'save' });
+				var saveGroup = _.findWhere(groups, { name: 'save' });
+
+				if (!saveGroup) {
+					return groups;
+				}
+
+				var saveAction = _.findWhere(saveGroup.actions, { name: 'save' });
 
 				saveAction.callback = widget.save.bind(widget);
 
@@ -4675,7 +4681,7 @@ module.exports = elementor.modules.controls.RepeaterRow.extend({
 		}
 
 		if (this.model.changed.name || this.model.changed.sub_name) {
-			this.model.set('sub_id', '');
+			this.model.set('sub_id', '', { silent: true });
 
 			var subIdModel = this.collection.findWhere({
 				name: 'sub_id'

@@ -2,6 +2,7 @@
 namespace ElementorPro\Modules\Slides\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Scheme_Typography;
@@ -22,7 +23,7 @@ class Slides extends Base_Widget {
 	}
 
 	public function get_icon() {
-		return 'eicon-slideshow';
+		return 'eicon-slides';
 	}
 
 	public function get_categories() {
@@ -34,7 +35,7 @@ class Slides extends Base_Widget {
 	}
 
 	public function get_script_depends() {
-		return [ 'imagesloaded', 'jquery-slick' ];
+		return [ 'imagesloaded' ];
 	}
 
 	public static function get_button_sizes() {
@@ -68,7 +69,7 @@ class Slides extends Base_Widget {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#bbbbbb',
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-bg' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -79,7 +80,7 @@ class Slides extends Base_Widget {
 				'label' => _x( 'Image', 'Background Control', 'elementor-pro' ),
 				'type' => Controls_Manager::MEDIA,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-image: url({{URL}})',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-bg' => 'background-image: url({{URL}})',
 				],
 			]
 		);
@@ -96,7 +97,7 @@ class Slides extends Base_Widget {
 					'auto' => _x( 'Auto', 'Background Control', 'elementor-pro' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-bg' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-bg' => 'background-size: {{VALUE}}',
 				],
 				'conditions' => [
 					'terms' => [
@@ -116,7 +117,6 @@ class Slides extends Base_Widget {
 				'label' => __( 'Ken Burns Effect', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'separator' => 'before',
 				'conditions' => [
 					'terms' => [
 						[
@@ -157,7 +157,6 @@ class Slides extends Base_Widget {
 				'label' => __( 'Background Overlay', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'separator' => 'before',
 				'conditions' => [
 					'terms' => [
 						[
@@ -185,7 +184,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-background-overlay' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-background-overlay' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -219,7 +218,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-background-overlay' => 'mix-blend-mode: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-background-overlay' => 'mix-blend-mode: {{VALUE}}',
 				],
 			]
 		);
@@ -243,7 +242,7 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Description', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( 'I am slide content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
+				'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-pro' ),
 				'show_label' => false,
 			]
 		);
@@ -322,7 +321,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-slide-content' => '{{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner .swiper-slide' => '{{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'left' => 'margin-right: auto',
@@ -361,7 +360,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner' => 'align-items: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner' => 'align-items: {{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'top' => 'flex-start',
@@ -400,7 +399,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner' => 'text-align: {{VALUE}}',
 				],
 				'conditions' => [
 					'terms' => [
@@ -419,10 +418,26 @@ class Slides extends Base_Widget {
 				'label' => __( 'Content Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-slide-heading' => 'color: {{VALUE}}',
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-slide-description' => 'color: {{VALUE}}',
-					'{{WRAPPER}} {{CURRENT_ITEM}} .slick-slide-inner .elementor-slide-button' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner .elementor-slide-heading' => 'color: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner .elementor-slide-description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner .elementor-slide-button' => 'color: {{VALUE}}; border-color: {{VALUE}}',
 				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'custom_style',
+							'value' => 'yes',
+						],
+					],
+				],
+			]
+		);
+
+		$repeater->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'repeater_text_shadow',
+				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-contents',
 				'conditions' => [
 					'terms' => [
 						[
@@ -448,19 +463,19 @@ class Slides extends Base_Widget {
 				'default' => [
 					[
 						'heading' => __( 'Slide 1 Heading', 'elementor-pro' ),
-						'description' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+						'description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'button_text' => __( 'Click Here', 'elementor-pro' ),
 						'background_color' => '#833ca3',
 					],
 					[
 						'heading' => __( 'Slide 2 Heading', 'elementor-pro' ),
-						'description' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+						'description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'button_text' => __( 'Click Here', 'elementor-pro' ),
 						'background_color' => '#4054b2',
 					],
 					[
 						'heading' => __( 'Slide 3 Heading', 'elementor-pro' ),
-						'description' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+						'description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'button_text' => __( 'Click Here', 'elementor-pro' ),
 						'background_color' => '#1abc9c',
 					],
@@ -489,7 +504,7 @@ class Slides extends Base_Widget {
 				],
 				'size_units' => [ 'px', 'vh', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-slide' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -517,6 +532,7 @@ class Slides extends Base_Widget {
 					'dots' => __( 'Dots', 'elementor-pro' ),
 					'none' => __( 'None', 'elementor-pro' ),
 				],
+				'frontend_available' => true,
 			]
 		);
 
@@ -526,6 +542,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Pause on Hover', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
+				'frontend_available' => true,
 			]
 		);
 
@@ -535,6 +552,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Autoplay', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
+				'frontend_available' => true,
 			]
 		);
 
@@ -548,8 +566,9 @@ class Slides extends Base_Widget {
 					'autoplay' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide-bg' => 'animation-duration: calc({{VALUE}}ms*1.2); transition-duration: calc({{VALUE}}ms)',
+					'{{WRAPPER}} .swiper-slide-bg' => 'transition-duration: calc({{VALUE}}ms*1.2)',
 				],
+				'frontend_available' => true,
 			]
 		);
 
@@ -559,6 +578,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Infinite Loop', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
+				'frontend_available' => true,
 			]
 		);
 
@@ -572,6 +592,7 @@ class Slides extends Base_Widget {
 					'slide' => __( 'Slide', 'elementor-pro' ),
 					'fade' => __( 'Fade', 'elementor-pro' ),
 				],
+				'frontend_available' => true,
 			]
 		);
 
@@ -581,6 +602,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Transition Speed', 'elementor-pro' ) . ' (ms)',
 				'type' => Controls_Manager::NUMBER,
 				'default' => 500,
+				'frontend_available' => true,
 			]
 		);
 
@@ -638,7 +660,7 @@ class Slides extends Base_Widget {
 					'unit' => '%',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-slide-content' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-slide-inner' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -650,7 +672,7 @@ class Slides extends Base_Widget {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-slide-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -727,8 +749,16 @@ class Slides extends Base_Widget {
 				],
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide-inner' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .swiper-slide-inner' => 'text-align: {{VALUE}}',
 				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name' => 'text_shadow',
+				'selector' => '{{WRAPPER}} .swiper-slide-contents',
 			]
 		);
 
@@ -754,7 +784,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide-inner .elementor-slide-heading:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .swiper-slide-inner .elementor-slide-heading:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -802,7 +832,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slide-inner .elementor-slide-description:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .swiper-slide-inner .elementor-slide-description:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1016,6 +1046,7 @@ class Slides extends Base_Widget {
 					'inside' => __( 'Inside', 'elementor-pro' ),
 					'outside' => __( 'Outside', 'elementor-pro' ),
 				],
+				'prefix_class' => 'elementor-arrows-position-',
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
 				],
@@ -1034,7 +1065,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-slides-wrapper .slick-slider .slick-prev:before, {{WRAPPER}} .elementor-slides-wrapper .slick-slider .slick-next:before' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-swiper-button' => 'font-size: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
@@ -1048,7 +1079,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Arrows Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-slides-wrapper .slick-slider .slick-prev:before, {{WRAPPER}} .elementor-slides-wrapper .slick-slider .slick-next:before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-swiper-button' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'navigation' => [ 'arrows', 'both' ],
@@ -1078,6 +1109,7 @@ class Slides extends Base_Widget {
 					'outside' => __( 'Outside', 'elementor-pro' ),
 					'inside' => __( 'Inside', 'elementor-pro' ),
 				],
+				'prefix_class' => 'elementor-pagination-position-',
 				'condition' => [
 					'navigation' => [ 'dots', 'both' ],
 				],
@@ -1096,7 +1128,9 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-slides-wrapper .elementor-slides .slick-dots li button:before' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-pagination-bullet' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .swiper-container-horizontal .swiper-pagination-progressbar' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .swiper-pagination-fraction' => 'font-size: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'navigation' => [ 'dots', 'both' ],
@@ -1110,7 +1144,7 @@ class Slides extends Base_Widget {
 				'label' => __( 'Dots Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-slides-wrapper .elementor-slides .slick-dots li button:before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
 					'navigation' => [ 'dots', 'both' ],
@@ -1161,11 +1195,7 @@ class Slides extends Base_Widget {
 				}
 			}
 
-			if ( 'yes' === $slide['background_overlay'] ) {
-				$slide_html .= '<div class="elementor-background-overlay"></div>';
-			}
-
-			$slide_html .= '<div class="elementor-slide-content">';
+			$slide_html .= '<div class="swiper-slide-contents">';
 
 			if ( $slide['heading'] ) {
 				$slide_html .= '<div class="elementor-slide-heading">' . $slide['heading'] . '</div>';
@@ -1181,57 +1211,47 @@ class Slides extends Base_Widget {
 
 			$ken_class = '';
 
-			if ( '' != $slide['background_ken_burns'] ) {
-				$ken_class = ' elementor-ken-' . $slide['zoom_direction'];
+			if ( $slide['background_ken_burns'] ) {
+				$ken_class = ' elementor-ken-burns elementor-ken-burns--' . $slide['zoom_direction'];
 			}
 
 			$slide_html .= '</div>';
-			$slide_html = '<div class="slick-slide-bg' . $ken_class . '"></div><' . $slide_element . ' ' . $slide_attributes . ' class="slick-slide-inner">' . $slide_html . '</' . $slide_element . '>';
-			$slides[] = '<div class="elementor-repeater-item-' . $slide['_id'] . ' slick-slide">' . $slide_html . '</div>';
+			$slide_html = '<div class="swiper-slide-bg' . $ken_class . '"></div><' . $slide_element . ' ' . $slide_attributes . ' class="swiper-slide-inner">' . $slide_html . '</' . $slide_element . '>';
+
+			if ( 'yes' === $slide['background_overlay'] ) {
+				$slide_html = '<div class="elementor-background-overlay"></div>' . $slide_html;
+			}
+
+			$slides[] = '<div class="elementor-repeater-item-' . $slide['_id'] . ' swiper-slide">' . $slide_html . '</div>';
 			$slide_count++;
 		}
 
-		$is_rtl = is_rtl();
-		$direction = $is_rtl ? 'rtl' : 'ltr';
+		$direction = is_rtl() ? 'rtl' : 'ltr';
 		$show_dots = ( in_array( $settings['navigation'], [ 'dots', 'both' ] ) );
 		$show_arrows = ( in_array( $settings['navigation'], [ 'arrows', 'both' ] ) );
 
-		$slick_options = [
-			'slidesToShow' => absint( 1 ),
-			'autoplaySpeed' => absint( $settings['autoplay_speed'] ),
-			'autoplay' => ( 'yes' === $settings['autoplay'] ),
-			'infinite' => ( 'yes' === $settings['infinite'] ),
-			'pauseOnHover' => ( 'yes' === $settings['pause_on_hover'] ),
-			'speed' => absint( $settings['transition_speed'] ),
-			'arrows' => $show_arrows,
-			'dots' => $show_dots,
-			'rtl' => $is_rtl,
-		];
-
-		if ( 'fade' === $settings['transition'] ) {
-			$slick_options['fade'] = true;
-		}
-
-		$carousel_classes = [ 'elementor-slides' ];
-
-		if ( $show_arrows ) {
-			$carousel_classes[] = 'slick-arrows-' . $settings['arrows_position'];
-		}
-
-		if ( $show_dots ) {
-			$carousel_classes[] = 'slick-dots-' . $settings['dots_position'];
-		}
-
-		$this->add_render_attribute( 'slides', [
-			'class' => $carousel_classes,
-			'data-slider_options' => wp_json_encode( $slick_options ),
-			'data-animation' => $settings['content_animation'],
-		] );
-
+		$slides_count = count( $settings['slides'] );
 		?>
-		<div class="elementor-slides-wrapper elementor-slick-slider" dir="<?php echo esc_attr( $direction ); ?>">
-			<div <?php echo $this->get_render_attribute_string( 'slides' ); ?>>
-				<?php echo implode( '', $slides ); ?>
+		<div class="elementor-swiper">
+			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="<?php echo $direction; ?>" data-animation="<?php echo $settings['content_animation']; ?>">
+				<div class="swiper-wrapper elementor-slides">
+					<?php echo implode( '', $slides ); ?>
+				</div>
+				<?php if ( 1 < $slides_count ) : ?>
+					<?php if ( $show_dots ) : ?>
+						<div class="swiper-pagination"></div>
+					<?php endif; ?>
+					<?php if ( $show_arrows ) : ?>
+						<div class="elementor-swiper-button elementor-swiper-button-prev">
+							<i class="eicon-chevron-left" aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php _e( 'Previous', 'elementor-pro' ); ?></span>
+						</div>
+						<div class="elementor-swiper-button elementor-swiper-button-next">
+							<i class="eicon-chevron-right" aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php _e( 'Next', 'elementor-pro' ); ?></span>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 		<?php
@@ -1240,71 +1260,59 @@ class Slides extends Base_Widget {
 	protected function _content_template() {
 		?>
 		<#
-			var isRtl           = <?php echo is_rtl() ? 'true' : 'false'; ?>,
-				direction       = isRtl ? 'rtl' : 'ltr',
-				navi            = settings.navigation,
-				showDots        = ( 'dots' === navi || 'both' === navi ),
-				showArrows      = ( 'arrows' === navi || 'both' === navi ),
-				autoplay        = ( 'yes' === settings.autoplay ),
-				infinite        = ( 'yes' === settings.infinite ),
-				speed           = Math.abs( settings.transition_speed ),
-				autoplaySpeed   = Math.abs( settings.autoplay_speed ),
-				fade            = ( 'fade' === settings.transition ),
-				buttonSize      = settings.button_size,
-				sliderOptions = {
-					"initialSlide": Math.max( 0, editSettings.activeItemIndex-1 ),
-					"slidesToShow": 1,
-					"autoplaySpeed": autoplaySpeed,
-					"autoplay": false,
-					"infinite": infinite,
-					"pauseOnHover":true,
-					"pauseOnFocus":true,
-					"speed": speed,
-					"arrows": showArrows,
-					"dots": showDots,
-					"rtl": isRtl,
-					"fade": fade
-				}
-				sliderOptionsStr = JSON.stringify( sliderOptions );
-			if ( showArrows ) {
-				var arrowsClass = 'slick-arrows-' + settings.arrows_position;
-			}
-
-			if ( showDots ) {
-				var dotsClass = 'slick-dots-' + settings.dots_position;
-			}
-
+			var direction        = elementorCommon.config.isRTL ? 'rtl' : 'ltr',
+				navi             = settings.navigation,
+				showDots         = ( 'dots' === navi || 'both' === navi ),
+				showArrows       = ( 'arrows' === navi || 'both' === navi ),
+				buttonSize       = settings.button_size;
 		#>
-		<div class="elementor-slides-wrapper elementor-slick-slider" dir="{{ direction }}">
-			<div data-slider_options="{{ sliderOptionsStr }}" class="elementor-slides {{ dotsClass }} {{ arrowsClass }}" data-animation="{{ settings.content_animation }}">
-				<# _.each( settings.slides, function( slide ) { #>
-					<div class="elementor-repeater-item-{{ slide._id }} slick-slide">
-						<#
-						var kenClass = '';
-
-						if ( '' != slide.background_ken_burns ) {
-							kenClass = ' elementor-ken-' + slide.zoom_direction;
-						}
-						#>
-						<div class="slick-slide-bg{{ kenClass }}"></div>
-						<div class="slick-slide-inner">
-								<# if ( 'yes' === slide.background_overlay ) { #>
+		<div class="elementor-swiper">
+			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="{{ direction }}" data-animation="settings.content_animation">
+				<div class="swiper-wrapper elementor-slides">
+					<# jQuery.each( settings.slides, function( index, slide ) { #>
+						<div class="elementor-repeater-item-{{ slide._id }} swiper-slide">
+						<# if ( 'yes' === slide.background_overlay ) { #>
 							<div class="elementor-background-overlay"></div>
-								<# } #>
-							<div class="elementor-slide-content">
-								<# if ( slide.heading ) { #>
-									<div class="elementor-slide-heading">{{{ slide.heading }}}</div>
-								<# }
-								if ( slide.description ) { #>
-									<div class="elementor-slide-description">{{{ slide.description }}}</div>
-								<# }
-								if ( slide.button_text ) { #>
-									<div class="elementor-button elementor-slide-button elementor-size-{{ buttonSize }}">{{{ slide.button_text }}}</div>
-								<# } #>
+						<# } #>
+							<#
+							var kenClass = '';
+
+							if ( '' != slide.background_ken_burns ) {
+								kenClass = ' elementor-ken-burns elementor-ken-burns--' + slide.zoom_direction;
+							}
+							#>
+							<div class="swiper-slide-bg{{ kenClass }}"></div>
+							<div class="swiper-slide-inner">
+								<div class="swiper-slide-contents">
+									<# if ( slide.heading ) { #>
+										<div class="elementor-slide-heading">{{{ slide.heading }}}</div>
+									<# }
+									if ( slide.description ) { #>
+										<div class="elementor-slide-description">{{{ slide.description }}}</div>
+									<# }
+									if ( slide.button_text ) { #>
+										<div class="elementor-button elementor-slide-button elementor-size-{{ buttonSize }}">{{{ slide.button_text }}}</div>
+									<# } #>
+								</div>
 							</div>
 						</div>
-					</div>
-				<# } ); #>
+					<# } ); #>
+				</div>
+				<# if ( 1 < settings.slides.length ) { #>
+					<# if ( showDots ) { #>
+						<div class="swiper-pagination"></div>
+					<# } #>
+					<# if ( showArrows ) { #>
+						<div class="elementor-swiper-button elementor-swiper-button-prev">
+							<i class="eicon-chevron-left" aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php _e( 'Previous', 'elementor-pro' ); ?></span>
+						</div>
+						<div class="elementor-swiper-button elementor-swiper-button-next">
+							<i class="eicon-chevron-right" aria-hidden="true"></i>
+							<span class="elementor-screen-only"><?php _e( 'Next', 'elementor-pro' ); ?></span>
+						</div>
+					<# } #>
+				<# } #>
 			</div>
 		</div>
 		<?php

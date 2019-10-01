@@ -3,8 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-?>
 // TODO: Remove after moving to Route API
+?>
 <script type="text/template" id="tmpl-elementor-publish">
 	<# if ( screens.length > 1 ) { #>
 	<div id="elementor-publish__tabs" class="elementor-templates-modal__sidebar">

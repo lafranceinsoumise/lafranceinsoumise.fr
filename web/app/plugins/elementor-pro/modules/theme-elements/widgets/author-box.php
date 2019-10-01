@@ -211,8 +211,8 @@ class Author_Box extends Base {
 			[
 				'label' => __( 'Biography', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
-				'rows' => 4,
+				'default' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
+				'rows' => 3,
 				'condition' => [
 					'source' => 'custom',
 				],

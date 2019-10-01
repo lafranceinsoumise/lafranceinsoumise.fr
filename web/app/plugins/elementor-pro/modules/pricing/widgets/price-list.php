@@ -51,6 +51,9 @@ class Price_List extends Base_Widget {
 			[
 				'label' => __( 'Price', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -112,19 +115,19 @@ class Price_List extends Base_Widget {
 				'default' => [
 					[
 						'title' => __( 'First item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$20',
 						'link' => [ 'url' => '#' ],
 					],
 					[
 						'title' => __( 'Second item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$9',
 						'link' => [ 'url' => '#' ],
 					],
 					[
 						'title' => __( 'Third item on the list', 'elementor-pro' ),
-						'item_description' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'elementor-pro' ),
+						'item_description' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'elementor-pro' ),
 						'price' => '$32',
 						'link' => [ 'url' => '#' ],
 					],

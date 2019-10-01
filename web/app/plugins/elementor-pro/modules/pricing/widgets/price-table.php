@@ -131,6 +131,9 @@ class Price_Table extends Base_Widget {
 				'label' => __( 'Price', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '39.99',
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -165,6 +168,9 @@ class Price_Table extends Base_Widget {
 				'default' => '59',
 				'condition' => [
 					'sale' => 'yes',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -287,7 +293,7 @@ class Price_Table extends Base_Widget {
 				'label' => __( 'Additional Info', 'elementor-pro' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => __( 'This is text element', 'elementor-pro' ),
-				'rows' => 2,
+				'rows' => 3,
 			]
 		);
 

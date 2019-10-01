@@ -158,6 +158,7 @@ class Icons_Manager {
 	public function add_finder_item( array $categories ) {
 		$categories['settings']['items']['custom-icons'] = [
 			'title' => __( 'Custom Icons', 'elementor-pro' ),
+			'icon' => 'favorite',
 			'url' => admin_url( 'edit.php?post_type=' . self::CPT ),
 			'keywords' => [ 'custom', 'icons', 'elementor' ],
 		];

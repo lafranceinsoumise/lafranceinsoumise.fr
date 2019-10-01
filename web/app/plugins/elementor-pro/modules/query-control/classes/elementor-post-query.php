@@ -55,7 +55,9 @@ class Elementor_Post_Query {
 			add_action( 'pre_get_posts', [ $this, 'pre_get_posts_query_filter' ] );
 		}
 
-		if ( 0 < $offset_control ) {
+		$post_type = $this->get_widget_settings( 'post_type' );
+
+		if ( 'by_id' !== $post_type && 0 < $offset_control ) {
 			add_action( 'pre_get_posts', [ $this, 'fix_query_offset' ], 1 );
 			add_filter( 'found_posts', [ $this, 'fix_query_found_posts' ], 1, 2 );
 		}

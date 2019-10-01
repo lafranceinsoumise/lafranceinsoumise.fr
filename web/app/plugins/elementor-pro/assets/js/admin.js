@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.6.5 - 26-08-2019 */
+/*! elementor-pro - v2.7.1 - 26-09-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -431,6 +431,8 @@ module.exports = function () {
 "use strict";
 
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 module.exports = {
 	$btn: null,
 	fileId: null,
@@ -441,7 +443,8 @@ module.exports = {
 		uploadBtnClass: 'elementor-upload-btn',
 		clearBtnClass: 'elementor-upload-clear-btn',
 		uploadBtn: '.elementor-upload-btn',
-		clearBtn: '.elementor-upload-clear-btn'
+		clearBtn: '.elementor-upload-clear-btn',
+		inputURLField: '.elementor-field-file input[type="text"]'
 	},
 
 	hasValue: function hasValue() {
@@ -463,15 +466,16 @@ module.exports = {
 	},
 
 	setUploadParams: function setUploadParams(ext, name) {
-		var self = this;
-		self.fileFrame[name].uploader.uploader.param('uploadType', ext);
-		self.fileFrame[name].uploader.uploader.param('uploadTypeCaller', 'elementor-admin-font-upload');
-		self.fileFrame[name].uploader.uploader.param('post_id', self.getPostId());
+		var uploader = this.fileFrame[name].uploader.uploader;
+		uploader.param('uploadType', ext);
+		uploader.param('uploadTypeCaller', 'elementor-admin-font-upload');
+		uploader.param('post_id', this.getPostId());
 	},
 
 	setUploadMimeType: function setUploadMimeType(frame, ext) {
-		// Set svg as only allowed upload extensions
-		var oldExtensions = _wpPluploadSettings.defaults.filters.mime_types[0].extensions;
+		// Set {ext} as only allowed upload extensions
+		var oldExtensions = _wpPluploadSettings.defaults.filters.mime_types[0].extensions,
+		    self = this;
 		frame.on('ready', function () {
 			_wpPluploadSettings.defaults.filters.mime_types[0].extensions = ext;
 		});
@@ -479,6 +483,7 @@ module.exports = {
 		frame.on('close', function () {
 			// restore allowed upload extensions
 			_wpPluploadSettings.defaults.filters.mime_types[0].extensions = oldExtensions;
+			self.replaceButtonClass(self.$btn);
 		});
 	},
 
@@ -492,6 +497,8 @@ module.exports = {
 	},
 
 	uploadFile: function uploadFile(el) {
+		var _this = this;
+
 		var self = this,
 		    $el = jQuery(el),
 		    mime = $el.attr('data-mime_type') || '',
@@ -511,7 +518,7 @@ module.exports = {
 		// Create the media frame.
 		self.fileFrame[name] = wp.media({
 			library: {
-				type: mime.split(',')
+				type: [].concat(_toConsumableArray(mime.split(',')), [mime.split(',').join('')])
 			},
 			title: $el.data('box_title'),
 			button: {
@@ -529,6 +536,16 @@ module.exports = {
 			jQuery(self.fileUrl).val(attachment.url);
 			self.replaceButtonClass(el);
 			self.updatePreview(el);
+		});
+
+		self.fileFrame[name].on('open', function () {
+			var selectedId = _this.fileId.val();
+			if (!selectedId) {
+				return;
+			}
+
+			var selection = self.fileFrame[name].state().get('selection');
+			selection.add(wp.media.attachment(selectedId));
 		});
 
 		self.setUploadMimeType(self.fileFrame[name], ext);
@@ -572,25 +589,47 @@ module.exports = {
 	getPostId: function getPostId() {
 		return jQuery('#post_ID').val();
 	},
+	handleUploadClick: function handleUploadClick(event) {
+		event.preventDefault();
+		var $element = jQuery(event.target);
+		if ('text' === $element.attr('type')) {
+			return $element.next().removeClass(this.selectors.clearBtnClass).addClass(this.selectors.uploadBtnClass).click();
+		}
+		this.$btn = $element;
+		this.setFields($element);
+		this.uploadFile($element);
+	},
 
 
 	init: function init() {
-		var self = this;
+		var _this2 = this;
 
-		jQuery(document).on('click', self.selectors.uploadBtn, function (event) {
-			event.preventDefault();
-			self.setFields(jQuery(this));
-			self.uploadFile(jQuery(this));
+		var self = this,
+		    _selectors = this.selectors,
+		    uploadBtn = _selectors.uploadBtn,
+		    inputURLField = _selectors.inputURLField,
+		    clearBtn = _selectors.clearBtn,
+		    handleUpload = function handleUpload(event) {
+			return _this2.handleUploadClick(event);
+		};
+
+
+		jQuery(document).on('click', uploadBtn, handleUpload);
+		jQuery(document).on('click', inputURLField, function (event) {
+			if ('' !== event.target.value) {
+				handleUpload(event);
+			}
 		});
 
-		jQuery(document).on('click', self.selectors.clearBtn, function (event) {
+		jQuery(document).on('click', clearBtn, function (event) {
 			event.preventDefault();
-			self.setFields(jQuery(this));
+			var $element = jQuery(this);
+			self.setFields($element);
 			jQuery(self.fileUrl).val('');
 			jQuery(self.fileId).val('');
 
-			self.updatePreview(jQuery(this));
-			self.replaceButtonClass(jQuery(this));
+			self.updatePreview($element);
+			self.replaceButtonClass($element);
 		});
 
 		this.setup();

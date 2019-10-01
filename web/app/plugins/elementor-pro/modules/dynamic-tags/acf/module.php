@@ -104,6 +104,7 @@ class Module extends DynamicTags\Module {
 			'ACF_URL',
 			'ACF_Gallery',
 			'ACF_File',
+			'ACF_Number',
 		];
 	}
 

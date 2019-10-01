@@ -8,8 +8,23 @@
 				return settings[ pureMatch ];
 			} );
 
-			if ( 'email' === networkName && link.indexOf( '?subject=&body') ) {
-				link = link.replace( 'subject=&', '' );
+			if ( 'email' === networkName ) {
+				if ( -1 < settings['title'].indexOf( '&' ) ||  -1 < settings['text'].indexOf( '&' ) ) {
+					var emailSafeSettings = {
+						text: settings['text'].replace( new RegExp('&', 'g'), '%26' ),
+						title: settings['title'].replace( new RegExp('&', 'g'), '%26' ),
+						url: settings['url'],
+					};
+
+					link = ShareLink.networkTemplates[ networkName ].replace( /{([^}]+)}/g, function( fullMatch, pureMatch ) {
+						return emailSafeSettings[ pureMatch ];
+					} );
+				}
+
+				if ( link.indexOf( '?subject=&body') ) {
+					link = link.replace( 'subject=&', '' );
+				}
+				return link;
 			}
 
 			return encodeURI( link );

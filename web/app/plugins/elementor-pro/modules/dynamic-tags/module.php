@@ -85,6 +85,7 @@ class Module extends TagsModule {
 			'Shortcode',
 			'Contact_URL',
 			'User_Info',
+			'User_Profile_Picture',
 		];
 	}
 

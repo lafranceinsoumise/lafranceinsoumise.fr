@@ -24,7 +24,10 @@ class Comments_Number extends Tag {
 	}
 
 	public function get_categories() {
-		return [ Module::TEXT_CATEGORY ];
+		return [
+			Module::TEXT_CATEGORY,
+			Module::NUMBER_CATEGORY,
+		];
 	}
 
 	protected function _register_controls() {
