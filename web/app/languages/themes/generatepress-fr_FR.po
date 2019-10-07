@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - GeneratePress package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-06-24 20:16:14+0000\n"
+"PO-Revision-Date: 2019-10-05 09:25:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,6 +20,14 @@ msgstr "GeneratePress est un thème WordPress léger construit avec un accent mi
 msgid "GeneratePress"
 msgstr "GeneratePress"
 
+#: inc/customizer.php:1421
+msgid "Reduce the number of CSS file requests and use a lite version of our grid system."
+msgstr "Réduit le nombre de requêtes des fichiers CSS et utilise une version allégée de notre système de grille."
+
+#: inc/customizer.php:1420
+msgid "Combine CSS"
+msgstr "Combiner le CSS"
+
 #: inc/customizer.php:1401
 msgid "Font"
 msgstr "Police"
@@ -35,6 +43,18 @@ msgstr "Type d’icône"
 #: inc/customizer.php:1065
 msgid "Text"
 msgstr "Texte"
+
+#: inc/customizer.php:1064
+msgid "Boxes"
+msgstr "Boîtes"
+
+#: inc/customizer.php:1061
+msgid "Container Alignment"
+msgstr "Alignement du conteneur"
+
+#: inc/customizer.php:214
+msgid "Place logo next to title"
+msgstr "Placer le logo à la suite du titre"
 
 #: inc/typography.php:664
 msgid "Heading 3 (H3)"
