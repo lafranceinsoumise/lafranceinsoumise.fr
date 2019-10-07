@@ -531,15 +531,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "1.2.2",
+            "version": "1.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/1.2.2"
+                "reference": "tags/1.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.1.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/amp.1.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -631,15 +631,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.7.3",
+            "version": "2.7.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.7.3"
+                "reference": "tags/2.7.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.7.4.zip",
                 "reference": null,
                 "shasum": null
             },
