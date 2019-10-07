@@ -140,7 +140,7 @@ class Upgrades {
 				continue;
 			}
 
-			$data = Plugin::elementor()->db->iterate_data( $data, function( $element ) use ( & $do_update ) {
+			$data = Plugin::elementor()->db->iterate_data( $data, function( $element ) use ( &$do_update ) {
 				if ( empty( $element['widgetType'] ) || 'form' !== $element['widgetType'] ) {
 					return $element;
 				}
@@ -193,7 +193,7 @@ class Upgrades {
 				continue;
 			}
 
-			$data = Plugin::elementor()->db->iterate_data( $data, function( $element ) use ( & $do_update ) {
+			$data = Plugin::elementor()->db->iterate_data( $data, function( $element ) use ( &$do_update ) {
 				if ( empty( $element['elType'] ) || 'section' !== $element['elType'] ) {
 					return $element;
 				}

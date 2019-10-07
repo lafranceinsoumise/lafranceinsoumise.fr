@@ -268,7 +268,7 @@ class Custom_Fonts extends Classes\Font_Base {
 		$font_face .= "\tfont-family: '" . $font_family . "';" . PHP_EOL;
 		$font_face .= "\tfont-style: " . $data['font_style'] . ';' . PHP_EOL;
 		$font_face .= "\tfont-weight: " . $data['font_weight'] . ';' . PHP_EOL;
-		$font_face .= "\tfont-display: " . apply_filters( 'elementor_pro/custom_fonts/font_display', 'auto', $font_family, $data ) . PHP_EOL;
+		$font_face .= "\tfont-display: " . apply_filters( 'elementor_pro/custom_fonts/font_display', 'auto', $font_family, $data ) . ';' . PHP_EOL;
 
 		if ( isset( $data['eot'] ) && isset( $data['eot']['url'] ) && ! empty( $data['eot']['url'] ) ) {
 			$font_face .= "\tsrc: url('" . esc_attr( $data['eot']['url'] ) . "');" . PHP_EOL;

@@ -506,7 +506,7 @@ class Controls_Group extends Group_Control_Base {
 		];
 	}
 
-	private function prepare_effects( $effects_group, array & $fields ) {
+	private function prepare_effects( $effects_group, array &$fields ) {
 		$method_name = "get_{$effects_group}_effects";
 
 		$effects = $this->$method_name();

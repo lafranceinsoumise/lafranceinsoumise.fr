@@ -197,7 +197,7 @@ class Module extends Module_Base {
 	public function set_global_widget_included_posts_list( $post_id, $editor_data ) {
 		$global_widget_ids = [];
 
-		Plugin::elementor()->db->iterate_data( $editor_data, function( $element_data ) use ( & $global_widget_ids ) {
+		Plugin::elementor()->db->iterate_data( $editor_data, function( $element_data ) use ( &$global_widget_ids ) {
 			if ( isset( $element_data['templateID'] ) ) {
 				$global_widget_ids[] = $element_data['templateID'];
 			}

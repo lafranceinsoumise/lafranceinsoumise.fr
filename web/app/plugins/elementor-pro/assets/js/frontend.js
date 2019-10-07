@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.7.1 - 26-09-2019 */
+/*! elementor-pro - v2.7.2 - 06-10-2019 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -5669,11 +5669,15 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 		return {
 			selectors: {
 				slider: '.elementor-slides-wrapper',
-				slideContent: '.swiper-slide',
-				slideInnerContents: '.swiper-slide-contents'
+				slide: '.swiper-slide',
+				slideBackground: '.swiper-slide-bg',
+				slideInnerContents: '.swiper-slide-contents',
+				activeSlide: '.swiper-slide-active',
+				activeDuplicate: '.swiper-slide-duplicate-active'
 			},
 			classes: {
-				animated: 'animated'
+				animated: 'animated',
+				kenBurnsActive: 'elementor-ken-burns--active'
 			},
 			attributes: {
 				dataSliderOptions: 'slider_options',
@@ -5689,7 +5693,7 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 			$slider: this.$element.find(selectors.slider)
 		};
 
-		elements.$mainSwiperSlides = elements.$slider.find(selectors.slideContent);
+		elements.$mainSwiperSlides = elements.$slider.find(selectors.slide);
 
 		return elements;
 	},
@@ -5705,7 +5709,10 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 	},
 
 	getSwiperOptions: function getSwiperOptions() {
-		var elementSettings = this.getElementSettings();
+		var _this = this;
+
+		var elementSettings = this.getElementSettings(),
+		    settings = this.getSettings();
 
 		var swiperOptions = {
 			grabCursor: true,
@@ -5717,15 +5724,19 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 			effect: elementSettings.transition,
 			on: {
 				slideChange: function slideChange() {
-					var kenBurnsActiveClass = 'elementor-ken-burns--active';
-
-					if (this.$activeImage) {
-						this.$activeImage.removeClass(kenBurnsActiveClass);
+					if (_this.$activeImageBg) {
+						_this.$activeImageBg.removeClass(settings.classes.kenBurnsActive);
 					}
 
-					this.$activeImage = jQuery(this.slides[this.activeIndex]).children();
+					_this.activeItemIndex = _this.swipers.main ? _this.swipers.main.activeIndex : _this.getInitialSlide();
 
-					this.$activeImage.addClass(kenBurnsActiveClass);
+					if (!_this.swipers.main) {
+						_this.$activeImageBg = jQuery(_this.elements.$mainSwiperSlides[0]).children(settings.selectors.slideBackground);
+					} else {
+						_this.$activeImageBg = jQuery(_this.swipers.main.slides[_this.activeItemIndex]).children(settings.selectors.slideBackground);
+					}
+
+					_this.$activeImageBg.addClass(settings.classes.kenBurnsActive);
 				}
 			}
 		};
@@ -5781,7 +5792,7 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 			return;
 		}
 
-		this.swipers.main = new Swiper(this.elements.$slider, this.getSwiperOptions());
+		this.swipers.main = new Swiper($slider, this.getSwiperOptions());
 
 		if (!animation) {
 			return;
@@ -5802,6 +5813,10 @@ var SlidesHandler = elementorModules.frontend.handlers.Base.extend({
 
 	onInit: function onInit() {
 		elementorModules.frontend.handlers.Base.prototype.onInit.apply(this, arguments);
+
+		if (2 > this.getSlidesCount()) {
+			return;
+		}
 
 		this.initSlider();
 	},

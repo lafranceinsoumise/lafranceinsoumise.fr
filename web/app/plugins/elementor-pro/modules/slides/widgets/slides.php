@@ -321,7 +321,7 @@ class Slides extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-inner .swiper-slide' => '{{VALUE}}',
+					'{{WRAPPER}} {{CURRENT_ITEM}} .swiper-slide-contents' => '{{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'left' => 'margin-right: auto',
@@ -660,7 +660,7 @@ class Slides extends Base_Widget {
 					'unit' => '%',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .swiper-slide-inner' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-slide-contents' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1195,6 +1195,8 @@ class Slides extends Base_Widget {
 				}
 			}
 
+			$slide_html .= '<' . $slide_element . ' class="swiper-slide-inner" ' . $slide_attributes . '>';
+
 			$slide_html .= '<div class="swiper-slide-contents">';
 
 			if ( $slide['heading'] ) {
@@ -1209,18 +1211,19 @@ class Slides extends Base_Widget {
 				$slide_html .= '<' . $btn_element . ' ' . $btn_attributes . ' ' . $this->get_render_attribute_string( 'button' ) . '>' . $slide['button_text'] . '</' . $btn_element . '>';
 			}
 
+			$slide_html .= '</div>' . '</' . $slide_element . '>';
+
+			if ( 'yes' === $slide['background_overlay'] ) {
+				$slide_html = '<div class="elementor-background-overlay"></div>' . $slide_html;
+			}
+
 			$ken_class = '';
 
 			if ( $slide['background_ken_burns'] ) {
 				$ken_class = ' elementor-ken-burns elementor-ken-burns--' . $slide['zoom_direction'];
 			}
 
-			$slide_html .= '</div>';
-			$slide_html = '<div class="swiper-slide-bg' . $ken_class . '"></div><' . $slide_element . ' ' . $slide_attributes . ' class="swiper-slide-inner">' . $slide_html . '</' . $slide_element . '>';
-
-			if ( 'yes' === $slide['background_overlay'] ) {
-				$slide_html = '<div class="elementor-background-overlay"></div>' . $slide_html;
-			}
+			$slide_html = '<div class="swiper-slide-bg' . $ken_class . '"></div>' . $slide_html;
 
 			$slides[] = '<div class="elementor-repeater-item-' . $slide['_id'] . ' swiper-slide">' . $slide_html . '</div>';
 			$slide_count++;
@@ -1267,13 +1270,10 @@ class Slides extends Base_Widget {
 				buttonSize       = settings.button_size;
 		#>
 		<div class="elementor-swiper">
-			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="{{ direction }}" data-animation="settings.content_animation">
+			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="{{ direction }}" data-animation="{{ settings.content_animation }}">
 				<div class="swiper-wrapper elementor-slides">
 					<# jQuery.each( settings.slides, function( index, slide ) { #>
 						<div class="elementor-repeater-item-{{ slide._id }} swiper-slide">
-						<# if ( 'yes' === slide.background_overlay ) { #>
-							<div class="elementor-background-overlay"></div>
-						<# } #>
 							<#
 							var kenClass = '';
 
@@ -1282,6 +1282,9 @@ class Slides extends Base_Widget {
 							}
 							#>
 							<div class="swiper-slide-bg{{ kenClass }}"></div>
+							<# if ( 'yes' === slide.background_overlay ) { #>
+							<div class="elementor-background-overlay"></div>
+							<# } #>
 							<div class="swiper-slide-inner">
 								<div class="swiper-slide-contents">
 									<# if ( slide.heading ) { #>
