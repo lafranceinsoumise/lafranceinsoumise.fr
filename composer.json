@@ -49,7 +49,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "jlm2017/theme-wp": "dev-master",
     "fi/fi-wordpress-addons": "dev-master",
-    "wpackagist-plugin/wordpress-seo": "^11.0",
+    "wpackagist-plugin/wordpress-seo": "^12.0",
     "wpackagist-plugin/redirection": "^4.0",
     "wpackagist-plugin/contact-form-7": "^5.0",
     "wpackagist-plugin/wpcf7-recaptcha": "^1.0",
