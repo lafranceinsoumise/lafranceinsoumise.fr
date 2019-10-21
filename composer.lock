@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6aa364b74cb48a2b1206a850a2a5ed98",
+    "content-hash": "30a9c93a55c51d2f9d54ee3d1817ab7b",
     "packages": [
         {
             "name": "composer/installers",
@@ -728,6 +728,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/menu-export/"
+        },
+        {
+            "name": "wpackagist-plugin/read-meter",
+            "version": "1.0.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/read-meter/",
+                "reference": "tags/1.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/read-meter.1.0.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/read-meter/"
         },
         {
             "name": "wpackagist-plugin/redirection",
