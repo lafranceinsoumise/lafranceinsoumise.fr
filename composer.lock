@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30a9c93a55c51d2f9d54ee3d1817ab7b",
+    "content-hash": "4ab280e35e741c7c5e46430cd2fddfe0",
     "packages": [
         {
             "name": "composer/installers",
@@ -828,6 +828,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/webp-express/"
+        },
+        {
+            "name": "wpackagist-plugin/webp-simple",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/webp-simple/",
+                "reference": "tags/1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/webp-simple.1.0.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/webp-simple/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

@@ -68,7 +68,8 @@
     "wpackagist-plugin/wp-typography": "^5.6",
     "wpackagist-plugin/redis-cache": "^1.4",
     "wpackagist-plugin/webp-express": "^0.17.2",
-    "wpackagist-plugin/read-meter": "^1.0"
+    "wpackagist-plugin/read-meter": "^1.0",
+    "wpackagist-plugin/webp-simple": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
