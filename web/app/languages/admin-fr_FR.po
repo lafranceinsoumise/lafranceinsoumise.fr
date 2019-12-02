@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-13 08:58:57+0000\n"
+"PO-Revision-Date: 2019-11-13 11:00:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "Le bloc Titre dispose maintenant d’un sélecteur de couleur de texte"
 #. translators: %s: Link to the PHP 7 developer notes.
 #: wp-admin/about.php:184
 msgid "WordPress 5.3 aims to fully support PHP 7.4. This release contains <a href=\"%s\">multiple changes</a> to remove deprecated functionality and ensure compatibility. WordPress continues to encourage all users to run the latest and greatest versions of PHP."
-msgstr "WordPress 5.3 vise à prendre en charge totalement PHP 7.4. Cette version contient de <a href=\"%s\">multiples modifications</a> pour retirer les fonctionnalités dépréciées et assurer la compatibilité. WordPress continue d’encourager ses utilisatrices et utilisateurs à faire tourner leurs sites sur la dernière et la meilleure version de PHP."
+msgstr "WordPress 5.3 vise à prendre totalement en charge PHP 7.4. Cette version contient de <a href=\"%s\">multiples modifications</a> pour retirer les fonctionnalités dépréciées et assurer la compatibilité. WordPress continue d’encourager ses utilisatrices et utilisateurs à faire tourner leurs sites sur la dernière et la meilleure version de PHP."
 
 #: wp-admin/about.php:167
 msgid "Date/Time Component Fixes"
@@ -47,7 +47,7 @@ msgstr "Compatibilité PHP 7.4"
 #. translators: %s: Link to the date/time developer notes.
 #: wp-admin/about.php:172
 msgid "Developers can now work with <a href=\"%s\">dates and timezones</a> in a more reliable way. Date and time functionality has received a number of new API functions for unified timezone retrieval and PHP interoperability, as well as many bug fixes."
-msgstr "Les développeurs et développeuses peuvent maintenant mieux travailler avec les <a href=\"%s\">dates et fuseaux horaires</a>. La fonctionnalité de gestion de la date et de l’heure a reçue quantité de nouvelles fonctions API pour unifier l’utilisation des fuseaux horaires, pour améliorer l’intéropérabilité PHP ainsi que plusieurs correctifs et améliorations diverses."
+msgstr "Les développeurs et développeuses peuvent maintenant mieux travailler avec les <a href=\"%s\">dates et fuseaux horaires</a>. La fonctionnalité de gestion de la date et de l’heure a reçu quantité de nouvelles fonctions API pour unifier l’utilisation des fuseaux horaires, pour améliorer l’intéropérabilité PHP ainsi que plusieurs correctifs et améliorations diverses."
 
 #: wp-admin/about.php:149
 msgid "You’ll now be periodically asked to confirm that your admin email address is up to date when you log in as an administrator. This reduces the chance of getting locked out of your site if you change your email address."
@@ -80,7 +80,7 @@ msgstr "Le nouvel éditeur fêtant son premier anniversaire, nous sommes fièr·
 
 #: wp-admin/about.php:94
 msgid "Additional style options allow you to set your preferred style for any block that supports this feature"
-msgstr "Des options de style supplémentaires vous permettent de définir votre style préféré pour n'importe quel bloc qui prend en charge cette fonctionnalité"
+msgstr "Des options de style supplémentaires vous permettent de définir votre style préféré pour n’importe quel bloc qui prend en charge cette fonctionnalité"
 
 #: wp-admin/about.php:92
 msgid "The new Predefined layouts make it a cinch to arrange content into advanced designs"
@@ -109,7 +109,7 @@ msgstr "Les améliorations d’accessibilité incluent l’intégration des styl
 
 #: wp-admin/about.php:68
 msgid "This enhancement-focused update introduces over 150 new features and usability improvements, including improved large image support for uploading non-optimized, high-resolution pictures taken from your smartphone or other high-quality cameras. Combined with larger default image sizes, pictures always look their best."
-msgstr "Cette mise à jour focalisée sur les améliorations introduit plus de 150 nouvelles fonctionnalités et améliorations d’utilisabilité, comme la prise en charge des grandes images pour téléverser les images de haute résolution prises avec votre téléphone ou avec d’autre appareils de haute résolution. En combinaison avec l’utilisation de tailles d’images plus larges, vos photos seront le mieux traitées possible."
+msgstr "Cette mise à jour focalisée sur les améliorations introduit plus de 150 nouvelles fonctionnalités et améliorations d’utilisabilité, comme la prise en charge des grandes images pour téléverser les images de haute résolution prises avec votre téléphone ou avec d’autre appareils de haute résolution. En combinaison avec l’utilisation de tailles d’images plus grandes par défaut, vos photos seront toujours traitées du mieux possible."
 
 #: wp-admin/about.php:66
 msgid "Block Editor Improvements"
@@ -4194,7 +4194,7 @@ msgstr "Veuillez mettre WordPress à jour maintenant"
 #. URL to network admin, 4: Accessibility text.
 #: wp-admin/includes/update.php:287
 msgid "<a href=\"%1$s\">WordPress %2$s</a> is available! <a href=\"%3$s\" aria-label=\"%4$s\">Please update now</a>."
-msgstr "<a href=\"%1$s\">WordPress %2$s</a> est disponible ! <a href=\"%3$s\" aria-label=\"%4$s\">Veuillez faire la mise à jour maintenant</a>."
+msgstr "<a href=\"%1$s\">WordPress %2$s</a> est disponible ! <a href=\"%3$s\" aria-label=\"%4$s\">Veuillez mettre à jour maintenant</a>."
 
 #: wp-admin/includes/theme.php:275
 msgid "Portfolio"
@@ -6770,7 +6770,7 @@ msgstr "[%1$s] URGENT : suite à une mise à jour échouée, votre site est peu
 #. WordPress version.
 #: wp-admin/includes/class-wp-automatic-updater.php:659
 msgid "[%1$s] WordPress %2$s is available. Please update!"
-msgstr "[%1$s] WordPress %2$s est disponible. Veuillez faire la mise à jour !"
+msgstr "[%1$s] WordPress %2$s est disponible. Veuillez mettre à jour !"
 
 #. translators: Site updated notification email subject. 1: Site title, 2:
 #. WordPress version.

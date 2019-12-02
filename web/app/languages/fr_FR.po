@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-07 08:17:17+0000\n"
+"PO-Revision-Date: 2019-11-21 18:40:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,7 +79,7 @@ msgstr ","
 
 #: wp-includes/js/dist/api-fetch.js:721
 msgid "Media upload failed. If this is a photo or a large image, please scale it down and try again."
-msgstr "Le téléversement du média a échoué. S'il s'agit d'une photo ou d'une grande image, veuillez la redimensionner puis réessayer."
+msgstr "Le téléversement du média a échoué. S’il s’agit d’une photo ou d’une grande image, veuillez la redimensionner puis réessayer."
 
 #: wp-includes/js/dist/block-editor.js:14785
 msgid "No Preview Available."
@@ -1024,7 +1024,7 @@ msgstr "https://wordpress.org/support/article/settings-general-screen/#email-add
 
 #: wp-login.php:640
 msgid "Please verify that the <strong>administration email</strong> for this website is still correct."
-msgstr "Veuillez vérifier que <strong>l'e-mail d'administration</strong> pour ce site est toujours correct."
+msgstr "Veuillez vérifier que <strong>l’e-mail d’administration</strong> pour ce site est toujours correct."
 
 #: wp-login.php:637
 msgid "Administration email verification"
@@ -1053,7 +1053,7 @@ msgstr "20"
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:113
 msgid "Previewing:"
-msgstr "Prévisualisation :"
+msgstr "Prévisualisation :"
 
 #: wp-includes/class-wp-image-editor-imagick.php:461
 #: wp-includes/class-wp-image-editor-gd.php:253
@@ -10813,7 +10813,7 @@ msgstr "Détails du thème"
 #: wp-includes/script-loader.php:1881
 #: wp-includes/customize/class-wp-customize-theme-control.php:124
 msgid "Live Preview"
-msgstr "Prévisualisation en direct"
+msgstr "Prévisualiser en direct"
 
 #: wp-includes/taxonomy.php:563
 msgid "No categories found."
@@ -16884,7 +16884,7 @@ msgstr "Public"
 
 #: wp-includes/script-loader.php:1702
 msgid "Public, Sticky"
-msgstr "Public, mis en avant"
+msgstr "Public, épinglé"
 
 #: wp-includes/script-loader.php:1700 wp-includes/post.php:940
 #: wp-includes/post.php:960 wp-includes/js/dist/editor.js:9170
