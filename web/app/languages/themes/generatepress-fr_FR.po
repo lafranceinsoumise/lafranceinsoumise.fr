@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - GeneratePress package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-10-05 09:25:16+0000\n"
+"PO-Revision-Date: 2019-11-20 21:26:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +19,15 @@ msgstr "GeneratePress est un thème WordPress léger construit avec un accent mi
 #: inc/structure/footer.php:83
 msgid "GeneratePress"
 msgstr "GeneratePress"
+
+#: inc/general.php:62
+msgid "Close Search Bar"
+msgstr "Fermer la barre de recherche"
+
+#: inc/general.php:61 inc/structure/navigation.php:114
+#: inc/structure/navigation.php:324 inc/structure/navigation.php:357
+msgid "Open Search Bar"
+msgstr "Ouvrir la barre de recherche"
 
 #: inc/customizer.php:1421
 msgid "Reduce the number of CSS file requests and use a lite version of our grid system."
@@ -181,7 +190,7 @@ msgctxt "GeneratePress"
 msgid "Powered by"
 msgstr "Propulsé par"
 
-#: inc/structure/navigation.php:368
+#: inc/structure/navigation.php:387
 msgid "Mobile Menu"
 msgstr "Menu mobile"
 
@@ -241,15 +250,15 @@ msgstr "Logo Retina"
 msgid "Premium Modules Available"
 msgstr "Modules Premium disponibles"
 
-#: inc/customizer/controls/class-typography-control.php:41
+#: inc/customizer/controls/class-typography-control.php:39
 msgid "Variants"
 msgstr "Variantes"
 
-#: inc/customizer/controls/class-typography-control.php:33
+#: inc/customizer/controls/class-typography-control.php:32
 msgid "System fonts"
 msgstr "Polices système"
 
-#: inc/structure/comments.php:93
+#: inc/structure/comments.php:118
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -295,7 +304,7 @@ msgstr "Largeur interne de la barre du haut"
 msgid "Top Bar Width"
 msgstr "Largeur de la barre du haut"
 
-#: inc/general.php:84 inc/customizer.php:602
+#: inc/general.php:93 inc/customizer.php:602
 msgid "Top Bar"
 msgstr "Barre du haut"
 
@@ -315,7 +324,7 @@ msgstr "Premium"
 msgid "Footer Bar Alignment"
 msgstr "Alignement de la barre de pied de page"
 
-#: inc/general.php:83
+#: inc/general.php:92
 msgid "Footer Bar"
 msgstr "Barre de pied de page"
 
@@ -456,52 +465,52 @@ msgstr "Prêt à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vo
 msgid "Nothing Found"
 msgstr "Rien de trouvé"
 
-#: inc/structure/post-meta.php:206
+#: inc/structure/post-meta.php:228
 msgid "% Comments"
 msgstr "% commentaires"
 
-#: inc/structure/post-meta.php:206
+#: inc/structure/post-meta.php:228
 msgid "1 Comment"
 msgstr "Un commentaire"
 
-#: inc/structure/post-meta.php:206
+#: inc/structure/post-meta.php:228
 msgid "Leave a comment"
 msgstr "Laisser un commentaire"
 
-#: inc/structure/post-meta.php:193
+#: inc/structure/post-meta.php:214
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: inc/structure/post-meta.php:180
+#: inc/structure/post-meta.php:197
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Catégories"
 
-#: inc/structure/post-meta.php:177 inc/structure/post-meta.php:190
+#: inc/structure/post-meta.php:191 inc/structure/post-meta.php:208
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: inc/structure/navigation.php:276
+#: inc/structure/navigation.php:292
 msgctxt "label"
 msgid "Search"
 msgstr "Chercher"
 
-#: inc/structure/post-meta.php:299 inc/structure/post-meta.php:319
+#: inc/structure/post-meta.php:318 inc/structure/post-meta.php:338
 msgid "Read more"
 msgstr "Lire la suite"
 
 #. translators: 1: Author name
-#: inc/structure/post-meta.php:166
+#: inc/structure/post-meta.php:180
 msgid "View all posts by %s"
 msgstr "Afficher tous les articles de %s"
 
-#: inc/structure/post-meta.php:163
+#: inc/structure/post-meta.php:249
 msgid "by"
 msgstr "par"
 
-#: inc/structure/comments.php:68
+#: inc/structure/comments.php:59
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de validation."
 
@@ -515,31 +524,31 @@ msgstr "%1$s à %2$s"
 msgid "Pingback:"
 msgstr "Ping&nbsp;:"
 
-#: inc/structure/post-meta.php:74
+#: inc/structure/post-meta.php:86
 msgid "Newer posts"
 msgstr "Articles plus récents"
 
-#: inc/structure/post-meta.php:67
+#: inc/structure/post-meta.php:79
 msgid "Older posts"
 msgstr "Articles plus anciens"
 
-#: inc/structure/post-meta.php:57 inc/structure/post-meta.php:74
+#: inc/structure/post-meta.php:51 inc/structure/post-meta.php:86
 msgid "Next"
 msgstr "Suivant"
 
-#: inc/structure/post-meta.php:51 inc/structure/post-meta.php:67
+#: inc/structure/post-meta.php:50 inc/structure/post-meta.php:79
 msgid "Previous"
 msgstr "Précédent"
 
-#: inc/structure/post-meta.php:46
+#: inc/structure/post-meta.php:45
 msgid "Post navigation"
 msgstr "Navigation des articles"
 
-#: inc/structure/post-meta.php:82 inc/deprecated.php:28
+#: inc/deprecated.php:28 inc/structure/post-meta.php:94
 msgid "Next &rarr;"
 msgstr "Suivant &rarr;"
 
-#: inc/structure/post-meta.php:81 inc/deprecated.php:27
+#: inc/deprecated.php:27 inc/structure/post-meta.php:93
 msgid "&larr; Previous"
 msgstr "&larr; Précédent"
 
@@ -567,9 +576,7 @@ msgstr "Avertissement : ceci va effacer vos réglages."
 msgid "Customize"
 msgstr "Personnaliser"
 
-#: searchform.php:17 inc/structure/navigation.php:100
-#: inc/structure/navigation.php:306 inc/structure/navigation.php:336
-#: inc/structure/navigation.php:339
+#: searchform.php:17
 msgctxt "submit button"
 msgid "Search"
 msgstr "Rechercher"
@@ -578,7 +585,7 @@ msgstr "Rechercher"
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: inc/structure/navigation.php:44
+#: inc/structure/navigation.php:44 inc/structure/navigation.php:54
 msgid "Menu"
 msgstr "Menu"
 
@@ -799,11 +806,11 @@ msgstr "Cacher le titre du site"
 msgid "Font size"
 msgstr "Taille de police"
 
-#: inc/customizer/controls/class-typography-control.php:39
+#: inc/customizer/controls/class-typography-control.php:37
 msgid "Text transform"
 msgstr "Transformation du texte"
 
-#: inc/customizer/controls/class-typography-control.php:38
+#: inc/customizer/controls/class-typography-control.php:36
 msgid "Font weight"
 msgstr "Graisse"
 
@@ -815,13 +822,13 @@ msgstr "Corps"
 msgid "Typography"
 msgstr "Typographie"
 
+#: inc/customizer/controls/class-typography-control.php:35
 #: inc/customizer/controls/class-deprecated.php:53
-#: inc/customizer/controls/class-typography-control.php:37
 msgid "Font family"
 msgstr "Famille des polices"
 
+#: inc/customizer/controls/class-typography-control.php:33
 #: inc/customizer/controls/class-deprecated.php:52
-#: inc/customizer/controls/class-typography-control.php:34
 msgid "Google fonts"
 msgstr "Google Fonts"
 
@@ -829,39 +836,39 @@ msgstr "Google Fonts"
 msgid "Default fonts"
 msgstr "Polices par défaut"
 
-#: inc/general.php:77 inc/customizer.php:690
+#: inc/general.php:86 inc/customizer.php:690
 msgid "Header"
 msgstr "En-tête"
 
-#: inc/general.php:76 inc/meta-box.php:143 inc/customizer.php:907
+#: inc/general.php:85 inc/meta-box.php:143 inc/customizer.php:907
 msgid "Left Sidebar"
 msgstr "Colonne latérale gauche"
 
-#: inc/general.php:75 inc/meta-box.php:138 inc/customizer.php:908
+#: inc/general.php:84 inc/meta-box.php:138 inc/customizer.php:908
 msgid "Right Sidebar"
 msgstr "Colonne latérale droite"
 
-#: functions.php:49
+#: functions.php:48
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: inc/general.php:82
+#: inc/general.php:91
 msgid "Footer Widget 5"
 msgstr "Bas de page - Widget 5"
 
-#: inc/general.php:81
+#: inc/general.php:90
 msgid "Footer Widget 4"
 msgstr "Bas de page - Widget 4"
 
-#: inc/general.php:80
+#: inc/general.php:89
 msgid "Footer Widget 3"
 msgstr "Bas de page - Widget 3"
 
-#: inc/general.php:79
+#: inc/general.php:88
 msgid "Footer Widget 2"
 msgstr "Bas de page - Widget 2"
 
-#: inc/general.php:78
+#: inc/general.php:87
 msgid "Footer Widget 1"
 msgstr "Bas de page - Widget 1"
 
@@ -869,27 +876,27 @@ msgstr "Bas de page - Widget 1"
 msgid "Edit"
 msgstr "Modifier"
 
-#: content-link.php:71 content.php:70 content-single.php:66 content-page.php:48
+#: content-page.php:64 content.php:70 content-link.php:71 content-single.php:66
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
-#: inc/structure/comments.php:101
+#: inc/structure/comments.php:126
 msgid "Post Comment"
 msgstr "Publier le commentaire"
 
-#: inc/structure/comments.php:100
+#: inc/structure/comments.php:125
 msgid "Leave a Comment"
 msgstr "Laisser un commentaire"
 
-#: inc/structure/comments.php:131
+#: inc/structure/comments.php:156
 msgid "Website"
 msgstr "Site Web"
 
-#: inc/structure/comments.php:125
+#: inc/structure/comments.php:150
 msgid "Email"
 msgstr "E-mail"
 
-#: inc/structure/comments.php:119
+#: inc/structure/comments.php:144
 msgid "Name"
 msgstr "Nom"
 
