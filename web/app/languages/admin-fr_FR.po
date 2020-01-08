@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-12-04 14:36:55+0000\n"
+"PO-Revision-Date: 2020-01-06 13:37:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1710,7 +1710,7 @@ msgstr "La constante %s est définie et activée."
 
 #: wp-admin/includes/class-wp-debug-data.php:1074
 msgid "The must use plugins directory"
-msgstr "Le répertoire des extension indispensables"
+msgstr "Le répertoire des extensions indispensables"
 
 #: wp-admin/includes/class-wp-debug-data.php:946
 msgid "Theme features"
@@ -6150,7 +6150,7 @@ msgstr "Ajouter l’utilisateur sans envoyer de message lui demandant de confirm
 #. translators: %s: List view URL.
 #: wp-admin/upload.php:102
 msgid "The grid view for the Media Library requires JavaScript. <a href=\"%s\">Switch to the list view</a>."
-msgstr "La vue en grille de la Bibliothèque de Médias nécessite JavaScript. <a href=\"%s\">Passer à la vue en liste</a>."
+msgstr "La vue en grille de la bibliothèque de médias nécessite JavaScript. <a href=\"%s\">Passer à la vue en liste</a>."
 
 #: wp-admin/update-core.php:260
 msgid "This site is set up to install updates of future beta versions automatically."
@@ -7504,7 +7504,7 @@ msgstr "N’oubliez pas de cliquer sur « Enregistrer les modifications » qua
 
 #: wp-admin/includes/class-custom-background.php:91
 msgid "To use a background image, simply upload it or choose an image that has already been uploaded to your Media Library by clicking the &#8220;Choose Image&#8221; button. You can display a single instance of your image, or tile it to fill the screen. You can have your background fixed in place, so your site content moves on top of it, or you can have it scroll with your site."
-msgstr "Pour utiliser une image de fond, téléversez-la simplement ou choisissez une image déjà téléversée dans votre Bibliothèque de Médias en cliquant sur le bouton « Choisir l’image ». Vous pouvez n’afficher qu’une occurrence de l’image, ou la répéter afin de remplir l’écran. Vous pouvez choisir de garder le fond en place quand vous faites défiler le contenu, ou au contraire faire que le fond défile en même temps."
+msgstr "Pour utiliser une image de fond, téléversez-la simplement ou choisissez une image déjà téléversée dans votre bibliothèque de médias en cliquant sur le bouton « Choisir l’image ». Vous pouvez n’afficher qu’une occurrence de l’image, ou la répéter afin de remplir l’écran. Vous pouvez choisir de garder le fond en place quand vous faites défiler le contenu, ou au contraire faire que le fond défile en même temps."
 
 #. translators: 1: URL to browser uploader, 2: Additional link attributes.
 #: wp-admin/includes/media.php:2976
@@ -7793,7 +7793,7 @@ msgstr "Sélectionnez un commentaire"
 
 #: wp-admin/includes/class-custom-image-header.php:109
 msgid "You can set a custom image header for your site. Simply upload the image and crop it, and the new header will go live immediately. Alternatively, you can use an image that has already been uploaded to your Media Library by clicking the &#8220;Choose Image&#8221; button."
-msgstr "Vous pouvez utiliser une image d’en-tête personnalisée pour votre site. Téléversez simplement l’image, recadrez-la, et le nouvel en-tête sera aussitôt en ligne. Autrement, vous pouvez utiliser une image qui a déjà été téléversée dans votre Bibliothèque de Médias, en cliquant sur le bouton « Choisissez une image »."
+msgstr "Vous pouvez utiliser une image d’en-tête personnalisée pour votre site. Téléversez simplement l’image, recadrez-la, et le nouvel en-tête sera aussitôt en ligne. Autrement, vous pouvez utiliser une image qui a déjà été téléversée dans votre bibliothèque de médias, en cliquant sur le bouton « Choisissez une image »."
 
 #: wp-admin/includes/class-custom-image-header.php:878
 msgid "Skip Cropping, Publish Image as Is"
@@ -8675,7 +8675,7 @@ msgstr "Les pages sont comme des articles, en cela qu’elles ont un titre, un c
 
 #: wp-admin/upload.php:226
 msgid "All the files you&#8217;ve uploaded are listed in the Media Library, with the most recent uploads listed first. You can use the Screen Options tab to customize the display of this screen."
-msgstr "Tous les fichiers que vous avez téléversés sont listés dans la Bibliothèque de Médias, les plus récents en premier. Vous pouvez utiliser l’onglet « Options de l’écran » pour personnaliser l’affichage de cet écran."
+msgstr "Tous les fichiers que vous avez téléversés sont listés dans la bibliothèque de médias, les plus récents en premier. Vous pouvez utiliser l’onglet « Options de l’écran » pour personnaliser l’affichage de cet écran."
 
 #: wp-admin/upload.php:244
 msgid "If a media file has not been attached to any content, you will see that in the Uploaded To column, and can click on Attach to launch a small popup that will allow you to search for existing content and attach the file."

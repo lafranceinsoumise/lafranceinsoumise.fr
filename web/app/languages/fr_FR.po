@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-12-06 09:23:29+0000\n"
+"PO-Revision-Date: 2020-01-07 18:50:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9929,7 +9929,7 @@ msgstr "Modifier l’élément de menu : %1$s (%2$s)"
 #. translators: 1: Title of a menu item, 2: Type of a menu item.
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:81
 msgid "Remove Menu Item: %1$s (%2$s)"
-msgstr "Enlever l’élément du menu : %1$s (%2$s)"
+msgstr "Retirer l’élément du menu : %1$s (%2$s)"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1187
 msgid "Toggle section: Custom Links"
@@ -11722,7 +11722,7 @@ msgstr "Ajoutez des sources alternatives pour une lecture HTML5 optimale"
 
 #: wp-includes/user.php:2235
 msgid "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
-msgstr "Astuce : le mot de passe devrait contenir au moins 12 caractères. Pour le rendre plus sûr, utilisez des lettres en majuscule et minuscule, des nombres, et des symboles tels que ! \" ? $ % ^ &amp; )."
+msgstr "Conseil : le mot de passe devrait contenir au moins 12 caractères. Pour le rendre plus sûr, utilisez des lettres en majuscule et minuscule, des nombres, et des symboles tels que ! \" ? $ % ^ &amp; )."
 
 #. translators: %s: wpdb::prepare()
 #: wp-includes/wp-db.php:1308
