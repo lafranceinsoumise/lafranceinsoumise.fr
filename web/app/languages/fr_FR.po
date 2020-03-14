@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-01-07 18:50:45+0000\n"
+"PO-Revision-Date: 2020-02-07 15:53:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9301,7 +9301,7 @@ msgstr "Si vous ne souhaitez pas que la valeur soit affichée avec echo, utilise
 
 #: wp-includes/class-wp-term.php:159
 msgid "Term ID is shared between multiple taxonomies"
-msgstr "L’identifiant du terme est partagé par plusieurs taxinomies"
+msgstr "L’identifiant du terme est partagé par plusieurs taxonomies"
 
 #: wp-includes/taxonomy.php:1219 wp-includes/taxonomy.php:1272
 msgid "Term meta cannot be added to terms that are shared between taxonomies."
@@ -9527,7 +9527,7 @@ msgstr "Impossible de sélectionner la base données"
 
 #: wp-includes/widgets/class-wp-widget-tag-cloud.php:153
 msgid "The tag cloud will not be displayed since there are no taxonomies that support the tag cloud widget."
-msgstr "Le nuage d’étiquettes ne sera pas affiché étant donné qu’il n’y a pas de taxinomie qui reconnaisse le widget de nuage d’étiquettes."
+msgstr "Le nuage d’étiquettes ne sera pas affiché étant donné qu’il n’y a pas de taxonomie qui prenne en charge le widget de nuage d’étiquettes."
 
 #: wp-includes/user.php:1593
 msgid "Nicename may not be longer than 50 characters."
@@ -10444,7 +10444,7 @@ msgstr "Nombre d’élément(s) trouvé(s) : %d"
 
 #: wp-includes/js/dist/block-library.js:19886
 msgid "Taxonomy"
-msgstr "Taxinomie"
+msgstr "Taxonomie"
 
 #. translators: %s: Title of a menu item in draft status.
 #: wp-includes/class-wp-customize-nav-menus.php:468
@@ -13333,7 +13333,7 @@ msgstr "Désolé, l’une des taxonomies données n’est pas reconnue par ce ty
 #: wp-includes/class-wp-xmlrpc-server.php:1523
 #: wp-includes/class-wp-xmlrpc-server.php:1550
 msgid "Sorry, you are not allowed to assign a term to one of the given taxonomies."
-msgstr "Désolé, vous n’avez pas l’autorisation d’assigner un terme à l’une des taxinomies indiquées."
+msgstr "Désolé, vous n’avez pas l’autorisation d’assigner un terme à l’une des taxonomies indiquées."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1417
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1156
@@ -13360,7 +13360,7 @@ msgstr "Cette publication ne peut pas être supprimée."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1587
 msgid "Sorry, you are not allowed to add a term to one of the given taxonomies."
-msgstr "Désolé, vous n’avez pas l’autorisation d’ajouter un terme à l’une des taxinomies indiquées."
+msgstr "Désolé, vous n’avez pas l’autorisation d’ajouter un terme à l’une des taxonomies indiquées."
 
 #: wp-includes/class-wp-xmlrpc-server.php:1579
 msgid "Ambiguous term name used in a hierarchical taxonomy. Please use term ID instead."
@@ -13588,7 +13588,7 @@ msgstr "Les scripts et les styles ne peuvent pas être enregistrés ou ajoutés 
 #. translators: 1: Home URL, 2: Admin URL.
 #: wp-includes/ms-functions.php:2102
 msgid "You have been added to this site. Please visit the <a href=\"%1$s\">homepage</a> or <a href=\"%2$s\">log in</a> using your username and password."
-msgstr "Vous avez été ajouté à ce site. Vous pouvez vous rendre sur <a href=\"%s\">sa page d’accueil</a> ou <a href=\"%s\">vous connecter</a> à l’aide de votre identifiant et mot de passe."
+msgstr "Vous avez été ajouté à ce site. Vous pouvez vous rendre sur <a href=\"%1$s\">sa page d’accueil</a> ou <a href=\"%2$s\">vous connecter</a> à l’aide de votre identifiant et mot de passe."
 
 #: wp-includes/script-loader.php:1231
 msgid "Memory exceeded. Please try another smaller file."

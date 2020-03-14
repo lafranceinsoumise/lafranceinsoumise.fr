@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0"
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
-                "reference": "141b272484481432cda342727a427dc1e206bfa0",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
                 "shasum": ""
             },
             "require": {
@@ -65,6 +65,7 @@
                 "Kanboard",
                 "Lan Management System",
                 "MODX Evo",
+                "MantisBT",
                 "Mautic",
                 "Maya",
                 "OXID",
@@ -119,6 +120,7 @@
                 "shopware",
                 "silverstripe",
                 "sydes",
+                "sylius",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -126,7 +128,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2019-08-12T15:00:31+00:00"
+            "time": "2020-02-07T10:39:20+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -422,16 +424,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3"
+                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
-                "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
+                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
                 "shasum": ""
             },
             "require": {
@@ -443,7 +445,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -476,7 +478,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-11-27T13:56:44+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -531,15 +533,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "1.4.2",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/1.4.2"
+                "reference": "tags/1.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.1.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/amp.1.4.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -571,15 +573,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/2.6.1"
+                "reference": "tags/2.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -611,15 +613,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.6",
+            "version": "5.1.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.6"
+                "reference": "tags/5.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -631,15 +633,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.8.3",
+            "version": "2.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.8.3"
+                "reference": "tags/2.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.8.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -751,7 +753,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.6.2",
+            "version": "4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -759,7 +761,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412",
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1581750837",
                 "reference": null,
                 "shasum": null
             },
@@ -771,15 +773,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "1.5.5",
+            "version": "1.5.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.5.5"
+                "reference": "tags/1.5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -831,15 +833,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "12.8",
+            "version": "12.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/12.8"
+                "reference": "tags/12.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.9.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -851,15 +853,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-maintenance",
-            "version": "5.0.9",
+            "version": "5.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-maintenance/",
-                "reference": "tags/5.0.9"
+                "reference": "tags/5.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.5.0.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-maintenance.5.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
