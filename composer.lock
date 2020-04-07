@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d6efad2f1d5f69be1a2ceae9adeb87f",
+    "content-hash": "4e27f00520968f7874efb0e7115be055",
     "packages": [
         {
             "name": "composer/installers",
@@ -792,25 +792,6 @@
             "homepage": "https://wordpress.org/plugins/redis-cache/"
         },
         {
-            "name": "wpackagist-plugin/ultimate-category-excluder",
-            "version": "1.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ultimate-category-excluder/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-category-excluder.zip",
-                "reference": "trunk"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ultimate-category-excluder/"
-        },
-        {
             "name": "wpackagist-plugin/webp-simple",
             "version": "1.0.0",
             "source": {
@@ -899,24 +880,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpcf7-recaptcha/"
-        },
-        {
-            "name": "wpackagist-theme/generatepress",
-            "version": "2.4.2",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "2.4.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.2.4.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/generatepress/"
         }
     ],
     "packages-dev": [
