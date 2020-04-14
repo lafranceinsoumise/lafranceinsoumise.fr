@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
-                "reference": "42a522074db7066a03b8f7a98a6cea579f343c24"
+                "reference": "d5bb42644656c10ed817e800b7eb968fdf5bd143"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/42a522074db7066a03b8f7a98a6cea579f343c24",
-                "reference": "42a522074db7066a03b8f7a98a6cea579f343c24",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/d5bb42644656c10ed817e800b7eb968fdf5bd143",
+                "reference": "d5bb42644656c10ed817e800b7eb968fdf5bd143",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
             },
-            "time": "2020-04-14T10:20:45+00:00"
+            "time": "2020-04-14T10:54:52+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
