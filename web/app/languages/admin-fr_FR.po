@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-05 21:11:15+0000\n"
+"PO-Revision-Date: 2020-04-07 21:40:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -634,7 +634,7 @@ msgstr "Vous devez rendre ce fichier accessible en écriture avant de pouvoir en
 
 #: wp-admin/includes/ajax-actions.php:2430
 msgid "Upload failed. Please reload and try again."
-msgstr "Téléversement échoué. Veuillez rafraîchir et réessayer."
+msgstr "Téléversement échoué. Veuillez actualiser et réessayer."
 
 #: wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php:111
 msgid "Data Erasure has failed."

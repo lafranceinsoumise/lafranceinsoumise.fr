@@ -33,11 +33,15 @@
     },
     {
       "type": "vcs",
-      "url": "git@github.com:jlm2017/theme-wp"
+      "url": "git@github.com:lafranceinsoumise/theme-wp"
     },
     {
       "type": "vcs",
-      "url": "git@github.com:jlm2017/wp-plugin"
+      "url": "git@github.com:lafranceinsoumise/wp-plugin"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:lafranceinsoumise/wp-author-category"
     }
   ],
   "require": {
@@ -49,6 +53,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "jlm2017/theme-wp": "dev-master",
     "fi/fi-wordpress-addons": "dev-master",
+    "fi/author-category": "dev-master",
     "wpackagist-plugin/wordpress-seo": "^12.0",
     "wpackagist-plugin/redirection": "^4.0",
     "wpackagist-plugin/contact-form-7": "^5.0",
@@ -58,7 +63,6 @@
     "wpackagist-plugin/google-authenticator": "^0",
     "wpackagist-plugin/members": "^2.0",
     "wpackagist-plugin/gregs-comment-length-limiter": "^1.7",
-    "wpackagist-plugin/author-category": "^0.8.0",
     "wpackagist-plugin/amp": "^1.0",
     "wpackagist-plugin/menu-export": "1.0.1",
     "wpackagist-plugin/autoptimize": "^2.5",

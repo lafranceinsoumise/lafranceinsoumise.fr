@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e27f00520968f7874efb0e7115be055",
+    "content-hash": "b778f02899bb0cac870d5bf44dcee18e",
     "packages": [
         {
             "name": "composer/installers",
@@ -142,6 +142,45 @@
                 }
             ],
             "time": "2020-04-07T06:57:05+00:00"
+        },
+        {
+            "name": "fi/author-category",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
+                "reference": "42a522074db7066a03b8f7a98a6cea579f343c24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/42a522074db7066a03b8f7a98a6cea579f343c24",
+                "reference": "42a522074db7066a03b8f7a98a6cea579f343c24",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jill Royer",
+                    "email": "site@lafranceinsoumise.fr"
+                }
+            ],
+            "homepage": "https://github.com/lafranceinsoumise/wp-author-category",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
+                "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
+            },
+            "time": "2020-04-14T10:20:45+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -500,16 +539,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.2",
+            "version": "v2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "c4a653ed3f1ff900baa15b4130c8770b57285b62"
+                "reference": "df4c4d08a639be4ef5d6d1322868f9e477553679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/c4a653ed3f1ff900baa15b4130c8770b57285b62",
-                "reference": "c4a653ed3f1ff900baa15b4130c8770b57285b62",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/df4c4d08a639be4ef5d6d1322868f9e477553679",
+                "reference": "df4c4d08a639be4ef5d6d1322868f9e477553679",
                 "shasum": ""
             },
             "require": {
@@ -553,7 +592,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2020-03-27T23:16:19+00:00"
+            "time": "2020-04-12T15:11:38+00:00"
         },
         {
             "name": "wpackagist-plugin/amp",
@@ -572,25 +611,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amp/"
-        },
-        {
-            "name": "wpackagist-plugin/author-category",
-            "version": "0.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/author-category/",
-                "reference": "tags/0.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/author-category.0.8.zip",
-                "reference": "tags/0.8"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/author-category/"
         },
         {
             "name": "wpackagist-plugin/autoptimize",
@@ -966,7 +986,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jlm2017/theme-wp": 20,
-        "fi/fi-wordpress-addons": 20
+        "fi/fi-wordpress-addons": 20,
+        "fi/author-category": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
