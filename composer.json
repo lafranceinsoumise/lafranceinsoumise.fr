@@ -68,6 +68,7 @@
     "wpackagist-plugin/autoptimize": "^2.5",
     "wpackagist-plugin/autoptimize-criticalcss": "^1.16",
     "wpackagist-plugin/wp-typography": "^5.6",
+    "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.4.3",
     "wpackagist-plugin/redis-cache": "^1.4",
     "wpackagist-plugin/read-meter": "^1.0",
     "wpackagist-plugin/webp-simple": "^1.0"
