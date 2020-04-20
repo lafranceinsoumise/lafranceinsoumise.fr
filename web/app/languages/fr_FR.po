@@ -1745,7 +1745,7 @@ msgstr "Ajouté :"
 msgid "Whether posts of this status may have floating published dates."
 msgstr "Si les articles avec cet état peuvent avoir des dates publiées flottantes."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:392
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:415
 msgid "Sorry, you are not allowed to delete revisions of this post."
 msgstr "Désolé, vous n’avez pas l’autorisation de supprimer les révisions de cet article."
 
@@ -11792,7 +11792,7 @@ msgstr "Sélection en masse"
 
 #. translators: %s: Taxonomy label, %l: List of terms formatted as per
 #. $term_template.
-#: wp-includes/taxonomy.php:4341
+#: wp-includes/taxonomy.php:4343
 msgid "%s: %l."
 msgstr "%s : %l."
 
@@ -15580,7 +15580,7 @@ msgstr "La feuille de style est absente."
 msgid "The parent theme is missing. Please install the \"%s\" parent theme."
 msgstr "Le thème parent est manquant. Merci d’installer le thème parent « %s »."
 
-#: wp-includes/taxonomy.php:4414
+#: wp-includes/taxonomy.php:4416
 msgid "Invalid object ID."
 msgstr "ID d’objet non valide."
 

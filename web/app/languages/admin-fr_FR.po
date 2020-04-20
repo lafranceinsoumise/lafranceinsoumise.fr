@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-07 21:40:41+0000\n"
+"PO-Revision-Date: 2020-04-17 14:26:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2429,11 +2429,11 @@ msgstr "Qu’est-ce que PHP et comment cela affecte t-il mon site ?"
 
 #: wp-admin/includes/dashboard.php:1732
 msgid "WordPress has detected that your site is running on an outdated version of PHP."
-msgstr "WordPress a détecté que votre site tourne sur un version obsolète de PHP."
+msgstr "WordPress a détecté que votre site tourne sur une version obsolète de PHP."
 
 #: wp-admin/includes/dashboard.php:1730
 msgid "WordPress has detected that your site is running on an insecure version of PHP."
-msgstr "WordPress a détecté que votre site tourne sur un version non sécurisée de PHP."
+msgstr "WordPress a détecté que votre site tourne sur une version non sécurisée de PHP."
 
 #: wp-admin/includes/dashboard.php:42
 msgid "PHP Update Required"
