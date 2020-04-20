@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
-                "reference": "ec07ce554de4204ae97ab627d9727f6d1883f3f6"
+                "reference": "6f861da3023b5b233c80607f6d94071bdf35ab64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/ec07ce554de4204ae97ab627d9727f6d1883f3f6",
-                "reference": "ec07ce554de4204ae97ab627d9727f6d1883f3f6",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/6f861da3023b5b233c80607f6d94071bdf35ab64",
+                "reference": "6f861da3023b5b233c80607f6d94071bdf35ab64",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
             },
-            "time": "2020-04-20T13:39:11+00:00"
+            "time": "2020-04-20T14:28:17+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -759,15 +759,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.4.3",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.4.3"
+                "reference": "tags/1.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.4.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
