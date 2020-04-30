@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
-                "reference": "6f861da3023b5b233c80607f6d94071bdf35ab64"
+                "reference": "3d71f31695da7a360fa305e5bc14220d82a76302"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/6f861da3023b5b233c80607f6d94071bdf35ab64",
-                "reference": "6f861da3023b5b233c80607f6d94071bdf35ab64",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/3d71f31695da7a360fa305e5bc14220d82a76302",
+                "reference": "3d71f31695da7a360fa305e5bc14220d82a76302",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
             },
-            "time": "2020-04-20T14:28:17+00:00"
+            "time": "2020-04-21T09:58:12+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -325,16 +325,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.4",
+            "version": "5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.4"
+                "reference": "5.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4",
-                "reference": "5.4"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.1",
+                "reference": "5.4.1"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -364,7 +364,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-03-31T20:06:05+00:00"
+            "time": "2020-04-29T18:50:02+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -668,15 +668,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.9.7",
+            "version": "2.9.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.9.7"
+                "reference": "tags/2.9.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -759,15 +759,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.4.4",
+            "version": "1.4.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.4.4"
+                "reference": "tags/1.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.4.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.4.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -903,15 +903,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.2.4",
+            "version": "1.2.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.2.4"
+                "reference": "tags/1.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.2.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.2.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
