@@ -66,7 +66,6 @@
     "wpackagist-plugin/amp": "^1.0",
     "wpackagist-plugin/menu-export": "1.0.1",
     "wpackagist-plugin/autoptimize": "^2.5",
-    "wpackagist-plugin/autoptimize-criticalcss": "^1.16",
     "wpackagist-plugin/wp-typography": "^5.6",
     "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.4.3",
     "wpackagist-plugin/redis-cache": "^1.4",

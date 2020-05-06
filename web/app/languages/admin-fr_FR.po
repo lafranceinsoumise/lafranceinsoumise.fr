@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-23 09:03:23+0000\n"
+"PO-Revision-Date: 2020-05-06 13:55:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: WordPress - 5.4.x - Development - Administration\n"
 
@@ -510,7 +510,7 @@ msgstr "<a href=\"https://wordpress.org/support/article/keyboard-shortcuts/\">Do
 
 #: wp-admin/edit-comments.php:195
 msgid "<a href=\"https://wordpress.org/support/article/comment-spam/\">Documentation on Comment Spam</a>"
-msgstr "<a href=\"https://wordpress.org/support/article/comment-spam/\">Documentation sur le spam de commentaires</a>"
+msgstr "<a href=\"https://wordpress.org/support/article/comment-spam/\">Documentation sur les commentaires indésirables</a>"
 
 #: wp-admin/plugins.php:471
 msgid "<a href=\"https://wordpress.org/support/article/managing-plugins/\">Documentation on Managing Plugins</a>"
@@ -3969,7 +3969,7 @@ msgstr "Votre planification vient d’être publiée"
 
 #: wp-admin/options-discussion.php:54
 msgid "Allow link notifications from other blogs (pingbacks and trackbacks) on new posts"
-msgstr "Autoriser les notification de lien  en provenance d’autres blogs (pings et rétroliens) sur les nouvelles publications."
+msgstr "Autoriser les notifications de lien  en provenance d’autres blogs (pings et rétroliens) sur les nouvelles publications."
 
 #: wp-admin/includes/class-wp-media-list-table.php:228
 msgid "No media files found."
@@ -4686,7 +4686,7 @@ msgstr "Fichier média mis à jour."
 #: wp-admin/includes/update.php:671 wp-admin/includes/update.php:684
 #: wp-admin/update-core.php:392
 msgid "View %1$s version %2$s details"
-msgstr "Afficher les détails de la version %2$s du thème %1$s"
+msgstr "Afficher les détails de la version %2$s de l’extension ou du thème %1$s"
 
 #. translators: 1: Relative date, 2: Time.
 #: wp-admin/includes/dashboard.php:974
@@ -10380,7 +10380,7 @@ msgstr "Activé"
 #: wp-admin/includes/class-wp-comments-list-table.php:679
 msgctxt "comment"
 msgid "Not Spam"
-msgstr "N’est pas un indésirable"
+msgstr "Non indésirable"
 
 #: wp-admin/includes/class-custom-background.php:318
 msgid "This will restore the original background image. You will not be able to restore any customizations."

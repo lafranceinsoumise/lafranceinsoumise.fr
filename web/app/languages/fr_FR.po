@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-23 12:17:12+0000\n"
+"PO-Revision-Date: 2020-05-03 20:52:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: WordPress - 5.4.x - Development\n"
 
@@ -1444,11 +1444,11 @@ msgstr "Parcourez la bibliothèque pour en savoir plus sur ce que fait chaque bl
 
 #: wp-includes/js/dist/block-editor.js:18011
 msgid "There are blocks available for all kinds of content: insert text, headings, images, lists, videos, tables, and lots more."
-msgstr "Il existe des blocs pour toutes sortes de contenus : insérer du texte, des en-têtes, des images, des listes, des vidéos, des tableaux, et bien plus encore."
+msgstr "Il existe des blocs pour toutes sortes de contenus : insérer du texte, des titres, des images, des listes, des vidéos, des tableaux, et bien plus encore."
 
 #: wp-includes/js/dist/block-editor.js:18011
 msgid "Welcome to the wonderful world of blocks! Blocks are the basis of all content within the editor."
-msgstr "Vous voici dans le monde merveilleux des blocs ! Les blocs sont la base de tous les contenus au sein de l’éditeur."
+msgstr "Bienvenue dans le monde merveilleux des blocs ! Les blocs sont la base de tous les contenus au sein de l’éditeur."
 
 #: wp-includes/js/dist/block-editor.js:18011
 msgid "Content blocks"
