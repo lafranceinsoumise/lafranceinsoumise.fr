@@ -481,16 +481,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +502,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -535,7 +535,21 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-12T16:14:59+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -629,15 +643,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/2.7.0"
+                "reference": "tags/2.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -647,15 +661,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.7",
+            "version": "5.1.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.7"
+                "reference": "tags/5.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -756,15 +770,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.4.6",
+            "version": "1.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.4.6"
+                "reference": "tags/1.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.4.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -792,15 +806,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.7.1",
+            "version": "4.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "trunk"
+                "reference": "tags/4.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1584192505"
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -810,15 +824,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "1.5.7",
+            "version": "1.5.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.5.7"
+                "reference": "tags/1.5.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
