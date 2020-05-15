@@ -3,7 +3,7 @@
 Plugin Name: Redis Object Cache Drop-In
 Plugin URI: http://wordpress.org/plugins/redis-cache/
 Description: A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, HHVM, replication, clustering and WP-CLI.
-Version: 1.5.7
+Version: 1.5.9
 Author: Till Krüss
 Author URI: https://till.im/
 License: GPLv3
@@ -230,7 +230,7 @@ function wp_cache_set($key, $value, $group = '', $expiration = 0)
 }
 
 /**
- * Switch the interal blog id.
+ * Switch the internal blog id.
  *
  * This changes the blog id used to create keys in blog specific groups.
  *
@@ -592,7 +592,11 @@ class WP_Object_Cache
             }
 
             if ( ! isset( $options['replication'] ) || ! $options['replication'] ) {
-                $info = $this->redis->info();
+                if (defined('WP_REDIS_CLUSTER')) {
+                    $info = $this->redis->info(current(array_values(WP_REDIS_CLUSTER)));
+                } else {
+                    $info = $this->redis->info();
+                }
 
                 if (isset($info['redis_version'])) {
                     $this->redis_version = $info['redis_version'];
@@ -881,6 +885,18 @@ class WP_Object_Cache
         }
     }
 
+    protected function glob_quote($string) {
+        $characters = ['*', '+', '?', '!', '{', '}', '[', ']', '(', ')', '|', '@'];
+
+        return str_replace(
+            $characters,
+            array_map(function ($character) {
+                return "[{$character}]";
+            }, $characters),
+            $string
+        );
+    }
+
     /**
      * Returns a closure ready to be called to flush selectively ignoring unflushable groups.
      *
@@ -889,6 +905,8 @@ class WP_Object_Cache
      */
     protected function lua_flush_closure($salt)
     {
+        $salt = $this->glob_quote($salt);
+
         return function () use ($salt) {
             $script = <<<LUA
                 local cur = 0
@@ -927,6 +945,8 @@ LUA;
      */
     protected function lua_flush_extended_closure($salt)
     {
+        $salt = $this->glob_quote($salt);
+
         return function () use ($salt) {
             $salt_length = strlen($salt);
 
@@ -1423,7 +1443,7 @@ LUA;
     /**
      * Wrapper to validate the cache keys expiration value
      *
-     * @param mixed $expiration Incomming expiration value (whatever it is)
+     * @param mixed $expiration Incoming expiration value (whatever it is)
      */
     protected function validate_expiration($expiration)
     {
