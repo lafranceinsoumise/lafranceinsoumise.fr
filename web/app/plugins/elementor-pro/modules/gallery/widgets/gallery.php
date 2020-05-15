@@ -3,15 +3,12 @@
 namespace ElementorPro\Modules\Gallery\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\Responsive\Responsive;
+use Elementor\Core\Schemes;
 use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
-use Elementor\Scheme_Color;
-use Elementor\Scheme_Typography;
 use ElementorPro\Base\Base_Widget;
 use ElementorPro\Plugin;
 
@@ -119,7 +116,30 @@ class Gallery extends Base_Widget {
 				'condition' => [
 					'gallery_type' => 'multiple',
 				],
-				'separator' => 'after',
+			]
+		);
+
+		$this->add_control(
+			'order_by',
+			[
+				'type' => Controls_Manager::SELECT,
+				'label' => __( 'Order By', 'elementor-pro' ),
+				'options' => [
+					'' => __( 'Default', 'elementor-pro' ),
+					'random' => __( 'Random', 'elementor-pro' ),
+				],
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'lazyload',
+			[
+				'type' => Controls_Manager::SWITCHER,
+				'label' => __( 'Lazy Load', 'elementor-pro' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'frontend_available' => true,
 			]
 		);
 
@@ -134,6 +154,7 @@ class Gallery extends Base_Widget {
 					'justified' => __( 'Justified', 'elementor-pro' ),
 					'masonry' => __( 'Masonry', 'elementor-pro' ),
 				],
+				'separator' => 'before',
 				'frontend_available' => true,
 			]
 		);
@@ -225,7 +246,6 @@ class Gallery extends Base_Widget {
 			[
 				'label' => __( 'URL', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
-				'show_external' => false,
 				'condition' => [
 					'link_to' => 'custom',
 				],
@@ -476,7 +496,7 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Border Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}}' => '--image-border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -488,7 +508,7 @@ class Gallery extends Base_Widget {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}' => '--image-border-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -500,7 +520,7 @@ class Gallery extends Base_Widget {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}' => '--image-border-radius: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -593,7 +613,7 @@ class Gallery extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .e-gallery-image' => 'transition-duration: {{SIZE}}ms',
+					'{{WRAPPER}}' => '--image-transition-duration: {{SIZE}}ms',
 				],
 			]
 		);
@@ -688,7 +708,7 @@ class Gallery extends Base_Widget {
 					'luminosity' => 'Luminosity',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__overlay' => 'mix-blend-mode: {{VALUE}}',
+					'{{WRAPPER}}' => '--overlay-mix-blend-mode: {{VALUE}}',
 				],
 				'separator' => 'before',
 				'render_type' => 'ui',
@@ -754,7 +774,7 @@ class Gallery extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__overlay' => 'transition-duration: {{SIZE}}ms',
+					'{{WRAPPER}}' => '--overlay-transition-duration: {{SIZE}}ms',
 				],
 			]
 		);
@@ -775,7 +795,6 @@ class Gallery extends Base_Widget {
 			[
 				'label' => __( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
@@ -792,7 +811,7 @@ class Gallery extends Base_Widget {
 				],
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__content' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}}' => '--content-text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -802,7 +821,6 @@ class Gallery extends Base_Widget {
 			[
 				'label' => __( 'Vertical Position', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'top' => [
 						'title' => __( 'Top', 'elementor-pro' ),
@@ -823,7 +841,7 @@ class Gallery extends Base_Widget {
 					'bottom' => 'flex-end',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__content' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}}' => '--content-justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -838,7 +856,7 @@ class Gallery extends Base_Widget {
 					'size' => 20,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__content' => 'padding: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}' => '--content-padding: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -861,7 +879,7 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--title-text-color: {{VALUE}}',
 				],
 				'condition' => [
 					'overlay_title!' => '',
@@ -873,7 +891,7 @@ class Gallery extends Base_Widget {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-gallery-item__title',
 				'condition' => [
 					'overlay_title!' => '',
@@ -888,7 +906,7 @@ class Gallery extends Base_Widget {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__title + .elementor-gallery-item__description' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}' => '--description-margin-top: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'overlay_title!' => '',
@@ -914,7 +932,7 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__description' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--description-text-color: {{VALUE}}',
 				],
 				'condition' => [
 					'overlay_description!' => '',
@@ -926,7 +944,7 @@ class Gallery extends Base_Widget {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
 				'selector' => '{{WRAPPER}} .elementor-gallery-item__description',
 				'condition' => [
 					'overlay_description!' => '',
@@ -1004,10 +1022,7 @@ class Gallery extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery-item__content > div' => 'transition-duration: {{SIZE}}ms',
-					'{{WRAPPER}} .elementor-gallery-item__content.elementor-gallery--sequenced-animation > div:nth-child(2)' => 'transition-delay: calc( ( {{SIZE}}ms / 3 ) )',
-					'{{WRAPPER}} .elementor-gallery-item__content.elementor-gallery--sequenced-animation > div:nth-child(3)' => 'transition-delay: calc( ( {{SIZE}}ms / 3 ) * 2 )',
-					'{{WRAPPER}} .elementor-gallery-item__content.elementor-gallery--sequenced-animation > div:nth-child(4)' => 'transition-delay: calc( ( {{SIZE}}ms / 3 ) * 3 )',
+					'{{WRAPPER}}' => '--content-transition-duration: {{SIZE}}ms; --content-transition-delay: {{SIZE}}ms;',
 				],
 				'condition' => [
 					'content_hover_animation!' => '',
@@ -1046,7 +1061,6 @@ class Gallery extends Base_Widget {
 			[
 				'label' => __( 'Align', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
@@ -1067,7 +1081,7 @@ class Gallery extends Base_Widget {
 					'right' => 'flex-end',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery__titles-container' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}}' => '--titles-container-justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -1086,11 +1100,11 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} a.elementor-item' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--galleries-title-color-normal: {{VALUE}}',
 				],
 			]
 		);
@@ -1100,7 +1114,7 @@ class Gallery extends Base_Widget {
 			[
 				'name' => 'galleries_titles_typography',
 				'selector' => '{{WRAPPER}} .elementor-gallery-title',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 			]
 		);
 
@@ -1118,14 +1132,11 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_2,
 				],
 				'selectors' => [
-					'{{WRAPPER}} a.elementor-item:hover,
-					{{WRAPPER}} a.elementor-item.elementor-item-active,
-					{{WRAPPER}} a.elementor-item.highlighted,
-					{{WRAPPER}} a.elementor-item:focus' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--galleries-title-color-hover: {{VALUE}}',
 				],
 				'condition' => [
 					'pointer!' => 'background',
@@ -1133,6 +1144,10 @@ class Gallery extends Base_Widget {
 			]
 		);
 
+		/*
+		When the pointer style = background, users could need a different text color.
+		The control handles the title color in hover state, only when the pointer style is background.
+		*/
 		$this->add_control(
 			'galleries_title_color_hover_pointer_bg',
 			[
@@ -1140,10 +1155,7 @@ class Gallery extends Base_Widget {
 				'type' => Controls_Manager::COLOR,
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} a.elementor-item:hover,
-					{{WRAPPER}} a.elementor-item.elementor-item-active,
-					{{WRAPPER}} a.elementor-item.highlighted,
-					{{WRAPPER}} a.elementor-item:focus' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--galleries-title-color-hover: {{VALUE}}',
 				],
 				'condition' => [
 					'pointer' => 'background',
@@ -1157,14 +1169,11 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Pointer Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_4,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery__titles-container:not(.e--pointer-framed) .elementor-item:before,
-					{{WRAPPER}} .elementor-gallery__titles-container:not(.e--pointer-framed) .elementor-item:after' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .e--pointer-framed .elementor-item:before,
-					{{WRAPPER}} .e--pointer-framed .elementor-item:after' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}}' => '--galleries-pointer-bg-color-hover: {{VALUE}}',
 				],
 				'condition' => [
 					'pointer!' => [ 'none', 'text' ],
@@ -1186,11 +1195,11 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Text Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_2,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_2,
 				],
 				'selectors' => [
-					'{{WRAPPER}} a.elementor-item.elementor-item-active' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--gallery-title-color-active: {{VALUE}}',
 				],
 			]
 		);
@@ -1201,14 +1210,11 @@ class Gallery extends Base_Widget {
 				'label' => __( 'Pointer Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_4,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-gallery__titles-container:not(.e--pointer-framed) .elementor-item.elementor-item-active:before,
-					{{WRAPPER}} .elementor-gallery__titles-container:not(.e--pointer-framed) .elementor-item.elementor-item-active:after' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .e--pointer-framed .elementor-item.elementor-item-active:before,
-					{{WRAPPER}} .e--pointer-framed .elementor-item.elementor-item-active:after' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}}' => '--galleries-pointer-bg-color-active: {{VALUE}}',
 				],
 				'condition' => [
 					'pointer!' => [ 'none', 'text' ],
@@ -1233,15 +1239,7 @@ class Gallery extends Base_Widget {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .e--pointer-framed .elementor-item:before' => 'border-width: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .e--pointer-framed.e--animation-draw .elementor-item:before' => 'border-width: 0 0 {{SIZE}}{{UNIT}} {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .e--pointer-framed.e--animation-draw .elementor-item:after' => 'border-width: {{SIZE}}{{UNIT}} {{SIZE}}{{UNIT}} 0 0',
-					'{{WRAPPER}} .e--pointer-framed.e--animation-corners .elementor-item:before' => 'border-width: {{SIZE}}{{UNIT}} 0 0 {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .e--pointer-framed.e--animation-corners .elementor-item:after' => 'border-width: 0 {{SIZE}}{{UNIT}} {{SIZE}}{{UNIT}} 0',
-					'{{WRAPPER}} .e--pointer-underline .elementor-item:after,
-					 {{WRAPPER}} .e--pointer-overline .elementor-item:before,
-					 {{WRAPPER}} .e--pointer-double-line .elementor-item:before,
-					 {{WRAPPER}} .e--pointer-double-line .elementor-item:after' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}' => '--galleries-pointer-border-width: {{SIZE}}{{UNIT}}',
 				],
 				'separator' => 'before',
 				'condition' => [
@@ -1350,6 +1348,7 @@ class Gallery extends Base_Widget {
 		$this->add_render_attribute( 'gallery_item_background_overlay', [ 'class' => 'elementor-gallery-item__overlay' ] );
 
 		$gallery_items = [];
+		$thumbnail_size = $settings['thumbnail_image_size'];
 		foreach ( $galleries as $gallery_index => $gallery ) {
 			foreach ( $gallery as $index => $item ) {
 				if ( in_array( $item['id'], array_keys( $gallery_items ), true ) ) {
@@ -1360,18 +1359,35 @@ class Gallery extends Base_Widget {
 			}
 		}
 
+		if ( 'random' === $settings['order_by'] ) {
+			$shuffled_items = [];
+			$keys = array_keys( $gallery_items );
+			shuffle( $keys );
+			foreach ( $keys as $key ) {
+				$shuffled_items[ $key ] = $gallery_items[ $key ];
+			}
+			$gallery_items = $shuffled_items;
+		}
+
 		if ( ! empty( $galleries ) ) { ?>
 		<div <?php echo $this->get_render_attribute_string( 'gallery_container' ); ?>>
 			<?php
 			foreach ( $gallery_items as $id => $tags ) :
 				$unique_index = $id; //$gallery_index . '_' . $index;
-				$thumbnail_size = $settings['thumbnail_image_size'];
+				$image_src = wp_get_attachment_image_src( $id, $thumbnail_size );
+				if ( ! $image_src ) {
+					continue;
+				}
 				$attachment = get_post( $id );
 				$image_data = [
 					'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-					'permalink' => get_permalink( $attachment->ID ),
 					'media' => wp_get_attachment_image_src( $id, 'full' )['0'],
-					'src' => wp_get_attachment_image_src( $id, $thumbnail_size )['0'],
+					'src' => $image_src['0'],
+					'width' => $image_src['1'],
+					'height' => $image_src['2'],
+					'caption' => $attachment->post_excerpt,
+					'description' => $attachment->post_content,
+					'title' => $attachment->post_title,
 				];
 
 				$this->add_render_attribute( 'gallery_item_' . $unique_index, [
@@ -1390,12 +1406,17 @@ class Gallery extends Base_Widget {
 				}
 
 				if ( 'a' === $gallery_item_tag ) {
-					$href = '#';
 					if ( 'file' === $settings['link_to'] ) {
 						$href = $image_data['media'];
-						$this->add_render_attribute( 'gallery_item_' . $unique_index, [ 'data-elementor-lightbox-slideshow' => 'all' ] );
+
+						$this->add_render_attribute( 'gallery_item_' . $unique_index, [
+							'href' => $href,
+						] );
+
+						$this->add_lightbox_data_attributes( 'gallery_item_' . $unique_index, $id, 'yes', 'all-' . $this->get_id() );
+					} elseif ( 'custom' === $settings['link_to'] ) {
+						$this->add_link_attributes( 'gallery_item_' . $unique_index, $settings['url'] );
 					}
-					$this->add_render_attribute( 'gallery_item_' . $unique_index, [ 'href' => $href ] );
 				}
 
 				$this->add_render_attribute( 'gallery_item_image_' . $unique_index,
@@ -1405,22 +1426,17 @@ class Gallery extends Base_Widget {
 							'elementor-gallery-item__image',
 						],
 						'data-thumbnail' => $image_data['src'],
+						'data-width' => $image_data['width'],
+						'data-height' => $image_data['height'],
 						'alt' => $image_data['alt'],
 					]
 				);?>
-
 				<<?php echo $gallery_item_tag; ?> <?php echo $this->get_render_attribute_string( 'gallery_item_' . $unique_index ); ?>>
 					<div <?php echo $this->get_render_attribute_string( 'gallery_item_image_' . $unique_index ); ?> ></div>
 					<?php if ( ! empty( $settings['overlay_background'] ) ) : ?>
 					<div <?php echo $this->get_render_attribute_string( 'gallery_item_background_overlay' ); ?>></div>
 					<?php endif; ?>
-					<?php if ( $has_title || $has_description ) :
-						$image_data = [
-							'caption' => $attachment->post_excerpt,
-							'description' => $attachment->post_content,
-							'title' => $attachment->post_title,
-						];
-						?>
+					<?php if ( $has_title || $has_description ) : ?>
 					<div <?php echo $this->get_render_attribute_string( 'gallery_item_content' ); ?>>
 						<?php if ( $has_title ) :
 							$title = $image_data[ $settings['overlay_title'] ];

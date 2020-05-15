@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorPro\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,7 +32,6 @@ class Featured_Image_Data extends Tag {
 	}
 
 	private function get_attacment() {
-		$settings = $this->get_settings();
 		$id = get_post_thumbnail_id();
 
 		if ( ! $id ) {
@@ -47,7 +46,7 @@ class Featured_Image_Data extends Tag {
 		$attachment = $this->get_attacment();
 
 		if ( ! $attachment ) {
-			return '';
+			return;
 		}
 
 		$value = '';
@@ -72,6 +71,7 @@ class Featured_Image_Data extends Tag {
 				$value = $attachment->post_title;
 				break;
 		}
+
 		echo wp_kses_post( $value );
 	}
 

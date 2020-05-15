@@ -2,10 +2,9 @@
 namespace ElementorPro\Modules\Posts\Skins;
 
 use Elementor\Controls_Manager;
+use Elementor\Core\Schemes;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Color;
-use Elementor\Scheme_Typography;
 use Elementor\Widget_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -56,6 +55,7 @@ class Skin_Cards extends Skin_Base {
 		$this->register_excerpt_controls();
 		$this->register_meta_data_controls();
 		$this->register_read_more_controls();
+		$this->register_link_controls();
 		$this->register_badge_controls();
 		$this->register_avatar_controls();
 	}
@@ -124,7 +124,6 @@ class Skin_Cards extends Skin_Base {
 			'badge_position',
 			[
 				'label' => 'Badge Position',
-				'label_block' => false,
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
@@ -155,8 +154,8 @@ class Skin_Cards extends Skin_Base {
 					'{{WRAPPER}} .elementor-post__card .elementor-post__badge' => 'background-color: {{VALUE}};',
 				],
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_4,
 				],
 				'condition' => [
 					$this->get_control_id( 'show_badge' ) => 'yes',
@@ -243,7 +242,7 @@ class Skin_Cards extends Skin_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'badge_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_4,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .elementor-post__card .elementor-post__badge',
 				'exclude' => [ 'font_size', 'line-height' ],
 				'condition' => [
@@ -489,6 +488,7 @@ class Skin_Cards extends Skin_Base {
 
 	protected function register_design_content_controls() {
 		parent::register_design_content_controls();
+
 		$this->remove_control( 'meta_spacing' );
 
 		$this->update_control(
@@ -497,6 +497,9 @@ class Skin_Cards extends Skin_Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-post__read-more' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
+			],
+			[
+				'recursive' => true,
 			]
 		);
 	}
@@ -565,8 +568,11 @@ class Skin_Cards extends Skin_Base {
 		if ( empty( $thumbnail_html ) ) {
 			return;
 		}
+
+		$optional_attributes_html = $this->get_optional_link_attributes_html();
+
 		?>
-		<a class="elementor-post__thumbnail__link" href="<?php echo get_permalink(); ?>">
+		<a class="elementor-post__thumbnail__link" href="<?php echo get_permalink(); ?>" <?php echo $optional_attributes_html; ?>>
 			<div class="elementor-post__thumbnail"><?php echo $thumbnail_html; ?></div>
 		</a>
 		<?php

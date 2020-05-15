@@ -2,16 +2,16 @@
 namespace ElementorPro\Modules\Woocommerce\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\Core\Schemes;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
-use Elementor\Scheme_Typography;
 use ElementorPro\Modules\Woocommerce\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Menu_Cart extends Widget_Base {
+class Menu_Cart extends Base_Widget {
 
 	public function get_name() {
 		return 'woocommerce-menu-cart';
@@ -107,7 +107,6 @@ class Menu_Cart extends Widget_Base {
 			[
 				'label' => __( 'Alignment', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-pro' ),
@@ -279,7 +278,7 @@ class Menu_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'toggle_button_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-menu-cart__toggle .elementor-button',
 				'separator' => 'before',
 			]
@@ -506,7 +505,7 @@ class Menu_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'product_title_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-menu-cart__product-name, {{WRAPPER}} .elementor-menu-cart__product-name a',
 			]
 		);
@@ -536,7 +535,7 @@ class Menu_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'product_price_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-menu-cart__product-price',
 			]
 		);
@@ -660,7 +659,7 @@ class Menu_Cart extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'product_buttons_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-menu-cart__footer-buttons .elementor-button',
 				'separator' => 'before',
 			]

@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\ThemeBuilder\Classes;
 
 use Elementor\Core\Files\CSS\Post as Post_CSS;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\ThemeBuilder\Documents\Theme_Document;
 use ElementorPro\Modules\ThemeBuilder\Module;
 use ElementorPro\Plugin;
@@ -422,14 +422,6 @@ class Locations_Manager {
 		$args = array_replace_recursive( $this->core_locations[ $location ], $args );
 
 		$this->register_location( $location, $args );
-	}
-
-	public function get_locations_without_core() {
-		_deprecated_function( __METHOD__, '2.4.0', __CLASS__ . '::get_locations( [ \'public\'=> true ] )' );
-
-		return $this->get_locations( [
-			'public' => true,
-		] );
 	}
 
 	public function location_exits( $location = '', $check_match = false ) {

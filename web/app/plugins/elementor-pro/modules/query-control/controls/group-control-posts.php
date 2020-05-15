@@ -3,7 +3,7 @@ namespace ElementorPro\Modules\QueryControl\Controls;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Base;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\QueryControl\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +33,7 @@ class Group_Control_Posts extends Group_Control_Base {
 	 * @return mixed
 	 */
 	public static function on_export_remove_setting_from_element( $element, $control_id ) {
-		// _deprecated_function( __METHOD__, '2.4.0' );
+		_deprecated_function( __METHOD__, '2.4.0' );
 
 		unset( $element['settings'][ $control_id . '_posts_ids' ] );
 		unset( $element['settings'][ $control_id . '_authors' ] );

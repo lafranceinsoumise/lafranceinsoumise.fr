@@ -2,7 +2,7 @@
 namespace ElementorPro\Modules\Forms\Actions;
 
 use Elementor\Controls_Manager;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
 use ElementorPro\Modules\Forms\Classes\Action_Base;
 use ElementorPro\Modules\Forms\Classes\Form_Record;
@@ -69,7 +69,6 @@ class Email extends Action_Base {
 				'default' => '[all-fields]',
 				'placeholder' => '[all-fields]',
 				'description' => sprintf( __( 'By default, all form fields are sent via %s shortcode. To customize sent fields, copy the shortcode that appears inside each field and paste it above.', 'elementor-pro' ), '<code>[all-fields]</code>' ),
-				'label_block' => true,
 				'render_type' => 'none',
 			]
 		);
@@ -194,6 +193,10 @@ class Email extends Action_Base {
 		return $element;
 	}
 
+	/**
+	 * @param \ElementorPro\Modules\Forms\Classes\Form_Record  $record
+	 * @param \ElementorPro\Modules\Forms\Classes\Ajax_Handler $ajax_handler
+	 */
 	public function run( $record, $ajax_handler ) {
 		$settings = $record->get( 'form_settings' );
 		$send_html = 'plain' !== $settings[ $this->get_control_id( 'email_content_type' ) ];
@@ -219,17 +222,7 @@ class Email extends Action_Base {
 			}
 		}
 
-		$email_reply_to = '';
-
-		if ( ! empty( $fields['email_reply_to'] ) ) {
-			$sent_data = $record->get( 'sent_data' );
-			foreach ( $record->get( 'fields' ) as $field_index => $field ) {
-				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) && is_email( $sent_data[ $field_index ] ) ) {
-					$email_reply_to = $sent_data[ $field_index ];
-					break;
-				}
-			}
-		}
+		$email_reply_to = $this->get_reply_to( $record, $fields );
 
 		$fields['email_content'] = $this->replace_content_shortcodes( $fields['email_content'], $record, $line_break );
 
@@ -321,6 +314,22 @@ class Email extends Action_Base {
 	// Allow overwrite the control_id with a prefix, @see Email2
 	protected function get_control_id( $control_id ) {
 		return $control_id;
+	}
+
+	protected function get_reply_to( $record, $fields ) {
+		$email_reply_to  = '';
+
+		if ( ! empty( $fields['email_reply_to'] ) ) {
+			$sent_data = $record->get( 'sent_data' );
+			foreach ( $record->get( 'fields' ) as $field_index => $field ) {
+				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) && is_email( $sent_data[ $field_index ] ) ) {
+					$email_reply_to = $sent_data[ $field_index ];
+					break;
+				}
+			}
+		}
+
+		return $email_reply_to;
 	}
 
 	/**

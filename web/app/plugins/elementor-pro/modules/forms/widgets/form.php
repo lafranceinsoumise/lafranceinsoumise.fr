@@ -2,17 +2,14 @@
 namespace ElementorPro\Modules\Forms\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\Core\Schemes;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
 use Elementor\Repeater;
-use Elementor\Scheme_Color;
-use Elementor\Scheme_Typography;
-use ElementorPro\Classes\Utils;
+use ElementorPro\Core\Utils;
 use ElementorPro\Modules\Forms\Classes\Ajax_Handler;
 use ElementorPro\Modules\Forms\Classes\Form_Base;
-use ElementorPro\Modules\Forms\Classes\Recaptcha_Handler;
-use ElementorPro\Modules\Forms\Classes\Recaptcha_V3_Handler;
 use ElementorPro\Modules\Forms\Module;
 use ElementorPro\Plugin;
 
@@ -430,13 +427,14 @@ class Form extends Form_Base {
 			]
 		);
 
+		$shortcode_template = '{{ view.container.settings.get( \'custom_id\' ) }}';
 		$repeater->add_control(
 			'shortcode',
 			[
 				'label' => __( 'Shortcode', 'elementor-pro' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'classes' => 'forms-field-shortcode',
-				'raw' => '<input class="elementor-form-field-shortcode" readonly />',
+				'raw' => '<input class="elementor-form-field-shortcode" value=\'[field id="' . $shortcode_template . '"]\' readonly />',
 			]
 		);
 
@@ -639,7 +637,6 @@ class Form extends Form_Base {
 				'label' => __( 'Icon', 'elementor-pro' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'button_icon',
-				'label_block' => true,
 			]
 		);
 
@@ -686,7 +683,6 @@ class Form extends Form_Base {
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
 				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor-pro' ),
-				'label_block' => false,
 				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-pro' ),
 				'separator' => 'before',
 
@@ -920,8 +916,8 @@ class Form extends Form_Base {
 					'{{WRAPPER}} .elementor-field-group > label, {{WRAPPER}} .elementor-field-subgroup label' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_3,
 				],
 			]
 		);
@@ -946,7 +942,7 @@ class Form extends Form_Base {
 			[
 				'name' => 'label_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-group > label',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
 			]
 		);
 
@@ -988,8 +984,8 @@ class Form extends Form_Base {
 					'{{WRAPPER}} .elementor-field-type-html' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_3,
 				],
 			]
 		);
@@ -999,7 +995,7 @@ class Form extends Form_Base {
 			[
 				'name' => 'html_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-type-html',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
 			]
 		);
 
@@ -1022,8 +1018,8 @@ class Form extends Form_Base {
 					'{{WRAPPER}} .elementor-field-group .elementor-field' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_3,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_3,
 				],
 			]
 		);
@@ -1033,7 +1029,7 @@ class Form extends Form_Base {
 			[
 				'name' => 'field_typography',
 				'selector' => '{{WRAPPER}} .elementor-field-group .elementor-field, {{WRAPPER}} .elementor-field-subgroup label',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
 			]
 		);
 
@@ -1117,8 +1113,8 @@ class Form extends Form_Base {
 				'label' => __( 'Background Color', 'elementor-pro' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Schemes\Color::get_type(),
+					'value' => Schemes\Color::COLOR_4,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-button' => 'background-color: {{VALUE}};',
@@ -1143,7 +1139,7 @@ class Form extends Form_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_4,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} .elementor-button',
 			]
 		);
@@ -1250,7 +1246,7 @@ class Form extends Form_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'message_typography',
-				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
+				'scheme' => Schemes\Typography::TYPOGRAPHY_3,
 				'selector' => '{{WRAPPER}} .elementor-message',
 			]
 		);
@@ -1391,6 +1387,12 @@ class Form extends Form_Base {
 			<input type="hidden" name="post_id" value="<?php echo Utils::get_current_post_id(); ?>"/>
 			<input type="hidden" name="form_id" value="<?php echo $this->get_id(); ?>"/>
 
+			<?php if ( is_singular() ) {
+				// `queried_id` may be different from `post_id` on Single theme builder templates.
+				?>
+				<input type="hidden" name="queried_id" value="<?php echo get_the_ID(); ?>"/>
+			<?php } ?>
+
 			<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 				<?php
 				foreach ( $instance['form_fields'] as $item_index => $item ) :
@@ -1505,7 +1507,15 @@ class Form extends Form_Base {
 		<?php
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Form widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		$submit_text = esc_html__( 'Submit', 'elementor-pro' );
 		?>
 		<form class="elementor-form" id="{{settings.form_id}}" name="{{settings.form_name}}">
@@ -1586,7 +1596,7 @@ class Form extends Form_Base {
 										}
 
 										view.addRenderAttribute( option_id, 'value', option_value );
-										if ( option_value ===  item.field_value ) {
+										if ( item.field_value.split( ',' ) .indexOf( option_value ) ) {
 											view.addRenderAttribute( option_id, 'selected', 'selected' );
 										}
 										inputField += '<option ' + view.getRenderAttributeString( option_id ) + '>' + option_label + '</option>';

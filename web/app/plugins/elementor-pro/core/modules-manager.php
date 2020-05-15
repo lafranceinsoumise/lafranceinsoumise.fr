@@ -1,5 +1,5 @@
 <?php
-namespace ElementorPro;
+namespace ElementorPro\Core;
 
 use ElementorPro\Base\Module_Base;
 
@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-final class Manager {
+final class Modules_Manager {
 	/**
 	 * @var Module_Base[]
 	 */
@@ -24,6 +24,7 @@ final class Manager {
 			'assets-manager',
 			'popup',
 			'motion-fx',
+			'usage',
 
 			// Modules with Widgets.
 			'theme-builder',
@@ -37,6 +38,7 @@ final class Manager {
 			'flip-box',
 			'call-to-action',
 			'carousel',
+			'table-of-contents',
 			'countdown',
 			'share-buttons',
 			'theme-elements',
@@ -47,13 +49,12 @@ final class Manager {
 			'dynamic-tags',
 			'sticky',
 			'wp-cli',
-			'link-actions',
 		];
 
 		foreach ( $modules as $module_name ) {
 			$class_name = str_replace( '-', ' ', $module_name );
 			$class_name = str_replace( ' ', '', ucwords( $class_name ) );
-			$class_name = __NAMESPACE__ . '\\Modules\\' . $class_name . '\Module';
+			$class_name = '\ElementorPro\Modules\\' . $class_name . '\Module';
 
 			/** @var Module_Base $class_name */
 			if ( $class_name::is_active() ) {

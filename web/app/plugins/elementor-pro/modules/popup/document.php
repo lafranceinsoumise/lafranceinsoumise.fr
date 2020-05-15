@@ -9,6 +9,7 @@ use ElementorPro\Modules\Popup\DisplaySettings\Base;
 use ElementorPro\Modules\Popup\DisplaySettings\Timing;
 use ElementorPro\Modules\Popup\DisplaySettings\Triggers;
 use ElementorPro\Modules\ThemeBuilder\Documents\Theme_Section_Document;
+use ElementorPro\Modules\ThemeBuilder\Module as ThemeBuilderModule;
 use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,6 +30,7 @@ class Document extends Theme_Section_Document {
 
 		$properties['admin_tab_group'] = 'popup';
 		$properties['location'] = 'popup';
+		$properties['support_kit'] = true;
 
 		return $properties;
 	}
@@ -65,8 +67,8 @@ class Document extends Theme_Section_Document {
 		return $this->display_settings;
 	}
 
-	public function _get_initial_config() {
-		$config = parent::_get_initial_config();
+	public function get_initial_config() {
+		$config = parent::get_initial_config();
 
 		$display_settings = $this->get_display_settings();
 
@@ -107,7 +109,14 @@ class Document extends Theme_Section_Document {
 
 		$display_settings = $this->get_display_settings();
 
-		$settings['triggers'] = $display_settings['triggers']->get_frontend_settings();
+		// Disable triggers if the popup is not printed by the theme builder conditions.
+		// avoid auto show the popup if it's enqueued by a dynamic tag and etc.)
+		$popups_by_condition = ThemeBuilderModule::instance()->get_conditions_manager()->get_documents_for_location( 'popup' );
+
+		if ( $popups_by_condition && isset( $popups_by_condition[ $this->get_main_id() ] ) ) {
+			$settings['triggers'] = $display_settings['triggers']->get_frontend_settings();
+		}
+
 		$settings['timing'] = $display_settings['timing']->get_frontend_settings();
 
 		return $settings;
@@ -233,7 +242,6 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Horizontal', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'toggle' => false,
 				'default' => 'center',
 				'options' => [
@@ -265,7 +273,6 @@ class Document extends Theme_Section_Document {
 			[
 				'label' => __( 'Vertical', 'elementor-pro' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'toggle' => false,
 				'default' => 'center',
 				'options' => [
@@ -374,7 +381,6 @@ class Document extends Theme_Section_Document {
 						],
 					],
 				],
-				'frontend_available' => true,
 			]
 		);
 
@@ -767,8 +773,8 @@ class Document extends Theme_Section_Document {
 
 	protected function get_remote_library_config() {
 		$config = parent::get_remote_library_config();
-
 		$config['type'] = 'popup';
+		$config['default_route'] = 'templates/popups';
 		$config['autoImportSettings'] = true;
 
 		return $config;

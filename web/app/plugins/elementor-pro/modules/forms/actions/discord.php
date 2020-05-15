@@ -157,7 +157,7 @@ class Discord extends Action_Base {
 		}
 
 		if ( ! empty( $settings['discord_ts'] ) && 'yes' === $settings['discord_ts'] ) {
-			$embeds['timestamp'] = date( \DateTime::ISO8601 );
+			$embeds['timestamp'] = gmdate( \DateTime::ISO8601 );
 			$embeds['footer'] = [
 				'text' => sprintf( __( 'Powered by %s', 'elementor-pro' ), 'Elementor' ),
 				'icon_url' => is_ssl() ? ELEMENTOR_ASSETS_URL . 'images/logo-icon.png' : null,
@@ -172,6 +172,7 @@ class Discord extends Action_Base {
 
 		$response = wp_remote_post( $settings['discord_webhook'], [
 			'body' => wp_json_encode( $webhook_data ),
+			'headers' => [ 'Content-Type' => 'application/json; charset=utf-8' ],
 		]);
 
 		if ( 204 !== (int) wp_remote_retrieve_response_code( $response ) ) {

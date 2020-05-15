@@ -2,11 +2,10 @@
 namespace ElementorPro\Modules\Popup;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag as DynamicTagsTag;
+use ElementorPro\Modules\DynamicTags\Tags\Base\Tag as DynamicTagsTag;
 use ElementorPro\Modules\DynamicTags\Module as DynamicTagsModule;
-use ElementorPro\Modules\LinkActions\Module as LinkActionsModule;
 use ElementorPro\Modules\QueryControl\Module as QueryControlModule;
-use Elementor\TemplateLibrary\Source_Local;
+use ElementorPro\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -54,6 +53,7 @@ class Tag extends DynamicTagsTag {
 					'object' => QueryControlModule::QUERY_OBJECT_LIBRARY_TEMPLATE,
 					'query' => [
 						'posts_per_page' => 20,
+						'post_status' => [ 'publish', 'private' ],
 						'meta_query' => [
 							[
 								'key' => Document::TYPE_META_KEY,
@@ -101,7 +101,7 @@ class Tag extends DynamicTagsTag {
 			return;
 		}
 
-		$link_action_url = LinkActionsModule::create_action_url( 'popup:open', [
+		$link_action_url = Plugin::elementor()->frontend->create_action_hash( 'popup:open', [
 			'id' => $settings['popup'],
 			'toggle' => 'toggle' === $settings['action'],
 		] );
@@ -112,6 +112,6 @@ class Tag extends DynamicTagsTag {
 	}
 
 	private function print_close_popup_link( array $settings ) {
-		echo LinkActionsModule::create_action_url( 'popup:close', [ 'do_not_show_again' => $settings['do_not_show_again'] ] );
+		echo Plugin::elementor()->frontend->create_action_hash( 'popup:close', [ 'do_not_show_again' => $settings['do_not_show_again'] ] );
 	}
 }

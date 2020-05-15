@@ -18,8 +18,8 @@ class Notice_Bar extends Base_Notice_Bar {
 
 		$license_admin = Plugin::instance()->license_admin;
 
-		if ( License_API::STATUS_VALID === $license_data['license'] || License_API::STATUS_EXPIRED === $license_data['license'] ) {
-			if ( License_API::STATUS_EXPIRED === $license_data['license'] || $license_admin->is_license_about_to_expire() ) {
+		if ( License_API::is_license_active() || License_API::STATUS_EXPIRED === $license_data['license'] ) {
+			if ( License_API::STATUS_EXPIRED === $license_data['license'] || License_API::is_license_about_to_expire() ) {
 				$settings = [
 					'option_key' => '_elementor_pro_editor_renew_license_notice_dismissed',
 					'message' => __( 'Renew Elementor Pro and enjoy updates, support and Pro templates for another year.', 'elementor-pro' ),
@@ -33,7 +33,10 @@ class Notice_Bar extends Base_Notice_Bar {
 				'option_key' => '_elementor_pro_editor_activate_license_notice_dismissed',
 				'message' => __( 'Activate Your License and Get Access to Premium Elementor Templates, Support & Plugin Updates.', 'elementor-pro' ),
 				'action_title' => __( 'Connect & Activate', 'elementor-pro' ),
-				'action_url' => $license_admin->get_connect_url(),
+				'action_url' => $license_admin->get_connect_url( [
+					'mode' => 'popup',
+					'callback_id' => 'editor-pro-activate',
+				] ),
 				'muted_period' => 0,
 			];
 		}
