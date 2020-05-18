@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd7e711b20dcfdb4ede8cf15b91e03b3",
+    "content-hash": "0aac0fb5e8b72cab522ed0a07bd91891",
     "packages": [
         {
             "name": "composer/installers",
@@ -235,12 +235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "04a10a50caa5ec984ab8fffc54ffc3d8db4d0d6f"
+                "reference": "956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/04a10a50caa5ec984ab8fffc54ffc3d8db4d0d6f",
-                "reference": "04a10a50caa5ec984ab8fffc54ffc3d8db4d0d6f",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1",
+                "reference": "956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2020-05-06T13:58:03+00:00"
+            "time": "2020-05-18T16:42:43+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -734,15 +734,15 @@
         },
         {
             "name": "wpackagist-plugin/members",
-            "version": "2.2.0",
+            "version": "3.0.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/members/",
-                "reference": "tags/2.2.0"
+                "reference": "tags/3.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/members.2.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/members.3.0.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -860,15 +860,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "12.9.1",
+            "version": "14.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/12.9.1"
+                "reference": "tags/14.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
