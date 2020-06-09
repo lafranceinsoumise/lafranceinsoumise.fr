@@ -553,26 +553,26 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.4",
+            "version": "v2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "67d472b1794c986381a8950e4958e1adb779d561"
+                "reference": "2e977311ffb17b2f82028a9c36824647789c6365"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/67d472b1794c986381a8950e4958e1adb779d561",
-                "reference": "67d472b1794c986381a8950e4958e1adb779d561",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2e977311ffb17b2f82028a9c36824647789c6365",
+                "reference": "2e977311ffb17b2f82028a9c36824647789c6365",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.9 || ^7.0 || ^8.0",
-                "symfony/polyfill-ctype": "^1.9"
+                "symfony/polyfill-ctype": "^1.16"
             },
             "require-dev": {
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -621,7 +621,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-02T13:38:00+00:00"
+            "time": "2020-06-02T14:06:52+00:00"
         },
         {
             "name": "wpackagist-plugin/amp",
@@ -643,15 +643,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "2.7.1",
+            "version": "2.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/2.7.1"
+                "reference": "tags/2.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -661,15 +661,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.8",
+            "version": "5.1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.8"
+                "reference": "tags/5.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -679,15 +679,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.9.8",
+            "version": "2.9.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.9.8"
+                "reference": "tags/2.9.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.11.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -806,15 +806,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.7.2",
+            "version": "4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.7.2"
+                "reference": "tags/4.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.7.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -824,15 +824,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "1.5.9",
+            "version": "1.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.5.9"
+                "reference": "tags/1.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.5.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.6.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -860,15 +860,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "14.1",
+            "version": "14.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/14.1"
+                "reference": "tags/14.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -896,15 +896,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-typography",
-            "version": "5.6.1",
+            "version": "5.7.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-typography/",
-                "reference": "tags/5.6.1"
+                "reference": "tags/5.7.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-typography.5.6.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-typography.5.7.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

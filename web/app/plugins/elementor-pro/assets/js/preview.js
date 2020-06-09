@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.9.4 - 07-05-2020 */
+/*! elementor-pro - v2.10.0 - 07-06-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,7 +82,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 127);
+/******/ 	return __webpack_require__(__webpack_require__.s = 131);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -114,7 +114,7 @@ module.exports = _getPrototypeOf;
 
 /***/ }),
 
-/***/ 127:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
