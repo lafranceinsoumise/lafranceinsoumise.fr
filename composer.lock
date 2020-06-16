@@ -325,16 +325,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.4.1"
+                "reference": "5.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.1",
-                "reference": "5.4.1"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.2",
+                "reference": "5.4.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -360,11 +360,15 @@
             ],
             "funding": [
                 {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                },
+                {
                     "url": "https://www.patreon.com/rootsdev",
                     "type": "patreon"
                 }
             ],
-            "time": "2020-04-29T18:50:02+00:00"
+            "time": "2020-06-10T21:43:59+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -643,15 +647,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/2.7.2"
+                "reference": "tags/2.7.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -679,15 +683,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.9.11",
+            "version": "2.9.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.9.11"
+                "reference": "tags/2.9.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.12.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
