@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-09 12:51:02+0000\n"
+"PO-Revision-Date: 2020-06-09 16:27:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -641,7 +641,7 @@ msgstr "Pour rechercher un site, <strong>saisissez son chemin ou son domaine</st
 
 #: wp-admin/network/index.php:42
 msgid "To search for a user, <strong>enter an email address or username</strong>. Use a wildcard to search for a partial username, such as user&#42;."
-msgstr "Pour chercher un utilisateur, <strong>saisissez une adresse e-mail ou un identifiant</strong>. Utilisez le signe étoile (*) pour lancer une recherche sur un identifiant partiel, par exemple utilisa&#42;."
+msgstr "Pour rechercher un utilisateur, <strong>saisissez une adresse e-mail ou un identifiant</strong>. Utilisez le signe étoile (*) pour lancer une recherche sur un identifiant partiel, par exemple utilisa&#42;."
 
 #: wp-admin/network/index.php:40
 msgid "To add a new site, <strong>click Create a New Site</strong>."

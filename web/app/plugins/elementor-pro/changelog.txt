@@ -1,5 +1,13 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.10.1 - 2020-06-16
+* Tweak: Improved License validation mechanism to avoid limitations
+* Tweak: Changed control labels and ordering in Price Table, Lottie and Form widgets
+* Fix: Popup close button vertical position glitch ([#10921](https://github.com/elementor/elementor/issues/10921))
+* Fix: Radio field placement glitch when in Multi Step mode in Form widget
+* Fix: Clicking `Enter` key submits the form in Multi Step Form
+* Fix: Hardened sanitization in Custom Attributes to avoid security issues
+
 #### 2.10.0 - 2020-06-07
 * New: Introducing Multi-Step Forms - Breakdown long forms into simple steps ([#5975](https://github.com/elementor/elementor/issues/5975), [#3911](https://github.com/elementor/elementor/issues/3911))
 * New: Introducing Lottie widget - easily add Lottie animations to your site, no coding needed ([#11026](https://github.com/elementor/elementor/issues/11026))

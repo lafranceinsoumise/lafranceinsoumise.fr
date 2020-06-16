@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-09 12:45:21+0000\n"
+"PO-Revision-Date: 2020-06-09 21:59:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1851,7 +1851,7 @@ msgstr "Taille de l’image en pixels"
 
 #: wp-includes/media-template.php:584
 msgid "Media title&hellip;"
-msgstr "Titre du média&hellip;"
+msgstr "Titre du média…"
 
 #: wp-includes/media-template.php:583
 msgid "Media title"
@@ -1859,7 +1859,7 @@ msgstr "Titre du média"
 
 #: wp-includes/media-template.php:581
 msgid "Audio title&hellip;"
-msgstr "Titre du son&hellip;"
+msgstr "Titre du son…"
 
 #: wp-includes/media-template.php:580
 msgid "Audio title"
@@ -1867,7 +1867,7 @@ msgstr "Titre du son"
 
 #: wp-includes/media-template.php:578
 msgid "Video title&hellip;"
-msgstr "Titre de la vidéo&hellip;"
+msgstr "Titre de la vidéo…"
 
 #: wp-includes/media-template.php:577
 msgid "Video title"
@@ -1875,7 +1875,7 @@ msgstr "Titre de la vidéo"
 
 #: wp-includes/media-template.php:573
 msgid "Caption&hellip;"
-msgstr "Légende&hellip;"
+msgstr "Légende…"
 
 #: wp-includes/media-template.php:413
 msgid "Details"
@@ -4335,7 +4335,7 @@ msgstr "est maintenant planifié. Il sera publié le"
 
 #: wp-includes/js/dist/editor.js:10344
 msgid "Tags help users and search engines navigate your site and find your content. Add a few keywords to describe your post."
-msgstr "Les étiquettes aident les utilisateur et utilisatrices ainsi que les moteurs de recherche à naviguer sur votre site et à trouver vos contenus. Ajoutez quelques étiquettes pour décrire votre publication."
+msgstr "Les étiquettes aident les utilisateurs et utilisatrices ainsi que les moteurs de recherche à naviguer sur votre site et à trouver vos contenus. Ajoutez quelques mots-clés pour décrire votre publication."
 
 #: wp-includes/js/dist/editor.js:10340
 msgid "Add tags"
@@ -5166,7 +5166,7 @@ msgstr "Erreur interne de prise en charge de la recherche."
 #. translators: %s: PHP class name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:74
 msgid "REST search handlers must extend the %s class."
-msgstr "Les handlers de recherche REST doivent étendre la classe %s."
+msgstr "Les prises en charge de la recherche REST doivent étendre la classe %s."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2467
 msgid "The current user can post unfiltered HTML markup and JavaScript."
@@ -6766,7 +6766,7 @@ msgstr "Avez-vous entendu parler de notre nouveau widget « HTML personnalisé�
 
 #: wp-includes/widgets/class-wp-widget-text.php:533
 msgid "Did you know there is a &#8220;Custom HTML&#8221; widget now? You can find it by pressing the &#8220;<a class=\"add-widget\" href=\"#\">Add a Widget</a>&#8221; button and searching for &#8220;HTML&#8221;. Check it out to add some custom code to your site!"
-msgstr "Dites, avez-vous entendu parler de notre nouveau widget « HTML personnalisé » ? Vous pouvez le trouver en cliquant sur le bouton « <a class=\"add-widget\" href=\"#\">Ajoutez un widget</a> » et en cherchant « HTML ». Utilisez-le pour ajouter du code personnalisé à votre site !"
+msgstr "Dites, avez-vous entendu parler de notre nouveau widget « HTML personnalisé » ? Vous pouvez le trouver en cliquant sur le bouton « <a class=\"add-widget\" href=\"#\">Ajoutez un widget</a> » et en recherchant « HTML ». Utilisez-le pour ajouter du code personnalisé à votre site !"
 
 #: wp-includes/widgets/class-wp-widget-text.php:531
 msgid "New Custom HTML Widget"
@@ -7146,7 +7146,7 @@ msgstr "Limiter le jeu de résultats aux termes ayant un ou plusieurs identifian
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:354
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:160
 msgid "The page number requested is larger than the number of pages available."
-msgstr "Le numéro de page demandé est plus grand que le nombre de pages disponibles."
+msgstr "Le nombre de page demandé est plus grand que le nombre de pages disponibles."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:239
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:174
@@ -9223,7 +9223,7 @@ msgstr "Jeu de modifications UUID non valide."
 
 #: wp-includes/class-wp-customize-control.php:636
 msgid "New page title&hellip;"
-msgstr "Nouveau titre de page&hellip;"
+msgstr "Nouveau titre de page…"
 
 #: wp-includes/class-wp-customize-control.php:635
 msgid "New page title"
@@ -9836,7 +9836,7 @@ msgstr "Type d’objet non valide."
 #: wp-includes/class-wp-editor.php:1389
 #: wp-includes/js/dist/block-editor.js:20514
 msgid "Paste URL or type to search"
-msgstr "Collez ou saisissez l’URL à rechercher"
+msgstr "Collez l’URL ou saisissez une recherche"
 
 #: wp-includes/class-wp-customize-manager.php:5152
 msgid "Logo"
@@ -10009,7 +10009,7 @@ msgctxt "genitive"
 msgid "January"
 msgstr "Janvier"
 
-#: wp-includes/embed.php:1143
+#: wp-includes/embed.php:1156
 msgid "Sharing options"
 msgstr "Options de partage"
 
@@ -10071,7 +10071,7 @@ msgid "Oops! That embed can&#8217;t be found."
 msgstr "Oups ! Ce contenu embarqué est introuvable."
 
 #. translators: %s: Post title.
-#: wp-includes/embed.php:943 wp-includes/post-template.php:296
+#: wp-includes/embed.php:956 wp-includes/post-template.php:296
 msgid "Continue reading %s"
 msgstr "Lire la suite de %s"
 
@@ -10442,32 +10442,32 @@ msgstr "Publications publiées sur %s"
 msgid "Use the %s filter instead."
 msgstr "Utilisez le filtre %s à la place."
 
-#: wp-includes/embed.php:1170
+#: wp-includes/embed.php:1183
 msgid "Close sharing dialog"
 msgstr "Fermer la fenêtre de partage"
 
-#: wp-includes/embed.php:1165
+#: wp-includes/embed.php:1178
 msgid "Copy and paste this code into your site to embed"
 msgstr "Copiez-collez ce code sur votre site pour l’y intégrer"
 
-#: wp-includes/embed.php:1158
+#: wp-includes/embed.php:1171
 msgid "Copy and paste this URL into your WordPress site to embed"
 msgstr "Copiez-collez cette URL dans votre site WordPress pour l’inclure"
 
-#: wp-includes/embed.php:1151
+#: wp-includes/embed.php:1164
 msgid "HTML Embed"
 msgstr "Contenu embarqué HTML"
 
-#: wp-includes/embed.php:1148
+#: wp-includes/embed.php:1161
 msgid "WordPress Embed"
 msgstr "Contenu embarqué WordPress"
 
-#: wp-includes/embed.php:1126
+#: wp-includes/embed.php:1139
 msgid "Open sharing dialog"
 msgstr "Ouvrir la fenêtre de partage"
 
 #. translators: %s: Number of comments.
-#: wp-includes/embed.php:1102
+#: wp-includes/embed.php:1115
 msgid "%s <span class=\"screen-reader-text\">Comment</span>"
 msgid_plural "%s <span class=\"screen-reader-text\">Comments</span>"
 msgstr[0] "%s <span class=\"screen-reader-text\">Commentaire</span>"
@@ -11905,7 +11905,7 @@ msgstr "Fermer le panneau de téléversement"
 
 #: wp-includes/class-wp-editor.php:1875
 msgid "Search or use up and down arrow keys to select an item."
-msgstr "Cherchez ou utilisez les flèches haut et bas pour choisir un élément."
+msgstr "Recherchez ou utilisez les flèches haut et bas pour choisir un élément."
 
 #: wp-includes/class-wp-editor.php:1384
 msgid "Read more..."
@@ -12078,7 +12078,7 @@ msgstr "En-têtes"
 
 #: wp-includes/class-wp-customize-widgets.php:837
 msgid "Search widgets&hellip;"
-msgstr "Recherche de widgets&hellip;"
+msgstr "Rechercher des widgets…"
 
 #: wp-includes/class-wp-customize-widgets.php:836
 msgid "Search Widgets"
@@ -12109,7 +12109,7 @@ msgstr "Pistes (sous-titres, légendes, descriptions, chapitres ou métadonnées
 
 #: wp-includes/media.php:3964
 msgid "Cropping&hellip;"
-msgstr "Recadrage&hellip;"
+msgstr "Recadrage…"
 
 #: wp-includes/class-wp-customize-widgets.php:697
 msgid "Move to another area&hellip;"
@@ -12616,7 +12616,7 @@ msgstr "Respecter la casse"
 
 #: wp-includes/class-wp-editor.php:1286
 msgid "Find and replace"
-msgstr "Chercher et remplacer"
+msgstr "Rechercher et remplacer"
 
 #: wp-includes/media-template.php:1179 wp-includes/media.php:3884
 #: wp-includes/js/dist/block-editor.js:20780
@@ -13114,7 +13114,7 @@ msgstr "<strong>Erreur</strong> : inscription impossible… Veuillez prendre co
 
 #: wp-includes/post-template.php:304
 msgid "(more&hellip;)"
-msgstr "(suite&hellip;)"
+msgstr "(suite…)"
 
 #. translators: %s: Site address.
 #: wp-signup.php:987
@@ -13158,7 +13158,7 @@ msgstr "Rechercher :"
 #: wp-includes/general-template.php:275
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr "Recherche&hellip;"
+msgstr "Rechercher…"
 
 #: wp-includes/script-loader.php:1172 wp-includes/functions.php:6503
 msgid "Session expired"
@@ -14163,7 +14163,7 @@ msgstr "Documentation"
 
 #: wp-includes/general-template.php:4197 wp-includes/formatting.php:3876
 msgid "&hellip;"
-msgstr "&hellip;"
+msgstr "…"
 
 #: wp-includes/wp-db.php:1674 wp-includes/functions.php:4648
 #: wp-includes/ms-load.php:473
@@ -15665,7 +15665,7 @@ msgstr "déplacé dans la corbeille."
 
 #: wp-includes/script-loader.php:876
 msgid "Crunching&hellip;"
-msgstr "En cours de traitement&hellip;"
+msgstr "En cours de traitement…"
 
 #: wp-includes/script-loader.php:874
 msgid "Upload stopped."
@@ -16615,7 +16615,7 @@ msgstr "« Précédent"
 #. translators: 1: Blog name, 2: Separator (raquo), 3: Search query.
 #: wp-includes/general-template.php:2987
 msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
-msgstr "%1$s %2$s Flux de résultats de la recherche pour &quot;%3$s&quot;"
+msgstr "%1$s %2$s Flux de résultats de la recherche pour « %3$s »"
 
 #. translators: 1: Blog name, 2: Separator (raquo), 3: Author name.
 #: wp-includes/general-template.php:2985
@@ -17455,7 +17455,7 @@ msgstr "Version"
 #: wp-includes/media.php:3924 wp-includes/class-wp-editor.php:1861
 #: wp-includes/js/dist/block-library.js:18411
 msgid "Search"
-msgstr "Recherche"
+msgstr "Rechercher"
 
 #: wp-includes/script-loader.php:696 wp-includes/script-loader.php:875
 #: wp-includes/widgets/class-wp-widget-text.php:538
@@ -17696,7 +17696,7 @@ msgstr "Commentaires récents"
 #: wp-includes/js/dist/block-editor.js:24814
 #: wp-includes/js/dist/block-library.js:14219
 msgid "Preview"
-msgstr "Aperçu"
+msgstr "Prévisualiser"
 
 #: wp-includes/widgets/class-wp-widget-rss.php:33
 #: wp-includes/js/dist/block-library.js:18311
