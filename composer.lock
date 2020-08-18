@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aac0fb5e8b72cab522ed0a07bd91891",
+    "content-hash": "93d940611a56c7703dc1c117dae68156",
     "packages": [
         {
             "name": "composer/installers",
@@ -937,6 +937,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpcf7-recaptcha/"
+        },
+        {
+            "name": "wpackagist-theme/generatepress",
+            "version": "2.4.2",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/generatepress/",
+                "reference": "2.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/generatepress.2.4.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/generatepress/"
         }
     ],
     "packages-dev": [

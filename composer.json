@@ -70,7 +70,8 @@
     "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.4.3",
     "wpackagist-plugin/redis-cache": "^1.4",
     "wpackagist-plugin/read-meter": "^1.0",
-    "wpackagist-plugin/webp-simple": "^1.0"
+    "wpackagist-plugin/webp-simple": "^1.0",
+    "wpackagist-theme/generatepress": "^2.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

@@ -1,0 +1,3776 @@
+# Copyright (C) 2020 Tom Usborne
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: GP Premium 1.11.0-beta.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gp-premium\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-07-29T17:14:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0-alpha\n"
+"X-Domain: gp-premium\n"
+
+#. Plugin Name of the plugin
+#: inc/activation.php:126
+msgid "GP Premium"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://generatepress.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "The entire collection of GeneratePress premium modules."
+msgstr ""
+
+#. Author of the plugin
+msgid "Tom Usborne"
+msgstr ""
+
+#: backgrounds/functions/functions.php:106
+#: backgrounds/functions/functions.php:116
+msgid "Background Images"
+msgstr ""
+
+#: backgrounds/functions/functions.php:125
+#: backgrounds/functions/functions.php:138
+#: backgrounds/functions/functions.php:169
+#: colors/functions/functions.php:67
+#: typography/functions/functions.php:63
+#: typography/functions/functions.php:77
+msgid "Body"
+msgstr ""
+
+#: backgrounds/functions/functions.php:233
+#: backgrounds/functions/functions.php:258
+#: colors/functions/functions.php:82
+#: disable-elements/functions/functions.php:136
+#: disable-elements/functions/functions.php:138
+#: disable-elements/functions/functions.php:312
+#: disable-elements/functions/functions.php:314
+#: elements/class-metabox.php:1208
+#: typography/functions/functions.php:256
+msgid "Top Bar"
+msgstr ""
+
+#: backgrounds/functions/functions.php:322
+#: backgrounds/functions/functions.php:335
+#: backgrounds/functions/functions.php:364
+#: colors/functions/functions.php:167
+#: colors/functions/functions.php:179
+#: disable-elements/functions/functions.php:142
+#: disable-elements/functions/functions.php:144
+#: disable-elements/functions/functions.php:318
+#: disable-elements/functions/functions.php:320
+#: elements/class-metabox.php:243
+#: elements/class-metabox.php:2178
+#: elements/class-post-type.php:282
+#: elements/class-post-type.php:414
+#: library/customizer-helpers.php:129
+#: spacing/functions/customizer/header-spacing.php:16
+#: typography/functions/functions.php:370
+#: typography/functions/functions.php:384
+msgid "Header"
+msgstr ""
+
+#: backgrounds/functions/functions.php:425
+#: backgrounds/functions/functions.php:438
+#: colors/functions/functions.php:279
+#: colors/functions/functions.php:291
+#: disable-elements/functions/functions.php:147
+#: disable-elements/functions/functions.php:149
+#: disable-elements/functions/functions.php:341
+#: disable-elements/functions/functions.php:343
+#: elements/class-metabox.php:1217
+#: library/customizer-helpers.php:147
+#: spacing/functions/customizer/navigation-spacing.php:16
+#: typography/functions/functions.php:631
+#: typography/functions/functions.php:645
+msgid "Primary Navigation"
+msgstr ""
+
+#: backgrounds/functions/functions.php:471
+#: backgrounds/functions/secondary-nav-backgrounds.php:91
+#: elements/class-metabox.php:2190
+msgid "Navigation"
+msgstr ""
+
+#: backgrounds/functions/functions.php:491
+#: backgrounds/functions/functions.php:542
+#: backgrounds/functions/functions.php:593
+#: backgrounds/functions/functions.php:644
+#: backgrounds/functions/functions.php:705
+#: backgrounds/functions/functions.php:756
+#: backgrounds/functions/functions.php:807
+#: backgrounds/functions/secondary-nav-backgrounds.php:111
+#: backgrounds/functions/secondary-nav-backgrounds.php:159
+#: backgrounds/functions/secondary-nav-backgrounds.php:207
+#: backgrounds/functions/secondary-nav-backgrounds.php:255
+#: backgrounds/functions/secondary-nav-backgrounds.php:314
+#: backgrounds/functions/secondary-nav-backgrounds.php:362
+#: backgrounds/functions/secondary-nav-backgrounds.php:410
+#: library/customizer/controls/class-backgrounds-control.php:121
+msgid "Repeat"
+msgstr ""
+
+#: backgrounds/functions/functions.php:492
+#: backgrounds/functions/functions.php:543
+#: backgrounds/functions/functions.php:594
+#: backgrounds/functions/functions.php:645
+#: backgrounds/functions/functions.php:706
+#: backgrounds/functions/functions.php:757
+#: backgrounds/functions/functions.php:808
+#: backgrounds/functions/secondary-nav-backgrounds.php:112
+#: backgrounds/functions/secondary-nav-backgrounds.php:160
+#: backgrounds/functions/secondary-nav-backgrounds.php:208
+#: backgrounds/functions/secondary-nav-backgrounds.php:256
+#: backgrounds/functions/secondary-nav-backgrounds.php:315
+#: backgrounds/functions/secondary-nav-backgrounds.php:363
+#: backgrounds/functions/secondary-nav-backgrounds.php:411
+#: library/customizer/controls/class-backgrounds-control.php:122
+msgid "Repeat x"
+msgstr ""
+
+#: backgrounds/functions/functions.php:493
+#: backgrounds/functions/functions.php:544
+#: backgrounds/functions/functions.php:595
+#: backgrounds/functions/functions.php:646
+#: backgrounds/functions/functions.php:707
+#: backgrounds/functions/functions.php:758
+#: backgrounds/functions/functions.php:809
+#: backgrounds/functions/secondary-nav-backgrounds.php:113
+#: backgrounds/functions/secondary-nav-backgrounds.php:161
+#: backgrounds/functions/secondary-nav-backgrounds.php:209
+#: backgrounds/functions/secondary-nav-backgrounds.php:257
+#: backgrounds/functions/secondary-nav-backgrounds.php:316
+#: backgrounds/functions/secondary-nav-backgrounds.php:364
+#: backgrounds/functions/secondary-nav-backgrounds.php:412
+#: library/customizer/controls/class-backgrounds-control.php:123
+msgid "Repeat y"
+msgstr ""
+
+#: backgrounds/functions/functions.php:494
+#: backgrounds/functions/functions.php:545
+#: backgrounds/functions/functions.php:596
+#: backgrounds/functions/functions.php:647
+#: backgrounds/functions/functions.php:708
+#: backgrounds/functions/functions.php:759
+#: backgrounds/functions/functions.php:810
+#: backgrounds/functions/secondary-nav-backgrounds.php:114
+#: backgrounds/functions/secondary-nav-backgrounds.php:162
+#: backgrounds/functions/secondary-nav-backgrounds.php:210
+#: backgrounds/functions/secondary-nav-backgrounds.php:258
+#: backgrounds/functions/secondary-nav-backgrounds.php:317
+#: backgrounds/functions/secondary-nav-backgrounds.php:365
+#: backgrounds/functions/secondary-nav-backgrounds.php:413
+#: library/customizer/controls/class-backgrounds-control.php:124
+msgid "No Repeat"
+msgstr ""
+
+#: backgrounds/functions/functions.php:522
+#: backgrounds/functions/secondary-nav-backgrounds.php:139
+msgid "Navigation Item"
+msgstr ""
+
+#: backgrounds/functions/functions.php:573
+#: backgrounds/functions/secondary-nav-backgrounds.php:187
+msgid "Navigation Item Hover"
+msgstr ""
+
+#: backgrounds/functions/functions.php:624
+#: backgrounds/functions/secondary-nav-backgrounds.php:235
+msgid "Navigation Item Current"
+msgstr ""
+
+#: backgrounds/functions/functions.php:657
+msgid "Primary Sub-Navigation"
+msgstr ""
+
+#: backgrounds/functions/functions.php:685
+#: backgrounds/functions/secondary-nav-backgrounds.php:294
+msgid "Sub-Navigation Item"
+msgstr ""
+
+#: backgrounds/functions/functions.php:736
+#: backgrounds/functions/secondary-nav-backgrounds.php:342
+msgid "Sub-Navigation Item Hover"
+msgstr ""
+
+#: backgrounds/functions/functions.php:787
+#: backgrounds/functions/secondary-nav-backgrounds.php:390
+msgid "Sub-Navigation Item Current"
+msgstr ""
+
+#: backgrounds/functions/functions.php:820
+#: backgrounds/functions/functions.php:833
+#: backgrounds/functions/functions.php:864
+#: blog/functions/customizer.php:49
+#: colors/functions/functions.php:749
+#: colors/functions/functions.php:761
+#: elements/class-metabox.php:304
+#: elements/class-metabox.php:1083
+#: elements/class-metabox.php:1090
+#: elements/class-metabox.php:1104
+#: elements/class-metabox.php:1111
+#: elements/class-metabox.php:1118
+#: elements/class-metabox.php:2202
+#: library/customizer-helpers.php:169
+#: page-header/functions/metabox.php:182
+#: sections/functions/metaboxes/metabox-functions.php:248
+#: sections/functions/metaboxes/metabox-functions.php:251
+#: spacing/functions/customizer/content-spacing.php:16
+#: typography/functions/functions.php:931
+msgid "Content"
+msgstr ""
+
+#: backgrounds/functions/functions.php:925
+#: backgrounds/functions/functions.php:938
+#: colors/functions/functions.php:931
+#: elements/class-metabox.php:284
+#: library/customizer-helpers.php:187
+msgid "Sidebar"
+msgstr ""
+
+#: backgrounds/functions/functions.php:967
+#: colors/functions/functions.php:919
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: backgrounds/functions/functions.php:1028
+#: backgrounds/functions/functions.php:1041
+#: colors/functions/functions.php:1169
+#: colors/functions/functions.php:1181
+#: disable-elements/functions/functions.php:169
+#: disable-elements/functions/functions.php:171
+#: disable-elements/functions/functions.php:363
+#: disable-elements/functions/functions.php:365
+#: elements/class-metabox.php:290
+#: elements/class-metabox.php:1253
+#: elements/class-metabox.php:2239
+#: library/customizer-helpers.php:205
+#: spacing/functions/customizer/footer-spacing.php:17
+#: typography/functions/functions.php:2304
+#: typography/functions/functions.php:2318
+msgid "Footer"
+msgstr ""
+
+#: backgrounds/functions/functions.php:1070
+msgid "Footer Widget Area"
+msgstr ""
+
+#: backgrounds/functions/functions.php:1145
+msgid "Footer Area"
+msgstr ""
+
+#: backgrounds/functions/secondary-nav-backgrounds.php:47
+#: backgrounds/functions/secondary-nav-backgrounds.php:61
+#: colors/functions/secondary-nav-colors.php:59
+#: colors/functions/secondary-nav-colors.php:72
+#: disable-elements/functions/functions.php:153
+#: disable-elements/functions/functions.php:155
+#: disable-elements/functions/functions.php:347
+#: disable-elements/functions/functions.php:349
+#: elements/class-metabox.php:1226
+#: secondary-nav/functions/functions.php:188
+#: secondary-nav/functions/functions.php:197
+#: secondary-nav/functions/functions.php:210
+#: typography/functions/secondary-nav-fonts.php:49
+#: typography/functions/secondary-nav-fonts.php:63
+msgid "Secondary Navigation"
+msgstr ""
+
+#: backgrounds/functions/secondary-nav-backgrounds.php:268
+msgid "Secondary Sub-Navigation"
+msgstr ""
+
+#: blog/functions/customizer.php:35
+#: elements/class-conditions.php:48
+#: elements/class-hero.php:868
+msgid "Blog"
+msgstr ""
+
+#: blog/functions/customizer.php:63
+#: blog/functions/customizer.php:439
+msgid "Archives"
+msgstr ""
+
+#: blog/functions/customizer.php:64
+msgid "Single"
+msgstr ""
+
+#: blog/functions/customizer.php:76
+msgid "Content type"
+msgstr ""
+
+#: blog/functions/customizer.php:79
+msgid "Full Content"
+msgstr ""
+
+#: blog/functions/customizer.php:80
+msgid "Excerpt"
+msgstr ""
+
+#: blog/functions/customizer.php:99
+msgid "Excerpt word count"
+msgstr ""
+
+#: blog/functions/customizer.php:119
+msgid "Read more label"
+msgstr ""
+
+#: blog/functions/customizer.php:139
+msgid "Display read more as button"
+msgstr ""
+
+#: blog/functions/customizer.php:159
+#: blog/functions/customizer.php:337
+msgid "Display post date"
+msgstr ""
+
+#: blog/functions/customizer.php:179
+#: blog/functions/customizer.php:356
+msgid "Display post author"
+msgstr ""
+
+#: blog/functions/customizer.php:199
+#: blog/functions/customizer.php:375
+msgid "Display post categories"
+msgstr ""
+
+#: blog/functions/customizer.php:219
+#: blog/functions/customizer.php:394
+msgid "Display post tags"
+msgstr ""
+
+#: blog/functions/customizer.php:239
+msgid "Display comment count"
+msgstr ""
+
+#: blog/functions/customizer.php:259
+msgid "Use infinite scroll"
+msgstr ""
+
+#: blog/functions/customizer.php:279
+msgid "Use button to load more posts"
+msgstr ""
+
+#: blog/functions/customizer.php:298
+msgid "Load more label"
+msgstr ""
+
+#: blog/functions/customizer.php:317
+msgid "Loading label"
+msgstr ""
+
+#: blog/functions/customizer.php:413
+msgid "Display post navigation"
+msgstr ""
+
+#: blog/functions/customizer.php:426
+msgid "Featured Images"
+msgstr ""
+
+#: blog/functions/customizer.php:440
+msgid "Posts"
+msgstr ""
+
+#: blog/functions/customizer.php:441
+msgid "Pages"
+msgstr ""
+
+#: blog/functions/customizer.php:462
+#: blog/functions/customizer.php:636
+#: blog/functions/customizer.php:811
+msgid "Display featured images"
+msgstr ""
+
+#: blog/functions/customizer.php:482
+#: blog/functions/customizer.php:656
+#: blog/functions/customizer.php:831
+msgid "Display padding around images"
+msgstr ""
+
+#: blog/functions/customizer.php:503
+#: blog/functions/customizer.php:677
+#: blog/functions/customizer.php:852
+#: elements/class-metabox.php:1308
+#: elements/class-post-type.php:172
+#: elements/class-post-type.php:182
+msgid "Location"
+msgstr ""
+
+#: blog/functions/customizer.php:506
+#: blog/functions/customizer.php:680
+#: blog/functions/customizer.php:855
+msgid "Below Title"
+msgstr ""
+
+#: blog/functions/customizer.php:507
+#: blog/functions/customizer.php:681
+#: blog/functions/customizer.php:856
+msgid "Above Title"
+msgstr ""
+
+#: blog/functions/customizer.php:528
+#: blog/functions/customizer.php:703
+#: blog/functions/customizer.php:878
+msgid "Alignment"
+msgstr ""
+
+#: blog/functions/customizer.php:531
+#: blog/functions/customizer.php:706
+#: blog/functions/customizer.php:881
+#: elements/class-metabox.php:507
+#: elements/class-metabox.php:529
+#: page-header/functions/metabox.php:339
+#: secondary-nav/functions/functions.php:309
+#: woocommerce/functions/customizer/customizer.php:390
+#: woocommerce/functions/customizer/customizer.php:433
+msgid "Center"
+msgstr ""
+
+#: blog/functions/customizer.php:532
+#: blog/functions/customizer.php:707
+#: blog/functions/customizer.php:882
+#: elements/class-metabox.php:506
+#: elements/class-metabox.php:595
+#: elements/class-metabox.php:649
+#: library/customizer/controls/class-spacing-control.php:43
+#: menu-plus/functions/generate-menu-plus.php:658
+#: page-header/functions/metabox.php:338
+#: secondary-nav/functions/functions.php:308
+#: secondary-nav/functions/functions.php:363
+#: woocommerce/functions/customizer/customizer.php:389
+#: woocommerce/functions/customizer/customizer.php:432
+msgid "Left"
+msgstr ""
+
+#: blog/functions/customizer.php:533
+#: blog/functions/customizer.php:708
+#: blog/functions/customizer.php:883
+#: elements/class-metabox.php:508
+#: elements/class-metabox.php:569
+#: elements/class-metabox.php:623
+#: library/customizer/controls/class-spacing-control.php:41
+#: menu-plus/functions/generate-menu-plus.php:659
+#: page-header/functions/metabox.php:340
+#: secondary-nav/functions/functions.php:310
+#: secondary-nav/functions/functions.php:362
+#: woocommerce/functions/customizer/customizer.php:391
+#: woocommerce/functions/customizer/customizer.php:434
+msgid "Right"
+msgstr ""
+
+#: blog/functions/customizer.php:553
+#: blog/functions/customizer.php:728
+#: blog/functions/customizer.php:903
+msgid "Media Attachment Size"
+msgstr ""
+
+#: blog/functions/customizer.php:575
+#: blog/functions/customizer.php:750
+#: blog/functions/customizer.php:925
+msgid "Width"
+msgstr ""
+
+#: blog/functions/customizer.php:596
+#: blog/functions/customizer.php:771
+#: blog/functions/customizer.php:946
+msgid "Height"
+msgstr ""
+
+#: blog/functions/customizer.php:610
+#: blog/functions/customizer.php:785
+#: blog/functions/customizer.php:960
+msgid "We will attempt to serve exact image sizes based on your width/height settings. If that is not possible, we will resize your images using CSS. Learn more about featured image sizing %s."
+msgstr ""
+
+#: blog/functions/customizer.php:611
+#: blog/functions/customizer.php:786
+#: blog/functions/customizer.php:961
+msgid "here"
+msgstr ""
+
+#: blog/functions/customizer.php:682
+#: blog/functions/customizer.php:857
+#: page-header/functions/functions.php:847
+#: page-header/functions/functions.php:872
+msgid "Above Content Area"
+msgstr ""
+
+#: blog/functions/customizer.php:976
+#: blog/functions/customizer.php:1016
+msgid "Columns"
+msgstr ""
+
+#: blog/functions/customizer.php:996
+msgid "Display posts in columns"
+msgstr ""
+
+#: blog/functions/customizer.php:1043
+msgid "Make first post featured"
+msgstr ""
+
+#: blog/functions/customizer.php:1064
+msgid "Display posts in masonry grid"
+msgstr ""
+
+#: blog/functions/defaults.php:13
+msgid "Read more"
+msgstr ""
+
+#: blog/functions/defaults.php:16
+msgid "+ More"
+msgstr ""
+
+#: blog/functions/defaults.php:17
+msgid "Loading..."
+msgstr ""
+
+#. translators: Aria-label describing the read more button
+#: blog/functions/generate-blog.php:432
+#: blog/functions/generate-blog.php:464
+msgctxt "more on post title"
+msgid "More on %s"
+msgstr ""
+
+#: colors/functions/functions.php:55
+#: library/customizer/controls/class-section-shortcuts-control.php:29
+#: sections/functions/metaboxes/views/sections-template.php:221
+msgid "Colors"
+msgstr ""
+
+#: colors/functions/functions.php:103
+#: colors/functions/functions.php:206
+#: colors/functions/functions.php:332
+#: colors/functions/functions.php:464
+#: colors/functions/functions.php:597
+#: colors/functions/functions.php:670
+#: colors/functions/functions.php:788
+#: colors/functions/functions.php:958
+#: colors/functions/functions.php:1221
+#: colors/functions/functions.php:1304
+#: colors/functions/functions.php:1383
+#: colors/functions/secondary-nav-colors.php:114
+#: colors/functions/secondary-nav-colors.php:274
+#: colors/functions/slideout-nav-colors.php:111
+#: colors/functions/slideout-nav-colors.php:271
+#: sections/functions/metaboxes/views/sections-template.php:246
+msgid "Background"
+msgstr ""
+
+#: colors/functions/functions.php:119
+#: colors/functions/functions.php:221
+#: colors/functions/functions.php:394
+#: colors/functions/functions.php:526
+#: colors/functions/functions.php:621
+#: colors/functions/functions.php:693
+#: colors/functions/functions.php:802
+#: colors/functions/functions.php:972
+#: colors/functions/functions.php:1234
+#: colors/functions/functions.php:1317
+#: colors/functions/functions.php:1406
+#: colors/functions/secondary-nav-colors.php:139
+#: colors/functions/secondary-nav-colors.php:299
+#: colors/functions/slideout-nav-colors.php:136
+#: colors/functions/slideout-nav-colors.php:296
+msgid "Text"
+msgstr ""
+
+#: colors/functions/functions.php:125
+#: colors/functions/functions.php:227
+#: colors/functions/functions.php:808
+#: colors/functions/functions.php:978
+#: colors/functions/functions.php:1239
+#: colors/functions/functions.php:1322
+msgid "Link"
+msgstr ""
+
+#: colors/functions/functions.php:131
+#: colors/functions/functions.php:233
+#: colors/functions/functions.php:814
+#: colors/functions/functions.php:984
+#: colors/functions/functions.php:1244
+#: colors/functions/functions.php:1327
+msgid "Link Hover"
+msgstr ""
+
+#: colors/functions/functions.php:239
+#: elements/class-metabox.php:858
+#: menu-plus/functions/generate-menu-plus.php:474
+#: page-header/functions/metabox.php:515
+#: typography/functions/functions.php:446
+msgid "Site Title"
+msgstr ""
+
+#: colors/functions/functions.php:245
+msgid "Tagline"
+msgstr ""
+
+#: colors/functions/functions.php:310
+#: colors/functions/secondary-nav-colors.php:91
+msgid "Parent Items"
+msgstr ""
+
+#: colors/functions/functions.php:356
+#: colors/functions/functions.php:488
+#: colors/functions/functions.php:715
+#: colors/functions/functions.php:1428
+#: colors/functions/secondary-nav-colors.php:163
+#: colors/functions/secondary-nav-colors.php:323
+#: colors/functions/slideout-nav-colors.php:160
+#: colors/functions/slideout-nav-colors.php:320
+msgid "Background Hover"
+msgstr ""
+
+#: colors/functions/functions.php:380
+#: colors/functions/functions.php:512
+#: colors/functions/secondary-nav-colors.php:212
+#: colors/functions/secondary-nav-colors.php:372
+#: colors/functions/slideout-nav-colors.php:209
+#: colors/functions/slideout-nav-colors.php:369
+msgid "Background Current"
+msgstr ""
+
+#: colors/functions/functions.php:400
+#: colors/functions/functions.php:532
+#: colors/functions/functions.php:738
+#: colors/functions/functions.php:1451
+#: colors/functions/secondary-nav-colors.php:188
+#: colors/functions/secondary-nav-colors.php:348
+#: colors/functions/slideout-nav-colors.php:185
+#: colors/functions/slideout-nav-colors.php:345
+msgid "Text Hover"
+msgstr ""
+
+#: colors/functions/functions.php:406
+#: colors/functions/functions.php:538
+#: colors/functions/secondary-nav-colors.php:237
+#: colors/functions/secondary-nav-colors.php:397
+#: colors/functions/slideout-nav-colors.php:234
+#: colors/functions/slideout-nav-colors.php:394
+msgid "Text Current"
+msgstr ""
+
+#: colors/functions/functions.php:442
+#: colors/functions/secondary-nav-colors.php:251
+#: colors/functions/slideout-nav-colors.php:248
+msgid "Sub-Menu Items"
+msgstr ""
+
+#: colors/functions/functions.php:575
+msgid "Navigation Search"
+msgstr ""
+
+#: colors/functions/functions.php:633
+#: colors/functions/woocommerce-colors.php:70
+#: typography/functions/functions.php:793
+msgid "Buttons"
+msgstr ""
+
+#: colors/functions/functions.php:645
+#: typography/functions/functions.php:807
+msgid "Button"
+msgstr ""
+
+#: colors/functions/functions.php:820
+#: disable-elements/functions/functions.php:164
+#: disable-elements/functions/functions.php:166
+#: disable-elements/functions/functions.php:358
+#: disable-elements/functions/functions.php:360
+#: elements/class-metabox.php:1244
+msgid "Content Title"
+msgstr ""
+
+#: colors/functions/functions.php:826
+msgid "Archive Content Title"
+msgstr ""
+
+#: colors/functions/functions.php:832
+msgid "Archive Content Title Hover"
+msgstr ""
+
+#: colors/functions/functions.php:838
+msgid "Entry Meta Text"
+msgstr ""
+
+#: colors/functions/functions.php:844
+msgid "Entry Meta Links"
+msgstr ""
+
+#: colors/functions/functions.php:850
+msgid "Entry Meta Links Hover"
+msgstr ""
+
+#: colors/functions/functions.php:856
+msgid "Heading 1 (H1) Color"
+msgstr ""
+
+#: colors/functions/functions.php:862
+msgid "Heading 2 (H2) Color"
+msgstr ""
+
+#: colors/functions/functions.php:868
+msgid "Heading 3 (H3) Color"
+msgstr ""
+
+#: colors/functions/functions.php:876
+msgid "Heading 4 (H4) Color"
+msgstr ""
+
+#: colors/functions/functions.php:885
+msgid "Heading 5 (H5) Color"
+msgstr ""
+
+#: colors/functions/functions.php:990
+#: colors/functions/functions.php:1249
+msgid "Widget Title"
+msgstr ""
+
+#: colors/functions/functions.php:1023
+msgid "Forms"
+msgstr ""
+
+#: colors/functions/functions.php:1044
+msgid "Form Background"
+msgstr ""
+
+#: colors/functions/functions.php:1068
+msgid "Form Background Focus"
+msgstr ""
+
+#: colors/functions/functions.php:1092
+msgid "Form Border"
+msgstr ""
+
+#: colors/functions/functions.php:1116
+msgid "Form Border Focus"
+msgstr ""
+
+#: colors/functions/functions.php:1130
+msgid "Form Text"
+msgstr ""
+
+#: colors/functions/functions.php:1136
+msgid "Form Text Focus"
+msgstr ""
+
+#: colors/functions/functions.php:1200
+#: elements/class-metabox.php:1130
+msgid "Footer Widgets"
+msgstr ""
+
+#: colors/functions/functions.php:1283
+msgid "Footer Bar"
+msgstr ""
+
+#: colors/functions/functions.php:1362
+msgid "Back to Top Button"
+msgstr ""
+
+#: colors/functions/slideout-nav-colors.php:57
+#: colors/functions/slideout-nav-colors.php:70
+#: menu-plus/functions/generate-menu-plus.php:550
+#: menu-plus/functions/generate-menu-plus.php:563
+#: menu-plus/functions/generate-menu-plus.php:587
+#: menu-plus/functions/generate-menu-plus.php:1125
+#: typography/functions/slideout-nav-fonts.php:39
+#: typography/functions/slideout-nav-fonts.php:52
+msgid "Off Canvas Panel"
+msgstr ""
+
+#: colors/functions/slideout-nav-colors.php:88
+msgid "Parent Menu Items"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:52
+#: typography/functions/woocommerce-fonts.php:43
+#: woocommerce/functions/customizer/customizer.php:57
+#: woocommerce/functions/customizer/customizer.php:70
+#: woocommerce/functions/customizer/customizer.php:981
+#: woocommerce/functions/customizer/customizer.php:991
+msgid "WooCommerce"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:82
+msgid "Primary Button Colors"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:83
+msgid "Primary button colors can be set <a href=\"#\">here</a>."
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:105
+msgid "Alt Button Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:129
+msgid "Alt Button Background Hover"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:153
+msgid "Alt Button Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:176
+msgid "Alt Button Text Hover"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:190
+msgid "Products"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:212
+msgid "Product Title"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:235
+msgid "Product Title Hover"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:258
+msgid "Star Ratings"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:282
+msgid "Sale Sticker Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:306
+msgid "Sale Sticker Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:329
+msgid "Price"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:343
+msgid "Sticky Panel Cart"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:365
+#: elements/class-metabox.php:765
+#: page-header/functions/metabox.php:365
+#: sections/functions/metaboxes/views/sections-template.php:222
+msgid "Background Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:389
+#: elements/class-metabox.php:774
+#: page-header/functions/metabox.php:370
+#: sections/functions/metaboxes/views/sections-template.php:227
+msgid "Text Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:412
+#: colors/functions/woocommerce-colors.php:564
+msgid "Button Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:435
+#: colors/functions/woocommerce-colors.php:587
+msgid "Button Background Hover"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:458
+#: colors/functions/woocommerce-colors.php:610
+msgid "Button Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:481
+#: colors/functions/woocommerce-colors.php:633
+msgid "Button Text Hover"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:495
+msgid "Menu Mini Cart"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:517
+msgid "Cart Background Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:541
+msgid "Cart Text Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:647
+msgid "Price Slider Widget"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:668
+msgid "Slider Background Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:690
+msgid "Slider Bar Color"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:704
+msgid "Product Tabs"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:726
+msgid "Product Tab Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:749
+msgid "Product Tab Active"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:763
+msgid "Messages"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:785
+msgid "Success Message Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:809
+msgid "Success Message Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:832
+msgid "Info Message Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:856
+msgid "Info Message Text"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:879
+msgid "Error Message Background"
+msgstr ""
+
+#: colors/functions/woocommerce-colors.php:903
+msgid "Error Message Text"
+msgstr ""
+
+#: copyright/functions/functions.php:43
+msgid "Copyright"
+msgstr ""
+
+#: disable-elements/functions/functions.php:104
+#: elements/class-metabox.php:297
+msgid "Disable Elements"
+msgstr ""
+
+#: disable-elements/functions/functions.php:159
+#: disable-elements/functions/functions.php:161
+#: disable-elements/functions/functions.php:353
+#: disable-elements/functions/functions.php:355
+msgid "Featured Image / Page Header"
+msgstr ""
+
+#: disable-elements/functions/functions.php:332
+#: disable-elements/functions/functions.php:334
+#: elements/class-metabox.php:1199
+#: menu-plus/functions/generate-menu-plus.php:380
+#: menu-plus/functions/generate-menu-plus.php:421
+msgid "Mobile Header"
+msgstr ""
+
+#: elements/class-conditions.php:44
+#: elements/class-conditions.php:143
+#: woocommerce/functions/customizer/customizer.php:88
+msgid "General"
+msgstr ""
+
+#: elements/class-conditions.php:46
+msgid "Entire Site"
+msgstr ""
+
+#: elements/class-conditions.php:47
+msgid "Front Page"
+msgstr ""
+
+#: elements/class-conditions.php:49
+msgid "All Singular"
+msgstr ""
+
+#: elements/class-conditions.php:50
+msgid "All Archives"
+msgstr ""
+
+#: elements/class-conditions.php:51
+msgid "Author Archives"
+msgstr ""
+
+#: elements/class-conditions.php:52
+msgid "Date Archives"
+msgstr ""
+
+#: elements/class-conditions.php:53
+#: page-header/functions/global-locations.php:81
+msgid "Search Results"
+msgstr ""
+
+#: elements/class-conditions.php:54
+#: page-header/functions/global-locations.php:90
+msgid "404 Template"
+msgstr ""
+
+#. translators: post type name
+#: elements/class-conditions.php:89
+msgctxt "%s is a singular post type name"
+msgid "%s Archives"
+msgstr ""
+
+#. translators: post type name
+#: elements/class-conditions.php:92
+msgctxt "%s is a singular post type name"
+msgid "%s Archive"
+msgstr ""
+
+#. translators: '%1$s is post type label. %2$s is taxonomy label.
+#: elements/class-conditions.php:121
+msgctxt "%1$s is post type label. %2$s is taxonomy label."
+msgid "%1$s %2$s Archive"
+msgstr ""
+
+#: elements/class-conditions.php:145
+msgid "All Users"
+msgstr ""
+
+#: elements/class-conditions.php:146
+msgid "Logged In"
+msgstr ""
+
+#: elements/class-conditions.php:147
+msgid "Logged Out"
+msgstr ""
+
+#: elements/class-conditions.php:151
+msgid "Roles"
+msgstr ""
+
+#. translators: author name
+#: elements/class-hero.php:898
+#: page-header/functions/functions.php:1124
+msgid "View all posts by %s"
+msgstr ""
+
+#: elements/class-metabox.php:142
+#: elements/class-metabox.php:663
+#: elements/class-metabox.php:672
+msgid "Custom Image"
+msgstr ""
+
+#: elements/class-metabox.php:143
+#: elements/class-metabox.php:674
+msgid "Fallback Image"
+msgstr ""
+
+#: elements/class-metabox.php:144
+#: elements/class-metabox.php:241
+#: elements/class-metabox.php:1328
+#: elements/class-metabox.php:1357
+#: elements/class-metabox.php:1384
+#: elements/class-metabox.php:1433
+#: elements/class-metabox.php:1462
+#: elements/class-metabox.php:1491
+#: elements/class-metabox.php:1536
+#: elements/class-metabox.php:1563
+#: elements/class-metabox.php:1588
+#: elements/class-post-type.php:412
+msgid "Choose..."
+msgstr ""
+
+#: elements/class-metabox.php:160
+msgid "Color value"
+msgstr ""
+
+#: elements/class-metabox.php:161
+msgid "Select Color"
+msgstr ""
+
+#: elements/class-metabox.php:162
+#: elements/class-metabox.php:987
+#: elements/class-metabox.php:1076
+#: elements/class-metabox.php:1136
+#: elements/class-metabox.php:1272
+msgid "Default"
+msgstr ""
+
+#: elements/class-metabox.php:163
+msgid "Select default color"
+msgstr ""
+
+#: elements/class-metabox.php:164
+msgid "Clear"
+msgstr ""
+
+#: elements/class-metabox.php:165
+msgid "Clear color"
+msgstr ""
+
+#: elements/class-metabox.php:220
+#: page-header/functions/metabox.php:676
+msgid "Template Tags"
+msgstr ""
+
+#: elements/class-metabox.php:242
+#: elements/class-post-type.php:267
+#: elements/class-post-type.php:413
+msgid "Block"
+msgstr ""
+
+#: elements/class-metabox.php:244
+#: elements/class-metabox.php:335
+#: elements/class-metabox.php:354
+#: elements/class-post-type.php:286
+#: elements/class-post-type.php:415
+msgid "Hook"
+msgstr ""
+
+#: elements/class-metabox.php:245
+#: elements/class-post-type.php:295
+#: elements/class-post-type.php:416
+#: library/customizer/controls/class-section-shortcuts-control.php:56
+#: sections/functions/metaboxes/views/sections-template.php:171
+msgid "Layout"
+msgstr ""
+
+#: elements/class-metabox.php:251
+msgid "This element needs a location set within the Display Rules tab in order to display."
+msgstr ""
+
+#: elements/class-metabox.php:264
+msgid "Page Hero"
+msgstr ""
+
+#: elements/class-metabox.php:270
+#: elements/class-metabox.php:336
+#: elements/class-metabox.php:1190
+msgid "Site Header"
+msgstr ""
+
+#: elements/class-metabox.php:277
+#: sections/functions/metaboxes/metabox-functions.php:250
+msgid "Settings"
+msgstr ""
+
+#: elements/class-metabox.php:312
+msgid "Display Rules"
+msgstr ""
+
+#: elements/class-metabox.php:319
+msgid "Internal Notes"
+msgstr ""
+
+#: elements/class-metabox.php:331
+msgid "Block Type"
+msgstr ""
+
+#: elements/class-metabox.php:337
+msgid "Site Footer"
+msgstr ""
+
+#: elements/class-metabox.php:338
+#: elements/class-metabox.php:993
+#: elements/class-metabox.php:1081
+#: secondary-nav/functions/functions.php:338
+msgid "Right Sidebar"
+msgstr ""
+
+#: elements/class-metabox.php:339
+#: elements/class-metabox.php:992
+#: elements/class-metabox.php:1088
+#: secondary-nav/functions/functions.php:337
+msgid "Left Sidebar"
+msgstr ""
+
+#: elements/class-metabox.php:343
+msgid "This will remove the current sidebar widgets for the selected sidebar. Your layout must have a sidebar set for this Element to show."
+msgstr ""
+
+#: elements/class-metabox.php:377
+msgid "Custom"
+msgstr ""
+
+#: elements/class-metabox.php:378
+msgid "Custom Hook"
+msgstr ""
+
+#: elements/class-metabox.php:386
+msgid "Custom Hook Name"
+msgstr ""
+
+#: elements/class-metabox.php:399
+msgid "Disable Site Header"
+msgstr ""
+
+#: elements/class-metabox.php:408
+msgid "Disable Site Footer"
+msgstr ""
+
+#: elements/class-metabox.php:417
+msgid "Execute Shortcodes"
+msgstr ""
+
+#: elements/class-metabox.php:426
+#: hooks/functions/functions.php:355
+msgid "Execute PHP"
+msgstr ""
+
+#. translators: %s is DISALLOW_FILE_EDIT constant
+#: elements/class-metabox.php:433
+msgid "Unable to execute PHP as %s is defined."
+msgstr ""
+
+#: elements/class-metabox.php:449
+msgid "Priority"
+msgstr ""
+
+#: elements/class-metabox.php:468
+msgid "Element Classes"
+msgstr ""
+
+#: elements/class-metabox.php:469
+msgid "Add custom classes to the Page Hero element."
+msgstr ""
+
+#: elements/class-metabox.php:478
+#: page-header/functions/metabox.php:320
+msgid "Container"
+msgstr ""
+
+#: elements/class-metabox.php:482
+#: elements/class-metabox.php:495
+#: page-header/functions/metabox.php:323
+#: page-header/functions/metabox.php:331
+#: sections/functions/metaboxes/views/sections-template.php:176
+#: sections/functions/metaboxes/views/sections-template.php:186
+msgid "Full Width"
+msgstr ""
+
+#: elements/class-metabox.php:483
+#: elements/class-metabox.php:494
+#: page-header/functions/metabox.php:322
+#: page-header/functions/metabox.php:330
+#: secondary-nav/functions/functions.php:259
+#: secondary-nav/functions/functions.php:284
+#: sections/functions/metaboxes/views/sections-template.php:177
+#: sections/functions/metaboxes/views/sections-template.php:185
+msgctxt "Width"
+msgid "Contained"
+msgstr ""
+
+#: elements/class-metabox.php:490
+#: page-header/functions/metabox.php:328
+msgid "Inner Container"
+msgstr ""
+
+#: elements/class-metabox.php:502
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: elements/class-metabox.php:515
+#: page-header/functions/metabox.php:309
+msgid "Full Screen"
+msgstr ""
+
+#: elements/class-metabox.php:524
+msgid "Vertical Alignment"
+msgstr ""
+
+#: elements/class-metabox.php:528
+#: elements/class-metabox.php:556
+#: elements/class-metabox.php:610
+#: library/customizer/controls/class-spacing-control.php:40
+msgid "Top"
+msgstr ""
+
+#: elements/class-metabox.php:530
+#: elements/class-metabox.php:582
+#: elements/class-metabox.php:636
+#: library/customizer/controls/class-spacing-control.php:42
+msgid "Bottom"
+msgstr ""
+
+#: elements/class-metabox.php:537
+msgid "Padding"
+msgstr ""
+
+#: elements/class-metabox.php:657
+#: elements/class-post-type.php:87
+#: sections/functions/metaboxes/views/sections-template.php:247
+#: sections/functions/metaboxes/views/sections-template.php:252
+msgid "Background Image"
+msgstr ""
+
+#: elements/class-metabox.php:661
+msgid "No Background Image"
+msgstr ""
+
+#: elements/class-metabox.php:662
+#: elements/class-metabox.php:1235
+msgid "Featured Image"
+msgstr ""
+
+#: elements/class-metabox.php:690
+msgid "Change"
+msgstr ""
+
+#: elements/class-metabox.php:695
+#: elements/class-metabox.php:895
+#: elements/class-metabox.php:921
+#: elements/class-metabox.php:947
+#: elements/class-metabox.php:973
+#: elements/class-metabox.php:1349
+#: elements/class-metabox.php:1377
+#: elements/class-metabox.php:1404
+#: elements/class-metabox.php:1454
+#: elements/class-metabox.php:1484
+#: elements/class-metabox.php:1513
+#: elements/class-metabox.php:1555
+#: elements/class-metabox.php:1581
+#: elements/class-metabox.php:1606
+#: sections/functions/metaboxes/views/sections-template.php:253
+msgid "Remove"
+msgstr ""
+
+#. translators: Upload Custom Image or Fallback image
+#: elements/class-metabox.php:706
+msgid "Upload %s"
+msgstr ""
+
+#: elements/class-metabox.php:717
+msgid "Background Position"
+msgstr ""
+
+#: elements/class-metabox.php:736
+msgid "Parallax"
+msgstr ""
+
+#: elements/class-metabox.php:745
+msgid "Disable Featured Image"
+msgstr ""
+
+#: elements/class-metabox.php:746
+msgid "Disable the featured image on posts with this hero area."
+msgstr ""
+
+#: elements/class-metabox.php:755
+msgid "Background Overlay"
+msgstr ""
+
+#: elements/class-metabox.php:756
+msgid "Use the background color as a background overlay."
+msgstr ""
+
+#: elements/class-metabox.php:783
+#: page-header/functions/metabox.php:375
+#: sections/functions/metaboxes/views/sections-template.php:233
+msgid "Link Color"
+msgstr ""
+
+#: elements/class-metabox.php:792
+#: page-header/functions/metabox.php:380
+#: sections/functions/metaboxes/views/sections-template.php:239
+msgid "Link Color Hover"
+msgstr ""
+
+#: elements/class-metabox.php:806
+msgid "Merge with Content"
+msgstr ""
+
+#: elements/class-metabox.php:807
+msgid "Place your site header on top of the element below it."
+msgstr ""
+
+#: elements/class-metabox.php:811
+msgid "No Merge"
+msgstr ""
+
+#: elements/class-metabox.php:812
+msgid "Merge"
+msgstr ""
+
+#: elements/class-metabox.php:813
+msgid "Merge on Desktop Only"
+msgstr ""
+
+#: elements/class-metabox.php:820
+msgid "Offset Site Header Height"
+msgstr ""
+
+#: elements/class-metabox.php:821
+msgid "Add to the top padding of your Page Hero to prevent overlapping."
+msgstr ""
+
+#: elements/class-metabox.php:848
+msgid "Header Background"
+msgstr ""
+
+#: elements/class-metabox.php:869
+#: page-header/functions/metabox.php:520
+#: typography/functions/functions.php:580
+msgid "Site Tagline"
+msgstr ""
+
+#: elements/class-metabox.php:880
+#: elements/class-metabox.php:894
+msgid "Site Logo"
+msgstr ""
+
+#: elements/class-metabox.php:894
+#: elements/class-metabox.php:920
+#: elements/class-metabox.php:946
+#: elements/class-metabox.php:972
+#: sections/functions/metaboxes/views/sections-template.php:252
+msgid "Upload"
+msgstr ""
+
+#: elements/class-metabox.php:906
+#: elements/class-metabox.php:920
+#: elements/class-metabox.php:946
+#: elements/class-metabox.php:972
+msgid "Retina Logo"
+msgstr ""
+
+#: elements/class-metabox.php:932
+#: menu-plus/functions/generate-menu-plus.php:340
+#: page-header/functions/metabox.php:480
+msgid "Navigation Logo"
+msgstr ""
+
+#: elements/class-metabox.php:958
+msgid "Mobile Header Logo"
+msgstr ""
+
+#: elements/class-metabox.php:983
+#: secondary-nav/functions/functions.php:330
+msgid "Navigation Location"
+msgstr ""
+
+#: elements/class-metabox.php:988
+#: secondary-nav/functions/functions.php:333
+msgid "Below Header"
+msgstr ""
+
+#: elements/class-metabox.php:989
+#: secondary-nav/functions/functions.php:334
+msgid "Above Header"
+msgstr ""
+
+#: elements/class-metabox.php:990
+#: secondary-nav/functions/functions.php:335
+msgid "Float Right"
+msgstr ""
+
+#: elements/class-metabox.php:991
+#: secondary-nav/functions/functions.php:336
+msgid "Float Left"
+msgstr ""
+
+#: elements/class-metabox.php:994
+#: secondary-nav/functions/functions.php:339
+msgid "No Navigation"
+msgstr ""
+
+#: elements/class-metabox.php:1001
+msgid "Navigation Colors"
+msgstr ""
+
+#: elements/class-metabox.php:1010
+#: page-header/functions/metabox.php:531
+msgid "Navigation Background"
+msgstr ""
+
+#: elements/class-metabox.php:1019
+#: page-header/functions/metabox.php:536
+msgid "Navigation Text"
+msgstr ""
+
+#: elements/class-metabox.php:1028
+#: page-header/functions/metabox.php:541
+msgid "Navigation Background Hover"
+msgstr ""
+
+#: elements/class-metabox.php:1037
+#: page-header/functions/metabox.php:546
+msgid "Navigation Text Hover"
+msgstr ""
+
+#: elements/class-metabox.php:1046
+#: page-header/functions/metabox.php:551
+msgid "Navigation Background Current"
+msgstr ""
+
+#: elements/class-metabox.php:1055
+#: page-header/functions/metabox.php:556
+msgid "Navigation Text Current"
+msgstr ""
+
+#: elements/class-metabox.php:1070
+#: woocommerce/functions/customizer/customizer.php:227
+#: woocommerce/functions/customizer/customizer.php:713
+msgid "Sidebar Layout"
+msgstr ""
+
+#: elements/class-metabox.php:1083
+#: elements/class-metabox.php:1090
+#: elements/class-metabox.php:1104
+#: elements/class-metabox.php:1111
+#: elements/class-metabox.php:1118
+msgctxt "Short name for meta box"
+msgid "Sidebar"
+msgstr ""
+
+#: elements/class-metabox.php:1095
+msgid "No Sidebars"
+msgstr ""
+
+#: elements/class-metabox.php:1097
+#: woocommerce/functions/customizer/customizer.php:232
+#: woocommerce/functions/customizer/customizer.php:719
+msgid "Content (no sidebars)"
+msgstr ""
+
+#: elements/class-metabox.php:1102
+msgid "Both Sidebars"
+msgstr ""
+
+#: elements/class-metabox.php:1109
+msgid "Both Sidebars on Left"
+msgstr ""
+
+#: elements/class-metabox.php:1116
+msgid "Both Sidebars on Right"
+msgstr ""
+
+#: elements/class-metabox.php:1143
+msgid "0 Widgets"
+msgstr ""
+
+#: elements/class-metabox.php:1150
+msgid "1 Widget"
+msgstr ""
+
+#: elements/class-metabox.php:1157
+msgid "2 Widgets"
+msgstr ""
+
+#: elements/class-metabox.php:1164
+msgid "3 Widgets"
+msgstr ""
+
+#: elements/class-metabox.php:1171
+msgid "4 Widgets"
+msgstr ""
+
+#: elements/class-metabox.php:1178
+msgid "5 Widgets"
+msgstr ""
+
+#: elements/class-metabox.php:1266
+msgid "Content Area"
+msgstr ""
+
+#: elements/class-metabox.php:1279
+msgid "Full Width (no padding)"
+msgstr ""
+
+#: elements/class-metabox.php:1286
+msgctxt "Width"
+msgid "Contained (no padding)"
+msgstr ""
+
+#: elements/class-metabox.php:1293
+msgid "Content Width"
+msgstr ""
+
+#: elements/class-metabox.php:1309
+msgid "Choose when this element should display."
+msgstr ""
+
+#: elements/class-metabox.php:1407
+msgid "Add Location Rule"
+msgstr ""
+
+#: elements/class-metabox.php:1413
+msgid "Exclude"
+msgstr ""
+
+#: elements/class-metabox.php:1414
+msgid "Choose when this element should not display."
+msgstr ""
+
+#: elements/class-metabox.php:1516
+msgid "Add Exclusion Rule"
+msgstr ""
+
+#: elements/class-metabox.php:1522
+#: elements/class-post-type.php:174
+#: elements/class-post-type.php:184
+msgid "Users"
+msgstr ""
+
+#: elements/class-metabox.php:1523
+msgid "Display this element for specific user roles."
+msgstr ""
+
+#: elements/class-metabox.php:1609
+msgid "Add User Rule"
+msgstr ""
+
+#: elements/class-metabox.php:1614
+msgid "Ignore Languages"
+msgstr ""
+
+#: elements/class-metabox.php:1615
+msgid "Show this Element to all languages."
+msgstr ""
+
+#: elements/class-metabox.php:1629
+msgid "Internal notes can be helpful to remember why this element was added."
+msgstr ""
+
+#: elements/class-metabox.php:2170
+msgid "Scripts & Styles"
+msgstr ""
+
+#: elements/class-metabox.php:2221
+msgid "Comments"
+msgstr ""
+
+#: elements/class-metabox.php:2230
+#: spacing/functions/customizer/sidebar-spacing.php:17
+msgid "Sidebars"
+msgstr ""
+
+#: elements/class-metabox.php:2255
+msgid "WooCommerce - Global"
+msgstr ""
+
+#: elements/class-metabox.php:2265
+msgid "WooCommerce - Shop"
+msgstr ""
+
+#: elements/class-metabox.php:2276
+msgid "WooCommerce - Product"
+msgstr ""
+
+#: elements/class-metabox.php:2297
+msgid "WooCommerce - Cart"
+msgstr ""
+
+#: elements/class-metabox.php:2319
+msgid "WooCommerce - Checkout"
+msgstr ""
+
+#: elements/class-metabox.php:2346
+msgid "WooCommerce - Account"
+msgstr ""
+
+#: elements/class-metabox.php:2367
+#: page-header/functions/metabox.php:689
+msgid "The content title of the current post/taxonomy."
+msgstr ""
+
+#: elements/class-metabox.php:2372
+#: page-header/functions/metabox.php:692
+msgid "The published date of the current post."
+msgstr ""
+
+#: elements/class-metabox.php:2377
+#: page-header/functions/metabox.php:695
+msgid "The author of the current post."
+msgstr ""
+
+#: elements/class-metabox.php:2382
+#: page-header/functions/metabox.php:698
+msgid "The terms attached to the chosen taxonomy (category, post_tag, product_cat)."
+msgstr ""
+
+#: elements/class-metabox.php:2387
+#: page-header/functions/metabox.php:701
+msgid "Custom post meta. Replace \"name\" with the name of your custom field."
+msgstr ""
+
+#: elements/class-post-type.php:77
+msgctxt "Post Type General Name"
+msgid "Elements"
+msgstr ""
+
+#: elements/class-post-type.php:78
+msgctxt "Post Type Singular Name"
+msgid "Element"
+msgstr ""
+
+#: elements/class-post-type.php:79
+#: elements/class-post-type.php:349
+#: elements/class-post-type.php:350
+#: elements/elements.php:82
+msgid "Elements"
+msgstr ""
+
+#: elements/class-post-type.php:80
+msgid "All Elements"
+msgstr ""
+
+#: elements/class-post-type.php:81
+#: elements/class-post-type.php:82
+msgid "Add New Element"
+msgstr ""
+
+#: elements/class-post-type.php:83
+msgid "New Element"
+msgstr ""
+
+#: elements/class-post-type.php:84
+msgid "Edit Element"
+msgstr ""
+
+#: elements/class-post-type.php:85
+msgid "Update Element"
+msgstr ""
+
+#: elements/class-post-type.php:86
+msgid "Search Element"
+msgstr ""
+
+#: elements/class-post-type.php:88
+msgid "Set background image"
+msgstr ""
+
+#: elements/class-post-type.php:89
+msgid "Remove background image"
+msgstr ""
+
+#: elements/class-post-type.php:144
+msgid "Add New Layout"
+msgstr ""
+
+#: elements/class-post-type.php:145
+msgid "Edit Layout"
+msgstr ""
+
+#: elements/class-post-type.php:149
+msgid "Add New Hook"
+msgstr ""
+
+#: elements/class-post-type.php:150
+msgid "Edit Hook"
+msgstr ""
+
+#: elements/class-post-type.php:154
+msgid "Add New Header"
+msgstr ""
+
+#: elements/class-post-type.php:155
+msgid "Edit Header"
+msgstr ""
+
+#: elements/class-post-type.php:171
+#: elements/class-post-type.php:181
+msgid "Type"
+msgstr ""
+
+#: elements/class-post-type.php:173
+#: elements/class-post-type.php:183
+msgid "Exclusions"
+msgstr ""
+
+#: elements/class-post-type.php:204
+msgid "Blocks"
+msgstr ""
+
+#: elements/class-post-type.php:205
+msgid "Headers"
+msgstr ""
+
+#: elements/class-post-type.php:206
+msgid "Hooks"
+msgstr ""
+
+#: elements/class-post-type.php:207
+msgid "Layouts"
+msgstr ""
+
+#: elements/class-post-type.php:212
+msgid "All types"
+msgstr ""
+
+#: elements/class-post-type.php:308
+msgid "Not set"
+msgstr ""
+
+#: elements/class-post-type.php:409
+msgid "Choose Element Type"
+msgstr ""
+
+#: elements/class-post-type.php:419
+msgid "Create"
+msgstr ""
+
+#: elements/class-post-type.php:422
+#: menu-plus/functions/generate-menu-plus.php:1099
+#: menu-plus/functions/generate-menu-plus.php:1805
+#: sections/functions/metaboxes/views/sections-template.php:69
+#: sites/classes/class-site.php:260
+#: sites/classes/class-site.php:510
+msgid "Close"
+msgstr ""
+
+#: general/class-external-file-css.php:98
+msgid "Dynamic CSS Print Method"
+msgstr ""
+
+#: general/class-external-file-css.php:99
+msgid "Generating your dynamic CSS in an external file offers significant performance advantages."
+msgstr ""
+
+#: general/class-external-file-css.php:102
+msgid "Inline Embedding"
+msgstr ""
+
+#: general/class-external-file-css.php:103
+msgid "External File"
+msgstr ""
+
+#: general/class-external-file-css.php:117
+msgid "Regenerate CSS File"
+msgstr ""
+
+#: general/class-external-file-css.php:439
+msgid "Security check failed."
+msgstr ""
+
+#: general/smooth-scroll.php:97
+msgid "Smooth scroll"
+msgstr ""
+
+#: general/smooth-scroll.php:98
+msgid "Initiate smooth scroll on anchor links using the <code>smooth-scroll</code> class."
+msgstr ""
+
+#: gp-premium.php:208
+msgid "GeneratePress has an update available."
+msgstr ""
+
+#: gp-premium.php:210
+msgid "Update now."
+msgstr ""
+
+#: gp-premium.php:219
+msgid "GP Premium requires GeneratePress to be your active theme."
+msgstr ""
+
+#: gp-premium.php:220
+msgid "Install now."
+msgstr ""
+
+#: gp-premium.php:235
+msgid "Configure"
+msgstr ""
+
+#: hooks/functions/functions.php:77
+msgid "DISALLOW_FILE_EDIT is defined. You should also disallow PHP execution in GP Hooks."
+msgstr ""
+
+#: hooks/functions/functions.php:78
+msgid "Learn how"
+msgstr ""
+
+#: hooks/functions/functions.php:132
+#: hooks/functions/functions.php:152
+#: hooks/functions/functions.php:403
+msgid "GP Hooks"
+msgstr ""
+
+#: hooks/functions/functions.php:168
+msgid "wp_head"
+msgstr ""
+
+#: hooks/functions/functions.php:174
+msgid "Before Header"
+msgstr ""
+
+#: hooks/functions/functions.php:180
+msgid "Before Header Content"
+msgstr ""
+
+#: hooks/functions/functions.php:186
+msgid "After Header Content"
+msgstr ""
+
+#: hooks/functions/functions.php:192
+msgid "After Header"
+msgstr ""
+
+#: hooks/functions/functions.php:198
+msgid "Inside Content Container"
+msgstr ""
+
+#: hooks/functions/functions.php:204
+msgid "Before Content"
+msgstr ""
+
+#: hooks/functions/functions.php:210
+msgid "After Entry Title"
+msgstr ""
+
+#: hooks/functions/functions.php:216
+msgid "After Content"
+msgstr ""
+
+#: hooks/functions/functions.php:222
+msgid "Before Right Sidebar Content"
+msgstr ""
+
+#: hooks/functions/functions.php:228
+msgid "After Right Sidebar Content"
+msgstr ""
+
+#: hooks/functions/functions.php:234
+msgid "Before Left Sidebar Content"
+msgstr ""
+
+#: hooks/functions/functions.php:240
+msgid "After Left Sidebar Content"
+msgstr ""
+
+#: hooks/functions/functions.php:246
+msgid "Before Footer"
+msgstr ""
+
+#: hooks/functions/functions.php:252
+msgid "After Footer Widgets"
+msgstr ""
+
+#: hooks/functions/functions.php:258
+msgid "Before Footer Content"
+msgstr ""
+
+#: hooks/functions/functions.php:264
+msgid "After Footer Content"
+msgstr ""
+
+#: hooks/functions/functions.php:270
+msgid "wp_footer"
+msgstr ""
+
+#: hooks/functions/functions.php:357
+msgid "Disable Hook"
+msgstr ""
+
+#: hooks/functions/functions.php:405
+msgid "Use these fields to insert anything you like throughout GeneratePress. Shortcodes are allowed, and you can even use PHP if you check the Execute PHP checkboxes."
+msgstr ""
+
+#: hooks/functions/functions.php:407
+msgid "Show all"
+msgstr ""
+
+#: hooks/functions/functions.php:418
+msgid "Save Hooks"
+msgstr ""
+
+#: hooks/functions/functions.php:490
+msgid "Hooks saved."
+msgstr ""
+
+#: hooks/functions/functions.php:537
+msgid "Legacy Hooks"
+msgstr ""
+
+#: import-export/functions/functions.php:58
+msgid "Import/Export"
+msgstr ""
+
+#: import-export/functions/functions.php:61
+#: import-export/functions/functions.php:137
+msgid "Export"
+msgstr ""
+
+#: import-export/functions/functions.php:62
+#: inc/reset.php:22
+#: page-header/functions/metabox.php:196
+msgid "Advanced"
+msgstr ""
+
+#: import-export/functions/functions.php:66
+#: inc/reset.php:24
+msgctxt "Module name"
+msgid "Core"
+msgstr ""
+
+#: import-export/functions/functions.php:72
+#: inc/reset.php:27
+msgctxt "Module name"
+msgid "Backgrounds"
+msgstr ""
+
+#: import-export/functions/functions.php:79
+#: inc/reset.php:31
+msgctxt "Module name"
+msgid "Blog"
+msgstr ""
+
+#: import-export/functions/functions.php:86
+#: inc/reset.php:35
+msgctxt "Module name"
+msgid "Hooks"
+msgstr ""
+
+#: import-export/functions/functions.php:93
+#: inc/reset.php:39
+msgctxt "Module name"
+msgid "Page Header"
+msgstr ""
+
+#: import-export/functions/functions.php:100
+#: inc/reset.php:43
+msgctxt "Module name"
+msgid "Secondary Navigation"
+msgstr ""
+
+#: import-export/functions/functions.php:107
+#: inc/reset.php:47
+msgctxt "Module name"
+msgid "Spacing"
+msgstr ""
+
+#: import-export/functions/functions.php:114
+#: inc/reset.php:51
+msgctxt "Module name"
+msgid "Menu Plus"
+msgstr ""
+
+#: import-export/functions/functions.php:121
+#: inc/reset.php:55
+msgctxt "Module name"
+msgid "WooCommerce"
+msgstr ""
+
+#: import-export/functions/functions.php:128
+#: inc/reset.php:59
+msgctxt "Module name"
+msgid "Copyright"
+msgstr ""
+
+#: import-export/functions/functions.php:141
+#: import-export/functions/functions.php:149
+msgid "Import"
+msgstr ""
+
+#: import-export/functions/functions.php:242
+msgid "Please upload a valid .json file"
+msgstr ""
+
+#: import-export/functions/functions.php:248
+msgid "Please upload a file to import"
+msgstr ""
+
+#: inc/activation.php:27
+msgid "This module has been deprecated. Deactivating it will remove it from this list."
+msgstr ""
+
+#: inc/activation.php:39
+msgid "Module deactivated."
+msgstr ""
+
+#: inc/activation.php:43
+msgid "Module activated."
+msgstr ""
+
+#: inc/activation.php:57
+msgid "License deactivated."
+msgstr ""
+
+#: inc/activation.php:61
+msgid "License activated."
+msgstr ""
+
+#: inc/activation.php:134
+msgid "Bulk Actions"
+msgstr ""
+
+#: inc/activation.php:135
+#: inc/activation.php:176
+msgid "Activate"
+msgstr ""
+
+#: inc/activation.php:136
+#: inc/activation.php:156
+msgid "Deactivate"
+msgstr ""
+
+#: inc/activation.php:139
+#: sections/functions/metaboxes/views/sections-template.php:80
+msgid "Apply"
+msgstr ""
+
+#: inc/activation.php:173
+msgid "WooCommerce not activated."
+msgstr ""
+
+#: inc/activation.php:382
+msgid "Receiving updates"
+msgstr ""
+
+#: inc/activation.php:384
+msgid "Not receiving updates"
+msgstr ""
+
+#: inc/activation.php:390
+msgid "Updates"
+msgstr ""
+
+#: inc/activation.php:393
+#: inc/activation.php:405
+msgid "Help"
+msgstr ""
+
+#: inc/activation.php:400
+msgid "License Key"
+msgstr ""
+
+#: inc/activation.php:405
+msgid "Receive beta updates"
+msgstr ""
+
+#: inc/activation.php:409
+msgid "Save"
+msgstr ""
+
+#: inc/activation.php:502
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: inc/activation.php:509
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: inc/activation.php:514
+msgid "Invalid license."
+msgstr ""
+
+#: inc/activation.php:520
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: inc/activation.php:525
+msgid "This appears to be an invalid license key for GP Premium."
+msgstr ""
+
+#: inc/activation.php:530
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: inc/activation.php:535
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: inc/activation.php:580
+msgid "Enter valid license key for automatic updates."
+msgstr ""
+
+#: inc/dashboard.php:19
+msgid "Modules"
+msgstr ""
+
+#: inc/deprecated.php:131
+msgid "Masonry Post Width"
+msgstr ""
+
+#: inc/deprecated.php:133
+msgid "Global setting"
+msgstr ""
+
+#: inc/deprecated.php:134
+msgid "Small"
+msgstr ""
+
+#: inc/deprecated.php:135
+msgid "Medium"
+msgstr ""
+
+#: inc/deprecated.php:136
+msgid "Large"
+msgstr ""
+
+#: inc/deprecated.php:503
+msgid "Error: Content already detected in default editor."
+msgstr ""
+
+#: inc/deprecated.php:504
+msgid "Please activate the \"Visual\" tab in your main editor before transferring content."
+msgstr ""
+
+#: inc/deprecated.php:560
+msgid "Cart"
+msgstr ""
+
+#: inc/deprecated.php:619
+#: sites/sites.php:320
+msgid "Refresh Sites"
+msgstr ""
+
+#: inc/reset.php:19
+msgid "Reset Settings"
+msgstr ""
+
+#: inc/reset.php:65
+msgid "Warning: This will delete your settings and can not be undone."
+msgstr ""
+
+#: inc/reset.php:68
+#: library/customizer/controls/class-range-slider-control.php:46
+msgid "Reset"
+msgstr ""
+
+#: library/customizer-helpers.php:67
+msgid "This will design your overlay by changing options in the Customizer for you. Once saved, this can not be undone."
+msgstr ""
+
+#: library/customizer-helpers.php:73
+#: typography/functions/functions.php:166
+#: typography/functions/functions.php:346
+#: typography/functions/functions.php:495
+#: typography/functions/functions.php:609
+#: typography/functions/functions.php:755
+#: typography/functions/functions.php:895
+#: typography/functions/functions.php:1030
+#: typography/functions/functions.php:1186
+#: typography/functions/functions.php:1333
+#: typography/functions/functions.php:1489
+#: typography/functions/functions.php:1626
+#: typography/functions/functions.php:1793
+#: typography/functions/functions.php:1924
+#: typography/functions/functions.php:2055
+#: typography/functions/functions.php:2214
+#: typography/functions/functions.php:2409
+#: typography/functions/secondary-nav-fonts.php:158
+#: typography/functions/slideout-nav-fonts.php:125
+#: typography/functions/woocommerce-fonts.php:117
+msgid "Font size"
+msgstr ""
+
+#: library/customizer-helpers.php:74
+msgid "Mobile header font size"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:18
+msgid "left top, x% y%, xpos ypos (px)"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:19
+msgid "Position"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:130
+msgid "Size (Auto)"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:131
+msgid "100% Width"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:132
+msgid "Cover"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:133
+msgid "Contain"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:139
+msgid "Attachment"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:140
+msgid "Fixed"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:141
+msgid "Local"
+msgstr ""
+
+#: library/customizer/controls/class-backgrounds-control.php:142
+#: woocommerce/functions/customizer/customizer.php:716
+msgid "Inherit"
+msgstr ""
+
+#: library/customizer/controls/class-copyright-control.php:25
+msgid "<code>%current_year%</code> to update year automatically."
+msgstr ""
+
+#: library/customizer/controls/class-copyright-control.php:26
+msgid "<code>%copy%</code> to include the copyright symbol."
+msgstr ""
+
+#: library/customizer/controls/class-copyright-control.php:27
+msgid "HTML is allowed."
+msgstr ""
+
+#: library/customizer/controls/class-copyright-control.php:28
+msgid "Shortcodes are allowed."
+msgstr ""
+
+#: library/customizer/controls/class-range-slider-control.php:43
+#: library/customizer/controls/class-spacing-control.php:44
+#: sites/classes/class-site.php:513
+msgid "Desktop"
+msgstr ""
+
+#: library/customizer/controls/class-range-slider-control.php:44
+#: library/customizer/controls/class-spacing-control.php:45
+#: sites/classes/class-site.php:514
+msgid "Tablet"
+msgstr ""
+
+#: library/customizer/controls/class-range-slider-control.php:45
+#: library/customizer/controls/class-spacing-control.php:46
+#: sites/classes/class-site.php:515
+msgid "Mobile"
+msgstr ""
+
+#: library/customizer/controls/class-section-shortcuts-control.php:38
+#: typography/functions/functions.php:53
+msgid "Typography"
+msgstr ""
+
+#: library/customizer/controls/class-section-shortcuts-control.php:47
+msgid "Backgrounds"
+msgstr ""
+
+#: library/customizer/controls/class-section-shortcuts-control.php:75
+msgid "More %s controls:"
+msgstr ""
+
+#: library/customizer/controls/class-section-shortcuts-control.php:79
+msgid "Go Back"
+msgstr ""
+
+#: library/customizer/controls/class-spacing-control.php:37
+msgid "Link values"
+msgstr ""
+
+#: library/customizer/controls/class-spacing-control.php:38
+msgid "Un-link values"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:24
+msgid "System Fonts"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:25
+msgid "Google Fonts"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:27
+msgid "Font family"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:28
+msgid "Font weight"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:29
+msgid "Text transform"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:31
+msgid "Variants"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:162
+#: library/customizer/controls/class-typography-control.php:179
+msgid "inherit"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:163
+msgid "normal"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:164
+msgid "bold"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:180
+msgid "none"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:181
+msgid "capitalize"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:182
+msgid "uppercase"
+msgstr ""
+
+#: library/customizer/controls/class-typography-control.php:183
+msgid "lowercase"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:20
+msgid "Off Canvas Menu"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:34
+#: menu-plus/functions/generate-menu-plus.php:988
+#: menu-plus/functions/generate-menu-plus.php:998
+#: secondary-nav/functions/functions.php:721
+msgid "Menu"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:132
+msgid "Menu Plus"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:158
+msgid "General Settings"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:176
+#: secondary-nav/functions/functions.php:234
+msgid "Mobile Menu Label"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:197
+msgid "Mobile Menu Breakpoint"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:219
+#: menu-plus/functions/generate-menu-plus.php:239
+msgid "Sticky Navigation"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:242
+#: menu-plus/functions/generate-menu-plus.php:590
+msgid "Mobile only"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:243
+#: menu-plus/functions/generate-menu-plus.php:591
+msgid "Desktop only"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:244
+#: menu-plus/functions/generate-menu-plus.php:425
+#: menu-plus/functions/generate-menu-plus.php:519
+#: menu-plus/functions/generate-menu-plus.php:592
+msgid "On"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:245
+#: menu-plus/functions/generate-menu-plus.php:424
+#: menu-plus/functions/generate-menu-plus.php:520
+#: menu-plus/functions/generate-menu-plus.php:593
+msgid "Off"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:265
+msgid "Transition"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:268
+msgid "Fade"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:269
+#: menu-plus/functions/generate-menu-plus.php:634
+msgid "Slide"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:270
+#: sites/sites.php:251
+#: sites/sites.php:269
+msgid "None"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:291
+#: menu-plus/functions/generate-menu-plus.php:540
+msgid "Hide when scrolling down"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:314
+msgid "Sticky Navigation Logo"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:361
+msgid "Navigation Logo Placement"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:364
+#: menu-plus/functions/generate-menu-plus.php:516
+msgid "Sticky"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:365
+msgid "Sticky + Static"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:366
+msgid "Static"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:401
+msgid "Use Navigation as Header"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:437
+msgid "Breakpoint"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:470
+msgid "Branding Type"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:473
+#: menu-plus/functions/generate-menu-plus.php:495
+#: page-header/functions/metabox.php:191
+msgid "Logo"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:611
+msgid "Desktop Toggle Label"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:631
+msgid "Style"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:635
+msgid "Overlay"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:655
+msgid "Side"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:673
+msgid "Set Overlay Defaults"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:674
+msgid "Clicking the above button will design your overlay by changing some of your off canvas color and typography options."
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:694
+msgid "Close Button"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:697
+msgid "Outside"
+msgstr ""
+
+#: menu-plus/functions/generate-menu-plus.php:698
+msgid "Inside"
+msgstr ""
+
+#: page-header/functions/functions.php:820
+#: page-header/functions/metabox.php:37
+#: page-header/functions/metabox.php:57
+#: page-header/functions/metabox.php:757
+#: page-header/functions/post-type.php:15
+#: page-header/functions/post-type.php:29
+#: page-header/functions/post-type.php:157
+#: page-header/functions/post-type.php:190
+msgid "Page Header"
+msgstr ""
+
+#: page-header/functions/functions.php:844
+msgid "Page Header Location"
+msgstr ""
+
+#: page-header/functions/functions.php:848
+#: page-header/functions/functions.php:873
+msgid "Inside Content Area"
+msgstr ""
+
+#: page-header/functions/functions.php:869
+msgid "Single Post Header Location"
+msgstr ""
+
+#: page-header/functions/functions.php:874
+msgid "Below Post Title"
+msgstr ""
+
+#: page-header/functions/functions.php:875
+msgid "Hide"
+msgstr ""
+
+#: page-header/functions/global-locations.php:24
+#: page-header/functions/global-locations.php:25
+#: page-header/functions/global-locations.php:40
+#: page-header/functions/post-type.php:132
+msgid "Global Locations"
+msgstr ""
+
+#: page-header/functions/global-locations.php:72
+msgid "Posts Page (blog)"
+msgstr ""
+
+#: page-header/functions/global-locations.php:99
+msgid "Post Types - Single"
+msgstr ""
+
+#: page-header/functions/global-locations.php:125
+msgid "Post Types - Archives"
+msgstr ""
+
+#: page-header/functions/global-locations.php:147
+msgid "Taxonomies - Archives"
+msgstr ""
+
+#: page-header/functions/metabox.php:139
+#: page-header/functions/metabox.php:743
+msgid "No Page Headers found. Want to <a href=\"%1$s\" target=\"_blank\">create one</a>?"
+msgstr ""
+
+#: page-header/functions/metabox.php:158
+msgid "Content is required for the below settings to work."
+msgstr ""
+
+#: page-header/functions/metabox.php:178
+msgid "Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:186
+msgid "Background Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:202
+msgid "Add to excerpt"
+msgstr ""
+
+#: page-header/functions/metabox.php:218
+msgid "Currently using your <a href=\"#\" class=\"generate-featured-image\">featured image</a>."
+msgstr ""
+
+#: page-header/functions/metabox.php:229
+msgid "Page Header Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:229
+msgid "Insert Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:230
+msgid "Choose Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:233
+msgid "Remove Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:238
+msgid "Or you can <a href=\"#\">set the featured image</a>."
+msgstr ""
+
+#: page-header/functions/metabox.php:243
+msgid "Image Link"
+msgstr ""
+
+#: page-header/functions/metabox.php:248
+msgid "Resize Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:250
+#: sections/functions/metaboxes/views/sections-template.php:260
+#: sections/functions/metaboxes/views/sections-template.php:268
+msgid "Disable"
+msgstr ""
+
+#: page-header/functions/metabox.php:251
+#: sections/functions/metaboxes/views/sections-template.php:261
+#: sections/functions/metaboxes/views/sections-template.php:269
+msgid "Enable"
+msgstr ""
+
+#: page-header/functions/metabox.php:256
+msgid "These options are no longer available as of GP Premium 1.10.0."
+msgstr ""
+
+#: page-header/functions/metabox.php:259
+msgid "Image Width"
+msgstr ""
+
+#: page-header/functions/metabox.php:264
+msgid "Image Height"
+msgstr ""
+
+#: page-header/functions/metabox.php:267
+msgid "Use \"0\" or leave blank for proportional resizing."
+msgstr ""
+
+#: page-header/functions/metabox.php:277
+msgid "HTML and shortcodes allowed."
+msgstr ""
+
+#: page-header/functions/metabox.php:284
+msgid "Automatically add paragraphs"
+msgstr ""
+
+#: page-header/functions/metabox.php:289
+msgid "Add Padding"
+msgstr ""
+
+#: page-header/functions/metabox.php:294
+msgid "Add Background Image"
+msgstr ""
+
+#: page-header/functions/metabox.php:299
+msgid "Use background color as overlay"
+msgstr ""
+
+#: page-header/functions/metabox.php:304
+#: sections/functions/metaboxes/views/sections-template.php:257
+msgid "Parallax Effect"
+msgstr ""
+
+#: page-header/functions/metabox.php:314
+msgid "Vertical center content"
+msgstr ""
+
+#: page-header/functions/metabox.php:336
+#: woocommerce/functions/customizer/customizer.php:429
+msgid "Text Alignment"
+msgstr ""
+
+#: page-header/functions/metabox.php:345
+msgid "Top & Bottom Padding"
+msgstr ""
+
+#: page-header/functions/metabox.php:354
+msgid "Left & Right Padding"
+msgstr ""
+
+#: page-header/functions/metabox.php:391
+msgid "MP4 file"
+msgstr ""
+
+#: page-header/functions/metabox.php:393
+#: page-header/functions/metabox.php:401
+#: page-header/functions/metabox.php:409
+msgid "Page Header Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:393
+#: page-header/functions/metabox.php:401
+#: page-header/functions/metabox.php:409
+msgid "Insert Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:394
+#: page-header/functions/metabox.php:402
+#: page-header/functions/metabox.php:410
+msgid "Choose Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:399
+msgid "OGV file"
+msgstr ""
+
+#: page-header/functions/metabox.php:407
+msgid "WEBM file"
+msgstr ""
+
+#: page-header/functions/metabox.php:415
+msgid "Overlay Color"
+msgstr ""
+
+#: page-header/functions/metabox.php:431
+msgid "Overwrite your site-wide logo/header on this page."
+msgstr ""
+
+#: page-header/functions/metabox.php:441
+msgid "Header / Logo"
+msgstr ""
+
+#: page-header/functions/metabox.php:441
+msgid "Insert Logo"
+msgstr ""
+
+#: page-header/functions/metabox.php:442
+#: page-header/functions/metabox.php:481
+msgid "Choose Logo"
+msgstr ""
+
+#: page-header/functions/metabox.php:453
+#: page-header/functions/metabox.php:493
+msgid "Remove Logo"
+msgstr ""
+
+#: page-header/functions/metabox.php:470
+msgid "Overwrite your navigation logo on this page."
+msgstr ""
+
+#: page-header/functions/metabox.php:505
+msgid "Merge with site header"
+msgstr ""
+
+#: page-header/functions/metabox.php:511
+msgid "Place content behind header (sliders etc..)"
+msgstr ""
+
+#: page-header/functions/metabox.php:526
+msgid "Custom Navigation Colors"
+msgstr ""
+
+#: page-header/functions/post-type.php:12
+msgctxt "Post Type General Name"
+msgid "Page Headers"
+msgstr ""
+
+#: page-header/functions/post-type.php:13
+msgctxt "Post Type Singular Name"
+msgid "Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:14
+#: page-header/functions/post-type.php:84
+#: page-header/functions/post-type.php:85
+msgid "Page Headers"
+msgstr ""
+
+#: page-header/functions/post-type.php:16
+msgid "Page Header Archives"
+msgstr ""
+
+#: page-header/functions/post-type.php:17
+msgid "Parent Page Header:"
+msgstr ""
+
+#: page-header/functions/post-type.php:18
+msgid "All Page Headers"
+msgstr ""
+
+#: page-header/functions/post-type.php:19
+msgid "Add New Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:20
+msgid "New Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:21
+msgid "Edit Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:22
+msgid "Update Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:23
+msgid "View Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:24
+msgid "Search Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:25
+msgid "Insert into Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:26
+msgid "Uploaded to this Page Header"
+msgstr ""
+
+#: page-header/functions/post-type.php:142
+msgid "Legacy Page Headers"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:25
+msgid "Secondary Menu"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:255
+msgid "Navigation Width"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:258
+#: secondary-nav/functions/functions.php:283
+msgctxt "Width"
+msgid "Full"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:280
+msgid "Inner Navigation Width"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:305
+msgid "Navigation Alignment"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:359
+msgid "Dropdown Direction"
+msgstr ""
+
+#: secondary-nav/functions/functions.php:383
+msgid "Merge with Secondary Navigation"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:47
+#: sections/functions/metaboxes/metabox-functions.php:56
+msgid "Sections"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:244
+msgid "This action can not be undone, are you sure?"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:247
+msgid "Section"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:256
+msgid "Section Background"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:257
+msgid "Set as Section Background"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:261
+msgid "Insert into Section"
+msgstr ""
+
+#: sections/functions/metaboxes/metabox-functions.php:262
+#: sections/functions/metaboxes/views/sections-template.php:74
+msgid "Edit Section"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:35
+msgid "Click to edit"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:37
+msgid "Click to edit content"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:38
+msgid "Click to edit settings"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:39
+msgid "Click and drag to sort"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:40
+msgid "Click to remove"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:54
+msgid "Add Section"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:55
+msgid "Remove Sections"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:81
+msgid "Cancel"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:110
+msgid "Section Label"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:127
+msgid "Add Media"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:132
+msgid "Visual"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:133
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:172
+msgid "Box Type"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:181
+msgid "Inner Box Type"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:190
+msgid "Custom ID"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:196
+msgid "Custom Classes"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:202
+msgid "Top Padding"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:211
+msgid "Bottom Padding"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections-template.php:265
+msgid "Background Color Overlay"
+msgstr ""
+
+#: sections/functions/metaboxes/views/sections.php:8
+msgid "Javascript must be enabled to use Generate Sections"
+msgstr ""
+
+#: sections/functions/metaboxes/views/use-sections.php:15
+msgid "Use Sections"
+msgstr ""
+
+#: sections/functions/templates/template.php:107
+msgid "No sections added!"
+msgstr ""
+
+#: sites/classes/class-site-restore.php:59
+#: sites/classes/class-site-restore.php:135
+#: sites/classes/class-site-restore.php:168
+#: sites/classes/class-site-restore.php:196
+#: sites/classes/class-site-restore.php:218
+#: sites/classes/class-site-restore.php:240
+#: sites/classes/class-site-restore.php:274
+#: sites/classes/class-site.php:588
+#: sites/classes/class-site.php:624
+#: sites/classes/class-site.php:665
+#: sites/classes/class-site.php:831
+#: sites/classes/class-site.php:859
+#: sites/classes/class-site.php:904
+#: sites/classes/class-site.php:935
+#: sites/classes/class-site.php:1030
+#: sites/classes/class-site.php:1080
+msgid "You are not allowed to perform this action"
+msgstr ""
+
+#: sites/classes/class-site-restore.php:123
+msgid "Theme options restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:156
+msgid "Site options restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:184
+msgid "Content restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:206
+msgid "Plugins restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:228
+msgid "Widgets restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:262
+msgid "CSS restored."
+msgstr ""
+
+#: sites/classes/class-site-restore.php:282
+msgid "Completed clean-up."
+msgstr ""
+
+#: sites/classes/class-site.php:212
+#: sites/sites.php:221
+msgid "Documentation"
+msgstr ""
+
+#: sites/classes/class-site.php:214
+msgid "Learn how to customize this site."
+msgstr ""
+
+#: sites/classes/class-site.php:215
+msgid "View documentation"
+msgstr ""
+
+#: sites/classes/class-site.php:221
+msgid "Using the Site Library"
+msgstr ""
+
+#: sites/classes/class-site.php:224
+msgid "Learn more about using the site library."
+msgstr ""
+
+#: sites/classes/class-site.php:225
+msgid "View instructions"
+msgstr ""
+
+#: sites/classes/class-site.php:231
+msgid "Site Author"
+msgstr ""
+
+#. translators: %s: Site name
+#: sites/classes/class-site.php:236
+msgid "%s is brought to you by "
+msgstr ""
+
+#: sites/classes/class-site.php:258
+msgid "Previous Site"
+msgstr ""
+
+#: sites/classes/class-site.php:258
+#: sites/classes/class-site.php:511
+msgid "Previous"
+msgstr ""
+
+#: sites/classes/class-site.php:259
+msgid "Next Site"
+msgstr ""
+
+#: sites/classes/class-site.php:259
+#: sites/classes/class-site.php:512
+msgid "Next"
+msgstr ""
+
+#: sites/classes/class-site.php:261
+#: sites/classes/class-site.php:313
+msgid "Preview"
+msgstr ""
+
+#: sites/classes/class-site.php:314
+#: sites/classes/class-site.php:516
+msgid "Details"
+msgstr ""
+
+#. translators: %s: GP Premium version
+#: sites/classes/class-site.php:321
+msgctxt "required version number"
+msgid "Requires GP Premium %s"
+msgstr ""
+
+#. translators: %s: Site name.
+#: sites/classes/class-site.php:346
+msgid "Welcome to %s."
+msgstr ""
+
+#: sites/classes/class-site.php:369
+msgid "I understand that this step will add content, site options, menus, widgets and plugins to my site. It can not be automatically undone."
+msgstr ""
+
+#: sites/classes/class-site.php:377
+msgid "I understand that this step will overwrite my Customizer settings. It is recommended that you only use the Site Library on a fresh site."
+msgstr ""
+
+#: sites/classes/class-site.php:388
+msgid "Theme Options"
+msgstr ""
+
+#: sites/classes/class-site.php:389
+msgid "Options set in the Customizer of the theme."
+msgstr ""
+
+#: sites/classes/class-site.php:396
+msgid "Demo Content"
+msgstr ""
+
+#: sites/classes/class-site.php:396
+msgid "Skip this step"
+msgstr ""
+
+#: sites/classes/class-site.php:398
+msgid "Things like pages, menus, widgets and plugins."
+msgstr ""
+
+#: sites/classes/class-site.php:408
+msgid "This site uses the following plugins."
+msgstr ""
+
+#: sites/classes/class-site.php:427
+msgid "No plugins required."
+msgstr ""
+
+#: sites/classes/class-site.php:431
+msgid "The following plugins can be installed and activated automatically."
+msgstr ""
+
+#: sites/classes/class-site.php:436
+msgid "The following plugins are already installed."
+msgstr ""
+
+#: sites/classes/class-site.php:441
+msgid "The following plugins need to be installed and activated manually."
+msgstr ""
+
+#: sites/classes/class-site.php:451
+msgid "All Done"
+msgstr ""
+
+#: sites/classes/class-site.php:452
+msgid "Your site is ready to go!"
+msgstr ""
+
+#: sites/classes/class-site.php:468
+msgid "Additional Cleanup"
+msgstr ""
+
+#: sites/classes/class-site.php:469
+msgid "This site is using Elementor which means you will want to replace the imported image URLs."
+msgstr ""
+
+#: sites/classes/class-site.php:469
+msgid "Learn more"
+msgstr ""
+
+#. translators: %s: Elementor link
+#: sites/classes/class-site.php:475
+msgid "Go to %s, enter the below URLs and click the \"Replace URL\" button."
+msgstr ""
+
+#: sites/classes/class-site.php:482
+msgid "Old URL"
+msgstr ""
+
+#: sites/classes/class-site.php:485
+msgid "New URL"
+msgstr ""
+
+#: sites/classes/class-site.php:532
+msgid "Backup Options"
+msgstr ""
+
+#: sites/classes/class-site.php:544
+msgid "Import Options"
+msgstr ""
+
+#: sites/classes/class-site.php:555
+msgid "Import Content"
+msgstr ""
+
+#: sites/classes/class-site.php:567
+msgid "View Your Site"
+msgstr ""
+
+#: sites/classes/class-site.php:670
+msgid "No theme options exist."
+msgstr ""
+
+#: sites/classes/class-site.php:1014
+msgid "Site options imported"
+msgstr ""
+
+#: sites/classes/class-site.php:1059
+msgid "Plugins activated"
+msgstr ""
+
+#: sites/sites.php:54
+#: sites/sites.php:71
+#: sites/sites.php:72
+msgid "Site Library"
+msgstr ""
+
+#: sites/sites.php:139
+msgid "Importing options"
+msgstr ""
+
+#: sites/sites.php:140
+msgid "Backing up options"
+msgstr ""
+
+#: sites/sites.php:141
+msgid "Checking demo content"
+msgstr ""
+
+#: sites/sites.php:142
+msgid "Downloading content"
+msgstr ""
+
+#: sites/sites.php:143
+msgid "Importing content"
+msgstr ""
+
+#: sites/sites.php:144
+msgid "Importing site options"
+msgstr ""
+
+#: sites/sites.php:145
+msgid "Importing widgets"
+msgstr ""
+
+#: sites/sites.php:146
+msgid "Activating plugins"
+msgstr ""
+
+#: sites/sites.php:147
+msgid "Installing plugins"
+msgstr ""
+
+#: sites/sites.php:148
+msgid "Automatic"
+msgstr ""
+
+#: sites/sites.php:149
+msgid "Manual"
+msgstr ""
+
+#: sites/sites.php:151
+msgid "Restoring theme options"
+msgstr ""
+
+#: sites/sites.php:152
+msgid "Restoring site options"
+msgstr ""
+
+#: sites/sites.php:153
+msgid "Removing imported content"
+msgstr ""
+
+#: sites/sites.php:154
+msgid "Deactivating imported plugins"
+msgstr ""
+
+#: sites/sites.php:155
+msgid "Restoring widgets"
+msgstr ""
+
+#: sites/sites.php:156
+msgid "Restoring CSS"
+msgstr ""
+
+#: sites/sites.php:157
+msgid "Cleaning up"
+msgstr ""
+
+#: sites/sites.php:159
+msgid "This process makes changes to your database. If you have existing data, be sure to create a backup as a precaution."
+msgstr ""
+
+#: sites/sites.php:216
+msgid "GeneratePress Site Library"
+msgstr ""
+
+#: sites/sites.php:220
+msgid "Support"
+msgstr ""
+
+#: sites/sites.php:248
+#: sites/sites.php:266
+msgid "Page Builder:"
+msgstr ""
+
+#: sites/sites.php:270
+msgid "Beaver Builder"
+msgstr ""
+
+#: sites/sites.php:271
+msgid "Elementor"
+msgstr ""
+
+#: sites/sites.php:292
+msgid "Existing Site Import Detected"
+msgstr ""
+
+#: sites/sites.php:295
+msgid "It is highly recommended that you remove the last site you imported before importing a new one."
+msgstr ""
+
+#: sites/sites.php:296
+msgid "This process restores your previous options, widgets and active plugins. It will also remove your imported content and CSS."
+msgstr ""
+
+#: sites/sites.php:300
+msgid "Remove Imported Site"
+msgstr ""
+
+#: sites/sites.php:301
+msgid "Skip"
+msgstr ""
+
+#: sites/sites.php:495
+msgctxt "Module name"
+msgid "GeneratePress Site"
+msgstr ""
+
+#: sites/sites.php:760
+msgid "No sites found."
+msgstr ""
+
+#: sites/sites.php:761
+msgid "Why?"
+msgstr ""
+
+#: spacing/functions/customizer/content-spacing.php:37
+msgid "Container Width"
+msgstr ""
+
+#: spacing/functions/customizer/content-spacing.php:73
+msgid "Separating Space"
+msgstr ""
+
+#: spacing/functions/customizer/content-spacing.php:202
+msgid "Content Padding"
+msgstr ""
+
+#: spacing/functions/customizer/content-spacing.php:227
+msgid "Content Separator"
+msgstr ""
+
+#: spacing/functions/customizer/content-spacing.php:228
+msgid "The content separator controls the space between the featured image, title, content and entry meta."
+msgstr ""
+
+#: spacing/functions/customizer/footer-spacing.php:126
+msgid "Footer Widget Area Padding"
+msgstr ""
+
+#: spacing/functions/customizer/footer-spacing.php:195
+msgid "Footer Padding"
+msgstr ""
+
+#: spacing/functions/customizer/header-spacing.php:120
+msgid "Header Padding"
+msgstr ""
+
+#: spacing/functions/customizer/navigation-spacing.php:54
+#: spacing/functions/customizer/secondary-nav-spacing.php:68
+msgid "Menu Item Width"
+msgstr ""
+
+#: spacing/functions/customizer/navigation-spacing.php:109
+#: spacing/functions/customizer/navigation-spacing.php:226
+#: spacing/functions/customizer/navigation-spacing.php:263
+#: spacing/functions/customizer/secondary-nav-spacing.php:104
+msgid "Menu Item Height"
+msgstr ""
+
+#: spacing/functions/customizer/navigation-spacing.php:153
+#: spacing/functions/customizer/secondary-nav-spacing.php:140
+msgid "Sub-Menu Item Height"
+msgstr ""
+
+#: spacing/functions/customizer/navigation-spacing.php:189
+msgid "Sub-Menu Width"
+msgstr ""
+
+#: spacing/functions/customizer/sidebar-spacing.php:123
+msgid "Widget Padding"
+msgstr ""
+
+#: spacing/functions/customizer/sidebar-spacing.php:158
+msgid "Left Sidebar Width"
+msgstr ""
+
+#: spacing/functions/customizer/sidebar-spacing.php:194
+msgid "Right Sidebar Width"
+msgstr ""
+
+#: spacing/functions/customizer/top-bar-spacing.php:59
+msgid "Top Bar Padding"
+msgstr ""
+
+#: spacing/functions/functions.php:49
+msgid "Spacing"
+msgstr ""
+
+#: spacing/functions/functions.php:50
+msgid "Change the spacing for various elements using pixels."
+msgstr ""
+
+#: typography/functions/functions.php:200
+#: typography/functions/functions.php:1072
+#: typography/functions/functions.php:1227
+#: typography/functions/functions.php:1375
+#: typography/functions/functions.php:1530
+#: typography/functions/functions.php:1660
+#: typography/functions/functions.php:1826
+#: typography/functions/functions.php:1957
+#: typography/functions/functions.php:2088
+msgid "Line height"
+msgstr ""
+
+#: typography/functions/functions.php:234
+msgid "Paragraph margin"
+msgstr ""
+
+#: typography/functions/functions.php:917
+msgid "Headings"
+msgstr ""
+
+#: typography/functions/functions.php:992
+msgid "Heading 1 (H1)"
+msgstr ""
+
+#: typography/functions/functions.php:1107
+#: typography/functions/functions.php:1410
+#: typography/functions/functions.php:1695
+#: typography/functions/functions.php:2248
+msgid "Bottom margin"
+msgstr ""
+
+#: typography/functions/functions.php:1151
+msgid "Single Content Title (H1)"
+msgstr ""
+
+#: typography/functions/functions.php:1295
+msgid "Heading 2 (H2)"
+msgstr ""
+
+#: typography/functions/functions.php:1454
+msgid "Archive Content Title (H2)"
+msgstr ""
+
+#: typography/functions/functions.php:1598
+msgid "Heading 3 (H3)"
+msgstr ""
+
+#: typography/functions/functions.php:1765
+msgid "Heading 4 (H4)"
+msgstr ""
+
+#: typography/functions/functions.php:1896
+msgid "Heading 5 (H5)"
+msgstr ""
+
+#: typography/functions/functions.php:2027
+msgid "Heading 6 (H6)"
+msgstr ""
+
+#: typography/functions/functions.php:2110
+#: typography/functions/functions.php:2124
+msgid "Widgets"
+msgstr ""
+
+#: typography/functions/functions.php:2186
+msgid "Widget Titles"
+msgstr ""
+
+#: typography/functions/functions.php:2282
+msgid "Content font size"
+msgstr ""
+
+#: typography/functions/slideout-nav-fonts.php:89
+msgid "Menu Items"
+msgstr ""
+
+#: typography/functions/woocommerce-fonts.php:81
+msgid "Shop Product Titles"
+msgstr ""
+
+#: typography/functions/woocommerce-fonts.php:160
+msgid "Related/upsell title font size"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:107
+msgid "Display cart in menu"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:126
+msgid "Display mini cart sub-menu"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:146
+msgid "Menu Item Icon"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:149
+msgid "Shopping Cart"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:150
+msgid "Shopping Bag"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:151
+msgid "Shopping Basket"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:171
+msgid "Menu Item Content"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:174
+msgid "Amount"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:175
+msgid "Number of Items"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:195
+msgid "Display breadcrumbs"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:208
+msgid "Shop"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:230
+#: woocommerce/functions/customizer/customizer.php:717
+msgid "Sidebar / Content"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:231
+#: woocommerce/functions/customizer/customizer.php:718
+msgid "Content / Sidebar"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:233
+#: woocommerce/functions/customizer/customizer.php:720
+msgid "Sidebar / Content / Sidebar"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:234
+#: woocommerce/functions/customizer/customizer.php:721
+msgid "Sidebar / Sidebar / Content"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:235
+#: woocommerce/functions/customizer/customizer.php:722
+msgid "Content / Sidebar / Sidebar"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:273
+msgid "Product Columns"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:339
+msgid "Column Gap"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:386
+msgid "Image Alignment"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:410
+msgid "Products Per Page"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:453
+msgid "Display cart panel on add to cart"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:472
+msgid "Display page title"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:491
+msgid "Display product results count"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:510
+msgid "Display product sorting"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:529
+msgid "Display product image"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:548
+msgid "Display secondary image on hover"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:567
+msgid "Display product title"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:586
+#: woocommerce/functions/customizer/customizer.php:811
+msgid "Display sale flash"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:605
+msgid "Sale flash over image"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:624
+msgid "Display rating"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:643
+msgid "Display price"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:662
+msgid "Display add to cart button"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:681
+#: woocommerce/functions/customizer/customizer.php:972
+msgid "Display short description"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:694
+msgid "Single Product"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:742
+msgid "Product Image Area Width"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:773
+msgid "Display add to cart panel on scroll"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:792
+msgid "Display quantity buttons"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:830
+msgid "Display product tabs"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:849
+msgid "Display related products"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:868
+msgid "Display upsell products"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:906
+msgid "Related/Upsell Columns"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:953
+msgid "Display product meta data"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:1005
+#: woocommerce/functions/functions.php:1258
+msgid "Checkout"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:1024
+msgid "Distraction-free mode"
+msgstr ""
+
+#: woocommerce/functions/customizer/customizer.php:1025
+msgid "Remove unnecessary distractions like sidebars, footer widgets and sticky menus."
+msgstr ""
+
+#: woocommerce/functions/functions.php:636
+msgid "View your shopping cart"
+msgstr ""
+
+#: woocommerce/functions/functions.php:1175
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/functions/functions.php:1177
+msgid "Not yet rated"
+msgstr ""
+
+#: woocommerce/functions/functions.php:1182
+msgid "out of 5"
+msgstr ""
+
+#: woocommerce/functions/functions.php:1244
+msgid "Continue Shopping"
+msgstr ""
+
+#: woocommerce/functions/functions.php:1249
+msgid "Item added to cart."
+msgstr ""
+
+#: woocommerce/functions/functions.php:1253
+#: woocommerce/functions/functions.php:1323
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
