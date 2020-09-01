@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.10.1 - 16-06-2020 */
+/*! elementor-pro - v2.10.3 - 29-06-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -6498,6 +6498,10 @@ var FormSteps = /*#__PURE__*/function (_elementorModules$fro) {
     value: function bindEvents() {
       var _this = this;
 
+      if (!this.isStepsExist()) {
+        return;
+      }
+
       this.elements.$form.on({
         submit: function submit() {
           return _this.resetForm();
@@ -6895,7 +6899,7 @@ var FormSteps = /*#__PURE__*/function (_elementorModules$fro) {
 
       if ('progress_bar' === this.state.stepsType) {
         this.setProgressBar();
-      } else {
+      } else if ('none' !== this.state.stepsType) {
         this.updateIndicatorsState(direction);
       }
     }
@@ -6929,12 +6933,12 @@ var FormSteps = /*#__PURE__*/function (_elementorModules$fro) {
     key: "resetForm",
     value: function resetForm() {
       this.state.currentStep = 0;
-      this.elements.$currentIndicator = this.elements.$indicators.eq(this.state.currentStep);
       this.resetSteps();
 
       if ('progress_bar' === this.state.stepsType) {
         this.setProgressBar();
-      } else {
+      } else if ('none' !== this.state.stepsType) {
+        this.elements.$currentIndicator = this.elements.$indicators.eq(this.state.currentStep);
         this.resetIndicators();
       }
     }

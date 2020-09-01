@@ -1,5 +1,12 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.10.3 - 2020-06-29
+* Fix: Form not being submitted when using "Progress Bar" and "None" view types in Multi Step Form ([#11596](https://github.com/elementor/elementor/issues/11596), [#11610](https://github.com/elementor/elementor/issues/11610))
+* Fix: Missing "for" attribute in Password field label in Login widget ([#8646](https://github.com/elementor/elementor/issues/8646))
+
+#### 2.10.2 - 2020-06-16
+* Fix: Run step events only when in Multi Step Form mode ([#11644](https://github.com/elementor/elementor/issues/11644))
+
 #### 2.10.1 - 2020-06-16
 * Tweak: Improved License validation mechanism to avoid limitations
 * Tweak: Changed control labels and ordering in Price Table, Lottie and Form widgets
