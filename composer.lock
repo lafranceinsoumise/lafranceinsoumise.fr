@@ -188,17 +188,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "ce19b5b1ef2d38680af2d12ac60f51ea94962f32"
+                "reference": "024eb1dc6f79d10073e57347ec514f0201edcd81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/ce19b5b1ef2d38680af2d12ac60f51ea94962f32",
-                "reference": "ce19b5b1ef2d38680af2d12ac60f51ea94962f32",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/024eb1dc6f79d10073e57347ec514f0201edcd81",
+                "reference": "024eb1dc6f79d10073e57347ec514f0201edcd81",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
-                "php": ">=5.3.2"
+                "php": ">=7.3"
             },
             "type": "wordpress-plugin",
             "license": [
@@ -211,7 +211,7 @@
                 },
                 {
                     "name": "Jill Royer",
-                    "email": "site@lafranceinsoumise.fr"
+                    "email": "fi@jillroyer.me"
                 },
                 {
                     "name": "Cheysson Arthur",
@@ -227,7 +227,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2019-01-11T17:21:40+00:00"
+            "time": "2020-09-08T15:22:32+00:00"
         },
         {
             "name": "jlm2017/theme-wp",
@@ -633,15 +633,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/2.0.0"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.2.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/amp.2.0.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -687,15 +687,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.0.5"
+                "reference": "tags/3.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -778,15 +778,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.5.3"
+                "reference": "tags/1.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

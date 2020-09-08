@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.5.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-09-01 05:56:51+0000\n"
+"PO-Revision-Date: 2020-09-07 10:39:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -419,11 +419,11 @@ msgstr "Lisez l’article <a href=\"%s\" target=\"_blank\">Déboguer un réseau 
 #. translators: 1: Block pattern name.
 #: wp-includes/class-wp-block-pattern-categories-registry.php:62
 msgid "Block pattern category \"%1$s\" not found."
-msgstr "Catégorie du motif « %1$s » non trouvée."
+msgstr "Catégorie de composition « %1$s » non trouvée."
 
 #: wp-includes/class-wp-block-pattern-categories-registry.php:39
 msgid "Block pattern category name must be a string."
-msgstr "La catégorie du motif de bloc doit être une chaîne."
+msgstr "La catégorie de composition de bloc doit être une chaîne."
 
 #: wp-includes/block-patterns.php:46
 msgctxt "Block pattern category"
@@ -553,19 +553,19 @@ msgstr "<strong>Erreur</strong> : l’URL de site saisie est déjà utilisée."
 #. translators: 1: Pattern name.
 #: wp-includes/class-wp-block-patterns-registry.php:75
 msgid "Pattern \"%1$s\" not found."
-msgstr "Le motif « %1$s » n’a pas été trouvé."
+msgstr "La composition « %1$s » n’a pas été trouvée."
 
 #: wp-includes/class-wp-block-patterns-registry.php:52
 msgid "Pattern content must be a string."
-msgstr "Le contenu du motif doit être une chaîne."
+msgstr "Le contenu de la composition doit être une chaîne."
 
 #: wp-includes/class-wp-block-patterns-registry.php:47
 msgid "Pattern title must be a string."
-msgstr "Le titre du motif doit être une chaîne."
+msgstr "Le titre de la composition doit être une chaîne."
 
 #: wp-includes/class-wp-block-patterns-registry.php:42
 msgid "Pattern name must be a string."
-msgstr "Le nom de motif doit être une chaîne."
+msgstr "Le nom de la composition doit être une chaîne."
 
 #: wp-includes/media.php:4241
 msgid "Attachment details"
@@ -600,7 +600,7 @@ msgstr "Couleur hexadécimale non valide."
 #. translators: 1: Parameter, 2: Pattern.
 #: wp-includes/rest-api.php:1732
 msgid "%1$s does not match pattern %2$s."
-msgstr "%1$s ne correspond pas au motif %2$s."
+msgstr "%1$s ne correspond pas à la composition %2$s."
 
 #. translators: 1: Parameter, 2: Number of characters.
 #: wp-includes/rest-api.php:1721
@@ -858,7 +858,7 @@ msgid "Cannot delete an active plugin. Please deactivate it first."
 msgstr "Impossible de supprimer une extension active. Veuillez d’abord la désactiver."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:488
-#: wp-admin/includes/ajax-actions.php:4538 wp-admin/plugins.php:268
+#: wp-admin/includes/ajax-actions.php:4539 wp-admin/plugins.php:268
 msgid "Sorry, you are not allowed to delete plugins for this site."
 msgstr "Désolé, vous n’avez pas l’autorisation de supprimer des extensions sur ce site."
 
@@ -867,12 +867,12 @@ msgid "Unable to determine what plugin was installed."
 msgstr "Impossible de déterminer l’extension qui a été installée."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:336
-#: wp-admin/includes/ajax-actions.php:4072
-#: wp-admin/includes/ajax-actions.php:4202
-#: wp-admin/includes/ajax-actions.php:4266
-#: wp-admin/includes/ajax-actions.php:4366
-#: wp-admin/includes/ajax-actions.php:4493
-#: wp-admin/includes/ajax-actions.php:4562
+#: wp-admin/includes/ajax-actions.php:4073
+#: wp-admin/includes/ajax-actions.php:4203
+#: wp-admin/includes/ajax-actions.php:4267
+#: wp-admin/includes/ajax-actions.php:4367
+#: wp-admin/includes/ajax-actions.php:4494
+#: wp-admin/includes/ajax-actions.php:4563
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Impossible de se connecter au système de fichier. Veuillez confirmer vos identifiants de connexion."
 
@@ -881,7 +881,7 @@ msgid "Sorry, you are not allowed to activate plugins."
 msgstr "Désolé, vous n’avez pas l’autorisation d’activer les extensions."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:243
-#: wp-admin/includes/ajax-actions.php:4319 wp-admin/update.php:106
+#: wp-admin/includes/ajax-actions.php:4320 wp-admin/update.php:106
 #: wp-admin/update.php:149 wp-admin/update.php:181
 #: wp-admin/plugin-install.php:19
 msgid "Sorry, you are not allowed to install plugins on this site."
@@ -896,8 +896,8 @@ msgstr "Extension non trouvée."
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:166
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:410
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:480
-#: wp-admin/includes/ajax-actions.php:4614
-#: wp-admin/includes/ajax-actions.php:4666 wp-admin/plugins.php:13
+#: wp-admin/includes/ajax-actions.php:4615
+#: wp-admin/includes/ajax-actions.php:4667 wp-admin/plugins.php:13
 msgid "Sorry, you are not allowed to manage plugins for this site."
 msgstr "Désolé, vous n’avez pas l’autorisation de gérer les extensions de ce site."
 
@@ -2290,8 +2290,8 @@ msgstr "https://fr.wordpress.org/support/article/cookies/"
 msgid "Missing confirm key."
 msgstr "Clé de confirmation manquante."
 
-#: wp-login.php:1174 wp-admin/includes/ajax-actions.php:4729
-#: wp-admin/includes/ajax-actions.php:4919
+#: wp-login.php:1174 wp-admin/includes/ajax-actions.php:4730
+#: wp-admin/includes/ajax-actions.php:4920
 msgid "Missing request ID."
 msgstr "ID de demande manquant."
 
@@ -7870,7 +7870,7 @@ msgid "Live Preview: %s"
 msgstr "Prévisualisation : %s"
 
 #: wp-includes/class-wp-customize-manager.php:580
-#: wp-admin/includes/ajax-actions.php:4251 wp-admin/includes/file.php:430
+#: wp-admin/includes/ajax-actions.php:4252 wp-admin/includes/file.php:430
 #: wp-admin/includes/file.php:440 wp-admin/theme-editor.php:69
 #: wp-admin/theme-editor.php:73 wp-admin/themes.php:28 wp-admin/themes.php:71
 msgid "The requested theme does not exist."
@@ -10329,8 +10329,8 @@ msgstr "j F Y G\\hi"
 #: wp-includes/class-wp-locale.php:365 wp-admin/includes/schema.php:428
 #: wp-admin/includes/class-wp-comments-list-table.php:953
 #: wp-admin/includes/ajax-actions.php:1564
-#: wp-admin/includes/ajax-actions.php:2802
-#: wp-admin/includes/ajax-actions.php:2805
+#: wp-admin/includes/ajax-actions.php:2803
+#: wp-admin/includes/ajax-actions.php:2806
 #: wp-admin/includes/class-wp-posts-list-table.php:1087
 #: wp-admin/options-general.php:292 wp-admin/options-general.php:355
 #: wp-admin/comment.php:217 wp-admin/update-core.php:879 wp-admin/admin.php:114
@@ -10351,8 +10351,8 @@ msgstr "G\\hi"
 #: wp-admin/includes/class-wp-privacy-policy-content.php:379
 #: wp-admin/includes/schema.php:426 wp-admin/includes/media.php:1668
 #: wp-admin/includes/ajax-actions.php:1564
-#: wp-admin/includes/ajax-actions.php:2801
-#: wp-admin/includes/ajax-actions.php:2804 wp-admin/includes/dashboard.php:623
+#: wp-admin/includes/ajax-actions.php:2802
+#: wp-admin/includes/ajax-actions.php:2805 wp-admin/includes/dashboard.php:623
 #: wp-admin/options-general.php:292 wp-admin/options-general.php:318
 #: wp-admin/update-core.php:879 wp-admin/admin.php:113
 #: wp-admin/edit-form-advanced.php:625 wp-admin/edit-form-advanced.php:628
@@ -10469,7 +10469,7 @@ msgstr "Aléatoire"
 #: wp-admin/includes/class-wp-themes-list-table.php:93
 #: wp-admin/includes/class-wp-list-table.php:335
 #: wp-admin/includes/ajax-actions.php:2180
-#: wp-admin/includes/ajax-actions.php:3783
+#: wp-admin/includes/ajax-actions.php:3784
 msgid "No items found."
 msgstr "Aucun élément trouvé."
 
