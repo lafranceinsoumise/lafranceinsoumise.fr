@@ -188,12 +188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-plugin.git",
-                "reference": "024eb1dc6f79d10073e57347ec514f0201edcd81"
+                "reference": "9942c96adcf4cd65a92a70417c53fd982ac6c761"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/024eb1dc6f79d10073e57347ec514f0201edcd81",
-                "reference": "024eb1dc6f79d10073e57347ec514f0201edcd81",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-plugin/zipball/9942c96adcf4cd65a92a70417c53fd982ac6c761",
+                "reference": "9942c96adcf4cd65a92a70417c53fd982ac6c761",
                 "shasum": ""
             },
             "require": {
@@ -227,7 +227,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-plugin/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
-            "time": "2020-09-08T15:22:32+00:00"
+            "time": "2020-09-09T13:56:02+00:00"
         },
         {
             "name": "jlm2017/theme-wp",
