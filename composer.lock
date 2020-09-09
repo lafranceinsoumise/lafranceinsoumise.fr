@@ -235,12 +235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1"
+                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1",
-                "reference": "956f5a9be1a4d8fb05d4b2d7fbd8002a73bc26e1",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/84139e618e52854147cb5cd84e63dd13e2994f61",
+                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "forum": "https://discourse.roots.io/",
                 "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
             },
-            "time": "2020-05-18T16:42:43+00:00"
+            "time": "2020-09-09T13:16:06+00:00"
         },
         {
             "name": "oscarotero/env",
