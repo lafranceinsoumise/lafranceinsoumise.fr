@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.0.3 - 02-09-2020 */
+/*! elementor-pro - v3.0.4 - 09-09-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -7041,7 +7041,7 @@ GlobalWidgetView = WidgetView.extend({
         previewSettings = self.model.get('previewSettings'),
         globalModel = self.getGlobalModel();
 
-    if (previewSettings) {
+    if (previewSettings && $e.commandsInternal.is('editor/documents/attach-preview')) {
       globalModel.set('settingsLoadedStatus', 'loaded').trigger('settings:loaded');
       var settingsModel = globalModel.get('settings');
       settingsModel.handleRepeaterData(previewSettings);

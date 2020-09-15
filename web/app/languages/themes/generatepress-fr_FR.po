@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Themes - GeneratePress package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-20 21:26:02+0000\n"
+"PO-Revision-Date: 2020-05-08 15:08:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Themes - GeneratePress\n"
 
@@ -24,8 +24,8 @@ msgstr "GeneratePress"
 msgid "Close Search Bar"
 msgstr "Fermer la barre de recherche"
 
-#: inc/general.php:61 inc/structure/navigation.php:114
-#: inc/structure/navigation.php:324 inc/structure/navigation.php:357
+#: inc/structure/navigation.php:114 inc/structure/navigation.php:324
+#: inc/structure/navigation.php:357 inc/general.php:61
 msgid "Open Search Bar"
 msgstr "Ouvrir la barre de recherche"
 
@@ -304,11 +304,11 @@ msgstr "Largeur interne de la barre du haut"
 msgid "Top Bar Width"
 msgstr "Largeur de la barre du haut"
 
-#: inc/general.php:93 inc/customizer.php:602
+#: inc/customizer.php:602 inc/general.php:93
 msgid "Top Bar"
 msgstr "Barre du haut"
 
-#: inc/dashboard.php:164 inc/typography.php:751 inc/customizer.php:1344
+#: inc/typography.php:751 inc/customizer.php:1344 inc/dashboard.php:164
 msgid "Learn more"
 msgstr "En savoir plus"
 
@@ -349,7 +349,7 @@ msgstr "Marge de paragraphe"
 msgid "Line height"
 msgstr "Hauteur de ligne"
 
-#: inc/dashboard.php:266 inc/customizer/controls/class-range-control.php:59
+#: inc/customizer/controls/class-range-control.php:59 inc/dashboard.php:266
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -357,7 +357,7 @@ msgstr "Réinitialiser"
 msgid "Footer"
 msgstr "Pied de page"
 
-#: inc/meta-box.php:80 inc/customizer.php:1075
+#: inc/customizer.php:1075 inc/meta-box.php:80
 msgid "Sidebars"
 msgstr "Barres latérales"
 
@@ -409,7 +409,7 @@ msgstr "Complet"
 
 #: inc/customizer.php:739
 msgid "Header Width"
-msgstr "Largeur d&rsquo;en-tête"
+msgstr "Largeur d’en-tête"
 
 #. translators: %s: Heart icon
 #: inc/dashboard.php:293
@@ -436,12 +436,12 @@ msgstr "Contenu introuvable. L’outil de recherche vous remettra peut-être sur
 #: searchform.php:15
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr "Recherche&hellip;"
+msgstr "Recherche…"
 
 #: searchform.php:14 searchform.php:15
 msgctxt "label"
 msgid "Search for:"
-msgstr "Rechercher&nbsp;:"
+msgstr "Rechercher :"
 
 #. translators: 1: Search query name
 #: search.php:31
@@ -459,7 +459,7 @@ msgstr "Désolé, mais rien ne correspond à votre recherche. Veuillez réessaye
 #. translators: 1: Admin URL
 #: no-results.php:49
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Prêt à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vous</a>&nbsp;!"
+msgstr "Prêt à publier votre premier article ? <a href=\"%1$s\">Lancez-vous</a> !"
 
 #: no-results.php:27
 msgid "Nothing Found"
@@ -522,7 +522,7 @@ msgstr "%1$s à %2$s"
 
 #: inc/structure/comments.php:25
 msgid "Pingback:"
-msgstr "Ping&nbsp;:"
+msgstr "Ping :"
 
 #: inc/structure/post-meta.php:86
 msgid "Newer posts"
@@ -544,11 +544,11 @@ msgstr "Précédent"
 msgid "Post navigation"
 msgstr "Navigation des articles"
 
-#: inc/deprecated.php:28 inc/structure/post-meta.php:94
+#: inc/structure/post-meta.php:94 inc/deprecated.php:28
 msgid "Next &rarr;"
 msgstr "Suivant &rarr;"
 
-#: inc/deprecated.php:27 inc/structure/post-meta.php:93
+#: inc/structure/post-meta.php:93 inc/deprecated.php:27
 msgid "&larr; Previous"
 msgstr "&larr; Précédent"
 
@@ -634,8 +634,8 @@ msgstr "Aucune barre latérale"
 msgid "Content"
 msgstr "Contenu"
 
-#: inc/meta-box.php:135 inc/meta-box.php:173 inc/meta-box.php:215
-#: inc/customizer.php:400 inc/customizer.php:714
+#: inc/customizer.php:400 inc/customizer.php:714 inc/meta-box.php:135
+#: inc/meta-box.php:173 inc/meta-box.php:215
 msgid "Default"
 msgstr "Valeur par défaut"
 
@@ -643,13 +643,13 @@ msgstr "Valeur par défaut"
 msgid "Blog"
 msgstr "Blog"
 
-#: inc/meta-box.php:85 inc/customizer.php:1237
+#: inc/customizer.php:1237 inc/meta-box.php:85
 msgid "Footer Widgets"
 msgstr "Widgets de pied de page"
 
 #: inc/customizer.php:1150
 msgid "Single Post Sidebar Layout"
-msgstr "Mise en page de la barre latérale en mode d'un article seul"
+msgstr "Mise en page de la barre latérale en mode d’un article seul"
 
 #: inc/customizer.php:1122
 msgid "Blog Sidebar Layout"
@@ -667,8 +667,8 @@ msgstr "Barre latérale / Barre latérale / Contenu"
 msgid "Sidebar / Content / Sidebar"
 msgstr "Barre latérale / Contenu / Barre latérale"
 
-#: inc/meta-box.php:150 inc/customizer.php:1099 inc/customizer.php:1127
-#: inc/customizer.php:1155
+#: inc/customizer.php:1099 inc/customizer.php:1127 inc/customizer.php:1155
+#: inc/meta-box.php:150
 msgid "Content (no sidebars)"
 msgstr "Contenu (pas de barre)"
 
@@ -722,11 +722,11 @@ msgstr "Flotter vers la droite"
 
 #: inc/customizer.php:904
 msgid "Above Header"
-msgstr "Au dessus de l&rsquo;en-tête"
+msgstr "Au dessus de l’en-tête"
 
 #: inc/customizer.php:903
 msgid "Below Header"
-msgstr "Sous l&rsquo;en-tête"
+msgstr "Sous l’en-tête"
 
 #: inc/customizer.php:900
 msgid "Navigation Location"
@@ -749,11 +749,11 @@ msgstr "Gauche"
 
 #: inc/customizer.php:789
 msgid "Header Alignment"
-msgstr "Alignement de l'en-tête"
+msgstr "Alignement de l’en-tête"
 
-#: inc/meta-box.php:225 inc/customizer.php:626 inc/customizer.php:652
-#: inc/customizer.php:743 inc/customizer.php:767 inc/customizer.php:828
-#: inc/customizer.php:852 inc/customizer.php:1192 inc/customizer.php:1216
+#: inc/customizer.php:626 inc/customizer.php:652 inc/customizer.php:743
+#: inc/customizer.php:767 inc/customizer.php:828 inc/customizer.php:852
+#: inc/customizer.php:1192 inc/customizer.php:1216 inc/meta-box.php:225
 msgid "Contained"
 msgstr "Contenu"
 
@@ -761,7 +761,7 @@ msgstr "Contenu"
 msgid "Container Width"
 msgstr "Largeur du contenant"
 
-#: inc/meta-box.php:53 inc/customizer.php:550
+#: inc/customizer.php:550 inc/meta-box.php:53
 msgid "Layout"
 msgstr "Mise en page"
 
@@ -783,7 +783,7 @@ msgstr "Couleur du texte"
 
 #: inc/customizer.php:244
 msgid "Background Color"
-msgstr "Couleur d&rsquo;arrière-plan"
+msgstr "Couleur d’arrière-plan"
 
 #: inc/customizer.php:223
 msgid "Colors"
@@ -795,11 +795,11 @@ msgstr "Logo"
 
 #: inc/customizer.php:116
 msgid "Hide site tagline"
-msgstr "Cacher le slogan du site"
+msgstr "Masquer le slogan du site"
 
 #: inc/customizer.php:97
 msgid "Hide site title"
-msgstr "Cacher le titre du site"
+msgstr "Masquer le titre du site"
 
 #: inc/typography.php:234 inc/typography.php:408 inc/typography.php:555
 #: inc/typography.php:692
@@ -836,15 +836,15 @@ msgstr "Google Fonts"
 msgid "Default fonts"
 msgstr "Polices par défaut"
 
-#: inc/general.php:86 inc/customizer.php:690
+#: inc/customizer.php:690 inc/general.php:86
 msgid "Header"
 msgstr "En-tête"
 
-#: inc/general.php:85 inc/meta-box.php:143 inc/customizer.php:907
+#: inc/customizer.php:907 inc/general.php:85 inc/meta-box.php:143
 msgid "Left Sidebar"
 msgstr "Colonne latérale gauche"
 
-#: inc/general.php:84 inc/meta-box.php:138 inc/customizer.php:908
+#: inc/customizer.php:908 inc/general.php:84 inc/meta-box.php:138
 msgid "Right Sidebar"
 msgstr "Colonne latérale droite"
 
@@ -876,9 +876,9 @@ msgstr "Bas de page - Widget 1"
 msgid "Edit"
 msgstr "Modifier"
 
-#: content-page.php:64 content.php:70 content-link.php:71 content-single.php:66
+#: content-single.php:66 content-link.php:71 content-page.php:64 content.php:70
 msgid "Pages:"
-msgstr "Pages&nbsp;:"
+msgstr "Pages :"
 
 #: inc/structure/comments.php:126
 msgid "Post Comment"
@@ -921,7 +921,7 @@ msgstr "Navigation des commentaires"
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s réflexion au sujet de &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s réflexion au sujet de « %2$s »"
 msgstr[1] "%1$s réflexions au sujet de &ldquo;%2$s&rdquo;"
 
 #: inc/structure/sidebars.php:77

@@ -38,8 +38,8 @@ class Module extends Module_Base {
 	 * @return bool
 	 */
 	public function allow_posts_widget_pagination( $handled, $wp_query ) {
-		// Check it's a single paged query.
-		if ( empty( $wp_query->query_vars['page'] ) || ! is_singular() || empty( $wp_query->post ) ) {
+		// Check it's not already handled and it's a single paged query.
+		if ( $handled || empty( $wp_query->query_vars['page'] ) || ! is_singular() || empty( $wp_query->post ) ) {
 			return $handled;
 		}
 

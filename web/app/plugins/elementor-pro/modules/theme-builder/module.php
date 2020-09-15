@@ -173,6 +173,10 @@ class Module extends Module_Base {
 			if ( $instance instanceof Theme_Document && 'section' !== $type ) {
 				$types[ $type ] .= $instance->get_location_label();
 			}
+
+			if ( Single::class === $document_type ) {
+				unset( $types[ $type ] );
+			}
 		}
 
 		return $types;

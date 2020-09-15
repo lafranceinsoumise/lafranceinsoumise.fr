@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - wp-Typography - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-24 04:16:58+0000\n"
+"PO-Revision-Date: 2020-09-04 19:44:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - wp-Typography - Stable (latest release)\n"
 
@@ -15,6 +15,11 @@ msgstr ""
 #: includes/class-wp-typography-requirements.php:94
 msgid "https://www.php.net/manual/en/dom.setup.php"
 msgstr "https://www.php.net/manual/en/dom.setup.php"
+
+#. translators: 1: plugin name 2: GD documentation URL
+#: includes/class-wp-typography-requirements.php:91
+msgid "The activated plugin %1$s requires the DOM PHP extension to be enabled on your server. Please deactivate this plugin, or <a href=\"%2$s\">enable the extension</a>."
+msgstr "L’extension activée %1$s nécessite que l’extension DOM PHP soit activée sur votre serveur. Veuillez désactiver cette extension ou <a href=\"%2$s\">activer l’extension</a>."
 
 #. translators: 1: checkbox HTML
 #: includes/wp-typography/settings/class-plugin-configuration.php:407
@@ -24,6 +29,10 @@ msgstr "%1$s Transforme les unités de surface et de volume [ <code> m2</code> ]
 #: includes/wp-typography/settings/class-plugin-configuration.php:405
 msgid "Area and volume units"
 msgstr "Unités de surface et de volume"
+
+#: includes/wp-typography/settings/class-plugin-configuration.php:166
+msgid "Narrow no-break space"
+msgstr "Espace fine insécable"
 
 #: includes/wp-typography/ui/class-sections.php:67
 msgid "Special Characters"
@@ -71,8 +80,8 @@ msgid "Select the wp-Typography filter to apply"
 msgstr "Sélectionner le filtre wp-Typography à appliquer"
 
 #: includes/wp-typography/integration/class-acf-integration.php:155
-#: admin/block-editor/js/index.js:1
 #: admin/block-editor/src/blocks/typography/index.js:47
+#: admin/block-editor/js/index.js:1
 msgid "Typography"
 msgstr "Typographie"
 
@@ -382,6 +391,10 @@ msgstr "Guillemets judicieux"
 msgid "Intelligent character replacement"
 msgstr "Remplacement intelligent des caractères"
 
+#: includes/wp-typography/settings/class-plugin-configuration.php:272
+msgid "Browser support"
+msgstr "Prise en charge des navigateurs"
+
 #: includes/wp-typography/settings/class-plugin-configuration.php:235
 msgid "Character limits"
 msgstr "Restrictions sur le nombre de caractères"
@@ -462,10 +475,6 @@ msgstr "Les règles de césure sont établies à partir de dictionnaires pré-é
 #: includes/wp-typography/ui/class-tabs.php:69
 msgid "By default, wp-Typography processes all post content and titles (but not the whole page). Certain HTML elements within your content can be exempted to prevent conflicts with your theme or other plugins."
 msgstr "Par défaut, wp-Typography traite tout le contenu et les titres des articles (et non de la page entière). Certains éléments HTML du contenu des articles peuvent être exclus afin d’empêcher des conflits avec votre thème ou d’autres extensions."
-
-#: includes/wp-typography/settings/class-plugin-configuration.php:272
-msgid "Browser support"
-msgstr "Prise en charge des navigateurs"
 
 #: includes/wp-typography/components/class-admin-interface.php:240
 msgid "Please keep in mind that technically, WordPress applies the typographic fixes on the individual content parts used in your site templates, e.g. <code>the_title</code>, <code>the_content</code>, not the page as a whole. For this reason, HTML tags (including classes and IDs) from the theme's template files cannot be used to limit the scope of wp-Typography's processing."

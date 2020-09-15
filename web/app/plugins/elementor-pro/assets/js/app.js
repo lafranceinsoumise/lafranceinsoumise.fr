@@ -1,4 +1,4 @@
-/*! elementor-pro - v3.0.3 - 02-09-2020 */
+/*! elementor-pro - v3.0.4 - 09-09-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -7297,6 +7297,7 @@ var SiteTemplateHeader = function SiteTemplateHeader(props) {
     active: props.isActive
   }), /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
     tag: "h1",
+    title: title,
     variant: "text-sm",
     className: "eps-card__headline"
   }, title), props.extended && /*#__PURE__*/_react.default.createElement(MetaData, null), props.extended && /*#__PURE__*/_react.default.createElement(ActionButtons, null));
