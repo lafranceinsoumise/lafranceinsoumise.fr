@@ -1,0 +1,20 @@
+/*
+ Theme Name:   GP LFI Child
+ Theme URI:    https://github.com/lafranceinsoumise/generatepress-child
+ Description:  A child theme to handle transition from legacy theme.
+ Author:       Jill Royer
+ Template:     generatepress
+ Version:      0.1
+*/
+
+body.small-container .grid-container {
+  max-width: 780px;
+}
+
+.template-legacy-header .entry-content {
+  border-top: 1px solid #ececec;
+}
+
+.template-legacy-header .entry-title {
+  text-align: center;
+}
