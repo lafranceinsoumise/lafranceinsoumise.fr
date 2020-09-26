@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Largeur normalisée sans barre latérale
+ * Template Name: Largeur normalisée sans barre latérale (écrase les options de Generatepress)
  * Template Post Type: post, page
  */
 

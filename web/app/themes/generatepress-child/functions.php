@@ -1,9 +1,12 @@
 <?php
 /**
  * GeneratePress child theme functions and definitions.
- *
- * Add your custom PHP in this file.
- * Only edit this file if you have direct access to it on your server (to fix errors if they happen).
  */
 
-add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_scripts', 100 );
+add_filter('generate_featured_image_output', function($output){
+    if (get_post_format() === 'video') {
+        return '';
+    }
+
+    return $output;
+}, 50);

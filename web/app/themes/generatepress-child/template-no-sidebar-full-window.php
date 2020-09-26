@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Largeur de fenêtre sans barre latériale
+ * Template Name: Largeur de fenêtre sans barre latériale (écrase les options de Generatepress)
  * Template Post Type: post, page
  */
 

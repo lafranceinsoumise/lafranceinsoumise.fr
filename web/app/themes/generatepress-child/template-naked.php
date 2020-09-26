@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Nu pour page d'accueil
+ * Template Name: Nu pour page d'accueil (écrase les options de Generatepress)
  * Template Post Type: post, page
  */
 
