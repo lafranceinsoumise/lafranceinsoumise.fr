@@ -31,3 +31,4 @@ bin
 .vagrant
 web/app/themes/theme-wp/
 web/app/themes/generatepress/
+.idea
