@@ -9,6 +9,7 @@
 
 body.small-container .site-content {
   max-width: 780px;
+  margin: auto;
 }
 
 .template-legacy-header .entry-content {
