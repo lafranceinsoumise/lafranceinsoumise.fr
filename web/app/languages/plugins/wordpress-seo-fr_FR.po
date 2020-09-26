@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-09-08 17:36:49+0000\n"
+"PO-Revision-Date: 2020-09-16 07:15:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1197,7 +1197,7 @@ msgstr "Profils sociaux de l’organisation"
 #. tag.
 #: admin/views/tabs/social/accounts.php:88
 msgid "To make your site represent a Company or Organization go to %1$sSearch Appearance%2$s and set Organization or Person to \"Organization\"."
-msgstr "Pour faire en sorte que votre vite représente une société ou une organisation, allez dans les %1$sréglages SEO%2$s et procédez à ce réglage."
+msgstr "Pour faire en sorte que votre site représente une société ou une organisation, allez dans les %1$sréglages SEO%2$s et procédez à ce réglage."
 
 #. translators: 1: link to edit user page.
 #: admin/views/tabs/social/accounts.php:82
