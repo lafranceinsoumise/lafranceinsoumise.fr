@@ -21,6 +21,10 @@ add_filter('body_class', function ($classes) {
     return $classes;
 }, 20);
 
-add_filter('generate_featured_image_output', function(){return '';});
+remove_action('generate_after_entry_header', 'generate_blog_single_featured_image');
+remove_action('generate_before_content', 'generate_blog_single_featured_image');
+remove_action('generate_after_header', 'generate_blog_single_featured_image');
+remove_action('generate_before_content', 'generate_featured_page_header_inside_single');
+remove_action('generate_after_header', 'generate_featured_page_header');
 
 require_once dirname(__FILE__).'/../generatepress/page.php';
