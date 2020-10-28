@@ -118,6 +118,15 @@ class GeneratePress_Sites_Restore {
 
 				update_option( $key, $val );
 			}
+
+			// Re-add non-theme option related theme mods.
+			if ( isset( $backup_data['site_options']['nav_menu_locations'] ) ) {
+				set_theme_mod( 'nav_menu_locations', $backup_data['site_options']['nav_menu_locations'] );
+			}
+
+			if ( isset( $backup_data['site_options']['custom_logo'] ) ) {
+				set_theme_mod( 'custom_logo', $backup_data['site_options']['custom_logo'] );
+			}
 		}
 
 		wp_send_json( __( 'Theme options restored.', 'gp-premium' ) );
@@ -148,7 +157,11 @@ class GeneratePress_Sites_Restore {
 				if ( 'nav_menu_locations' === $key || 'custom_logo' === $key ) {
 					set_theme_mod( $key, $val );
 				} else {
-					update_option( $key, $val );
+					if ( ! $val && ! is_numeric( $val ) ) {
+						delete_option( $key );
+					} else {
+						update_option( $key, $val );
+					}
 				}
 			}
 		}

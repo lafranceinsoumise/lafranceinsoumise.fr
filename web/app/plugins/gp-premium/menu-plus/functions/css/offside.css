@@ -127,6 +127,11 @@
 	color: #fff;
 	font-size: 30px;
 	border: 0;
+	opacity: 0;
+}
+
+.slide-opened .slideout-overlay button.slideout-exit {
+	opacity: 1;
 }
 
 button.slideout-exit:hover {
@@ -341,6 +346,11 @@ button.slideout-exit:hover {
 .slideout-both .main-navigation.toggled .main-nav > ul,
 .slideout-desktop .main-navigation.toggled .main-nav li.slideout-toggle {
 	display: none !important;
+}
+
+.slideout-mobile .has-inline-mobile-toggle #site-navigation.toggled,
+.slideout-both .has-inline-mobile-toggle #site-navigation.toggled {
+	margin-top: 0;
 }
 
 .sf-menu > li.slideout-toggle {

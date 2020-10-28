@@ -83,7 +83,8 @@ if ( ! function_exists( 'generate_page_header_metabox_enqueue' ) ) {
 				wp_enqueue_media();
 				wp_enqueue_script( 'wp-color-picker' );
 				wp_enqueue_style( 'wp-color-picker' );
-				wp_enqueue_script( 'wp-color-picker-alpha', plugin_dir_url( __FILE__ ) . 'js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), GENERATE_PAGE_HEADER_VERSION );
+				wp_enqueue_script( 'wp-color-picker-alpha', GP_LIBRARY_DIRECTORY_URL . 'alpha-color-picker/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.4', true );
+
 				wp_enqueue_style( 'generate-page-header-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), GENERATE_PAGE_HEADER_VERSION );
 				wp_enqueue_script( 'generate-lc-switch', plugin_dir_url( __FILE__ ) . 'js/lc_switch.js', array( 'jquery' ), GENERATE_PAGE_HEADER_VERSION, false );
 				wp_enqueue_script( 'generate-page-header-metabox', plugin_dir_url( __FILE__ ) . 'js/metabox.js', array( 'jquery','generate-lc-switch', 'wp-color-picker' ), GENERATE_PAGE_HEADER_VERSION, false );

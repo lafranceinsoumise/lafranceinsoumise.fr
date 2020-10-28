@@ -323,6 +323,17 @@ class WXRImporter extends \WP_Importer {
 		add_filter( 'import_post_meta_key', array( $this, 'is_valid_meta_key' ) );
 		add_filter( 'http_request_timeout', array( &$this, 'bump_request_timeout' ) );
 
+		/*
+		 * Elementor fix for excessive use of `wp_slash` after our update v3.0.2.
+		 * Method in Elementor: \Elementor\Compatibility::register_actions
+		 * https://wordpress.org/support/topic/version-2-6-0-breaks-every-elementor-theme/
+		 *
+		 * This can be removed after Elementor skips the functionality in above method if our plugin is in use.
+		 */
+		if ( method_exists( '\Elementor\Compatibility', 'on_wxr_importer_pre_process_post_meta' ) ) {
+			remove_action( 'wxr_importer.pre_process.post_meta', array( 'Elementor\Compatibility', 'on_wxr_importer_pre_process_post_meta' ) );
+		}
+
 		$result = $this->import_start( $file );
 		if ( is_wp_error( $result ) ) {
 			return $result;
@@ -843,7 +854,7 @@ class WXRImporter extends \WP_Importer {
 			$postdata[ $key ] = $data[ $key ];
 		}
 
-		$postdata = apply_filters( 'wp_import_post_data_processed', $postdata, $data );
+		$postdata = apply_filters( 'wp_import_post_data_processed', wp_slash( $postdata ), $data );
 
 		if ( 'attachment' === $postdata['post_type'] ) {
 			if ( ! $this->options['fetch_attachments'] ) {
@@ -1170,7 +1181,12 @@ class WXRImporter extends \WP_Importer {
 					$value = maybe_unserialize( $meta_item['value'] );
 				}
 
-				add_post_meta( $post_id, $key, $value );
+				if ( function_exists( 'wp_slash_strings_only' ) ) {
+					add_post_meta( $post_id, wp_slash( $key ), wp_slash_strings_only( $value ) );
+				} else {
+					add_post_meta( $post_id, $key, $value );
+				}
+
 				do_action( 'import_post_meta', $post_id, $key, $value );
 
 				// if the post has a featured image, take note of this in case of remap

@@ -203,7 +203,14 @@ function generatepress_wc_scripts() {
 	wp_enqueue_style( 'generate-woocommerce', plugin_dir_url( __FILE__ ) . "css/woocommerce{$suffix}.css", array(), GENERATE_WOOCOMMERCE_VERSION );
 	wp_enqueue_style( 'generate-woocommerce-mobile', plugin_dir_url( __FILE__ ) . "css/woocommerce-mobile{$suffix}.css", array(), GENERATE_WOOCOMMERCE_VERSION, generate_premium_get_media_query( 'mobile' ) );
 
-	wp_enqueue_script( 'generate-woocommerce', plugin_dir_url( __FILE__ ) . "js/woocommerce{$suffix}.js", array( 'jquery' ), GENERATE_WOOCOMMERCE_VERSION, true );
+	if (
+		generatepress_wc_get_setting( 'cart_menu_item' ) ||
+		generatepress_wc_get_setting( 'off_canvas_panel_on_add_to_cart' ) ||
+		generatepress_wc_show_sticky_add_to_cart() ||
+		generatepress_wc_get_setting( 'quantity_buttons' )
+	) {
+		wp_enqueue_script( 'generate-woocommerce', plugin_dir_url( __FILE__ ) . "js/woocommerce{$suffix}.js", array( 'jquery' ), GENERATE_WOOCOMMERCE_VERSION, true );
+	}
 
 	$show_add_to_cart_panel = false;
 

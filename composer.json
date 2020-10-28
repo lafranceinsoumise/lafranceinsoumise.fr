@@ -41,7 +41,7 @@
     "jlm2017/theme-wp": "dev-master",
     "fi/fi-wordpress-addons": "dev-master",
     "fi/author-category": "dev-master",
-    "wpackagist-plugin/wordpress-seo": "^14.0",
+    "wpackagist-plugin/wordpress-seo": "^15.0",
     "wpackagist-plugin/redirection": "^4.0",
     "wpackagist-plugin/contact-form-7": "^5.0",
     "wpackagist-plugin/wpcf7-recaptcha": "^1.0",
@@ -55,7 +55,7 @@
     "wpackagist-plugin/autoptimize": "^2.5",
     "wpackagist-plugin/wp-typography": "^5.6",
     "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.4.3",
-    "wpackagist-plugin/redis-cache": "^1.4",
+    "wpackagist-plugin/redis-cache": "^2.0",
     "wpackagist-plugin/read-meter": "^1.0",
     "wpackagist-plugin/webp-simple": "^1.0",
     "wpackagist-theme/generatepress": "^2.4"

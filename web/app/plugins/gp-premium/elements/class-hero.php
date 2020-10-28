@@ -224,6 +224,17 @@ class GeneratePress_Hero {
 		$options['padding_bottom_unit_mobile'] = $options['padding_bottom_unit_mobile'] ? $options['padding_bottom_unit_mobile'] : 'px';
 		$options['padding_left_unit_mobile']   = $options['padding_left_unit_mobile'] ? $options['padding_left_unit_mobile'] : 'px';
 
+		$padding_inside = false;
+		$using_flexbox = false;
+
+		if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+			$using_flexbox = true;
+
+			if ( function_exists( 'generate_get_option' ) && 'text' === generate_get_option( 'container_alignment' ) ) {
+				$padding_inside = true;
+			}
+		}
+
 		$css->set_selector( '.page-hero' );
 
 		if ( $options['background_color'] ) {
@@ -269,7 +280,9 @@ class GeneratePress_Hero {
 			$css->add_property( 'text-align', esc_html( $options['horizontal_alignment'] ) );
 		}
 
-		$css->add_property( 'box-sizing', 'border-box' );
+		if ( ! $using_flexbox ) {
+			$css->add_property( 'box-sizing', 'border-box' );
+		}
 
 		if ( $options['site_header_merge'] && $options['full_screen'] ) {
 			$css->add_property( 'min-height', '100vh' );
@@ -297,6 +310,32 @@ class GeneratePress_Hero {
 				$css->set_selector( '.page-hero .inside-page-hero' );
 				$css->add_property( 'width', '100%' );
 			}
+		}
+
+		if ( $padding_inside && function_exists( 'generate_get_option' ) ) {
+			$container_width = generate_get_option( 'container_width' );
+			$padding_right = '0px';
+			$padding_left = '0px';
+
+			if ( $options['padding_right'] ) {
+				$padding_right = absint( $options['padding_right'] ) . $options['padding_right_unit'];
+			}
+
+			if ( $options['padding_left'] ) {
+				$padding_left = absint( $options['padding_left'] ) . $options['padding_left_unit'];
+			}
+
+			$css->set_selector( '.page-hero .inside-page-hero.grid-container' );
+
+			$css->add_property(
+				'max-width',
+				sprintf(
+					'calc(%1$s - %2$s - %3$s)',
+					$container_width . 'px',
+					$padding_right,
+					$padding_left
+				)
+			);
 		}
 
 		$css->set_selector( '.page-hero h1, .page-hero h2, .page-hero h3, .page-hero h4, .page-hero h5, .page-hero h6' );
@@ -378,13 +417,23 @@ class GeneratePress_Hero {
 				$navigation_background_hover = $options['navigation_background_color_hover'] ? $options['navigation_background_color_hover'] : 'transparent';
 				$navigation_background_current = $options['navigation_background_color_current'] ? $options['navigation_background_color_current'] : 'transparent';
 
-				$css->set_selector( '.header-wrap #site-navigation:not(.toggled), .header-wrap #mobile-header:not(.toggled):not(.navigation-stick)' );
+				$css->set_selector( '.header-wrap #site-navigation:not(.toggled), .header-wrap #mobile-header:not(.toggled):not(.navigation-stick), .has-inline-mobile-toggle .mobile-menu-control-wrapper' );
 				$css->add_property( 'background', $navigation_background );
 
-				$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li > a, .header-wrap #mobile-header:not(.toggled):not(.navigation-stick) .main-nav > ul > li > a, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle:hover, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a:hover, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a:focus' );
+				if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+					$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li > a, .header-wrap #mobile-header:not(.toggled):not(.navigation-stick) .main-nav > ul > li > a, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle:hover, .main-navigation:not(.toggled):not(.navigation-stick) .menu-bar-item:not(.close-search) > a' );
+				} else {
+					$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li > a, .header-wrap #mobile-header:not(.toggled):not(.navigation-stick) .main-nav > ul > li > a, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle, .header-wrap .main-navigation:not(.toggled):not(.navigation-stick) .menu-toggle:hover, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a:hover, .main-navigation:not(.toggled):not(.navigation-stick) .mobile-bar-items a:focus' );
+				}
+
 				$css->add_property( 'color', esc_attr( $options['navigation_text_color'] ) );
 
-				$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:focus > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li.sfHover > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li:hover > a' );
+				if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+					$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:focus > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li.sfHover > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .menu-bar-item:not(.close-search):hover > a, .header-wrap #mobile-header:not(.toggled) .menu-bar-item:not(.close-search):hover > a, .header-wrap #site-navigation:not(.toggled) .menu-bar-item:not(.close-search).sfHover > a, .header-wrap #mobile-header:not(.toggled) .menu-bar-item:not(.close-search).sfHover > a' );
+				} else {
+					$css->set_selector( '.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:focus > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li.sfHover > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li:hover > a' );
+				}
+
 				$css->add_property( 'background', $navigation_background_hover );
 
 				if ( '' !== $options['navigation_text_color_hover'] ) {
@@ -666,7 +715,7 @@ class GeneratePress_Hero {
 		$attr = apply_filters(
 			'generate_page_hero_logo_attributes',
 			array(
-				'class' => 'header-image',
+				'class' => 'header-image is-logo-image',
 				'alt'   => esc_attr( apply_filters( 'generate_logo_title', get_bloginfo( 'name', 'display' ) ) ),
 				'src'   => $logo_url,
 				'title' => esc_attr( apply_filters( 'generate_logo_title', get_bloginfo( 'name', 'display' ) ) ),
@@ -722,7 +771,7 @@ class GeneratePress_Hero {
 		printf(
 			'<div class="site-logo sticky-logo navigation-logo page-hero-navigation-logo">
 				<a href="%1$s" title="%2$s" rel="home">
-					<img class="header-image" src="%3$s" alt="%4$s" />
+					<img class="header-image is-logo-image" src="%3$s" alt="%4$s" />
 				</a>
 			</div>',
 			esc_url( apply_filters( 'generate_logo_href', home_url( '/' ) ) ),
@@ -748,7 +797,7 @@ class GeneratePress_Hero {
 		printf(
 			'<div class="site-logo mobile-header-logo page-hero-mobile-logo">
 				<a href="%1$s" title="%2$s" rel="home">
-					<img class="header-image" src="%3$s" alt="%4$s" />
+					<img class="header-image is-logo-image" src="%3$s" alt="%4$s" />
 				</a>
 			</div>',
 			esc_url( apply_filters( 'generate_logo_href', home_url( '/' ) ) ),
@@ -817,7 +866,10 @@ class GeneratePress_Hero {
 		$options = self::get_options();
 
 		if ( strpos( $options['content'], '{{post_title}}' ) !== false ) {
-			add_filter( 'generate_show_title', '__return_false' );
+			if ( is_singular() ) {
+				add_filter( 'generate_show_title', '__return_false' );
+			}
+
 			remove_action( 'generate_archive_title', 'generate_archive_title' );
 			add_filter( 'post_class', array( self::$hero, 'remove_hentry' ) );
 		}

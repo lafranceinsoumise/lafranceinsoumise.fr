@@ -273,7 +273,13 @@ class GeneratePress_Elements_Post_Type {
 
 						if ( 'hook' === $block_type && $hook_location ) {
 							echo '<br />';
-							echo '<span class="hook-location">' . esc_html( $hook_location ) . '</span>';
+
+							if ( 'custom' === $hook_location ) {
+								$custom_hook = get_post_meta( $post_id, '_generate_custom_hook', true );
+								echo '<span class="hook-location">' . esc_html( $custom_hook ) . '</span>';
+							} else {
+								echo '<span class="hook-location">' . esc_html( $hook_location ) . '</span>';
+							}
 						}
 					}
 				}
@@ -287,7 +293,13 @@ class GeneratePress_Elements_Post_Type {
 
 					if ( $hook_location ) {
 						echo '<br />';
-						echo '<span class="hook-location">' . esc_html( $hook_location ) . '</span>';
+
+						if ( 'custom' === $hook_location ) {
+							$custom_hook = get_post_meta( $post_id, '_generate_custom_hook', true );
+							echo '<span class="hook-location">' . esc_html( $custom_hook ) . '</span>';
+						} else {
+							echo '<span class="hook-location">' . esc_html( $hook_location ) . '</span>';
+						}
 					}
 				}
 

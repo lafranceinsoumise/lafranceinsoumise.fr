@@ -35,9 +35,17 @@ function generate_premium_do_elements() {
 		'post_status'      => 'publish',
 		'numberposts'      => 500, // phpcs:ignore
 		'fields'           => 'ids',
-		'order'            => 'ASC',
 		'suppress_filters' => false,
 	);
+
+	$custom_args = apply_filters(
+		'generate_elements_custom_args',
+		array(
+			'order' => 'ASC',
+		)
+	);
+
+	$args = array_merge( $args, $custom_args );
 
 	// Prevent Polylang from altering the query.
 	if ( function_exists( 'pll_get_post_language' ) ) {

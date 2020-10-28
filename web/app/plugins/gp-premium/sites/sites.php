@@ -261,18 +261,9 @@ function generate_sites_container() {
 						</select>
 					</div>
 				</div>
-			<?php else : ?>
-				<div class="page-builder-filter">
-					<label for="page-builder" class="page-builder-label"><?php _e( 'Page Builder:', 'gp-premium' ); ?></label>
-					<div class="filter-select">
-						<select id="page-builder" class="page-builder-group" data-filter-group="page-builder" data-page-builder=".no-page-builder">
-							<option value="no-page-builder"><?php _e( 'None', 'gp-premium' ); ?></option>
-							<option value="beaver-builder"><?php _e( 'Beaver Builder', 'gp-premium' ); ?></option>
-							<option value="elementor"><?php _e( 'Elementor', 'gp-premium' ); ?></option>
-						</select>
-					</div>
-				</div>
-			<?php endif; ?>
+				<?php
+			endif;
+			?>
 
 			</div>
 
@@ -314,10 +305,13 @@ function generate_sites_container() {
 			<?php
 			printf(
 				'<div class="refresh-sites">
-					<a class="button" href="%1$s">%2$s</a>
+					<a data-nonce="%1$s" class="button" href="#">%2$s</a>
+					<a class="button button-primary" href="%3$s" style="display: none;">%4$s</a>
 				</div>',
-				esc_url( wp_nonce_url( admin_url( 'themes.php?page=generatepress-site-library' ), 'refresh_sites', 'refresh_sites_nonce' ) ),
-				__( 'Refresh Sites', 'gp-premium' )
+				esc_html( wp_create_nonce( 'refresh_sites_nonce' ) ),
+				__( 'Refresh Sites', 'gp-premium' ),
+				esc_url( admin_url( 'themes.php?page=generatepress-site-library' ) ),
+				__( 'Reload Page', 'gp-premium' )
 			);
 			?>
 		</div>
@@ -325,18 +319,21 @@ function generate_sites_container() {
 	<?php
 }
 
-add_action( 'admin_init', 'generate_sites_refresh_list', 2 );
+add_action( 'wp_ajax_generate_sites_refresh_sites', 'generate_sites_do_refresh_list' );
 /**
- * Delete our sites transient if the Refresh sites link is clicked.
- *
- * @since 1.6
+ * Refresh our list of sites.
  */
-function generate_sites_refresh_list() {
-	if ( ! isset( $_GET['refresh_sites_nonce'] ) || ! wp_verify_nonce( $_GET['refresh_sites_nonce'], 'refresh_sites' ) ) {
-		return;
+function generate_sites_do_refresh_list() {
+	check_ajax_referer( 'refresh_sites_nonce', '_nonce' );
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( __( 'Security check failed.', 'gp-premium' ) );
 	}
 
 	delete_transient( 'generatepress_sites' );
+	generate_get_sites_from_library();
+
+	wp_send_json_success();
 }
 
 /**
@@ -487,6 +484,9 @@ add_action( 'generate_export_items', 'generatepress_sites_add_export_checkbox' )
  * @since 1.7
  */
 function generatepress_sites_add_export_checkbox() {
+	if ( ! apply_filters( 'generate_show_generatepress_site_export_option', false ) ) {
+		return;
+	}
 	?>
 	<hr style="margin:10px 0;border-bottom:0;" />
 
@@ -573,6 +573,8 @@ function generatepress_sites_do_site_options_export( $data ) {
 		$data['site_options']['elementor_scheme_typography']           = get_option( 'elementor_scheme_typography' );
 		$data['site_options']['elementor_space_between_widgets']       = get_option( 'elementor_space_between_widgets' );
 		$data['site_options']['elementor_stretched_section_container'] = get_option( 'elementor_stretched_section_container' );
+		$data['site_options']['elementor_load_fa4_shim']               = get_option( 'elementor_load_fa4_shim' );
+		$data['site_options']['elementor_active_kit']                  = get_option( 'elementor_active_kit' );
 	}
 
 	// Beaver Builder.
@@ -647,6 +649,72 @@ function generatepress_sites_do_site_options_export( $data ) {
 
 }
 
+/**
+ * Get our sites from the site server.
+ *
+ * @since 1.12.0
+ */
+function generate_get_sites_from_library() {
+	$remote_sites = get_transient( 'generatepress_sites' );
+	$trusted_authors = get_transient( 'generatepress_sites_trusted_providers' );
+
+	if ( empty( $remote_sites ) ) {
+		$sites = array();
+
+		$data = wp_safe_remote_get( 'https://gpsites.co/wp-json/wp/v2/sites?per_page=100' );
+
+		if ( is_wp_error( $data ) ) {
+			set_transient( 'generatepress_sites', 'no results', 5 * MINUTE_IN_SECONDS );
+			return;
+		}
+
+		$data = json_decode( wp_remote_retrieve_body( $data ), true );
+
+		if ( ! is_array( $data ) ) {
+			set_transient( 'generatepress_sites', 'no results', 5 * MINUTE_IN_SECONDS );
+			return;
+		}
+
+		foreach ( (array) $data as $site ) {
+			$sites[ $site['name'] ] = array(
+				'name'          => $site['name'],
+				'directory'     => $site['directory'],
+				'preview_url'   => $site['preview_url'],
+				'author_name'   => $site['author_name'],
+				'author_url'    => $site['author_url'],
+				'description'   => $site['description'],
+				'page_builder'  => $site['page_builder'],
+				'min_version'   => $site['min_version'],
+				'uploads_url'   => $site['uploads_url'],
+				'plugins'       => $site['plugins'],
+				'documentation' => $site['documentation'],
+			);
+		}
+
+		$sites = apply_filters( 'generate_add_sites', $sites );
+
+		set_transient( 'generatepress_sites', $sites, 24 * HOUR_IN_SECONDS );
+	}
+
+	if ( empty( $trusted_authors ) ) {
+		$trusted_authors = wp_safe_remote_get( 'https://gpsites.co/wp-json/sites/site' );
+
+		if ( is_wp_error( $trusted_authors ) || empty( $trusted_authors ) ) {
+			set_transient( 'generatepress_sites_trusted_providers', 'no results', 5 * MINUTE_IN_SECONDS );
+			return;
+		}
+
+		$trusted_authors = json_decode( wp_remote_retrieve_body( $trusted_authors ), true );
+
+		$authors = array();
+		foreach ( (array) $trusted_authors['trusted_author'] as $author ) {
+			$authors[] = $author;
+		}
+
+		set_transient( 'generatepress_sites_trusted_providers', $authors, 24 * HOUR_IN_SECONDS );
+	}
+}
+
 add_action( 'current_screen', 'generatepress_sites_init', 5 );
 /**
  * Fetch our sites and trusted authors. Stores them in their own transients.
@@ -658,64 +726,7 @@ function generatepress_sites_init() {
 	$screen = get_current_screen();
 
 	if ( 'appearance_page_generate-options' === $screen->id || 'appearance_page_generatepress-site-library' === $screen->id ) {
-		$remote_sites = get_transient( 'generatepress_sites' );
-		$trusted_authors = get_transient( 'generatepress_sites_trusted_providers' );
-
-		if ( empty( $remote_sites ) ) {
-			$sites = array();
-
-			$data = wp_safe_remote_get( 'https://gpsites.co/wp-json/wp/v2/sites?per_page=100' );
-
-			if ( is_wp_error( $data ) ) {
-				set_transient( 'generatepress_sites', 'no results', 5 * MINUTE_IN_SECONDS );
-				return;
-			}
-
-			$data = json_decode( wp_remote_retrieve_body( $data ), true );
-
-			if ( ! is_array( $data ) ) {
-				set_transient( 'generatepress_sites', 'no results', 5 * MINUTE_IN_SECONDS );
-				return;
-			}
-
-			foreach ( (array) $data as $site ) {
-				$sites[ $site['name'] ] = array(
-					'name'          => $site['name'],
-					'directory'     => $site['directory'],
-					'preview_url'   => $site['preview_url'],
-					'author_name'   => $site['author_name'],
-					'author_url'    => $site['author_url'],
-					'description'   => $site['description'],
-					'page_builder'  => $site['page_builder'],
-					'min_version'   => $site['min_version'],
-					'uploads_url'   => $site['uploads_url'],
-					'plugins'       => $site['plugins'],
-					'documentation' => $site['documentation'],
-				);
-			}
-
-			$sites = apply_filters( 'generate_add_sites', $sites );
-
-			set_transient( 'generatepress_sites', $sites, 24 * HOUR_IN_SECONDS );
-		}
-
-		if ( empty( $trusted_authors ) ) {
-			$trusted_authors = wp_safe_remote_get( 'https://gpsites.co/wp-json/sites/site' );
-
-			if ( is_wp_error( $trusted_authors ) || empty( $trusted_authors ) ) {
-				set_transient( 'generatepress_sites_trusted_providers', 'no results', 5 * MINUTE_IN_SECONDS );
-				return;
-			}
-
-			$trusted_authors = json_decode( wp_remote_retrieve_body( $trusted_authors ), true );
-
-			$authors = array();
-			foreach ( (array) $trusted_authors['trusted_author'] as $author ) {
-				$authors[] = $author;
-			}
-
-			set_transient( 'generatepress_sites_trusted_providers', $authors, 24 * HOUR_IN_SECONDS );
-		}
+		generate_get_sites_from_library();
 	}
 }
 

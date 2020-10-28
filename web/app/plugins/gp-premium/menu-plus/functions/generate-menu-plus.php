@@ -900,12 +900,46 @@ if ( ! function_exists( 'generate_menu_plus_inline_css' ) ) {
 		}
 
 		if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
-			if ( 'true' === $generate_menu_plus_settings['sticky_menu'] || 'mobile' === $generate_menu_plus_settings['sticky_menu'] || 'enable' === $generate_menu_plus_settings['mobile_header_sticky'] ) {
+			if ( 'true' === $generate_menu_plus_settings['sticky_menu'] || 'desktop' === $generate_menu_plus_settings['sticky_menu'] || 'mobile' === $generate_menu_plus_settings['sticky_menu'] || 'enable' === $generate_menu_plus_settings['mobile_header_sticky'] ) {
 				$return .= '.sticky-enabled .gen-sidebar-nav.is_stuck .main-navigation {margin-bottom: 0px;}';
 				$return .= '.sticky-enabled .gen-sidebar-nav.is_stuck {z-index: 500;}';
 				$return .= '.sticky-enabled .main-navigation.is_stuck {box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);}';
 				$return .= '.navigation-stick:not(.gen-sidebar-nav) {left: 0;right: 0;width: 100% !important;}';
-				$return .= '.both-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-header-sticky #mobile-header.toggled .main-nav > ul {position: absolute;left: 0;right: 0;z-index: 999;}';
+
+				if ( function_exists( 'generate_get_option' ) && generate_get_option( 'smooth_scroll' ) ) {
+					$return .= '.both-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-header-sticky #mobile-header.toggled .main-nav > ul {position: absolute;left: 0;right: 0;z-index: 999;}';
+				}
+
+				if ( function_exists( 'generate_has_inline_mobile_toggle' ) && generate_has_inline_mobile_toggle() && 'enable' !== $generate_menu_plus_settings['mobile_header'] ) {
+					$return .= '@media ' . generate_premium_get_media_query( 'mobile-menu' ) . '{#sticky-placeholder{height:0;overflow:hidden;}.has-inline-mobile-toggle #site-navigation.toggled{margin-top:0;}.has-inline-mobile-menu #site-navigation.toggled .main-nav > ul{top:1.5em;}}';
+				}
+
+				$return .= '.nav-float-right .navigation-stick {width: 100% !important;left: 0;}';
+				$return .= '.nav-float-right .navigation-stick .navigation-branding {margin-right: auto;}';
+				$return .= '.main-navigation.has-sticky-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left: 10px;}';
+
+				if ( ! $generate_menu_plus_settings['navigation_as_header'] ) {
+					$header_left = 40;
+					$header_right = 40;
+
+					if ( function_exists( 'generate_spacing_get_defaults' ) ) {
+						$spacing_settings = wp_parse_args(
+							get_option( 'generate_spacing_settings', array() ),
+							generate_spacing_get_defaults()
+						);
+
+						$header_left = $spacing_settings['header_left'];
+						$header_right = $spacing_settings['header_right'];
+					}
+
+					if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+						if ( function_exists( 'generate_get_option' ) && 'text' === generate_get_option( 'container_alignment' ) ) {
+							$return .= '.main-navigation.navigation-stick.has-sticky-branding .inside-navigation.grid-container{padding-left:' . $header_left . 'px;padding-right:' . $header_right . 'px;}';
+
+							$return .= '@media ' . generate_premium_get_media_query( 'mobile' ) . '{.main-navigation.navigation-stick.has-sticky-branding .inside-navigation.grid-container{padding-left:0;padding-right:0;}}';
+						}
+					}
+				}
 			}
 		}
 
@@ -959,6 +993,12 @@ if ( ! function_exists( 'generate_menu_plus_mobile_header' ) ) {
 
 		if ( function_exists( 'generatepress_wc_get_setting' ) && generatepress_wc_get_setting( 'cart_menu_item' ) ) {
 			$classes[] = 'wc-menu-cart-activated';
+		}
+
+		if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+			if ( function_exists( 'generate_has_menu_bar_items' ) && generate_has_menu_bar_items() ) {
+				$classes[] = 'has-menu-bar-items';
+			}
 		}
 
 		$classes = implode( ' ', $classes );
@@ -1401,7 +1441,7 @@ if ( ! function_exists( 'generate_menu_plus_sticky_logo' ) ) {
 			sprintf(
 				'<div class="site-logo sticky-logo navigation-logo">
 					<a href="%1$s" title="%2$s" rel="home">
-						<img src="%3$s" alt="%4$s" />
+						<img src="%3$s" alt="%4$s" class="is-logo-image" />
 					</a>
 				</div>',
 				esc_url( apply_filters( 'generate_logo_href', home_url( '/' ) ) ),
@@ -1433,7 +1473,7 @@ if ( ! function_exists( 'generate_menu_plus_mobile_header_logo' ) ) {
 				sprintf(
 					'<div class="site-logo mobile-header-logo">
 						<a href="%1$s" title="%2$s" rel="home">
-							<img src="%3$s" alt="%4$s" />
+							<img src="%3$s" alt="%4$s" class="is-logo-image" />
 						</a>
 					</div>',
 					esc_url( apply_filters( 'generate_logo_href', home_url( '/' ) ) ),
@@ -1585,6 +1625,14 @@ function generate_do_off_canvas_css() {
 				$css->set_selector( '.slide-opened nav.toggled .menu-toggle:before' );
 				$css->add_property( 'display', 'none' );
 			}
+
+			if ( 'font' === generate_get_option( 'icons' ) ) {
+				$css->set_selector( '.slideout-navigation .dropdown-menu-toggle:before' );
+				$css->add_property( 'content', '"\f107"' );
+
+				$css->set_selector( '.slideout-navigation .sfHover > a .dropdown-menu-toggle:before' );
+				$css->add_property( 'content', '"\f106"' );
+			}
 		}
 	}
 
@@ -1655,6 +1703,8 @@ function generate_do_nav_branding_css() {
 
 	$navigation_height = 60;
 	$mobile_navigation_height = '';
+	$content_left = 40;
+	$content_right = 40;
 
 	if ( function_exists( 'generate_spacing_get_defaults' ) ) {
 		$spacing_settings = wp_parse_args(
@@ -1666,6 +1716,34 @@ function generate_do_nav_branding_css() {
 
 		if ( isset( $spacing_settings['mobile_menu_item_height'] ) ) {
 			$mobile_navigation_height = $spacing_settings['mobile_menu_item_height'];
+		}
+
+		$content_left = $spacing_settings['content_left'];
+		$content_right = $spacing_settings['content_right'];
+	}
+
+	if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+		if ( function_exists( 'generate_get_option' ) ) {
+			if ( 'text' === generate_get_option( 'container_alignment' ) ) {
+				$css->set_selector( '.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding.grid-container .inside-navigation:not(.grid-container)' );
+				$css->add_property( 'padding', generate_padding_css( 0, $content_right, 0, $content_left ) );
+
+				$css->set_selector( '.main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding' );
+
+				if ( ! is_rtl() ) {
+					$css->add_property( 'margin-left', '10px' );
+				} else {
+					$css->add_property( 'margin-right', '10px' );
+				}
+			} else {
+				$css->set_selector( '.main-navigation.has-branding.grid-container .navigation-branding, .main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding' );
+
+				if ( ! is_rtl() ) {
+					$css->add_property( 'margin-left', '10px' );
+				} else {
+					$css->add_property( 'margin-right', '10px' );
+				}
+			}
 		}
 	}
 
@@ -1684,24 +1762,57 @@ function generate_do_nav_branding_css() {
 	$css->set_selector( '.navigation-branding .main-title' );
 	$css->add_property( 'line-height', absint( $navigation_height ), false, 'px' );
 
-	$css->start_media_query( '(max-width: ' . ( $settings['container_width'] + 10 ) . 'px)' );
-	$css->set_selector( '#site-navigation .navigation-branding, #sticky-navigation .navigation-branding' );
-	$css->add_property( 'margin-left', '10px' );
+	$do_nav_padding = true;
 
-	if ( is_rtl() ) {
-		$css->set_selector( '#site-navigation .navigation-branding, #sticky-navigation .navigation-branding' );
-		$css->add_property( 'margin-left', 'auto' );
-		$css->add_property( 'margin-right', '10px' );
+	if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+		if ( function_exists( 'generate_get_option' ) && 'text' === generate_get_option( 'container_alignment' ) ) {
+			$do_nav_padding = false;
+		}
 	}
-	$css->stop_media_query();
+
+	if ( $do_nav_padding ) {
+		$css->start_media_query( '(max-width: ' . ( $settings['container_width'] + 10 ) . 'px)' );
+		$css->set_selector( '#site-navigation .navigation-branding, #sticky-navigation .navigation-branding' );
+		$css->add_property( 'margin-left', '10px' );
+
+		if ( is_rtl() ) {
+			$css->set_selector( '#site-navigation .navigation-branding, #sticky-navigation .navigation-branding' );
+			$css->add_property( 'margin-left', 'auto' );
+			$css->add_property( 'margin-right', '10px' );
+		}
+		$css->stop_media_query();
+	}
 
 	$css->start_media_query( generate_premium_get_media_query( 'mobile-menu' ) );
 	if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
-		$css->set_selector( '.main-navigation.has-branding.nav-align-center' );
-		$css->add_property( 'justify-content', 'flex-start' );
+		$css->set_selector( '.main-navigation.has-branding.nav-align-center .menu-bar-items, .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items' );
+		$css->add_property( 'margin-left', 'auto' );
 
 		$css->set_selector( '.navigation-branding' );
 		$css->add_property( 'margin-right', 'auto' );
+		$css->add_property( 'margin-left', '10px' );
+
+		$css->set_selector( '.navigation-branding .main-title, .mobile-header-navigation .site-logo' );
+		$css->add_property( 'margin-left', '10px' );
+
+		if ( is_rtl() ) {
+			$css->set_selector( '.rtl .navigation-branding' );
+			$css->add_property( 'margin-left', 'auto' );
+			$css->add_property( 'margin-right', '10px' );
+
+			$css->set_selector( '.rtl .navigation-branding .main-title, .rtl .mobile-header-navigation .site-logo' );
+			$css->add_property( 'margin-right', '10px' );
+			$css->add_property( 'margin-left', '0px' );
+
+			$css->set_selector( '.rtl .main-navigation.has-branding.nav-align-center .menu-bar-items, .rtl .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items' );
+			$css->add_property( 'margin-left', '0px' );
+			$css->add_property( 'margin-right', 'auto' );
+		}
+
+		if ( function_exists( 'generate_get_option' ) && 'text' === generate_get_option( 'container_alignment' ) ) {
+			$css->set_selector( '.main-navigation.has-branding .inside-navigation.grid-container' );
+			$css->add_property( 'padding', '0px' );
+		}
 	} else {
 		$css->set_selector( '.main-navigation:not(.slideout-navigation) .main-nav' );
 		$css->add_property( '-webkit-box-flex', '0' );
@@ -1865,7 +1976,7 @@ function generate_do_navigation_branding() {
 			$attr = apply_filters(
 				'generate_logo_attributes',
 				array(
-					'class' => 'header-image',
+					'class' => 'header-image is-logo-image',
 					'alt'   => esc_attr( apply_filters( 'generate_logo_title', get_bloginfo( 'name', 'display' ) ) ),
 					'src'   => $logo_url,
 					'title' => esc_attr( apply_filters( 'generate_logo_title', get_bloginfo( 'name', 'display' ) ) ),
@@ -1918,7 +2029,7 @@ function generate_do_navigation_branding() {
 			sprintf(
 				'<div class="sticky-navigation-logo">
 					<a href="%1$s" title="%2$s" rel="home">
-						<img src="%3$s" alt="%2$s" />
+						<img src="%3$s" class="is-logo-image" alt="%2$s" />
 					</a>
 				</div>',
 				esc_url( apply_filters( 'generate_logo_href', home_url( '/' ) ) ),

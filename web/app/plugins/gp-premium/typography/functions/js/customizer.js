@@ -181,7 +181,8 @@ gp_premium_typography_live_update( 'archive_post_title_line_height', 'h2.entry-t
 /**
  * H3 font size, weight and transform
  */
-gp_premium_typography_live_update( 'heading_3_font_size', 'h3', 'font-size', 'px' );
+gp_premium_typography_live_update( 'heading_3_font_size', 'h3', 'font-size', 'px', gp_typography.desktop );
+gp_premium_typography_live_update( 'mobile_heading_3_font_size', 'h3', 'font-size', 'px', gp_typography.mobile );
 gp_premium_typography_live_update( 'heading_3_weight', 'h3', 'font-weight' );
 gp_premium_typography_live_update( 'heading_3_transform', 'h3', 'text-transform' );
 gp_premium_typography_live_update( 'heading_3_line_height', 'h3', 'line-height', 'em' );
@@ -190,7 +191,8 @@ gp_premium_typography_live_update( 'heading_3_margin_bottom', 'h3', 'margin-bott
 /**
  * H4 font size, weight and transform
  */
-gp_premium_typography_live_update( 'heading_4_font_size', 'h4', 'font-size', 'px' );
+gp_premium_typography_live_update( 'heading_4_font_size', 'h4', 'font-size', 'px', gp_typography.desktop );
+gp_premium_typography_live_update( 'mobile_heading_4_font_size', 'h4', 'font-size', 'px', gp_typography.mobile );
 gp_premium_typography_live_update( 'heading_4_weight', 'h4', 'font-weight' );
 gp_premium_typography_live_update( 'heading_4_transform', 'h4', 'text-transform' );
 gp_premium_typography_live_update( 'heading_4_line_height', 'h4', 'line-height', 'em' );
@@ -198,7 +200,8 @@ gp_premium_typography_live_update( 'heading_4_line_height', 'h4', 'line-height',
 /**
  * H5 font size, weight and transform
  */
-gp_premium_typography_live_update( 'heading_5_font_size', 'h5', 'font-size', 'px' );
+gp_premium_typography_live_update( 'heading_5_font_size', 'h5', 'font-size', 'px', gp_typography.desktop );
+gp_premium_typography_live_update( 'mobile_heading_5_font_size', 'h5', 'font-size', 'px', gp_typography.mobile );
 gp_premium_typography_live_update( 'heading_5_weight', 'h5', 'font-weight' );
 gp_premium_typography_live_update( 'heading_5_transform', 'h5', 'text-transform' );
 gp_premium_typography_live_update( 'heading_5_line_height', 'h5', 'line-height', 'em' );

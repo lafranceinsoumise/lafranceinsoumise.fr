@@ -862,8 +862,16 @@ if ( ! function_exists( 'generate_secondary_navigation_classes' ) ) {
 		$nav_layout = $generate_settings['secondary_nav_layout_setting'];
 
 		if ( 'secondary-contained-nav' === $nav_layout ) {
-			$classes[] = 'grid-container';
-			$classes[] = 'grid-parent';
+			if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+				$navigation_location = $generate_settings['secondary_nav_position_setting'];
+
+				if ( 'secondary-nav-float-right' !== $navigation_location && 'secondary-nav-float-left' !== $navigation_location ) {
+					$classes[] = 'grid-container';
+				}
+			} else {
+				$classes[] = 'grid-container';
+				$classes[] = 'grid-parent';
+			}
 		}
 
 		if ( 'left' === $generate_settings['secondary_nav_dropdown_direction'] ) {
@@ -962,6 +970,21 @@ if ( ! function_exists( 'generate_secondary_nav_css' ) ) {
 		$css->add_property( 'background-color', esc_attr( $generate_settings['navigation_background_color'] ) );
 		$css->add_property( 'background-image', ! empty( $generate_settings['nav_image'] ) ? 'url(' . esc_url( $generate_settings['nav_image'] ) . ')' : '' );
 		$css->add_property( 'background-repeat', esc_attr( $generate_settings['nav_repeat'] ) );
+
+		if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+			if ( function_exists( 'generate_spacing_get_defaults' ) && function_exists( 'generate_get_option' ) && 'text' === generate_get_option( 'container_alignment' ) ) {
+				$spacing_settings = wp_parse_args(
+					get_option( 'generate_spacing_settings', array() ),
+					generate_spacing_get_defaults()
+				);
+
+				$navigation_left_padding = absint( $spacing_settings['header_left'] ) - absint( $generate_settings['secondary_menu_item'] );
+				$navigation_right_padding = absint( $spacing_settings['header_right'] ) - absint( $generate_settings['secondary_menu_item'] );
+
+				$css->set_selector( '.secondary-nav-below-header .secondary-navigation .inside-navigation.grid-container, .secondary-nav-above-header .secondary-navigation .inside-navigation.grid-container' );
+				$css->add_property( 'padding', generate_padding_css( 0, $navigation_right_padding, 0, $navigation_left_padding ) );
+			}
+		}
 
 		if ( 'secondary-nav-above-header' === $generate_settings['secondary_nav_position_setting'] && has_nav_menu( 'secondary' ) && is_active_sidebar( 'top-bar' ) ) {
 			$css->set_selector( '.secondary-navigation .top-bar' );

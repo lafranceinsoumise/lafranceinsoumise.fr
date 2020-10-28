@@ -197,8 +197,8 @@
 	display: inline-block;
 }
 
-.secondary-nav-aligned-right .secondary-navigation ul,
-.secondary-nav-aligned-center .secondary-navigation ul {
+.secondary-nav-aligned-right .secondary-navigation ul.secondary-menu,
+.secondary-nav-aligned-center .secondary-navigation ul.secondary-menu {
 	font-size: 0px;
 }
 

@@ -94,7 +94,7 @@ if ( ! function_exists( 'generate_blog_scripts' ) ) {
 		$needs_columns_css = false;
 		$needs_featured_image_css = false;
 
-		if ( ( ! is_singular() && $settings['column_layout'] ) || $settings['infinite_scroll'] ) {
+		if ( generate_blog_get_columns() || $settings['infinite_scroll'] ) {
 			$needs_columns_css = true;
 		}
 

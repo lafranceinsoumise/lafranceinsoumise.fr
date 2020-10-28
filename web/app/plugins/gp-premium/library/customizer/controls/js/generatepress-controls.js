@@ -16,8 +16,8 @@
 				mobileHeader = api.instance( 'generate_menu_plus_settings[mobile_header]' ).get(),
 				navTextColorSetting = api.instance( 'generate_settings[navigation_text_color]' ),
 				navTextColor = gpControls.navigationTextColor,
-				headerTextColorSetting = api.instance( 'generate_settings[header_text_color]' ),
-				headerTextColor = gpControls.headerTextColor;
+				siteTitleTextColorSetting = api.instance( 'generate_settings[site_title_color]' ),
+				siteTitleTextColor = gpControls.siteTitleTextColor;
 
 			if ( siteTitleFontSizeSetting && ! siteTitleFontSizeSetting._dirty && 25 !== siteTitleFontSizeSetting.get() ) {
 				siteTitleFontSize = siteTitleFontSizeSetting.get();
@@ -31,8 +31,8 @@
 				navTextColor = navTextColorSetting.get();
 			}
 
-			if ( headerTextColorSetting && ! headerTextColorSetting._dirty ) {
-				headerTextColor = headerTextColorSetting.get();
+			if ( siteTitleTextColorSetting && ! siteTitleTextColorSetting._dirty ) {
+				siteTitleTextColor = siteTitleTextColorSetting.get();
 			}
 
 			if ( newval ) {
@@ -57,7 +57,7 @@
 				}
 
 				if ( api.instance( 'generate_settings[site_title_color]' ) ) {
-					api.instance( 'generate_settings[site_title_color]' ).set( headerTextColor );
+					api.instance( 'generate_settings[site_title_color]' ).set( siteTitleTextColor );
 				}
 
 				if ( mobileSiteTitleFontSizeSetting && 'enable' !== mobileHeader ) {
@@ -68,8 +68,7 @@
 
 		var showRegularHeader,
 			showRegularHeaderCallback,
-			showNavHeader,
-			showNavHeaderCallback;
+			showNavHeader;
 
 		/**
 		 * Determine whether we should display our header controls.
@@ -108,21 +107,6 @@
 			};
 
 			control.active.validate = showRegularHeader;
-			setActiveState();
-			value.bind( setActiveState );
-		};
-
-		/**
-		 * Update a control's active state according to the navigation as header option.
-		 *
-		 * @param {wp.customize.Control} control
-		 */
-		showNavHeaderCallback = function( control ) {
-			var setActiveState = function() {
-				control.active.set( showNavHeader() );
-			};
-
-			control.active.validate = showNavHeader;
 			setActiveState();
 			value.bind( setActiveState );
 		};

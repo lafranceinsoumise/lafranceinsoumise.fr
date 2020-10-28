@@ -3,7 +3,7 @@
  * Plugin Name: Redis Object Cache Drop-In
  * Plugin URI: http://wordpress.org/plugins/redis-cache/
  * Description: A persistent object cache backend powered by Redis. Supports Predis, PhpRedis, Credis, HHVM, replication, clustering and WP-CLI.
- * Version: 2.0.13
+ * Version: 2.0.15
  * Author: Till Krüss
  * Author URI: https://objectcache.pro
  * License: GPLv3
@@ -151,6 +151,14 @@ function wp_cache_incr( $key, $offset = 1, $group = '' ) {
  */
 function wp_cache_init() {
     global $wp_object_cache;
+
+    if ( ! defined( 'WP_REDIS_PREFIX' ) && getenv( 'WP_REDIS_PREFIX' ) ) {
+        define( 'WP_REDIS_PREFIX', getenv( 'WP_REDIS_PREFIX' ) );
+    }
+
+    if ( ! defined( 'WP_REDIS_SELECTIVE_FLUSH' ) && getenv( 'WP_REDIS_SELECTIVE_FLUSH' ) ) {
+        define( 'WP_REDIS_SELECTIVE_FLUSH', (bool) getenv( 'WP_REDIS_SELECTIVE_FLUSH' ) );
+    }
 
     // Backwards compatibility: map `WP_CACHE_KEY_SALT` constant to `WP_REDIS_PREFIX`.
     if ( defined( 'WP_CACHE_KEY_SALT' ) && ! defined( 'WP_REDIS_PREFIX' ) ) {
@@ -742,7 +750,7 @@ class WP_Object_Cache {
             $is_cluster = defined( 'WP_REDIS_CLUSTER' );
             $clients = $is_cluster ? WP_REDIS_CLUSTER : WP_REDIS_SERVERS;
 
-            foreach ( $clients as $index => &$connection_string ) {
+            foreach ( $clients as $index => $connection_string ) {
                 // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
                 $url_components = parse_url( $connection_string );
 
@@ -758,12 +766,12 @@ class WP_Object_Cache {
                     $add_params['alias'] = "redis-$index";
                 }
 
-                $connection_string = array_merge( $parameters, $add_params );
+                $clients[ $index ] = array_merge( $parameters, $add_params );
             }
 
             $this->redis = new Credis_Cluster( $clients );
 
-            foreach ( $clients as &$_client ) {
+            foreach ( $clients as $index => $_client ) {
                 $connection_string = "{$_client['scheme']}://{$_client['host']}:{$_client['port']}";
                 unset( $_client['scheme'], $_client['host'], $_client['port'] );
 
@@ -773,7 +781,7 @@ class WP_Object_Cache {
                     $connection_string .= '?' . http_build_query( $params, null, '&' );
                 }
 
-                $_client = $connection_string;
+                $clients[ $index ] = $connection_string;
             }
 
             $args['servers'] = $clients;
@@ -1744,7 +1752,7 @@ LUA;
 
         return (object) [
             // Connected, Disabled, Unknown, Not connected
-            'status' => '...',
+            // 'status' => '...',
             'hits' => $this->cache_hits,
             'misses' => $this->cache_misses,
             'ratio' => $total > 0 ? round( $this->cache_hits / ( $total / 100 ), 1 ) : 100,

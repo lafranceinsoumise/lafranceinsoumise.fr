@@ -830,3 +830,24 @@
 	pointer-events: none;
 	opacity: 0.2;
 }
+
+.refresh-sites a:first-child:before {
+	font: normal 20px/.5 dashicons;
+    speak: none;
+    display: inline-block;
+    padding: 0;
+    top: 9px;
+    left: -4px;
+    position: relative;
+    vertical-align: top;
+    content: "\f463";
+}
+
+.refresh-sites a:first-child.loading:before {
+	animation: rotation 1s infinite linear;
+}
+
+.refresh-sites a:first-child.success:before {
+    content: "\f147";
+    color: #46b450;
+}

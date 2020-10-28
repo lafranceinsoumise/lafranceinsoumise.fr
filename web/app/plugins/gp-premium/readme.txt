@@ -5,7 +5,7 @@ Tags: generatepress
 Requires at least: 4.5
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.11.2
+Stable tag: 1.12.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,70 @@ To learn how to install GP Premium, check out our documentation [here](https://d
 In most cases, #1 will work fine and is way easier.
 
 == Changelog ==
+
+= 1.12.2 =
+* Blog: Load columns CSS when using filter to enable it anywhere
+* Menu Plus: Fix sticky mobile header jump when using inline mobile toggle
+* Menu Plus: Add margin to sticky nav branding when set to full width
+* Menu Plus: Disable sticky nav container text align padding
+* Menu Plus: Make mobile menu absolute only when smooth scroll is enabled
+* Menu Plus: Improve nav as header/mobile header when using flexbox
+* Menu Plus: Prevent off-canvas panel close button from flashing visible when closing
+* Spacing: Fix custom nav search height
+
+= 1.12.1 =
+* Typography: Fix missing heading font size controls in the Customizer
+
+= 1.12.0 =
+* Blog: Fix column margin on mobile with some caching plugins
+* Blog: Add post-load trigger to infinite scroll for better plugin compatibility
+* Blog: Take generate_blog_columns filter into account when loading columns CSS
+* Colors: Add search menu-bar-item color live preview to Customizer
+* Elements: Fix broken custom hook field in Block Elements
+* Elements: Integrate page hero with text container alignment in GP 3.0
+* Elements: Better integrate Header Element colors with GP 3.0
+* Elements: Only disable content title when {{post_title}} is present on single pages
+* Elements: Fix </body> tag in metabox
+* Elements: Add generate_elements_metabox_ajax_allow_editors filter
+* Elements: Add new 3.0 hooks to hook selector
+* Elements: Re-add generate_elements_custom_args filter
+* Menu Plus: Better prepare navigation as header for GP 3.0
+* Menu Plus: Better prepare Off-Canvas Panel for GP 3.0
+* Menu Plus: Better prepare sticky navigation for GP 3.0
+* Menu Plus: Add has-menu-bar-items class to mobile header if needed
+* Menu Plus: Add is-logo-image class to all site logos
+* Menu Plus: Fix mobile header alignment when it has menu bar items
+* Secondary Nav: Better prepare sticky navigation for GP 3.0
+* Secondary Nav: Fix hidden navigation widget in top bar when merged with secondary nav
+* Sites: Improve the option-only import feature
+* Sites: Improve the refresh sites button functionality
+* Sites: Improve the undo site import functionality
+* Sites: Fix Elementor site import issues
+* Sites: Re-add Elementor sites to library
+* Spacing: Better prepare Customizer live preview for GP 3.0
+* Spacing: Fix blog column spacing Customizer live preview
+* Spacing: Stop handling mobile header, widget and footer widget features added in GP 3.0
+* Typography: Add mobile font size control for H3 (when using GP 3.0)
+* Typography: Add mobile font size control for H4 (when using GP 3.0)
+* Typography: Add mobile font size control for H5 (when using GP 3.0)
+* Typography: Allow empty tablet and mobile site title font size values
+* Typography: Make menu toggle CSS selector specific to primary navigation
+* WooCommerce: Use CSS for secondary product image functionality instead of JS
+* WooCommerce: Only load .js file if needed
+* WooCommerce: Fix quantity box functionality when multiple quantity boxes exist on the page
+* General: Improve alpha color picker script for better 5.5 compatibility
+* General: Move child theme stylesheet after dynamic stylesheet if enabled
+* General: Update gp-premium-de_DE.mo
+* General: Update gp-premium-es_ES.mo
+* General: Update gp-premium-fi.mo
+* General: Update gp-premium-pt_PT.mo
+* General: Update gp-premium-sv_SE.mo
+
+= 1.11.3 =
+* Blog: Set widths to grid-sizer element
+* Elements: Fix legacy Page Header/Hooks buttons in the Elements dashboard
+* Page Header: Replace .load() with .on('load')
+* Page Header: Fix color picker error in WP 5.5
 
 = 1.11.2 =
 * Blog: Remove negative featured image top margin from columns when using one container

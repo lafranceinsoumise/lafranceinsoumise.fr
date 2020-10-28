@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Elementor Pro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-09-08 07:40:55+0000\n"
+"PO-Revision-Date: 2020-10-24 12:58:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.3.1\n"
 "Language: fr\n"
 "Project-Id-Version: Elementor Pro\n"
+
+#: elementor-pro/modules/woocommerce/documents/product.php:37
+msgid "What is a Single Product Template?"
+msgstr "Qu’est-ce qu’un modèle de produit unique ?"
 
 #: elementor-pro/modules/theme-builder/documents/single-page.php:27
 msgid "What is a Single Page Template?"
@@ -19,15 +23,15 @@ msgstr "Qu’est-ce qu’un modèle de page unique ?"
 msgid "What is a Single Post Template?"
 msgstr "Qu’est-ce qu’un modèle de publication unique ?"
 
-#: elementor-pro/modules/theme-builder/module.php:353
+#: elementor-pro/modules/theme-builder/module.php:357
 msgid "Meet the New Theme Builder: More Intuitive and Visual Than Ever"
 msgstr "Rencontrez le nouveau constructeur de thème : plus intuitif et plus visuel que jamais"
 
-#: elementor-pro/modules/theme-builder/module.php:354
+#: elementor-pro/modules/theme-builder/module.php:358
 msgid "With the new Theme Builder you can visually manage every part of your site intuitively, making the task of designing a complete website that much easier"
 msgstr "Grâce au nouveau constructeur de thème, vous pouvez gérer visuellement et intuitivement chaque partie de votre site, ce qui facilite grandement la tâche de concevoir un site web complet"
 
-#: elementor-pro/modules/theme-builder/module.php:356
+#: elementor-pro/modules/theme-builder/module.php:360
 msgid "Try it Now"
 msgstr "Essayez-le maintenant"
 
@@ -72,12 +76,12 @@ msgid "A single post template allows you to easily design the layout and style o
 msgstr "Un modèle de publication unique vous permet de facilement concevoir la mise en page et le style des publications, en assurant par exemple une cohérence de conception dans tous les articles de votre blog."
 
 #: elementor-pro/modules/theme-builder/documents/single-post.php:26
-msgid "You can create multiple global post templates, and assign each to a different category."
-msgstr "Vous pouvez créer plusieurs modèles de publication globaux et assigner chacun à une catégorie différente."
+msgid "You can create multiple single post templates, and assign each to a different category."
+msgstr "Vous pouvez créer plusieurs modèles de publication unique et assigner chacun à une catégorie différente."
 
 #: elementor-pro/modules/theme-builder/documents/theme-document.php:107
-msgid "Congrats! Your Global Site Part is Live"
-msgstr "Félicitations ! Votre partie de site global est en ligne"
+msgid "Congrats! Your Site Part is Live"
+msgstr "Félicitations ! Votre partie du site est en ligne"
 
 #: elementor-pro/modules/theme-builder/module.php:123
 msgid "Open Site Editor"
@@ -96,24 +100,20 @@ msgid "A products archive template allows you to easily design the layout and st
 msgstr "Un modèle d'archive de produits vous permet de facilement concevoir la présentation et le style de votre page de boutique WooCommerce ou d’autres pages d’archive de produits - ces pages qui présentent une liste de produits, qui peut être filtrée par des termes tels que catégories, étiquettes, etc."
 
 #: elementor-pro/modules/woocommerce/documents/product-archive.php:47
-msgid "You can create multiple global archive product templates, and assign each to different categories of products. This gives you the freedom to customize the appearance for each type of product being shown."
-msgstr "Vous pouvez créer plusieurs modèles globaux d’archive de produits et les affecter à différentes catégories de produits. Cela vous donne la liberté de personnaliser l’apparence de chaque type de produit affiché."
-
-#: elementor-pro/modules/woocommerce/documents/product.php:37
-msgid "What is a Global Product?"
-msgstr "Qu’est-ce qu’un produit global ?"
+msgid "You can create multiple products archive templates, and assign each to different categories of products. This gives you the freedom to customize the appearance for each type of product being shown."
+msgstr "Vous pouvez créer plusieurs modèles d’archive de produits et les affecter à différentes catégories de produits. Cela vous donne la liberté de personnaliser l’apparence de chaque type de produit affiché."
 
 #: elementor-pro/modules/woocommerce/documents/product.php:38
-msgid "A global product template allows you to easily design the layout and style of WooCommerce single product pages, and apply that template to various conditions that you assign."
-msgstr "Un modèle de produit global vous permet de concevoir facilement la mise en page et le style des pages de produit uniques de WooCommerce et d’appliquer ce modèle aux diverses conditions que vous attribuez."
+msgid "A single product template allows you to easily design the layout and style of WooCommerce single product pages, and apply that template to various conditions that you assign."
+msgstr "Un modèle de produit global vous permet de concevoir facilement la mise en page et le style des pages de produit unique de WooCommerce et d’appliquer ce modèle aux diverses conditions que vous attribuez."
 
 #: elementor-pro/modules/woocommerce/documents/product.php:39
-msgid "You can create multiple global product templates, and assign each to different types of products, enabling a custom design for each group of similar products."
-msgstr "Vous pouvez créer plusieurs modèles de produits globaux et les affecter à différents types de produits, ce qui permet une conception personnalisée pour chaque groupe de produits similaires."
+msgid "You can create multiple single product templates, and assign each to different types of products, enabling a custom design for each group of similar products."
+msgstr "Vous pouvez créer plusieurs modèles de produit unique et les affecter à différents types de produits, ce qui permet une conception personnalisée pour chaque groupe de produits similaires."
 
 #: elementor-pro/modules/theme-builder/documents/archive.php:37
-msgid "If you’d like a different style for a specific category, it’s easy to create a separate global archive template whose condition is to only display when users are viewing that category’s list of posts."
-msgstr "Si vous souhaitez un style différent pour une catégorie spécifique, il est facile de créer un modèle d’archive global séparé dont la condition est de s'afficher uniquement lorsque les utilisateurs consultent la liste des publications de cette catégorie."
+msgid "If you’d like a different style for a specific category, it’s easy to create a separate archive template whose condition is to only display when users are viewing that category’s list of posts."
+msgstr "Si vous souhaitez un style différent pour une catégorie spécifique, il est facile de créer un modèle d’archive séparé dont la condition est de s'afficher uniquement lorsque les utilisateurs consultent la liste des publications de cette catégorie."
 
 #: elementor-pro/modules/theme-builder/documents/error-404.php:19
 msgid "Error 404"
@@ -164,8 +164,8 @@ msgid "A single page template allows you to easily create the layout and style o
 msgstr "Un modèle de page unique vous permet de facilement créer la mise en page et le style des pages, en assurant la cohérence de la conception sur toutes les pages de votre site."
 
 #: elementor-pro/modules/theme-builder/documents/single-page.php:29
-msgid "You can create multiple global page templates, and assign each to different areas of your site."
-msgstr "Vous pouvez créer plusieurs modèles de page globaux et les affecter à différentes zones de votre site."
+msgid "You can create multiple single page templates, and assign each to different areas of your site."
+msgstr "Vous pouvez créer plusieurs modèles de page unique et les affecter à différentes zones de votre site."
 
 #: elementor-pro/core/app/modules/site-editor/data/endpoints/templates.php:157
 msgid "No instances"
@@ -509,7 +509,7 @@ msgstr "Table des matières"
 
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:88
 msgid "Anchors By Tags"
-msgstr "Ancres par étiquettes"
+msgstr "Ancres par balises"
 
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:108
 msgid "Container"
@@ -1434,12 +1434,12 @@ msgstr "Appliquer le modèle actuel à ces pages."
 msgid "Save & Close"
 msgstr "Enregistrer & Fermer"
 
-#: elementor-pro/modules/theme-builder/module.php:312
-#: elementor-pro/modules/theme-builder/module.php:337
+#: elementor-pro/modules/theme-builder/module.php:316
+#: elementor-pro/modules/theme-builder/module.php:341
 msgid "Theme Builder"
 msgstr "Constructeur de thème"
 
-#: elementor-pro/modules/theme-builder/module.php:319
+#: elementor-pro/modules/theme-builder/module.php:323
 msgid "Add New Theme Template"
 msgstr "Ajouter un nouveau modèle de thème"
 
@@ -1892,7 +1892,7 @@ msgstr "Fil d'Ariane WooCommerce"
 
 #: elementor-pro/modules/woocommerce/widgets/categories.php:23
 msgid "Product Categories"
-msgstr "Catégorie des produits"
+msgstr "Catégories de produit"
 
 #: elementor-pro/modules/woocommerce/widgets/categories.php:89
 msgid "Current Subcategories"
@@ -1915,7 +1915,7 @@ msgstr "Le bouton \"Suivre\" a été déprécié par Facebook et ne fonctionnera
 #: elementor-pro/modules/woocommerce/tags/category-image.php:16
 #: elementor-pro/modules/woocommerce/widgets/category-image.php:21
 msgid "Category Image"
-msgstr "Catégorie d'image"
+msgstr "Image de catégorie"
 
 #: elementor-pro/modules/dynamic-tags/module.php:102
 #: elementor-pro/modules/dynamic-tags/tags/internal-url.php:65
@@ -2030,7 +2030,7 @@ msgstr "ID de requête"
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:394
 msgid "Give your Query a custom unique id to allow server side filtering"
-msgstr "Donner à la requête un identifiant unique personnalisé pour permettre le filtrage côté serveur"
+msgstr "Donner à la requête un ID unique personnalisé pour permettre le filtrage côté serveur"
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:256
 #: elementor-pro/modules/query-control/module.php:106
@@ -2414,7 +2414,7 @@ msgstr "Elementor canevas"
 msgid "Elementor Full Width"
 msgstr "Elementor pleine largeur"
 
-#: elementor-pro/modules/theme-builder/module.php:222
+#: elementor-pro/modules/theme-builder/module.php:226
 msgid "Select Post Type"
 msgstr "Sélectionner un type de publication"
 
@@ -2591,7 +2591,7 @@ msgstr "Modèle de page par défaut de votre thème"
 
 #: elementor-pro/modules/theme-builder/documents/theme-page-document.php:64
 msgid "No header, no footer, just Elementor"
-msgstr "Pas d’en-tête, pas de pied de page, juste Elementor"
+msgstr "Aucun en-tête, aucun pied de page, juste Elementor"
 
 #: elementor-pro/modules/theme-builder/documents/theme-page-document.php:77
 msgid "This template includes the header, full-width content and footer"
@@ -2618,7 +2618,7 @@ msgstr "Ajouter une condition"
 msgid "Where Do You Want to Display Your %s?"
 msgstr "Où voulez-vous afficher votre %s ?"
 
-#: elementor-pro/modules/theme-builder/module.php:192
+#: elementor-pro/modules/theme-builder/module.php:196
 msgid "Select a Location"
 msgstr "Sélectionner un Emplacement"
 
@@ -2727,7 +2727,7 @@ msgstr "Aucun commentaire"
 #: elementor-pro/modules/theme-elements/widgets/post-info.php:240
 #: elementor-pro/modules/theme-elements/widgets/post-info.php:755
 msgid "One Comment"
-msgstr "Un Commentaire"
+msgstr "Un commentaire"
 
 #: elementor-pro/modules/theme-elements/widgets/post-info.php:253
 #: elementor-pro/modules/theme-elements/widgets/post-info.php:756
@@ -3042,11 +3042,11 @@ msgstr "Nombre de commentaires"
 
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:37
 msgid "No Comments Format"
-msgstr "Format sans commentaires"
+msgstr "Format sans commentaire"
 
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:38
 msgid "No Responses"
-msgstr "Pas de Réponse"
+msgstr "Aucune réponse"
 
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:45
 msgid "One Comment Format"
@@ -3058,7 +3058,7 @@ msgstr "Une réponse"
 
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:53
 msgid "Many Comment Format"
-msgstr "Nombreux format de commentaires"
+msgstr "Format nombreux commentaires"
 
 #: elementor-pro/modules/dynamic-tags/tags/comments-number.php:54
 msgid "{number} Responses"
@@ -3286,7 +3286,7 @@ msgid "In %s"
 msgstr "Dans %s"
 
 #: elementor-pro/modules/theme-builder/conditions/not-found404.php:23
-#: elementor-pro/modules/theme-builder/module.php:251
+#: elementor-pro/modules/theme-builder/module.php:255
 msgid "404 Page"
 msgstr "Page 404"
 
@@ -3700,7 +3700,7 @@ msgstr "Échec d’écriture du fichier sur le disque."
 #. translators: %s: phpinfo()
 #: elementor-pro/modules/forms/fields/upload.php:245
 msgid "A PHP extension stopped the file upload. PHP does not provide a way to ascertain which extension caused the file upload to stop; examining the list of loaded extensions with %s may help."
-msgstr "Une extension PHP a arrêté le téléchargement du fichier. PHP ne permet pas de déterminer quelle extension a provoqué l'arrêt du téléchargement du fichier. Examiner la liste des extensions chargées avec %s peut vous aider."
+msgstr "Une extension PHP a arrêté le téléversement du fichier. PHP ne permet pas de déterminer quelle extension a provoqué l'arrêt du téléversement du fichier. Examinez la liste des extensions chargées avec %s peut vous aider."
 
 #: elementor-pro/modules/forms/fields/upload.php:287
 msgid "This file type is not allowed."
@@ -3858,7 +3858,7 @@ msgstr "Clé API personnalisée"
 #: elementor-pro/modules/forms/classes/getresponse-handler.php:58
 #: elementor-pro/modules/forms/classes/mailerlite-handler.php:66
 #: elementor-pro/modules/theme-builder/documents/theme-section-document.php:29
-#: elementor-pro/modules/theme-builder/module.php:197
+#: elementor-pro/modules/theme-builder/module.php:201
 msgid "Select..."
 msgstr "Selectionner…"
 
@@ -3980,7 +3980,7 @@ msgstr "Thème des commentaires"
 
 #: elementor-pro/modules/theme-elements/widgets/post-comments.php:58
 msgid "The Theme Comments skin uses the currently active theme comments design and layout to display the comment form and comments."
-msgstr "L’habillage des commentaires de thème utilise la conception et la mise en page des commentaires du thème actuellement actifs pour afficher le formulaire de commentaires et les commentaires."
+msgstr "L’habillage des commentaires de thème utilise la conception et la mise en page des commentaires du thème actuellement actifs pour afficher le formulaire de commentaire et les commentaires."
 
 #: elementor-pro/modules/dynamic-tags/tags/internal-url.php:71
 #: elementor-pro/modules/dynamic-tags/tags/internal-url.php:88
@@ -4632,7 +4632,7 @@ msgstr "Commentaire parent"
 
 #: elementor-pro/modules/social/widgets/facebook-embed.php:112
 msgid "Set to include parent comment (if URL is a reply)."
-msgstr "Configuré pour inclure le commentaire parent (si l’URL est une réponse)."
+msgstr "Configurer pour inclure le commentaire parent (si l’URL est une réponse)."
 
 #: elementor-pro/modules/social/widgets/facebook-embed.php:122
 msgid "Full Post"
@@ -6007,7 +6007,7 @@ msgstr "Filtrer par"
 #: elementor-pro/modules/woocommerce/widgets/products-deprecated.php:118
 #: elementor-pro/modules/woocommerce/widgets/products.php:60
 msgid "Featured"
-msgstr "Mis en exergue"
+msgstr "Mis en avant"
 
 #: elementor-pro/modules/pricing/widgets/price-table.php:155
 #: elementor-pro/modules/woocommerce/tags/product-price.php:26
@@ -7624,7 +7624,7 @@ msgstr "Nombre"
 #: elementor-pro/modules/forms/widgets/form.php:50
 #: elementor-pro/modules/library/wp-widgets/elementor-library.php:104
 #: elementor-pro/modules/theme-builder/documents/section.php:52
-#: elementor-pro/modules/theme-builder/module.php:227
+#: elementor-pro/modules/theme-builder/module.php:231
 #: elementor-pro/modules/woocommerce/widgets/elements.php:66
 #: elementor-pro/modules/woocommerce/widgets/single-elements.php:44
 msgid "Select"
@@ -8570,7 +8570,7 @@ msgstr "Choisir un modèle"
 
 #: elementor-pro/modules/library/wp-widgets/elementor-library.php:19
 msgid "Elementor Library"
-msgstr "Bibliothèque d'Elementor"
+msgstr "Bibliothèque Elementor"
 
 #: elementor-pro/modules/library/wp-widgets/elementor-library.php:21
 msgid "Embed your saved elements."

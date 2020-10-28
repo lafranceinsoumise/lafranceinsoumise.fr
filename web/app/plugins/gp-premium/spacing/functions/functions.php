@@ -161,20 +161,23 @@ if ( ! function_exists( 'generate_spacing_premium_defaults' ) ) {
 		$defaults['off_canvas_menu_item_height'] = '';
 		$defaults['content_element_separator'] = '2'; // em.
 
-		$defaults['mobile_header_top'] = '';
-		$defaults['mobile_header_right'] = '';
-		$defaults['mobile_header_bottom'] = '';
-		$defaults['mobile_header_left'] = '';
+		// These defaults were added to GeneratePress (free) in 3.0.0.
+		if ( defined( 'GENERATE_VERSION' ) && version_compare( GENERATE_VERSION, '3.0.0-alpha.1', '<' ) ) {
+			$defaults['mobile_header_top'] = '';
+			$defaults['mobile_header_right'] = '';
+			$defaults['mobile_header_bottom'] = '';
+			$defaults['mobile_header_left'] = '';
 
-		$defaults['mobile_widget_top'] = '';
-		$defaults['mobile_widget_right'] = '';
-		$defaults['mobile_widget_bottom'] = '';
-		$defaults['mobile_widget_left'] = '';
+			$defaults['mobile_widget_top'] = '';
+			$defaults['mobile_widget_right'] = '';
+			$defaults['mobile_widget_bottom'] = '';
+			$defaults['mobile_widget_left'] = '';
 
-		$defaults['mobile_footer_widget_container_top'] = '';
-		$defaults['mobile_footer_widget_container_right'] = '';
-		$defaults['mobile_footer_widget_container_bottom'] = '';
-		$defaults['mobile_footer_widget_container_left'] = '';
+			$defaults['mobile_footer_widget_container_top'] = '';
+			$defaults['mobile_footer_widget_container_right'] = '';
+			$defaults['mobile_footer_widget_container_bottom'] = '';
+			$defaults['mobile_footer_widget_container_left'] = '';
+		}
 
 		return $defaults;
 	}
@@ -211,72 +214,78 @@ function generate_spacing_do_premium_css() {
 		$premium_css->set_selector( '.main-navigation .main-nav ul li a,.main-navigation .menu-toggle,.main-navigation .mobile-bar-items a,.main-navigation .menu-bar-item > a' );
 		$premium_css->add_property( 'line-height', absint( $spacing_settings['mobile_menu_item_height'] ), false, 'px' );
 
-		$premium_css->set_selector( '.main-navigation .site-logo.navigation-logo img, .mobile-header-navigation .site-logo.mobile-header-logo img, .navigation-search input' );
+		$premium_css->set_selector( '.main-navigation .site-logo.navigation-logo img, .mobile-header-navigation .site-logo.mobile-header-logo img, .navigation-search input[type="search"]' );
 		$premium_css->add_property( 'height', absint( $spacing_settings['mobile_menu_item_height'] ), false, 'px' );
 	}
 
 	$premium_css->stop_media_query();
 
-	$premium_css->start_media_query( generate_premium_get_media_query( 'mobile' ) );
+	// This CSS was added to GeneratePress (free) in 3.0.0.
+	if ( defined( 'GENERATE_VERSION' ) && version_compare( GENERATE_VERSION, '3.0.0-alpha.1', '<' ) ) {
+		$premium_css->start_media_query( generate_premium_get_media_query( 'mobile' ) );
 
-	$premium_css->set_selector( '.inside-header' );
+		$premium_css->set_selector( '.inside-header' );
 
-	if ( '' !== $spacing_settings['mobile_header_top'] ) {
-		$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_header_top'] ), false, 'px' );
+		if ( '' !== $spacing_settings['mobile_header_top'] ) {
+			$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_header_top'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_header_right'] ) {
+			$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_header_right'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_header_bottom'] ) {
+			$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_header_bottom'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_header_left'] ) {
+			$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_header_left'] ), false, 'px' );
+		}
+
+		$premium_css->set_selector( '.widget-area .widget' );
+
+		if ( '' !== $spacing_settings['mobile_widget_top'] ) {
+			$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_widget_top'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_widget_right'] ) {
+			$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_widget_right'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_widget_bottom'] ) {
+			$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_widget_bottom'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_widget_left'] ) {
+			$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_widget_left'] ), false, 'px' );
+		}
+
+		$premium_css->set_selector( '.footer-widgets' );
+
+		if ( '' !== $spacing_settings['mobile_footer_widget_container_top'] ) {
+			$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_footer_widget_container_top'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_footer_widget_container_right'] ) {
+			$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_footer_widget_container_right'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_footer_widget_container_bottom'] ) {
+			$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_footer_widget_container_bottom'] ), false, 'px' );
+		}
+
+		if ( '' !== $spacing_settings['mobile_footer_widget_container_left'] ) {
+			$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_footer_widget_container_left'] ), false, 'px' );
+		}
+
+		$premium_css->stop_media_query();
+
+		$premium_css->set_selector( '.post-image, .page-content, .entry-content, .entry-summary, footer.entry-meta' );
+		$premium_css->add_property( 'margin-top', floatval( $spacing_settings['content_element_separator'] ), '2', 'em' );
+	} else {
+		$premium_css->set_selector( '.post-image:not(:first-child), .page-content:not(:first-child), .entry-content:not(:first-child), .entry-summary:not(:first-child), footer.entry-meta' );
+		$premium_css->add_property( 'margin-top', floatval( $spacing_settings['content_element_separator'] ), '2', 'em' );
 	}
-
-	if ( '' !== $spacing_settings['mobile_header_right'] ) {
-		$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_header_right'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_header_bottom'] ) {
-		$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_header_bottom'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_header_left'] ) {
-		$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_header_left'] ), false, 'px' );
-	}
-
-	$premium_css->set_selector( '.widget-area .widget' );
-
-	if ( '' !== $spacing_settings['mobile_widget_top'] ) {
-		$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_widget_top'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_widget_right'] ) {
-		$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_widget_right'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_widget_bottom'] ) {
-		$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_widget_bottom'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_widget_left'] ) {
-		$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_widget_left'] ), false, 'px' );
-	}
-
-	$premium_css->set_selector( '.footer-widgets' );
-
-	if ( '' !== $spacing_settings['mobile_footer_widget_container_top'] ) {
-		$premium_css->add_property( 'padding-top', absint( $spacing_settings['mobile_footer_widget_container_top'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_footer_widget_container_right'] ) {
-		$premium_css->add_property( 'padding-right', absint( $spacing_settings['mobile_footer_widget_container_right'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_footer_widget_container_bottom'] ) {
-		$premium_css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_footer_widget_container_bottom'] ), false, 'px' );
-	}
-
-	if ( '' !== $spacing_settings['mobile_footer_widget_container_left'] ) {
-		$premium_css->add_property( 'padding-left', absint( $spacing_settings['mobile_footer_widget_container_left'] ), false, 'px' );
-	}
-
-	$premium_css->stop_media_query();
-
-	$premium_css->set_selector( '.post-image, .page-content, .entry-content, .entry-summary, footer.entry-meta' );
-	$premium_css->add_property( 'margin-top', floatval( $spacing_settings['content_element_separator'] ), '2', 'em' );
 
 	$premium_css->set_selector( '.post-image-above-header .inside-article div.featured-image, .post-image-above-header .inside-article div.post-image' );
 	$premium_css->add_property( 'margin-bottom', floatval( $spacing_settings['content_element_separator'] ), '2', 'em' );
@@ -293,7 +302,7 @@ function generate_spacing_do_premium_css() {
 				$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .main-nav > ul > li > a,.sticky-navigation-transition .menu-toggle,.main-navigation.sticky-navigation-transition .mobile-bar-items a, .sticky-navigation-transition .navigation-branding .main-title' );
 				$premium_css->add_property( 'line-height', absint( $spacing_settings['sticky_menu_item_height'] ), false, 'px' );
 
-				$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .site-logo img, .main-navigation.sticky-navigation-transition .navigation-search input, .main-navigation.sticky-navigation-transition .navigation-branding img' );
+				$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .site-logo img, .main-navigation.sticky-navigation-transition .navigation-search input[type="search"], .main-navigation.sticky-navigation-transition .navigation-branding img' );
 				$premium_css->add_property( 'height', absint( $spacing_settings['sticky_menu_item_height'] ), false, 'px' );
 
 			$premium_css->stop_media_query();

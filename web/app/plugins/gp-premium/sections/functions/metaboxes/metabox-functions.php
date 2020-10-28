@@ -172,20 +172,7 @@ if ( ! function_exists( 'generate_sections_metabox_scripts' ) ) {
 				wp_enqueue_script( 'media-upload' );
 				wp_enqueue_script( 'wp-color-picker' );
 				wp_enqueue_style( 'wp-color-picker' );
-				wp_enqueue_script( 'wp-color-picker-alpha', plugin_dir_url( __FILE__ ) . 'js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), GENERATE_SECTIONS_VERSION );
-
-				wp_localize_script(
-					'wp-color-picker-alpha',
-					'gpSectionsColorPickerL10n',
-					array(
-						'defaultLabel'     => __( 'Color value', 'gp-premium' ),
-						'pick'             => __( 'Select Color', 'gp-premium' ),
-						'defaultString'    => __( 'Default', 'gp-premium' ),
-						'defaultAriaLabel' => __( 'Select default color', 'gp-premium' ),
-						'clear'            => __( 'Clear', 'gp-premium' ),
-						'clearAriaLabel'   => __( 'Clear color', 'gp-premium' ),
-					)
-				);
+				wp_enqueue_script( 'wp-color-picker-alpha', GP_LIBRARY_DIRECTORY_URL . 'alpha-color-picker/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.4', true );
 
 				wp_enqueue_media();
 

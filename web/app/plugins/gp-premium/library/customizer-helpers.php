@@ -85,7 +85,7 @@ function generate_premium_control_inline_scripts() {
 		$color_defaults = generate_get_color_defaults();
 
 		$controls_a11y['navigationTextColor'] = $color_defaults['navigation_text_color'];
-		$controls_a11y['headerTextColor'] = $color_defaults['header_text_color'];
+		$controls_a11y['siteTitleTextColor'] = $color_defaults['site_title_color'];
 	}
 
 	if ( function_exists( 'generate_get_defaults' ) ) {

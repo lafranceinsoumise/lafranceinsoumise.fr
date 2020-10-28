@@ -63,6 +63,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			$button.html( svgIcon + generateBlog.more ).removeClass( 'loading' );
+			$( document.body ).trigger( 'post-load' );
 		} );
 
 		$container.on( 'last.infiniteScroll', function() {

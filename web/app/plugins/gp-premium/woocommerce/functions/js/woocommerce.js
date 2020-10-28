@@ -24,14 +24,6 @@ jQuery( document ).ready( function( $ ) {
 		};
 	};
 
-	$( '.wc-has-gallery .wc-product-image' ).hover(
-		function() {
-			$( this ).find( '.secondary-image' ).css( 'opacity','1' );
-		}, function() {
-			$( this ).find( '.secondary-image' ).css( 'opacity','0' );
-		}
-	);
-
 	$( 'body' ).on( 'added_to_cart', function() {
 		if ( ! $( '.wc-menu-item' ).hasClass( 'has-items' ) ) {
 			$( '.wc-menu-item' ).addClass( 'has-items' );
@@ -181,7 +173,7 @@ jQuery( document ).ready( function( $ ) {
 		}
 	} );
 
-	function generateQuantityButtons( quantitySelector ) {
+	function generateQuantityButtons() {
 		var quantityBoxes,
 			cart = $( '.woocommerce div.product form.cart' );
 
@@ -190,95 +182,95 @@ jQuery( document ).ready( function( $ ) {
 			return;
 		}
 
-		if ( ! quantitySelector ) {
-			quantitySelector = '.qty';
-		}
+		quantityBoxes = $( '.cart div.quantity:not(.buttons-added), .cart td.quantity:not(.buttons-added)' ).find( '.qty' );
 
-		quantityBoxes = $( 'div.quantity:not(.buttons-added), td.quantity:not(.buttons-added)' ).find( quantitySelector );
+		if ( quantityBoxes ) {
+			$.each( quantityBoxes, function( key, value ) {
+				var box = $( value );
 
-		if ( quantityBoxes && 'date' !== quantityBoxes.prop( 'type' ) && 'hidden' !== quantityBoxes.prop( 'type' ) ) {
+				if ( 'date' !== box.prop( 'type' ) && 'hidden' !== box.prop( 'type' ) ) {
+					// Add plus and minus icons
+					box.parent().addClass( 'buttons-added' ).prepend('<a href="javascript:void(0)" class="minus">-</a>');
+					box.after('<a href="javascript:void(0)" class="plus">+</a>');
 
-			// Add plus and minus icons
-			quantityBoxes.parent().addClass( 'buttons-added' ).prepend('<a href="javascript:void(0)" class="minus">-</a>');
-	        quantityBoxes.after('<a href="javascript:void(0)" class="plus">+</a>');
+					// Target quantity inputs on product pages
+					$( 'input.qty:not(.product-quantity input.qty)' ).each( function() {
+						var min = parseFloat( $( this ).attr( 'min' ) );
 
-			// Target quantity inputs on product pages
-			$( 'input' + quantitySelector + ':not(.product-quantity input' + quantitySelector + ')' ).each( function() {
-				var min = parseFloat( $( this ).attr( 'min' ) );
+						if ( min && min > 0 && parseFloat( $( this ).val() ) < min ) {
+							$( this ).val( min );
+						}
+					} );
 
-				if ( min && min > 0 && parseFloat( $( this ).val() ) < min ) {
-					$( this ).val( min );
-				}
-			});
+					// Quantity input
+					if ( $( 'body' ).hasClass( 'single-product' ) && ! cart.hasClass( 'grouped_form' ) ) {
+						var quantityInput = $( '.woocommerce form input[type=number].qty' );
 
-			// Quantity input
-			if ( $( 'body' ).hasClass( 'single-product' ) && ! cart.hasClass( 'grouped_form' ) ) {
-				var quantityInput = $( '.woocommerce form input[type=number].qty' );
-				quantityInput.on( 'keyup', function() {
-					var qty_val = $( this ).val();
-					quantityInput.val( qty_val );
-				});
-			}
-
-			$( '.plus, .minus' ).unbind( 'click' );
-
-			$( '.plus, .minus' ).on( 'click', function() {
-
-				// Quantity
-				var quantityBox;
-
-				// If floating bar is enabled
-				if ( $( 'body' ).hasClass( 'single-product' ) && ! cart.hasClass( 'grouped_form' ) && ! cart.hasClass( 'cart_group' ) ) {
-					quantityBox = $( '.plus, .minus' ).closest( '.quantity' ).find( quantitySelector );
-				} else {
-					quantityBox = $( this ).closest( '.quantity' ).find( quantitySelector );
-				}
-
-				// Get values
-				var currentQuantity = parseFloat( quantityBox.val() ),
-				    maxQuantity     = parseFloat( quantityBox.attr( 'max' ) ),
-				    minQuantity     = parseFloat( quantityBox.attr( 'min' ) ),
-				    step            = quantityBox.attr( 'step' );
-
-				// Fallback default values
-				if ( ! currentQuantity || '' === currentQuantity  || 'NaN' === currentQuantity ) {
-					currentQuantity = 0;
-				}
-
-				if ( '' === maxQuantity || 'NaN' === maxQuantity ) {
-					maxQuantity = '';
-				}
-
-				if ( '' === minQuantity || 'NaN' === minQuantity ) {
-					minQuantity = 0;
-				}
-
-				if ( 'any' === step || '' === step  || undefined === step || 'NaN' === parseFloat( step )  ) {
-					step = 1;
-				}
-
-				// Change the value
-				if ( $( this ).is( '.plus' ) ) {
-
-					if ( maxQuantity && ( maxQuantity == currentQuantity || currentQuantity > maxQuantity ) ) {
-						quantityBox.val( maxQuantity );
-					} else {
-						quantityBox.val( currentQuantity + parseFloat( step ) );
+						quantityInput.on( 'keyup', function() {
+							var qty_val = $( this ).val();
+							quantityInput.val( qty_val );
+						} );
 					}
 
-				} else {
+					$( '.plus, .minus' ).unbind( 'click' );
 
-					if ( minQuantity && ( minQuantity == currentQuantity || currentQuantity < minQuantity ) ) {
-						quantityBox.val( minQuantity );
-					} else if ( currentQuantity > 0 ) {
-						quantityBox.val( currentQuantity - parseFloat( step ) );
-					}
+					$( '.plus, .minus' ).on( 'click', function() {
+						// Quantity
+						var quantityBox;
 
+						// If floating bar is enabled
+						if ( $( 'body' ).hasClass( 'single-product' ) && ! cart.hasClass( 'grouped_form' ) && ! cart.hasClass( 'cart_group' ) ) {
+							quantityBox = $( '.plus, .minus' ).closest( '.quantity' ).find( '.qty' );
+						} else {
+							quantityBox = $( this ).closest( '.quantity' ).find( '.qty' );
+						}
+
+						// Get values
+						var currentQuantity = parseFloat( quantityBox.val() ),
+							maxQuantity     = parseFloat( quantityBox.attr( 'max' ) ),
+							minQuantity     = parseFloat( quantityBox.attr( 'min' ) ),
+							step            = quantityBox.attr( 'step' );
+
+						// Fallback default values
+						if ( ! currentQuantity || '' === currentQuantity  || 'NaN' === currentQuantity ) {
+							currentQuantity = 0;
+						}
+
+						if ( '' === maxQuantity || 'NaN' === maxQuantity ) {
+							maxQuantity = '';
+						}
+
+						if ( '' === minQuantity || 'NaN' === minQuantity ) {
+							minQuantity = 0;
+						}
+
+						if ( 'any' === step || '' === step  || undefined === step || 'NaN' === parseFloat( step )  ) {
+							step = 1;
+						}
+
+						// Change the value
+						if ( $( this ).is( '.plus' ) ) {
+
+							if ( maxQuantity && ( maxQuantity == currentQuantity || currentQuantity > maxQuantity ) ) {
+								quantityBox.val( maxQuantity );
+							} else {
+								quantityBox.val( currentQuantity + parseFloat( step ) );
+							}
+
+						} else {
+
+							if ( minQuantity && ( minQuantity == currentQuantity || currentQuantity < minQuantity ) ) {
+								quantityBox.val( minQuantity );
+							} else if ( currentQuantity > 0 ) {
+								quantityBox.val( currentQuantity - parseFloat( step ) );
+							}
+
+						}
+
+						// Trigger change event
+						quantityBox.trigger( 'change' );
+					} );
 				}
-
-				// Trigger change event
-				quantityBox.trigger( 'change' );
-
 			} );
 		}
 	}

@@ -80,10 +80,10 @@ class GeneratePress_Block_Element {
 				case 'left-sidebar':
 					$hook = 'generate_before_left_sidebar_content';
 					break;
+			}
 
-				case 'custom':
-					$hook = $custom_hook;
-					break;
+			if ( 'custom' === $hook && $custom_hook ) {
+				$hook = $custom_hook;
 			}
 
 			if ( ! $hook ) {

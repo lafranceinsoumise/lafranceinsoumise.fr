@@ -472,7 +472,7 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 			array(
 				'default' => $defaults['tablet_site_title_font_size'],
 				'type' => 'option',
-				'sanitize_callback' => 'absint',
+				'sanitize_callback' => 'generate_premium_sanitize_empty_absint',
 				'transport' => 'postMessage',
 			)
 		);
@@ -482,7 +482,7 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 			array(
 				'default' => $defaults['mobile_site_title_font_size'],
 				'type' => 'option',
-				'sanitize_callback' => 'absint',
+				'sanitize_callback' => 'generate_premium_sanitize_empty_absint',
 				'transport' => 'postMessage',
 			)
 		);
@@ -1618,6 +1618,42 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 			)
 		);
 
+		$h3_font_size_options = array(
+			'desktop' => array(
+				'min' => 10,
+				'max' => 80,
+				'step' => 1,
+				'edit' => true,
+				'unit' => 'px',
+			),
+		);
+
+		$h3_font_size_settings = array(
+			'desktop' => 'generate_settings[heading_3_font_size]',
+		);
+
+		if ( isset( $defaults['mobile_heading_3_font_size'] ) ) {
+			$wp_customize->add_setting(
+				'generate_settings[mobile_heading_3_font_size]',
+				array(
+					'default' => $defaults['mobile_heading_3_font_size'],
+					'type' => 'option',
+					'sanitize_callback' => 'generate_premium_sanitize_empty_absint',
+					'transport' => 'postMessage',
+				)
+			);
+
+			$h3_font_size_options['mobile'] = array(
+				'min' => 10,
+				'max' => 80,
+				'step' => 1,
+				'edit' => true,
+				'unit' => 'px',
+			);
+
+			$h3_font_size_settings['mobile'] = 'generate_settings[mobile_heading_3_font_size]';
+		}
+
 		$wp_customize->add_control(
 			new GeneratePress_Pro_Range_Slider_Control(
 				$wp_customize,
@@ -1625,18 +1661,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 				array(
 					'description' => __( 'Font size', 'gp-premium' ),
 					'section' => 'font_content_section',
-					'settings' => array(
-						'desktop' => 'generate_settings[heading_3_font_size]',
-					),
-					'choices' => array(
-						'desktop' => array(
-							'min' => 10,
-							'max' => 80,
-							'step' => 1,
-							'edit' => true,
-							'unit' => 'px',
-						),
-					),
+					'settings' => $h3_font_size_settings,
+					'choices' => $h3_font_size_options,
 				)
 			)
 		);
@@ -1785,6 +1811,42 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 				)
 			);
 
+			$h4_font_size_options = array(
+				'desktop' => array(
+					'min' => 10,
+					'max' => 80,
+					'step' => 1,
+					'edit' => true,
+					'unit' => 'px',
+				),
+			);
+
+			$h4_font_size_settings = array(
+				'desktop' => 'generate_settings[heading_4_font_size]',
+			);
+
+			if ( isset( $defaults['mobile_heading_4_font_size'] ) ) {
+				$wp_customize->add_setting(
+					'generate_settings[mobile_heading_4_font_size]',
+					array(
+						'default' => $defaults['mobile_heading_4_font_size'],
+						'type' => 'option',
+						'sanitize_callback' => 'generate_premium_sanitize_empty_absint',
+						'transport' => 'postMessage',
+					)
+				);
+
+				$h4_font_size_options['mobile'] = array(
+					'min' => 10,
+					'max' => 80,
+					'step' => 1,
+					'edit' => true,
+					'unit' => 'px',
+				);
+
+				$h4_font_size_settings['mobile'] = 'generate_settings[mobile_heading_4_font_size]';
+			}
+
 			$wp_customize->add_control(
 				new GeneratePress_Pro_Range_Slider_Control(
 					$wp_customize,
@@ -1792,18 +1854,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 					array(
 						'description' => __( 'Font size', 'gp-premium' ),
 						'section' => 'font_content_section',
-						'settings' => array(
-							'desktop' => 'generate_settings[heading_4_font_size]',
-						),
-						'choices' => array(
-							'desktop' => array(
-								'min' => 10,
-								'max' => 80,
-								'step' => 1,
-								'edit' => true,
-								'unit' => 'px',
-							),
-						),
+						'settings' => $h4_font_size_settings,
+						'choices' => $h4_font_size_options,
 					)
 				)
 			);
@@ -1916,6 +1968,42 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 				)
 			);
 
+			$h5_font_size_options = array(
+				'desktop' => array(
+					'min' => 10,
+					'max' => 80,
+					'step' => 1,
+					'edit' => true,
+					'unit' => 'px',
+				),
+			);
+
+			$h5_font_size_settings = array(
+				'desktop' => 'generate_settings[heading_5_font_size]',
+			);
+
+			if ( isset( $defaults['mobile_heading_5_font_size'] ) ) {
+				$wp_customize->add_setting(
+					'generate_settings[mobile_heading_5_font_size]',
+					array(
+						'default' => $defaults['mobile_heading_5_font_size'],
+						'type' => 'option',
+						'sanitize_callback' => 'generate_premium_sanitize_empty_absint',
+						'transport' => 'postMessage',
+					)
+				);
+
+				$h5_font_size_options['mobile'] = array(
+					'min' => 10,
+					'max' => 80,
+					'step' => 1,
+					'edit' => true,
+					'unit' => 'px',
+				);
+
+				$h5_font_size_settings['mobile'] = 'generate_settings[mobile_heading_5_font_size]';
+			}
+
 			$wp_customize->add_control(
 				new GeneratePress_Pro_Range_Slider_Control(
 					$wp_customize,
@@ -1923,18 +2011,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) {
 					array(
 						'description' => __( 'Font size', 'gp-premium' ),
 						'section' => 'font_content_section',
-						'settings' => array(
-							'desktop' => 'generate_settings[heading_5_font_size]',
-						),
-						'choices' => array(
-							'desktop' => array(
-								'min' => 10,
-								'max' => 80,
-								'step' => 1,
-								'edit' => true,
-								'unit' => 'px',
-							),
-						),
+						'settings' => $h5_font_size_settings,
+						'choices' => $h5_font_size_options,
 					)
 				)
 			);
@@ -2944,7 +3022,7 @@ function generate_typography_get_premium_css() {
 	$premium_css->start_media_query( generate_premium_get_media_query( 'tablet' ) );
 
 	if ( '' !== $generate_settings['tablet_navigation_font_size'] ) {
-		$premium_css->set_selector( '.main-navigation:not(.slideout-navigation) a, .menu-toggle, .main-navigation .menu-bar-items' );
+		$premium_css->set_selector( '.main-navigation:not(.slideout-navigation) a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items' );
 		$premium_css->add_property( 'font-size', absint( $generate_settings['tablet_navigation_font_size'] ), false, 'px' );
 
 		$tablet_subnav_font_size = $generate_settings['tablet_navigation_font_size'] - 1;
@@ -2982,8 +3060,8 @@ function generate_typography_get_premium_css() {
 
 	$premium_css->start_media_query( generate_premium_get_media_query( 'mobile-menu' ) );
 
-	if ( '' !== $generate_settings['mobile_navigation_font_size'] ) {
-		$premium_css->set_selector( '.main-navigation:not(.slideout-navigation) a, .menu-toggle, .main-navigation .menu-bar-items' );
+	if ( ! empty( $generate_settings['mobile_navigation_font_size'] ) ) {
+		$premium_css->set_selector( '.main-navigation:not(.slideout-navigation) a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items' );
 		$premium_css->add_property( 'font-size', absint( $generate_settings['mobile_navigation_font_size'] ), false, 'px' );
 
 		$mobile_subnav_font_size = $generate_settings['mobile_navigation_font_size'] - 1;
@@ -3003,7 +3081,7 @@ function generate_typography_get_premium_css() {
 		);
 
 		if ( $menu_settings['navigation_as_header'] || $menu_settings['sticky_navigation_logo'] || 'enable' === $menu_settings['mobile_header'] ) {
-			if ( '' !== $generate_settings['mobile_site_title_font_size'] ) {
+			if ( ! empty( $generate_settings['mobile_site_title_font_size'] ) ) {
 				$premium_css->set_selector( '.navigation-branding .main-title' );
 				$premium_css->add_property( 'font-size', absint( $generate_settings['mobile_site_title_font_size'] ), false, 'px' );
 			}

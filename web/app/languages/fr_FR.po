@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.5.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-09-07 10:39:04+0000\n"
+"PO-Revision-Date: 2020-10-26 21:56:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: WordPress - 5.5.x - Development\n"
 
-#: wp-includes/script-loader.php:1441
+#: wp-includes/script-loader.php:1442
 msgctxt "Google Font Name and Variants"
 msgid "Noto Serif:400,400i,700,700i"
 msgstr "Noto Serif:400,400i,700,700i"
@@ -34,13 +34,19 @@ msgstr "off"
 #. Asian characters), enter 'characters_excluding_spaces' or
 #. 'characters_including_spaces'. Otherwise, enter 'words'. Do not translate
 #. into your own language.
-#: wp-includes/script-loader.php:1619 wp-includes/formatting.php:3884
+#: wp-includes/script-loader.php:1620 wp-includes/formatting.php:3884
 #: wp-includes/js/dist/editor.js:13029
 msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr "words"
 
-#: wp-includes/script-loader.php:1351
+#: wp-login.php:122 wp-includes/admin-bar.php:165
+#: wp-includes/widgets/class-wp-widget-meta.php:90 wp-admin/upgrade.php:68
+#: wp-admin/admin-footer.php:38 wp-admin/maint/repair.php:24
+msgid "https://wordpress.org/"
+msgstr "https://fr.wordpress.org/"
+
+#: wp-includes/script-loader.php:1352
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -86,6 +92,14 @@ msgstr " "
 #: wp-includes/class-wp-locale.php:208
 msgid "number_format_decimal_point"
 msgstr ","
+
+#: wp-includes/category-template.php:161
+#: wp-includes/js/dist/block-editor.js:25066
+#: wp-includes/js/dist/block-editor.js:25071
+#: wp-includes/js/dist/block-editor.js:25337
+#: wp-includes/js/dist/edit-post.js:5056 wp-admin/includes/upgrade.php:158
+msgid "Uncategorized"
+msgstr "Non classé"
 
 #. translators: %s: WP_ENVIRONMENT_TYPES
 #: wp-includes/load.php:164
@@ -205,7 +219,7 @@ msgstr "Deux colonnes de texte précédées par un long titre."
 
 #: wp-includes/block-patterns/text-two-columns.php:11
 msgid "The rest of it went in a doublet of fine cloth and velvet breeches and shoes to match for holidays, while on week-days he made a brave figure in his best homespun. He had in his house a housekeeper past forty, a niece under twenty, and a lad for the field and market-place, who used to saddle the hack as well as handle the bill-hook. The age of this gentleman of ours was bordering on fifty; he was of a hardy habit, spare, gaunt-featured, a very early riser and a great sportsman."
-msgstr "Le reste se dépensait en un pourpoint de drap fin et des chausses de panne avec leurs pantoufles de même étoffe, pour les jours de fête, et un habit de la meilleure serge du pays, dont il se faisait honneur les jours de la semaine. Il avait chez lui une gouvernante qui passait les quarante ans, une nièce qui n'atteignait pas les vingt, et de plus un garçon de ville et de campagne, qui sellait le bidet aussi bien qu'il maniait la serpette. L’âge de notre hidalgo frisait la cinquantaine ; il était de complexion robuste, maigre de corps, sec de visage, fort matineux et grand ami de la chasse."
+msgstr "Le reste se dépensait en un pourpoint de drap fin et des chausses de panne avec leurs pantoufles de même étoffe, pour les jours de fête, et un habit de la meilleure serge du pays, dont il se faisait honneur les jours de la semaine. Il avait chez lui une gouvernante qui passait les quarante ans, une nièce qui n’atteignait pas les vingt, et de plus un garçon de ville et de campagne, qui sellait le bidet aussi bien qu’il maniait la serpette. L’âge de notre hidalgo frisait la cinquantaine ; il était de complexion robuste, maigre de corps, sec de visage, fort matineux et grand ami de la chasse."
 
 #: wp-includes/block-patterns/text-two-columns.php:11
 msgid "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income."
@@ -697,7 +711,7 @@ msgstr "En pourcentage de l’image, la position x à partir de laquelle commenc
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1285
 msgid "The amount to rotate the image clockwise in degrees."
-msgstr "La valeur de rotation en degrés pour pivoter l’image dans le sens des aiguilles d'une montre."
+msgstr "La valeur de rotation en degrés pour pivoter l’image dans le sens des aiguilles d’une montre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:512
 msgid "Unable to crop this image."
@@ -1351,7 +1365,7 @@ msgstr "L’état %1$s de la publication n’est pas enregistré et pourrait ne 
 #. translators: %s: Comment link.
 #: wp-includes/comment-template.php:981
 #: wp-admin/includes/class-wp-comments-list-table.php:871
-#: wp-admin/comment.php:200
+#: wp-admin/comment.php:204
 msgid "In reply to %s."
 msgstr "En réponse à %s."
 
@@ -1701,7 +1715,7 @@ msgstr "une erreur critique est survenue sur votre site. Veuillez consulter la b
 
 #: wp-includes/class-wp-fatal-error-handler.php:184
 msgid "There has been a critical error on your website, putting it in recovery mode. Please check the Themes and Plugins screens for more details. If you just installed or updated a theme or plugin, check the relevant page for that first."
-msgstr "une erreur critique est survenue sur votre site, activant ainsi le mode de récupération. Veuillez vérifier les pages des thèmes et des extensions pour plus de détails. Si vous veniez d'installer ou de mettre à jour un thème ou une extension, vérifiez la page correspondante en premier."
+msgstr "Il y a eu une erreur critique sur votre site, activant ainsi le mode de récupération. Veuillez vérifier les pages des thèmes et des extensions pour plus de détails. Si vous veniez d’installer ou de mettre à jour un thème ou une extension, vérifiez la page correspondante en premier."
 
 #: wp-includes/class-wp-image-editor-imagick.php:633
 msgid "The image cannot be rotated because the embedded meta data cannot be updated."
@@ -1729,11 +1743,11 @@ msgstr "Aucun élément média trouvé. Essayez une recherche différente."
 
 #: wp-includes/media.php:4236
 msgid "Number of media items displayed: %d. Scroll the page for more results."
-msgstr "Nombre de médias affichés : %d. Faîtes défiler la page pour plus de résultats."
+msgstr "Nombre d’éléments média affichés : %d. Faîtes défiler la page pour plus de résultats."
 
 #: wp-includes/media.php:4235
 msgid "Number of media items found: %d"
-msgstr "Nombre de médias trouvés : %d"
+msgstr "Nombre d’éléments média trouvés : %d"
 
 #. translators: %s: Number of archives.
 #: wp-includes/post.php:2801
@@ -1946,7 +1960,7 @@ msgstr "Autoriser les gens à envoyer des commentaires sur les nouvelles publica
 #. translators: %s: Documentation URL.
 #: wp-login.php:474
 msgid "<strong>Error</strong>: The email could not be sent. Your site may not be correctly configured to send emails. <a href=\"%s\">Get support for resetting your password</a>."
-msgstr "<strong>Erreur</strong> : l’e-mail n’a pas pu être envoyé. Votre site peut ne pas être correctement configuré pour envoyer les e-mails. <a href=\"%s\">Obtenez de l’aide pour réinitialiser votre mot de passe</a>."
+msgstr "<strong>Erreur</strong> : L’e-mail n’a pas pu être envoyé. Votre site peut ne pas être correctement configuré pour envoyer les e-mails. <a href=\"%s\">Obtenez de l’aide pour réinitialiser votre mot de passe</a>."
 
 #: wp-login.php:475
 msgid "https://wordpress.org/support/article/resetting-your-password/"
@@ -2044,7 +2058,7 @@ msgstr "[%s] Détails de connexion"
 #: wp-admin/includes/meta-boxes.php:441 wp-admin/includes/media.php:1710
 #: wp-admin/includes/class-wp-media-list-table.php:177
 #: wp-admin/includes/class-wp-comments-list-table.php:374
-#: wp-admin/includes/class-wp-posts-list-table.php:420 wp-admin/comment.php:132
+#: wp-admin/includes/class-wp-posts-list-table.php:420 wp-admin/comment.php:136
 #: wp-admin/edit-form-comment.php:205
 msgid "Move to Trash"
 msgstr "Mettre à la corbeille"
@@ -2066,7 +2080,7 @@ msgstr "Restaurer depuis la corbeille"
 #: wp-admin/includes/plugin-install.php:196
 #: wp-admin/includes/plugin-install.php:211
 #: wp-admin/includes/class-wp-automatic-updater.php:788
-#: wp-admin/includes/class-wp-automatic-updater.php:1157
+#: wp-admin/includes/class-wp-automatic-updater.php:1161
 #: wp-admin/theme-install.php:63
 msgid "https://wordpress.org/support/forums/"
 msgstr "https://wordpress.org/support/forums/"
@@ -2586,7 +2600,7 @@ msgstr "Élément ajouté."
 #: wp-admin/includes/class-wp-site-health.php:1441
 #: wp-admin/includes/class-wp-site-health.php:1510
 #: wp-admin/includes/dashboard.php:1233 wp-admin/includes/dashboard.php:1245
-#: wp-admin/includes/dashboard.php:1258 wp-admin/includes/dashboard.php:1756
+#: wp-admin/includes/dashboard.php:1258 wp-admin/includes/dashboard.php:1758
 msgid "(opens in a new tab)"
 msgstr "(ouvre un nouvel onglet)"
 
@@ -3410,8 +3424,8 @@ msgid "Take over"
 msgstr "Prendre la main"
 
 #: wp-includes/class-wp-customize-manager.php:4293
-#: wp-admin/includes/post.php:1690 wp-admin/comment.php:74
-#: wp-admin/comment.php:272 wp-admin/theme-editor.php:376
+#: wp-admin/includes/post.php:1690 wp-admin/comment.php:78
+#: wp-admin/comment.php:276 wp-admin/theme-editor.php:376
 #: wp-admin/plugin-editor.php:330
 msgid "Go back"
 msgstr "Retour"
@@ -4412,7 +4426,7 @@ msgid "(no author)"
 msgstr "(aucun auteur)"
 
 #. translators: %s: The name of a city.
-#: wp-includes/script-loader.php:1753
+#: wp-includes/script-loader.php:1755
 msgid "City updated. Listing events near %s."
 msgstr "Ville mise à jour. Liste des évènements proche de %s."
 
@@ -4420,19 +4434,19 @@ msgstr "Ville mise à jour. Liste des évènements proche de %s."
 #. examples with cities in your locale, but test * that they match the expected
 #. location before including them. * Use endonyms (native locale names)
 #. whenever possible.
-#: wp-includes/script-loader.php:1749 wp-admin/includes/dashboard.php:1364
+#: wp-includes/script-loader.php:1751 wp-admin/includes/dashboard.php:1364
 msgid "We couldn&#8217;t locate %s. Please try another nearby city. For example: Kansas City; Springfield; Portland."
 msgstr "Nous ne localisons pas %s. Veuillez essayer une autre ville proche. Par exemple : Paris, Lyon, Bordeaux."
 
-#: wp-includes/script-loader.php:1731
+#: wp-includes/script-loader.php:1733
 msgid "Attend an upcoming event near you."
 msgstr "Assister à un évènement  à venir proche de chez vous."
 
-#: wp-includes/script-loader.php:1730 wp-admin/includes/dashboard.php:1280
+#: wp-includes/script-loader.php:1732 wp-admin/includes/dashboard.php:1280
 msgid "An error occurred. Please try again."
 msgstr "Une erreur est survenue. Veuillez réessayer plus tard."
 
-#: wp-includes/script-loader.php:1729
+#: wp-includes/script-loader.php:1731
 msgid "Enter your closest city to find nearby events."
 msgstr "Saisissez la ville la plus proche afin de trouver des évènements à proximité."
 
@@ -6901,7 +6915,7 @@ msgstr "Impossible de retrouver le message d’erreur depuis MYSQL"
 msgid "Edit Menu"
 msgstr "Modifier le menu"
 
-#: wp-includes/script-loader.php:1673 wp-admin/includes/dashboard.php:964
+#: wp-includes/script-loader.php:1674 wp-admin/includes/dashboard.php:964
 msgid "Today"
 msgstr "Aujourd’hui"
 
@@ -7418,7 +7432,7 @@ msgstr "Vous parcourez actuellement les archives du blog %1$s pour le %2$s."
 #. translators: %s: Admin email link.
 #: wp-includes/ms-load.php:111
 msgid "This site has not been activated yet. If you are having problems activating your site, please contact %s."
-msgstr "Ce site n{a pas encore été activé. Si vous rencontrez des problèmes pour l’activer, veuillez contacter %s."
+msgstr "Ce site n’a pas encore été activé. Si vous rencontrez des problèmes pour l’activer, veuillez contacter %s."
 
 #. translators: %s: Email address.
 #: wp-signup.php:676 wp-signup.php:834
@@ -8853,7 +8867,7 @@ msgstr "Corbeille"
 msgid "Edit Selection"
 msgstr "Modifier la sélection"
 
-#: wp-includes/script-loader.php:1677 wp-includes/js/dist/components.js:42054
+#: wp-includes/script-loader.php:1678 wp-includes/js/dist/components.js:42054
 msgid "Previous"
 msgstr "Précédent"
 
@@ -9620,7 +9634,7 @@ msgstr "Ajoutez des sources alternatives pour une lecture HTML5 optimale"
 
 #: wp-includes/user.php:2262
 msgid "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
-msgstr "Conseil : le mot de passe devrait contenir au moins 12 caractères. Pour le rendre plus sûr, utilisez des lettres en majuscule et minuscule, des nombres, et des symboles tels que ! \" ? $ % ^ &amp; )."
+msgstr "Conseil : Le mot de passe devrait contenir au moins douze caractères. Pour le rendre plus sûr, utilisez des lettres en majuscules et minuscules, des nombres, et des symboles tels que ! \" ? $ % ^ &amp; )."
 
 #. translators: %s: wpdb::prepare()
 #: wp-includes/wp-db.php:1310
@@ -10079,12 +10093,6 @@ msgstr "https://wordpress.org/support/forum/requests-and-feedback"
 msgid "https://wordpress.org/support/"
 msgstr "https://wpfr.net/support/"
 
-#: wp-login.php:122 wp-includes/admin-bar.php:165
-#: wp-includes/widgets/class-wp-widget-meta.php:90 wp-admin/upgrade.php:68
-#: wp-admin/admin-footer.php:38 wp-admin/maint/repair.php:24
-msgid "https://wordpress.org/"
-msgstr "https://fr.wordpress.org/"
-
 #: wp-includes/js/dist/editor.js:8978
 #: wp-admin/includes/class-wp-privacy-requests-table.php:44
 #: wp-admin/includes/ajax-actions.php:2183
@@ -10167,7 +10175,7 @@ msgstr "Une liste des pages de votre site."
 msgid "An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"%s\">support forums</a>."
 msgstr "Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href=\"%s\">forums de support</a>."
 
-#: wp-includes/script-loader.php:1358
+#: wp-includes/script-loader.php:1359
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
@@ -10333,7 +10341,7 @@ msgstr "j F Y G\\hi"
 #: wp-admin/includes/ajax-actions.php:2806
 #: wp-admin/includes/class-wp-posts-list-table.php:1087
 #: wp-admin/options-general.php:292 wp-admin/options-general.php:355
-#: wp-admin/comment.php:217 wp-admin/update-core.php:879 wp-admin/admin.php:114
+#: wp-admin/comment.php:221 wp-admin/update-core.php:879 wp-admin/admin.php:114
 #: wp-admin/edit-form-advanced.php:625 wp-admin/edit-form-advanced.php:628
 msgid "g:i a"
 msgstr "G\\hi"
@@ -11007,7 +11015,7 @@ msgid "Remove image"
 msgstr "Retirer l’image"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:784
-#: wp-admin/comment.php:78
+#: wp-admin/comment.php:82
 msgid "Sorry, you are not allowed to edit this comment."
 msgstr "Désolé, vous n’avez pas l’autorisation de modifier ce commentaire."
 
@@ -12595,8 +12603,8 @@ msgstr "État du commentaire non valide."
 #: wp-includes/class-wp-xmlrpc-server.php:3675
 #: wp-includes/class-wp-xmlrpc-server.php:3743
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:341
-#: wp-includes/comment.php:2444 wp-admin/comment.php:74
-#: wp-admin/comment.php:272 wp-admin/edit-comments.php:250
+#: wp-includes/comment.php:2444 wp-admin/comment.php:78
+#: wp-admin/comment.php:276 wp-admin/edit-comments.php:250
 msgid "Invalid comment ID."
 msgstr "Identifiant de commentaire non valide."
 
@@ -12655,7 +12663,7 @@ msgstr "Mais, avant d’utiliser votre nouvel identifiant, <strong>vous devez l�
 msgid "%s is your new username"
 msgstr "Votre nouvel identifiant est %s"
 
-#: wp-includes/script-loader.php:1676
+#: wp-includes/script-loader.php:1677
 #: wp-includes/class-wp-customize-nav-menus.php:1110 wp-signup.php:621
 #: wp-includes/js/dist/components.js:42057
 msgid "Next"
@@ -14255,7 +14263,7 @@ msgstr "(Modifier)"
 #: wp-admin/includes/meta-boxes.php:216 wp-admin/includes/meta-boxes.php:408
 #: wp-admin/includes/class-wp-comments-list-table.php:949
 #: wp-admin/includes/class-wp-posts-list-table.php:1083
-#: wp-admin/comment.php:213 wp-admin/edit-form-advanced.php:171
+#: wp-admin/comment.php:217 wp-admin/edit-form-advanced.php:171
 #: wp-admin/edit-form-comment.php:126
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
@@ -14406,7 +14414,7 @@ msgstr "Format de date"
 
 #: wp-login.php:1106 wp-includes/comment-template.php:2350
 #: wp-admin/includes/class-wp-users-list-table.php:358
-#: wp-admin/includes/template.php:481 wp-admin/comment.php:171
+#: wp-admin/includes/template.php:481 wp-admin/comment.php:175
 #: wp-admin/user-new.php:389 wp-admin/user-new.php:485
 #: wp-admin/user-edit.php:502 wp-admin/edit-form-comment.php:53
 #: wp-admin/includes/class-wp-ms-users-list-table.php:199
@@ -14605,7 +14613,7 @@ msgid "Select"
 msgstr "Sélectionner"
 
 #: wp-includes/script-loader.php:811 wp-includes/script-loader.php:1107
-#: wp-includes/script-loader.php:1672
+#: wp-includes/script-loader.php:1673
 #: wp-includes/class-wp-customize-manager.php:5688
 #: wp-includes/class-wp-editor.php:1179 wp-includes/class-wp-editor.php:1835
 #: wp-includes/js/dist/components.js:35855
@@ -14630,14 +14638,6 @@ msgstr "Pages"
 #: wp-includes/pluggable.php:1997
 msgid "Email: %s"
 msgstr "E-mail : %s"
-
-#: wp-includes/category-template.php:161
-#: wp-includes/js/dist/block-editor.js:25066
-#: wp-includes/js/dist/block-editor.js:25071
-#: wp-includes/js/dist/block-editor.js:25337
-#: wp-includes/js/dist/edit-post.js:5056 wp-admin/includes/upgrade.php:158
-msgid "Uncategorized"
-msgstr "Non classé"
 
 #: wp-includes/widgets/class-wp-widget-links.php:29
 #: wp-admin/link-manager.php:49
@@ -14706,7 +14706,7 @@ msgstr "Rechercher"
 #: wp-includes/widgets/class-wp-widget-text.php:553
 #: wp-includes/class-wp-customize-manager.php:4268
 #: wp-includes/js/wp-pointer.js:20 wp-admin/includes/file.php:340
-#: wp-admin/includes/dashboard.php:1633 wp-admin/async-upload.php:100
+#: wp-admin/includes/dashboard.php:1635 wp-admin/async-upload.php:100
 #: wp-admin/index.php:160
 msgid "Dismiss"
 msgstr "Ignorer"
@@ -14974,7 +14974,7 @@ msgstr "Contenu"
 #: wp-admin/includes/template.php:862 wp-admin/includes/file.php:2268
 #: wp-admin/includes/class-wp-posts-list-table.php:1915
 #: wp-admin/includes/dashboard.php:187 wp-admin/includes/dashboard.php:1325
-#: wp-admin/options-general.php:129 wp-admin/comment.php:240
+#: wp-admin/options-general.php:129 wp-admin/comment.php:244
 #: wp-admin/nav-menus.php:1076 wp-admin/user-new.php:549
 #: wp-admin/widgets.php:352 wp-admin/widgets.php:565 wp-admin/user-edit.php:527
 #: wp-admin/user-edit.php:642 wp-admin/js/post.js:989
@@ -15250,7 +15250,7 @@ msgstr "il y a %s"
 #: wp-admin/includes/class-wp-comments-list-table.php:769
 #: wp-admin/includes/class-wp-posts-list-table.php:412
 #: wp-admin/includes/class-wp-posts-list-table.php:1348
-#: wp-admin/includes/dashboard.php:700 wp-admin/comment.php:231
+#: wp-admin/includes/dashboard.php:700 wp-admin/comment.php:235
 #: wp-admin/edit-form-comment.php:139
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:692
 #: wp-admin/includes/class-wp-ms-users-list-table.php:396
@@ -15275,7 +15275,7 @@ msgstr "Voulez-vous vraiment faire cela ?"
 
 #. translators: Field name in comment form.
 #: wp-includes/comment-template.php:1117 wp-includes/comment-template.php:2416
-#: wp-admin/comment.php:228
+#: wp-admin/comment.php:232
 msgctxt "noun"
 msgid "Comment"
 msgstr "Commentaire"
@@ -15296,7 +15296,7 @@ msgstr "Commentaire"
 #: wp-admin/includes/class-wp-links-list-table.php:132
 #: wp-admin/includes/class-walker-nav-menu-edit.php:187
 #: wp-admin/includes/media.php:2911 wp-admin/includes/template.php:486
-#: wp-admin/includes/nav-menu.php:301 wp-admin/comment.php:177
+#: wp-admin/includes/nav-menu.php:301 wp-admin/comment.php:181
 #: wp-admin/edit-form-comment.php:59
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:361
 msgid "URL"
@@ -15316,7 +15316,7 @@ msgstr "Adresse web"
 #: wp-admin/includes/class-wp-post-comments-list-table.php:26
 #: wp-admin/includes/class-wp-posts-list-table.php:624
 #: wp-admin/includes/class-wp-posts-list-table.php:1595
-#: wp-admin/comment.php:166 wp-admin/edit-form-comment.php:43
+#: wp-admin/comment.php:170 wp-admin/edit-form-comment.php:43
 msgid "Author"
 msgstr "Auteur"
 
@@ -15337,7 +15337,7 @@ msgstr "Aller sur le site"
 #: wp-admin/includes/class-wp-comments-list-table.php:951
 #: wp-admin/includes/ajax-actions.php:2209
 #: wp-admin/includes/class-wp-posts-list-table.php:1085
-#: wp-admin/comment.php:215
+#: wp-admin/comment.php:219
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:473
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:494
 #: wp-admin/includes/class-wp-ms-users-list-table.php:334

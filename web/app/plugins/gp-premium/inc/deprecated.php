@@ -620,6 +620,20 @@ function generate_sites_refresh_link() {
 	);
 }
 
+/**
+ * Delete our sites transient if the Refresh sites link is clicked.
+ *
+ * @since 1.6
+ * @deprecated 1.12.0
+ */
+function generate_sites_refresh_list() {
+	if ( ! isset( $_GET['refresh_sites_nonce'] ) || ! wp_verify_nonce( $_GET['refresh_sites_nonce'], 'refresh_sites' ) ) {
+		return;
+	}
+
+	delete_transient( 'generatepress_sites' );
+}
+
 if ( ! function_exists( 'generate_insert_import_export' ) ) {
 	/**
 	* @deprecated 1.7

@@ -768,9 +768,9 @@ class GeneratePress_Site {
 				continue;
 			}
 
-			// Import any images.
 			if ( is_array( $val ) || is_object( $val ) ) {
 				foreach ( $val as $option_name => $option_value ) {
+					// Import any images.
 					if ( is_string( $option_value ) && preg_match( '/\.(jpg|jpeg|png|gif)/i', $option_value ) ) {
 						$data = GeneratePress_Sites_Helper::sideload_image( $option_value );
 
@@ -778,11 +778,27 @@ class GeneratePress_Site {
 							$val[ $option_name ] = $data->url;
 						}
 					}
+
+					// Set these options if we import content.
+					unset( $val['hide_title'] );
+					unset( $val['hide_tagline'] );
+					unset( $val['logo_width'] );
 				}
 			}
 
 			update_option( $key, $val );
 		}
+
+		// Re-add non-theme option related theme mods.
+		set_theme_mod( 'nav_menu_locations', $backup_data['site_options']['nav_menu_locations'] );
+		set_theme_mod( 'custom_logo', $backup_data['site_options']['custom_logo'] );
+
+		$existing_settings = get_option( 'generate_settings', array() );
+		$existing_settings['hide_title'] = $backup_data['theme_options']['options']['generate_settings']['hide_title'];
+		$existing_settings['hide_tagline'] = $backup_data['theme_options']['options']['generate_settings']['hide_tagline'];
+		$existing_settings['logo_width'] = $backup_data['theme_options']['options']['generate_settings']['logo_width'];
+
+		update_option( 'generate_settings', $existing_settings );
 
 		// Remove dynamic CSS cache.
 		delete_option( 'generate_dynamic_css_output' );
@@ -1000,6 +1016,51 @@ class GeneratePress_Site {
 					}
 					break;
 			}
+		}
+
+		// Set theme options.
+		$theme_settings = get_option( 'generate_settings', array() );
+		$update_theme_settings = false;
+
+		foreach ( $settings['options'] as $key => $val ) {
+			if ( 'generate_settings' !== $key ) {
+				continue;
+			}
+
+			if ( is_array( $val ) || is_object( $val ) ) {
+				foreach ( $val as $option_name => $option_value ) {
+					if ( 'hide_title' === $option_name ) {
+						$theme_settings['hide_title'] = $option_value;
+						$update_theme_settings = true;
+					}
+
+					if ( 'hide_tagline' === $option_name ) {
+						$theme_settings['hide_tagline'] = $option_value;
+						$update_theme_settings = true;
+					}
+
+					if ( 'logo_width' === $option_name ) {
+						$theme_settings['logo_width'] = $option_value;
+						$update_theme_settings = true;
+					}
+				}
+			}
+		}
+
+		if ( $update_theme_settings ) {
+			update_option( 'generate_settings', $theme_settings );
+
+			// Remove dynamic CSS cache.
+			delete_option( 'generate_dynamic_css_output' );
+			delete_option( 'generate_dynamic_css_cached_version' );
+
+			$dynamic_css_data = get_option( 'generatepress_dynamic_css_data', array() );
+
+			if ( isset( $dynamic_css_data['updated_time'] ) ) {
+				unset( $dynamic_css_data['updated_time'] );
+			}
+
+			update_option( 'generatepress_dynamic_css_data', $dynamic_css_data );
 		}
 
 		// Set our backed up options.

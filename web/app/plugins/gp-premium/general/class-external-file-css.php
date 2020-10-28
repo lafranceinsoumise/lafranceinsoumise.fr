@@ -188,7 +188,13 @@ class GeneratePress_External_CSS_File {
 	 */
 	public function enqueue_dynamic_css() {
 		if ( 'file' === $this->mode() ) {
-			wp_enqueue_style( 'generatepress-dynamic', esc_url( $this->file( 'uri' ) ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+			wp_enqueue_style( 'generatepress-dynamic', esc_url( $this->file( 'uri' ) ), array( 'generate-style' ), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+
+			// Move the child theme after our dynamic stylesheet.
+			if ( is_child_theme() && wp_style_is( 'generate-child', 'enqueued' ) ) {
+				wp_dequeue_style( 'generate-child' );
+				wp_enqueue_style( 'generate-child' );
+			}
 
 			// Re-add no-cache CSS in GP < 3.0.0.
 			if ( ! function_exists( 'generate_get_dynamic_css' ) && function_exists( 'generate_no_cache_dynamic_css' ) ) {

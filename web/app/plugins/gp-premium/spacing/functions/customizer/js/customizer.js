@@ -87,6 +87,18 @@ generate_spacing_live_update( 'mobile_header_right', 'mobile_header_right', '.in
 generate_spacing_live_update( 'mobile_header_bottom', 'mobile_header_bottom', '.inside-header', 'padding-bottom', false, false, gp_spacing.mobile );
 generate_spacing_live_update( 'mobile_header_left', 'mobile_header_left', '.inside-header', 'padding-left', false, false, gp_spacing.mobile );
 
+jQuery( window ).on( 'load', function() {
+	var containerAlignment = wp.customize( 'generate_settings[container_alignment]' ).get();
+
+	if ( gp_spacing.isFlex && 'text' === containerAlignment ) {
+		generate_spacing_live_update( 'header_left_sticky_nav', 'header_left', '.main-navigation.navigation-stick:not(.has-branding) .inside-navigation.grid-container', 'padding-left', false, false, gp_spacing.desktop );
+		generate_spacing_live_update( 'header_right_sticky_nav', 'header_right', '.main-navigation.navigation-stick:not(.has-branding) .inside-navigation.grid-container', 'padding-right', false, false, gp_spacing.desktop );
+
+		generate_spacing_live_update( 'mobile_header_left_sticky_nav', 'mobile_header_left', '.main-navigation.navigation-stick:not(.has-branding) .inside-navigation.grid-container', 'padding-left', false, false, gp_spacing.mobile );
+		generate_spacing_live_update( 'mobile_header_right_sticky_nav', 'mobile_header_right', '.main-navigation.navigation-stick:not(.has-branding) .inside-navigation.grid-container', 'padding-right', false, false, gp_spacing.mobile );
+	}
+} );
+
 /**
  * Content padding
  */
@@ -103,6 +115,17 @@ generate_spacing_live_update( 'content_right', 'content_right', content_areas, '
 generate_spacing_live_update( 'content_bottom', 'content_bottom', content_areas, 'padding-bottom', false, false, gp_spacing.desktop );
 generate_spacing_live_update( 'content_left', 'content_left', content_areas, 'padding-left', false, false, gp_spacing.desktop );
 
+jQuery( window ).on( 'load', function() {
+	var containerAlignment = wp.customize( 'generate_settings[container_alignment]' ).get();
+
+	if ( gp_spacing.isFlex && 'text' === containerAlignment ) {
+		generate_spacing_live_update( 'content_left_nav_as_header', 'content_left', '.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding .inside-navigation.grid-container', 'padding-left', false, false, gp_spacing.desktop );
+		generate_spacing_live_update( 'content_right_nav_as_header', 'content_right', '.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding .inside-navigation.grid-container', 'padding-right', false, false, gp_spacing.desktop );
+	}
+} );
+
+generate_spacing_live_update( 'one_container_post_content_bottom', 'content_bottom', '.one-container.archive .post:not(:last-child),.one-container.blog .post:not(:last-child)', 'padding-bottom' );
+
 /* Mobile content padding */
 generate_spacing_live_update( 'mobile_content_top', 'mobile_content_top', content_areas, 'padding-top', false, false, gp_spacing.mobile );
 generate_spacing_live_update( 'mobile_content_right', 'mobile_content_right', content_areas, 'padding-right', false, false, gp_spacing.mobile );
@@ -116,7 +139,7 @@ generate_spacing_live_update( 'content-margin-left-both', 'content_left', '.one-
 
 /* Content element separator */
 
-generate_spacing_live_update( 'content_element_separator_top', 'content_element_separator', '.post-image, .page-content, .entry-content, .entry-summary, footer.entry-meta', 'margin-top', false, false, false, 'em' );
+generate_spacing_live_update( 'content_element_separator_top', 'content_element_separator', '.post-image:not(:first-child), .page-content:not(:first-child), .entry-content:not(:first-child), .entry-summary:not(:first-child), footer.entry-meta', 'margin-top', false, false, false, 'em' );
 generate_spacing_live_update( 'content_element_separator_bottom', 'content_element_separator', '.post-image-above-header .inside-article div.featured-image, .post-image-above-header .inside-article div.post-image', 'margin-bottom', false, false, false, 'em' );
 
 /**
@@ -278,26 +301,51 @@ generate_spacing_live_update( 'mobile_widget_right', 'mobile_widget_right', '.wi
 generate_spacing_live_update( 'mobile_widget_bottom', 'mobile_widget_bottom', '.widget-area .widget', 'padding-bottom', false, false, gp_spacing.mobile );
 generate_spacing_live_update( 'mobile_widget_left', 'mobile_widget_left', '.widget-area .widget', 'padding-left', false, false, gp_spacing.mobile );
 
-/**
- * Footer widget area
- */
-generate_spacing_live_update( 'footer_widget_container_top', 'footer_widget_container_top', '.footer-widgets', 'padding-top', false, false, gp_spacing.desktop );
-generate_spacing_live_update( 'footer_widget_container_right', 'footer_widget_container_right', '.footer-widgets', 'padding-right', false, false, gp_spacing.desktop );
-generate_spacing_live_update( 'footer_widget_container_bottom', 'footer_widget_container_bottom', '.footer-widgets', 'padding-bottom', false, false, gp_spacing.desktop );
-generate_spacing_live_update( 'footer_widget_container_left', 'footer_widget_container_left', '.footer-widgets', 'padding-left', false, false, gp_spacing.desktop );
 
-generate_spacing_live_update( 'mobile_footer_widget_container_top', 'mobile_footer_widget_container_top', '.footer-widgets', 'padding-top', false, false, gp_spacing.mobile );
-generate_spacing_live_update( 'mobile_footer_widget_container_right', 'mobile_footer_widget_container_right', '.footer-widgets', 'padding-right', false, false, gp_spacing.mobile );
-generate_spacing_live_update( 'mobile_footer_widget_container_bottom', 'mobile_footer_widget_container_bottom', '.footer-widgets', 'padding-bottom', false, false, gp_spacing.mobile );
-generate_spacing_live_update( 'mobile_footer_widget_container_left', 'mobile_footer_widget_container_left', '.footer-widgets', 'padding-left', false, false, gp_spacing.mobile );
+if ( gp_spacing.isFlex ) {
+	/**
+	 * Footer widget area
+	 */
+	generate_spacing_live_update( 'footer_widget_container_top', 'footer_widget_container_top', '.footer-widgets-container', 'padding-top', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_right', 'footer_widget_container_right', '.footer-widgets-container', 'padding-right', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_bottom', 'footer_widget_container_bottom', '.footer-widgets-container', 'padding-bottom', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_left', 'footer_widget_container_left', '.footer-widgets-container', 'padding-left', false, false, gp_spacing.desktop );
 
-/**
- * Footer
- */
-generate_spacing_live_update( 'footer_top', 'footer_top', '.site-info', 'padding-top' );
-generate_spacing_live_update( 'footer_right', 'footer_right', '.site-info', 'padding-right' );
-generate_spacing_live_update( 'footer_bottom', 'footer_bottom', '.site-info', 'padding-bottom' );
-generate_spacing_live_update( 'footer_left', 'footer_left', '.site-info', 'padding-left' );
+	generate_spacing_live_update( 'mobile_footer_widget_container_top', 'mobile_footer_widget_container_top', '.footer-widgets-container', 'padding-top', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_right', 'mobile_footer_widget_container_right', '.footer-widgets-container', 'padding-right', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_bottom', 'mobile_footer_widget_container_bottom', '.footer-widgets-container', 'padding-bottom', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_left', 'mobile_footer_widget_container_left', '.footer-widgets-container', 'padding-left', false, false, gp_spacing.mobile );
+
+	/**
+	 * Footer
+	 */
+	generate_spacing_live_update( 'footer_top', 'footer_top', '.inside-site-info', 'padding-top' );
+	generate_spacing_live_update( 'footer_right', 'footer_right', '.inside-site-info', 'padding-right' );
+	generate_spacing_live_update( 'footer_bottom', 'footer_bottom', '.inside-site-info', 'padding-bottom' );
+	generate_spacing_live_update( 'footer_left', 'footer_left', '.inside-site-info', 'padding-left' );
+} else {
+	/**
+	 * Footer widget area
+	 */
+	generate_spacing_live_update( 'footer_widget_container_top', 'footer_widget_container_top', '.footer-widgets', 'padding-top', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_right', 'footer_widget_container_right', '.footer-widgets', 'padding-right', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_bottom', 'footer_widget_container_bottom', '.footer-widgets', 'padding-bottom', false, false, gp_spacing.desktop );
+	generate_spacing_live_update( 'footer_widget_container_left', 'footer_widget_container_left', '.footer-widgets', 'padding-left', false, false, gp_spacing.desktop );
+
+	generate_spacing_live_update( 'mobile_footer_widget_container_top', 'mobile_footer_widget_container_top', '.footer-widgets', 'padding-top', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_right', 'mobile_footer_widget_container_right', '.footer-widgets', 'padding-right', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_bottom', 'mobile_footer_widget_container_bottom', '.footer-widgets', 'padding-bottom', false, false, gp_spacing.mobile );
+	generate_spacing_live_update( 'mobile_footer_widget_container_left', 'mobile_footer_widget_container_left', '.footer-widgets', 'padding-left', false, false, gp_spacing.mobile );
+
+	/**
+	 * Footer
+	 */
+	generate_spacing_live_update( 'footer_top', 'footer_top', '.site-info', 'padding-top' );
+	generate_spacing_live_update( 'footer_right', 'footer_right', '.site-info', 'padding-right' );
+	generate_spacing_live_update( 'footer_bottom', 'footer_bottom', '.site-info', 'padding-bottom' );
+	generate_spacing_live_update( 'footer_left', 'footer_left', '.site-info', 'padding-left' );
+}
+
 
 /**
  * Separator
@@ -317,7 +365,7 @@ if ( jQuery( 'body' ).hasClass( 'masonry-enabled' ) ) {
 if ( jQuery( 'body' ).hasClass( 'generate-columns-activated' ) ) {
 	generate_spacing_live_update( 'columns_bottom', 'separator', '.generate-columns', 'margin-bottom' );
 	generate_spacing_live_update( 'columns_left', 'separator', '.generate-columns', 'padding-left' );
-	generate_spacing_live_update( 'columns_container', 'separator', '.generate-columns-container', 'padding-left', 'negative' );
+	generate_spacing_live_update( 'columns_container', 'separator', '.generate-columns-container', 'margin-left', 'negative' );
 	generate_spacing_live_update( 'columns_page_header_bottom', 'separator', '.generate-columns-container .page-header', 'margin-bottom' );
 	generate_spacing_live_update( 'columns_page_header_left', 'separator', '.generate-columns-container .page-header', 'margin-left' );
 	generate_spacing_live_update( 'columns_pagination', 'separator', '.separate-containers .generate-columns-container > .paging-navigation', 'margin-left' );
@@ -347,8 +395,14 @@ if ( jQuery( 'body' ).hasClass( 'both-right' ) ) {
 	generate_spacing_live_update( 'both_right_sidebar_sepatator_top', 'separator', '.both-right.separate-containers .site-main', 'margin-top' );
 	generate_spacing_live_update( 'both_right_sidebar_sepatator_right', 'separator', '.both-right.separate-containers .site-main', 'margin-right' );
 	generate_spacing_live_update( 'both_right_sidebar_sepatator_bottom', 'separator', '.both-right.separate-containers .site-main', 'margin-bottom' );
-	generate_spacing_live_update( 'both_right_left_sidebar', 'separator', '.both-right.separate-containers .inside-left-sidebar', 'margin-right', false, true );
-	generate_spacing_live_update( 'both_right_right_sidebar', 'separator', '.both-right.separate-containers .inside-right-sidebar', 'margin-left', false, true );
+
+	if ( gp_spacing.isFlex ) {
+		generate_spacing_live_update( 'both_right_left_sidebar', 'separator', '.both-right .inside-left-sidebar', 'margin-right', false, true );
+		generate_spacing_live_update( 'both_right_right_sidebar', 'separator', '.both-right .inside-right-sidebar', 'margin-left', false, true );
+	} else {
+		generate_spacing_live_update( 'both_right_left_sidebar', 'separator', '.both-right.separate-containers .inside-left-sidebar', 'margin-right', false, true );
+		generate_spacing_live_update( 'both_right_right_sidebar', 'separator', '.both-right.separate-containers .inside-right-sidebar', 'margin-left', false, true );
+	}
 }
 
 /* Both sidebars left */
@@ -356,8 +410,14 @@ if ( jQuery( 'body' ).hasClass( 'both-left' ) ) {
 	generate_spacing_live_update( 'both_left_sidebar_sepatator_top', 'separator', '.both-left.separate-containers .site-main', 'margin-top' );
 	generate_spacing_live_update( 'both_left_sidebar_sepatator_right', 'separator', '.both-left.separate-containers .site-main', 'margin-bottom' );
 	generate_spacing_live_update( 'both_left_sidebar_sepatator_bottom', 'separator', '.both-left.separate-containers .site-main', 'margin-left' );
-	generate_spacing_live_update( 'both_left_left_sidebar', 'separator', '.both-left.separate-containers .inside-left-sidebar', 'margin-right', false, true );
-	generate_spacing_live_update( 'both_left_right_sidebar', 'separator', '.both-left.separate-containers .inside-right-sidebar', 'margin-left', false, true );
+
+	if ( gp_spacing.isFlex ) {
+		generate_spacing_live_update( 'both_left_left_sidebar', 'separator', '.both-left .inside-left-sidebar', 'margin-right', false, true );
+		generate_spacing_live_update( 'both_left_right_sidebar', 'separator', '.both-left .inside-right-sidebar', 'margin-left', false, true );
+	} else {
+		generate_spacing_live_update( 'both_left_left_sidebar', 'separator', '.both-left.separate-containers .inside-left-sidebar', 'margin-right', false, true );
+		generate_spacing_live_update( 'both_left_right_sidebar', 'separator', '.both-left.separate-containers .inside-right-sidebar', 'margin-left', false, true );
+	}
 }
 
 /* Main element margin */
@@ -365,22 +425,34 @@ generate_spacing_live_update( 'site_main_separator_top', 'separator', '.separate
 generate_spacing_live_update( 'site_main_separator_bottom', 'separator', '.separate-containers .site-main', 'margin-bottom' );
 
 /* Page header element */
-generate_spacing_live_update( 'page_header_separator_top', 'separator',
-	'.separate-containers .page-header-image, \
-	.separate-containers .page-header-contained, \
-	.separate-containers .page-header-image-single, \
-	.separate-containers .page-header-content-single', 'margin-top' );
+if ( gp_spacing.isFlex ) {
+	generate_spacing_live_update( 'page_header_separator_top', 'separator', '.separate-containers .featured-image', 'margin-top' );
+} else {
+	generate_spacing_live_update( 'page_header_separator_top', 'separator',
+		'.separate-containers .page-header-image, \
+		.separate-containers .page-header-contained, \
+		.separate-containers .page-header-image-single, \
+		.separate-containers .page-header-content-single', 'margin-top' );
+}
 
 /* Top and bottom sidebar margin */
 generate_spacing_live_update( 'right_sidebar_separator_top', 'separator', '.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar', 'margin-top' );
 generate_spacing_live_update( 'right_sidebar_separator_bottom', 'separator', '.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar', 'margin-bottom' );
 
 /* Element separators */
-generate_spacing_live_update( 'content_separator', 'separator',
-	'.separate-containers .widget, \
-	.separate-containers .site-main > *, \
-	.separate-containers .page-header, \
-	.widget-area .main-navigation', 'margin-bottom' );
+if ( gp_spacing.isFlex ) {
+	generate_spacing_live_update( 'content_separator', 'separator',
+		'.sidebar .widget, \
+		.site-main > *, \
+		.page-header, \
+		.widget-area .main-navigation', 'margin-bottom' );
+} else {
+	generate_spacing_live_update( 'content_separator', 'separator',
+		'.separate-containers .widget, \
+		.separate-containers .site-main > *, \
+		.separate-containers .page-header, \
+		.widget-area .main-navigation', 'margin-bottom' );
+}
 
 /**
  * Right sidebar width
@@ -391,11 +463,22 @@ wp.customize( 'generate_spacing_settings[right_sidebar_width]', function( value 
 
 		if ( jQuery( '#right-sidebar' ).length ) {
 			if ( gp_spacing.isFlex ) {
-				var rightSidebar = jQuery( '#right-sidebar' );
+				var contentWidth = 100,
+					leftSidebar = jQuery( '#left-sidebar' ).length ? wp.customize.value('generate_spacing_settings[left_sidebar_width]')() : 0;
 
-				if ( rightSidebar.length ) {
-					rightSidebar.css( 'width', newval + '%' );
+				if ( body.hasClass( 'right-sidebar' ) ) {
+					contentWidth = ( Number( contentWidth ) - Number( newval ) );
+				} else if ( ! body.hasClass( 'left-sidebar' ) && ! body.hasClass( 'no-sidebar' ) ) {
+					var totalSidebarWidth = ( Number( leftSidebar ) + Number( newval ) );
+
+					contentWidth = ( Number( contentWidth ) - Number( totalSidebarWidth ) );
 				}
+
+				jQuery( 'head' ).append( '<style id="right_sidebar_width">.is-right-sidebar{width:' + newval + '%;}.site-content .content-area{width:' + contentWidth + '%;}</style>' );
+
+				setTimeout(function() {
+					jQuery( 'style#right_sidebar_width' ).not( ':last' ).remove();
+				}, 200 );
 			} else {
 				// Left sidebar width
 				var left_sidebar = ( jQuery( '#left-sidebar' ).length ) ? wp.customize.value('generate_spacing_settings[left_sidebar_width]')() : 0;
@@ -466,11 +549,22 @@ wp.customize( 'generate_spacing_settings[left_sidebar_width]', function( value )
 		var body = jQuery( 'body' );
 		if ( jQuery( '#left-sidebar' ).length ) {
 			if ( gp_spacing.isFlex ) {
-				var leftSidebar = jQuery( '#left-sidebar' );
+				var contentWidth = 100,
+					rightSidebar = jQuery( '#right-sidebar' ).length ? wp.customize.value('generate_spacing_settings[right_sidebar_width]')() : 0;
 
-				if ( leftSidebar.length ) {
-					leftSidebar.css( 'width', newval + '%' );
+				if ( body.hasClass( 'left-sidebar' ) ) {
+					contentWidth = ( Number( contentWidth ) - Number( newval ) );
+				} else if ( ! body.hasClass( 'right-sidebar' ) && ! body.hasClass( 'no-sidebar' ) ) {
+					var totalSidebarWidth = ( Number( rightSidebar ) + Number( newval ) );
+
+					contentWidth = ( Number( contentWidth ) - Number( totalSidebarWidth ) );
 				}
+
+				jQuery( 'head' ).append( '<style id="left_sidebar_width">.is-left-sidebar{width:' + newval + '%;}.site-content .content-area{width:' + contentWidth + '%;}</style>' );
+
+				setTimeout(function() {
+					jQuery( 'style#left_sidebar_width' ).not( ':last' ).remove();
+				}, 200 );
 			} else {
 				// Right sidebar width
 				var right_sidebar = ( jQuery( '#right-sidebar' ).length ) ? wp.customize.value('generate_spacing_settings[right_sidebar_width]')() : 0;

@@ -184,31 +184,26 @@
 	.wc-columns-container.wc-columns-6 .products,
 	.wc-related-upsell-columns-6 .related ul.products,
 	.wc-related-upsell-columns-6 .up-sells ul.products {
-		-ms-grid-columns: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
 		grid-template-columns: repeat(6, minmax(0, 1fr));
 	}
 	.wc-columns-container.wc-columns-5 .products,
 	.wc-related-upsell-columns-5 .related ul.products,
 	.wc-related-upsell-columns-5 .up-sells ul.products {
-		-ms-grid-columns: 1fr 50px 1fr 50px 1fr 50px 1fr 50px 1fr;
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}
 	.woocommerce .wc-columns-container.wc-columns-4 .products,
 	.wc-related-upsell-columns-4 .related ul.products,
 	.wc-related-upsell-columns-4 .up-sells ul.products {
-		-ms-grid-columns: 1fr [4];
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 	.woocommerce .wc-columns-container.wc-columns-3 .products,
 	.wc-related-upsell-columns-3 .related ul.products,
 	.wc-related-upsell-columns-3 .up-sells ul.products {
-		-ms-grid-columns: 1fr [3];
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.woocommerce .wc-columns-container.wc-columns-2 .products,
 	.wc-related-upsell-columns-2 .related ul.products,
 	.wc-related-upsell-columns-2 .up-sells ul.products {
-		-ms-grid-columns: 1fr [2];
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.woocommerce .wc-columns-container.wc-columns-1 .products,
@@ -741,6 +736,15 @@ nav span.count {
 	left: 50%;
 	transform: translate(-50%, 0px);
 	top: 0;
+}
+
+.wc-has-gallery picture.secondary-image {
+	width: 100%;
+	height: 100%;
+}
+
+.wc-product-image:hover .secondary-image {
+	opacity: 1;
 }
 
 .woocommerce ul.products li.product a img {

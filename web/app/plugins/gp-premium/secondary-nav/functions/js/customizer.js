@@ -4,6 +4,8 @@
 	 */
 	wp.customize( 'generate_secondary_nav_settings[secondary_nav_layout_setting]', function( value ) {
 		value.bind( function( newval ) {
+			var navLocation = wp.customize.value('generate_secondary_nav_settings[secondary_nav_position_setting]')();
+
 			if ( 'secondary-fluid-nav' == newval ) {
 				$( '.secondary-navigation' ).removeClass( 'grid-container' ).removeClass( 'grid-parent' );
 				if ( 'full-width' !== wp.customize.value('generate_secondary_nav_settings[secondary_nav_inner_width]')() ) {
@@ -11,6 +13,10 @@
 				}
 			}
 			if ( 'secondary-contained-nav' == newval ) {
+				if ( generateSecondaryNav.isFlex && ( 'secondary-nav-float-right' === navLocation || 'secondary-nav-float-left' === navLocation ) ) {
+					return;
+				}
+
 				jQuery( '.secondary-navigation' ).addClass( 'grid-container' ).addClass( 'grid-parent' );
 				jQuery( '.secondary-navigation .inside-navigation' ).removeClass( 'grid-container' ).removeClass( 'grid-parent' );
 			}

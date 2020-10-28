@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 	});
 });
 
-jQuery(window).load(function($) {
+jQuery(window).on('load', function() {
 	if ( jQuery( '#_meta-generate-page-header-enable-image-crop' ).val() == 'enable' ) {
 		jQuery( '#crop-enabled' ).show();
 	}

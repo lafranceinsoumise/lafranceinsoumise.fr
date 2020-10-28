@@ -152,19 +152,7 @@ class GeneratePress_Elements_Metabox {
 				wp_enqueue_media();
 				wp_enqueue_script( 'wp-color-picker' );
 				wp_enqueue_style( 'wp-color-picker' );
-				wp_enqueue_script( 'wp-color-picker-alpha', plugin_dir_url( __FILE__ ) . 'assets/admin/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), GP_PREMIUM_VERSION, true );
-				wp_localize_script(
-					'wp-color-picker-alpha',
-					'wpColorPickerL10n',
-					array(
-						'defaultLabel'     => __( 'Color value', 'gp-premium' ),
-						'pick'             => __( 'Select Color', 'gp-premium' ),
-						'defaultString'    => __( 'Default', 'gp-premium' ),
-						'defaultAriaLabel' => __( 'Select default color', 'gp-premium' ),
-						'clear'            => __( 'Clear', 'gp-premium' ),
-						'clearAriaLabel'   => __( 'Clear color', 'gp-premium' ),
-					)
-				);
+				wp_enqueue_script( 'wp-color-picker-alpha', GP_LIBRARY_DIRECTORY_URL . 'alpha-color-picker/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.4', true );
 
 				if ( function_exists( 'wp_add_inline_script' ) && function_exists( 'generate_get_default_color_palettes' ) ) {
 					// Grab our palette array and turn it into JS.
@@ -1256,7 +1244,7 @@ class GeneratePress_Elements_Metabox {
 								<input type="checkbox" name="_generate_disable_footer" id="_generate_disable_footer" value="true" <?php checked( get_post_meta( get_the_ID(), '_generate_disable_footer', true ), 'true' ); ?> />
 							</td>
 						</tr>
-					</body>
+					</tbody>
 				</table>
 
 				<table class="generate-elements-settings" data-type="layout" data-tab="content">
@@ -2040,7 +2028,13 @@ class GeneratePress_Elements_Metabox {
 	public function get_terms() {
 		check_ajax_referer( 'generate-elements-location', 'nonce' );
 
-		if ( ! current_user_can( 'manage_options' ) ) {
+		$current_user_can = 'manage_options';
+
+		if ( apply_filters( 'generate_elements_metabox_ajax_allow_editors', false ) ) {
+			$current_user_can = 'edit_posts';
+		}
+
+		if ( ! current_user_can( $current_user_can ) ) {
 			return;
 		}
 
@@ -2063,7 +2057,13 @@ class GeneratePress_Elements_Metabox {
 	public function get_posts() {
 		check_ajax_referer( 'generate-elements-location', 'nonce' );
 
-		if ( ! current_user_can( 'manage_options' ) ) {
+		$current_user_can = 'manage_options';
+
+		if ( apply_filters( 'generate_elements_metabox_ajax_allow_editors', false ) ) {
+			$current_user_can = 'edit_posts';
+		}
+
+		if ( ! current_user_can( $current_user_can ) ) {
 			return;
 		}
 
@@ -2350,6 +2350,21 @@ class GeneratePress_Elements_Metabox {
 					'woocommerce_after_account_navigation',
 				),
 			);
+		}
+
+		if ( function_exists( 'generate_is_using_flexbox' ) && generate_is_using_flexbox() ) {
+			$hooks['navigation']['hooks'][] = 'generate_menu_bar_items';
+		}
+
+		if ( defined( 'GENERATE_VERSION' ) && version_compare( GENERATE_VERSION, '3.0.0-alpha.1', '>' ) ) {
+			$hooks['navigation']['hooks'][] = 'generate_before_navigation';
+			$hooks['navigation']['hooks'][] = 'generate_after_navigation';
+			$hooks['navigation']['hooks'][] = 'generate_after_mobile_menu_button';
+			$hooks['navigation']['hooks'][] = 'generate_inside_mobile_menu_control_wrapper';
+
+			$hooks['content']['hooks'][] = 'generate_after_loop';
+			$hooks['content']['hooks'][] = 'generate_before_do_template_part';
+			$hooks['content']['hooks'][] = 'generate_after_do_template_part';
 		}
 
 		return apply_filters( 'generate_hooks_list', $hooks );

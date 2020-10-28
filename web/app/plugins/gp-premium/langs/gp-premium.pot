@@ -1,17 +1,17 @@
 # Copyright (C) 2020 Tom Usborne
-# This file is distributed under the GNU General Public License v2 or later.
+# This file is distributed under the same license as the GP Premium plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: GP Premium 1.11.0-beta.1\n"
+"Project-Id-Version: GP Premium 1.12.0-alpha.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gp-premium\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-29T17:14:37+00:00\n"
+"POT-Creation-Date: 2020-09-16T17:49:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: gp-premium\n"
 
 #. Plugin Name of the plugin
@@ -49,11 +49,11 @@ msgstr ""
 #: backgrounds/functions/functions.php:233
 #: backgrounds/functions/functions.php:258
 #: colors/functions/functions.php:82
-#: disable-elements/functions/functions.php:136
-#: disable-elements/functions/functions.php:138
-#: disable-elements/functions/functions.php:312
-#: disable-elements/functions/functions.php:314
-#: elements/class-metabox.php:1208
+#: disable-elements/functions/functions.php:142
+#: disable-elements/functions/functions.php:144
+#: disable-elements/functions/functions.php:318
+#: disable-elements/functions/functions.php:320
+#: elements/class-metabox.php:1196
 #: typography/functions/functions.php:256
 msgid "Top Bar"
 msgstr ""
@@ -63,14 +63,14 @@ msgstr ""
 #: backgrounds/functions/functions.php:364
 #: colors/functions/functions.php:167
 #: colors/functions/functions.php:179
-#: disable-elements/functions/functions.php:142
-#: disable-elements/functions/functions.php:144
-#: disable-elements/functions/functions.php:318
-#: disable-elements/functions/functions.php:320
-#: elements/class-metabox.php:243
+#: disable-elements/functions/functions.php:148
+#: disable-elements/functions/functions.php:150
+#: disable-elements/functions/functions.php:324
+#: disable-elements/functions/functions.php:326
+#: elements/class-metabox.php:231
 #: elements/class-metabox.php:2178
-#: elements/class-post-type.php:282
-#: elements/class-post-type.php:414
+#: elements/class-post-type.php:288
+#: elements/class-post-type.php:426
 #: library/customizer-helpers.php:129
 #: spacing/functions/customizer/header-spacing.php:16
 #: typography/functions/functions.php:370
@@ -82,11 +82,11 @@ msgstr ""
 #: backgrounds/functions/functions.php:438
 #: colors/functions/functions.php:279
 #: colors/functions/functions.php:291
-#: disable-elements/functions/functions.php:147
-#: disable-elements/functions/functions.php:149
-#: disable-elements/functions/functions.php:341
-#: disable-elements/functions/functions.php:343
-#: elements/class-metabox.php:1217
+#: disable-elements/functions/functions.php:153
+#: disable-elements/functions/functions.php:155
+#: disable-elements/functions/functions.php:347
+#: disable-elements/functions/functions.php:349
+#: elements/class-metabox.php:1205
 #: library/customizer-helpers.php:147
 #: spacing/functions/customizer/navigation-spacing.php:16
 #: typography/functions/functions.php:631
@@ -212,15 +212,15 @@ msgstr ""
 #: blog/functions/customizer.php:49
 #: colors/functions/functions.php:749
 #: colors/functions/functions.php:761
-#: elements/class-metabox.php:304
-#: elements/class-metabox.php:1083
-#: elements/class-metabox.php:1090
-#: elements/class-metabox.php:1104
-#: elements/class-metabox.php:1111
-#: elements/class-metabox.php:1118
+#: elements/class-metabox.php:292
+#: elements/class-metabox.php:1071
+#: elements/class-metabox.php:1078
+#: elements/class-metabox.php:1092
+#: elements/class-metabox.php:1099
+#: elements/class-metabox.php:1106
 #: elements/class-metabox.php:2202
 #: library/customizer-helpers.php:169
-#: page-header/functions/metabox.php:182
+#: page-header/functions/metabox.php:183
 #: sections/functions/metaboxes/metabox-functions.php:248
 #: sections/functions/metaboxes/metabox-functions.php:251
 #: spacing/functions/customizer/content-spacing.php:16
@@ -231,7 +231,7 @@ msgstr ""
 #: backgrounds/functions/functions.php:925
 #: backgrounds/functions/functions.php:938
 #: colors/functions/functions.php:931
-#: elements/class-metabox.php:284
+#: elements/class-metabox.php:272
 #: library/customizer-helpers.php:187
 msgid "Sidebar"
 msgstr ""
@@ -245,17 +245,17 @@ msgstr ""
 #: backgrounds/functions/functions.php:1041
 #: colors/functions/functions.php:1169
 #: colors/functions/functions.php:1181
-#: disable-elements/functions/functions.php:169
-#: disable-elements/functions/functions.php:171
-#: disable-elements/functions/functions.php:363
-#: disable-elements/functions/functions.php:365
-#: elements/class-metabox.php:290
-#: elements/class-metabox.php:1253
+#: disable-elements/functions/functions.php:175
+#: disable-elements/functions/functions.php:177
+#: disable-elements/functions/functions.php:369
+#: disable-elements/functions/functions.php:371
+#: elements/class-metabox.php:278
+#: elements/class-metabox.php:1241
 #: elements/class-metabox.php:2239
 #: library/customizer-helpers.php:205
 #: spacing/functions/customizer/footer-spacing.php:17
-#: typography/functions/functions.php:2304
-#: typography/functions/functions.php:2318
+#: typography/functions/functions.php:2373
+#: typography/functions/functions.php:2387
 msgid "Footer"
 msgstr ""
 
@@ -271,11 +271,11 @@ msgstr ""
 #: backgrounds/functions/secondary-nav-backgrounds.php:61
 #: colors/functions/secondary-nav-colors.php:59
 #: colors/functions/secondary-nav-colors.php:72
-#: disable-elements/functions/functions.php:153
-#: disable-elements/functions/functions.php:155
-#: disable-elements/functions/functions.php:347
-#: disable-elements/functions/functions.php:349
-#: elements/class-metabox.php:1226
+#: disable-elements/functions/functions.php:159
+#: disable-elements/functions/functions.php:161
+#: disable-elements/functions/functions.php:353
+#: disable-elements/functions/functions.php:355
+#: elements/class-metabox.php:1214
 #: secondary-nav/functions/functions.php:188
 #: secondary-nav/functions/functions.php:197
 #: secondary-nav/functions/functions.php:210
@@ -290,7 +290,7 @@ msgstr ""
 
 #: blog/functions/customizer.php:35
 #: elements/class-conditions.php:48
-#: elements/class-hero.php:868
+#: elements/class-hero.php:920
 msgid "Blog"
 msgstr ""
 
@@ -398,7 +398,7 @@ msgstr ""
 #: blog/functions/customizer.php:503
 #: blog/functions/customizer.php:677
 #: blog/functions/customizer.php:852
-#: elements/class-metabox.php:1308
+#: elements/class-metabox.php:1296
 #: elements/class-post-type.php:172
 #: elements/class-post-type.php:182
 msgid "Location"
@@ -425,9 +425,9 @@ msgstr ""
 #: blog/functions/customizer.php:531
 #: blog/functions/customizer.php:706
 #: blog/functions/customizer.php:881
-#: elements/class-metabox.php:507
-#: elements/class-metabox.php:529
-#: page-header/functions/metabox.php:339
+#: elements/class-metabox.php:495
+#: elements/class-metabox.php:517
+#: page-header/functions/metabox.php:340
 #: secondary-nav/functions/functions.php:309
 #: woocommerce/functions/customizer/customizer.php:390
 #: woocommerce/functions/customizer/customizer.php:433
@@ -437,12 +437,12 @@ msgstr ""
 #: blog/functions/customizer.php:532
 #: blog/functions/customizer.php:707
 #: blog/functions/customizer.php:882
-#: elements/class-metabox.php:506
-#: elements/class-metabox.php:595
-#: elements/class-metabox.php:649
+#: elements/class-metabox.php:494
+#: elements/class-metabox.php:583
+#: elements/class-metabox.php:637
 #: library/customizer/controls/class-spacing-control.php:43
 #: menu-plus/functions/generate-menu-plus.php:658
-#: page-header/functions/metabox.php:338
+#: page-header/functions/metabox.php:339
 #: secondary-nav/functions/functions.php:308
 #: secondary-nav/functions/functions.php:363
 #: woocommerce/functions/customizer/customizer.php:389
@@ -453,12 +453,12 @@ msgstr ""
 #: blog/functions/customizer.php:533
 #: blog/functions/customizer.php:708
 #: blog/functions/customizer.php:883
-#: elements/class-metabox.php:508
-#: elements/class-metabox.php:569
-#: elements/class-metabox.php:623
+#: elements/class-metabox.php:496
+#: elements/class-metabox.php:557
+#: elements/class-metabox.php:611
 #: library/customizer/controls/class-spacing-control.php:41
 #: menu-plus/functions/generate-menu-plus.php:659
-#: page-header/functions/metabox.php:340
+#: page-header/functions/metabox.php:341
 #: secondary-nav/functions/functions.php:310
 #: secondary-nav/functions/functions.php:362
 #: woocommerce/functions/customizer/customizer.php:391
@@ -533,8 +533,8 @@ msgid "Loading..."
 msgstr ""
 
 #. translators: Aria-label describing the read more button
-#: blog/functions/generate-blog.php:432
-#: blog/functions/generate-blog.php:464
+#: blog/functions/generate-blog.php:438
+#: blog/functions/generate-blog.php:470
 msgctxt "more on post title"
 msgid "More on %s"
 msgstr ""
@@ -601,9 +601,9 @@ msgid "Link Hover"
 msgstr ""
 
 #: colors/functions/functions.php:239
-#: elements/class-metabox.php:858
+#: elements/class-metabox.php:846
 #: menu-plus/functions/generate-menu-plus.php:474
-#: page-header/functions/metabox.php:515
+#: page-header/functions/metabox.php:516
 #: typography/functions/functions.php:446
 msgid "Site Title"
 msgstr ""
@@ -679,11 +679,11 @@ msgid "Button"
 msgstr ""
 
 #: colors/functions/functions.php:820
-#: disable-elements/functions/functions.php:164
-#: disable-elements/functions/functions.php:166
-#: disable-elements/functions/functions.php:358
-#: disable-elements/functions/functions.php:360
-#: elements/class-metabox.php:1244
+#: disable-elements/functions/functions.php:170
+#: disable-elements/functions/functions.php:172
+#: disable-elements/functions/functions.php:364
+#: disable-elements/functions/functions.php:366
+#: elements/class-metabox.php:1232
 msgid "Content Title"
 msgstr ""
 
@@ -761,7 +761,7 @@ msgid "Form Text Focus"
 msgstr ""
 
 #: colors/functions/functions.php:1200
-#: elements/class-metabox.php:1130
+#: elements/class-metabox.php:1118
 msgid "Footer Widgets"
 msgstr ""
 
@@ -778,7 +778,7 @@ msgstr ""
 #: menu-plus/functions/generate-menu-plus.php:550
 #: menu-plus/functions/generate-menu-plus.php:563
 #: menu-plus/functions/generate-menu-plus.php:587
-#: menu-plus/functions/generate-menu-plus.php:1125
+#: menu-plus/functions/generate-menu-plus.php:1165
 #: typography/functions/slideout-nav-fonts.php:39
 #: typography/functions/slideout-nav-fonts.php:52
 msgid "Off Canvas Panel"
@@ -854,15 +854,15 @@ msgid "Sticky Panel Cart"
 msgstr ""
 
 #: colors/functions/woocommerce-colors.php:365
-#: elements/class-metabox.php:765
-#: page-header/functions/metabox.php:365
+#: elements/class-metabox.php:753
+#: page-header/functions/metabox.php:366
 #: sections/functions/metaboxes/views/sections-template.php:222
 msgid "Background Color"
 msgstr ""
 
 #: colors/functions/woocommerce-colors.php:389
-#: elements/class-metabox.php:774
-#: page-header/functions/metabox.php:370
+#: elements/class-metabox.php:762
+#: page-header/functions/metabox.php:371
 #: sections/functions/metaboxes/views/sections-template.php:227
 msgid "Text Color"
 msgstr ""
@@ -955,21 +955,21 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: disable-elements/functions/functions.php:104
-#: elements/class-metabox.php:297
+#: disable-elements/functions/functions.php:110
+#: elements/class-metabox.php:285
 msgid "Disable Elements"
 msgstr ""
 
-#: disable-elements/functions/functions.php:159
-#: disable-elements/functions/functions.php:161
-#: disable-elements/functions/functions.php:353
-#: disable-elements/functions/functions.php:355
+#: disable-elements/functions/functions.php:165
+#: disable-elements/functions/functions.php:167
+#: disable-elements/functions/functions.php:359
+#: disable-elements/functions/functions.php:361
 msgid "Featured Image / Page Header"
 msgstr ""
 
-#: disable-elements/functions/functions.php:332
-#: disable-elements/functions/functions.php:334
-#: elements/class-metabox.php:1199
+#: disable-elements/functions/functions.php:338
+#: disable-elements/functions/functions.php:340
+#: elements/class-metabox.php:1187
 #: menu-plus/functions/generate-menu-plus.php:380
 #: menu-plus/functions/generate-menu-plus.php:421
 msgid "Mobile Header"
@@ -1050,209 +1050,181 @@ msgid "Roles"
 msgstr ""
 
 #. translators: author name
-#: elements/class-hero.php:898
+#: elements/class-hero.php:950
 #: page-header/functions/functions.php:1124
 msgid "View all posts by %s"
 msgstr ""
 
 #: elements/class-metabox.php:142
-#: elements/class-metabox.php:663
-#: elements/class-metabox.php:672
+#: elements/class-metabox.php:651
+#: elements/class-metabox.php:660
 msgid "Custom Image"
 msgstr ""
 
 #: elements/class-metabox.php:143
-#: elements/class-metabox.php:674
+#: elements/class-metabox.php:662
 msgid "Fallback Image"
 msgstr ""
 
 #: elements/class-metabox.php:144
-#: elements/class-metabox.php:241
-#: elements/class-metabox.php:1328
-#: elements/class-metabox.php:1357
-#: elements/class-metabox.php:1384
-#: elements/class-metabox.php:1433
-#: elements/class-metabox.php:1462
-#: elements/class-metabox.php:1491
-#: elements/class-metabox.php:1536
-#: elements/class-metabox.php:1563
-#: elements/class-metabox.php:1588
-#: elements/class-post-type.php:412
+#: elements/class-metabox.php:229
+#: elements/class-metabox.php:1316
+#: elements/class-metabox.php:1345
+#: elements/class-metabox.php:1372
+#: elements/class-metabox.php:1421
+#: elements/class-metabox.php:1450
+#: elements/class-metabox.php:1479
+#: elements/class-metabox.php:1524
+#: elements/class-metabox.php:1551
+#: elements/class-metabox.php:1576
+#: elements/class-post-type.php:424
 msgid "Choose..."
 msgstr ""
 
-#: elements/class-metabox.php:160
-msgid "Color value"
-msgstr ""
-
-#: elements/class-metabox.php:161
-msgid "Select Color"
-msgstr ""
-
-#: elements/class-metabox.php:162
-#: elements/class-metabox.php:987
-#: elements/class-metabox.php:1076
-#: elements/class-metabox.php:1136
-#: elements/class-metabox.php:1272
-msgid "Default"
-msgstr ""
-
-#: elements/class-metabox.php:163
-msgid "Select default color"
-msgstr ""
-
-#: elements/class-metabox.php:164
-msgid "Clear"
-msgstr ""
-
-#: elements/class-metabox.php:165
-msgid "Clear color"
-msgstr ""
-
-#: elements/class-metabox.php:220
-#: page-header/functions/metabox.php:676
+#: elements/class-metabox.php:208
+#: page-header/functions/metabox.php:677
 msgid "Template Tags"
 msgstr ""
 
-#: elements/class-metabox.php:242
+#: elements/class-metabox.php:230
 #: elements/class-post-type.php:267
-#: elements/class-post-type.php:413
+#: elements/class-post-type.php:425
 msgid "Block"
 msgstr ""
 
-#: elements/class-metabox.php:244
-#: elements/class-metabox.php:335
-#: elements/class-metabox.php:354
-#: elements/class-post-type.php:286
-#: elements/class-post-type.php:415
+#: elements/class-metabox.php:232
+#: elements/class-metabox.php:323
+#: elements/class-metabox.php:342
+#: elements/class-post-type.php:292
+#: elements/class-post-type.php:427
 msgid "Hook"
 msgstr ""
 
-#: elements/class-metabox.php:245
-#: elements/class-post-type.php:295
-#: elements/class-post-type.php:416
+#: elements/class-metabox.php:233
+#: elements/class-post-type.php:307
+#: elements/class-post-type.php:428
 #: library/customizer/controls/class-section-shortcuts-control.php:56
 #: sections/functions/metaboxes/views/sections-template.php:171
 msgid "Layout"
 msgstr ""
 
-#: elements/class-metabox.php:251
+#: elements/class-metabox.php:239
 msgid "This element needs a location set within the Display Rules tab in order to display."
 msgstr ""
 
-#: elements/class-metabox.php:264
+#: elements/class-metabox.php:252
 msgid "Page Hero"
 msgstr ""
 
-#: elements/class-metabox.php:270
-#: elements/class-metabox.php:336
-#: elements/class-metabox.php:1190
+#: elements/class-metabox.php:258
+#: elements/class-metabox.php:324
+#: elements/class-metabox.php:1178
 msgid "Site Header"
 msgstr ""
 
-#: elements/class-metabox.php:277
+#: elements/class-metabox.php:265
 #: sections/functions/metaboxes/metabox-functions.php:250
 msgid "Settings"
 msgstr ""
 
-#: elements/class-metabox.php:312
+#: elements/class-metabox.php:300
 msgid "Display Rules"
 msgstr ""
 
-#: elements/class-metabox.php:319
+#: elements/class-metabox.php:307
 msgid "Internal Notes"
 msgstr ""
 
-#: elements/class-metabox.php:331
+#: elements/class-metabox.php:319
 msgid "Block Type"
 msgstr ""
 
-#: elements/class-metabox.php:337
+#: elements/class-metabox.php:325
 msgid "Site Footer"
 msgstr ""
 
-#: elements/class-metabox.php:338
-#: elements/class-metabox.php:993
-#: elements/class-metabox.php:1081
+#: elements/class-metabox.php:326
+#: elements/class-metabox.php:981
+#: elements/class-metabox.php:1069
 #: secondary-nav/functions/functions.php:338
 msgid "Right Sidebar"
 msgstr ""
 
-#: elements/class-metabox.php:339
-#: elements/class-metabox.php:992
-#: elements/class-metabox.php:1088
+#: elements/class-metabox.php:327
+#: elements/class-metabox.php:980
+#: elements/class-metabox.php:1076
 #: secondary-nav/functions/functions.php:337
 msgid "Left Sidebar"
 msgstr ""
 
-#: elements/class-metabox.php:343
+#: elements/class-metabox.php:331
 msgid "This will remove the current sidebar widgets for the selected sidebar. Your layout must have a sidebar set for this Element to show."
 msgstr ""
 
-#: elements/class-metabox.php:377
+#: elements/class-metabox.php:365
 msgid "Custom"
 msgstr ""
 
-#: elements/class-metabox.php:378
+#: elements/class-metabox.php:366
 msgid "Custom Hook"
 msgstr ""
 
-#: elements/class-metabox.php:386
+#: elements/class-metabox.php:374
 msgid "Custom Hook Name"
 msgstr ""
 
-#: elements/class-metabox.php:399
+#: elements/class-metabox.php:387
 msgid "Disable Site Header"
 msgstr ""
 
-#: elements/class-metabox.php:408
+#: elements/class-metabox.php:396
 msgid "Disable Site Footer"
 msgstr ""
 
-#: elements/class-metabox.php:417
+#: elements/class-metabox.php:405
 msgid "Execute Shortcodes"
 msgstr ""
 
-#: elements/class-metabox.php:426
+#: elements/class-metabox.php:414
 #: hooks/functions/functions.php:355
 msgid "Execute PHP"
 msgstr ""
 
 #. translators: %s is DISALLOW_FILE_EDIT constant
-#: elements/class-metabox.php:433
+#: elements/class-metabox.php:421
 msgid "Unable to execute PHP as %s is defined."
 msgstr ""
 
-#: elements/class-metabox.php:449
+#: elements/class-metabox.php:437
 msgid "Priority"
 msgstr ""
 
-#: elements/class-metabox.php:468
+#: elements/class-metabox.php:456
 msgid "Element Classes"
 msgstr ""
 
-#: elements/class-metabox.php:469
+#: elements/class-metabox.php:457
 msgid "Add custom classes to the Page Hero element."
 msgstr ""
 
-#: elements/class-metabox.php:478
-#: page-header/functions/metabox.php:320
+#: elements/class-metabox.php:466
+#: page-header/functions/metabox.php:321
 msgid "Container"
 msgstr ""
 
-#: elements/class-metabox.php:482
-#: elements/class-metabox.php:495
-#: page-header/functions/metabox.php:323
-#: page-header/functions/metabox.php:331
+#: elements/class-metabox.php:470
+#: elements/class-metabox.php:483
+#: page-header/functions/metabox.php:324
+#: page-header/functions/metabox.php:332
 #: sections/functions/metaboxes/views/sections-template.php:176
 #: sections/functions/metaboxes/views/sections-template.php:186
 msgid "Full Width"
 msgstr ""
 
-#: elements/class-metabox.php:483
-#: elements/class-metabox.php:494
-#: page-header/functions/metabox.php:322
-#: page-header/functions/metabox.php:330
+#: elements/class-metabox.php:471
+#: elements/class-metabox.php:482
+#: page-header/functions/metabox.php:323
+#: page-header/functions/metabox.php:331
 #: secondary-nav/functions/functions.php:259
 #: secondary-nav/functions/functions.php:284
 #: sections/functions/metaboxes/views/sections-template.php:177
@@ -1261,374 +1233,381 @@ msgctxt "Width"
 msgid "Contained"
 msgstr ""
 
-#: elements/class-metabox.php:490
-#: page-header/functions/metabox.php:328
+#: elements/class-metabox.php:478
+#: page-header/functions/metabox.php:329
 msgid "Inner Container"
 msgstr ""
 
-#: elements/class-metabox.php:502
+#: elements/class-metabox.php:490
 msgid "Horizontal Alignment"
 msgstr ""
 
-#: elements/class-metabox.php:515
-#: page-header/functions/metabox.php:309
+#: elements/class-metabox.php:503
+#: page-header/functions/metabox.php:310
 msgid "Full Screen"
 msgstr ""
 
-#: elements/class-metabox.php:524
+#: elements/class-metabox.php:512
 msgid "Vertical Alignment"
 msgstr ""
 
-#: elements/class-metabox.php:528
-#: elements/class-metabox.php:556
-#: elements/class-metabox.php:610
+#: elements/class-metabox.php:516
+#: elements/class-metabox.php:544
+#: elements/class-metabox.php:598
 #: library/customizer/controls/class-spacing-control.php:40
 msgid "Top"
 msgstr ""
 
-#: elements/class-metabox.php:530
-#: elements/class-metabox.php:582
-#: elements/class-metabox.php:636
+#: elements/class-metabox.php:518
+#: elements/class-metabox.php:570
+#: elements/class-metabox.php:624
 #: library/customizer/controls/class-spacing-control.php:42
 msgid "Bottom"
 msgstr ""
 
-#: elements/class-metabox.php:537
+#: elements/class-metabox.php:525
 msgid "Padding"
 msgstr ""
 
-#: elements/class-metabox.php:657
+#: elements/class-metabox.php:645
 #: elements/class-post-type.php:87
 #: sections/functions/metaboxes/views/sections-template.php:247
 #: sections/functions/metaboxes/views/sections-template.php:252
 msgid "Background Image"
 msgstr ""
 
-#: elements/class-metabox.php:661
+#: elements/class-metabox.php:649
 msgid "No Background Image"
 msgstr ""
 
-#: elements/class-metabox.php:662
-#: elements/class-metabox.php:1235
+#: elements/class-metabox.php:650
+#: elements/class-metabox.php:1223
 msgid "Featured Image"
 msgstr ""
 
-#: elements/class-metabox.php:690
+#: elements/class-metabox.php:678
 msgid "Change"
 msgstr ""
 
-#: elements/class-metabox.php:695
-#: elements/class-metabox.php:895
-#: elements/class-metabox.php:921
-#: elements/class-metabox.php:947
-#: elements/class-metabox.php:973
-#: elements/class-metabox.php:1349
-#: elements/class-metabox.php:1377
-#: elements/class-metabox.php:1404
-#: elements/class-metabox.php:1454
-#: elements/class-metabox.php:1484
-#: elements/class-metabox.php:1513
-#: elements/class-metabox.php:1555
-#: elements/class-metabox.php:1581
-#: elements/class-metabox.php:1606
+#: elements/class-metabox.php:683
+#: elements/class-metabox.php:883
+#: elements/class-metabox.php:909
+#: elements/class-metabox.php:935
+#: elements/class-metabox.php:961
+#: elements/class-metabox.php:1337
+#: elements/class-metabox.php:1365
+#: elements/class-metabox.php:1392
+#: elements/class-metabox.php:1442
+#: elements/class-metabox.php:1472
+#: elements/class-metabox.php:1501
+#: elements/class-metabox.php:1543
+#: elements/class-metabox.php:1569
+#: elements/class-metabox.php:1594
 #: sections/functions/metaboxes/views/sections-template.php:253
 msgid "Remove"
 msgstr ""
 
 #. translators: Upload Custom Image or Fallback image
-#: elements/class-metabox.php:706
+#: elements/class-metabox.php:694
 msgid "Upload %s"
 msgstr ""
 
-#: elements/class-metabox.php:717
+#: elements/class-metabox.php:705
 msgid "Background Position"
 msgstr ""
 
-#: elements/class-metabox.php:736
+#: elements/class-metabox.php:724
 msgid "Parallax"
 msgstr ""
 
-#: elements/class-metabox.php:745
+#: elements/class-metabox.php:733
 msgid "Disable Featured Image"
 msgstr ""
 
-#: elements/class-metabox.php:746
+#: elements/class-metabox.php:734
 msgid "Disable the featured image on posts with this hero area."
 msgstr ""
 
-#: elements/class-metabox.php:755
+#: elements/class-metabox.php:743
 msgid "Background Overlay"
 msgstr ""
 
-#: elements/class-metabox.php:756
+#: elements/class-metabox.php:744
 msgid "Use the background color as a background overlay."
 msgstr ""
 
-#: elements/class-metabox.php:783
-#: page-header/functions/metabox.php:375
+#: elements/class-metabox.php:771
+#: page-header/functions/metabox.php:376
 #: sections/functions/metaboxes/views/sections-template.php:233
 msgid "Link Color"
 msgstr ""
 
-#: elements/class-metabox.php:792
-#: page-header/functions/metabox.php:380
+#: elements/class-metabox.php:780
+#: page-header/functions/metabox.php:381
 #: sections/functions/metaboxes/views/sections-template.php:239
 msgid "Link Color Hover"
 msgstr ""
 
-#: elements/class-metabox.php:806
+#: elements/class-metabox.php:794
 msgid "Merge with Content"
 msgstr ""
 
-#: elements/class-metabox.php:807
+#: elements/class-metabox.php:795
 msgid "Place your site header on top of the element below it."
 msgstr ""
 
-#: elements/class-metabox.php:811
+#: elements/class-metabox.php:799
 msgid "No Merge"
 msgstr ""
 
-#: elements/class-metabox.php:812
+#: elements/class-metabox.php:800
 msgid "Merge"
 msgstr ""
 
-#: elements/class-metabox.php:813
+#: elements/class-metabox.php:801
 msgid "Merge on Desktop Only"
 msgstr ""
 
-#: elements/class-metabox.php:820
+#: elements/class-metabox.php:808
 msgid "Offset Site Header Height"
 msgstr ""
 
-#: elements/class-metabox.php:821
+#: elements/class-metabox.php:809
 msgid "Add to the top padding of your Page Hero to prevent overlapping."
 msgstr ""
 
-#: elements/class-metabox.php:848
+#: elements/class-metabox.php:836
 msgid "Header Background"
 msgstr ""
 
-#: elements/class-metabox.php:869
-#: page-header/functions/metabox.php:520
+#: elements/class-metabox.php:857
+#: page-header/functions/metabox.php:521
 #: typography/functions/functions.php:580
 msgid "Site Tagline"
 msgstr ""
 
-#: elements/class-metabox.php:880
-#: elements/class-metabox.php:894
+#: elements/class-metabox.php:868
+#: elements/class-metabox.php:882
 msgid "Site Logo"
 msgstr ""
 
-#: elements/class-metabox.php:894
-#: elements/class-metabox.php:920
-#: elements/class-metabox.php:946
-#: elements/class-metabox.php:972
+#: elements/class-metabox.php:882
+#: elements/class-metabox.php:908
+#: elements/class-metabox.php:934
+#: elements/class-metabox.php:960
 #: sections/functions/metaboxes/views/sections-template.php:252
 msgid "Upload"
 msgstr ""
 
-#: elements/class-metabox.php:906
-#: elements/class-metabox.php:920
-#: elements/class-metabox.php:946
-#: elements/class-metabox.php:972
+#: elements/class-metabox.php:894
+#: elements/class-metabox.php:908
+#: elements/class-metabox.php:934
+#: elements/class-metabox.php:960
 msgid "Retina Logo"
 msgstr ""
 
-#: elements/class-metabox.php:932
+#: elements/class-metabox.php:920
 #: menu-plus/functions/generate-menu-plus.php:340
-#: page-header/functions/metabox.php:480
+#: page-header/functions/metabox.php:481
 msgid "Navigation Logo"
 msgstr ""
 
-#: elements/class-metabox.php:958
+#: elements/class-metabox.php:946
 msgid "Mobile Header Logo"
 msgstr ""
 
-#: elements/class-metabox.php:983
+#: elements/class-metabox.php:971
 #: secondary-nav/functions/functions.php:330
 msgid "Navigation Location"
 msgstr ""
 
-#: elements/class-metabox.php:988
+#: elements/class-metabox.php:975
+#: elements/class-metabox.php:1064
+#: elements/class-metabox.php:1124
+#: elements/class-metabox.php:1260
+msgid "Default"
+msgstr ""
+
+#: elements/class-metabox.php:976
 #: secondary-nav/functions/functions.php:333
 msgid "Below Header"
 msgstr ""
 
-#: elements/class-metabox.php:989
+#: elements/class-metabox.php:977
 #: secondary-nav/functions/functions.php:334
 msgid "Above Header"
 msgstr ""
 
-#: elements/class-metabox.php:990
+#: elements/class-metabox.php:978
 #: secondary-nav/functions/functions.php:335
 msgid "Float Right"
 msgstr ""
 
-#: elements/class-metabox.php:991
+#: elements/class-metabox.php:979
 #: secondary-nav/functions/functions.php:336
 msgid "Float Left"
 msgstr ""
 
-#: elements/class-metabox.php:994
+#: elements/class-metabox.php:982
 #: secondary-nav/functions/functions.php:339
 msgid "No Navigation"
 msgstr ""
 
-#: elements/class-metabox.php:1001
+#: elements/class-metabox.php:989
 msgid "Navigation Colors"
 msgstr ""
 
-#: elements/class-metabox.php:1010
-#: page-header/functions/metabox.php:531
+#: elements/class-metabox.php:998
+#: page-header/functions/metabox.php:532
 msgid "Navigation Background"
 msgstr ""
 
-#: elements/class-metabox.php:1019
-#: page-header/functions/metabox.php:536
+#: elements/class-metabox.php:1007
+#: page-header/functions/metabox.php:537
 msgid "Navigation Text"
 msgstr ""
 
-#: elements/class-metabox.php:1028
-#: page-header/functions/metabox.php:541
+#: elements/class-metabox.php:1016
+#: page-header/functions/metabox.php:542
 msgid "Navigation Background Hover"
 msgstr ""
 
-#: elements/class-metabox.php:1037
-#: page-header/functions/metabox.php:546
+#: elements/class-metabox.php:1025
+#: page-header/functions/metabox.php:547
 msgid "Navigation Text Hover"
 msgstr ""
 
-#: elements/class-metabox.php:1046
-#: page-header/functions/metabox.php:551
+#: elements/class-metabox.php:1034
+#: page-header/functions/metabox.php:552
 msgid "Navigation Background Current"
 msgstr ""
 
-#: elements/class-metabox.php:1055
-#: page-header/functions/metabox.php:556
+#: elements/class-metabox.php:1043
+#: page-header/functions/metabox.php:557
 msgid "Navigation Text Current"
 msgstr ""
 
-#: elements/class-metabox.php:1070
+#: elements/class-metabox.php:1058
 #: woocommerce/functions/customizer/customizer.php:227
 #: woocommerce/functions/customizer/customizer.php:713
 msgid "Sidebar Layout"
 msgstr ""
 
-#: elements/class-metabox.php:1083
-#: elements/class-metabox.php:1090
-#: elements/class-metabox.php:1104
-#: elements/class-metabox.php:1111
-#: elements/class-metabox.php:1118
+#: elements/class-metabox.php:1071
+#: elements/class-metabox.php:1078
+#: elements/class-metabox.php:1092
+#: elements/class-metabox.php:1099
+#: elements/class-metabox.php:1106
 msgctxt "Short name for meta box"
 msgid "Sidebar"
 msgstr ""
 
-#: elements/class-metabox.php:1095
+#: elements/class-metabox.php:1083
 msgid "No Sidebars"
 msgstr ""
 
-#: elements/class-metabox.php:1097
+#: elements/class-metabox.php:1085
 #: woocommerce/functions/customizer/customizer.php:232
 #: woocommerce/functions/customizer/customizer.php:719
 msgid "Content (no sidebars)"
 msgstr ""
 
-#: elements/class-metabox.php:1102
+#: elements/class-metabox.php:1090
 msgid "Both Sidebars"
 msgstr ""
 
-#: elements/class-metabox.php:1109
+#: elements/class-metabox.php:1097
 msgid "Both Sidebars on Left"
 msgstr ""
 
-#: elements/class-metabox.php:1116
+#: elements/class-metabox.php:1104
 msgid "Both Sidebars on Right"
 msgstr ""
 
-#: elements/class-metabox.php:1143
+#: elements/class-metabox.php:1131
 msgid "0 Widgets"
 msgstr ""
 
-#: elements/class-metabox.php:1150
+#: elements/class-metabox.php:1138
 msgid "1 Widget"
 msgstr ""
 
-#: elements/class-metabox.php:1157
+#: elements/class-metabox.php:1145
 msgid "2 Widgets"
 msgstr ""
 
-#: elements/class-metabox.php:1164
+#: elements/class-metabox.php:1152
 msgid "3 Widgets"
 msgstr ""
 
-#: elements/class-metabox.php:1171
+#: elements/class-metabox.php:1159
 msgid "4 Widgets"
 msgstr ""
 
-#: elements/class-metabox.php:1178
+#: elements/class-metabox.php:1166
 msgid "5 Widgets"
 msgstr ""
 
-#: elements/class-metabox.php:1266
+#: elements/class-metabox.php:1254
 msgid "Content Area"
 msgstr ""
 
-#: elements/class-metabox.php:1279
+#: elements/class-metabox.php:1267
 msgid "Full Width (no padding)"
 msgstr ""
 
-#: elements/class-metabox.php:1286
+#: elements/class-metabox.php:1274
 msgctxt "Width"
 msgid "Contained (no padding)"
 msgstr ""
 
-#: elements/class-metabox.php:1293
+#: elements/class-metabox.php:1281
 msgid "Content Width"
 msgstr ""
 
-#: elements/class-metabox.php:1309
+#: elements/class-metabox.php:1297
 msgid "Choose when this element should display."
 msgstr ""
 
-#: elements/class-metabox.php:1407
+#: elements/class-metabox.php:1395
 msgid "Add Location Rule"
 msgstr ""
 
-#: elements/class-metabox.php:1413
+#: elements/class-metabox.php:1401
 msgid "Exclude"
 msgstr ""
 
-#: elements/class-metabox.php:1414
+#: elements/class-metabox.php:1402
 msgid "Choose when this element should not display."
 msgstr ""
 
-#: elements/class-metabox.php:1516
+#: elements/class-metabox.php:1504
 msgid "Add Exclusion Rule"
 msgstr ""
 
-#: elements/class-metabox.php:1522
+#: elements/class-metabox.php:1510
 #: elements/class-post-type.php:174
 #: elements/class-post-type.php:184
 msgid "Users"
 msgstr ""
 
-#: elements/class-metabox.php:1523
+#: elements/class-metabox.php:1511
 msgid "Display this element for specific user roles."
 msgstr ""
 
-#: elements/class-metabox.php:1609
+#: elements/class-metabox.php:1597
 msgid "Add User Rule"
 msgstr ""
 
-#: elements/class-metabox.php:1614
+#: elements/class-metabox.php:1602
 msgid "Ignore Languages"
 msgstr ""
 
-#: elements/class-metabox.php:1615
+#: elements/class-metabox.php:1603
 msgid "Show this Element to all languages."
 msgstr ""
 
-#: elements/class-metabox.php:1629
+#: elements/class-metabox.php:1617
 msgid "Internal notes can be helpful to remember why this element was added."
 msgstr ""
 
@@ -1670,27 +1649,27 @@ msgid "WooCommerce - Account"
 msgstr ""
 
 #: elements/class-metabox.php:2367
-#: page-header/functions/metabox.php:689
+#: page-header/functions/metabox.php:690
 msgid "The content title of the current post/taxonomy."
 msgstr ""
 
 #: elements/class-metabox.php:2372
-#: page-header/functions/metabox.php:692
+#: page-header/functions/metabox.php:693
 msgid "The published date of the current post."
 msgstr ""
 
 #: elements/class-metabox.php:2377
-#: page-header/functions/metabox.php:695
+#: page-header/functions/metabox.php:696
 msgid "The author of the current post."
 msgstr ""
 
 #: elements/class-metabox.php:2382
-#: page-header/functions/metabox.php:698
+#: page-header/functions/metabox.php:699
 msgid "The terms attached to the chosen taxonomy (category, post_tag, product_cat)."
 msgstr ""
 
 #: elements/class-metabox.php:2387
-#: page-header/functions/metabox.php:701
+#: page-header/functions/metabox.php:702
 msgid "Custom post meta. Replace \"name\" with the name of your custom field."
 msgstr ""
 
@@ -1705,8 +1684,8 @@ msgid "Element"
 msgstr ""
 
 #: elements/class-post-type.php:79
-#: elements/class-post-type.php:349
-#: elements/class-post-type.php:350
+#: elements/class-post-type.php:361
+#: elements/class-post-type.php:362
 #: elements/elements.php:82
 msgid "Elements"
 msgstr ""
@@ -1798,48 +1777,49 @@ msgstr ""
 msgid "All types"
 msgstr ""
 
-#: elements/class-post-type.php:308
+#: elements/class-post-type.php:320
 msgid "Not set"
 msgstr ""
 
-#: elements/class-post-type.php:409
+#: elements/class-post-type.php:421
 msgid "Choose Element Type"
 msgstr ""
 
-#: elements/class-post-type.php:419
+#: elements/class-post-type.php:431
 msgid "Create"
 msgstr ""
 
-#: elements/class-post-type.php:422
-#: menu-plus/functions/generate-menu-plus.php:1099
-#: menu-plus/functions/generate-menu-plus.php:1805
+#: elements/class-post-type.php:434
+#: menu-plus/functions/generate-menu-plus.php:1139
+#: menu-plus/functions/generate-menu-plus.php:1894
 #: sections/functions/metaboxes/views/sections-template.php:69
 #: sites/classes/class-site.php:260
 #: sites/classes/class-site.php:510
 msgid "Close"
 msgstr ""
 
-#: general/class-external-file-css.php:98
+#: general/class-external-file-css.php:97
 msgid "Dynamic CSS Print Method"
 msgstr ""
 
-#: general/class-external-file-css.php:99
+#: general/class-external-file-css.php:98
 msgid "Generating your dynamic CSS in an external file offers significant performance advantages."
 msgstr ""
 
-#: general/class-external-file-css.php:102
+#: general/class-external-file-css.php:101
 msgid "Inline Embedding"
 msgstr ""
 
-#: general/class-external-file-css.php:103
+#: general/class-external-file-css.php:102
 msgid "External File"
 msgstr ""
 
-#: general/class-external-file-css.php:117
+#: general/class-external-file-css.php:116
 msgid "Regenerate CSS File"
 msgstr ""
 
-#: general/class-external-file-css.php:439
+#: general/class-external-file-css.php:442
+#: sites/sites.php:330
 msgid "Security check failed."
 msgstr ""
 
@@ -1992,7 +1972,7 @@ msgstr ""
 
 #: import-export/functions/functions.php:62
 #: inc/reset.php:22
-#: page-header/functions/metabox.php:196
+#: page-header/functions/metabox.php:197
 msgid "Advanced"
 msgstr ""
 
@@ -2210,7 +2190,7 @@ msgid "Cart"
 msgstr ""
 
 #: inc/deprecated.php:619
-#: sites/sites.php:320
+#: sites/sites.php:312
 msgid "Refresh Sites"
 msgstr ""
 
@@ -2242,12 +2222,12 @@ msgstr ""
 #: typography/functions/functions.php:1186
 #: typography/functions/functions.php:1333
 #: typography/functions/functions.php:1489
-#: typography/functions/functions.php:1626
-#: typography/functions/functions.php:1793
-#: typography/functions/functions.php:1924
-#: typography/functions/functions.php:2055
-#: typography/functions/functions.php:2214
-#: typography/functions/functions.php:2409
+#: typography/functions/functions.php:1656
+#: typography/functions/functions.php:1846
+#: typography/functions/functions.php:2000
+#: typography/functions/functions.php:2124
+#: typography/functions/functions.php:2283
+#: typography/functions/functions.php:2478
 #: typography/functions/secondary-nav-fonts.php:158
 #: typography/functions/slideout-nav-fonts.php:125
 #: typography/functions/woocommerce-fonts.php:117
@@ -2416,8 +2396,8 @@ msgid "Off Canvas Menu"
 msgstr ""
 
 #: menu-plus/functions/generate-menu-plus.php:34
-#: menu-plus/functions/generate-menu-plus.php:988
-#: menu-plus/functions/generate-menu-plus.php:998
+#: menu-plus/functions/generate-menu-plus.php:1028
+#: menu-plus/functions/generate-menu-plus.php:1038
 #: secondary-nav/functions/functions.php:721
 msgid "Menu"
 msgstr ""
@@ -2483,7 +2463,6 @@ msgstr ""
 
 #: menu-plus/functions/generate-menu-plus.php:270
 #: sites/sites.php:251
-#: sites/sites.php:269
 msgid "None"
 msgstr ""
 
@@ -2527,7 +2506,7 @@ msgstr ""
 
 #: menu-plus/functions/generate-menu-plus.php:473
 #: menu-plus/functions/generate-menu-plus.php:495
-#: page-header/functions/metabox.php:191
+#: page-header/functions/metabox.php:192
 msgid "Logo"
 msgstr ""
 
@@ -2570,7 +2549,7 @@ msgstr ""
 #: page-header/functions/functions.php:820
 #: page-header/functions/metabox.php:37
 #: page-header/functions/metabox.php:57
-#: page-header/functions/metabox.php:757
+#: page-header/functions/metabox.php:758
 #: page-header/functions/post-type.php:15
 #: page-header/functions/post-type.php:29
 #: page-header/functions/post-type.php:157
@@ -2622,198 +2601,198 @@ msgstr ""
 msgid "Taxonomies - Archives"
 msgstr ""
 
-#: page-header/functions/metabox.php:139
-#: page-header/functions/metabox.php:743
+#: page-header/functions/metabox.php:140
+#: page-header/functions/metabox.php:744
 msgid "No Page Headers found. Want to <a href=\"%1$s\" target=\"_blank\">create one</a>?"
 msgstr ""
 
-#: page-header/functions/metabox.php:158
+#: page-header/functions/metabox.php:159
 msgid "Content is required for the below settings to work."
 msgstr ""
 
-#: page-header/functions/metabox.php:178
+#: page-header/functions/metabox.php:179
 msgid "Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:186
+#: page-header/functions/metabox.php:187
 msgid "Background Video"
 msgstr ""
 
-#: page-header/functions/metabox.php:202
+#: page-header/functions/metabox.php:203
 msgid "Add to excerpt"
 msgstr ""
 
-#: page-header/functions/metabox.php:218
+#: page-header/functions/metabox.php:219
 msgid "Currently using your <a href=\"#\" class=\"generate-featured-image\">featured image</a>."
 msgstr ""
 
-#: page-header/functions/metabox.php:229
+#: page-header/functions/metabox.php:230
 msgid "Page Header Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:229
+#: page-header/functions/metabox.php:230
 msgid "Insert Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:230
+#: page-header/functions/metabox.php:231
 msgid "Choose Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:233
+#: page-header/functions/metabox.php:234
 msgid "Remove Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:238
+#: page-header/functions/metabox.php:239
 msgid "Or you can <a href=\"#\">set the featured image</a>."
 msgstr ""
 
-#: page-header/functions/metabox.php:243
+#: page-header/functions/metabox.php:244
 msgid "Image Link"
 msgstr ""
 
-#: page-header/functions/metabox.php:248
+#: page-header/functions/metabox.php:249
 msgid "Resize Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:250
+#: page-header/functions/metabox.php:251
 #: sections/functions/metaboxes/views/sections-template.php:260
 #: sections/functions/metaboxes/views/sections-template.php:268
 msgid "Disable"
 msgstr ""
 
-#: page-header/functions/metabox.php:251
+#: page-header/functions/metabox.php:252
 #: sections/functions/metaboxes/views/sections-template.php:261
 #: sections/functions/metaboxes/views/sections-template.php:269
 msgid "Enable"
 msgstr ""
 
-#: page-header/functions/metabox.php:256
+#: page-header/functions/metabox.php:257
 msgid "These options are no longer available as of GP Premium 1.10.0."
 msgstr ""
 
-#: page-header/functions/metabox.php:259
+#: page-header/functions/metabox.php:260
 msgid "Image Width"
 msgstr ""
 
-#: page-header/functions/metabox.php:264
+#: page-header/functions/metabox.php:265
 msgid "Image Height"
 msgstr ""
 
-#: page-header/functions/metabox.php:267
+#: page-header/functions/metabox.php:268
 msgid "Use \"0\" or leave blank for proportional resizing."
 msgstr ""
 
-#: page-header/functions/metabox.php:277
+#: page-header/functions/metabox.php:278
 msgid "HTML and shortcodes allowed."
 msgstr ""
 
-#: page-header/functions/metabox.php:284
+#: page-header/functions/metabox.php:285
 msgid "Automatically add paragraphs"
 msgstr ""
 
-#: page-header/functions/metabox.php:289
+#: page-header/functions/metabox.php:290
 msgid "Add Padding"
 msgstr ""
 
-#: page-header/functions/metabox.php:294
+#: page-header/functions/metabox.php:295
 msgid "Add Background Image"
 msgstr ""
 
-#: page-header/functions/metabox.php:299
+#: page-header/functions/metabox.php:300
 msgid "Use background color as overlay"
 msgstr ""
 
-#: page-header/functions/metabox.php:304
+#: page-header/functions/metabox.php:305
 #: sections/functions/metaboxes/views/sections-template.php:257
 msgid "Parallax Effect"
 msgstr ""
 
-#: page-header/functions/metabox.php:314
+#: page-header/functions/metabox.php:315
 msgid "Vertical center content"
 msgstr ""
 
-#: page-header/functions/metabox.php:336
+#: page-header/functions/metabox.php:337
 #: woocommerce/functions/customizer/customizer.php:429
 msgid "Text Alignment"
 msgstr ""
 
-#: page-header/functions/metabox.php:345
+#: page-header/functions/metabox.php:346
 msgid "Top & Bottom Padding"
 msgstr ""
 
-#: page-header/functions/metabox.php:354
+#: page-header/functions/metabox.php:355
 msgid "Left & Right Padding"
 msgstr ""
 
-#: page-header/functions/metabox.php:391
+#: page-header/functions/metabox.php:392
 msgid "MP4 file"
-msgstr ""
-
-#: page-header/functions/metabox.php:393
-#: page-header/functions/metabox.php:401
-#: page-header/functions/metabox.php:409
-msgid "Page Header Video"
-msgstr ""
-
-#: page-header/functions/metabox.php:393
-#: page-header/functions/metabox.php:401
-#: page-header/functions/metabox.php:409
-msgid "Insert Video"
 msgstr ""
 
 #: page-header/functions/metabox.php:394
 #: page-header/functions/metabox.php:402
 #: page-header/functions/metabox.php:410
+msgid "Page Header Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:394
+#: page-header/functions/metabox.php:402
+#: page-header/functions/metabox.php:410
+msgid "Insert Video"
+msgstr ""
+
+#: page-header/functions/metabox.php:395
+#: page-header/functions/metabox.php:403
+#: page-header/functions/metabox.php:411
 msgid "Choose Video"
 msgstr ""
 
-#: page-header/functions/metabox.php:399
+#: page-header/functions/metabox.php:400
 msgid "OGV file"
 msgstr ""
 
-#: page-header/functions/metabox.php:407
+#: page-header/functions/metabox.php:408
 msgid "WEBM file"
 msgstr ""
 
-#: page-header/functions/metabox.php:415
+#: page-header/functions/metabox.php:416
 msgid "Overlay Color"
 msgstr ""
 
-#: page-header/functions/metabox.php:431
+#: page-header/functions/metabox.php:432
 msgid "Overwrite your site-wide logo/header on this page."
 msgstr ""
 
-#: page-header/functions/metabox.php:441
+#: page-header/functions/metabox.php:442
 msgid "Header / Logo"
 msgstr ""
 
-#: page-header/functions/metabox.php:441
+#: page-header/functions/metabox.php:442
 msgid "Insert Logo"
 msgstr ""
 
-#: page-header/functions/metabox.php:442
-#: page-header/functions/metabox.php:481
+#: page-header/functions/metabox.php:443
+#: page-header/functions/metabox.php:482
 msgid "Choose Logo"
 msgstr ""
 
-#: page-header/functions/metabox.php:453
-#: page-header/functions/metabox.php:493
+#: page-header/functions/metabox.php:454
+#: page-header/functions/metabox.php:494
 msgid "Remove Logo"
 msgstr ""
 
-#: page-header/functions/metabox.php:470
+#: page-header/functions/metabox.php:471
 msgid "Overwrite your navigation logo on this page."
 msgstr ""
 
-#: page-header/functions/metabox.php:505
+#: page-header/functions/metabox.php:506
 msgid "Merge with site header"
 msgstr ""
 
-#: page-header/functions/metabox.php:511
+#: page-header/functions/metabox.php:512
 msgid "Place content behind header (sliders etc..)"
 msgstr ""
 
-#: page-header/functions/metabox.php:526
+#: page-header/functions/metabox.php:527
 msgid "Custom Navigation Colors"
 msgstr ""
 
@@ -3031,49 +3010,49 @@ msgid "No sections added!"
 msgstr ""
 
 #: sites/classes/class-site-restore.php:59
-#: sites/classes/class-site-restore.php:135
-#: sites/classes/class-site-restore.php:168
-#: sites/classes/class-site-restore.php:196
-#: sites/classes/class-site-restore.php:218
-#: sites/classes/class-site-restore.php:240
-#: sites/classes/class-site-restore.php:274
+#: sites/classes/class-site-restore.php:144
+#: sites/classes/class-site-restore.php:181
+#: sites/classes/class-site-restore.php:209
+#: sites/classes/class-site-restore.php:231
+#: sites/classes/class-site-restore.php:253
+#: sites/classes/class-site-restore.php:287
 #: sites/classes/class-site.php:588
 #: sites/classes/class-site.php:624
 #: sites/classes/class-site.php:665
-#: sites/classes/class-site.php:831
-#: sites/classes/class-site.php:859
-#: sites/classes/class-site.php:904
-#: sites/classes/class-site.php:935
-#: sites/classes/class-site.php:1030
-#: sites/classes/class-site.php:1080
+#: sites/classes/class-site.php:847
+#: sites/classes/class-site.php:875
+#: sites/classes/class-site.php:920
+#: sites/classes/class-site.php:951
+#: sites/classes/class-site.php:1091
+#: sites/classes/class-site.php:1141
 msgid "You are not allowed to perform this action"
 msgstr ""
 
-#: sites/classes/class-site-restore.php:123
+#: sites/classes/class-site-restore.php:132
 msgid "Theme options restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:156
+#: sites/classes/class-site-restore.php:169
 msgid "Site options restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:184
+#: sites/classes/class-site-restore.php:197
 msgid "Content restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:206
+#: sites/classes/class-site-restore.php:219
 msgid "Plugins restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:228
+#: sites/classes/class-site-restore.php:241
 msgid "Widgets restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:262
+#: sites/classes/class-site-restore.php:275
 msgid "CSS restored."
 msgstr ""
 
-#: sites/classes/class-site-restore.php:282
+#: sites/classes/class-site-restore.php:295
 msgid "Completed clean-up."
 msgstr ""
 
@@ -3251,11 +3230,11 @@ msgstr ""
 msgid "No theme options exist."
 msgstr ""
 
-#: sites/classes/class-site.php:1014
+#: sites/classes/class-site.php:1075
 msgid "Site options imported"
 msgstr ""
 
-#: sites/classes/class-site.php:1059
+#: sites/classes/class-site.php:1120
 msgid "Plugins activated"
 msgstr ""
 
@@ -3350,36 +3329,31 @@ msgid "Support"
 msgstr ""
 
 #: sites/sites.php:248
-#: sites/sites.php:266
 msgid "Page Builder:"
 msgstr ""
 
-#: sites/sites.php:270
-msgid "Beaver Builder"
-msgstr ""
-
-#: sites/sites.php:271
-msgid "Elementor"
-msgstr ""
-
-#: sites/sites.php:292
+#: sites/sites.php:283
 msgid "Existing Site Import Detected"
 msgstr ""
 
-#: sites/sites.php:295
+#: sites/sites.php:286
 msgid "It is highly recommended that you remove the last site you imported before importing a new one."
 msgstr ""
 
-#: sites/sites.php:296
+#: sites/sites.php:287
 msgid "This process restores your previous options, widgets and active plugins. It will also remove your imported content and CSS."
 msgstr ""
 
-#: sites/sites.php:300
+#: sites/sites.php:291
 msgid "Remove Imported Site"
 msgstr ""
 
-#: sites/sites.php:301
+#: sites/sites.php:292
 msgid "Skip"
+msgstr ""
+
+#: sites/sites.php:314
+msgid "Reload Page"
 msgstr ""
 
 #: sites/sites.php:495
@@ -3387,11 +3361,11 @@ msgctxt "Module name"
 msgid "GeneratePress Site"
 msgstr ""
 
-#: sites/sites.php:760
+#: sites/sites.php:771
 msgid "No sites found."
 msgstr ""
 
-#: sites/sites.php:761
+#: sites/sites.php:772
 msgid "Why?"
 msgstr ""
 
@@ -3477,10 +3451,10 @@ msgstr ""
 #: typography/functions/functions.php:1227
 #: typography/functions/functions.php:1375
 #: typography/functions/functions.php:1530
-#: typography/functions/functions.php:1660
-#: typography/functions/functions.php:1826
-#: typography/functions/functions.php:1957
-#: typography/functions/functions.php:2088
+#: typography/functions/functions.php:1683
+#: typography/functions/functions.php:1872
+#: typography/functions/functions.php:2026
+#: typography/functions/functions.php:2157
 msgid "Line height"
 msgstr ""
 
@@ -3498,8 +3472,8 @@ msgstr ""
 
 #: typography/functions/functions.php:1107
 #: typography/functions/functions.php:1410
-#: typography/functions/functions.php:1695
-#: typography/functions/functions.php:2248
+#: typography/functions/functions.php:1718
+#: typography/functions/functions.php:2317
 msgid "Bottom margin"
 msgstr ""
 
@@ -3519,28 +3493,28 @@ msgstr ""
 msgid "Heading 3 (H3)"
 msgstr ""
 
-#: typography/functions/functions.php:1765
+#: typography/functions/functions.php:1788
 msgid "Heading 4 (H4)"
 msgstr ""
 
-#: typography/functions/functions.php:1896
+#: typography/functions/functions.php:1942
 msgid "Heading 5 (H5)"
 msgstr ""
 
-#: typography/functions/functions.php:2027
+#: typography/functions/functions.php:2096
 msgid "Heading 6 (H6)"
 msgstr ""
 
-#: typography/functions/functions.php:2110
-#: typography/functions/functions.php:2124
+#: typography/functions/functions.php:2179
+#: typography/functions/functions.php:2193
 msgid "Widgets"
 msgstr ""
 
-#: typography/functions/functions.php:2186
+#: typography/functions/functions.php:2255
 msgid "Widget Titles"
 msgstr ""
 
-#: typography/functions/functions.php:2282
+#: typography/functions/functions.php:2351
 msgid "Content font size"
 msgstr ""
 
@@ -3732,7 +3706,7 @@ msgid "Display product meta data"
 msgstr ""
 
 #: woocommerce/functions/customizer/customizer.php:1005
-#: woocommerce/functions/functions.php:1258
+#: woocommerce/functions/functions.php:1265
 msgid "Checkout"
 msgstr ""
 
@@ -3744,32 +3718,32 @@ msgstr ""
 msgid "Remove unnecessary distractions like sidebars, footer widgets and sticky menus."
 msgstr ""
 
-#: woocommerce/functions/functions.php:636
+#: woocommerce/functions/functions.php:643
 msgid "View your shopping cart"
 msgstr ""
 
-#: woocommerce/functions/functions.php:1175
+#: woocommerce/functions/functions.php:1182
 msgid "Rated %s out of 5"
 msgstr ""
 
-#: woocommerce/functions/functions.php:1177
+#: woocommerce/functions/functions.php:1184
 msgid "Not yet rated"
 msgstr ""
 
-#: woocommerce/functions/functions.php:1182
+#: woocommerce/functions/functions.php:1189
 msgid "out of 5"
 msgstr ""
 
-#: woocommerce/functions/functions.php:1244
+#: woocommerce/functions/functions.php:1251
 msgid "Continue Shopping"
 msgstr ""
 
-#: woocommerce/functions/functions.php:1249
+#: woocommerce/functions/functions.php:1256
 msgid "Item added to cart."
 msgstr ""
 
-#: woocommerce/functions/functions.php:1253
-#: woocommerce/functions/functions.php:1323
+#: woocommerce/functions/functions.php:1260
+#: woocommerce/functions/functions.php:1330
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""

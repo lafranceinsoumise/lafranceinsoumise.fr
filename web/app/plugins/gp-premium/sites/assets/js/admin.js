@@ -910,4 +910,20 @@ jQuery( document ).ready( function($) {
 		 $( 'body' ).removeClass( 'site-import-content-exists' );
 		 $( 'body' ).removeClass( 'site-import-data-exists' );
 	 } );
+
+	 $( '.refresh-sites a:first-child' ).on( 'click', function( e ) {
+		var $thisButton = $( this ); // eslint-disable-line no-var
+		e.preventDefault();
+
+		$thisButton.removeClass( 'success' ).addClass( 'loading' );
+
+		$.post( ajaxurl, {
+			action: 'generate_sites_refresh_sites',
+			_nonce: $thisButton.data( 'nonce' ),
+		} ).done( function() {
+			$thisButton.removeClass( 'loading' ).addClass( 'success' );
+			$thisButton.hide();
+			$thisButton.next( '.button' ).show();
+		} );
+	} );
 } );
