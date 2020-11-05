@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "288dc4eb641cf4ccdacb46d96b74c037",
+    "content-hash": "88c1bf25e0cb21d122f7210644ce45cc",
     "packages": [
         {
             "name": "composer/installers",
@@ -325,16 +325,16 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.5.1",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.5.1"
+                "reference": "5.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.5.1",
-                "reference": "5.5.1"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.5.3",
+                "reference": "5.5.3"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -368,7 +368,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-09-01T18:56:09+00:00"
+            "time": "2020-10-30T20:40:02+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -698,15 +698,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.0.12",
+            "version": "3.0.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.0.12"
+                "reference": "tags/3.0.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.13.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -825,15 +825,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.9.1",
+            "version": "4.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.9.1"
+                "reference": "tags/4.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.9.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -879,15 +879,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "15.2",
+            "version": "15.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/15.2"
+                "reference": "tags/15.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.2.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -915,15 +915,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-typography",
-            "version": "5.7.1",
+            "version": "5.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-typography/",
-                "reference": "tags/5.7.1"
+                "reference": "tags/5.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-typography.5.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-typography.5.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -951,15 +951,15 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "2.4.2",
+            "version": "3.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "2.4.2"
+                "reference": "3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.2.4.2.zip"
+                "url": "https://downloads.wordpress.org/theme/generatepress.3.0.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

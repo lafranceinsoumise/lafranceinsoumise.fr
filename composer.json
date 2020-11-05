@@ -54,11 +54,11 @@
     "wpackagist-plugin/menu-export": "1.0.1",
     "wpackagist-plugin/autoptimize": "^2.5",
     "wpackagist-plugin/wp-typography": "^5.6",
-    "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.4.3",
+    "wpackagist-plugin/pdfjs-viewer-shortcode": "^1.5.4",
     "wpackagist-plugin/redis-cache": "^2.0",
     "wpackagist-plugin/read-meter": "^1.0",
     "wpackagist-plugin/webp-simple": "^1.0",
-    "wpackagist-theme/generatepress": "^2.4"
+    "wpackagist-theme/generatepress": "^3.0"
   },
   "extra": {
     "installer-paths": {
