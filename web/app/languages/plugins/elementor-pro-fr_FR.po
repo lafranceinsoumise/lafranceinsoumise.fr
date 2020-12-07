@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Elementor Pro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-10-24 12:58:40+0000\n"
+"PO-Revision-Date: 2020-11-04 18:12:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -732,7 +732,7 @@ msgstr "Archive incompatible"
 
 #: elementor-pro/modules/assets-manager/asset-types/icons/custom-icons.php:314
 msgid "The zip file provided is not supported!"
-msgstr "Le fichier zip fourni n’est pas supporté !"
+msgstr "Le fichier zip fourni n’est pas pris en charge !"
 
 #: elementor-pro/modules/assets-manager/asset-types/icons/custom-icons.php:382
 #: elementor-pro/modules/assets-manager/asset-types/icons/templates.php:14
@@ -868,7 +868,7 @@ msgstr "reCAPTCHA V3"
 
 #: elementor-pro/modules/forms/classes/recaptcha-v3-handler.php:59
 msgid "<a href=\"%s\" target=\"_blank\">reCAPTCHA V3</a> is a free service by Google that protects your website from spam and abuse. It does this while letting your valid users pass through with ease."
-msgstr "<a href=\"%s\" target=\"_blank\">reCAPTCHA V3</a> est un service gratuit de Google qui protège votre site Web contre le spam et les abus. Il le fait tout en laissant vos utilisateurs valides passer facilement."
+msgstr "<a href=\"%s\" target=\"_blank\">reCAPTCHA V3</a> est un service gratuit de Google qui protège votre site web contre les indésirables et les abus. Il le fait tout en laissant vos utilisateurs valides passer facilement."
 
 #: elementor-pro/modules/forms/classes/recaptcha-v3-handler.php:75
 msgid "Score Threshold"
@@ -1775,7 +1775,7 @@ msgstr "Enfant direct de"
 #. translators: %s: Taxonomy label.
 #: elementor-pro/modules/theme-builder/conditions/in-sub-term.php:27
 msgid "In Child %s"
-msgstr "Dans l'enfant %s"
+msgstr "Dans les %s enfants"
 
 #: elementor-pro/modules/table-of-contents/widgets/table-of-contents.php:507
 #: elementor-pro/modules/theme-elements/widgets/post-info.php:622
@@ -2811,7 +2811,7 @@ msgstr "Merci d’activer les notes d’'évaluation"
 
 #: elementor-pro/modules/woocommerce/widgets/single-elements.php:106
 msgid "No Rating Reviews"
-msgstr "Pas d'évaluation"
+msgstr "Aucune évaluation"
 
 #. translators: %s: Search term.
 #: elementor-pro/core/utils.php:111
@@ -3252,7 +3252,7 @@ msgstr "Zone de contenu"
 #. translators: %s: Location name.
 #: elementor-pro/modules/theme-builder/classes/locations-manager.php:419
 msgid "Location '%s' is not a core location."
-msgstr "L’emplacement '%s n'est pas un emplacement central."
+msgstr "L’emplacement '%s n’est pas un emplacement central."
 
 #: elementor-pro/modules/gallery/widgets/gallery.php:62
 #: elementor-pro/modules/theme-builder/classes/locations-manager.php:469
@@ -3679,7 +3679,7 @@ msgstr "Aucune erreur, fichier téléchargé avec succès."
 #. translators: %s: MAX_FILE_SIZE
 #: elementor-pro/modules/forms/fields/upload.php:239
 msgid "The uploaded file exceeds the %s directive that was specified in the HTML form."
-msgstr "Le fichier téléchargé dépasse la directive %s c’est spécifié dans le formulaire HTML."
+msgstr "Le fichier téléversé dépasse la directive %s spécifiée dans le formulaire HTML."
 
 #: elementor-pro/modules/forms/fields/upload.php:240
 msgid "The uploaded file was only partially uploaded."
@@ -5190,11 +5190,11 @@ msgstr "Libellé du mot de passe"
 #: elementor-pro/modules/forms/widgets/login.php:282
 #: elementor-pro/modules/forms/widgets/login.php:295
 msgid "Password"
-msgstr "Mot de Passe"
+msgstr "Mot de passe"
 
 #: elementor-pro/modules/forms/widgets/login.php:293
 msgid "Password Placeholder"
-msgstr "Indicatif Mot de Passe"
+msgstr "Teste indicatif de mot de passe"
 
 #: elementor-pro/modules/forms/widgets/login.php:83
 msgid "Log In"
@@ -6072,7 +6072,7 @@ msgstr "Ordonner par"
 
 #: elementor-pro/elementor-pro.php:93
 msgid "Elementor Pro is not working because you need to install the Elementor plugin."
-msgstr "Elementor Pro ne fonctionne pas car il requiert Elementor pour fonctionner"
+msgstr "Elementor Pro ne fonctionne pas car il nécessite l’extension Elementor pour fonctionner."
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:350
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:243
@@ -6099,7 +6099,7 @@ msgstr "Aléatoire"
 
 #: elementor-pro/elementor-pro.php:108
 msgid "Elementor Pro is not working because you are using an old version of Elementor."
-msgstr "Elementor Pro ne fonctionne pas car vous utilisez une ancienne version d'Elementor."
+msgstr "Elementor Pro ne fonctionne pas car vous utilisez une ancienne version d’Elementor."
 
 #: elementor-pro/modules/query-control/controls/group-control-query.php:359
 #: elementor-pro/modules/theme-elements/widgets/sitemap.php:271
@@ -7210,7 +7210,7 @@ msgstr "Options des diapositives"
 
 #: elementor-pro/modules/forms/classes/ajax-handler.php:40
 msgid "There's something wrong. The form is invalid."
-msgstr "Il y a quelque chose qui ne va pas... Le formulaire est invalide."
+msgstr "Quelque chose s’est mal passé. Le formulaire n’est pas valide."
 
 #: elementor-pro/modules/carousel/widgets/base.php:362
 #: elementor-pro/modules/slides/widgets/slides.php:519
@@ -7220,7 +7220,7 @@ msgstr "Navigation"
 
 #: elementor-pro/modules/forms/classes/ajax-handler.php:41
 msgid "Server error. Form not sent."
-msgstr "Erreur de serveur. Le formulaire n'a pas été envoyé."
+msgstr "Erreur de serveur. Formulaire non envoyé."
 
 #: elementor-pro/modules/slides/widgets/slides.php:523
 msgid "Arrows and Dots"
@@ -7360,7 +7360,7 @@ msgstr "En haut"
 
 #: elementor-pro/modules/forms/classes/recaptcha-handler.php:126
 msgid "The Captcha field cannot be blank. Please enter a value."
-msgstr "Le champ Captcha ne peut pas être vide. Prière de saisir une valeur."
+msgstr "Le champ Captcha ne peut pas être vide. Veuillez saisir une valeur."
 
 #: elementor-pro/modules/slides/widgets/slides.php:630
 msgid "Zoom"

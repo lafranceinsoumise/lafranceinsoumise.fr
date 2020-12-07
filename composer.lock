@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
-                "reference": "9cfa56c65c71c5e579223a9bfcd0f4827391b852"
+                "reference": "049d845bf8f85683b0bccdb45bf56e1f451a6256"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/9cfa56c65c71c5e579223a9bfcd0f4827391b852",
-                "reference": "9cfa56c65c71c5e579223a9bfcd0f4827391b852",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/049d845bf8f85683b0bccdb45bf56e1f451a6256",
+                "reference": "049d845bf8f85683b0bccdb45bf56e1f451a6256",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
             },
-            "time": "2020-07-21T20:14:02+00:00"
+            "time": "2020-11-17T11:13:46+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -644,15 +644,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "2.0.5",
+            "version": "2.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/2.0.5"
+                "reference": "tags/2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.2.0.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/amp.2.0.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -680,15 +680,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.3",
+            "version": "5.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.3"
+                "reference": "tags/5.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.3.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -698,15 +698,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.0.13",
+            "version": "3.0.14",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.0.13"
+                "reference": "tags/3.0.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.13.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.14.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -789,15 +789,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.5.4",
+            "version": "1.5.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.5.4"
+                "reference": "tags/1.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -879,15 +879,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "15.2.1",
+            "version": "15.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/15.2.1"
+                "reference": "tags/15.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
