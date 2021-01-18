@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88c1bf25e0cb21d122f7210644ce45cc",
+    "content-hash": "f237251c146fb8e29966d3c022d572fa",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
+                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
-                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
+                "url": "https://api.github.com/repos/composer/installers/zipball/1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
+                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
                 "shasum": ""
             },
             "require": {
@@ -28,17 +28,18 @@
                 "shama/baton": "*"
             },
             "require-dev": {
-                "composer/composer": "1.6.* || 2.0.*@dev",
-                "composer/semver": "1.0.* || 2.0.*@dev",
-                "phpunit/phpunit": "^4.8.36",
-                "sebastian/comparator": "^1.2.4",
+                "composer/composer": "1.6.* || ^2.0",
+                "composer/semver": "^1 || ^3",
+                "phpstan/phpstan": "^0.12.55",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
                 "symfony/process": "^2.3"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-main": "1.x-dev"
                 }
             },
             "autoload": {
@@ -76,6 +77,7 @@
                 "Porto",
                 "RadPHP",
                 "SMF",
+                "Starbug",
                 "Thelia",
                 "Whmcs",
                 "WolfCMS",
@@ -116,6 +118,7 @@
                 "phpbb",
                 "piwik",
                 "ppi",
+                "processwire",
                 "puppet",
                 "pxcms",
                 "reindex",
@@ -131,17 +134,25 @@
                 "zend",
                 "zikula"
             ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.10.0"
+            },
             "funding": [
                 {
                     "url": "https://packagist.com",
                     "type": "custom"
                 },
                 {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/composer/composer",
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-07T06:57:05+00:00"
+            "time": "2021-01-14T11:07:16+00:00"
         },
         {
             "name": "fi/author-category",
@@ -149,18 +160,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lafranceinsoumise/wp-author-category.git",
-                "reference": "049d845bf8f85683b0bccdb45bf56e1f451a6256"
+                "reference": "69b61ed663f3aec232d308ca9179ab45f6aa479e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/049d845bf8f85683b0bccdb45bf56e1f451a6256",
-                "reference": "049d845bf8f85683b0bccdb45bf56e1f451a6256",
+                "url": "https://api.github.com/repos/lafranceinsoumise/wp-author-category/zipball/69b61ed663f3aec232d308ca9179ab45f6aa479e",
+                "reference": "69b61ed663f3aec232d308ca9179ab45f6aa479e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": ">=7.0"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-3.0"
@@ -180,7 +192,7 @@
                 "source": "https://github.com/lafranceinsoumise/wp-author-category/tree/master",
                 "issues": "https://github.com/lafranceinsoumise/wp-author-category/issues"
             },
-            "time": "2020-11-17T11:13:46+00:00"
+            "time": "2020-12-14T10:54:42+00:00"
         },
         {
             "name": "fi/fi-wordpress-addons",
@@ -200,6 +212,7 @@
                 "composer/installers": "~1.0",
                 "php": ">=7.3"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-3.0"
@@ -228,57 +241,6 @@
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
             "time": "2020-09-09T13:56:02+00:00"
-        },
-        {
-            "name": "jlm2017/theme-wp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lafranceinsoumise/theme-wp.git",
-                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/84139e618e52854147cb5cd84e63dd13e2994f61",
-                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.4.0"
-            },
-            "type": "wordpress-theme",
-            "license": [
-                "AGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Guillaume Royer",
-                    "email": "perso@guilro.com",
-                    "homepage": "https://github.com/guilro"
-                },
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                },
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                }
-            ],
-            "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
-            "homepage": "https://github.com/guilro/theme-wp/",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/roots/sage/issues",
-                "forum": "https://discourse.roots.io/",
-                "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
-            },
-            "time": "2020-09-09T13:16:06+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -321,20 +283,24 @@
             "keywords": [
                 "env"
             ],
+            "support": {
+                "email": "oom@oscarotero.com",
+                "issues": "https://github.com/oscarotero/env/issues",
+                "source": "https://github.com/oscarotero/env/tree/v1.2.0"
+            },
             "time": "2019-04-03T18:28:43+00:00"
         },
         {
             "name": "roots/wordpress",
-            "version": "5.5.3",
+            "version": "5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.5.3"
+                "reference": "5.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.5.3",
-                "reference": "5.5.3"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.6"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -358,6 +324,15 @@
                 "cms",
                 "wordpress"
             ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "rss": "https://wordpress.org/news/feed/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
             "funding": [
                 {
                     "url": "https://github.com/roots",
@@ -368,7 +343,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-30T20:40:02+00:00"
+            "time": "2020-12-08T22:15:57+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -425,6 +400,10 @@
             "keywords": [
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress-core-installer/issues",
+                "source": "https://github.com/roots/wordpress-core-installer/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://github.com/roots",
@@ -492,20 +471,25 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
+            "support": {
+                "forum": "https://discourse.roots.io/",
+                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
+            },
             "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
                 "shasum": ""
             },
             "require": {
@@ -517,7 +501,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -554,6 +538,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -568,7 +555,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -630,6 +617,10 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.6"
+            },
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -644,15 +635,15 @@
         },
         {
             "name": "wpackagist-plugin/amp",
-            "version": "2.0.7",
+            "version": "2.0.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amp/",
-                "reference": "tags/2.0.7"
+                "reference": "tags/2.0.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amp.2.0.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/amp.2.0.10.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -662,15 +653,15 @@
         },
         {
             "name": "wpackagist-plugin/autoptimize",
-            "version": "2.7.8",
+            "version": "2.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoptimize/",
-                "reference": "tags/2.7.8"
+                "reference": "tags/2.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.7.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.8.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -680,15 +671,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.3.1",
+            "version": "5.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.3.1"
+                "reference": "tags/5.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.3.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -698,15 +689,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.0.14",
+            "version": "3.0.16",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.0.14"
+                "reference": "tags/3.0.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.16.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -716,40 +707,21 @@
         },
         {
             "name": "wpackagist-plugin/google-authenticator",
-            "version": "0.52",
+            "version": "0.53",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-authenticator/",
-                "reference": "tags/0.52"
+                "reference": "tags/0.53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-authenticator.0.52.zip"
+                "url": "https://downloads.wordpress.org/plugin/google-authenticator.0.53.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-authenticator/"
-        },
-        {
-            "name": "wpackagist-plugin/gregs-comment-length-limiter",
-            "version": "1.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gregs-comment-length-limiter/",
-                "reference": "tags/1.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gregs-comment-length-limiter.1.7.zip",
-                "reference": "tags/1.7"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gregs-comment-length-limiter/"
         },
         {
             "name": "wpackagist-plugin/members",
@@ -789,15 +761,15 @@
         },
         {
             "name": "wpackagist-plugin/pdfjs-viewer-shortcode",
-            "version": "1.5.7",
+            "version": "1.5.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pdfjs-viewer-shortcode/",
-                "reference": "tags/1.5.7"
+                "reference": "tags/1.5.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/pdfjs-viewer-shortcode.1.5.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -843,15 +815,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "2.0.15",
+            "version": "2.0.17",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/2.0.15"
+                "reference": "tags/2.0.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.0.15.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.0.17.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -879,15 +851,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "15.4",
+            "version": "15.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/15.4"
+                "reference": "tags/15.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.6.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -933,15 +905,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.2.9",
+            "version": "1.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.2.9"
+                "reference": "tags/1.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.2.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -972,7 +944,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "jlm2017/theme-wp": 20,
         "fi/fi-wordpress-addons": 20,
         "fi/author-category": 20
     },
@@ -982,5 +953,5 @@
         "php": ">=5.6"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
