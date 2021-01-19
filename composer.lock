@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f237251c146fb8e29966d3c022d572fa",
+    "content-hash": "63e7faed30e8cccbc75b5647bfae9e7e",
     "packages": [
         {
             "name": "composer/installers",
@@ -241,6 +241,59 @@
                 "issues": "https://github.com/lafranceinsoumise/wp-plugin/issues"
             },
             "time": "2020-09-09T13:56:02+00:00"
+        },
+        {
+            "name": "jlm2017/theme-wp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lafranceinsoumise/theme-wp.git",
+                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lafranceinsoumise/theme-wp/zipball/84139e618e52854147cb5cd84e63dd13e2994f61",
+                "reference": "84139e618e52854147cb5cd84e63dd13e2994f61",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "default-branch": true,
+            "type": "wordpress-theme",
+            "license": [
+                "AGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Guillaume Royer",
+                    "email": "perso@guilro.com",
+                    "homepage": "https://github.com/guilro"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                },
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                }
+            ],
+            "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
+            "homepage": "https://github.com/guilro/theme-wp/",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/roots/sage/issues",
+                "forum": "https://discourse.roots.io/",
+                "source": "https://github.com/lafranceinsoumise/theme-wp/tree/master"
+            },
+            "abandoned": true,
+            "time": "2020-09-09T13:16:06+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -944,6 +997,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "jlm2017/theme-wp": 20,
         "fi/fi-wordpress-addons": 20,
         "fi/author-category": 20
     },

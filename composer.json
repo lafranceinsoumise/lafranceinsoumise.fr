@@ -20,6 +20,10 @@
     },
     {
       "type": "vcs",
+      "url": "git@github.com:lafranceinsoumise/theme-wp"
+    },
+    {
+      "type": "vcs",
       "url": "git@github.com:lafranceinsoumise/wp-plugin"
     },
     {
@@ -34,6 +38,7 @@
     "roots/wordpress": "^5.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
+    "jlm2017/theme-wp": "dev-master",
     "fi/fi-wordpress-addons": "dev-master",
     "fi/author-category": "dev-master",
     "wpackagist-plugin/wordpress-seo": "^15.0",
